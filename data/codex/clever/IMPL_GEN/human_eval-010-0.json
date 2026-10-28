@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_palindrome(string: str) -> str\n\"\"\"Find the shortest palindrome that begins with a supplied string.\nAlgorithm idea is simple:\n- Find the longest postfix of supplied string that is a palindrome.\n- Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: String) :=\nis_palindrome result ∧\nresult.length ≥ string.length ∧\nstring.isPrefixOf result ∧\n-- comprehensive check that the result is the shortest palindrome\n(∀ (possible_palindrome: String),\nstring.isPrefixOf possible_palindrome →\nis_palindrome possible_palindrome →\nresult.length ≤ possible_palindrome.length);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = \"\"\n-- #test implementation \"cat\" = \"catac\"\n-- #test implementation \"cata\" = \"catac\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 10,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:614e3f1579d213f239cc9223e814c7354fd994ad93e4c1eaadb433c6ab021d69",
+  "timing": 100.3049564640969,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:0f602c2a62484f082bb49e60d68e2d7a67195adf0db5bb8394109ff857dd8229",
+    "status": "OK",
+    "result": "sha256:43837cb22518bc20f5159307769633bb92938296f64cea0c1629828d4260d66e"
+  },
+  "exception": null
+}

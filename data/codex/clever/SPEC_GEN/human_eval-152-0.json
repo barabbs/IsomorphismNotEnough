@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef compare(scores: List[float], guesses: List[float]) -> List[float]\n\"\"\"I think we all remember that feeling when the result of some long-awaited\nevent is finally known. The feelings and thoughts you have at that moment are\ndefinitely worth noting down and comparing.\nYour task is to determine if a person correctly guessed the results of a number of matches.\nYou are given two arrays of scores and guesses of equal length, where each index shows a match.\nReturn an array of the same length denoting how far off each guess was. If they have guessed correctly,\nthe value is 0, and if not, the value is the absolute difference between the guess and the score.\n\nNote: to reviewer, the reason for not using |.| to get the absolute value is to avoid leaking the implementation.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat → List Rat → List Rat)\n-- inputs\n(scores guesses: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 152,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:be531d77004a0c33c4f4c5a71da5355e3db5ba6ac1e34e93dba1eada2485e5c5",
+  "timing": 57.20862382091582,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:7c385912d06785b946cd4f6d1ecc147e2f511601c3eff7d7d27d06a8f18a4734",
+    "status": "OK",
+    "result": "sha256:199eb7e97a7e50edadbda9aeed2e417806ff05b38c14f82aff3be38268cdff3a"
+  },
+  "exception": null
+}

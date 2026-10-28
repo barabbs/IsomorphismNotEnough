@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strlen(string: str) -> int\n\"\"\"Return length of given string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Nat) :=\n-- every character in the string is counted once\nresult = 0 \u2194 string.isEmpty \u2227\n(0 < result \u2192 result - 1 = implementation (string.drop 1))\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String): Nat :=\n\nstring.length\n\n\n-- [TEST_CASES]\n\n#test implementation \"\" = 0\n#test implementation \"abc\" = 3\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 23,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c9c1bd4916a6516ab59bcf65d915b099e08b12d158db2467fa36d36e25b06f14",
+  "timing": 306.03707611799473,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/w30vf1h6/problem.lean --deep=stuck",
+    "claude": "sha256:6eca25dadd57828766535a7589342f952e923df189bb2472c7dce222767b2013",
+    "status": "OK",
+    "result": "sha256:d3c644ac9249ea4cb7d4bdc97520a904984db271fcbd510e6bcca112d5c1d9f1",
+    "validation": [
+      {
+        "problem_id": "23",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:ce2322e05f8eb71412dcbd5369d5a78d2efdca4fbc1d888c83adaad17d158250"
+      }
+    ]
+  },
+  "exception": null
+}

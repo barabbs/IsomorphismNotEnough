@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef same_chars(s0: str, s1: str) -> bool\n\"\"\"Check if two words have the same characters.\n>>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')\nTrue\n>>> same_chars('eabcd', 'dddddddabc')\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String \u2192 Bool)\n-- inputs\n(s0 s1: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 'eabcdzzzz' 'dddzzzzzzzddeddabc' = true\n-- #test implementation 'abcd' 'dddddddabc' = true\n-- #test implementation 'dddddddabc' 'abcd' = true\n-- #test implementation 'eabcd' 'dddddddabc' = false\n-- #test implementation 'abcd' 'dddddddabce' = false\n-- #test implementation 'eabcdzzzz' 'dddzzzzzzzddddabc' = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 54,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:2c3e17e2c0f97f2fcedf0e0cd709324c0a8e089648222c6ee63b3e65039ace76",
+  "timing": 60.02244631400026,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/l9nwj8kq/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b46003d3a1e8216e9f90de153a5a85ea779dc86cf94157b196345e451d211afa",
+    "status": "OK",
+    "result": "sha256:9de701404e7b820ccce14d532ed3f44acc38caa7637121cc93f57ea3a53901bc"
+  },
+  "exception": null
+}

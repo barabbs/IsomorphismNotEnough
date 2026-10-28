@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fibfib(n: int)\n\"\"\"The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfibfib(0) == 0\nfibfib(1) == 0\nfibfib(2) == 1\nfibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).\nPlease write a function to efficiently compute the n-th element of the fibfib number sequence.\n\n>>> fibfib(1)\n0\n>>> fibfib(5)\n4\n>>> fibfib(8)\n24\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_3 : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable_3 0 0\n| base1 : fibonacci_non_computable_3 1 0\n| base2 : fibonacci_non_computable_3 2 1\n| step : \u2200 n f\u2081 f\u2082 f\u2083, fibonacci_non_computable_3 n f\u2081 \u2192\nfibonacci_non_computable_3 (n + 1) f\u2082 \u2192\nfibonacci_non_computable_3 (n + 2) f\u2083 \u2192\nfibonacci_non_computable_3 (n + 3) (f\u2081 + f\u2082 + f\u2083)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(x : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 1 = 0\n-- #test implementation 5 = 4\n-- #test implementation 8 = 24\n",
+  "info": {
+    "dataset": "clever",
+    "id": 63,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:92d97a840f1045a183bfbc758631e118162b77dd9da597278134b734bdf7c9e7",
+  "timing": 56.348339538999426,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/nc_2u9tt/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:536492dfa2a627d55856cb68d87f8ee6daaef24eb828c39cd43e53bb2e75114d",
+    "status": "OK",
+    "result": "sha256:2d6b8569d56e9df76b31fb88c421a5e2be52301e434f3b5e077e52443b4cbf75"
+  },
+  "exception": null
+}

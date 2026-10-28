@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_shift(s: str) -> str\n\"\"\"returns encoded string by shifting every character by 5 in the alphabet.\n\n>>> encode_shift('abc')\n'fgh'\n>>> encode_shift('xyz')\n'cde'\n>>> encode_shift('aaa')\n'fff'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"abc\" = \"fgh\"\n-- #test implementation \"xyz\" = \"cde\"\n-- #test implementation \"aaa\" = \"fff\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:7821c14f21aafc92e94a0b14c7a032d9b01a187e0010d1ee59dc46a59887e8a4",
+  "timing": 166.37104762904346,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/sez4taqc/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:8299acfa3a431a94911a47f778985aafea28427593fbc74f2353adafb1072aa2",
+    "status": "OK",
+    "result": "sha256:3ac90f4a217308e0930163eb0eb6eeb4f85178001fb2aa810e592d7eadafbebf"
+  },
+  "exception": null
+}

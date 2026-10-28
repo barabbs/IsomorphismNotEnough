@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_in_sentence(sentence: str) -> str\n\"\"\"You are given a string representing a sentence,\nthe sentence contains some words separated by a space,\nand you have to return a string that contains the words from the original sentence,\nwhose lengths are prime numbers,\nthe order of the words in the new string should be the same as the original one.\n\nConstraints:\n* 1 <= len(sentence) <= 100\n* sentence contains only letters\n\n>>> words_in_sentence('This is a test')\n'is'\n>>> words_in_sentence('lets go for swimming')\n'go for'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(sentence: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"This is a test\" = \"is\"\n-- #test implementation \"lets go for swimming\" = \"go for\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 143,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:e823ae4d9c7804523d4a07be5e8b5c1444c79ff8124ecd72093c7eb20b4d7844",
+  "timing": 219.84229937000055,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ke20ryjf/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:fada689de596da621503aea96b15bd3fde35cf3d19c1497208edf061043018ad",
+    "status": "OK",
+    "result": "sha256:fad5eb4b348dab719b8ded4b128ec440f65fc009dc6d28e45cf55bfc1961dd5f"
+  },
+  "exception": null
+}

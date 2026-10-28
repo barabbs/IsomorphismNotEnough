@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef multiply(a : int, b : int) -> int\n\"\"\"Complete the function that takes two integers and returns\nthe product of their unit digits.\nAssume the input is always valid.\n-- Note(George): I'm finding it hard to not leak the implementation here, so I opted to make the spec more convoluted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Int → Int)\n-- inputs\n(a b: Int) :=\n-- spec\nlet spec (result : Int) :=\n  |result| ≤ 81 ∧\n  result % 10 = (a * b) % 10 ∧\n  ((b%10) ≠ 0 → (result % (b%10) = 0 ∧ (result/ (b%10)) % 100 = (a%10))) ∧\n  ((a%10) ≠ 0 → (result % (a%10) = 0 ∧ (result/ (a%10)) % 100 = (b%10))) ∧\n  ((a%10 = 0) ∨ (b%10 = 0) → result = 0)\n-- program termination\n∃ result,\n  implementation a b = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b: Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 148 412 = 16\n-- #test implementation 19 28 = 72\n-- #test implementation 2020 1851 = 0\n-- #test implementation 14 (-15) = 20\n",
+  "info": {
+    "dataset": "clever",
+    "id": 97,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6f9eec36603b7a145232b42acaaac79d371aeb78305e398beaea32bf0c7a9851",
+  "timing": 84.24289377825335,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:9b83b1c9b863334792e3d1db80a5b2890629df03815f9d065d3fec9807284353",
+    "status": "OK",
+    "result": "sha256:bdbb228c8253c92c82792d7ebd6aeb0cec96b1990321055e4e268d6e063847c2"
+  },
+  "exception": null
+}

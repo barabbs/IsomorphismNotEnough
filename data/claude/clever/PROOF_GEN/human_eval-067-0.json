@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, n: nat) -> nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat → Nat)\n-- inputs\n(string: String)\n(n : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n∃ x y : Nat, x + y = n - result\n∧ (String.join [x.repr, \" apples and \", y.repr, \" oranges\"] = string)\n-- program termination\n∃ result, implementation string n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) (n: Nat) : Nat :=\n\n  let parts := string.splitOn \" apples and \"\n  match parts with\n  | [xStr, rest] =>\n    let yStr := (rest.splitOn \" oranges\").head!\n    let x := xStr.toNat!\n    let y := yStr.toNat!\n    n - (x + y)\n  | _ => 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"5 apples and 6 oranges\" 19 = 8\n#test implementation \"0 apples and 1 oranges\" 3 = 2\n#test implementation \"2 apples and 3 oranges\" 100 = 95\n#test implementation \"100 apples and 1 oranges\" 120 = 19\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String) (n : Nat)\n: problem_spec implementation s n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0d1840692fe15bb2c2cedc5dc7c697d95b7aa64ad1f3dd89446ace02d78e5916",
+  "timing": 327.9881711519556,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:2118a72d141a108dd321d8f3372a524e5afb6e93291d4d357af0c1b2423eb97e",
+    "status": "ISSUE",
+    "result": "sha256:77f3c793b505ec5810d27b3b65c6dba82cf1aeea43b9465f64d0c2cbcbf91581",
+    "validation": [
+      {
+        "problem_id": "67",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:d5416a402096d7082895c120cc0dc84e42ed2e4433df3516b06213cce6a1d7a5"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "UNIV"
+  },
+  "exception": null
+}

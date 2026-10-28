@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef histogram(s : str) -> Dict[str, int]\n\"\"\"Given a string representing a space separated lowercase letters, return a dictionary\nof the letter with the most repetition and containing the corresponding count.\nIf several letters have the same occurrence, return all of them.\n-- Note(George): I believe the equality extensionality for HashMaps makes this spec true.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Std.HashMap Char Nat)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 111,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6e65cffcaa33b0f0d538eccd29e0a85aa4754af520d4b75264774fbec25f0062",
+  "timing": 99.85518240695819,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:9188ccf89802ee8652d8f8b76161699c511381b7112de84a28249159790d606d",
+    "status": "OK",
+    "result": "sha256:dead8373b7634c5b5b8d025647352cbac011b39d71a03297bbe7c9ba5e0c072d"
+  },
+  "exception": null
+}

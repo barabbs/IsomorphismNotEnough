@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef Strongest_Extension(class_name: str, extensions: List[str]) -> str\n\"\"\"You will be given the name of a class (a string) and a list of extensions.\nThe extensions are to be used to load additional classes to the class. The\nstrength of the extension is as follows: Let CAP be the number of the uppercase\nletters in the extension's name, and let SM be the number of lowercase letters\nin the extension's name, the strength is given by the fraction CAP - SM.\nYou should find the strongest extension and return a string in this\nformat: ClassName.StrongestExtensionName.\nIf there are two or more extensions with the same strength, you should\nchoose the one that comes first in the list.\nFor example, if you are given \"Slices\" as the class and a list of the\nextensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should\nreturn 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the strongest extension\n(its strength is -1).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → List String → String)\n-- inputs\n(class_name: String)\n(extensions: List String) :=\nlet strength (extension: String) :=\n  let cap := (extension.toList.filter (fun c => c.isUpper)).length;\n  let sm := (extension.toList.filter (fun c => c.isLower)).length;\n  cap - sm;\n-- spec\nlet spec (result: String) :=\nlet last_pos := result.revPosOf '.';\n0 < extensions.length ∧ extensions.all (fun x => 0 < x.length) ∧ 0 < class_name.length →\n0 < result.length ∧\nlast_pos.isSome ∧\nlet class_name' := result.take (last_pos.get!).byteIdx;\nlet extension_name := result.drop ((last_pos.get!).byteIdx + 1);\nclass_name' = class_name ∧\nextension_name ∈ extensions ∧\nlet strength_of_extensions := extensions.map (fun ext => strength ext);\n∃ j : Nat, j < extensions.length ∧\n  extensions[j]! = extension_name ∧\n  (∀ i : Nat, i < j → strength_of_extensions[i]! < strength_of_extensions[j]!)\n  ∧ strength_of_extensions[j]! = strength_of_extensions.max?.get!;\n-- program terminates\n∃ result, impl class_name extensions = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (class_name: String) (extensions: List String) : String :=\n\n  let strength (ext : String) : Int :=\n    let cap : Nat := (ext.toList.filter (fun c => c.isUpper)).length;\n    let sm : Nat := (ext.toList.filter (fun c => c.isLower)).length;\n    (↑cap : Int) - (↑sm : Int);\n  let best :=\n    match extensions with\n    | [] => \"\"\n    | hd :: tl =>\n      tl.foldl\n        (fun best_ext ext =>\n          if strength ext > strength best_ext then ext else best_ext)\n        hd;\n  class_name ++ \".\" ++ best\n\n\n-- [TEST_CASES]\n\n#test implementation \"my_class\" [\"AA\", \"Be\", \"CC\"] = \"my_class.AA\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(class_name: String)\n(extensions: List String)\n: problem_spec implementation class_name extensions :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 153,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2904d9a4e95f0b367b6ea8a2775e98ff65ab49cefa6244d4cb757c32cd4461cb",
+  "timing": 3658.725171181839,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c0dabcff02b86745e1147ec24a43910d6188790ede72e0d1d832e95162398954",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:cf3d200baa70d6ace4485d0f50599b227ef782faa4f9976249bf72435ba3fcca",
+    "validation": [
+      {
+        "problem_id": "153",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:0e5447d438e9f1828901ca60912785c87ad3e4400ab035c5c557d881334308b4"
+      }
+    ]
+  },
+  "exception": null
+}

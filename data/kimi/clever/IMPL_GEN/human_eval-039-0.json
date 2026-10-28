@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_fib(n: int)\n\"\"\"prime_fib returns n-th prime Fibonacci number.\nNote(George): A proof of this problem requires the resolution of the open conjecture: there are infinitely many prime Fibonacci numbers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  n > 0 →\n    (∃ i, Nat.fib i = result ∧ Nat.Prime result ∧\n      (∃! S : Finset Nat, S.card = n - 1 ∧\n      (∀ y ∈ S, (∃ k, y = Nat.fib k) ∧ y < result ∧ Nat.Prime y))\n    )\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 2\n-- #test implementation 2 = 3\n-- #test implementation 3 = 5\n-- #test implementation 4 = 13\n-- #test implementation 5 = 89\n",
+  "info": {
+    "dataset": "clever",
+    "id": 39,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b8d4a8b4ad723b9963d3c1079bb6d89259f2f2b702365e2c6ee555f81447c18a",
+  "timing": 600.9184382013045,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:6f8a83f9af2b3733f6719c5a5254627f3260763593fd840ee05bded37580d821",
+    "status": "OK",
+    "result": "sha256:868bae67de8a4beb5384884416111cb7fa889e891d2c4eb482ef71d05ab5950d"
+  },
+  "exception": null
+}

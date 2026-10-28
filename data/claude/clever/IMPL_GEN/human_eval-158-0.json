@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_max(words: List String) -> String\n\"\"\"Write a function that accepts a list of strings.\nThe list contains different words. Return the word with maximum number\nof unique characters. If multiple strings have maximum number of unique\ncharacters, return the one which comes first in lexicographical order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List String \u2192 String)\n-- inputs\n(words: List String) :=\nlet unique_chars (string: String) :=\n  let string_idx := {i: Nat | i < string.length}.toFinset;\n  let characters := string_idx.image (fun i => string.toList.get! i);\n  characters.card;\n-- spec\nlet spec (result: String) :=\n(result = \"\" \u2194 words.length = 0) \u2227\n(words.length != 0 \u2192 result \u2208 words \u2227\nlet unique_chars_list := words.map unique_chars;\nlet max_unique_chars := unique_chars_list.max?.get!;\nunique_chars result = max_unique_chars \u2227\n\u2200 i : Nat, i < words.length \u2192\n  unique_chars_list[i]! = max_unique_chars \u2192\n  result \u2264 words[i]!);\n-- program terminates\n\u2203 result, impl words = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (words: List String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [\"name\", \"of\", \"string\"]= \"string\"\n-- #test implementation [\"name\", \"enam\", \"game\"] = \"enam\"\n-- #test implementation [\"aaaaaaa\", \"bb\" ,\"cc\"] = \"aaaaaaa\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 158,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3c5b1cde4d2089a9f00292951dbfefa6f31eccf9ebdfe5c3fe6ad65f2c7ace29",
+  "timing": 70.10550058601075,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4e5vpdeb/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:530b3012be09c553f77e90bab678d6616dc6996c9fd8eb8a733bd4c4f08e0349",
+    "status": "OK",
+    "result": "sha256:04b0673dad3acf5a6460bbdeb561c75ae718965982e7097ee687cc7cd779cdc3"
+  },
+  "exception": null
+}

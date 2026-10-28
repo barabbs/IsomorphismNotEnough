@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef move_one_ball(arr: List[int]) -> bool\n\"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\nnumbers in the array will be randomly ordered. Your task is to determine if\nit is possible to get an array sorted in non-decreasing order by performing\nthe following operation on the given array:\n    You are allowed to perform right shift operation any number of times.\n\nOne right shift operation means shifting all elements of the array by one\nposition in the right direction. The last element of the array will be moved to\nthe starting position in the array i.e. 0th index.\n\nIf it is possible to obtain the sorted array by performing the above operation\nthen return True else return False.\nIf the given array is empty then return True.\n\nNote: The given list is guaranteed to have unique elements.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Bool)\n-- inputs\n(arr: List Int) :=\nlet is_shifted (xs: List Int) (ys: List Int) (i: Nat) :=\n  (xs.length = ys.length) \u2227\n  (0 <= i) \u2227\n  (i < xs.length) \u2227\n  (forall j, (0 <= j \u2227 j < ys.length) \u2192 (ys[j]! = xs[(j-i) % xs.length]!))\n-- spec\nlet spec (result: Bool) :=\n  ((arr = []) \u2192 (result = True)) \u2227\n  result \u2194 (exists i, exists arr_shifted, (is_shifted arr arr_shifted i) \u2227 (List.Sorted Int.le arr_shifted))\n-- program termination\n\u2203 result, implementation arr = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 4, 5, 1, 2] = True\n-- #test implementation [3, 5, 10, 1, 2] = True\n-- #test implementation [4, 3, 1, 2] = False\n-- #test implementation [3, 5, 4, 1, 2] = False\n-- #test implementation [] = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 109,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:da0a594d152b9e8d5db8ce4c793368f6d76b7b32f1d25ab7d2c6939d6aca0d2b",
+  "timing": 66.52397165101138,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/nxjs461x/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:b6bd76b796d05737c1525ec49290a7dbf30dfcbbcc31674afb71fdd7905c6e16",
+    "status": "OK",
+    "result": "sha256:b4401961bad47b8371d0b710d7f6b01326339827cc586b13de6ac9f246d3ade3"
+  },
+  "exception": null
+}

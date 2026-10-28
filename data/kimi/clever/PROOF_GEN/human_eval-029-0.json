@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that start with a given prefix.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String → List String)\n-- inputs\n(strings: List String)\n(pref: String) :=\n-- spec\nlet spec (result: List String) :=\nresult.all (λ s => s.startsWith pref) ∧\nresult.all (λ s => s ∈ strings) ∧\nstrings.all (λ s => s.startsWith pref → s ∈ result) ∧\n∀ s : String, s ∈ result → result.count s = strings.count s;\n-- program termination\n∃ result, implementation strings pref = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) (pref: String) : List String :=\n\nList.filter (fun s => s.startsWith pref) strings\n\n\n-- [TEST_CASES]\n\n#test implementation [] \"a\" = []\n#test implementation [\"abc\", \"bcd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"array\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n(pref: String)\n: problem_spec implementation strings pref\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 29,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:27a08342d58c9eb49ad35e77b34d3380b653baf3062eb31822469701cf090b96",
+  "timing": 188.15188817493618,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:e50708410372e82286573d661cb4a6433d4a958473140c905ca901c25e0eb513",
+    "status": "OK",
+    "result": "sha256:731c5c79ca21dd6f9a31e2e4893100dd105c05ff6ebaeeaff3f07cc159e33b23",
+    "validation": [
+      {
+        "problem_id": "29",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:99e3742eb1f429d0fe19f01a9525f2ce93d995567544c44b8412c51e34f694e6"
+      }
+    ]
+  },
+  "exception": null
+}

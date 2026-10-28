@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef double_the_difference(numbers: List[float]) -> int\n\"\"\"Given a list of numbers, return the sum of squares of the numbers\nin the list that are odd. Ignore numbers that are negative or not integers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat → Int)\n-- inputs\n(numbers: List Rat) :=\nlet isEven (n : Rat) := n % 2 = 0;\nlet isNegative (n : Rat) := n < 0;\nlet isNotInteger (n : Rat) := ¬ n.isInt;\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length →\n0 ≤ result ∧\nif numbers.length = 1\nthen result = if (isEven numbers[0]! ∨ isNegative numbers[0]! ∨ isNotInteger numbers[0]!) then (0 : Int) else numbers[0]!.floor ^ 2\nelse result = if (isEven numbers[0]! ∨ isNegative numbers[0]! ∨ isNotInteger numbers[0]!) then (0 : Int) else numbers[0]!.floor ^ 2 + impl numbers.tail\n-- program terminates\n∃ result, impl numbers = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Rat) : Int :=\n\n  match numbers with\n  | [] => 0\n  | x :: xs =>\n    let isEven (n : Rat) := n.isInt ∧ n.floor % 2 = 0\n    let isNegative (n : Rat) := n < 0\n    let isNotInteger (n : Rat) := ¬ n.isInt\n    if isEven x ∨ isNegative x ∨ isNotInteger x then\n      implementation xs\n    else\n      x.floor ^ 2 + implementation xs\n\n\n-- [TEST_CASES]\n\n#test implementation ([1, 3, 2, 0]: List Rat) = (10: Int)\n#test implementation ([-1, -2, 0]: List Int) = (0: Int)\n#test implementation ([9, -2]: List Int) = 81\n#test implementation ([0]: List Int) = 0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Rat)\n: problem_spec implementation numbers :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 151,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0de90ec19b9de12e389548674d2673e709e31d597f192d1af97f4a972d2c7cca",
+  "timing": 9423.195523607079,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:e3192e8c54133b7f224da27278e4a90c3c0f3b65c1c348c06324bb4df7866852",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:d1e91f07a6e01670f2a62df7760e2d3c75db3e3e96e71563a8c03c17df26ae1a",
+    "validation": [
+      {
+        "problem_id": "151",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:d526ddc2bd488b01d0e924ef8a4ffd81d0ca4befb9e8917703168b1dbef679f3",
+        "lean_code": "sha256:99a8aabcd74449ae93c5bc77f2571e748c0cb5a7e95059eed9f00f62dbd9fa20"
+      }
+    ]
+  },
+  "exception": null
+}

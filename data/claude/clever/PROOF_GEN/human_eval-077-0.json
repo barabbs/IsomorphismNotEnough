@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef iscube(a: int) -> bool\n\"\"\"Write a function that takes an integer a and returns True if this integer is a cube of some integer number.\nNote: you may assume the input is always valid.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  result \u2194 exists n: Int, a = n^3\n-- program termination\n\u2203 result, implementation a = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Int) : Bool :=\n\n  let abs_a := a.natAbs\n  let rec check : Nat \u2192 Bool\n    | 0 => abs_a == 0\n    | n + 1 => if (n + 1) ^ 3 == abs_a then true else check n\n  check abs_a\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = True\n#test implementation 2 = False\n#test implementation (-1) = True\n#test implementation 64 = True\n#test implementation 180 = False\n#test implementation 1000 = True\n#test implementation 0 = True\n#test implementation 1729 = False\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Int)\n: problem_spec implementation a\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 77,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9b80ee8f711907c900c8c4d79b0b34f802efaab669b6b568365a6d0b4172634c",
+  "timing": 494.67890093498863,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:bb27d9af952ed96d074ec44350fe7825904bfd3a08a4c21aaa27bcafe312eae7",
+    "status": "OK",
+    "result": "sha256:4343f279b9d2a0fcf29210abb0c9b8b96b0b6f679ff5ce48b18eef3b72b59754",
+    "validation": [
+      {
+        "problem_id": "77",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:a6c0992dea1a35766f60f31aedb78dc11673319d4cec897eb0c59d9d78457916"
+      }
+    ]
+  },
+  "exception": null
+}

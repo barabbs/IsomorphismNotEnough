@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef specialFilter(nums: List[int]) -> int\n\"\"\"Write a function that takes an array of numbers as input and returns\nthe number of elements in the array that are greater than 10 and both\nfirst and last digits of a number are odd (1, 3, 5, 7, 9).\n\n>>> specialFilter([15, -73, 14, -15])\n1\n>>> specialFilter([33, -2, -3, 45, 21, 109])\n2\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(nums: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [15, -73, 14, -15] = 1\n-- #test implementation [33, -2, -3, 45, 21, 109] = 2\n",
+  "info": {
+    "dataset": "clever",
+    "id": 146,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:50f974eea5019254c5603b45ed6ddd245a57323d0f28facbaacc34ac5a2b88e0",
+  "timing": 367.41944784810767,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:492265184e365d12e66758d89eaee2560b8415c947ccbc30b441e94126849f60",
+    "status": "OK",
+    "result": "sha256:3946b4c3298305dea4426c4a13ed76418bd26c47bfe709579ab475df28e39ebf"
+  },
+  "exception": null
+}

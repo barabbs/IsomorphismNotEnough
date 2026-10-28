@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add_elements(arr: List[int], k: int) -> int\n\"\"\"Given a non-empty array of integers arr and an integer k, return\nthe sum of the elements with at most two digits from the first k elements of arr.\n\nConstraints:\n    1. 1 <= len(arr) <= 100\n    2. 1 <= k <= len(arr)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Nat → Int)\n-- inputs\n(arr: List Int)\n(k: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 122,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9ca14178ef9668671faf5d2f0e6ac0505c05246f35dbbc4043f0ad67b329ee89",
+  "timing": 368.5055416589894,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:092afb62f7410d09f052caa579a92eddcca87f3c24055d034b08c428c3b83bab",
+    "status": "OK",
+    "result": "sha256:3fcec58194efa0200c5925e4170a3fd99a86b99b4fdebf2620da9348e9df306d"
+  },
+  "exception": null
+}

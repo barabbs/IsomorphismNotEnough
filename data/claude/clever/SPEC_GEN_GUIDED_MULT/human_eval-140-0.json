@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fix_spaces(text: str) -> str\n\"\"\"Given a string text, replace all spaces in it with underscores,\nand if a string has more than 2 consecutive spaces,\nthen replace all consecutive spaces with -\n\n>>> fix_spaces('Example')\n'Example'\n>>> fix_spaces('Example 1')\n'Example_1'\n>>> fix_spaces(' Example 2')\n'_Example_2'\n>>> fix_spaces(' Example   3')\n'_Example-3'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(text: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Example\" = \"Example\"\n-- #test implementation \"Example 1\" = \"Example_1\"\n-- #test implementation \" Example 2\" = \"_Example_2\"\n-- #test implementation \" Example   3\" = \"_Example-3\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 140,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:7e585712c04d1a7cd878ea119ea2a54f56f7ce1a6ce028bd0b7a4ecb9e6c122b",
+  "timing": 172.5923595710192,
+  "metadata": {
+    "prompt": "Read problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c206d0beb4b2e87aeca7924b32378841b6c2739b0a92e40528327e95f7919994",
+    "status": "OK",
+    "result": "sha256:2a6c4e485b658fc90a15b27e6d077c19d1adadbee3226eb918d26a3c93918f10"
+  },
+  "exception": null
+}

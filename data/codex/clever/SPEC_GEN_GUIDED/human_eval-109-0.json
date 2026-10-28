@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef move_one_ball(arr: List[int]) -> bool\n\"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\nnumbers in the array will be randomly ordered. Your task is to determine if\nit is possible to get an array sorted in non-decreasing order by performing\nthe following operation on the given array:\n    You are allowed to perform right shift operation any number of times.\n\nOne right shift operation means shifting all elements of the array by one\nposition in the right direction. The last element of the array will be moved to\nthe starting position in the array i.e. 0th index.\n\nIf it is possible to obtain the sorted array by performing the above operation\nthen return True else return False.\nIf the given array is empty then return True.\n\nNote: The given list is guaranteed to have unique elements.\n\n>>> move_one_ball([3, 4, 5, 1, 2])\nTrue\n>>> move_one_ball([3, 5, 4, 1, 2])\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [3, 4, 5, 1, 2] = True\n-- #test implementation [3, 5, 10, 1, 2] = True\n-- #test implementation [4, 3, 1, 2] = False\n-- #test implementation [3, 5, 4, 1, 2] = False\n-- #test implementation [] = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 109,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c6dc45081e990f7a0915e358fbd9d3b1a6d552a49e0c1b9510cd209c2ee76508",
+  "timing": 68.04485281277448,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:fa5aad70190525504bc02995a057cc03f9aa6a0355c489b886b91c273015eed8",
+    "status": "OK",
+    "result": "sha256:591f05b9e56f5dff8913b3ad95a721e415fc274ca23d6660bacdac02cf917cd0"
+  },
+  "exception": null
+}

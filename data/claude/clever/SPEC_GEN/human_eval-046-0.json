@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib4(n: int)\n\"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfib4(0) -> 0\nfib4(1) -> 0\nfib4(2) -> 2\nfib4(3) -> 0\nfib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\nPlease write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_4 : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable_4 0 0\n| base1 : fibonacci_non_computable_4 1 0\n| base2 : fibonacci_non_computable_4 2 2\n| base3 : fibonacci_non_computable_4 3 0\n| step : \u2200 n f\u2081 f\u2082 f\u2083 f\u2084, fibonacci_non_computable_4 n f\u2081 \u2192\nfibonacci_non_computable_4 (n + 1) f\u2082 \u2192\nfibonacci_non_computable_4 (n + 2) f\u2083 \u2192\nfibonacci_non_computable_4 (n + 3) f\u2084 \u2192\nfibonacci_non_computable_4 (n + 4) (f\u2081 + f\u2082 + f\u2083 + f\u2084)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(x: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 46,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:eabb6d38bb56c3137290351034e2fa0592626fc20191ae4e673b9a7180a07fc7",
+  "timing": 56.22879419699893,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/g00_6f7l/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f7da248d79d0510211b07b7a30cde493cb4e986f37bcffa62782f30213c96e29",
+    "status": "OK",
+    "result": "sha256:a8af453940ffe9e620b2734b18e4b55d38948bcb48eb9289a254ed68b73857b6"
+  },
+  "exception": null
+}

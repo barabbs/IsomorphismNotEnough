@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef simplify(x: str, n: str) -> bool\n\"\"\"Your task is to implement a function that will simplify the expression\nx * n. The function returns True if x * n evaluates to a whole number and False\notherwise. Both x and n, are string representation of a fraction, and have the following format,\n<numerator>/<denominator> where both numerator and denominator are positive whole numbers.\n\nYou can assume that x, and n are valid fractions, and do not have zero as denominator.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(x: String) (n: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 144,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fdbbed52a2533b2f70d18ac40e8b6b07d95bd48759aa8fbb9a6f39735a90250b",
+  "timing": 187.9944801167585,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:afc1f47cf423337b4ed45e9f0b98cbfe52926441dcffd70275539b1bd8cf4f1b",
+    "status": "OK",
+    "result": "sha256:66d209008c433c802b84a0ee88ca7c71ed7e5f7716aa002e755f38b3214636dc"
+  },
+  "exception": null
+}

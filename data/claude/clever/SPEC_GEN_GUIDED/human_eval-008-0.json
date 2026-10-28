@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_product(numbers: List[int]) -> Tuple[int, int]\n\"\"\"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n\n>>> sum_product([])\n(0, 1)\n>>> sum_product([1, 2, 3, 4])\n(10, 24)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 (Int \u00d7 Int))\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] = (0, 1)\n-- #test implementation [1, 2, 3, 4] = (10, 24)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 8,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:6a55d9e17edced4d5e8f5215e703db187405109ab0b8349a858f74255cf3bded",
+  "timing": 57.72341466999933,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mor6bla8/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e7d1f4bd8b9f1eaabf41e070c8eaee2ebe4364b9bc526cd759054fc6107e7e41",
+    "status": "OK",
+    "result": "sha256:e7aa58359ee25e5df5c8bb507c8216d94aacd8af8271e9f8a57dea44c6b26660"
+  },
+  "exception": null
+}

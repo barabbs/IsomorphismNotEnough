@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_xor(a: str, b: str) -> str\n\"\"\"Input are two strings a and b consisting only of 1s and 0s.\nPerform binary XOR on these inputs and return result also as a string.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String → String → String)\n-- inputs\n(a b: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 11,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6ef9d635c8590a69c9e04b9c0ce088fcd2cfba6aac334de4071549149bea4d07",
+  "timing": 204.2875361442566,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:cc08d75684e7b894efd2b13b74020d60121e895e39a060cd054d58074b65dc91",
+    "status": "OK",
+    "result": "sha256:957da7c5fcf91ff2a6239ad01ca5aae45ba9d10d628a708486fb3beeaed972ad"
+  },
+  "exception": null
+}

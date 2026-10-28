@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef truncate_number(number: float) -> float\n\"\"\"Given a positive floating point number, it can be decomposed into\nand integer part (largest integer smaller than given number) and decimals\n(leftover part always smaller than 1).\n\nReturn the decimal part of the number.\n\n>>> truncate_number(3.5)\n0.5\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Rat → Rat)\n-- inputs\n(number: Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 3.5 = 0.5\n",
+  "info": {
+    "dataset": "clever",
+    "id": 2,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:98e306f6213f379afa87aac6f04956cb65f2f12a77b21a8e6d484f1ac2eca6a8",
+  "timing": 191.85915125600877,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:a168ac02d6fbbcaef07fb34c407e8a1540e5647b1eba999733c8b0789116cdd9",
+    "status": "OK",
+    "result": "sha256:6d9673c19d2f8c5225e9041278d236cf1338b36ec913020489ab53f07b812cd0"
+  },
+  "exception": null
+}

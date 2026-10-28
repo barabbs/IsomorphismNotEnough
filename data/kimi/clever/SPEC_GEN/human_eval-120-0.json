@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef maximum(arr: List[int], k: int) -> List[int]\n\"\"\"Given an array arr of integers and a positive integer k, return a sorted list of length\nk with the maximum k numbers in arr.\nNote:\n    1. The length of the array will be in the range of [1, 1000].\n    2. The elements in the array will be in the range of [-1000, 1000].\n    3. 0 <= k <= len(arr)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int → List Int)\n-- inputs\n(arr: List Int)\n(k: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 120,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:443696e19038da3c22c92158ba1057a6f2192972b3576d082a99459c113b7f7c",
+  "timing": 367.92256637103856,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d4c071f4e5a196878c0be9ddb22c6b546e4c5078f7f9769356ed5b7063094430",
+    "status": "OK",
+    "result": "sha256:5e98c6375d77457ad7e9ce49ee21efbd9810d267df9e79ad1a7199fb276b437b"
+  },
+  "exception": null
+}

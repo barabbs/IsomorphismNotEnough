@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef any_int(a: float, b: float, c: float) -> bool\n\"\"\"Create a function that takes 3 numbers.\nReturns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\nReturns false in any other cases.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat → Rat → Bool)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) :=\n-- spec\nlet spec (result : Bool) :=\n  let nums := [a, b, c];\n  result = true ↔ ∃ i j k : ℕ, {i, j, k} ⊆ ({0, 1, 2} : Set ℕ) ∧ i ≠ j ∧ j ≠ k ∧ k ≠ i ∧ (nums[i]! + nums[j]! = nums[k]!) ∧ a.den = 1 ∧ a.den = b.den ∧ a.den = c.den\n-- program termination\n∃ result,\n  implementation a b c = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a: Rat) (b: Rat) (c: Rat) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 2 7 = true\n-- #test implementation 3 2 2 = false\n-- #test implementation 3 (-2) 1 = true\n-- #test implementation 3.6 (-2.2) 2 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 92,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bd0aee9486e18a2ad7c9e6bed11c0f706e08f8f133a980981afc79b0bc2634c0",
+  "timing": 91.94333992805332,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:1745e4084040dc04e19a7b08825115253afc0e5a6c73bbd2dfe856ef4ef140c8",
+    "status": "OK",
+    "result": "sha256:d1f597d3a0a77ffd8f0bf122ed2778cd1070a897346c1518c445e148f107fe43"
+  },
+  "exception": null
+}

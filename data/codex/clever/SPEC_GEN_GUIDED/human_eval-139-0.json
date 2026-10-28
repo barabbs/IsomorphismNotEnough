@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef special_factorial(n: int) -> int\n\"\"\"The Brazilian factorial is defined as:\nbrazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!\nwhere n > 0. Please write a function that computes the Brazilian factorial.\n\n>>> special_factorial(4)\n288\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 4 = 288\n",
+  "info": {
+    "dataset": "clever",
+    "id": 139,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:04b6a432e11a6d4a6e04fcd79d1ee6694558a35d94aaabb6408dc533d9cf42f3",
+  "timing": 104.62852012226358,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:2f31346ac5333f37aa3e10059a5d41b50b6aeb55f1e6450bb325ab4268ea3829",
+    "status": "OK",
+    "result": "sha256:6e9571a0cd1731c255eb943c16a1855a82df96dd7adc8eec72fbb8da8c2a9ea7"
+  },
+  "exception": null
+}

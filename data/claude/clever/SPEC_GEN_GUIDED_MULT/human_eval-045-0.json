@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, h: float) -> float\n\"\"\"Given length of a side and high return area for a triangle.\n\n>>> triangle_area(5, 3)\n7.5\n>>> triangle_area(8, 2)\n8.0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Rat \u2192 Rat \u2192 Rat)\n-- inputs\n(a h: Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 3 = 7.5\n-- #test implementation 8 2 = 8.0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 45,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:6cf02872cda437c6d0117ff0aa1aecfe4ec63a90250e6f772a8f21eb2420fba0",
+  "timing": 87.83724456501659,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/3eygmj6d/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:48dd6f81572ff8522cbbbb36cde675b14740e7b01686d0bcc9e5ed39c512af8d",
+    "status": "OK",
+    "result": "sha256:7bd61ea230bb24757f31d9ca36bca652d643d564fffddc2833791e22ef8d9982"
+  },
+  "exception": null
+}

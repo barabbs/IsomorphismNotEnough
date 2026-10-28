@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[int]) -> int\n\"\"\"This function will take a list of integers. For all entries in the list, the function shall square the integer entry if its index is a\nmultiple of 3 and will cube the integer entry if its index is a multiple of 4 and not a multiple of 3. The function will not\nchange the entries in the list whose indexes are not a multiple of 3 or 4. The function shall then return the sum of all entries.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(lst : List Int) :=\n-- spec\nlet spec (result : Int) :=\nlet last := lst.length-1;\n(lst = [] \u2192 result = 0) \u2227\n(lst \u2260 [] \u2227 last % 3 = 0 \u2192 result = lst[last]! ^ 2 + impl (lst.take last)) \u2227\n(lst \u2260 [] \u2227 last % 4 = 0 \u2227 last % 3 != 0 \u2192 result = lst[last]! ^ 3 + impl (lst.take last)) \u2227\n(lst \u2260 [] \u2227 last % 3 != 0 \u2227 last % 4 != 0 \u2192 result = lst[last]! + impl (lst.take last))\n-- program termination\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst : List Int) : Int :=\n\nlet rec go (i : Nat) (l : List Int) : Int :=\n  match l with\n  | [] => 0\n  | x :: xs =>\n    let entry :=\n      if i % 3 == 0 then x ^ 2\n      else if i % 4 == 0 then x ^ 3\n      else x\n    entry + go (i + 1) xs\ngo 0 lst\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = 6\n#test implementation [] = 0\n#test implementation [-1, -5, 2, -1, -5] = -126\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst : List Int)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 142,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:44008b49b6d2b5fb5999406b7c779166995a8d8f80ff56609cd964639ad8432d",
+  "timing": 893.0325649990118,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/52y1tzrr/problem.lean --deep=stuck",
+    "claude": "sha256:e6ab78fc3057900e5cf0ec5332b632e7c159341febc5a28f8e0de81231279125",
+    "status": "OK",
+    "result": "sha256:25f74fa224227a3bcefb0037beed0b01e4b563dd43bf5e4d2a7d420c96d84dde",
+    "validation": [
+      {
+        "problem_id": "142",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:90310f4a7869d6dd0ba538e1680dd8f0af7fc75fc76c805d0ef0bfd75f403677"
+      }
+    ]
+  },
+  "exception": null
+}

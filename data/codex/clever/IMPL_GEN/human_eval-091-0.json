@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_bored(s: str) -> int\n\"\"\"You'll be given a string of words, and your task is to count the number\nof boredoms. A boredom is a sentence that starts with the word \"I\".\nSentences are delimited by '.', '?' or '!'.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Nat) :=\n  let is_sentence_is_boredom (s: String) : Bool :=\n    (s.startsWith \"I \" ∨ s.startsWith \" I\") ∧ '.' ∉ s.data ∧ '?' ∉ s.data ∧ '!' ∉ s.data\n  match s.data.findIdx? (λ c => c = '.' ∨ c = '?' ∨ c = '!') with\n  | some i =>\n    let j := i + 1;\n    let substring := s.drop j;\n    result = (if is_sentence_is_boredom substring then 1 else 0) + implementation substring\n  | none =>\n    result = if is_sentence_is_boredom s then 1 else 0\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hello world\" = 0\n-- #test implementation \"The sky is blue. The sun is shining. I love this weather\" = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 91,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3a5c9e3aa8c81156df4820720be1dc343ad4ff8f1cf61dd66e9fb6f0352e927e",
+  "timing": 175.23715682001784,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:de1499917e42f1af37721258ac86e3a2903429a3fb24a2d3fa875a49240dd245",
+    "status": "ISSUE",
+    "result": "sha256:9deb151a2191701d960d7e4cfd76017f7cf5420ad357a5eb9e96ac2cc7a82f7e"
+  },
+  "exception": null
+}

@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digitSum(string: str) -> nat\n\"\"\"Write a function that takes a string as input and returns the sum of the upper characters only'\nASCII codes.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\nlet isUpper (c : Char) :=\n  65 ≤ c.toNat ∧ c.toNat ≤ 90\n-- spec\nlet spec (result: Nat) :=\nif string.length = 1 then\n  result = if isUpper string.data[0]! then string.data[0]!.toNat else 0\nelse\n  result = (if isUpper string.data[0]! then string.data[0]!.toNat else 0) + implementation (string.drop 1);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : Nat :=\n\n  let chars := string.data\n  chars.foldl (fun acc c =>\n    if 65 ≤ c.toNat ∧ c.toNat ≤ 90 then acc + c.toNat else acc) 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"\" = 0\n#test implementation \"abAB\" = 131\n#test implementation \"abcCd\" = 67\n#test implementation \"helloE\" = 69\n#test implementation \"woArBld\" = 131\n#test implementation \"aAaaaXa\" = 153\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 66,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ea63bbfd11d76d94a13ce7d18166fe48ec3a9316e18639efedec98fcccb504dd",
+  "timing": 253.67242642398924,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:d706e45aa28b6c9bb5cdfcf3278d922d23ec0e55794a54c5591d6df1925cdbe1",
+    "status": "ISSUE",
+    "result": "sha256:a303dcfa5713e1356763a22af77375a33ca9bea217c2357cbb5f4ec9f81efff2",
+    "validation": [
+      {
+        "problem_id": "66",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:9e7456357c935cfb63635829c5c556ffc35b78b75de7bdf2bb4a6b18c8fbe4de"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "OOB"
+  },
+  "exception": null
+}

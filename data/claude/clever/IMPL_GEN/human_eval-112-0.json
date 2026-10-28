@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef reverse_delete(s : str, c : str) -> (str, bool)\n\"\"\"We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\nthen check if the result string is palindrome.\nA string is called palindrome if it reads the same backward as forward.\nYou should return a tuple containing the result string and True/False for the check.\n-- Note: We assume the deletions preserve the order of the remaining characters.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String \u2192 (String \u00d7 Bool))\n-- inputs\n(s: String)\n(c: String) :=\n-- spec\nlet spec (result : String \u00d7 Bool) :=\n  let (result_str, result_bool) := result\n  result_bool = (List.Palindrome result_str.data) \u2227\n  (c.data.length = 0 \u2192 result_str = s) \u2227\n  (c.data.length > 0 \u2192\n    result_str =\n    (implementation\n      (String.join ((s.data.filter (fun x => x \u2260 c.data.head!)).map (fun c => String.mk [c])))\n      (c.drop 1)).fst)\n\n-- program termination\n\u2203 result,\n  implementation s c = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) (c: String) : String \u00d7 Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abcde\" \"ae\" = (\"bcd\", False)\n-- #test implementation \"abcdef\" \"b\" = (\"acdef\", False)\n-- #test implementation \"abcdedcba\" \"ab\" = (\"cdedc\", True)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 112,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:dabb3f43cd6fffbf4bbeaca2446c8ad108680ea0a168385facc79b457a0b67ea",
+  "timing": 197.77457567700185,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mc4g0d3f/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:259bef5e4c19e038ba23d68469c1b9997a4cb102627fda69574cd7c9b4a7b43b",
+    "status": "OK",
+    "result": "sha256:c306c6c89787caeece441d489f47b5a4531ca17bfbc8eee2ad399c842c03721e"
+  },
+  "exception": null
+}

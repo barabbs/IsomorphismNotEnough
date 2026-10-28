@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef valid_date(date: str) -> bool\n\"\"\"You have to write a function which validates a given date string and\nreturns True if the date is valid otherwise False.\nThe date is valid if all of the following rules are satisfied:\n1. The date string is not empty.\n2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n3. The months should not be less than 1 or higher than 12.\n4. The date should be in the format: mm-dd-yyyy\n\n>>> valid_date('03-11-2000')\nTrue\n>>> valid_date('15-01-2012')\nFalse\n>>> valid_date('04-0-2040')\nFalse\n>>> valid_date('06-04-2020')\nTrue\n>>> valid_date('06/04/2020')\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(date: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"03-11-2000\" = true\n-- #test implementation \"15-01-2012\" = false\n-- #test implementation \"04-0-2040\" = false\n-- #test implementation \"06-04-2020\" = true\n-- #test implementation \"06/04/2020\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 124,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f8e81cb0bbdb58c7ace46390aa94a10ab31c5f34f110a1e41bfcc0373b401452",
+  "timing": 483.46080545987934,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:ef814d5417b001ef3ced0d2815ae666822fb4d105c4e547247d8cedbb6bcdc7d",
+    "status": "OK",
+    "result": "sha256:3a1a8098039906fe4f0b5b203d935bf5ec8fee1ef9a657692846fab178ae7293"
+  },
+  "exception": null
+}

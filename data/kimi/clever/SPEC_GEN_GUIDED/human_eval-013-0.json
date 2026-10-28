@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef greatest_common_divisor(a: int, b: int) -> int\n\"\"\"Return a greatest common divisor of two integers a and b\n\n>>> greatest_common_divisor(25, 15)\n5\n>>> greatest_common_divisor(3, 5)\n1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Int → Int → Int)\n-- inputs\n(a b: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 25 15 = 5\n-- #test implementation 3 5 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 13,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:affecd6b762ddb3074cce90e7ee73ee791c2d1c6caa712f30a75bb73264ebce4",
+  "timing": 61.01177520304918,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:ace1730662d4d0dabeda970a64014fd79fa1f5f4f8720abda6fb14c5ccf0093f",
+    "status": "OK",
+    "result": "sha256:11e2131b866b7acbbb1bd0bc58b8715c210ebdcd42426b0788beb65e75d49287"
+  },
+  "exception": null
+}

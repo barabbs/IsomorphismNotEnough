@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_prime_factor(n: nat) -> nat\n\"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  1 < n ∧ ¬ Nat.Prime n →\n  (Nat.Prime result ∧ result ∣ n ∧\n  ∀ i, i < n ∧ i ∣ n ∧ Nat.Prime i → i ≤ result);\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 13195 = 29\n-- #test implementation 2048 = 2\n",
+  "info": {
+    "dataset": "clever",
+    "id": 59,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a86d55ec204ae05d4dc48d93292b79937fea33ca1434b301b5923998ce65a278",
+  "timing": 181.1880779680796,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:241f467d54eaeeb3fb5fbeb63b8cc7f7245eb2fcdcb9b76e9942d5be4de118cc",
+    "status": "OK",
+    "result": "sha256:2fd2bb87b9de5689097f1486499169e0cc86daade8c1f6fc74686ca6f4f13419"
+  },
+  "exception": null
+}

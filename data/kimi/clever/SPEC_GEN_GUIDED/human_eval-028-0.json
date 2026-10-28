@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef concatenate(strings: List[str]) -> str\n\"\"\"Concatenate list of strings into a single string\n\n>>> concatenate([])\n''\n>>> concatenate(['a', 'b', 'c'])\n'abc'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String → String)\n-- inputs\n(strings: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] = \"\"\n-- #test implementation [\"a\", \"b\", \"c\"] = \"abc\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 28,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:d472039e7338f1732bcec56d39317dc6d83778574fff2802d56a604f89fceda8",
+  "timing": 145.36287160869688,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:70b5c0e33d6fcbed1e00133685cd403f020cf1fe456c7fc0dbcd0a5d2b074247",
+    "status": "OK",
+    "result": "sha256:82d675b5b7fb00c1cb8f079c9770147af4e5fc80ac343998920ea35a6a33ef91"
+  },
+  "exception": null
+}

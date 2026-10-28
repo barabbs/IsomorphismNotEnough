@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rounded_avg(n: nat, m: nat) -> Option[string]\n\"\"\"You are given two positive integers n and m, and your task is to compute the\naverage of the integers from n through m (including n and m).\nRound the answer to the nearest integer and convert that to binary.\nIf n is greater than m, return none.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat \u2192 Option String)\n-- inputs\n(n: Nat) (m: Nat) :=\n-- spec\nlet spec (result: Option String) :=\n  (n > m \u2194 result.isNone) \u2227\n  (n \u2264 m \u2194 result.isSome) \u2227\n  (n \u2264 m \u2192\n    (result.isSome \u2227\n    let val := Option.getD result \"\";\n    let xs := List.Ico n (m+1);\n    let avg := xs.sum / xs.length;\n    (val.take 2 = \"0b\") \u2227\n    (Nat.ofDigits 2 ((val.drop 2).toList.map (fun c => c.toNat - '0'.toNat)).reverse = avg)))\n-- program termination\n\u2203 result, implementation n m = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) (m: Nat) : Option String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 5 = some \"0b11\"\n-- #test implementation 7 13 = some \"0b1010\"\n-- #test implementation 964 977 = some \"0b1111001010\"\n-- #test implementation 996 997 = some \"0b1111100100\"\n-- #test implementation 185 546 = some \"0b101101110\"\n-- #test implementation 362 496 = some \"0b110101101\"\n-- #test implementation 350 902 = some \"0b1001110010\"\n-- #test implementation 197 233 = some \"0b11010111\"\n-- #test implementation 7 5 = none\n-- #test implementation 5 1 = none\n-- #test implementation 5 5 = some \"0b101\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0a203c56c52ee38d252a9a6bca456f58cdc32cf4ad59c82897309063539930ce",
+  "timing": 254.88116745400475,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mvml3re3/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:74e8474825222e52d3641865dc99a1043314822526a52f8ea5ef7ddfd57ca1f3",
+    "status": "ISSUE",
+    "result": "sha256:52443172006a3f14d38106af9254dc8e3e501351266d1c0833270c7b07b9125a"
+  },
+  "exception": null
+}

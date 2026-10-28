@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Nat)\n-- inputs\n(n p: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0ba75f43bc3ae9d7817ee879ae6a09b4e3112f38997122a5acd4b271c674f6bc",
+  "timing": 41.26284113433212,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:a20a3c7eef688c9c617a19ba6cfca35a97833eec3d81ebe4148798c3fd00ce9d",
+    "status": "OK",
+    "result": "sha256:394422cdd1a8541ff9e4f817a4c6c424bf1a59aac67a79e6982a77d6b7e5e2a5"
+  },
+  "exception": null
+}

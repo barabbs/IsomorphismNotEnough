@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]\n\"\"\"Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int → List Int)\n-- inputs\n(numbers: List Int)\n(delimeter: Int) :=\n-- spec\nlet spec (result: List Int) :=\n(result.length = 0 ∧ result = numbers) ∨\n(result.length = 2 ∧ numbers.length = 1 ∧\nresult[0]! = numbers[0]! ∧ result[1]! = delimeter) ∨\n(result.length = 2 * numbers.length - 1 ∧\n∀ i, i < numbers.length →\nresult[2 * i]! = numbers[i]! ∧\n(0 < 2*i - 1 → result[2 * i - 1]! = delimeter));\n-- program termination\n∃ result, implementation numbers delimeter = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) (delimeter: Int) : List Int :=\n\n  match numbers with\n  | [] => []\n  | x :: xs => x :: List.flatten (xs.map (λ y => [delimeter, y]))\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] 4 = [1, 4, 2, 4, 3]\n#test implementation [] 4 = []\n#test implementation [1] 4 = [1]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n(delimeter: Int)\n: problem_spec implementation numbers delimeter\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 5,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e4d4b3a6c60741aee70fe25e8de1a2a50f4f304d215a651082cdf814048df20b",
+  "timing": 1164.714648202993,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:d11e1fb70885efeb9be63677870863c2d9ecde272c931e548f7d7fcb6696bb50",
+    "status": "OK",
+    "result": "sha256:80bdd3740094ae54267add64096d933f4d158cee3ec82398f6af58084afd8d36",
+    "validation": [
+      {
+        "problem_id": "5",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:3c1ec55b8fdb24615786c3d02385f21d54075517b2b318b212aaa5bf10337166"
+      }
+    ]
+  },
+  "exception": null
+}

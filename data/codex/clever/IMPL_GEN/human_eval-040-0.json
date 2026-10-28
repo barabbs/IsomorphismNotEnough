@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triples_sum_to_zero(numbers: List[int]) -> bool\n\"\"\"triples_sum_to_zero takes a list of integers as an input.\nit returns True if there are three distinct elements in the list that\nsum to zero, and False otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Bool)\n-- inputs\n(numbers: List Int) :=\nlet sum_i_j_k (i j k: Nat) : Bool :=\n  numbers[i]! + numbers[j]! + numbers[k]! = 0;\nlet exists_zero := 3 ≤ numbers.length ∧ (∃ i j k, i ≠ j ∧ i ≠ k ∧ j ≠ k ∧\n i < numbers.length ∧ j < numbers.length ∧ k < numbers.length ∧\n sum_i_j_k i j k)\n-- spec\nlet spec (result: Bool) :=\nresult ↔ exists_zero\n-- -- program termination\n∃ result, implementation numbers = result ∧\nspec result\n-- \n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 3, 5, 0] = false\n-- #test implementation [1, 3, -2, 1] = true\n-- #test implementation [1, 2, 3, 7] = false\n-- #test implementation [2, 4, -5, 3, 9, 7] = true\n-- #test implementation [1] = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 40,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e69aaae475cc941221b4f3b4d4599188d057567e9b56e224f2e6bab228c93306",
+  "timing": 74.72293372778222,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:58449bfa6a929cb31c98e8110c970fb04d6d7ce7600de5833ee3e9126b2e32d3",
+    "status": "OK",
+    "result": "sha256:bf5f10ea88340d1b8f5a45316f49f6b6a6744997ce7bf3e336b9817ad4f7e3e1"
+  },
+  "exception": null
+}

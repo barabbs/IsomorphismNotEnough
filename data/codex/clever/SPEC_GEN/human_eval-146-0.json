@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef specialFilter(nums: List[int]) -> int\n\"\"\"Write a function that takes an array of numbers as input and returns\nthe number of elements in the array that are greater than 10 and both\nfirst and last digits of a number are odd (1, 3, 5, 7, 9).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(nums: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 146,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:37afa111f897d009dac50d62594150301f2c4b6cdffe66689f057ef69209eed8",
+  "timing": 121.33254221221432,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:8d60a273c73fd277d83f338a3e9b9767bcf680f187859c6233f8847d05ceabd3",
+    "status": "OK",
+    "result": "sha256:831664c7ab7c2700766c88af83b1c4a1c82ad827e9ec4881687e75a2dfaeafea"
+  },
+  "exception": null
+}

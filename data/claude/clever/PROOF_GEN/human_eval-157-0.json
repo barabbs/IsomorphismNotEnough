@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef right_angle_triangle(a: nat, b: nat, c: nat) -> bool\n\"\"\"Given the lengths of the three sides of a triangle. Return True if the three\nsides form a right-angled triangle, False otherwise.\nA right-angled triangle is a triangle in which one angle is right angle or\n90 degree.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 Nat \u2192 Bool)\n-- inputs\n(a b c: Nat) :=\n-- spec\nlet spec (result: Bool) :=\nresult \u2194\n  0 < a \u2227 0 < b \u2227 0 < c \u2227\n  ((a * a + b * b = c * c) \u2228\n  (a * a + c * c = b * b) \u2228\n  (b * b + c * c = a * a))\n-- program terminates\n\u2203 result, impl a b c = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b c: Nat) : Bool :=\n\n  (0 < a && 0 < b && 0 < c) && (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a)\n\n\n-- [TEST_CASES]\n\n#test implementation 3 4 5 = true\n#test implementation 1 2 3 = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b c: Nat)\n: problem_spec implementation a b c :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 157,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c5488a2af197666b934476b4e197816255976837648496770885933f4eb82ed9",
+  "timing": 74.45769674307667,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:ad1338a66314ad69fd7e1588b1605e221d614f1a5743556fb74f1012e8f2cde3",
+    "status": "OK",
+    "result": "sha256:c6c63b80c26bc550b8346cdb49592dcf6233611ee828baf91079b642d542d7fc",
+    "validation": [
+      {
+        "problem_id": "157",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:7b759fc168c32e049be637ae60d83d700bb2f5c58c8e334ab2dc5f07942efc69"
+      }
+    ]
+  },
+  "exception": null
+}

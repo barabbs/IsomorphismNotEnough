@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef double_the_difference(numbers: List[float]) -> Int\n\"\"\"Given a list of numbers, return the sum of squares of the numbers\nin the list that are odd. Ignore numbers that are negative or not integers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat \u2192 Int)\n-- inputs\n(numbers: List Rat) :=\nlet isEven (n : Rat) := n % 2 = 0;\nlet isNegative (n : Rat) := n < 0;\nlet isNotInteger (n : Rat) := \u00ac n.isInt;\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length \u2192\n0 \u2264 result \u2227\nif numbers.length = 1\nthen result = if (isEven numbers[0]! \u2228 isNegative numbers[0]! \u2228 isNotInteger numbers[0]!) then (0 : Int) else numbers[0]!.floor ^ 2\nelse result = if (isEven numbers[0]! \u2228 isNegative numbers[0]! \u2228 isNotInteger numbers[0]!) then (0 : Int) else numbers[0]!.floor ^ 2 + impl numbers.tail\n-- program terminates\n\u2203 result, impl numbers = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 3, 2, 0]: List Rat) = (10: Int)\n-- #test implementation ([-1, -2, 0]: List Int) = (0: Int)\n-- #test implementation ([9, -2]: List Int) = 81\n-- #test implementation ([0]: List Int) = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 151,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:69c6d10c3369c8c9bb8a0ed83da44bd3f0c91c3ec907e4501c2ac0bb85df8a7b",
+  "timing": 198.32481391800684,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/n9y3k_gm/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:effa82a574569de66db0013214fd8463bc1af791a4c20ac2a1778c74492a9897",
+    "status": "OK",
+    "result": "sha256:0617f67c5c19adc98f17cb0364d9f836551b9647bb90d7fbeef8fcd32408adbe"
+  },
+  "exception": null
+}

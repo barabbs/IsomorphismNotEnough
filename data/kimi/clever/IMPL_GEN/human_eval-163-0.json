@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef generate_integers(a : nat, b : nat) -> List[nat]\n\"\"\"Given two positive integers a and b, return the even digits between a\nand b, in ascending order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat → List Nat)\n-- inputs\n(a b : Nat) :=\nlet isAscendingBy2 (r : List Nat) :=\n∀ i, i < r.length - 1 → r[i+1]! - r[i]! = 2\n-- spec\nlet spec (result: List Nat) :=\nresult.all (fun n => n % 2 = 0) ∧ isAscendingBy2 result ∧\n1 < result.length ∧\nlet min_a_b := min a b;\nlet max_a_b := max a b;\nif min_a_b = max_a_b ∧ (min_a_b % 2 = 1)\nthen result = []\nelse ((result[0]! = if 2 ∣ min_a_b then min_a_b else (min_a_b + 1)) ∧\n(result[result.length-1]! = if 2 ∣ max_a_b then max_a_b else max_a_b - 1))\n-- program terminates\n∃ result, impl a b = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 2 8 = [2, 4, 6, 8]\n-- #test implementation 8 2 = [2, 4, 6, 8]\n-- #test implementation 10 14 = [10, 12, 14]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 163,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fc14bc6bb452a6d19507cce80475deb7443bca0171773e76c9c2b4103d2a4a80",
+  "timing": 58.776585441082716,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:b929de097d095dc83f45e6eceebb2b353330d658a09f03e69c3c83623e491f29",
+    "status": "OK",
+    "result": "sha256:2021301fd82e8a2808f97079544d8895f416eda360b9b35313268f141005cdcd"
+  },
+  "exception": null
+}

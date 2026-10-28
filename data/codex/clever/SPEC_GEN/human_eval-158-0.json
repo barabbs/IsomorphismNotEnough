@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_max(words: List[str]) -> str\n\"\"\"Write a function that accepts a list of strings.\nThe list contains different words. Return the word with maximum number\nof unique characters. If multiple strings have maximum number of unique\ncharacters, return the one which comes first in lexicographical order.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String → String)\n-- inputs\n(words: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 158,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:388aee022559eee62a41995c748e959cfa611df41fee3639225f300d11e4e5f9",
+  "timing": 101.74656455684453,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:7165816995194e0076ab4b5cbee952c5b654a948b0a48322df8a4200bc3e373e",
+    "status": "OK",
+    "result": "sha256:e346319d2f7965fadf535fdf0d137e8d0e0f30a0c4e6d7f296e75dd600c79223"
+  },
+  "exception": null
+}

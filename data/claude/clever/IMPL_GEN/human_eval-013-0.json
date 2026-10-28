@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef greatest_common_divisor(a: int, b: int) -> int\n\"\"\"Return a greatest common divisor of two integers a and b\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 Int \u2192 Int)\n-- inputs\n(a b: Int) :=\n-- spec\nlet spec (result: Int) :=\n(result \u2223 a) \u2227\n(result \u2223 b) \u2227\n(result \u2265 0) \u2227\n(\u2200 (d': Int),\n(d' \u2223 a) \u2192 (d' \u2223 b) \u2192\nd' \u2223 result);\n-- program termination\n\u2203 result, implementation a b = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b: Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 25 15 = 5\n-- #test implementation 3 5 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 13,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:279f8f91469f0a1edad6f1a8ee661849839f95e7be3149a34084a7987530bbbd",
+  "timing": 68.24926805499126,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/yvht8b6o/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:38b1c5cdbbccf6802d0c0d90dc1b942c892a7ecd7b17181ebee7e9047e322fe4",
+    "status": "OK",
+    "result": "sha256:db29cab827244065be34ccd806048eaa39340e6951f27813657b966d87d581f8"
+  },
+  "exception": null
+}

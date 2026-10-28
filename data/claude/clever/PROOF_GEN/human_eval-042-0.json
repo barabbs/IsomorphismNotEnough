@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef incr_list(numbers: List[int]) -> List[int]\n\"\"\"incr_list takes a list of integers as input and returns a new list\nwhere each element is incremented by 1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (result.length = numbers.length) \u2227\n  \u2200 i, i < numbers.length \u2192\n  result[i]! = numbers[i]! + 1\n-- -- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n-- \n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : List Int :=\n\nnumbers.map (\u00b7 + 1)\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = [2, 3, 4]\n#test implementation [5, 3, 5, 2, 3, 3, 9, 0, 123] = [6, 4, 6, 3, 4, 4, 10, 1, 124]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers : List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 42,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c86f1c671a746e38e4fdeebc3fe84f9cbdfb3de8e510c1581bb8a1f261710c69",
+  "timing": 99.59369670797605,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:ec0ffec9a242038e33ee8bbe2200e882cb142ec95d28ba1646da028e51f9a8e0",
+    "status": "OK",
+    "result": "sha256:d08ef9580b388b378f8e5f8f8773340fc289ef3b37f636ed5cfccc703f51c0bb",
+    "validation": [
+      {
+        "problem_id": "42",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:56007ae26347b33236c54ab4db0f7859cc008346d03323c7d4cc93cb58797e01"
+      }
+    ]
+  },
+  "exception": null
+}

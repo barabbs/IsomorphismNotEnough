@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef median(numbers: List[float]) -> float\n\"\"\"Return median of elements in the list l\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  0 < numbers.length →\n  let less_eq := (numbers.filter (fun x => x ≤ result));\n  let more_eq := (numbers.filter (fun x => result ≤ x));\n  let max_more_eq := more_eq.max?;\n  let min_less_eq := less_eq.min?;\n  let less_eq_count := less_eq.length;\n  let more_eq_count := more_eq.length;\n  let eq_count := (numbers.filter (fun x => x = result)).length;\n  (less_eq_count + more_eq_count - eq_count = numbers.length →\n  numbers.length ≤ 2 * less_eq_count →\n  numbers.length ≤ 2 * more_eq_count) ∧\n  ((numbers.length % 2 = 1 →\n    result ∈ numbers) ∧\n    (numbers.length % 2 = 0 → max_more_eq.isSome ∧\n    min_less_eq.isSome ∧\n    2 * result = max_more_eq.get! + min_less_eq.get!));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat) : Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 1, 2, 4, 5] = 3\n-- #test implementation [-10, 4, 6, 1000, 10, 20] = 8.0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6ac5ab108c8ddf880b7ff8ed2b7504157b58f454b345bdad834abf7e9333f12a",
+  "timing": 113.66146120522171,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:aae7fc1830439a4d12c762fe79e0bb48efa570e76bdf5bea81434a15ba754034",
+    "status": "OK",
+    "result": "sha256:86bfcf23bf28606626dee3d61e455860aa683bfef772c1710f7e87716ad5a727"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rounded_avg(n: nat, m: nat) -> Optional[str]\n\"\"\"You are given two positive integers n and m, and your task is to compute the\naverage of the integers from n through m (including n and m).\nRound the answer to the nearest integer and convert that to binary.\nIf n is greater than m, return none.\n\n>>> rounded_avg(1, 5)\n'0b11'\n>>> rounded_avg(7, 5)\nNone\n>>> rounded_avg(10, 20)\n'0b1111'\n>>> rounded_avg(20, 33)\n'0b11010'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Option String)\n-- inputs\n(n: Nat) (m: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 1 5 = some \"0b11\"\n-- #test implementation 7 13 = some \"0b1010\"\n-- #test implementation 964 977 = some \"0b1111001010\"\n-- #test implementation 996 997 = some \"0b1111100100\"\n-- #test implementation 185 546 = some \"0b101101101\"\n-- #test implementation 362 496 = some \"0b110101101\"\n-- #test implementation 350 902 = some \"0b1001110010\"\n-- #test implementation 197 233 = some \"0b11010111\"\n-- #test implementation 7 5 = none\n-- #test implementation 5 1 = none\n-- #test implementation 5 5 = some \"0b101\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c92be944a1a7c21264549ebd4062005ffc0f7110f35452f6cda82d6b80fcc5ee",
+  "timing": 126.46274542203173,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:8c16e60e70d88ea7d0c52498ce5bc74c1ee44054db5431ff197366af5282bc88",
+    "status": "OK",
+    "result": "sha256:c8f85adb52d8c4a8e4365120082244e2fc07fa6bb47f47f668e3d4d1d0eb0438"
+  },
+  "exception": null
+}

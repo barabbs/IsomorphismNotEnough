@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef will_it_fly(q: List[int], w: int) -> bool\n\"\"\"Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is\nless than or equal the maximum possible weight w.\n\n>>> will_it_fly([1, 2], 5)\nFalse\n>>> will_it_fly([3, 2, 3], 1)\nFalse\n>>> will_it_fly([3, 2, 3], 9)\nTrue\n>>> will_it_fly([3], 5)\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int \u2192 Bool)\n-- inputs\n(q: List Int) (w: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [3, 2, 3] 9 = True\n-- #test implementation [1, 2] 5 = False\n-- #test implementation [3] 5 = True\n-- #test implementation [3, 2, 3] 1 = False\n-- #test implementation [1, 2, 3] 6 = False\n-- #test implementation [5] 5 = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 72,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:ca7b656de0da8c321fcd296c4d5cb3eaab3d73e33cb5beafc2f12a27b792833e",
+  "timing": 100.06381805700948,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/j7k115du/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:df1c76ce63681df6c48b9093dc861f69bb24f7231b27599bcfc9379f219c9aad",
+    "status": "OK",
+    "result": "sha256:c8fff475e0deda6fdf20f6c099974da43dd5b6b0da63c2abcd1e5f7b08cf3e43"
+  },
+  "exception": null
+}

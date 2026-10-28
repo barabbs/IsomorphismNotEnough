@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minPath(grid, k)\n\"\"\"Given a grid with N rows and N columns (N >= 2) and a positive integer k,\neach cell of the grid contains a value. Every integer in the range [1, N * N]\ninclusive appears exactly once on the cells of the grid.\n\nYou have to find the minimum path of length k in the grid. You can start\nfrom any cell, and in each step you can move to any of the neighbor cells,\nin other words, you can go to cells which share an edge with you current\ncell.\nPlease note that a path of length k means visiting exactly k cells (not\nnecessarily distinct).\nYou CANNOT go off the grid.\nA path A (of length k) is considered less than a path B (of length k) if\nafter making the ordered lists of the values on the cells that A and B go\nthrough (let's call them lst_A and lst_B), lst_A is lexicographically less\nthan lst_B, in other words, there exist an integer index i (1 <= i <= k)\nsuch that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\nlst_A[j] = lst_B[j].\nIt is guaranteed that the answer is unique.\nReturn an ordered list of the values on the cells that the minimum path go through.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List (List Nat) → Nat → List Nat)\n-- inputs\n(grid: List (List Nat))\n(k: Nat) :=\n-- spec\nlet lexographically_less (a b: List Nat) : Prop :=\n  a.length = b.length ∧ a.length = k ∧\n  (∃ i, i < k ∧ a.get! i < b.get! i ∧\n  (∀ j, j < i → a.get! j = b.get! j));\nlet rec is_valid_path (k': Nat) (path: List Nat) (grid: List (List Nat)) : Prop :=\n  let n := grid.length;\n  path.length = k' →\n  (∃ i j,\n    (i < n ∧ j < n ∧ path.get! 0 = (grid.get! i).get! j) ∧\n    (1 < path.length →\n      ( ∃ i' j', i' < n ∧ j' < n ∧\n        (path.get! 1 = (grid.get! i').get! j') ∧\n        ((abs ((i: Int) - (i': Int)) = 1 ∧ j = j') ∨\n         (abs ((j: Int) - (j': Int)) = 1 ∧ i = i'))) ∧\n      (is_valid_path (k' - 1) (path.drop 1) grid))\n  );\nlet spec (result: List Nat) :=\n  let n := grid.length;\n  (∀ i, i < n → (grid.get! i).length = n) →\n  (∀ i j, i < n → j < n ↔ ((grid.get! i).get! j) ∈ [1, n^2]) →\n  is_valid_path k result grid ∧ (∀ path, is_valid_path k path grid → lexographically_less result path);\n-- program terminates\n∃ result, impl grid k = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (grid: List (List Nat)) (k: Nat) : List Nat :=\n\n  let n := grid.length\n  -- Find position of value 1 (the global minimum)\n  let pos := Id.run do\n    let mut r := (0, 0)\n    let mut minV := n * n + 1\n    for i in [:n] do\n      for j in [:n] do\n        if (grid.get! i).get! j < minV then\n          minV := (grid.get! i).get! j\n          r := (i, j)\n    return r\n  let (mi, mj) := pos\n  let minVal := (grid.get! mi).get! mj\n  -- Find minimum neighbor value of the cell with value 1\n  let minNbr := Id.run do\n    let mut best := n * n + 1\n    if mi > 0 then\n      best := min best ((grid.get! (mi - 1)).get! mj)\n    if mi + 1 < n then\n      best := min best ((grid.get! (mi + 1)).get! mj)\n    if mj > 0 then\n      best := min best ((grid.get! mi).get! (mj - 1))\n    if mj + 1 < n then\n      best := min best ((grid.get! mi).get! (mj + 1))\n    return best\n  -- Alternate: [1, minNbr, 1, minNbr, ...]\n  (List.range k).map fun i => if i % 2 == 0 then minVal else minNbr\n\n\n-- [TEST_CASES]\n\n#test implementation [[1,2,3], [4,5,6], [7,8,9]] 3 = [1,2,1]\n#test implementation [[5,9,3], [4,1,6], [7,8,2]] 1 = [1]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(grid: List (List Nat))\n(k: Nat)\n: problem_spec implementation grid k :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 125,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:25717e9115aaf65f01196580b4299900450aadbbaa9fd1914c13f49192b39a51",
+  "timing": 1079.7538336240686,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:24b44c8a00f90e3554ee38618840d0709b9273e0656beba9bc7dd5c79aea5c21",
+    "status": "ISSUE",
+    "result": "sha256:852564102c25221e9c2ec938b64d886e5e20435454f7cb80179e80092f6d6128",
+    "validation": [
+      {
+        "problem_id": "125",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:5e7b8e6894018c428b67e9e5fdde16f3f0ae2e39c0e5d5fe2f84a225b02807fa"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "UNIV"
+  },
+  "exception": null
+}

@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, n: nat) -> nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat → Nat)\n-- inputs\n(string: String)\n(n : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n∃ x y : Nat, x + y = n - result\n∧ (String.join [x.repr, \" apples and \", y.repr, \" oranges\"] = string)\n-- program termination\n∃ result, implementation string n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) (n: Nat) : Nat :=\n\n  let parts := string.splitOn \" apples and \"\n  let x := (parts[0]!.toNat?).getD 0\n  let y_oranges := parts[1]!\n  let y := (y_oranges.splitOn \" oranges\")[0]!.toNat?.getD 0\n  n - (x + y)\n\n\n-- [TEST_CASES]\n\n#test implementation \"5 apples and 6 oranges\" 19 = 8\n#test implementation \"0 apples and 1 oranges\" 3 = 2\n#test implementation \"2 apples and 3 oranges\" 100 = 95\n#test implementation \"100 apples and 1 oranges\" 120 = 19\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String) (n : Nat)\n: problem_spec implementation s n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:af14af446f7bd3ff418133687f981edeb8928aa04f5ece132305b426deab5564",
+  "timing": 6254.836222018581,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:a6eee255597b3295af81b73d8f20558a776ece11e5e16b2ee66391a6a1d00eba",
+    "status": "ISSUE",
+    "result": "sha256:4766037790766ead05ead6a4b913a329f2ea4bb4625db0ec6e086432dd84da27",
+    "validation": [
+      {
+        "problem_id": "67",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:3cd8611277088dbd3594e26cf4c983badafe2d2a06e0872006e94e2ba11cef5e"
+      }
+    ],
+    "raw_status": "MISMATCH",
+    "comment": "SPEC"
+  },
+  "exception": null
+}

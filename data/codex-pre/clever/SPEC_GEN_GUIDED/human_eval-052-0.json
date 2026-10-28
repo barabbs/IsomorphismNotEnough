@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_threshold(numbers: List[int], threshold: int) -> bool\n\"\"\"Return True if all numbers in the list l are below threshold t, and False otherwise.\n>>> below_threshold([1, 2, 4, 10], 100)\nTrue\n>>> below_threshold([1, 20, 4, 10], 5)\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int → Bool)\n-- inputs\n(numbers : List Int)\n(threshold : Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ([1, 2, 4, 10]: List Int) 100 = true\n-- #test implementation ([1, 20, 4, 10]: List Int) 5 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 52,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c30a21427c3f27249f38132be863b68e70cff06af6da7c77707f10921361708d",
+  "timing": 69.43384872601018,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:a2783f2eb27b11459d89956d7029ec98c97c9a32623a0c6baa0e65cd9e033bd5",
+    "status": "OK",
+    "result": "sha256:fa5d18a2bb04537a633e019a1982a6d48ceba665a56529f02e4f27d3056ea8da"
+  },
+  "exception": null
+}

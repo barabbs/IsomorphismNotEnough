@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_vowels(string: str) -> str\n\"\"\"remove_vowels is a function that takes string and returns string without vowels.\n\n>>> remove_vowels('')\n''\n>>> remove_vowels('abcdef\\nghijklm')\n'bcdf\\nghjklm'\n>>> remove_vowels('abcdef')\n'bcdf'\n>>> remove_vowels('aaaaa')\n''\n>>> remove_vowels('aaBAA')\n'B'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(string : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"\" = \"\"\n-- #test implementation \"cat\" = \"catac\"\n-- #test implementation \"cata\" = \"catac\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 51,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:4b1bb151830e11c2885359bb59102cef2ba742936d9ba7b5e7ae056e89682f60",
+  "timing": 184.77822970901616,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/gq7mv5av/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:2e60325d1274601952c647d74e2a860296410277b2348a0cce98e2bb3938d7bb",
+    "status": "OK",
+    "result": "sha256:559915a0735235e001a51d13fbe93426c34b17a527f534358ba633fc9211efcf"
+  },
+  "exception": null
+}

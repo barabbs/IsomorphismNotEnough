@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minSubArraySum(nums : list[int]) -> int\n\"\"\"Given an array of integers nums, find the minimum sum of any non-empty sub-array\nof nums.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  (∀ subarray ∈ nums.sublists,\n    subarray.length > 0 →\n    result ≤ subarray.sum) ∧\n  (∃ subarray ∈ nums.sublists,\n    subarray.length > 0 ∧\n    result = subarray.sum)\n-- program termination\n∃ result,\n  implementation nums = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (nums: List Int) : Int :=\n\n  let negatives := nums.filter (· < 0)\n  if negatives.isEmpty then\n    nums.foldl min (nums.headD 0)\n  else\n    negatives.foldl (· + ·) 0\n\n\n-- [TEST_CASES]\n\n#test implementation [2, 3, 4, 1, 2, 4] = 1\n#test implementation [-1, -2, -3] = -6\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(nums: List Int)\n: problem_spec implementation nums\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 114,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:caea032e85f77bae68fb39943b51a221a2c7be622f2e8d5a5285cf731a61453a",
+  "timing": 148.3480216159951,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:a27ab9c2b1b34722462617dcc28b779a8cd54943578ad1c99b645cb998b9d8c1",
+    "status": "ISSUE",
+    "result": "sha256:55b73621e16ca1606b7306d93bf817cd2faff4b7849a78043ac73241bb040d58",
+    "validation": [
+      {
+        "problem_id": "114",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:88c2317b1a70179206d0e1c7ee5e31c02addc9883e92556ba38b42abb4682252"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "WRONG"
+  },
+  "exception": null
+}

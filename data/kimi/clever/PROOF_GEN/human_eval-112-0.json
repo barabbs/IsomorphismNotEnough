@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef reverse_delete(s : str, c : str) -> (str, bool)\n\"\"\"We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\nthen check if the result string is palindrome.\nA string is called palindrome if it reads the same backward as forward.\nYou should return a tuple containing the result string and True/False for the check.\n-- Note: We assume the deletions preserve the order of the remaining characters.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String → (String × Bool))\n-- inputs\n(s: String)\n(c: String) :=\n-- spec\nlet spec (result : String × Bool) :=\n  let (result_str, result_bool) := result\n  result_bool = (List.Palindrome result_str.data) ∧\n  (c.data.length = 0 → result_str = s) ∧\n  (c.data.length > 0 →\n    result_str =\n    (implementation\n      (String.join ((s.data.filter (fun x => x ≠ c.data.head!)).map (fun c => String.mk [c])))\n      (c.drop 1)).fst)\n\n-- program termination\n∃ result,\n  implementation s c = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) (c: String) : String × Bool :=\n\n  let charsToRemove := c.data\n  let result_str := String.mk (s.data.filter (fun x => !charsToRemove.contains x))\n  let result_bool := decide (List.Palindrome result_str.data)\n  (result_str, result_bool)\n\n\n-- [TEST_CASES]\n\n#test implementation \"abcde\" \"ae\" = (\"bcd\", false)\n#test implementation \"abcdef\" \"b\" = (\"acdef\", false)\n#test implementation \"abcdedcba\" \"ab\" = (\"cdedc\", true)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s c: String)\n: problem_spec implementation s c\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 112,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:029a4293f6b60b66bff3ff6952d416d23a3d6fdb3efc3c457c9cb7886565c5ae",
+  "timing": 2226.5359576158226,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:bce31e1aa7a2e205e3734b675340124e62e34f22279cf4a5d7d53c1591f9cacb",
+    "status": "OK",
+    "result": "sha256:dd6614e21c0671cb2b07a2224a86325518dcd7a816569a2d3ea104daf0f55c75",
+    "validation": [
+      {
+        "problem_id": "112",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:2fcd4fbc6a18f41c66763d7a78cf472ea2ee44ef2e1b4cd7b62bbbdf26e6db45"
+      }
+    ]
+  },
+  "exception": null
+}

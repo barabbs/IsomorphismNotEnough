@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_element(l: list)\n\"\"\"Return maximum element in the list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: Int) :=\n  l.length > 0 →\n  ((∀ i, i < l.length → l.get! i ≤ result) ∧\n  (∃ i, i < l.length ∧ l.get! i = result));\n-- program termination\n∃ result, implementation l = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = 3\n-- #test implementation [5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10] = 123\n",
+  "info": {
+    "dataset": "clever",
+    "id": 35,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:60c06e43cdb3cc14ac7d48b076416fffcdad157ddbe25a2a85cf242823d163c5",
+  "timing": 65.710749567952,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:e6303148159ef52b5dfe6f9c1780e5238baeb7e8e6ec4b9610f5d62ecd60269f",
+    "status": "OK",
+    "result": "sha256:7a2b5b9bab62fda62f819b8202b363d02ba1b5c2cbd5049976d462c322b15430"
+  },
+  "exception": null
+}

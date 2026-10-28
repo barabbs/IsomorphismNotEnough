@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef will_it_fly(q: List[int], w: int) -> bool\n\"\"\"Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is\nless than or equal the maximum possible weight w.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int → Bool)\n-- inputs\n(q: List Int) (w: Int) :=\n-- spec\nlet spec (result : Bool) :=\n  (result → (List.Palindrome q)) ∧\n  (result → (List.sum q ≤ w)) ∧\n  (¬(List.Palindrome q) → ¬ result) ∧\n  (¬(List.sum q ≤ w) → ¬ result)\n-- program termination\n∃ result, implementation q w = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (q: List Int) (w: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 2, 3] 9 = True\n-- #test implementation [1, 2] 5 = False\n-- #test implementation [3] 5 = True\n-- #test implementation [3, 2, 3] 1 = False\n-- #test implementation [1, 2, 3] 6 = False\n-- #test implementation [5] 5 = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 72,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b3dafbacda099b403058fde1ca5bd87c3e26bccdd0a26622ef64d0c72a7ece39",
+  "timing": 119.15455006761476,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:984fa82e16660c3648aaecca268062eb041518b3dcfbf5965710486a40b5fd70",
+    "status": "OK",
+    "result": "sha256:a9b2b8e51f935add924267ca0f5743e6e29a80b3dd44400ea8bc3917b3d50dde"
+  },
+  "exception": null
+}

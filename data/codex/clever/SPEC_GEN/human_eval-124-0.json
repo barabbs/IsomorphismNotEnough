@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef valid_date(date: str) -> bool\n\"\"\"You have to write a function which validates a given date string and\nreturns True if the date is valid otherwise False.\nThe date is valid if all of the following rules are satisfied:\n1. The date string is not empty.\n2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n3. The months should not be less than 1 or higher than 12.\n4. The date should be in the format: mm-dd-yyyy\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(date: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 124,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:53857e352d18ce5b93f718f4a57e5377deb786d1925e60b5868c7e281079aa17",
+  "timing": 120.35206699976698,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:b813bfec0debd84e72b66542716cad853f2d28b2a44cfb5ae8750127aa917bae",
+    "status": "OK",
+    "result": "sha256:3654271bac255c1974057b255276c8fec9a37951171359ca492f004972f7fe5c"
+  },
+  "exception": null
+}

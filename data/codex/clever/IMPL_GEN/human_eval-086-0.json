@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef anti_shuffle(s : str) -> str\n\"\"\"Write a function that takes a string and returns an ordered version of it.\nOrdered version of string, is a string where all words (separated by space)\nare replaced by a new word where all the characters arranged in\nascending order based on ascii value.\nNote: You should keep the order of words and blank spaces in the sentence.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  result.length = s.length ∧\n  let words := result.split (fun c => c = ' ');\n  let s_words := s.split (fun c => c = ' ');\n  s_words.length = words.length ∧\n  ∀ i, i < words.length →\n    words[i]!.length = s_words[i]!.length ∧\n    ((∀ j, j < words[i]!.length →\n      (words[i]!.data[j]! ∈ s_words[i]!.data ∧\n      s_words[i]!.data[j]! ∈ words[i]!.data ∧\n      words[i]!.data.count (words[i]!.data[j]!) = s_words[i]!.data.count (s_words[i]!.data[j]!))) ∧\n    List.Sorted Nat.le (words[i]!.data.map (fun c => c.val.toNat)))\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hi\" = \"Hi\"\n-- #test implementation \"hello\" = \"ehllo\"\n-- #test implementation \"Hello World!!!\" = \"Hello !!!Wdlor\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 86,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bb53713ddb8e91b3bea7bf0bf52ee1468f3f23ff11e878582d7f833959bb90be",
+  "timing": 104.49608619092032,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:b2ae0a19a6d74152d79255480d4d90e76b23b633cc5e99d10ec44033f5f203ca",
+    "status": "OK",
+    "result": "sha256:5185f0b4816fe31be79bf343bb3ae6a6583395a42cdc2e5d5a0a8d2ad5d5765d"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"(\" and \")\".\nreturn True if every opening bracket has a corresponding closing bracket.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(brackets: String) :=\n-- spec\nlet spec (result: Bool) :=\n  brackets.data.all (fun c => c = '(' \u2228 c = ')') \u2192\n  (result \u2194 balanced_paren_non_computable brackets '(' ')')\n-- program terminates\n\u2203 result, impl brackets = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (paren_string: String) : Bool :=\n\n  let chars := paren_string.toList\n  let (balanced, depth) := chars.foldl (fun (acc : Bool \u00d7 Nat) c =>\n    if !acc.1 then (false, acc.2)\n    else if c == '(' then (true, acc.2 + 1)\n    else if c == ')' then\n      if acc.2 == 0 then (false, 0)\n      else (true, acc.2 - 1)\n    else (acc.1, acc.2)\n  ) (true, 0)\n  balanced && depth == 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"(\" = false\n#test implementation \"()\" = true\n#test implementation \"(()())\" = true\n#test implementation \")(()\" = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(brackets: String)\n: problem_spec implementation brackets :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 61,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a590a55dfb51b638c4115a7cc5d64cba1cdaa1cb59f119f70b76351aea7bebae",
+  "timing": 1183.118921619025,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:2c8cb709d3c930294979e3fd2f18a76fc14a4ec6d5641083944ec7fce7c9847e",
+    "status": "OK",
+    "result": "sha256:4f1ebf44238f06ab861b52ddda72634fd784c066ae5d2ed2bb9eec68268273b8",
+    "validation": [
+      {
+        "problem_id": "61",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:7bfb477112285f69d4cb6c0669151417ae35b3cd28e61d796ff89d36e7b49784"
+      }
+    ]
+  },
+  "exception": null
+}

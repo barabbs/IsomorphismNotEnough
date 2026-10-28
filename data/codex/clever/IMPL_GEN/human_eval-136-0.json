@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_smallest_integers(lst: List[int]) -> Tuple[Optional[int], Optional[int]]\n\"\"\"Create a function that returns a tuple (a, b), where 'a' is\nthe largest of negative integers, and 'b' is the smallest\nof positive integers in a list.\nIf there is no negative or positive integers, return them as None.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Option Int × Option Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result: Option Int × Option Int) :=\n  let (a, b) := result;\n  (match a with\n  | none => ¬(∃ i, i ∈ lst ∧ i < 0)\n  | some a => a < 0 ∧ a ∈ lst ∧ ∀ i, i ∈ lst ∧ i < 0 → i ≤ a) ∧\n  (match b with\n  | none => ¬(∃ i, i ∈ lst ∧ 0 < i)\n  | some b => 0 < b ∧ b ∈ lst ∧ ∀ i, i ∈ lst ∧ 0 < i → b ≤ i)\n-- program termination\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int) : (Option Int × Option Int) :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [2, 4, 1, 3, 5, 7] = (none, some 1)\n-- #test implementation [] = (none, none)\n-- #test implementation [0] = (none, none)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 136,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:583219165379351faa08853cf2ec9084204840354ecf1a83ef51989627da6c23",
+  "timing": 64.99855303019285,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:c027c10bf94bc831702001e3f33d8f14de2514d29cc274123b39391b7885d084",
+    "status": "OK",
+    "result": "sha256:6ceddb162b4be0b9307778e908b4f9d4233c9aafb378df5e5b04b76db1f7d0c5"
+  },
+  "exception": null
+}

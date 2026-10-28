@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef longest(strings: List[str]) -> Optional[str]\n\"\"\"Out of list of strings, return the longest one. Return the first one in case of multiple\nstrings of the same length. Return None in case the input list is empty.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → Option String)\n-- inputs\n(strings: List String) :=\n-- spec\nlet spec (result: Option String) :=\n  (result = none ↔ strings.length = 0) ∨\n  (∃ longest, result = some longest ∧\n  longest ∈ strings ∧\n  ∀ s, s ∈ strings → s.length ≤ longest.length →\n  (∃ i, i < strings.length ∧\n  strings[i]! = longest ∧ ∀ j < i, strings[j]!.length < longest.length));\n-- program termination\n∃ result, implementation strings = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) : Option String :=\n\n  match strings with\n  | [] => none\n  | x :: xs => some (xs.foldl (fun acc s => if s.length > acc.length then s else acc) x)\n\n\n-- [TEST_CASES]\n\n#test implementation [\"a\", \"b\", \"c\"] = some \"a\"\n#test implementation [\"a\", \"bb\", \"ccc\"] = some \"ccc\"\n#test implementation [] = none\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n: problem_spec implementation strings\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 12,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:042a7cccbdc8a3fe56cde2bf43bcd7e0ba40eff4cdbf86b0650e843efbed3d37",
+  "timing": 268.9570677038282,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:4942594228f836f9f1ef12d52ecebc2ea71a94aefb450569f3656eb34db33094",
+    "status": "OK",
+    "result": "sha256:985163f262a05f920bff497ff8e2a6faf9f8e29b3d74ae6a964cb56a741a405d",
+    "validation": [
+      {
+        "problem_id": "12",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:df6fd01935764b21ab1e97bd1c964dc1ec143352a0d7c0d18e946fe3f1ef7820"
+      }
+    ]
+  },
+  "exception": null
+}

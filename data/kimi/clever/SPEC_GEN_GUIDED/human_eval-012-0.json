@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef longest(strings: List[str]) -> Optional[str]\n\"\"\"Out of list of strings, return the longest one. Return the first one in case of multiple\nstrings of the same length. Return None in case the input list is empty.\n\n>>> longest([])\nNone\n>>> longest(['a', 'b', 'c'])\n'a'\n>>> longest(['a', 'bb', 'ccc'])\n'ccc'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String → Option String)\n-- inputs\n(strings: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [\"a\", \"b\", \"c\"] = some \"a\"\n-- #test implementation [\"a\", \"bb\", \"ccc\"] = some \"ccc\"\n-- #test implementation [] = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 12,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:8d44ae941056c292b528255f84d6d5f52ea5600bfce79245c09d3992b4ea410d",
+  "timing": 91.25440686196089,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:ac8a40dd2648c0017f4d575f85253852ce5157b98d3c0563eb1e24f181383123",
+    "status": "OK",
+    "result": "sha256:535b4bd42bc15c6146f11a3ae7429b7168ded988931f25cdb78b13a0953140ae"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_nums(arr: List[int]) -> int\n\"\"\"Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(arr: List Int) :=\n\n-- spec\nlet spec (result: Int) :=\n  let dig_sum (x: Int): Int :=\n    let digs := Nat.digits 10 x.natAbs;\n    if x >= 0 then\n      (List.map (fun t => (t: Int)) digs).sum\n    else\n      (List.map (fun t => (t: Int)) (digs.drop 1)).sum - (digs[0]! : Int);\n  (arr = [] → result = 0) ∧\n  (arr ≠ [] → 0 < (dig_sum arr[0]!) → result = 1 + implementation (arr.drop 1)) ∧\n  (arr ≠ [] → (dig_sum arr[0]!) ≤ 0 → result = implementation (arr.drop 1));\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] = 0\n-- #test implementation [-1, -2, 0] = 0\n-- #test implementation [1, 1, 2, -2, 3, 4, 5] = 6\n-- #test implementation [1, 6, 9, -6, 0, 1, 5] = 5\n-- #test implementation [1, 100, 98, -7, 1, -1] = 4\n-- #test implementation [12, 23, 34, -45, -56, 0] = 5\n-- #test implementation [-0, 1^0] = 1\n-- #test implementation [1] = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 108,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:08d04c665a3ce8b39c6e419d4e51a2b9a7ac75a39e4f8edafe72eb4c5c5837ee",
+  "timing": 536.8471130481921,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:0f1d110684282ff529907c1239f9a0d15088f23af0180431ad5204d7759bf801",
+    "status": "OK",
+    "result": "sha256:3ec38cd047ddcd9207359192eb55c57231d170d36729721b0379455c646cc5ac"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef starts_one_ends(n: int) -> int\n\"\"\"Given a positive integer n, return the count of the numbers of n-digit\npositive integers that start or end with 1.\nNote: For reviewer, I believe this is the most straightforward spec, and I am relying on Set cardianlity not being computable in general. The point of this problem is really to privide a formula.\nNote: But I guess a program that goes through each number and adds 1 will be the same as a program that computes in O(1) under this view.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  0 < n →\n  result = {k : ℕ | 10 ^ (n - 1) ≤ k ∧ k < 10 ^ n ∧ (k.repr.front = '1' ∨ k.repr.back = '1')}.ncard\n-- program termination\n∃ result,\n  implementation n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  match n with\n  | 0 => 1\n  | 1 => 1\n  | _ => 18 * 10 ^ (n - 2)\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = 1\n#test implementation 2 = 18\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 83,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:28a55ef1d9ba9354d8605359bb1dcedd89ab8a4691019eed856950acdb32b72d",
+  "timing": 8742.970655749086,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:8abebc38129c697f7209b7786ae088badc14da7f6a5c364d7464b98d09a43c7d",
+    "status": "FAIL",
+    "result": "sha256:7e60db21080388c83b798e063b880ec63aa65b0b32459fb78225bf7f979b35e9",
+    "validation": [
+      {
+        "problem_id": "83",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:c7454f8433797dca8137248539be222449706921aad434ce707450bbf73021d3",
+        "lean_code": "sha256:a6fb7cbc32a1a4e71fc368df802418e1cdfe81ce40a8eeef8b53e3745802d9ac"
+      }
+    ]
+  },
+  "exception": null
+}

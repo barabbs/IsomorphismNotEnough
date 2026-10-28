@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_if_last_char_is_a_letter(txt: str) -> bool\n\"\"\"Create a function that returns True if the last character\nof a given string is an alphabetical character and is not\na part of a word, and False otherwise.\nNote: \"word\" is a group of characters separated by space.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(txt: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 134,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f61ef30b09e3c3d25170dcefbd64d450457a6349355abe8268c6ca1d0f7cd30c",
+  "timing": 82.86393544496968,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:d380cfa8e5cfca7dc55ff119b74ff73f7fa9b9f27bfbd5b074e06267b33096d1",
+    "status": "OK",
+    "result": "sha256:47dea02eeccc2a27b6f28327ef475067c2462475033d32f4fb0a376f71092def"
+  },
+  "exception": null
+}

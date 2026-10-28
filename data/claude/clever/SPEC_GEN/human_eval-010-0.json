@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_palindrome(string: str) -> str\n\"\"\"Find the shortest palindrome that begins with a supplied string.\nAlgorithm idea is simple:\n- Find the longest postfix of supplied string that is a palindrome.\n- Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 10,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:571e925666957fd6d2c0574cd9efa78dd22b856b85772a825d22f79388d05f3a",
+  "timing": 107.85234812300769,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/23x3r35v/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:bac262aa11e681ff88427f9b07af4b66d1993efa6fcbe36f961413bd7b37befc",
+    "status": "OK",
+    "result": "sha256:29261d30c02fe151afd13ed23b22376ce32680b1f0206a87843da09a98416df1"
+  },
+  "exception": null
+}

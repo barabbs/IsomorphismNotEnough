@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef vowels_count(string: str) -> nat\n\"\"\"Write a function vowels_count which takes a string representing\na word as input and returns the number of vowels in the string.\nVowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\nvowel, but only when it is at the end of the given word.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\nlet isVowel (c : Char) :=\n  let vowels := \"aeiouAEIOU\"\n  vowels.contains c\nlet isY (c : Char) := c = 'y' ∨ c = 'Y'\n-- spec\nlet spec (result: Nat) :=\nstring.data.all (fun c => c.isAlpha) →\nif string.length = 1 then\n  result = if isVowel string.data[0]! ∨ isY string.data[0]! then 1 else 0\nelse\n  result = (if isVowel string.data[0]! then 1 else 0) + implementation (string.drop 1);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : Nat :=\n\n  let isVowel (c : Char) := \"aeiouAEIOU\".contains c\n  let vowelCount := string.data.filter isVowel |>.length\n  let lastIsY := match string.data.getLast? with\n    | some c => c == 'y' || c == 'Y'\n    | none => false\n  vowelCount + if lastIsY then 1 else 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"abcde\" = 2\n#test implementation \"ACEDY\" = 3\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 64,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8c7554241fe824ee19add8917943e28a89b1c10e85b50c936f86dfd6699394c2",
+  "timing": 261.9976195889758,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:c2917a0781515ccfa486c6156dd0937874ce0276ef470201af67794d4b539ba6",
+    "status": "ISSUE",
+    "result": "sha256:6c84291f91ce07c649d821b2ffb032592cb23edf1d76fe27013f85b09ba37adf",
+    "validation": [
+      {
+        "problem_id": "64",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:34174294d7d03339a7b350701d37c3014d6cc1e4711d9732c45d632a71cb6c50"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "OOB"
+  },
+  "exception": null
+}

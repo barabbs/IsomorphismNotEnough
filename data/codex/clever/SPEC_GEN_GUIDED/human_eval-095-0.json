@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_dict_case(s : dict[str, str]) -> bool\n\"\"\"Given a dictionary, return True if all keys are strings in lower\ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nNote(George): Modified the problem to use strings only for both keys and values.\n\n>>> check_dict_case({'a': 'apple', 'b': 'banana'})\nTrue\n>>> check_dict_case({'a': 'apple', 'A': 'banana', 'B': 'banana'})\nFalse\n>>> check_dict_case({'a': 'apple', '8': 'banana'})\nFalse\n>>> check_dict_case({'Name': 'John', 'Age': '36', 'City': 'Houston'})\nFalse\n>>> check_dict_case({'STATE': 'NC', 'ZIP': '12345'})\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Std.HashMap String String → Bool)\n-- inputs\n(D: Std.HashMap String String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"b\", \"banana\")]) = true\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"A\", \"banana\"), (\"B\", \"banana\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"8\", \"banana\"), (\"a\", \"apple\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"Name\", \"John\"), (\"Age\", \"36\"), (\"City\", \"Houston\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"STATE\", \"NC\"), (\"ZIP\", \"12345\")]) = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 95,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:4942ad3d83336918a0f5662f75a4d8accc2b675fc5363a24515a96ba823e8aa4",
+  "timing": 144.0677068270743,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:bda2d09b21b4747d842758eb118a732ebf05fd4baec028644763849f3d11da1c",
+    "status": "OK",
+    "result": "sha256:65b2893026b41d34b63a1ca8d7e6d3d53cd9465b75e1e66fc438c187ff5f03df"
+  },
+  "exception": null
+}

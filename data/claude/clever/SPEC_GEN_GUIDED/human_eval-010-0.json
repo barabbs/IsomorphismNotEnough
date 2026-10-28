@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_palindrome(string: str) -> str\n\"\"\"Find the shortest palindrome that begins with a supplied string.\nAlgorithm idea is simple:\n- Find the longest postfix of supplied string that is a palindrome.\n- Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n\n>>> make_palindrome('')\n''\n>>> make_palindrome('cat')\n'catac'\n>>> make_palindrome('cata')\n'catac'\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"\" = \"\"\n-- #test implementation \"cat\" = \"catac\"\n-- #test implementation \"cata\" = \"catac\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 10,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:562748d0ffd531d5393d936b3f8b9bf64ca97cb9adf694b3b17d255ef924999e",
+  "timing": 68.47633121400031,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/eq3bwb0t/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:49767131d10a3d6c9d487d8aef942be6469d1c1e5f879d7035bebe2fd8dc5d13",
+    "status": "OK",
+    "result": "sha256:9451941ad46a9e0e3fff0becad8f261fa733fdcc485153ef2d96850cd09b8fa4"
+  },
+  "exception": null
+}

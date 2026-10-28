@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strange_sort_list(lst: List[int]) -> List[int]\n\"\"\"Given list of integers, return list in strange order.\nStrange sorting is when you start with the minimum value,\nthen the maximum of the remaining integers, then the minimum and so on.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 70,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:17fa384e9649e87fea6371d0f0bd5d200dcf7a3fdd21bb17adb04c09831d4273",
+  "timing": 144.65705351438373,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:72633d25c5cb9f3a50d622f26414b63f07278a8c088f856f2487992db7c9b521",
+    "status": "OK",
+    "result": "sha256:da3ed811c11b0c29b4183aac5aa894090de7a1d13128c9c384d26d667019c2b4"
+  },
+  "exception": null
+}

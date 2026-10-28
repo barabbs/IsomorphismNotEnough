@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef mean_absolute_deviation(numbers: List[float]) -> float\n\"\"\"For a given list of input numbers, calculate Mean Absolute Deviation\naround the mean of this dataset.\nMean Absolute Deviation is the average absolute difference between each\nelement and a centerpoint (mean in this case):\nMAD = average | x - x_mean |\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(numbers: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 4,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:601065c9cc32d4587ad00dfb8497b5243e17369f69f87e4434123e7f9c2805b7",
+  "timing": 52.57153870398179,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:7362ca7f9c59eaff3e920262d1399c3ba5d2ec25f21970860d0c1812eca058fd",
+    "status": "OK",
+    "result": "sha256:5ae274bcfca89e4004506bf7874fdd83eeae3b86198329bed3938b315fad447f"
+  },
+  "exception": null
+}

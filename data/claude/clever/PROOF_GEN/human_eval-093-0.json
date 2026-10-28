@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode(s : str) -> str\n\"\"\"Write a function that takes a message, and encodes in such a\nway that it swaps case of all letters, replaces all vowels in\nthe message with the letter that appears 2 places ahead of that\nvowel in the english alphabet.\nAssume only letters.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (\u03bb c => c.isAlpha) \u2192\n  result.length = s.length \u2227\n  (\u2200 i, i < s.length \u2192\n    let c := s.data.get! i;\n    let c' := result.data.get! i;\n    match c with\n    | 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' =>\n      c.isUpper \u2192 c'.val = c.toLower.val + 2 \u2227\n      c.isLower \u2192 c'.val = c.toUpper.val + 2\n    | _ =>\n      c.isUpper \u2192 c' = c.toLower \u2227\n      c.isLower \u2192 c' = c.toUpper)\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : String :=\n\n  \u27e8s.data.map (fun c =>\n    let isVowel := c \u2208 ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']\n    if isVowel then\n      if c.isLower then\n        Char.ofNat (c.toUpper.val.toNat + 2)\n      else\n        Char.ofNat (c.toLower.val.toNat + 2)\n    else if c.isUpper then\n      c.toLower\n    else if c.isLower then\n      c.toUpper\n    else\n      c)\u27e9\n\n\n-- [TEST_CASES]\n\n#test implementation \"test\" = \"TGST\"\n#test implementation \"This is a message\" = \"tHKS KS C MGSSCGG\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 93,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e89fde6361b335977bf49b6d07b091945bd89ddb69609b7cdea67d2ad0013737",
+  "timing": 458.33929953200277,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:daec687be1753c01fff6c4e4fd2053a18febf7cd7fc714f1946624128c0c5f0c",
+    "status": "OK",
+    "result": "sha256:8f7f083d72bd26fd13305b38ffc3bd08b2c2f3a463bf8bf4ceed7cbac1be3624",
+    "validation": [
+      {
+        "problem_id": "93",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:8ec1f16c4c68b755b9867f5ecc087535b442097cbc2f95616f03e8648135a75f"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique_digits(x: List[nat]) -> List[nat]\n\"\"\"Given a list of positive integers x. return a sorted list of all\nelements that hasn't any even digit.\n\nNote: Returned list should be sorted in increasing order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat → List Nat)\n-- inputs\n(x: List Nat) :=\n-- spec\nlet spec (result: List Nat) :=\n  let has_even_digits(i: Nat): Bool :=\n    (List.filter (fun d => Even d) (Nat.digits 10 i)).length > 0;\n  (List.Sorted Nat.le result) ∧\n  (forall i, i ∈ result ↔ (i ∈ x ∧ !(has_even_digits i)))\n-- program termination\n∃ result, implementation x = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x: List Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [15, 33, 1422, 1] = [1, 15, 33]\n-- #test implementation [152, 323, 1422, 10] = []\n-- #test implementation [12345, 2033, 111, 151] = [111, 151]\n-- #test implementation [135, 103, 31] = [31, 135]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 104,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9b39deb86664d8cfd80ba2a2ae9ec71f89d222c288284c7543b67f0c3cd85f00",
+  "timing": 118.44008025992662,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:4a5490606fc7dcfcb6d951f3c5f74054d57d08e48a82bbb596e4085859185b64",
+    "status": "OK",
+    "result": "sha256:042f6859b5ec5a431b60c08082ca284b3b53f7cd3cb1118ed118bd2ea926698b"
+  },
+  "exception": null
+}

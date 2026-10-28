@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_zero(operations: List[int]) -> bool\n\"\"\"You're given a list of deposit and withdrawal operations on a bank account that starts with\nzero balance. Your task is to detect if at any point the balance of account fallls below zero, and\nat that point function should return True. Otherwise it should return False.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(operations: List Int) :=\n-- spec\nlet below_zero_condition := ∃ i, i ≤ operations.length ∧\n(operations.take i).sum < 0;\nlet spec (result: Bool) :=\nif result then below_zero_condition else ¬below_zero_condition;\n-- program terminates\n∃ result, impl operations = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (operations: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = false\n-- #test implementation [1, 2, -4, 5] = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 3,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b545cb2835bb763ba0a83af10af4beddace89b28c446a84af4bf758653f3be7c",
+  "timing": 54.441972634755075,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:09800d57a53cb2e1384868536a2019c4555ffdcfcdc1a1bdb6b30402cffcce4d",
+    "status": "OK",
+    "result": "sha256:854061b394492c2f37741970f69fd0ac01cc2e4afd52a9be513342db2f98be0c"
+  },
+  "exception": null
+}

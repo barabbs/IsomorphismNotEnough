@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_prime_factor(n: nat) -> nat\n\"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(x : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 59,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:31798ddd29ece56e710f8fc632769b9ceb105dd85b84e5ecc0a5ade7ed42473c",
+  "timing": 62.691855835262686,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:3655950175a69a96d1306f26ad7199b2c9e07cc3bdb97eafca799fbbfd677d78",
+    "status": "OK",
+    "result": "sha256:4836963387f481cd5153644fe8dd45f56ce7efed4716da1352d7c31971eb7dd4"
+  },
+  "exception": null
+}

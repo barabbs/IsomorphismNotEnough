@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, b: float, c: float) -> float\n\"\"\"Given the lengths of the three sides of a triangle. Return the area of the triangle rounded to 2 decimal points\nif the three sides form a valid triangle. Otherwise return -1. Three sides make a valid triangle when the sum of\nany two sides is greater than the third side.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat → Rat → Rat)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) :=\n-- spec\nlet spec (result : Rat) :=\n  let is_valid_triangle :=\n    (a + b > c) ∧  (a + c > b) ∧ (b + c > a);\n  let s :=\n    (a + b + c) / 2;\n  if is_valid_triangle then\n    |result^2 - (s * (s-a) * (s-b) * (s-c))| ≤ ((1: Rat)/10000)\n  else\n    result = -1\n-- program termination\n∃ result, implementation a b c = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Rat) (b: Rat) (c: Rat): Rat :=\n\n  let isValid := (a + b > c) ∧ (a + c > b) ∧ (b + c > a)\n  if isValid then\n    let a' := a.toFloat\n    let b' := b.toFloat\n    let c' := c.toFloat\n    let s := (a' + b' + c') / 2\n    let areaSq := s * (s - a') * (s - b') * (s - c')\n    let rounded := Int64.toInt (Float.toInt64 (Float.round (Float.sqrt areaSq * 100)))\n    (rounded : Rat) / 100\n  else\n    -1\n\n\n-- [TEST_CASES]\n\n#test implementation 3 4 5 = 6.00\n#test implementation 1 2 10 = -1\n#test implementation 4 8 5 = 8.18\n#test implementation 2 2 2 = 1.73\n#test implementation 1 2 3 = -1\n#test implementation 10 5 7 = 16.25\n#test implementation 2 6 3 = -1\n#test implementation 1 1 1 =  0.43\n#test implementation 2 2 10 = -1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Rat) (b: Rat) (c: Rat)\n: problem_spec implementation a b c\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 71,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fb1809f92adf04f7d96d826eba63e920b5b46665ec058bb80360e0b29f40f248",
+  "timing": 5498.745212515816,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:9b4239ce26765b30b1f82046c17c3c1133936ed690e94bb26a6f71dd679ff925",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:7d96bae80fb0dac6a89344bd7f9ef14db3df46c1129732f73d445c3098d8a892",
+    "validation": [
+      {
+        "problem_id": "71",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:cf7a763a87e064bde2070718b7b1ca1a21bda3b67c7a9292a4c451ca700a91b2"
+      }
+    ]
+  },
+  "exception": null
+}

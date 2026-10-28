@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique_digits(x: List[nat]) -> List[nat]\n\"\"\"Given a list of positive integers x. return a sorted list of all\nelements that hasn't any even digit.\n\nNote: Returned list should be sorted in increasing order.\n\n>>> unique_digits([15, 33, 1422, 1])\n[1, 15, 33]\n>>> unique_digits([152, 323, 1422, 10])\n[]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat → List Nat)\n-- inputs\n(x: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [15, 33, 1422, 1] = [1, 15, 33]\n-- #test implementation [152, 323, 1422, 10] = []\n-- #test implementation [12345, 2033, 111, 151] = [111, 151]\n-- #test implementation [135, 103, 31] = [31, 135]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 104,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:fb69f877e33e32193cc0aa48e73fe9832d4e808ed31902da35f183c2d2aadcf1",
+  "timing": 111.00380341988057,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:9532653d5dc654688defcb1655c56f90592d99fb9545e63dd3f9f7b6c77d6cc7",
+    "status": "OK",
+    "result": "sha256:2c4d29f8c35c447a29acc298556b8babff7c195807a97349efc07acd9411ec91"
+  },
+  "exception": null
+}

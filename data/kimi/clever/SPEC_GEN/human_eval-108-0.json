@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_nums(arr: List[int]) -> int\n\"\"\"Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 108,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:43aa7eda2d6ad4c256bf271825c2b88d56b0735deb3e8918ee42f861e14278d8",
+  "timing": 305.20204763673246,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:8dc41e5dc83418dbba071f1b8b4de0e1593e2f15e4f888fbb008bda5420aaca6",
+    "status": "OK",
+    "result": "sha256:4eff22ed4931470c0e7bf6652841f3391bf6b27c26915e8ad87778ece3c480b7"
+  },
+  "exception": null
+}

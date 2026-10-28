@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef order_by_points(nums: List[int]) -> List[int]\n\"\"\"Write a function which sorts the given list of integers\nin ascending order according to the sum of their digits.\nNote: if there are several items with similar sum of their digits,\norder them based on their index in original list.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef digit_sum (n : Int) : Int :=\n  let ds := (toString n.natAbs).toList.map fun c => c.toNat - Char.toNat '0'\n  match ds with\n  | [] => 0\n  | d :: ds' =>\n    let tail := ds'.foldl (· + ·) 0\n    if n < 0 then Int.ofNat tail - Int.ofNat d\n    else Int.ofNat (d + tail)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result: List Int) :=\nList.Perm nums result ∧\nmatch result with\n| [] => nums = []\n| head::tail =>\n  let head_sum := digit_sum head;\n  (∀ num ∈ nums,\n    let sum := digit_sum num;\n    sum > head_sum ∨\n   (sum = head_sum ∧ nums.idxOf num ≥ nums.idxOf head))\n  ∧ impl (nums.erase head) = tail\n-- program termination\n∃ result, impl nums = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (nums: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 11, -1, -11, -12] = [-1, -11, 1, -12, 11]\n-- #test implementation [] = []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 145,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a4158ac0d7fba940c94dd8a4992806e5cbc60ae416d2290b722368bd50e84dfb",
+  "timing": 164.7610517567955,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:b793213e7cf309a9106cc9055ae2a7de2dc4c295ae1d0f263a29440cfd2ca109",
+    "status": "OK",
+    "result": "sha256:f5c64df4da9886f6dfd79c9216b92c9b395859e37ccc6d2e37f886a3d5c51761"
+  },
+  "exception": null
+}

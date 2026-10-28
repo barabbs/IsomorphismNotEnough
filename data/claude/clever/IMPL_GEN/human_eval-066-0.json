@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digitSum(string: str) -> Nat\n\"\"\"Write a function that takes a string as input and returns the sum of the upper characters only'\nASCII codes.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Nat)\n-- inputs\n(string: String) :=\nlet isUpper (c : Char) :=\n  65 \u2264 c.toNat \u2227 c.toNat \u2264 90\n-- spec\nlet spec (result: Nat) :=\nif string.length = 1 then\n  result = if isUpper string.data[0]! then string.data[0]!.toNat else 0\nelse\n  result = (if isUpper string.data[0]! then string.data[0]!.toNat else 0) + implementation (string.drop 1);\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = 0\n-- #test implementation \"abAB\" = 131\n-- #test implementation \"abcCd\" = 67\n-- #test implementation \"helloE\" = 69\n-- #test implementation \"woArBld\" = 131\n-- #test implementation \"aAaaaXa\" = 153\n",
+  "info": {
+    "dataset": "clever",
+    "id": 66,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:26a2b0e8f50956d9d222d6ec425e36aefc1296a0633edea357e03eb343f85e62",
+  "timing": 91.248672376998,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4nc0clzh/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:b29d305f12a41554e124a421c1ca421ec102dcc8881f6c7fe7df71675e9fe68f",
+    "status": "OK",
+    "result": "sha256:0f3ee06eb23a3c547b99d859740a8dfcdc24bd0774c6f890ac5010b9459458b0"
+  },
+  "exception": null
+}

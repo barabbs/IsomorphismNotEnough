@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_upper(s : str) -> int\n\"\"\"Given a string s, count the number of uppercase vowels in even indices.\n-- Note(George): I also feel like this one is hard to not leak, I tried a trick about keeping implementation for a recursive call in the spec. Let me know if this doesn't work..\n\n>>> count_upper('aBCdEf')\n1\n>>> count_upper('abcdefg')\n0\n>>> count_upper('dBBE')\n0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Int)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"aBCdEf\" = 1\n-- #test implementation \"abcdefg\" = 0\n-- #test implementation \"dBBE\" = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 98,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:fb49d53fc27a7d85d319488de24ed5bd55b1b05ced34786cd961b2b3a617b19c",
+  "timing": 163.92939038015902,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:3886d00466c3081ea3f962132dfc9531da2864f8f3afed2370b28b6ed76ad400",
+    "status": "OK",
+    "result": "sha256:3a00fb39775696e15d20630ce1d3a1566c53b7e9b1880db683e1eae35dd07899"
+  },
+  "exception": null
+}

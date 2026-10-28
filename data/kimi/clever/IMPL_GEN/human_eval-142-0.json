@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[int]) -> int\n\"\"\"This function will take a list of integers. For all entries in the list, the function shall square the integer entry if its index is a\nmultiple of 3 and will cube the integer entry if its index is a multiple of 4 and not a multiple of 3. The function will not\nchange the entries in the list whose indexes are not a multiple of 3 or 4. The function shall then return the sum of all entries.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(lst : List Int) :=\n-- spec\nlet spec (result : Int) :=\nlet last := lst.length-1;\n(lst = [] → result = 0) ∧\n(lst ≠ [] ∧ last % 3 = 0 → result = lst[last]! ^ 2 + impl (lst.take last)) ∧\n(lst ≠ [] ∧ last % 4 = 0 ∧ last % 3 != 0 → result = lst[last]! ^ 3 + impl (lst.take last)) ∧\n(lst ≠ [] ∧ last % 3 != 0 ∧ last % 4 != 0 → result = lst[last]! + impl (lst.take last))\n-- program termination\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst : List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = 6\n-- #test implementation [] = 0\n-- #test implementation [-1, -5, 2, -1, -5] = -126\n",
+  "info": {
+    "dataset": "clever",
+    "id": 142,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d8c21e23c37e30289c5c371d41ae928572b50bc0afdc056f0f03c9fe78ab1a8e",
+  "timing": 264.49233131390065,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:9f42e977f75d2d5fd0c02831a1f3cdc3d64a3d798404682e5faa9afbd23b983b",
+    "status": "OK",
+    "result": "sha256:dbc2c209ecd8c63898d9ddf49cfa3c3d73fba8adf67f05dc88b55871938fae72"
+  },
+  "exception": null
+}

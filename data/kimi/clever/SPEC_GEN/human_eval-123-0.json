@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_odd_collatz (n: int) -> List[int]\n\"\"\"Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\nThe Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\nas follows: start with any positive integer n. Then each term is obtained from the\nprevious term as follows: if the previous term is even, the next term is one half of\nthe previous term. If the previous term is odd, the next term is 3 times the previous\nterm plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\nNote:\n    1. Collatz(1) is [1].\n    2. returned list sorted in increasing order.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef collatz_reachable (n m : Nat) : Prop :=\n  ∃ k, Nat.iterate (fun x => if x % 2 = 0 then x / 2 else x * 3 + 1) k n = m\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → List Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 123,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4d7c42cd421a2d454ad38e81a8b25dd7fbf3421fa5cc29e9ae8201a5492c8a06",
+  "timing": 158.99258862016723,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:bf12c9c295ca900018b86e7b854e206e0ca3fd9d0a4d255795e5482cd35c83db",
+    "status": "OK",
+    "result": "sha256:71d7f172eba5a12ac0d2958edc6fe287b808b71e9cd10c8e3ce41ddac0f5e3b2"
+  },
+  "exception": null
+}

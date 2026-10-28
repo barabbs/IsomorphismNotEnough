@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"(\" and \")\".\nreturn True if every opening bracket has a corresponding closing bracket.\n\n>>> correct_bracketing('(')\nFalse\n>>> correct_bracketing('()')\nTrue\n>>> correct_bracketing('(()())')\nTrue\n>>> correct_bracketing(')(()')\nFalse\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(x : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"(\" = false\n-- #test implementation \"()\" = true\n-- #test implementation \"(()())\" = true\n-- #test implementation \")(()\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 61,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:476bc40cf64c4e6ee7de9c3ae6750f709dbd4da4449f567f9ead664d92f5fb9e",
+  "timing": 70.27318956702948,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:d4c7d761d4d43243ade4c006e6c620c612c27258cdf9203b58e1371a9a51adb6",
+    "status": "OK",
+    "result": "sha256:960efcb3950bfdf1633fdb1205b36d1a13f9e75d5df91020e61d71f0a4ebcb20"
+  },
+  "exception": null
+}

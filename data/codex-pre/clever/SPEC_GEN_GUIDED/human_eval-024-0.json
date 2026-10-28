@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_divisor(n: int) -> int\n\"\"\"For a given number n, find the largest number that divides n evenly, smaller than n\n\n>>> largest_divisor(15)\n5\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 15 = 5\n",
+  "info": {
+    "dataset": "clever",
+    "id": 24,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f04d4dede6875963eca42f00ff2e3d921acb0172a7b1eeeaf7eadf18c45bad0b",
+  "timing": 46.62539017299423,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:0c6568f586d7a613d6c52f01ebb26e6cdbff1ba1d2f24daea4f0758ee4754484",
+    "status": "OK",
+    "result": "sha256:f93e51f06aa44577002090da91f9afd4555a4b5d6577ca92a78cf46cc5946837"
+  },
+  "exception": null
+}

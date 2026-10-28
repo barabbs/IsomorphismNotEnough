@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_simple_power(x: int, n: int) -> bool\n\"\"\"Your task is to write a function that returns true if a number x is a simple\npower of n and false in other cases. x is a simple power of n if n**int=x\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Int \u2192 Bool)\n-- inputs\n(x: Int) (n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 76,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b430ce97ddf0bce108181f9eb8a91b810a007a90990bc197e54babf4ec860fb4",
+  "timing": 60.833870953007136,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/wdm778bj/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f0494f2478e2d9248609c3b54ce50600005f803ff356923e9c27007ca12b57b4",
+    "status": "OK",
+    "result": "sha256:34f69ce888a70198913c1db283c80a0f5b73d7076a93414491080aa9569a2c4e"
+  },
+  "exception": null
+}

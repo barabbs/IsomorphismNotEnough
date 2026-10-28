@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_distinct_characters(string: str) -> int\n\"\"\"Given a string, find out how many distinct characters (regardless of case) does it consist of\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Nat) :=\nlet string_idx := {i: Nat | i < string.length}.toFinset\nlet characters := string_idx.image (fun i => string.toList.get! i)\nlet lowercase_characters := characters.image (fun c => c.toLower)\nresult = lowercase_characters.card;\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : Nat :=\n\n(string.toList.map Char.toLower).eraseDups.length\n\n\n-- [TEST_CASES]\n\n#test implementation \"xyzXYZ\" = 3\n#test implementation \"Jerry\" = 4\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 16,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:73995f759df5b16f2efee9f37cf57cd35c980c91950150e98eee37c7a91619cc",
+  "timing": 1439.7275337699975,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/xtsti85b/problem.lean --deep=stuck",
+    "claude": "sha256:d8b928662ef40fbcc0d49aee5730445b1e3c41c08d5efeec419f1e03bfae6536",
+    "status": "OK",
+    "result": "sha256:901f5f84b16aa6ec5da9afe1736a5ab6c8ec7a36139f0e6a662129e0655dcf51",
+    "validation": [
+      {
+        "problem_id": "16",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:98a77242d34ec6f57dac0e9d6e3177aeeeddc90f1fe8a1e22ae5b644d98553f5"
+      }
+    ]
+  },
+  "exception": null
+}

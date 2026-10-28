@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef bf(planet1: str, planet2: str) -> List[str]\n\"\"\"There are eight planets in our solar system: the closest to the Sun\nis Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn,\nUranus, Neptune.\nWrite a function that takes two planet names as strings planet1 and planet2.\nThe function should return a tuple containing all planets whose orbits are\nlocated between the orbit of planet1 and the orbit of planet2, sorted by\nthe proximity to the sun.\nThe function should return an empty tuple if planet1 or planet2\nare not correct planet names.\n\n>>> bf('Jupiter', 'Neptune')\n('Saturn', 'Uranus')\n>>> bf('Earth', 'Mercury')\n'Venus'\n>>> bf('Mercury', 'Uranus')\n('Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn')\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String \u2192 List String)\n-- inputs\n(planet1: String)\n(planet2: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Jupiter\" \"Neptune\" = [\"Saturn\", \"Uranus\"]\n-- #test implementation \"Earth\" \"Mercury\" = [\"Venus\"]\n-- #test implementation \"Mercury\" \"Uranus\" = [\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 148,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:88bbcc09b42e0f396d053cf6d46f9cc8c7b885e39dec94a83df966b2aa9abb3d",
+  "timing": 137.0240358279989,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mqpzt6u2/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:6bdc7918c423723408ee198f962a8750f3d7cf52e8e90ce7c7411e1f1edf4eff",
+    "status": "OK",
+    "result": "sha256:ca8663577cb0385b6afe8a469c60084325989ec0342c0976d1b97339064f6eff"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_even(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the odd indicies, while its values at the even indicies are equal\nto the values of the even indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 37,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d9eb00825750367ca45b8f0baad66d228079008b66bb781d1e69ff881971a731",
+  "timing": 323.07149478886276,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:1dea86ccb789f7246f9a5cc4b41ce039e89b20cab6f376563cfd8e86135be66a",
+    "status": "OK",
+    "result": "sha256:c8f466aa09586510bcdf231ef5c730879d301565ea486d37baf197866d57ce46"
+  },
+  "exception": null
+}

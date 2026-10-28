@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef vowels_count(string: str) -> nat\n\"\"\"Write a function vowels_count which takes a string representing\na word as input and returns the number of vowels in the string.\nVowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\nvowel, but only when it is at the end of the given word.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\nlet isVowel (c : Char) :=\n  let vowels := \"aeiouAEIOU\"\n  vowels.contains c\nlet isY (c : Char) := c = 'y' ∨ c = 'Y'\n-- spec\nlet spec (result: Nat) :=\nstring.data.all (fun c => c.isAlpha) →\nif string.length = 1 then\n  result = if isVowel string.data[0]! ∨ isY string.data[0]! then 1 else 0\nelse\n  result = (if isVowel string.data[0]! then 1 else 0) + implementation (string.drop 1);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abcde\" = 2\n-- #test implementation \"ACEDY\" = 3\n",
+  "info": {
+    "dataset": "clever",
+    "id": 64,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:41cc54642030ec06e9079cda1870518de45d4ff19ad3362c94573c09fe632483",
+  "timing": 61.9779022121802,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:d35dfa4a10646cc286203d3a3de433f311631197a132234f48855bae002c3956",
+    "status": "OK",
+    "result": "sha256:80bfff2f3c629a86992ce9122bef971901e47cb4e18e3889fafd1aff90ed6f67"
+  },
+  "exception": null
+}

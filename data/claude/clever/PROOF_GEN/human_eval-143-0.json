@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_in_sentence(sentence: str) -> str\n\"\"\"You are given a string representing a sentence,\nthe sentence contains some words separated by a space,\nand you have to return a string that contains the words from the original sentence,\nwhose lengths are prime numbers,\nthe order of the words in the new string should be the same as the original one.\n\nConstraints:\n* 1 <= len(sentence) <= 100\n* sentence contains only letters\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(sentence: String) :=\n-- spec\nlet spec (result: String) :=\nlet words := sentence.splitOn;\nlet result_words := result.splitOn;\n  1 ≤ sentence.length → sentence.length ≤ 100 →\n  sentence.all (fun x => Char.isAlpha x) →\n  result_words.length ≤ words.length ∧\n  (∀ word ∈ result_words, word ∈ words ∧ Nat.Prime word.length) ∧\n  match result_words with\n  | [] => ∀ word ∈ words, ¬(Nat.Prime word.length)\n  | head :: tail => if Nat.Prime head.length ∧ head = words[0]! then String.join tail = impl (String.join (words.drop 1))\n    else result = impl (String.join (words.drop 1))\n-- program termination\n∃ result, impl sentence = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (sentence : String) : String :=\n\n  let words := sentence.splitOn \" \"\n  let primeWords := words.filter (fun w => decide (Nat.Prime w.length))\n  \" \".intercalate primeWords\n\n\n-- [TEST_CASES]\n\n#test implementation \"This is a test\" = \"is\"\n#test implementation \"lets go for swimming\" = \"go for\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(sentence : String)\n: problem_spec implementation sentence :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 143,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7780547809b45a50301634c2c39a5bc0d64bfb5cd307e75443b6d52b191faa7e",
+  "timing": 263.90267598000355,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:6cfb6595d54716ca906b8afc3682148501d9d771d061f25ddb27e4081554518d",
+    "status": "ISSUE",
+    "result": "sha256:3ed8be38bf1467eb85209e60ef69d0ce6400d9fb1b868f3ff2badcffc91ae262",
+    "validation": [
+      {
+        "problem_id": "143",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:f428ed011353be7fb50a7e073d0faf60743b3ea67e5a528942b8f56d1b10d90c"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "UNIV"
+  },
+  "exception": null
+}

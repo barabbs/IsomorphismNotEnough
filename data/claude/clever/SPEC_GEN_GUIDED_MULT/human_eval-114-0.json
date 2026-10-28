@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minSubArraySum(nums : list[int]) -> int\n\"\"\"Given an array of integers nums, find the minimum sum of any non-empty sub-array\nof nums.\n\n>>> minSubArraySum([2, 3, 4, 1, 2, 4])\n1\n>>> minSubArraySum([-1, -2, -3])\n-6\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(nums: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [2, 3, 4, 1, 2, 4] = 1\n-- #test implementation [-1, -2, -3] = -6\n",
+  "info": {
+    "dataset": "clever",
+    "id": 114,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:fb5d5f0bf9c8d657e5c00765012ca979acf4374c1bfc6beb19e4491a69214ada",
+  "timing": 121.80873881699517,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/3kkiiuu9/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:3090ac6a954ab1b7618b7075a929e4f26bdf7523bb9203e1be0ee9eb389783b2",
+    "status": "OK",
+    "result": "sha256:b0f7204c0fa88b1a3717b56466cd3088cc4db803d7db7f5af2302f5ca4ea059e"
+  },
+  "exception": null
+}

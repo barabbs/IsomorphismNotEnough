@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef same_chars(s0: str, s1: str) -> bool\n\"\"\"Check if two words have the same characters.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String \u2192 Bool)\n-- inputs\n(s0 s1: String) :=\n-- spec\nlet spec (res: Bool) :=\n  res \u2194 (\u2200 c : Char, c \u2208 s0.toList \u2194 c \u2208 s1.toList)\n-- program terminates\n\u2203 result, impl s0 s1 = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s0 s1: String) : Bool :=\n\n  s0.toList.all (fun c => s1.toList.contains c) &&\n  s1.toList.all (fun c => s0.toList.contains c)\n\n\n-- [TEST_CASES]\n\n#test implementation \"eabcdzzzz\" \"dddzzzzzzzddeddabc\" = true\n#test implementation \"abcd\" \"dddddddabc\" = true\n#test implementation \"dddddddabc\" \"abcd\" = true\n#test implementation \"eabcd\" \"dddddddabc\" = false\n#test implementation \"abcd\" \"dddddddabce\" = false\n#test implementation \"eabcdzzzz\" \"dddzzzzzzzddddabc\" = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s0 s1: String)\n: problem_spec implementation s0 s1  :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 54,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:07536558c81b342653ccf1183f4e2466c07410de496044e3ea454bdbec6eab5c",
+  "timing": 112.07662559102755,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:3f2b7ca55c317cefca6808e7e6523a042c1ebc7569e37a2c58a8633754765bd0",
+    "status": "OK",
+    "result": "sha256:84f7ad4276b2139cb1ecc98ef492744a687de9f111902c1b3f100627725dc0b7",
+    "validation": [
+      {
+        "problem_id": "54",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5a8de79d14f1fefd18112b7713bbbbb5a3b3a395b339690411e7cf5f35a31049"
+      }
+    ]
+  },
+  "exception": null
+}

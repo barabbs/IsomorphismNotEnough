@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_array(lst : List[int]) -> List[int]\n\"\"\"Please write a function that sorts an array of non-negative integers according to\nnumber of ones in their binary representation in ascending order.\nFor similar number of ones, sort based on decimal value.\n\n>>> sort_array([1, 5, 2, 3, 4])\n[1, 2, 4, 3, 5]\n>>> sort_array([1, 0, 2, 3, 4])\n[0, 1, 2, 4, 3]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat → List Nat)\n-- inputs\n(lst: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 5, 2, 3, 4] = [1, 2, 4, 3, 5]\n-- #test implementation [1, 0, 2, 3, 4] = [0, 1, 2, 4, 3]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 116,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:e403e4e1c85b5f8a3d6ac74914c04e4dd76658773d378d777e027ef234bdae22",
+  "timing": 143.555019041989,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:70f51ad2c66f9ba210b10bdd1b6b930594c6cd0f6a42c133f3ce99b37f73e0f9",
+    "status": "OK",
+    "result": "sha256:c0ce09e5726c47e28734df45a7186cd221324a2302224f67c49a7615f560c136"
+  },
+  "exception": null
+}

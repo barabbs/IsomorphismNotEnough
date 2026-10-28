@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]\n\"\"\"Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int \u2192 List Int)\n-- inputs\n(numbers: List Int)\n(delimeter: Int) :=\n-- spec\nlet spec (result: List Int) :=\n(result.length = 0 \u2227 result = numbers) \u2228\n(result.length = 2 \u2227 numbers.length = 1 \u2227\nresult[0]! = numbers[0]! \u2227 result[1]! = delimeter) \u2228\n(result.length = 2 * numbers.length - 1 \u2227\n\u2200 i, i < numbers.length \u2192\nresult[2 * i]! = numbers[i]! \u2227\n(0 < 2*i - 1 \u2192 result[2 * i - 1]! = delimeter));\n-- program termination\n\u2203 result, implementation numbers delimeter = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) (delimeter: Int) : List Int :=\n\nmatch numbers with\n  | [] => []\n  | [x] => [x]\n  | x :: rest => x :: (rest.flatMap (fun y => [delimeter, y]))\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] 4 = [1, 4, 2, 4, 3]\n#test implementation [] 4 = []\n#test implementation [1] 4 = [1]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n(delimeter: Int)\n: problem_spec implementation numbers delimeter\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 5,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1c43f4d35c5f2c16688c6d9f95ace33cdcc9067f0da40e6f04c5e6a8233220db",
+  "timing": 751.0228153130156,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/vm5fwbzt/problem.lean --deep=stuck",
+    "claude": "sha256:57c81e18396e8ec23ff075594121e0f1a5300277a70c9188160a0914889b0a59",
+    "status": "OK",
+    "result": "sha256:53cfd5125897496571e3dc6b67c9b214a16bfd8b72d88e1c6c0de4047a3c3c52",
+    "validation": [
+      {
+        "problem_id": "5",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:7611f8207813b0caa02b5fcc4f8c3be15cee4241782e990a2c69314264d19f1d"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef smallest_change(arr: List[int]) -> int\n\"\"\"Given an array arr of integers, find the minimum number of elements that\nneed to be changed to make the array palindromic. A palindromic array is an array that\nis read the same backwards and forwards. In one change, you can change one element to any other element.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  let changes_needed (arr1: List Int) (arr2: List Int) :=\n    ((List.finRange (arr1.length)).filter (fun idx => arr1[idx]? \u2260 arr2[idx]?)).length\n  (\u2203 palin : List Int,\n    palin.length = arr.length \u2227\n    List.Palindrome palin \u2227\n    result = changes_needed arr palin) \u2227\n  (\u2200 palin : List Int,\n    palin.length = arr.length \u2192\n    List.Palindrome palin \u2192\n    result \u2264 changes_needed arr palin)\n-- program termination\n\u2203 result, implementation arr = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : Int :=\n\n  let n := arr.length\n  let half := n / 2\n  let indices := List.range half\n  indices.foldl (fun acc i =>\n    if arr[i]? != arr[n - 1 - i]? then acc + 1 else acc) 0\n\n\n-- [TEST_CASES]\n\n#test implementation [1,2,3,5,4,7,9,6] = 4\n#test implementation [1, 2, 3, 4, 3, 2, 2] = 1\n#test implementation [1, 4, 2] = 1\n#test implementation [1, 4, 4, 2] = 1\n#test implementation [1, 2, 3, 2, 1] = 0\n#test implementation [3, 1, 1, 3] = 0\n#test implementation [1] = 0\n#test implementation [0, 1] = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 73,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1abd19b004d8ca813a4888bbbe4cc88ae6415f4ac601f545e822bc7c0d6aa941",
+  "timing": 3604.6880628940416,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:ed43686da30407ff242cc04e0ad0ef807e035614db0010658a883f975158beea",
+    "status": "TIMEOUT",
+    "result": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "validation": [
+      {
+        "problem_id": "73",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:912c99e094861e1845a3c8af2218706ec0c1a73b49af32a3ecd5b30679bd0261",
+        "lean_code": "sha256:7928d98f722cd9653f335fa42b9c7028abcf099dd2c9d3cebfd8db0d8d67cf98"
+      }
+    ]
+  },
+  "exception": null
+}

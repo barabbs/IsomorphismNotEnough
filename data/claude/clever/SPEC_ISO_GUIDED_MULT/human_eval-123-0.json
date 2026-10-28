@@ -1,0 +1,71 @@
+{
+  "text": "sha256:aed8b6f44242ef91af00240f54d0780443fad79c2a61c1928bbcecec2165a888",
+  "info": {
+    "dataset": "clever",
+    "id": 123,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:a6460831eb62699e02912c489409928ab80ac363889588101af3d8da5dd44fef",
+  "timing": 790.6915320829721,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:e87966f8580b9f90659c901413adcd69a11eded2811b0b424d6f4d50a1f8fdd3",
+    "status": [
+      "OK",
+      "MISMATCH",
+      "ISSUE",
+      "ISSUE"
+    ],
+    "result": "sha256:8fd6803738b09074b63838aca7336627640e9da6222c0d9bdc94aec5dfe80888",
+    "raw_status": "The background build completed successfully (exit code 0), confirming all four files compile cleanly. The work is complete.",
+    "comment": [
+      "",
+      "←",
+      "GEN",
+      "GEN"
+    ],
+    "validation": [
+      {
+        "problem_id": "123",
+        "isomorphism_ok": true,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:c721c3d07a12bd62a8fedd262cb0b078cf69d69c23dde02e6bb87cc18030a860"
+      },
+      {
+        "problem_id": "123",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:f5c5982d4c41a024d55519fd9a9e550fb6f17b2914cd02e6621065c4aac3a5ab"
+      },
+      {
+        "problem_id": "123",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:793a90fce2c5498f332aa75ee037d49062036da6f3c16b148a5640ccd2d7a8f5"
+      },
+      {
+        "problem_id": "123",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:a713f4cc61bbf36aa6d0740f5b759a8f484a1a61a4ff53c4005f731c59e3fa50"
+      }
+    ],
+    "analysis": [
+      null,
+      "ORDER",
+      "MCONS",
+      "MCONS+WRONG"
+    ]
+  },
+  "exception": null
+}

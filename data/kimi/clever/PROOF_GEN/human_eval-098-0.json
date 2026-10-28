@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_upper(s : str) -> int\n\"\"\"Given a string s, count the number of uppercase vowels in even indices.\n-- Note(George): I also feel like this one is hard to not leak, I tried a trick about keeping implementation for a recursive call in the spec. Let me know if this doesn't work..\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Int)\n-- inputs\n(s: String) :=\n-- spec\nlet uppercase_vowels := ['A', 'E', 'I', 'O', 'U']\nlet spec (result : Int) :=\n  let chars := s.toList\n  (result = 0 ↔ ∀ i, i < chars.length → chars[i]! ∉ uppercase_vowels) ∧\n  (1 < chars.length →\n    (result - 1 = implementation (chars.drop 2).toString ↔ chars[0]! ∈ uppercase_vowels) ∨\n    (result = implementation (chars.drop 2).toString ↔ chars[0]! ∉ uppercase_vowels)\n  )\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : Int :=\n\n  let rec aux (cs : List Char) : Int :=\n    match cs with\n    | [] => 0\n    | [c] => if c = 'A' ∨ c = 'E' ∨ c = 'I' ∨ c = 'O' ∨ c = 'U' then 1 else 0\n    | c :: _ :: rest =>\n        if c = 'A' ∨ c = 'E' ∨ c = 'I' ∨ c = 'O' ∨ c = 'U' then\n          1 + aux rest\n        else\n          aux rest\n  aux s.toList\n\n\n-- [TEST_CASES]\n\n#test implementation \"aBCdEf\" = 1\n#test implementation \"abcdefg\" = 0\n#test implementation \"dBBE\" = 0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 98,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b1b0b83955aef1b794749ba5c8a5cdb2b53024fd6337b9c56d6d76b6561cf242",
+  "timing": 6691.398269993253,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:087351e17421b12084647209476da491cfb0f7366da2e38d1e74e084c327db4b",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:18b62ad8b902a1cfbb33b2a28549bbe8df18575bbcfa96fc38eda5887aa76ee3",
+    "validation": [
+      {
+        "problem_id": "98",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:1f1b62ef30712496ea4451dd2e2c4d3c24a67e8313b9b1f0bb9235cdabda800c"
+      }
+    ]
+  },
+  "exception": null
+}

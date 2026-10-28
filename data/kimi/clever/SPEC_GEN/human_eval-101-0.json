@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_string(s: str) -> List[str]\n\"\"\"You will be given a string of words separated by commas or spaces. Your task is\nto split the string into words and return an array of the words.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → List String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 101,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7d47d40a9f5652a3ebf23dfb55ec65ac1125ea2a523d5fcf705e39a6084278fd",
+  "timing": 152.98677112162113,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:e9012effe2e9029f13b2a7d7ba42267241dc271d5e16653064a1073a3b2fc2a0",
+    "status": "OK",
+    "result": "sha256:65e7b5b5cc29b9354e0e434794f7e572a9bc3e03e2c0295570bec5959d308d83"
+  },
+  "exception": null
+}

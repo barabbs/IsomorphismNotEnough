@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_cyclic(s: str) -> str\n\"\"\"Returns an encoded string by cycling each group of three consecutive characters.\nSpecifically, each group of exactly three characters 'abc' is transformed to 'bca'.\nGroups of fewer than three characters at the end of the string remain unchanged.\n\n>>> encode_cyclic('abcdef')\n'bcaefd'\n>>> encode_cyclic('abcde')\n'bcade'\n>>> encode_cyclic('ab')\n'ab'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"abcdef\" = \"bcaefd\"\n-- #test implementation \"abcde\" = \"bcade\"\n-- #test implementation \"ab\" = \"ab\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 38,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f474c12b43a5791e575ded6541c87d25d512e4fd5b91de8245a8b8b3fdb72e25",
+  "timing": 73.99549548886716,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:70d139efe3c3db5a4d177ab504430e4e384022eb5e91fbbf447378172cee75c4",
+    "status": "OK",
+    "result": "sha256:4b8321dd5b3219285ce8b0929bf1bae7f3000c91fadc1fcb8c184b7b1c98feb3"
+  },
+  "exception": null
+}

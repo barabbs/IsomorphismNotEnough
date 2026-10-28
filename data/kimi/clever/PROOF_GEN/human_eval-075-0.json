@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_multiply_prime(a: int) -> bool\n\"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\nand false otherwise. Knowing that (a) is less then 100.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  (a < 100) →\n    result ↔ exists a' b c, (Nat.Prime a') ∧ (Nat.Prime b) ∧ (Nat.Prime c) ∧ (a == a'*b*c)\n-- program termination\n∃ result, implementation a = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Int) : Bool :=\n\n  if a > 0 then\n    let n : Nat := a.toNat\n    n.primeFactorsList.length == 3\n  else\n    false\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = False\n#test implementation 30 = True\n#test implementation 8 = True\n#test implementation 10 = False\n#test implementation 125 = True\n#test implementation (3 * 5 * 7) = True\n#test implementation (3 * 6 * 7) = False\n#test implementation (9 * 9 * 9) = False\n#test implementation (11 * 9 * 9) = False\n#test implementation (11*13*7) = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Int)\n: problem_spec implementation a\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 75,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:63c8cd1f92b72298ab3b54628a3e907bef5c8a9b8abc8b029c2fdd040e5db97d",
+  "timing": 14403.04442345025,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:3a7ffef3b9678330e6ae4a521910ad5d0acd4eb6109d70fde72a10dcbef4fa6d",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "75",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:679e6aac2380d8dab4d57df8011a12843c73c295af2a254f99c901c038b9ae27",
+        "lean_code": "sha256:5a9e0531f3ff057c3c9d742fc1bc1e71de2ce23c3655c1623b7d71c4253bc9c8"
+      }
+    ]
+  },
+  "exception": null
+}

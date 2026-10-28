@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef vowels_count(string: str) -> nat\n\"\"\"Write a function vowels_count which takes a string representing\na word as input and returns the number of vowels in the string.\nVowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\nvowel, but only when it is at the end of the given word.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\nlet isVowel (c : Char) :=\n  let vowels := \"aeiouAEIOU\"\n  vowels.contains c\nlet isY (c : Char) := c = 'y' ∨ c = 'Y'\n-- spec\nlet spec (result: Nat) :=\nstring.data.all (fun c => c.isAlpha) →\nif string.length = 1 then\n  result = if isVowel string.data[0]! ∨ isY string.data[0]! then 1 else 0\nelse\n  result = (if isVowel string.data[0]! then 1 else 0) + implementation (string.drop 1);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : Nat :=\n\n    let rec count (cs : List Char) : Nat :=\n    match cs with\n    | [] => 0\n    | [c] =>\n      let isVowel := String.contains \"aeiouAEIOU\" c\n      let isY := c = 'y' ∨ c = 'Y'\n      if isVowel ∨ isY then 1 else 0\n    | c :: rest =>\n      let isVowel := String.contains \"aeiouAEIOU\" c\n      (if isVowel then 1 else 0) + count rest\n  count string.data\n\n\n-- [TEST_CASES]\n\n#test implementation \"abcde\" = 2\n#test implementation \"ACEDY\" = 3\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 64,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7bafdfbef9aeac809752384ae9e67c4c3366a13762c302b619a0fe3d38db9542",
+  "timing": 14781.229439739138,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:856b7d546b2818077f8398d9b8739483086852e4043e2f79787443f0ba9e56e9",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "64",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:47a10b7c386ee1560010cac13713be30e5f90068316af4c6dab81732cbf47f38",
+        "lean_code": "sha256:070f4c0ef1a37e7891459064f44e8b1c942d9fcf243ecf8f006067b8b802c6de"
+      }
+    ]
+  },
+  "exception": null
+}

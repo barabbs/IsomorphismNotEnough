@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]\n\"\"\"Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int \u2192 List Int)\n-- inputs\n(numbers: List Int)\n(delimeter: Int) :=\n-- spec\nlet spec (result: List Int) :=\n(result.length = 0 \u2227 result = numbers) \u2228\n(result.length = 2 \u2227 numbers.length = 1 \u2227\nresult[0]! = numbers[0]! \u2227 result[1]! = delimeter) \u2228\n(result.length = 2 * numbers.length - 1 \u2227\n\u2200 i, i < numbers.length \u2192\nresult[2 * i]! = numbers[i]! \u2227\n(0 < 2*i - 1 \u2192 result[2 * i - 1]! = delimeter));\n-- program termination\n\u2203 result, implementation numbers delimeter = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) (delimeter: Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] 4 = [1, 4, 2, 4, 3]\n-- #test implementation [] 4 = []\n-- #test implementation [1] 4 = [1]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 5,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c294e410210d2c247284110bb282d4d1e85523a4c763da2122ecd99f8f9a7144",
+  "timing": 98.55533311600448,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/swraww_t/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:a03277cf67b1c2049964f5abf413edf361f0ebfba2e893fa5c223db13ea7599d",
+    "status": "OK",
+    "result": "sha256:73bc6d455a08c46f4d74b2f7261e8ec431e49b58548f872a536b3a7375c88f4b"
+  },
+  "exception": null
+}

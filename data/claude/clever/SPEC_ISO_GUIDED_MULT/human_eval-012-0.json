@@ -1,0 +1,77 @@
+{
+  "text": "sha256:2ef0042947cfee9993542e766916fb5df479b8ce11dfb368a0845fdfee5e70ba",
+  "info": {
+    "dataset": "clever",
+    "id": 12,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:d6003259bcf4e6c794c6803f88d7237201a21b64ca8eb6c51c651876fe02b6d5",
+  "timing": 536.1289296059986,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:9e96f221e137bb22d41085d900623970df7bdf2d9fd7d9673088eab95dafbe14",
+    "status": [
+      "ISSUE",
+      "ISSUE",
+      "ISSUE",
+      "ISSUE"
+    ],
+    "result": "sha256:edeb979d707314f7663c19332f34d95f04959d326473aae2e2eb5d444e9261a3",
+    "raw_status": "0:ISSUE\n1:ISSUE\n2:ISSUE\n3:ISSUE",
+    "comment": [
+      "PROB",
+      "PROB",
+      "BOTH",
+      "BOTH"
+    ],
+    "validation": [
+      {
+        "problem_id": "12",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:8f5768caf35fa07df18267d63988cbdcf6ccd25b712c6eda024e51bfcc0ca487"
+      },
+      {
+        "problem_id": "12",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:6e531a942ba5aabdaf1ec2e5e4aef0e315a06313b48e7c3d2ef97a27f9413c3c"
+      },
+      {
+        "problem_id": "12",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:06302e8c39091b0f8511a807020cc13421b14b2ca18c727c94fa40fc226c2bed"
+      },
+      {
+        "problem_id": "12",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:d32ddbe0497c7449c56935f6e677552064418213e1bd33a10ba845f12f52f6ec"
+      }
+    ],
+    "analysis": [
+      "VAC",
+      "VAC",
+      [
+        "VAC",
+        "MCONS"
+      ],
+      [
+        "VAC",
+        "MCONS"
+      ]
+    ]
+  },
+  "exception": null
+}

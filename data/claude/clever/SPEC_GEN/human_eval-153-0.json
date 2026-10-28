@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef Strongest_Extension(class_name: String, extensions: List[String]) -> String\n\"\"\"You will be given the name of a class (a string) and a list of extensions.\nThe extensions are to be used to load additional classes to the class. The\nstrength of the extension is as follows: Let CAP be the number of the uppercase\nletters in the extension's name, and let SM be the number of lowercase letters\nin the extension's name, the strength is given by the fraction CAP - SM.\nYou should find the strongest extension and return a string in this\nformat: ClassName.StrongestExtensionName.\nIf there are two or more extensions with the same strength, you should\nchoose the one that comes first in the list.\nFor example, if you are given \"Slices\" as the class and a list of the\nextensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should\nreturn 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the strongest extension\n(its strength is -1).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 List String \u2192 String)\n-- inputs\n(class_name: String)\n(extensions: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 153,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:634f1942bc0aa89c79df4f172f42bc557c6ab0f60ab89479369194649241a001",
+  "timing": 84.02608981600497,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/18jdbxpx/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:3f4c188f2c727dc2998b3b1b5c6c73e9db5be6f11e852a4304a8b6aa0b38fea1",
+    "status": "OK",
+    "result": "sha256:6abb6ff0634af67cbae44900d817da71c5e09073048ce8d0de43becb8caf7c16"
+  },
+  "exception": null
+}

@@ -1,0 +1,49 @@
+{
+  "text": "sha256:886f8ad5ab197c4a55dbde4c2085113dcd4b243295ac54c3a164266a0264bc61",
+  "info": {
+    "dataset": "clever",
+    "id": 140,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:51280f6b1650f6f3df4675425434364c75154c045ea67ccd51d4f2c7cf13bb59",
+  "timing": 1445.5344155350467,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean --deep=stuck",
+    "claude": "sha256:9a0575f6696de3b40d8cc74a3dd7d75abcd585ad15c9ea4692c4804f9187f9c7",
+    "status": [
+      "MISMATCH",
+      "ISSUE"
+    ],
+    "result": "sha256:45a811950e55a125203cef84e4e5fb1db58474ff299c00dd2a9bcd9eed957579",
+    "raw_status": "0:MISMATCH\n1:ISSUE",
+    "comment": [
+      "→",
+      "GEN"
+    ],
+    "validation": [
+      {
+        "problem_id": "140",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:4c7d25d6d17b9f0ab290890fea3a2880a6db95539dc6245fa8f5ddf9304209e4"
+      },
+      {
+        "problem_id": "140",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:9fe7879712cd3d698d6e9f8ee751f1f63d06f8b7b10a1ba6d2ec91bbc0d99e5b"
+      }
+    ],
+    "analysis": [
+      "STRUCT",
+      "WRONG"
+    ]
+  },
+  "exception": null
+}

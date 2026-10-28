@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_shift(s: str) -> str\n\"\"\"returns encoded string by shifting every character by 5 in the alphabet.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(s : String) :=\nlet isAlphabetic (string: String) : Bool :=\n∀ i, i < string.length →\nlet c := string.get! ⟨i⟩;\n('a'.toNat ≤ c.toNat ∧ c.toNat ≤ 'z'.toNat) ∨\n('A'.toNat ≤ c.toNat ∧ c.toNat ≤ 'Z'.toNat)\n-- spec\nlet spec (result: String) :=\nisAlphabetic result ∧ isAlphabetic s ∧\nresult.length = s.length ∧\n∃ k : Nat, k < 26 ∧\n∀ i : Nat, i < s.length →\n((s.get! ⟨i⟩).toNat + k) % 26 = (result.get! ⟨i⟩).toNat\n→ k = 5\n-- program termination\n∃ result, implementation s = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : String :=\n\n  s.map fun c =>\n    if 'a' ≤ c ∧ c ≤ 'z' then\n      Char.ofNat (((c.toNat - 'a'.toNat + 5) % 26) + 'a'.toNat)\n    else if 'A' ≤ c ∧ c ≤ 'Z' then\n      Char.ofNat (((c.toNat - 'A'.toNat + 5) % 26) + 'A'.toNat)\n    else c\n\n\n-- [TEST_CASES]\n\n#test implementation \"abc\" = \"fgh\"\n#test implementation \"xyz\" = \"cde\"\n#test implementation \"aaa\" = \"fff\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e32244b97924d5ac2f7e127d080ed85f3e78fce0ebdc48b281b2c90ece8b8ccb",
+  "timing": 290.8009451390244,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:1f761029510af9c6da6dc987a0796016365aa698644cc79edf54004c6b9332ae",
+    "status": "ISSUE",
+    "result": "sha256:9d488c2ba739af404d93c81b143e547d5241d176fdc4c7c1e735a1014bdbbf02",
+    "validation": [
+      {
+        "problem_id": "50",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:6be56e9408784440de6974a1244e2b0776c1346aee04a73db6ba758f61c3b5ec"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

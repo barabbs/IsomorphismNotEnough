@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]\n\"\"\"From a supplied list of numbers (of length at least two) select and return two that are the closest to each\nother and return them in order (smaller number, larger number).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → (Rat × Rat))\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: (Rat × Rat)) :=\n2 ≤ numbers.length →\n(let (smaller, larger) := result;\nlet abs_diff := |larger - smaller|;\nsmaller ≤ larger ∧\nsmaller ∈ numbers ∧\nlarger ∈ numbers ∧\n(∀ x y, x ∈ numbers → y ∈ numbers → x ≠ y → abs_diff ≤ |x - y|) ∧\n(smaller = larger → 2 ≤ (numbers.filter (fun z => z = smaller)).length));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Rat): (Rat × Rat) :=\n\n  let sorted := numbers.mergeSort (λ a b => a ≤ b)\n  let pairs := sorted.zip sorted.tail\n  match pairs with\n  | [] => (0, 0)\n  | first :: rest =>\n    let best := rest.foldl (λ p1 p2 => \n      let diff1 := |p1.2 - p1.1|\n      let diff2 := |p2.2 - p2.1|\n      if diff2 < diff1 then p2 else p1\n    ) first\n    (best.1, best.2)\n\n\n-- [TEST_CASES]\n\n#test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.2] = (2.0, 2.2)\n#test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.0] = (2.0, 2.0)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Rat)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 20,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:74622868a55a0f8894a9d8f8cd73e4fef40b337d61db2dc515cf78e0fa30e955",
+  "timing": 6389.984367530793,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:f61f4c9c67872f5df5ba9d544843467b6fc8c674a0f6fc6384d50b1afcb5b320",
+    "status": "FAIL",
+    "result": "sha256:1181971b82144259780f184ebef4e64dc55350ca57a189a2ac4a8da2abba3bac",
+    "validation": [
+      {
+        "problem_id": "20",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:09512f450cb1d66956979bc15b653c9b0ee58d8815cce9df372cbc127c214472"
+      }
+    ]
+  },
+  "exception": null
+}

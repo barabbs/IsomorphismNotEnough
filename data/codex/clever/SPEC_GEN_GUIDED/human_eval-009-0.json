@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rolling_max(numbers: List[int]) -> List[int]\n\"\"\"From a given list of integers, generate a list of rolling maximum element found until given moment\nin the sequence.\n\n>>> rolling_max([1, 2, 3, 2, 3, 4, 2])\n[1, 2, 3, 3, 3, 4, 4]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3, 2, 3, 4, 2] = [1, 2, 3, 3, 3, 4, 4]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 9,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:1e08e292779d3a195f6054d590b8eab09c7ef35805af70fb0225693941089a0f",
+  "timing": 86.0140779921785,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:c64fafdc7672fc46caf6be26c586ff49b0573fd3b7f00a7ff49e739d58e84728",
+    "status": "OK",
+    "result": "sha256:bf1be3f9f7582b1af733c3037154d27ef5a1efd1591f53f214f9b463dbb06dfd"
+  },
+  "exception": null
+}

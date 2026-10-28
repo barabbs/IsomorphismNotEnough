@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef incr_list(numbers: List[int]) -> List[int]\n\"\"\"incr_list takes a list of integers as input and returns a new list\nwhere each element is incremented by 1.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(x: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 42,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:753d5e10bee3afa2207653dee354de7817ece4c587ad6bc0f20fba8e2d798434",
+  "timing": 29.979183301795274,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:4c5e595f0045df6261e2e3fdfcb4a5d75854d9b6b192d0e1e8b53e5ba0a56911",
+    "status": "OK",
+    "result": "sha256:8c31f9a9975b28a569f426fbbfe831702d240047ba963c3d4c1e3fe54e6254c7"
+  },
+  "exception": null
+}

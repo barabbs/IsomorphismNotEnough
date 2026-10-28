@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique(l: list)\n\"\"\"Return sorted unique elements in a list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (∀ x, x ∈ result ↔ x ∈ l ∧ result.count x = 1) ∧\n  List.Sorted Int.le result\n-- program termination\n∃ result,\n  implementation l = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [5, 3, 5, 2, 3, 3, 9, 0, 123] = [0, 2, 3, 5, 9, 123]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 34,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e4ad3658c9239d9b70812096748a7e5ed2034d477cdf40745af2bab6966d1132",
+  "timing": 65.96402656892315,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:262b070ab87d7270563ee4ec19a84ef6aaed3547b875a080c8cd2d4901ca0c14",
+    "status": "OK",
+    "result": "sha256:1ae7bee73a17c9f759d39533cb5cffc9174c7216680e3cc54a71e2ca20805e78"
+  },
+  "exception": null
+}

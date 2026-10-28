@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef tri(n: int) -> List[int]\n\"\"\"Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in\nthe last couple centuries. However, what people don't know is Tribonacci sequence.\nTribonacci sequence is defined by the recurrence:\ntri(1) = 3\ntri(n) = 1 + n / 2, if n is even.\ntri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.\nFor example:\ntri(2) = 1 + (2 / 2) = 2\ntri(4) = 3\ntri(3) = tri(2) + tri(1) + tri(4)\n       = 2 + 3 + 3 = 8\nYou are given a non-negative integer number n, you have to a return a list of the\nfirst n + 1 numbers of the Tribonacci sequence.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 List Int)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Int) :=\n  0 < result.length \u2227\n  result.length = n \u2227\n  let i := result.length-1;\n  (i = 0 \u2192 result[0]! = 1) \u2227 -- base case\n  (i = 1 \u2192 result[1]! = 3) \u2227\n  (2 \u2264 i \u2227 i % 2 = 0 \u2192 result[i]! = 1 + i / 2) \u2227\n  (2 \u2264 i \u2227 i % 2 = 1 \u2192 result[i]! = result[i-2]! + result[i-1]! + (1 + (i+1) / 2)) \u2227\n  if i = 0 then true else result.take i = impl (i-1)\n-- program termination\n\u2203 result, impl n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : List Int:=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 = [1, 3, 2, 8]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 130,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0d111467e4e7f49245e2b7562a4a55618547591d765ba84867278399062ce9bb",
+  "timing": 109.60575826000422,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4i4dv2f9/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:6e39256c09c5a9d220e2fe269c025f080f4730663088d445cba39a56af512a87",
+    "status": "OK",
+    "result": "sha256:a201d872b488da225252d496442c84747c256d2e4ede5c8beda31444a9852847"
+  },
+  "exception": null
+}

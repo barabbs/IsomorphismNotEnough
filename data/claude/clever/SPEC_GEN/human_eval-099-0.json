@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef closest_integer(s : String) -> Option Int\n\"\"\"Create a function that takes a value (string) representing a number\nand returns the closest integer to it. If the number is equidistant\nfrom two integers, round it away from zero.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Option Int)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 99,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ab4681c207d000664832b967d157beb44047441ce11104f34e0868fd28ab7a53",
+  "timing": 186.54623559099855,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/53qx6rz7/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d22d0c67bce1d7bcc56e6d1720f1e52474f860f15ca5a8996dc8ee83f58b9849",
+    "status": "OK",
+    "result": "sha256:1b072337a24d0117339a87355e77efd6825b7812023b44035b5c7b015f405ff1"
+  },
+  "exception": null
+}

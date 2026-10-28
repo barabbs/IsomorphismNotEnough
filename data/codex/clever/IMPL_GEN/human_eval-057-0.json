@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef monotonic(numbers: List[int]) -> bool\n\"\"\"Return True if list elements are monotonically increasing or decreasing.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Bool)\n-- inputs\n(numbers: List Int) :=\nlet non_ordered := ∃ i j,\ni < numbers.length - 1 ∧\nj < numbers.length - 1 ∧\n(numbers[i]! < numbers[i+1]!) ∧\n(numbers[j+1]! < numbers[j]!);\n-- spec\nlet spec (result: Bool) :=\n  (1 < numbers.length) →\n  (result ↔ ¬non_ordered);\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 4, 20] = true\n-- #test implementation [1, 20, 4, 10] = false\n-- #test implementation [4, 1, 0, -10] = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 57,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5c395268932c07f2d78029a784377eec200b82549ae8a550f79427ee2485f835",
+  "timing": 93.43187979096547,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:c38f8d1f812e26eb5dc07fa48ff297beaae694bc1549c541f2d7de43d40c37e5",
+    "status": "OK",
+    "result": "sha256:b8f9d40576fa3787c21bdddceae88c2bbfa0a1c9f35f04451592605ddbea2ba1"
+  },
+  "exception": null
+}

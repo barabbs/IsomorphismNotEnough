@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef cycpattern_check(a: str, b: str) -> bool\n\"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word, else False\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(a b: String) :=\n-- spec\nlet spec (result: Bool) :=\n(b.length = 0 → result) ∧\n(0 < b.length →\nresult ↔ ((b.length ≤ a.length) ∧\n  (∃ i : Nat, i < b.length ∧\n  let b_rotation := b.drop i ++ b.take i;\n  a.containsSubstr b_rotation)));\n-- program terminates\n∃ result, impl a b = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: String) : Bool :=\n\nif b.length = 0 then true\nelse\n  let bLen := b.length\n  (List.range bLen).any fun i =>\n    let rotation := b.drop i ++ b.take i\n    a.containsSubstr rotation\n\n\n-- [TEST_CASES]\n\n#test implementation \"abcd\" \"abd\" = False\n#test implementation \"hello\" \"ell\" = True\n#test implementation \"whassup\" \"psus\" = False\n#test implementation \"abab\" \"baa\" = True\n#test implementation \"efef\" \"eeff\" = False\n#test implementation \"himenss\" \"simen\" = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: String)\n: problem_spec implementation a b :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 154,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a44a931591aa6b93e65915aaa73688576bf8cb111d517941b4e804442765a804",
+  "timing": 1720.9888575309888,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:10fa57a4833df31c1e0e053fdab8449976a1c48fefc9a26ca95ddaea06571c66",
+    "status": "ISSUE",
+    "result": "sha256:ca6009ae72bc1b2d84c4c1b3e4a74dd133fabb481ecacc2bd06ffa24e25d1ee3",
+    "validation": [
+      {
+        "problem_id": "154",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:9628ae5b9753d8ae98191470d06f5d0564848410713b6e5aceacf154d837b516"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "PREC"
+  },
+  "exception": null
+}

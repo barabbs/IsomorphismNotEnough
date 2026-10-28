@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib4(n: int)\n\"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfib4(0) -> 0\nfib4(1) -> 0\nfib4(2) -> 2\nfib4(3) -> 0\nfib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\nPlease write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_4 : ℕ → ℕ → Prop\n| base0 : fibonacci_non_computable_4 0 0\n| base1 : fibonacci_non_computable_4 1 0\n| base2 : fibonacci_non_computable_4 2 2\n| base3 : fibonacci_non_computable_4 3 0\n| step : ∀ n f₁ f₂ f₃ f₄, fibonacci_non_computable_4 n f₁ →\nfibonacci_non_computable_4 (n + 1) f₂ →\nfibonacci_non_computable_4 (n + 2) f₃ →\nfibonacci_non_computable_4 (n + 3) f₄ →\nfibonacci_non_computable_4 (n + 4) (f₁ + f₂ + f₃ + f₄)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nfibonacci_non_computable_4 n result\n-- program terminates\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  if n = 0 then 0\n  else if n = 1 then 0\n  else if n = 2 then 2\n  else if n = 3 then 0\n  else\n    let result := Nat.repeat (fun p : Nat × Nat × Nat × Nat =>\n      let (a, b, c, d) := p\n      (b, c, d, a + b + c + d)\n    ) (n - 3) (0, 0, 2, 0)\n    result.2.2.2\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = 4\n#test implementation 6 = 8\n#test implementation 7 = 14\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 46,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ae867c3cea4cd673a89d7aa435e6707f031c9845144af1a2def66da13c138cab",
+  "timing": 1032.655528187286,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:a140e07888217d158533c949ca2d4edcb29003c8af8e2000c767e8d80eb0d7ef",
+    "status": "OK",
+    "result": "sha256:ad0e0dbc90dfe7ca533ec64e4d47987b8297995e0f157e33e96dcb79803d4405",
+    "validation": [
+      {
+        "problem_id": "46",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:a381be3939df8959f899aa29a54fee60d5e8d4a1158fd1b0b81008e5b4c8f6a5"
+      }
+    ]
+  },
+  "exception": null
+}

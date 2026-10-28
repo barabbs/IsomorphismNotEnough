@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib4(n: int)\n\"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfib4(0) -> 0\nfib4(1) -> 0\nfib4(2) -> 2\nfib4(3) -> 0\nfib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\nPlease write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_4 : ℕ → ℕ → Prop\n| base0 : fibonacci_non_computable_4 0 0\n| base1 : fibonacci_non_computable_4 1 0\n| base2 : fibonacci_non_computable_4 2 2\n| base3 : fibonacci_non_computable_4 3 0\n| step : ∀ n f₁ f₂ f₃ f₄, fibonacci_non_computable_4 n f₁ →\nfibonacci_non_computable_4 (n + 1) f₂ →\nfibonacci_non_computable_4 (n + 2) f₃ →\nfibonacci_non_computable_4 (n + 3) f₄ →\nfibonacci_non_computable_4 (n + 4) (f₁ + f₂ + f₃ + f₄)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nfibonacci_non_computable_4 n result\n-- program terminates\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = 4\n-- #test implementation 6 = 8\n-- #test implementation 7 = 14\n",
+  "info": {
+    "dataset": "clever",
+    "id": 46,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2084a7735f5fd96f06f6fc1e0bed89003d79f2b8e67b8ca48041cb7c50df0fc2",
+  "timing": 107.01352962758392,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:15496b3a457773efb7d7bb0f24ed76b0f5dc567a84e5b9e3c7b02e8a083e2c5d",
+    "status": "OK",
+    "result": "sha256:8638a179a15b72997ec49684a70b7465864c0954be7017bf6abdcc66e2bb9b2c"
+  },
+  "exception": null
+}

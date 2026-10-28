@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_palindrome(n: nat) -> (nat, nat)\n\"\"\"Given a positive integer n, return a tuple that has the number of even and odd\ninteger palindromes that fall within the range(1, n), inclusive.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat × Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat × Nat) :=\n  let is_palindrome (k: Nat): Prop :=\n    List.Palindrome (Nat.digits 10 k);\n  let even_palindrome (k: Nat): Prop :=\n    (Even k) ∧ (is_palindrome k);\n  let odd_palindrome (k: Nat): Prop :=\n    (Odd k) ∧ (is_palindrome k);\n  n > 0 →\n  (1 < n →\n    let impl_n_minus_1 := implementation (n - 1);\n    ((even_palindrome n) → result.1 = 1 + impl_n_minus_1.1) ∧\n    ((odd_palindrome n) → result.2 = 1 + impl_n_minus_1.2) ∧\n    (¬ (odd_palindrome n) → result.2 = impl_n_minus_1.2) ∧\n    (¬ (even_palindrome n) → result.1 = impl_n_minus_1.1))\n  ∧\n  (n = 1 → (result.1 = 0) ∧ (result.2 = 1));\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat × Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 123 = (8, 13)\n-- #test implementation 12 = (4, 6)\n-- #test implementation 3 = (1, 2)\n-- #test implementation 63 = (6, 8)\n-- #test implementation 25 = (5, 6)\n-- #test implementation 19 = (4, 6)\n-- #test implementation 9 = (4, 5)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 107,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:13e367930070a9c250894e3c83f1b1acc670aad1d3b3ce1bdb87141d0c597152",
+  "timing": 139.62462802510709,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:c499a47c7f2e34ce49fc51c38c6d94f5a829e1e6c20a5675702e421eb87501b7",
+    "status": "OK",
+    "result": "sha256:efc0201560a71bfdbf04b9b784049231d9337e310b8994d94e8a3e82e1c07de6"
+  },
+  "exception": null
+}

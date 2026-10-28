@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]\n\"\"\"From a supplied list of numbers (of length at least two) select and return two that are the closest to each\nother and return them in order (smaller number, larger number).\n\n>>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n(2.0, 2.2)\n>>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n(2.0, 2.0)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Rat \u2192 (Rat \u00d7 Rat))\n-- inputs\n(numbers: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.2] = (2.0, 2.2)\n-- #test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.0] = (2.0, 2.0)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 20,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:112809432127be738b93e74727c46e882cdff234b26e4745230bbfe5993ef9f5",
+  "timing": 93.0021980069996,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/90tlk63q/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:aabd0836080aa391b920abc092207e0e2676540ea5d0e619875b24ad5f2955e0",
+    "status": "OK",
+    "result": "sha256:e646932d6b27532cc92d953bdfbf6254a35b3b7b27743bc8ac9d60e7b14e9d83"
+  },
+  "exception": null
+}

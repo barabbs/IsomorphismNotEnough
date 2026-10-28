@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encrypt(str : str) -> str\n\"\"\"Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated.\nThe alphabet should be rotated in a manner such that the letters\nshift down by two multiplied to two places.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(str: String) :=\n-- spec\nlet spec (result : String) :=\n  result.data.all (fun c => c.isLower) →\n  result.length = str.length ∧\n  (∀ i, i < str.length →\n    let c := str.data[i]!\n    let c' := result.data[i]!\n    ((c'.toNat - 97) + 2 * 2) % 26 = (c.toNat - 97))\n-- program termination\n∃ result,\n  implementation str = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (str: String) : String :=\n\n⟨str.data.map (fun c =>\n  if c.isLower then\n    Char.ofNat (((c.toNat - 97 + 4) % 26) + 97)\n  else if c.isUpper then\n    Char.ofNat (((c.toNat - 65 + 4) % 26) + 65)\n  else c)⟩\n\n\n-- [TEST_CASES]\n\n#test implementation \"hi\" = \"lm\"\n#test implementation \"asdfghjkl\" = \"ewhjklnop\"\n#test implementation \"gf\" = \"kj\"\n#test implementation \"et\" = \"ix\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(str: String)\n: problem_spec implementation str\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 89,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e4438e3fb6aa31233bedf6349b568f687cc529b58b05e323e1f1bc71670affb0",
+  "timing": 290.28999128800933,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/udcoy2h7/problem.lean --deep=stuck",
+    "claude": "sha256:1a67f47c555aa45da5f2c3c45122058b6e658f09aef1fdcd2ad679e413b60c02",
+    "status": "ISSUE",
+    "result": "sha256:4118e7c37cc4a932e8517338530a207b08577bf85b5d75c592a19bfd7d4924f0",
+    "validation": [
+      {
+        "problem_id": "89",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:89761c674938403f87eab91565004639ba576c3ae1599722d4e9f3ac873f6196"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "WRONG"
+  },
+  "exception": null
+}

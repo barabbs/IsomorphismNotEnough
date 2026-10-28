@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_positive(l: list)\n\"\"\"Return only positive numbers in the list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.all (λ x => x > 0 ∧ x ∈ numbers) ∧\n  numbers.all (λ x => x > 0 → x ∈ result) ∧\n  result.all (λ x => result.count x = numbers.count x);\n-- program termination\n∃ result,\n  implementation numbers = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int): List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [(-1), 2, (-4), 5, 6] = [2, 5, 6]\n-- #test implementation [5, 3, (-5), 2, (-3), 3, 9, 0, 123, 1, (-10)] = [5, 3, 2, 3, 9, 123, 1]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 30,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7d7f4b16d7987d16d1d6e275856d32d571f4a635245a43e22a2818ea016e7e77",
+  "timing": 88.57886088686064,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:844f702715cbfc33e232991d2e2c7e84ac74d42be8b6ce617e7e2c0d382ea13b",
+    "status": "OK",
+    "result": "sha256:14d87d0e887b662011581c50b11ce43674165f993b1be5b1cfb8b0be8764e8ac"
+  },
+  "exception": null
+}

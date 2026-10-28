@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_a_pile(n: int) -> List[int]\n\"\"\"Given a positive integer n, you have to make a pile of n levels of stones.\nThe first level has n stones.\nThe number of stones in the next level is:\n  - the next odd number if n is odd.\n  - the next even number if n is even.\nReturn the number of stones in each level in a list, where element at index\ni represents the number of stones in the level (i+1).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 List Int)\n-- inputs\n(n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 100,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e31cf5871f12e85296e1892e238390d578daf7bb99f92cb1a4c6116e53ecbedf",
+  "timing": 65.05406799699995,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ndcb7sz0/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e6b8a52a0b8b11c70bd0c55d6c03ab295af8cb10cb3658a53ad73ebdf550a56a",
+    "status": "OK",
+    "result": "sha256:54abc436898c116ccc6db556356f87de1d04ea45805dd688d19fb55b7893f81f"
+  },
+  "exception": null
+}

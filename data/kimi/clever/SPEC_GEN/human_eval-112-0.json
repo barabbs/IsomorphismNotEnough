@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef reverse_delete(s : str, c : str) -> (str, bool)\n\"\"\"We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\nthen check if the result string is palindrome.\nA string is called palindrome if it reads the same backward as forward.\nYou should return a tuple containing the result string and True/False for the check.\n-- Note: We assume the deletions preserve the order of the remaining characters.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String → (String × Bool))\n-- inputs\n(s: String)\n(c: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 112,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1d9e756eb8dd7f408808b116a7038463b8f1589ab96add6f2e2124483438745c",
+  "timing": 203.46493321470916,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:8a771a82ab04f559be2148341616097e751231f6e7aee42d8c9444a0d927710e",
+    "status": "OK",
+    "result": "sha256:38772fa171207e3c861d86ba6f9654af5ef71d8e0b32619e0468062a71da8fe6"
+  },
+  "exception": null
+}

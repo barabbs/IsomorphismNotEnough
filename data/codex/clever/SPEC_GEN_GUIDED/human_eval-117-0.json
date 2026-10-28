@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef select_words(s : str, n : int) -> list[str]\n\"\"\"Given a string s and a natural number n, you have been tasked to implement\na function that returns a list of all words from string s that contain exactly\nn consonants, in order these words appear in the string s.\nIf the string s is empty then the function should return an empty list.\nNote: you may assume the input string contains only letters and spaces.\n\n>>> select_words('Mary had a little lamb', 4)\n['little']\n>>> select_words('Mary had a little lamb', 3)\n['Mary', 'lamb']\n>>> select_words('simple white space', 2)\n[]\n>>> select_words('Hello world', 4)\n['world']\n>>> select_words('Uncle sam', 3)\n['Uncle']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Nat → List String)\n-- inputs\n(s: String)\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Mary had a little lamb\" 4 = [\"little\"]\n-- #test implementation \"Mary had a little lamb\" 3 = [\"Mary\", \"lamb\"]\n-- #test implementation \"simple white space\" 2 = []\n-- #test implementation \"Hello world\" 4 = [\"world\"]\n-- #test implementation \"Uncle sam\" 3 = [\"Uncle\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 117,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:e31a360a2fae3efcfee81171e3e6457396c705d2bf349d011ec4838dd0527bc7",
+  "timing": 153.69538708077744,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:5dd1bb10178dcb3bfb537475699b460cf9080352361146f248157ad6fdc96621",
+    "status": "OK",
+    "result": "sha256:29b7ab3aa617d1ebcc32206dbdfe635e99d21cbc7a398e8fbbd58d2f13372d9d"
+  },
+  "exception": null
+}

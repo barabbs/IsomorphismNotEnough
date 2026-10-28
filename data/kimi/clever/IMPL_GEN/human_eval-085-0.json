@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: list[int]) -> int\n\"\"\"Given a non-empty list of integers lst, add the even elements that are at odd indices.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  lst.length = 0 → result = 0 ∧\n  lst.length > 0 →\n    if lst.length > 1 then\n      result = (if Even lst[1]! then lst[1]! else 0) + implementation (lst.drop 2)\n    else\n      result = (if Even lst[1]! then lst[1]! else 0)\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [4, 2, 6, 7] = 2\n",
+  "info": {
+    "dataset": "clever",
+    "id": 85,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4251218276db1b3774105df3515f6e5d369f35996b60cfc5eba158f1d682fee6",
+  "timing": 50.41661727614701,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:8f7252aea8617e8ae7b2a39d75b00cc4e8ef22d67ff6bc5873e897e87156c5d6",
+    "status": "OK",
+    "result": "sha256:81858254d89d955b73e07d37505c2a628c2adccbf6c930c28ec41713b5691c23"
+  },
+  "exception": null
+}

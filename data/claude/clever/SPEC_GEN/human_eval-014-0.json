@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef all_prefixes(string: str) -> List[str]\n\"\"\"Return list of all prefixes from shortest to longest of the input string\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 List String)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 14,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:10a50885814f7b269766870eee763be37be9b89a10f178af7686c38dedb15afc",
+  "timing": 83.70362114899035,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/c9cj1a80/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:bdbcba76f2d19ce6eba00a33277a791090272a1d1be0f025666de55ecb3f0ef6",
+    "status": "OK",
+    "result": "sha256:4421b7287fed690b6811428c89570346c7080dd09c0745ff81d58d2acd57a30a"
+  },
+  "exception": null
+}

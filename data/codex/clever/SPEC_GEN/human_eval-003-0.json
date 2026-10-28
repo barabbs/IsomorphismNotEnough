@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_zero(operations: List[int]) -> bool\n\"\"\"You're given a list of deposit and withdrawal operations on a bank account that starts with\nzero balance. Your task is to detect if at any point the balance of account fallls below zero, and\nat that point function should return True. Otherwise it should return False.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(operations: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 3,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8850eef40577e8a69930c696d8a769279f5c3f288ec48a2dc718f5c39c260856",
+  "timing": 85.85529070813209,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:35d3dd0eb64c0684a0acc9dce5667ed510e8a492c0283a202d1b5a938c89ad43",
+    "status": "OK",
+    "result": "sha256:35aa274991a4d05d5cdc182e711c234e0d38db1313e5e945d27814247f2f26fd"
+  },
+  "exception": null
+}

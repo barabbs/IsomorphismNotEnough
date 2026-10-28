@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → Nat)\n-- inputs\n(n p: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n0 < p ∧\nresult < p ∧\n(∃ k : Nat, p * k + result = Nat.pow 2 n)\n-- program termination\n∃ result, implementation n p = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n p: Nat) : Nat :=\n\n2 ^ n % p\n\n\n-- [TEST_CASES]\n\n#test implementation 3 5 = 3\n#test implementation 1101 101 = 2\n#test implementation 0 101 = 1\n#test implementation 3 11 = 8\n#test implementation 100 101 = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n p: Nat)\n: problem_spec implementation n p\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:93ae58d30ba8d1f223d81158e941c196c0d1aeaeaf8b74fbca4341009d8fb208",
+  "timing": 5540.140163750853,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:1f76e5503cd43a39b698c149a9e2635ff2b75233c09fd9055e6d33ad562e0fcd",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:a0791322bb79eec3ce5fd282762c8e48a9e24a84540858efc429740e6bfa0aac",
+    "validation": [
+      {
+        "problem_id": "49",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:f768778170bfdfb342a4bfd2b92c21092fd8c754280ee4745793a1c654b49f1d",
+        "lean_code": "sha256:8b2f4818575f2a03046ddc5aadf9c788f00a6e159b02ae60a1a3015c90c3d490"
+      }
+    ]
+  },
+  "exception": null
+}

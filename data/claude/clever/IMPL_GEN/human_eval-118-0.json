@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_closest_vowel(s : str) -> str\n\"\"\"You are given a word. Your task is to find the closest vowel that stands between\ntwo consonants from the right side of the word (case sensitive).\n\nVowels in the beginning and ending doesn't count. Return empty string if you didn't\nfind any vowel met the above condition.\n\nYou may assume that the given string contains English letter only.\nNote: The \"closest\" is interpreted as the closest to the end of the word, not the closest to the consonants.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (fun c => c.isAlpha) \u2192\n  let is_consonant (c: Char) :=\n    c \u2209 ['a', 'e', 'i', 'o', 'u'] \u2227\n    c \u2209 ['A', 'E', 'I', 'O', 'U'] \u2227\n    c.isAlpha\n  (result = \"\" \u2192 \u00ac \u2203 (i j k : Nat), i < j \u2227 j < k \u2227 k < s.length \u2227 is_consonant s.data[i]! \u2227 \u00ac is_consonant s.data[j]! \u2227 is_consonant s.data[k]!) \u2227\n  (result \u2260 \"\" \u2192\n    result.length = 1 \u2227\n    result.data[0]! \u2208 s.data \u2227\n    \u00ac is_consonant result.data[0]! \u2227\n    \u2203 (i j k : Nat),\n      i < j \u2227 j < k \u2227 k < s.length \u2227\n      is_consonant s.data[i]! \u2227 \u00ac is_consonant s.data[j]! \u2227 is_consonant s.data[k]! \u2227\n      result.data[0]! = s.data[j]! \u2227\n      (\u2200 (i' j' k' : Nat),\n        i' < j' \u2227 j' < k' \u2227 k' < s.length \u2227 is_consonant s.data[i']! \u2227 \u00ac is_consonant s.data[j']! \u2227 is_consonant s.data[k']! \u2192\n        j' \u2264 j)\n  )\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"yogurt\" = \"u\"\n-- #test implementation \"FULL\" = \"U\"\n-- #test implementation \"quick\" = \"i\"\n-- #test implementation \"ab\" = \"\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 118,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:48b0e1cda3431f2d2243d5744e62fc24e91ac90ae954a70c010b1f5c1fb96b0a",
+  "timing": 156.2608191279869,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/y4okhjve/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:e6ae8992c7dbf20fdd5472bde3c86447821b972ef055acc7dba4c61b72543999",
+    "status": "OK",
+    "result": "sha256:500722d3fb7cfd4d3fc809dd992727d62e501bbabe2f01422198684fcce20b05"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef by_length(arr: List[int]) -> List[str]\n\"\"\"Given an array of integers, sort the integers that are between 1 and 9 inclusive,\nreverse the resulting array, and then replace each digit by its corresponding name from\n\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List String)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: List String) :=\n  let digits: List String := [\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\"];\n  (forall s: String, (s ∈ result → s ∈ digits)) ∧\n  (arr.length ≥ result.length) ∧\n  (forall x: Nat, ((x: Int) ∈ arr ∧ 1 ≤ x ∧ x ≤ 9) → (digits[x-1]! ∈ result)) ∧\n  (List.Sorted Int.le (List.map (fun (s: String) => (List.idxOf s digits) + 1) result).reverse)\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : List String :=\n\n  let digits : List String := [\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\"]\n  let filtered : List Int := arr.filter (fun x => 1 ≤ x ∧ x ≤ 9)\n  let sorted : List Int := filtered.mergeSort (fun a b => a ≤ b)\n  let reversed : List Int := sorted.reverse\n  reversed.map (fun x => digits[(x - 1).toNat]!)\n\n\n-- [TEST_CASES]\n\n#test implementation [2, 1, 1, 4, 5, 8, 2, 3] = [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n#test implementation [] = []\n#test implementation [1, -1 , 55] = [\"One\"]\n#test implementation [1, -1, 3, 2] = [\"Three\", \"Two\", \"One\"]\n#test implementation [9, 4, 8] = [\"Nine\", \"Eight\", \"Four\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 105,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b6050a364c4fb669ab169890973c61904e7a7def1ee27b4efb828be61bb9a624",
+  "timing": 8327.172341111116,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:44d830c8e9819d8cb32502e5a845e3c1c8d200d3c5936e2ac863153f4e3d335f",
+    "status": "FAIL",
+    "result": "sha256:12c82ad0f6419066a7958741206f53be66b299e86f0e93c4e72bb3adf300c01e",
+    "validation": [
+      {
+        "problem_id": "105",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:0bbaa3763e928c642d8aef1616e72f1fad24be539fbec03db7f645eb906c8078",
+        "lean_code": "sha256:389f0cab121583dbf20b5311c025cb3e9021c87619958712440dd6ae46832100"
+      }
+    ]
+  },
+  "exception": null
+}

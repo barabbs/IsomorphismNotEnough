@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef any_int(a: float, b: float, c: float) -> bool\n\"\"\"Create a function that takes 3 numbers.\nReturns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\nReturns false in any other cases.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat → Rat → Bool)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) :=\n-- spec\nlet spec (result : Bool) :=\n  let nums := [a, b, c];\n  result = true ↔ ∃ i j k : ℕ, {i, j, k} ⊆ ({0, 1, 2} : Set ℕ) ∧ i ≠ j ∧ j ≠ k ∧ k ≠ i ∧ (nums[i]! + nums[j]! = nums[k]!) ∧ a.den = 1 ∧ a.den = b.den ∧ a.den = c.den\n-- program termination\n∃ result,\n  implementation a b c = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Rat) (b: Rat) (c: Rat) : Bool :=\n\na.den == 1 && b.den == 1 && c.den == 1 && (a + b == c || a + c == b || b + c == a)\n\n\n-- [TEST_CASES]\n\n#test implementation 5 2 7 = true\n#test implementation 3 2 2 = false\n#test implementation 3 (-2) 1 = true\n#test implementation 3.6 (-2.2) 2 = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Rat) (b: Rat) (c: Rat)\n: problem_spec implementation a b c\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 92,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6c69a0999b54f20bc63f3663fbf168db791f5acf4020e823627868d3542bb189",
+  "timing": 11196.966535282787,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:cb6d4930c845c52964867aa0883a9700d6bd6c530b6ce533994b4847469171c5",
+    "status": "OK",
+    "result": "sha256:252948210fcff543371a6081adce81bbc408c643ee9507e05d846aa94000e0c0",
+    "validation": [
+      {
+        "problem_id": "92",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:223c8d8f983f65947b02acf366048685e2741210f366e4c93a6ba716fa58bd61"
+      }
+    ]
+  },
+  "exception": null
+}

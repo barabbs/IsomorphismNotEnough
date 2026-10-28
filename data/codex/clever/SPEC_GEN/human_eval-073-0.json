@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef smallest_change(arr: List[int]) -> int\n\"\"\"Given an array arr of integers, find the minimum number of elements that\nneed to be changed to make the array palindromic. A palindromic array is an array that\nis read the same backwards and forwards. In one change, you can change one element to any other element.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 73,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e2f368ecd353959df982485200268d6f9b3514025247cf99b9fe214e1e66b2ca",
+  "timing": 109.77948063006625,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:79d0f7665a416d6e26215c27521e762223c98695116d4d00354c6ec5923bed41",
+    "status": "OK",
+    "result": "sha256:069e1bf7d915d97f0136c2ce6eb832389dfb7a04e83e1dc0d1c66d239b7ef388"
+  },
+  "exception": null
+}

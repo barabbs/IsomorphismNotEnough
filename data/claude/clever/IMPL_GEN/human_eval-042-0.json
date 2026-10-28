@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef incr_list(numbers: List[Int]) -> List[Int]\n\"\"\"incr_list takes a list of integers as input and returns a new list\nwhere each element is incremented by 1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (result.length = numbers.length) \u2227\n  \u2200 i, i < numbers.length \u2192\n  result[i]! = numbers[i]! + 1\n-- -- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n-- \n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = [2, 3, 4]\n-- #test implementation [5, 3, 5, 2, 3, 3, 9, 0, 123] = [6, 4, 6, 3, 4, 4, 10, 1, 124]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 42,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bffe11b069cf293dc4b8e74ab265c05dfd89d4e100ef10d58b3c9d3c4312c3a6",
+  "timing": 60.18766486499226,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/kvu602oi/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:03e8bcacc5aaeb9e598656c172937b17a4dfdbe761084bbd90cda4468cb7a32b",
+    "status": "OK",
+    "result": "sha256:c2475d26ad58a94f42d81139228b8cef0542ac84bdd867037b8566c6a748ae92"
+  },
+  "exception": null
+}

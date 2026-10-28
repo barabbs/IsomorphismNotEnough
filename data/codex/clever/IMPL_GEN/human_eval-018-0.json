@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef how_many_times(string: str, substring: str) -> int\n\"\"\"Find how many times a given substring can be found in the original string. Count overlaping cases.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String → Nat)\n-- inputs\n(string substring: String) :=\n-- spec\nlet spec (result: Nat) :=\n(substring.length = 0 → result = string.length)\n∧\n(substring.length ≠ 0 →\n(string.length < substring.length → result = 0)\n∧\n(string.length = substring.length →\n((string = substring ↔ result = 1) ∧\n(substring ≠ string ↔ result = 0)))\n∧\n(substring.length < string.length  →\nlet substring_start_idx := {i: Nat | i < string.length - substring.length + 1};\nlet substring_occurrences := {i ∈ substring_start_idx | (string.drop i).take substring.length = substring };\nresult = substring_occurrences.toFinset.card));\n-- program termination\n∃ result, implementation string substring = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) (substring: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"aaa\" \"a\" = 3\n-- #test implementation \"aaaa\" \"aa\" = 3\n-- #test implementation \"\" \"a\" = 0\n-- #test implementation \"a\" \"\" = 1\n-- #test implementation \"a\" \"a\" = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 18,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1941e8883760a850b3963cb71f95745effa33bb45fc4d526fc6a7d6d8e57974f",
+  "timing": 88.72090085502714,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:5c53ba81ef1216c731d1e79b2c32102b425fd0b46a60810fd00bd2178a3a9a79",
+    "status": "OK",
+    "result": "sha256:5069be680d9b1d37909330a74efcf9cfa77fd9154c9ae061e8e5ffa9f8d5c9b8"
+  },
+  "exception": null
+}

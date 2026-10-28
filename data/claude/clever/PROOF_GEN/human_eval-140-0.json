@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fix_spaces(text: str) -> str\n\"\"\"Given a string text, replace all spaces in it with underscores,\nand if a string has more than 2 consecutive spaces,\nthen replace all consecutive spaces with -\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(text: String) :=\n-- spec\nlet spec (result: String) :=\n  (result = \"\" \u2192 text = \"\") \u2227\n  (result \u2260 \"\" \u2192 (\n    (\u2203 pref s, text = pref ++ s\n      \u2227 pref.length = 1\n      \u2227 pref \u2260 \" \"\n      \u2227 result = pref ++ impl s)\n    \u2228\n    (\u2203 pref s : String, text = pref ++ s \u2227 pref \u2260 \"\" \u2227 (\u2200 ch, ch \u2208 pref.toList \u2192 ch = ' ')\n      \u2227 let k := pref.length;\n        (k \u2264 2 \u2192 result = (String.replicate k '_') ++ (impl (text.drop k)))\n      \u2227 (2 < k \u2192 result = \"-\" ++ (impl (text.drop k)))) )\n  )\n-- program termination\n\u2203 result, impl text = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (text: String) : String :=\n\n  let rec go (chars : List Char) (spaceCount : Nat) : String :=\n    match chars with\n    | [] =>\n      if spaceCount == 0 then \"\"\n      else if spaceCount \u2264 2 then String.replicate spaceCount '_'\n      else \"-\"\n    | c :: rest =>\n      if c == ' ' then\n        go rest (spaceCount + 1)\n      else\n        (if spaceCount == 0 then \"\"\n         else if spaceCount \u2264 2 then String.replicate spaceCount '_'\n         else \"-\") ++ c.toString ++ go rest 0\n  go text.toList 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"Example\" = \"Example\"\n#test implementation \"Example 1\" = \"Example_1\"\n#test implementation \" Example 2\" = \"_Example_2\"\n#test implementation \" Example   3\" = \"_Example-3\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(text: String)\n: problem_spec implementation text :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 140,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fa5e638970929ca09e69ad3400315c5138cad29191db802b5836a13e3462a7c6",
+  "timing": 2076.013452313957,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:b106d6d9e7ba4d926f154f145e353d55df0f28c3742ca21bb1f2cec38e02b7ba",
+    "status": "OK",
+    "result": "sha256:67b48664b96b97777bc31b4be34f2c73cf9e6ddb7841f2bc0aa9c7fe4d2f6379",
+    "validation": [
+      {
+        "problem_id": "140",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:74ab332820a5952357b8c195cbdb85e08b29adedb692cd82fb7ffe79cd732bee"
+      }
+    ]
+  },
+  "exception": null
+}

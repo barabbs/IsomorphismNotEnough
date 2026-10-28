@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef circular_shift(x: int, shift: int) -> str\n\"\"\"Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → String)\n-- inputs\n(x shift: Nat) :=\nlet isReverse (s: String) : Bool :=\n  let n := s.length;\n  ∀ i, i < n / 2 → s.get! ⟨i⟩ = s.get! ⟨n - 1 - i⟩;\n-- spec\nlet spec (result: String) :=\nlet x_str := Nat.repr x;\nresult.length = x_str.length ∧\n(x_str.length < shift → isReverse x_str) ∧\n(shift ≤ x_str.length →\n  x_str.take shift = result.drop (x_str.length - shift) ∧\n  x_str.drop shift = result.take (x_str.length - shift));\n-- program termination\n∃ result, implementation x shift = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x shift: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 12 1 = \"21\"\n-- #test implementation 12 2 = \"12\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 65,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bcf24f75fadf4cde2219b9f9d648fc8a7a734fd8aa5f887b1fd46b9cafca94c7",
+  "timing": 138.914958124049,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:fa82df974b53f72dcd8b8357ca715d933b3ef7a0e4767e8fca9809300f69209f",
+    "status": "OK",
+    "result": "sha256:365ae1632f533b2411100091264ec598cdc9800f13921daf39766c97b366a065"
+  },
+  "exception": null
+}

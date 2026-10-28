@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add(x: int, y: int) -> int\n\"\"\"Add two numbers x and y\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int \u2192 Int \u2192 Int)\n-- inputs\n(x y: Int) :=\n-- spec\nlet spec (res: Int) :=\n  res - x - y = 0\n-- program terminates\n\u2203 result, impl x y = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x y: Int) : Int :=\n\nx + y\n\n\n-- [TEST_CASES]\n\n#test implementation 2 3 = 5\n#test implementation 5 7 = 12\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x y: Int)\n: problem_spec implementation x y  :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 53,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1ba6246ca76983e54ec509a01c7d71a1b2cc28e5f9ed516ed1f7d9fc9fbff4ce",
+  "timing": 81.8644270079676,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:2786e0abe97c68baf5dbd5a6492c4d89d73eddba83c8ebfd495b4c3dbda774ec",
+    "status": "OK",
+    "result": "sha256:f02a5d04559a011d9f9fc4959675bded605bf839414748fe849a929ba51c2c83",
+    "validation": [
+      {
+        "problem_id": "53",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:39507179320d36ba74b290968e10564116b87f9bdf4b8aed7e28eb60808f3987"
+      }
+    ]
+  },
+  "exception": null
+}

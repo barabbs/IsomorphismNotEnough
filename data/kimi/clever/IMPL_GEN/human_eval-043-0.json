@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef pairs_sum_to_zero(numbers: List[int]) -> bool\n\"\"\"pairs_sum_to_zero takes a list of integers as an input.\nit returns True if there are two distinct elements in the list that\nsum to zero, and False otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Bool)\n-- inputs\n(numbers: List Int) :=\nlet sum_i_j (i j: Nat) : Bool :=\n  numbers[i]! + numbers[j]! = 0;\nlet exists_zero := 2 ≤ numbers.length ∧ (∃ i j, i ≠ j ∧\n i < numbers.length ∧ j < numbers.length ∧\n sum_i_j i j)\n-- spec\nlet spec (result: Bool) :=\nresult ↔ exists_zero\n-- -- program termination\n∃ result, implementation numbers = result ∧\nspec result\n-- \n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 3, 5, 0] = false\n-- #test implementation [1, 3, -2, 1] = false\n-- #test implementation [1, 2, 3, 7] = false\n-- #test implementation [2, 4, -5, 3, 5, 7] = true\n-- #test implementation [1] = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 43,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9eb80a72b5b15d8a1e2505a797268e287f6e6c4dbcb89b91c2c4393061d0492c",
+  "timing": 69.21851813793182,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:76b0d0253f17976ee6375a30861ce1757ddbb35edfa622496be6bab69e1144a1",
+    "status": "OK",
+    "result": "sha256:5711572398b94e3738235d8f38b210a78116cd0d3d556b7f6267d4b247d609e5"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef can_arrange(arr: List[int]) -> int\n\"\"\"Create a function which returns the largest index of an element which\nis not greater than or equal to the element immediately preceding it. If\nno such element exists then return -1. The given array will not contain\nduplicate values.\n\n>>> can_arrange([1, 2, 4, 3, 5])\n3\n>>> can_arrange([1, 2, 3])\n-1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 4, 3, 5] = 3\n-- #test implementation [1, 2, 3] = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 135,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:cd1918b8d5e9d01401357d104d0d34e7923e44ce055ffdd10f47adbac6778b5c",
+  "timing": 79.09059446500032,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/dfyvgbe3/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:40259cb31f61afe7e55a308ba06d6139eeebf465540d369d0c1e25ea8b1122cf",
+    "status": "OK",
+    "result": "sha256:34d2bd9ffe145751aba47690496ef7d474b79280847bc6aadb71d4f7c38dba19"
+  },
+  "exception": null
+}

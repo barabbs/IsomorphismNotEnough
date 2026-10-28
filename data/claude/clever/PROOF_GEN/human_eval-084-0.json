@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: int) -> str\n\"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 String)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : String) :=\n  0 < n \u2192\n  result.all (fun c => c = '0' \u2228 c = '1') \u2192\n  Nat.ofDigits 2 (result.data.map (fun c => if c = '0' then 0 else 1)).reverse = (Nat.digits 10 n).sum\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : String :=\n\nString.mk (Nat.toDigits 2 ((Nat.digits 10 n).sum))\n\n\n-- [TEST_CASES]\n\n#test implementation 1000 = \"1\"\n#test implementation 150 = \"110\"\n#test implementation 147 = \"1100\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 84,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0e7765b93884d917110b70eb27be479e969c8b7b0134c092b80d8170496eba02",
+  "timing": 1487.4069556409959,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/g41ts0n6/problem.lean --deep=stuck",
+    "claude": "sha256:495a80d2d32a4247563dbd0482c574bd9d1d00cdfdef81693c5602fd91033a17",
+    "status": "OK",
+    "result": "sha256:cd71a1fe156266100d15070002edbc78322ffe354003efb762141d89aed9dd08",
+    "validation": [
+      {
+        "problem_id": "84",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:9314af65a96f7ae617f37482a4b1a4de74f1a7caafaa6e1109a349a00c95a55d"
+      }
+    ]
+  },
+  "exception": null
+}

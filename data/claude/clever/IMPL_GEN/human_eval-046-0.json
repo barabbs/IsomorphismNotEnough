@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib4(n: int)\n\"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfib4(0) -> 0\nfib4(1) -> 0\nfib4(2) -> 2\nfib4(3) -> 0\nfib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\nPlease write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_4 : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable_4 0 0\n| base1 : fibonacci_non_computable_4 1 0\n| base2 : fibonacci_non_computable_4 2 2\n| base3 : fibonacci_non_computable_4 3 0\n| step : \u2200 n f\u2081 f\u2082 f\u2083 f\u2084, fibonacci_non_computable_4 n f\u2081 \u2192\nfibonacci_non_computable_4 (n + 1) f\u2082 \u2192\nfibonacci_non_computable_4 (n + 2) f\u2083 \u2192\nfibonacci_non_computable_4 (n + 3) f\u2084 \u2192\nfibonacci_non_computable_4 (n + 4) (f\u2081 + f\u2082 + f\u2083 + f\u2084)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nfibonacci_non_computable_4 n result\n-- program terminates\n\u2203 result, impl n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = 4\n-- #test implementation 6 = 8\n-- #test implementation 7 = 14\n",
+  "info": {
+    "dataset": "clever",
+    "id": 46,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:66d01a7ce8f65a5565224b18b37af58b77050fb6a2c4dcbeef19e811d42905be",
+  "timing": 66.66742168899509,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/s50z0_gt/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:5271522c77e1b955a4bf2d8d2037c6ce00bfb1e8d05da5d9a75aa981d323f027",
+    "status": "OK",
+    "result": "sha256:12f4af976654c712132a7e95475ceb56fecc178602e64dac1dac6d8282f42fd5"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digitSum(string: str) -> nat\n\"\"\"Write a function that takes a string as input and returns the sum of the upper characters only'\nASCII codes.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\nlet isUpper (c : Char) :=\n  65 ≤ c.toNat ∧ c.toNat ≤ 90\n-- spec\nlet spec (result: Nat) :=\nif string.length = 1 then\n  result = if isUpper string.data[0]! then string.data[0]!.toNat else 0\nelse\n  result = (if isUpper string.data[0]! then string.data[0]!.toNat else 0) + implementation (string.drop 1);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = 0\n-- #test implementation \"abAB\" = 131\n-- #test implementation \"abcCd\" = 67\n-- #test implementation \"helloE\" = 69\n-- #test implementation \"woArBld\" = 131\n-- #test implementation \"aAaaaXa\" = 153\n",
+  "info": {
+    "dataset": "clever",
+    "id": 66,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5bb811f140b5462202cb7337fd90c841d8b47b5bc9a56d1c0fad78aa0f54ba97",
+  "timing": 33.852509825956076,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:5d805bd175696e9608c0f03b91740c5f58208b22e8f7060ef6414ddf4f144ac3",
+    "status": "OK",
+    "result": "sha256:d4a1d9eafa3bbc349f87e0af0ae0394116782aa7f8be3d468fffb99f2caa891b"
+  },
+  "exception": null
+}

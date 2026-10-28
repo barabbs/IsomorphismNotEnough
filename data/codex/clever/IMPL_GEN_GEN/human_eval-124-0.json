@@ -1,0 +1,19 @@
+{
+  "text": "sha256:b3472b5518a67ac8e587847d170cc5a34b396d13eb94740d81f764c1c799d4c6",
+  "info": {
+    "dataset": "clever",
+    "id": 124,
+    "subset": "human_eval",
+    "task": "IMPL_GEN_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6547e71de4aa132dfde0497449e0c90156e17caa942c975072bb914364e1c5cd",
+  "timing": 78.08579123113304,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:01927ff5e5b75114aea1e98a560f1969a5bfca1c26f1067ff4155a8d40b38749",
+    "status": "OK",
+    "result": "sha256:f1a5f08476cb6557a0ff4030d9a01650b8f3f7009287d72ed329163e7e9acd09"
+  },
+  "exception": null
+}

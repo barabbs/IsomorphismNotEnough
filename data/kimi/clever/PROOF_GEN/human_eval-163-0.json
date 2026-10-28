@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef generate_integers(a : nat, b : nat) -> List[nat]\n\"\"\"Given two positive integers a and b, return the even digits between a\nand b, in ascending order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat → List Nat)\n-- inputs\n(a b : Nat) :=\nlet isAscendingBy2 (r : List Nat) :=\n∀ i, i < r.length - 1 → r[i+1]! - r[i]! = 2\n-- spec\nlet spec (result: List Nat) :=\nresult.all (fun n => n % 2 = 0) ∧ isAscendingBy2 result ∧\n1 < result.length ∧\nlet min_a_b := min a b;\nlet max_a_b := max a b;\nif min_a_b = max_a_b ∧ (min_a_b % 2 = 1)\nthen result = []\nelse ((result[0]! = if 2 ∣ min_a_b then min_a_b else (min_a_b + 1)) ∧\n(result[result.length-1]! = if 2 ∣ max_a_b then max_a_b else max_a_b - 1))\n-- program terminates\n∃ result, impl a b = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: Nat) : List Nat :=\n\nlet minVal := min a b\nlet maxVal := max a b\nlet firstEven := if 2 ∣ minVal then minVal else minVal + 1\nlet lastEven := if 2 ∣ maxVal then maxVal else maxVal - 1\nif firstEven > lastEven then []\nelse\n  List.range ((lastEven - firstEven) / 2 + 1) |>.map (λ i => firstEven + 2 * i)\n\n\n-- [TEST_CASES]\n\n#test implementation 2 8 = [2, 4, 6, 8]\n#test implementation 8 2 = [2, 4, 6, 8]\n#test implementation 10 14 = [10, 12, 14]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: Nat)\n: problem_spec implementation a b :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 163,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bd502d7585cf46f55ee775e78a82d2cd898041c37294fdc0d04e03a28b7c7ab1",
+  "timing": 2815.181005124934,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:bfec65f08461bf2185c0da9a336280d851bd0f4a2441e8ccdf24fd0e968f3e3a",
+    "status": "ISSUE",
+    "result": "sha256:264991be7c3b7bed72756b386471f68aab2154c8829be468301c6fd873d1e902",
+    "validation": [
+      {
+        "problem_id": "163",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:df08c13cf1773a331097a61fda45f3dbc2b1a1d0613f92a6155e6d6d8c3cf665"
+      }
+    ],
+    "raw_status": "MISMATCH",
+    "comment": "SPEC"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, b: float, c: float) -> float\n\"\"\"Given the lengths of the three sides of a triangle. Return the area of the triangle rounded to 2 decimal points\nif the three sides form a valid triangle. Otherwise return -1. Three sides make a valid triangle when the sum of\nany two sides is greater than the third side.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat \u2192 Rat \u2192 Rat \u2192 Rat)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) :=\n-- spec\nlet spec (result : Rat) :=\n  let is_valid_triangle :=\n    (a + b > c) \u2227  (a + c > b) \u2227 (b + c > a);\n  let s :=\n    (a + b + c) / 2;\n  if is_valid_triangle then\n    |result^2 - (s * (s-a) * (s-b) * (s-c))| \u2264 ((1: Rat)/10000)\n  else\n    result = -1\n-- program termination\n\u2203 result, implementation a b c = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a: Rat) (b: Rat) (c: Rat): Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 4 5 = 6.00\n-- #test implementation 1 2 10 = -1\n-- #test implementation 4 8 5 = 8.18\n-- #test implementation 2 2 2 = 1.73\n-- #test implementation 1 2 3 = -1\n-- #test implementation 10 5 7 = 16.25\n-- #test implementation 2 6 3 = -1\n-- #test implementation 1 1 1 =  0.43\n-- #test implementation 2 2 10 = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 71,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2d60483286d4ed5eab6011dc9b5ac7ec3f558cc9ca0aec05e7a3f35d9c21f16b",
+  "timing": 153.54667445400264,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/hc3blgrg/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:69b61a17705406ba1c92cce50e2184067698eafed6a1a613371f626c092de057",
+    "status": "OK",
+    "result": "sha256:c0dd3adde3e0cb776bf7d2e6471d4c273466aa1619ed3398ee0bd2f9f54f09c1"
+  },
+  "exception": null
+}

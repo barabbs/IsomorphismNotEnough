@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_closest_vowel(s : str) -> str\n\"\"\"You are given a word. Your task is to find the closest vowel that stands between\ntwo consonants from the right side of the word (case sensitive).\n\nVowels in the beginning and ending doesn't count. Return empty string if you didn't\nfind any vowel met the above condition.\n\nYou may assume that the given string contains English letter only.\nNote: The \"closest\" is interpreted as the closest to the end of the word, not the closest to the consonants.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 118,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b5fb7638594232763f15a4d3e60fb7585ec626f1249d9e3d8a6be671554b8ae0",
+  "timing": 163.96984005905688,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:cf630e62bf8170b5f274473508ce5fcb6379fe7b75955cfa7659728a775eb9a8",
+    "status": "OK",
+    "result": "sha256:27c8ccbf3e6d0a242db7deb14a46e8030631189f069889b2b5b1a1b24b1b4da9"
+  },
+  "exception": null
+}

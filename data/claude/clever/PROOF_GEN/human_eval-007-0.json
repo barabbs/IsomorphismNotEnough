@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that contain given substring\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String \u2192 List String)\n-- inputs\n(strings: List String)\n(substring: String)\n:=\n-- spec\nlet spec (result: List String) :=\n(\u2200 i, i < result.length \u2192 result[i]!.containsSubstr substring \u2192\n\u2200 j, j < strings.length \u2227 strings[j]!.containsSubstr substring \u2192 strings[j]! \u2208 result \u2192\n\u2200 j, j < result.length \u2192 result.count result[j]! = strings.count result[j]!);\n-- program termination\n\u2203 result, implementation strings substring = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) (substring: String): List String :=\n\nstrings.filter (\u00b7.containsSubstr substring)\n\n\n-- [TEST_CASES]\n\n#test implementation [] \"a\" = []\n#test implementation [\"abc\", \"bacd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"bacd\", \"array\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n(substring: String)\n: problem_spec implementation strings substring\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 7,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a01dd5308e9a51f8bf60c73fe5c40be922dc022fe5059e46ba1c8ebb58f12ad1",
+  "timing": 411.22320760198636,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/1h316az7/problem.lean --deep=stuck",
+    "claude": "sha256:aa61ae4fb341941076826026c8ff7f7eaa1bc95f026928797f15db7fbbe62320",
+    "status": "OK",
+    "result": "sha256:787fc38752d030576c508a6e69ace8347bdfdd10bb6757ec481cb2ad7a0821c9",
+    "validation": [
+      {
+        "problem_id": "7",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:8ba5d67c45c7c1062fed2d4e95c8e7e3b189fc2864559d592b911561cd0b3918"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_palindrome(string: str) -> bool\n\"\"\"Checks if given string is a palindrome\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Bool)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Bool) :=\nresult \u2194 is_palindrome string\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : Bool :=\n\nis_palindrome string\n\n\n-- [TEST_CASES]\n\n#test implementation \"\" = true\n#test implementation \"aba\" = true\n#test implementation \"aaaaa\" = true\n#test implementation \"zbcd\" = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 48,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b7253d915be6e17866c05a6fd40388fe1e22cae2afea26ee35effe43230fced8",
+  "timing": 157.85252846195363,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:92f9b71aa648dd9cbed155467cbaef1466f1fa5f1a3f52105f732ffb3716f01e",
+    "status": "OK",
+    "result": "sha256:f0db6b438573805b642aed9fbac0f33c4a79c8076491bfb50992360599ad5335",
+    "validation": [
+      {
+        "problem_id": "48",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:e9fae537046548a4c5451302f5ffd3d3963997c27b6f05b249cfe1f25275f7bb"
+      }
+    ]
+  },
+  "exception": null
+}

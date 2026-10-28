@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add_elements(arr: List[int], k: int) -> int\n\"\"\"Given a non-empty array of integers arr and an integer k, return\nthe sum of the elements with at most two digits from the first k elements of arr.\n\nConstraints:\n    1. 1 <= len(arr) <= 100\n    2. 1 <= k <= len(arr)\n\n>>> add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 4)\n24\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Nat \u2192 Int)\n-- inputs\n(arr: List Int)\n(k: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ([111, 21, 3, 4000, 5, 6, 7, 8, 9]: List Int) 4 = 24\n",
+  "info": {
+    "dataset": "clever",
+    "id": 122,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:c5eb868c5bff7818fddaad2f9671689d53a39228ca1b10656c550eb01f4832a4",
+  "timing": 319.43356843298534,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/6dqmb5ir/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:7e055722dfc9469fde00f1bdccf68fbffab9e26be1b178c6d6e4653ad238597c",
+    "status": "OK",
+    "result": "sha256:27d2ddbaa8c6decebe3179e46b6a05f893e93a4532f0cae56a3bd4a3a8fdff60"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef match_parens(l : list[str]) -> str\n\"\"\"You are given a list of two strings, both strings consist of open\nparentheses '(' or close parentheses ')' only.\nYour job is to check if it is possible to concatenate the two strings in\nsome order, that the resulting string will be good.\nA string S is considered to be good if and only if all parentheses in S\nare balanced. For example: the string '(())()' is good, while the string\n'())' is not.\nReturn 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\n>>> match_parens(['()(', ')'])\n'Yes'\n>>> match_parens([')', ')'])\n'No'\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String \u2192 String)\n-- inputs\n(l: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ['()(', ')'] = \"Yes\"\n-- #test implementation [')', ')'] = \"No\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 119,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:708b8f806f467761cec8291686f916c8ed7309bf4b96710ef3fbce6f5bd43ef7",
+  "timing": 66.22918046499944,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/rznvy8hs/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:13ebf9dd900df5764a40ae759fb96b3e8833993a479241b14b59fa33d2f854dc",
+    "status": "OK",
+    "result": "sha256:45ac830aa334caa77c897f545b74af2a8efe97b477c3dc121d1b1e6955cd7c55"
+  },
+  "exception": null
+}

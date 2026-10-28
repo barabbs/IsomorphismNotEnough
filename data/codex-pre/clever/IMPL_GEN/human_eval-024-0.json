@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_divisor(n: int) -> int\n\"\"\"For a given number n, find the largest number that divides n evenly, smaller than n\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n0 < n → 0 < result → result ∣ n → ∀ x, x ∣ n → x ≠ n → x ≤ result;\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 15 = 5\n",
+  "info": {
+    "dataset": "clever",
+    "id": 24,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fcf76e592ff8d8df404040df4f57abb6d0d1ab6456b14e7edc8d84e8a0bd9d63",
+  "timing": 176.16922288300702,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex-pre": "sha256:bb97e666abe6442e3c62e35ab87afe9f24a89fbc51b39e4102fa803aa0453da7",
+    "status": "OK",
+    "result": "sha256:1c2b8a68e5b9aacc290db5c9d9f1be927e52effc4f3ca78c5e2662d0d73dbc6e"
+  },
+  "exception": null
+}

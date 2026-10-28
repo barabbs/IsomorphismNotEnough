@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fibfib(n: int)\n\"\"\"The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfibfib(0) == 0\nfibfib(1) == 0\nfibfib(2) == 1\nfibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).\nPlease write a function to efficiently compute the n-th element of the fibfib number sequence.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_3 : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable_3 0 0\n| base1 : fibonacci_non_computable_3 1 0\n| base2 : fibonacci_non_computable_3 2 1\n| step : \u2200 n f\u2081 f\u2082 f\u2083, fibonacci_non_computable_3 n f\u2081 \u2192\nfibonacci_non_computable_3 (n + 1) f\u2082 \u2192\nfibonacci_non_computable_3 (n + 2) f\u2083 \u2192\nfibonacci_non_computable_3 (n + 3) (f\u2081 + f\u2082 + f\u2083)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(x : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 63,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8a85a58bfc8b6996e3e12ec3a71123b967b3d1ae5c7e3ee0aaca237c2e8e32bd",
+  "timing": 73.01226077300089,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mj3khqky/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e68d479484cf55427ab797f095d972f0d75f1a376d1eb7789c48fa039e695867",
+    "status": "OK",
+    "result": "sha256:aed624a5ed569ce5e3df8854e11c4494c5f8cef887ea81d3b5494cf09c03dd77"
+  },
+  "exception": null
+}

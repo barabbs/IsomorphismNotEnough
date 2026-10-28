@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, b: float, c: float) -> float\n\"\"\"Given the lengths of the three sides of a triangle. Return the area of the triangle rounded to 2 decimal points\nif the three sides form a valid triangle. Otherwise return -1. Three sides make a valid triangle when the sum of\nany two sides is greater than the third side.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat → Rat → Rat)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) :=\n-- spec\nlet spec (result : Rat) :=\n  let is_valid_triangle :=\n    (a + b > c) ∧  (a + c > b) ∧ (b + c > a);\n  let s :=\n    (a + b + c) / 2;\n  if is_valid_triangle then\n    |result^2 - (s * (s-a) * (s-b) * (s-c))| ≤ ((1: Rat)/10000)\n  else\n    result = -1\n-- program termination\n∃ result, implementation a b c = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Rat) (b: Rat) (c: Rat): Rat :=\n\n  if a + b > c ∧ a + c > b ∧ b + c > a then\n    let s := (a + b + c) / 2\n    let prod := s * (s - a) * (s - b) * (s - c)\n    let scaled := prod * 1000000\n    let n := scaled.num.toNat / scaled.den\n    let sqrtN := Nat.sqrt n\n    let rounded := (sqrtN + 5) / 10\n    (↑rounded : Rat) / 100\n  else\n    -1\n\n\n-- [TEST_CASES]\n\n#test implementation 3 4 5 = 6.00\n#test implementation 1 2 10 = -1\n#test implementation 4 8 5 = 8.18\n#test implementation 2 2 2 = 1.73\n#test implementation 1 2 3 = -1\n#test implementation 10 5 7 = 16.25\n#test implementation 2 6 3 = -1\n#test implementation 1 1 1 =  0.43\n#test implementation 2 2 10 = -1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Rat) (b: Rat) (c: Rat)\n: problem_spec implementation a b c\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 71,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:84343597c28e0566fdc29df24831760f6112a735dcdf7f492bc7b84d258d14d2",
+  "timing": 398.1108302710345,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:1ff954e42bda0c0b5dfe3a44378fe1afe8668330a62d1ee3347695a2a3ed3c0a",
+    "status": "ISSUE",
+    "result": "sha256:1a2cf47d38372de1c4121f62a7dadadbd1640f4abb826b1fbfbaadc8be1e896f",
+    "validation": [
+      {
+        "problem_id": "71",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:86409d944b4aba068b3f328335529599222bdd0aabf328ad6cebc6a92ad12e3d"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "ECONS"
+  },
+  "exception": null
+}

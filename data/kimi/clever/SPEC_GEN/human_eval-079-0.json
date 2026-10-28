@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef decimal_to_binary(decimal: nat) -> str\n\"\"\"You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → String)\n-- inputs\n(decimal: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 79,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f2a3d54a60ae9ef6c6b7252730a0e3bb0f68810ada8dc8da3cb453ffea286b52",
+  "timing": 160.068919448182,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:487362a9bd37035e08054c0e3fbf36dcce7c8525f4321b55a59fd9a68aae101c",
+    "status": "OK",
+    "result": "sha256:ad7001d2ddd48e95b10ca42b1aa0977763dd7603b1b462afbea24e397ce63826"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fix_spaces(text: str) -> str\n\"\"\"Given a string text, replace all spaces in it with underscores,\nand if a string has more than 2 consecutive spaces,\nthen replace all consecutive spaces with -\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(text: String) :=\n-- spec\nlet spec (result: String) :=\n  (result = \"\" → text = \"\") ∧\n  (result ≠ \"\" → (\n    (∃ pref s, text = pref ++ s\n      ∧ pref.length = 1\n      ∧ pref ≠ \" \"\n      ∧ result = pref ++ impl s)\n    ∨\n    (∃ pref s : String, text = pref ++ s ∧ pref ≠ \"\" ∧ (∀ ch, ch ∈ pref.toList → ch = ' ')\n      ∧ let k := pref.length;\n        (k ≤ 2 → result = (String.replicate k '_') ++ (impl (text.drop k)))\n      ∧ (2 < k → result = \"-\" ++ (impl (text.drop k)))) )\n  )\n-- program termination\n∃ result, impl text = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (text: String) : String :=\n\n  let (spaces, res_rev) := text.toList.foldl\n    (fun (sp, r) c =>\n      if c = ' ' then\n        (sp + 1, r)\n      else\n        if sp > 2 then\n          (0, c :: '-' :: r)\n        else if sp > 0 then\n          (0, c :: (List.replicate sp '_' ++ r))\n        else\n          (0, c :: r)\n    )\n    (0, [])\n  let trailing :=\n    if spaces > 2 then\n      ['-']\n    else\n      List.replicate spaces '_'\n  String.mk (trailing ++ res_rev.reverse)\n\n\n-- [TEST_CASES]\n\n#test implementation \"Example\" = \"Example\"\n#test implementation \"Example 1\" = \"Example_1\"\n#test implementation \" Example 2\" = \"_Example_2\"\n#test implementation \" Example   3\" = \"_Example-3\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(text: String)\n: problem_spec implementation text :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 140,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1e1a4d63312cbd339ea373b4a9d891054caea0c3f94afa51148b460eaa987fcb",
+  "timing": 4458.689135645982,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:ec53eae6c752cf4b18ad2c170b83cfee402fa1bb6c2efabce97f9e061eace088",
+    "status": "FAIL",
+    "result": "sha256:a2a6064fcf9c865ff72bbaafa39c604fc448c0a1d332704c81f63002f424c25f",
+    "validation": [
+      {
+        "problem_id": "140",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:2ff88673f7379dc7b3d7454b003687321e0468dd89c227345d7c029a98f608a3"
+      }
+    ]
+  },
+  "exception": null
+}

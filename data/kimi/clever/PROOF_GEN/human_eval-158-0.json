@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_max(words: List[str]) -> str\n\"\"\"Write a function that accepts a list of strings.\nThe list contains different words. Return the word with maximum number\nof unique characters. If multiple strings have maximum number of unique\ncharacters, return the one which comes first in lexicographical order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List String → String)\n-- inputs\n(words: List String) :=\nlet unique_chars (string: String) :=\n  let string_idx := {i: Nat | i < string.length}.toFinset;\n  let characters := string_idx.image (fun i => string.toList.get! i);\n  characters.card;\n-- spec\nlet spec (result: String) :=\n(result = \"\" ↔ words.length = 0) ∧\n(words.length != 0 → result ∈ words ∧\nlet unique_chars_list := words.map unique_chars;\nlet max_unique_chars := unique_chars_list.max?.get!;\nunique_chars result = max_unique_chars ∧\n∀ i : Nat, i < words.length →\n  unique_chars_list[i]! = max_unique_chars →\n  result ≤ words[i]!);\n-- program terminates\n∃ result, impl words = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (words: List String) : String :=\n\n  if words.isEmpty then \"\" else\n    let uniqueChars (s : String) := s.toList.toFinset.card\n    words.foldl (fun best word =>\n      let bestCount := uniqueChars best\n      let wordCount := uniqueChars word\n      if wordCount > bestCount then word\n      else if wordCount = bestCount ∧ word < best then word\n      else best) words.head!\n\n\n-- [TEST_CASES]\n\n#test implementation [\"name\", \"of\", \"string\"]= \"string\"\n#test implementation [\"name\", \"enam\", \"game\"] = \"enam\"\n#test implementation [\"aaaaaaa\", \"bb\" ,\"cc\"] = \"aaaaaaa\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(words: List String)\n: problem_spec implementation words :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 158,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2ac285566e361d1876ba596001cade30a5f38c8b09f0d3f83c1902f1e5e72f84",
+  "timing": 2385.0525609930046,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:f2bf18320210d891ad1766ccefcf447860d06d7c2443113c1ef2dc9d7a65b33c",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:b4dd349b8b7fc61c83bfed7302b28cb8ea160b24989a5fca0ef702bceadefda3",
+    "validation": [
+      {
+        "problem_id": "158",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:ab3f4aeb5ea4f956e5c3de3c110375dd0d1c4ec99017e7e8b16026b1393fbbac"
+      }
+    ]
+  },
+  "exception": null
+}

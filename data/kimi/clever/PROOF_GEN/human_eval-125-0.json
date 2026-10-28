@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minPath(grid, k)\n\"\"\"Given a grid with N rows and N columns (N >= 2) and a positive integer k,\neach cell of the grid contains a value. Every integer in the range [1, N * N]\ninclusive appears exactly once on the cells of the grid.\n\nYou have to find the minimum path of length k in the grid. You can start\nfrom any cell, and in each step you can move to any of the neighbor cells,\nin other words, you can go to cells which share an edge with you current\ncell.\nPlease note that a path of length k means visiting exactly k cells (not\nnecessarily distinct).\nYou CANNOT go off the grid.\nA path A (of length k) is considered less than a path B (of length k) if\nafter making the ordered lists of the values on the cells that A and B go\nthrough (let's call them lst_A and lst_B), lst_A is lexicographically less\nthan lst_B, in other words, there exist an integer index i (1 <= i <= k)\nsuch that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\nlst_A[j] = lst_B[j].\nIt is guaranteed that the answer is unique.\nReturn an ordered list of the values on the cells that the minimum path go through.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List (List Nat) → Nat → List Nat)\n-- inputs\n(grid: List (List Nat))\n(k: Nat) :=\n-- spec\nlet lexographically_less (a b: List Nat) : Prop :=\n  a.length = b.length ∧ a.length = k ∧\n  (∃ i, i < k ∧ a.get! i < b.get! i ∧\n  (∀ j, j < i → a.get! j = b.get! j));\nlet rec is_valid_path (k': Nat) (path: List Nat) (grid: List (List Nat)) : Prop :=\n  let n := grid.length;\n  path.length = k' →\n  (∃ i j,\n    (i < n ∧ j < n ∧ path.get! 0 = (grid.get! i).get! j) ∧\n    (1 < path.length →\n      ( ∃ i' j', i' < n ∧ j' < n ∧\n        (path.get! 1 = (grid.get! i').get! j') ∧\n        ((abs ((i: Int) - (i': Int)) = 1 ∧ j = j') ∨\n         (abs ((j: Int) - (j': Int)) = 1 ∧ i = i'))) ∧\n      (is_valid_path (k' - 1) (path.drop 1) grid))\n  );\nlet spec (result: List Nat) :=\n  let n := grid.length;\n  (∀ i, i < n → (grid.get! i).length = n) →\n  (∀ i j, i < n → j < n ↔ ((grid.get! i).get! j) ∈ [1, n^2]) →\n  is_valid_path k result grid ∧ (∀ path, is_valid_path k path grid → lexographically_less result path);\n-- program terminates\n∃ result, impl grid k = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (grid: List (List Nat)) (k: Nat) : List Nat :=\n\nlet rec getInList (xs : List Nat) (j : Nat) : Option Nat :=\n  match xs, j with\n  | [], _ => none\n  | x :: _, 0 => some x\n  | _ :: xs', j' + 1 => getInList xs' j'\n\nlet rec getValue (rows : List (List Nat)) (i j : Nat) : Option Nat :=\n  match rows, i with\n  | [], _ => none\n  | row :: _, 0 => getInList row j\n  | _ :: rest, i' + 1 => getValue rest i' j\n\nlet rec findInRow (row : List Nat) (v : Nat) (j : Nat) : Option Nat :=\n  match row with\n  | [] => none\n  | x :: xs => if x = v then some j else findInRow xs v (j + 1)\n\nlet rec findInGrid (rows : List (List Nat)) (v : Nat) (i : Nat) : Option (Nat × Nat) :=\n  match rows with\n  | [] => none\n  | row :: rest => \n    match findInRow row v 0 with\n    | some j => some (i, j)\n    | none => findInGrid rest v (i + 1)\n\nlet getNeighbors (grid : List (List Nat)) (i j : Nat) : List Nat :=\n  [ if i > 0 then getValue grid (i - 1) j else none\n  , getValue grid (i + 1) j\n  , if j > 0 then getValue grid i (j - 1) else none\n  , getValue grid i (j + 1)\n  ].filterMap id\n\nlet rec minOption (xs : List Nat) : Option Nat :=\n  match xs with\n  | [] => none\n  | x :: xs' => \n    match minOption xs' with\n    | none => some x\n    | some m => some (min x m)\n\nlet rec buildPath (grid : List (List Nat)) (k' : Nat) (i j : Nat) : List Nat :=\n  match k' with\n  | 0 => []\n  | k'' + 1 => \n    match getValue grid i j with\n    | none => []\n    | some v => \n      let neighbors := getNeighbors grid i j\n      match minOption neighbors with\n      | none => [v]\n      | some nextVal => \n        match findInGrid grid nextVal 0 with\n        | none => [v]\n        | some (ni, nj) => v :: buildPath grid k'' ni nj\n\nmatch findInGrid grid 1 0 with\n| none => []\n| some (i, j) => buildPath grid k i j\n\n\n-- [TEST_CASES]\n\n#test implementation [[1,2,3], [4,5,6], [7,8,9]] 3 = [1,2,1]\n#test implementation [[5,9,3], [4,1,6], [7,8,2]] 1 = [1]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(grid: List (List Nat))\n(k: Nat)\n: problem_spec implementation grid k :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 125,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2ad740e06a4f0a9fe5908daa918fdca74389e9f3c57becf826e18524b4ac919c",
+  "timing": 10073.355254633818,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:df3f543265cd920e2a7e39303f8a1a4412823fbfd8978ee4f4af1494e0dec27a",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:28115c55205ffbec0cb52af2d6aadba4fcc4a4ad0510c4f1f1008dfbe82ba5d9",
+    "validation": [
+      {
+        "problem_id": "125",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:aadc7e6cdbee31db2ffb7114330d673d6b4dc8e04fc7545d8a84536727198c54"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef starts_one_ends(n: int) -> int\n\"\"\"Given a positive integer n, return the count of the numbers of n-digit\npositive integers that start or end with 1.\nNote: For reviewer, I believe this is the most straightforward spec, and I am relying on Set cardianlity not being computable in general. The point of this problem is really to privide a formula.\nNote: But I guess a program that goes through each number and adds 1 will be the same as a program that computes in O(1) under this view.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  0 < n →\n  result = {k : ℕ | 10 ^ (n - 1) ≤ k ∧ k < 10 ^ n ∧ (k.repr.front = '1' ∨ k.repr.back = '1')}.ncard\n-- program termination\n∃ result,\n  implementation n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 1\n-- #test implementation 2 = 18\n",
+  "info": {
+    "dataset": "clever",
+    "id": 83,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:406b56a0246a677a53db17835a4774908d21d82ca6599dcf83f40857b6950c96",
+  "timing": 66.80651815375313,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:cfee0c180c44e7fd86d6372f36b17283a74fc2c508f7966cba3e990e97a0577a",
+    "status": "OK",
+    "result": "sha256:af4abf5df154633aa9081e19d46e9e296e61f3af3555e12a92103e885a1b60ab"
+  },
+  "exception": null
+}

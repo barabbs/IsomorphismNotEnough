@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib(n: int) -> int\n\"\"\"Return n-th Fibonacci number.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable 0 0\n| base1 : fibonacci_non_computable 1 1\n| step  : \u2200 n f\u2081 f\u2082, fibonacci_non_computable n f\u2081 \u2192\nfibonacci_non_computable (n + 1) f\u2082 \u2192\nfibonacci_non_computable (n + 2) (f\u2081 + f\u2082)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(x : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 55,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:37fa883d370c77479fa93ff107a97ad79816fbe4060945d89a23c9db176c1a12",
+  "timing": 51.68007889199362,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/qiwh7h2x/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:5f1f6b9cbf5412e310e45cd12240cb5f39ed26edb66a36992afbae64dd8a06fa",
+    "status": "OK",
+    "result": "sha256:6505113cee6b4033425d86cfdfc12184f4cab884717d31d04f6a74f066cb2158"
+  },
+  "exception": null
+}

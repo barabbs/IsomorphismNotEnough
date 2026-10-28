@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_sorted(lst: List[int]) -> bool\n\"\"\"Given a list of numbers, return whether or not they are sorted\nin ascending order. If list has more than 1 duplicate of the same\nnumber, return False. Assume no negative numbers and only integers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Bool)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet sorted_ascending := lst.Sorted (\u00b7 \u2264 \u00b7);\nlet ms := Multiset.ofList lst;\nlet multiple_duplicates := \u2203 i, i \u2208 lst \u2227 2 < ms.count i;\nlet spec (res: Bool) :=\n  res \u2192 sorted_ascending \u2227\n  res \u2192 \u00acmultiple_duplicates \u2227\n  multiple_duplicates \u2192 \u00acres \u2227\n  \u00acsorted_ascending \u2192 \u00acres;\n-- program terminates\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int) : Bool :=\n\n  let rec isSorted : List Int \u2192 Bool\n    | [] => true\n    | [_] => true\n    | a :: b :: rest => decide (a \u2264 b) && isSorted (b :: rest)\n  isSorted lst && lst.all (fun x => decide (lst.count x \u2264 2))\n\n\n-- [TEST_CASES]\n\n#test implementation [5] = true\n#test implementation [1, 2, 3, 4, 5] = true\n#test implementation [1, 3, 2, 4, 5] = false\n#test implementation [1, 2, 3, 4, 5, 6] = true\n#test implementation [1, 2, 3, 4, 5, 6, 7] = true\n#test implementation [1, 3, 2, 4, 5, 6, 7] = false\n#test implementation [1, 2, 2, 3, 3, 4] = true\n#test implementation [1, 2, 2, 2, 3, 4] = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 126,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ce7291d327590ee507a640fc025699733ecd7b9554836d30ca9e0176d98dab44",
+  "timing": 131.43201534007676,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:3ed3ccec96ae71fdc9a3c80150b4baf63ee2f0f7ba660e1841e83fcc1e689b50",
+    "status": "OK",
+    "result": "sha256:161697d76228bf3deee74278ed7cbc97208e577468ddf61cafe33f60d262c8f8",
+    "validation": [
+      {
+        "problem_id": "126",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:48f56a94a75bfe96b0951c8857e45f04590eadd0b71dced7cc486d809151eea4"
+      }
+    ]
+  },
+  "exception": null
+}

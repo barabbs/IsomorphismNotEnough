@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strlen(string: str) -> int\n\"\"\"Return length of given string\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 23,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0aeb285a6bac3ff314ab20310a4a7eb1117a099c459b37587ff796664224395f",
+  "timing": 57.667490783147514,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:af59beab9aa5deb2f92b2dc9fd2cba28027efb1ce52a56fc68b0123367fecd43",
+    "status": "OK",
+    "result": "sha256:365afc3d37cfeca122a368825ce5d4dc6571329ece21b73fd2bc6e6eaf1883b6"
+  },
+  "exception": null
+}

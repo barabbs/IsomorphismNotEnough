@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, b: float, c: float) -> float\n\"\"\"Given the lengths of the three sides of a triangle. Return the area of the triangle rounded to 2 decimal points\nif the three sides form a valid triangle. Otherwise return -1. Three sides make a valid triangle when the sum of\nany two sides is greater than the third side.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Rat → Rat → Rat → Rat)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 71,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:92c418957618e23831c1eb9b81fba3b517185077fb9612188791a7ab574e1703",
+  "timing": 198.7618253408,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:1a42d07480d24f1daba7bf4ae0c1fec7fc69a4ee4076cdc0cdfedfa3dfe7d02f",
+    "status": "OK",
+    "result": "sha256:b9edbb2442012758cf4025aedee9687e9d802299bd2b51f42db1d18b9209bf38"
+  },
+  "exception": null
+}

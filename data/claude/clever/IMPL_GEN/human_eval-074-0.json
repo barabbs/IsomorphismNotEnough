@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef total_match(lst1: List[str], lst2: List[str]) -> List[str]\n\"\"\"Write a function that accepts two lists of strings and returns the list that has\ntotal number of chars in the all strings of the list less than the other list.\nIf the two lists have the same number of chars, return the first list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 List String \u2192 List String)\n-- inputs\n(lst1: List String) (lst2: List String) :=\nlet sum_chars (xs: List String) : Int :=\n  xs.foldl (\u03bb acc a => acc + a.length) 0;\n-- spec\nlet spec (result : List String) :=\n  ((result = lst1) \u2228 (result = lst2))\n  \u2227\n  (sum_chars result \u2264 sum_chars lst1)\n  \u2227\n  (sum_chars result \u2264 sum_chars lst2)\n  \u2227\n  ((sum_chars lst1 = sum_chars lst2) \u2192 (result = lst1))\n-- program termination\n\u2203 result, implementation lst1 lst2 = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst1: List String) (lst2: List String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] [] = []\n-- #test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\"] = [\"hi\", \"hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\", \"admin\", \"project\"] = [\"hi\", \"admin\"]\n-- #test implementation [\"4\"] [\"1\", \"2\", \"3\", \"4\", \"5\"] = [\"4\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"Hi\"] = [\"hI\", \"Hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hi\"] = [\"hI\", \"hi\", \"hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hii\"] = [\"hi\", \"admin\"]\n-- #test implementation [] [\"this\"] = []\n-- #test implementation [\"this\"] [] == []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 74,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:243c6682fa074404a511bfd0b86ac91722b57460a59c74d5f3d982e7992825e2",
+  "timing": 70.15974069500226,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/jn5m49bf/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:b194422bc0c2b1ec4f0ba00950fd075a4dedf1af02a2c2955a0fbaf905112ca4",
+    "status": "OK",
+    "result": "sha256:ff66b0971aa395fecccc134fc2851ceba5399af7cbe146980690f82ef67b3d6f"
+  },
+  "exception": null
+}

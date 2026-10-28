@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_max_triples(n: int) -> int\n\"\"\"You are given a positive integer n. You have to create an integer array a of length n.\nFor each i (1 \u2264 i \u2264 n), the value of a[i] = i * i - i + 1.\nReturn the number of triples (a[i], a[j], a[k]) of a where i < j < k,\nand a[i] + a[j] + a[k] is a multiple of 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n\u2203 (S : Finset (Nat \u00d7 Nat \u00d7 Nat)), S.card = result \u2227\n  \u2200 (triple: Nat \u00d7 Nat \u00d7 Nat),\n    let (i, j, k) := triple;\n    let a_i := i * i - i + 1;\n    let a_j := j * j - j + 1;\n    let a_k := k * k - k + 1;\n    (1 \u2264 i \u2227 i < j \u2227 j < k \u2227 k \u2264 n \u2227\n    (a_i + a_j + a_k) % 3 = 0)\n    \u2194 triple \u2208 S\n-- program termination\n\u2203 result, impl n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  let a := fun i => i * i - i + 1\n  let count := fun m => (List.range n).filter (fun i => a (i + 1) % 3 == m) |>.length\n  let c0 := count 0\n  let c1 := count 1\n  c0 * (c0 - 1) * (c0 - 2) / 6 + c1 * (c1 - 1) * (c1 - 2) / 6\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 147,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:88a232a40d38df0604b763af2332f13915cbe8003a5982f571868e65ae8c7513",
+  "timing": 3688.5242344950093,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:26db489175a8f73f921077eca8847219e4d934c8cae76d8368522ad34cbf5a55",
+    "status": "TIMEOUT",
+    "result": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "validation": [
+      {
+        "problem_id": "147",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:5be97ac5c9000fb16b9523ec8c204c70d351ef17f9f96ad1f1cabb7e8e2e685a"
+      }
+    ]
+  },
+  "exception": null
+}

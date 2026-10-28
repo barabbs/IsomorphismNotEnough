@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef specialFilter(nums: List[int]) -> int\n\"\"\"Write a function that takes an array of numbers as input and returns\nthe number of elements in the array that are greater than 10 and both\nfirst and last digits of a number are odd (1, 3, 5, 7, 9).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result: Int) :=\nmatch nums with\n| [] => result = 0\n| head::tail =>\n  let first_digit := (toString head.natAbs).toList[0]!.toNat - Char.toNat '0';\n  let last_digit := head % 10;\n  let valid := head > 10 ∧ Odd first_digit ∧ Odd last_digit\n  if valid then result = 1 + impl tail else result = impl tail\n-- program termination\n∃ result, impl nums = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (nums: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [15, -73, 14, -15] = 1\n-- #test implementation [33, -2, -3, 45, 21, 109] = 2\n",
+  "info": {
+    "dataset": "clever",
+    "id": 146,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:730457d9c8266bc2eebe48ec612229c3c373263a2be606c8eda690a170f01263",
+  "timing": 146.18124879989773,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:a45a93aee0fd9338e0821e04bb3fbbb03d2ec0cad6ca7148adc4ad616827e6cf",
+    "status": "OK",
+    "result": "sha256:cfb026b27504bcc484fa0659124154fc0ce55c0bd98b930c0562b42a8d1f9454"
+  },
+  "exception": null
+}

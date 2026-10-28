@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add_elements(arr: List[int], k: int) -> int\n\"\"\"Given a non-empty array of integers arr and an integer k, return\nthe sum of the elements with at most two digits from the first k elements of arr.\n\nConstraints:\n    1. 1 <= len(arr) <= 100\n    2. 1 <= k <= len(arr)\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Nat → Int)\n-- inputs\n(arr: List Int)\n(k: Nat) :=\n-- spec\nlet spec (result: Int) :=\n  1 ≤ arr.length → arr.length ≤ 100 → 1 ≤ k → k ≤ arr.length →\n  ((∀ i, 0 ≤ i ∧ i < k → ¬(arr[i]! ≤ 99 ∧ -99 ≤ arr[i]!)) → result = 0) ∧\n  ∃ i, i < k\n    ∧ arr[i]! ≤ 99 ∧ -99 ≤ arr[i]!\n    ∧ result = arr[i]! + (if i = 0 then 0 else impl arr i)\n    ∧ ∀ i', i < i' ∧ i' < k → ¬(arr[i']! ≤ 99 ∧ -99 ≤ arr[i']!)\n-- program termination\n∃ result, impl arr k = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) (k: Nat) : Int :=\n\n  match k with\n  | 0 => 0\n  | k' + 1 =>\n    let elem := arr[k']!\n    if elem ≤ 99 ∧ -99 ≤ elem then\n      elem + implementation arr k'\n    else\n      implementation arr k'\n\n\n-- [TEST_CASES]\n\n#test implementation ([111, 21, 3, 4000, 5, 6, 7, 8, 9]: List Int) 4 = 24\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n(k: Nat)\n: problem_spec implementation arr k :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 122,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fd2c1b5aaf29d8e759f533e8cee650ae8473b6dda344276f3c04bbafd964f30c",
+  "timing": 1290.364232969936,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:54ace7b8c801407de5a4ecd446c55352b50fe4518a3d786f8a7c935cc7e3735e",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:f591e25344829794534d0aa18031d53d5b5e893f66b74cb9d436231e8d1f25b7",
+    "validation": [
+      {
+        "problem_id": "122",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:11c4b654f07d8aa5a838f8742088610bd904c1642b436f0546d60165dc556139",
+        "lean_code": "sha256:80d6b2bf9ff681b6ab67a76635ca874336e3b3deff34cdcf14a6959f580de1b1"
+      }
+    ]
+  },
+  "exception": null
+}

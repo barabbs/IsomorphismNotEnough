@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode(s : str) -> str\n\"\"\"Write a function that takes a message, and encodes in such a\nway that it swaps case of all letters, replaces all vowels in\nthe message with the letter that appears 2 places ahead of that\nvowel in the english alphabet.\nAssume only letters.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (λ c => c.isAlpha) →\n  result.length = s.length ∧\n  (∀ i, i < s.length →\n    let c := s.data.get! i;\n    let c' := result.data.get! i;\n    match c with\n    | 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' =>\n      c.isUpper → c'.val = c.toLower.val + 2 ∧\n      c.isLower → c'.val = c.toUpper.val + 2\n    | _ =>\n      c.isUpper → c' = c.toLower ∧\n      c.isLower → c' = c.toUpper)\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"test\" = \"TGST\"\n-- #test implementation \"This is a message\" = \"tHKS KS C MGSSCGG\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 93,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:572e3c9fd5e9ad2d1f634fa99edc68d3103f2b4052b9ab7a54c92eeadee13bba",
+  "timing": 106.86776541499421,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:d5a8bf4e74f921867d2ae6720cb18611d843cd8c683da346bfcf6ae27f86faee",
+    "status": "OK",
+    "result": "sha256:4265a704e39140d9b3a436ebd17c6b322004a12a3a60ae0afe24b6232a023911"
+  },
+  "exception": null
+}

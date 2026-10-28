@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that contain given substring\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String → List String)\n-- inputs\n(strings: List String)\n(substring: String)\n:=\n-- spec\nlet spec (result: List String) :=\n(∀ i, i < result.length → result[i]!.containsSubstr substring →\n∀ j, j < strings.length ∧ strings[j]!.containsSubstr substring → strings[j]! ∈ result →\n∀ j, j < result.length → result.count result[j]! = strings.count result[j]!);\n-- program termination\n∃ result, implementation strings substring = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) (substring: String): List String :=\n\nstrings.filter (fun s => s.containsSubstr substring)\n\n\n-- [TEST_CASES]\n\n#test implementation [] \"a\" = []\n#test implementation [\"abc\", \"bacd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"bacd\", \"array\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n(substring: String)\n: problem_spec implementation strings substring\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 7,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3b910555e54e14a966c91fe067234d208058bb1756755762016af43d2a392b6e",
+  "timing": 6039.404065900017,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:d36f6b55dcd521e2061ebc60501b8c7211b47637e0a0f8c8246d3c3aa5edba1b",
+    "status": "OK",
+    "result": "sha256:e442c0d3db2d80f1188ec1495040fc42ff490974ca040834df59f03afbc77e89",
+    "validation": [
+      {
+        "problem_id": "7",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:dafb9a22943d24f7f60e0038ef21d2fca153155212a5c6cc4d1cb0f8afa49f85"
+      }
+    ]
+  },
+  "exception": null
+}

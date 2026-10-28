@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_dict_case(s : dict[str, str]) -> bool\n\"\"\"Given a dictionary, return True if all keys are strings in lower\ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nNote(George): Modified the problem to use strings only for both keys and values.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Std.HashMap String String → Bool)\n-- inputs\n(D: Std.HashMap String String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 95,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:035fdfc0b36355930c750bd73c5bdfc7330d269d051a9550c3d0c46b356d3597",
+  "timing": 101.7756028380245,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:ecfab808c42cda597e4166d60e35f063b4a2d71a18fef15d993266aab78d170c",
+    "status": "OK",
+    "result": "sha256:aa6cccb04ca1ef7009af39eef8af5a471a41bf12b467d4104f95ac64a6a35d8a"
+  },
+  "exception": null
+}

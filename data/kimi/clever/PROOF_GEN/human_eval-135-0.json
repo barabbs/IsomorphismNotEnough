@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef can_arrange(arr: List[int]) -> int\n\"\"\"Create a function which returns the largest index of an element which\nis not greater than or equal to the element immediately preceding it. If\nno such element exists then return -1. The given array will not contain\nduplicate values.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: Int) :=\n  ¬arr.any (fun x => 1 < arr.count x) →\n  (arr.length = 0 ∨ arr.length = 1 → result = -1) ∧\n  (1 < arr.length →\n    let last := arr.length-1;\n    let i := if arr[last]! < arr[last-1]! then Int.ofNat last else -1;\n    result = max (impl (arr.take last)) i);\n-- program termination\n∃ result, impl arr = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : Int :=\n\n  if h : arr.length ≤ 1 then -1\n  else\n    let n := arr.length;\n    let last := n - 1;\n    let i := if arr[last]! < arr[last - 1]! then Int.ofNat last else -1;\n    max (implementation (arr.take last)) i\n  termination_by arr.length\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 4, 3, 5] = 3\n#test implementation [1, 2, 3] = -1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 135,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:78ac86ad2a58c3a5c0b65cc6f70632575a9ce41d60f187f94cba19dce68fdf58",
+  "timing": 1907.7119465619326,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:962c9dc944bb3ceb60051a4185a107c71a9b48933bd78552ef5d205f2f19fce0",
+    "status": "OK",
+    "result": "sha256:7442932a4962280a3682c383e966d3f31dff175612ada536f4ab187e47d85b9e",
+    "validation": [
+      {
+        "problem_id": "135",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:103f75495c43dbf6349daf495edd93ea3304407aed242f0978340aa3fd82b455"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that start with a given prefix.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String \u2192 List String)\n-- inputs\n(strings: List String)\n(pref: String) :=\n-- spec\nlet spec (result: List String) :=\nresult.all (\u03bb s => s.startsWith pref) \u2227\nresult.all (\u03bb s => s \u2208 strings) \u2227\nstrings.all (\u03bb s => s.startsWith pref \u2192 s \u2208 result) \u2227\n\u2200 s : String, s \u2208 result \u2192 result.count s = strings.count s;\n-- program termination\n\u2203 result, implementation strings pref = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) (pref: String) : List String :=\n\nstrings.filter (fun s => s.startsWith pref)\n\n\n-- [TEST_CASES]\n\n#test implementation [] \"a\" = []\n#test implementation [\"abc\", \"bcd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"array\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n(pref: String)\n: problem_spec implementation strings pref\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 29,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:769d2dbc9214a7187bca88f54316de832efa65336fcc73a69657597e90fef605",
+  "timing": 232.57545852000476,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/0krc7c_q/problem.lean --deep=stuck",
+    "claude": "sha256:bc10c4493f4566c900f25ea790aac3db47c24defc9691eca2b93703ef2427fb4",
+    "status": "OK",
+    "result": "sha256:976cd77929cc9fe02943a6adb2a52c0823484602b6079b7784f28b63a4f94d2a",
+    "validation": [
+      {
+        "problem_id": "29",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5985c8e6712ae0888a89475647aa501ec7dcdf24808b8d4567e18d9541c4b6e5"
+      }
+    ]
+  },
+  "exception": null
+}

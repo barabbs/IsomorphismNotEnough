@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef median(numbers: List[float]) -> float\n\"\"\"Return median of elements in the list l\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  0 < numbers.length →\n  let less_eq := (numbers.filter (fun x => x ≤ result));\n  let more_eq := (numbers.filter (fun x => result ≤ x));\n  let max_more_eq := more_eq.max?;\n  let min_less_eq := less_eq.min?;\n  let less_eq_count := less_eq.length;\n  let more_eq_count := more_eq.length;\n  let eq_count := (numbers.filter (fun x => x = result)).length;\n  (less_eq_count + more_eq_count - eq_count = numbers.length →\n  numbers.length ≤ 2 * less_eq_count →\n  numbers.length ≤ 2 * more_eq_count) ∧\n  ((numbers.length % 2 = 1 →\n    result ∈ numbers) ∧\n    (numbers.length % 2 = 0 → max_more_eq.isSome ∧\n    min_less_eq.isSome ∧\n    2 * result = max_more_eq.get! + min_less_eq.get!));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Rat) : Rat :=\n\nlet sorted := numbers.mergeSort\nlet n := sorted.length\nif n = 0 then 0\nelse if n % 2 = 1 then\n  sorted[n / 2]!\nelse\n  (sorted[n / 2 - 1]! + sorted[n / 2]!) / 2\n\n\n-- [TEST_CASES]\n\n#test implementation [3, 1, 2, 4, 5] = 3\n#test implementation [-10, 4, 6, 1000, 10, 20] = 8.0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Rat)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1907ddaffdbb417c64dbbcb34e7f60e0118274c1f3a5714fb1518ee75a9fb1ac",
+  "timing": 2666.4869995480403,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:62ede86ae04f2f90524c6a7686e8b61c6b7dba12cb884451d061f5810d79be6b",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:3886a112d2d3a12f07b461cb5318ee2cf98d81bcc5c92f5cb80ad29ecfe1d28b",
+    "validation": [
+      {
+        "problem_id": "47",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:191bf508b9cd2fc252521ae8fe5c7efaa8c5343992f2d1c7d1296c809a7c9f75"
+      }
+    ]
+  },
+  "exception": null
+}

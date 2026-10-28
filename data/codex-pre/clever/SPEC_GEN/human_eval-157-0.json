@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef right_angle_triangle(a: nat, b: nat, c: nat) -> bool\n\"\"\"Given the lengths of the three sides of a triangle. Return True if the three\nsides form a right-angled triangle, False otherwise.\nA right-angled triangle is a triangle in which one angle is right angle or\n90 degree.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Nat → Bool)\n-- inputs\n(a b c: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 157,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0d648a6434a95ea1b4d2d82e3a63ae4767fc43e81bb0a5407a130f427e61a851",
+  "timing": 270.27792081900407,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:332551d365f23cdd4583082a6758e57eb3638f7898e6f8ac3137335543cb3d04",
+    "status": "OK",
+    "result": "sha256:373a900e578caec3063fbf30342aa119c988e7ed7b9d2a35c99e96a355686632"
+  },
+  "exception": null
+}

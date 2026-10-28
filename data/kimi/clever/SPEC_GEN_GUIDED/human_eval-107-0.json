@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_palindrome(n: nat) -> (nat, nat)\n\"\"\"Given a positive integer n, return a tuple that has the number of even and odd\ninteger palindromes that fall within the range(1, n), inclusive.\n\n>>> even_odd_palindrome(3)\n(1, 2)\n>>> even_odd_palindrome(12)\n(4, 6)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat × Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 123 = (8, 13)\n-- #test implementation 12 = (4, 6)\n-- #test implementation 3 = (1, 2)\n-- #test implementation 63 = (6, 8)\n-- #test implementation 25 = (5, 6)\n-- #test implementation 19 = (4, 6)\n-- #test implementation 9 = (4, 5)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 107,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c04c363a2d670937b7de378af3d54813e10bc41887dadd4b4978ba559928d65c",
+  "timing": 87.99536917498335,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d59fe894253bbba92a17541cfe9cac8bdf53972aa356cf40bed4e03368365f00",
+    "status": "OK",
+    "result": "sha256:dd4988e74fdb8f8d8dc950a74c11a3b380f2bdc4d973ea33d443ffb736e7fbc0"
+  },
+  "exception": null
+}

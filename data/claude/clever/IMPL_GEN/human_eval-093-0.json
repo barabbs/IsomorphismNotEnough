@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode(s : str) -> str\n\"\"\"Write a function that takes a message, and encodes in such a\nway that it swaps case of all letters, replaces all vowels in\nthe message with the letter that appears 2 places ahead of that\nvowel in the english alphabet.\nAssume only letters.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (\u03bb c => c.isAlpha) \u2192\n  result.length = s.length \u2227\n  (\u2200 i, i < s.length \u2192\n    let c := s.data.get! i;\n    let c' := result.data.get! i;\n    match c with\n    | 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' =>\n      c.isUpper \u2192 c'.val = c.toLower.val + 2 \u2227\n      c.isLower \u2192 c'.val = c.toUpper.val + 2\n    | _ =>\n      c.isUpper \u2192 c' = c.toLower \u2227\n      c.isLower \u2192 c' = c.toUpper)\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"test\" = \"TGST\"\n-- #test implementation \"This is a message\" = \"tHKS KS C MGSSCGG\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 93,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0c9532ae8dd1b976e5b9a76408f740383b942c7e6d3bbb400158472b7ee89119",
+  "timing": 84.70151145398268,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/u_j4lyu2/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:8ee97d5d85f9cc81969c5c15e4ef0aaee8a5182e719265c51111a23613e92518",
+    "status": "OK",
+    "result": "sha256:cda5c5be89c23efb38a4d15d3ced8ebfcbe210052142769d2e32972e7967cd3f"
+  },
+  "exception": null
+}

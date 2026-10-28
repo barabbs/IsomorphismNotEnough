@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_divisor(n: int) -> int\n\"\"\"For a given number n, find the largest number that divides n evenly, smaller than n\n\n>>> largest_divisor(15)\n5\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 15 = 5\n",
+  "info": {
+    "dataset": "clever",
+    "id": 24,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:ffb4ecdb00c819dae677c1a74c9c0835d8eb11dc81466ae2aef015b6480e4040",
+  "timing": 285.3178740339936,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/vpjcu41n/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:68ed8341432cb84e660005027386e3b433f14e9a9994809736d3cb151d731f7d",
+    "status": "OK",
+    "result": "sha256:f668715faee79229d3904432e31507a2c658738f475e2b684369ac9310196c58"
+  },
+  "exception": null
+}

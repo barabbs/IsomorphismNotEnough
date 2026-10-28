@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef by_length(arr: List[int]) -> List[string]\n\"\"\"Given an array of integers, sort the integers that are between 1 and 9 inclusive,\nreverse the resulting array, and then replace each digit by its corresponding name from\n\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List String)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 105,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fa36c754ec43864fd241e1ca4ef3ba1caf953e4e6f4ce1b382c7e412c50b76be",
+  "timing": 73.95176106599683,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/8gvk8kuh/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c862cb53b19770f30e58c30615903f8f6915a2bb8f0a07815b0f81fddb0d52f2",
+    "status": "OK",
+    "result": "sha256:8781efb5c3a067d6a1db10f2a8871fd75605660ea50bc881be08d9d7c61bb855"
+  },
+  "exception": null
+}

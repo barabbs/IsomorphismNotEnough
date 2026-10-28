@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef match_parens(l : list[str]) -> str\n\"\"\"You are given a list of two strings, both strings consist of open\nparentheses '(' or close parentheses ')' only.\nYour job is to check if it is possible to concatenate the two strings in\nsome order, that the resulting string will be good.\nA string S is considered to be good if and only if all parentheses in S\nare balanced. For example: the string '(())()' is good, while the string\n'())' is not.\nReturn 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String)\n-- inputs\n(l: List String) :=\n-- spec\nlet spec (result : String) :=\n  l.length = 2 →\n  l[0]!.all (fun c => c = '(' ∨ c = ')') →\n  l[1]!.all (fun c => c = '(' ∨ c = ')') →\n  let res := (balanced_paren_non_computable (l[0]! ++ l[1]!) '(' ')' ∨\n            balanced_paren_non_computable (l[1]! ++ l[0]!) '(' ')')\n  (res → result = \"Yes\") ∧\n  (¬ res → result = \"No\")\n-- program termination\n∃ result,\n  implementation l = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l: List String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [\"()(\", \")\"] = \"Yes\"\n-- #test implementation [\")\", \")\"] = \"No\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 119,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:19cd6b3af1887a68fbb3745f381b15dc1b13f6e06911d294238222e8fde0a13c",
+  "timing": 115.87363038212061,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:19e311a812ed8d0347fe06fcb30aa330bd1c7f075924ebf2610cf46e4cea6071",
+    "status": "OK",
+    "result": "sha256:8aaa776e844b96d2046471bfc33236a9ad2d45aac170499ff5d2335b6fb6c622"
+  },
+  "exception": null
+}

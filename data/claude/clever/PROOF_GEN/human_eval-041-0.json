@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef car_race_collision(x: nat) -> nat\n\"\"\"Imagine a road that's a perfectly straight infinitely long line.\nn cars are driving left to right;  simultaneously, a different set of n cars\nare driving right to left.   The two sets of cars start out being very far from\neach other.  All cars move in the same speed.  Two cars are said to collide\nwhen a car that's moving left to right hits a car that's moving right to left.\nHowever, the cars are infinitely sturdy and strong; as a result, they continue moving\nin their trajectory as if they did not collide.\nThis function outputs the number of such collisions.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(x : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  \u2203 x_list : List Nat, x_list.length = x \u2227 x_list.all (fun i => i = x)\n  \u2227 x_list.sum = result\n-- -- program termination\n\u2203 result, implementation x = result \u2227\nspec result\n-- \n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x : Nat) : Nat :=\n\nx * x\n\n\n-- [TEST_CASES]\n\n#test implementation 0 = 0\n#test implementation 5 = 25\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x : Nat)\n: problem_spec implementation x\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 41,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8255817d151af8c3f6541dd20c6290d043d338b27921041fb70db6cf1ffaf346",
+  "timing": 161.5491510120919,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:b105823b8df751af8ac664705ff1c4657bffdbd25a5eddd7b4ffab5dcb18b9c2",
+    "status": "OK",
+    "result": "sha256:0db22c2d76bfbad50486134881e88f230319386869e3703e0c5435fb15dd9fe2",
+    "validation": [
+      {
+        "problem_id": "41",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:eddb11edb442381bfc724dd569bb39901ef3cac47a8252f7d351268ec8fd9325"
+      }
+    ]
+  },
+  "exception": null
+}

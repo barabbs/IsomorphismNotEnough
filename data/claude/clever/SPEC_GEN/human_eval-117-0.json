@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef select_words(s : str, n : int) -> list[str]\n\"\"\"Given a string s and a natural number n, you have been tasked to implement\na function that returns a list of all words from string s that contain exactly\nn consonants, in order these words appear in the string s.\nIf the string s is empty then the function should return an empty list.\nNote: you may assume the input string contains only letters and spaces.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Nat \u2192 List String)\n-- inputs\n(s: String)\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 117,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d08df05a22a3c2d7dd40ae168ed98d1102d148d8354c493d8a3767f312a4bcb5",
+  "timing": 75.56146821200673,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/9_uch3xo/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:ccaaa9fa24fc3b2bd634b27c60753681865fdd2bb877cfc6d60399818a6f0825",
+    "status": "OK",
+    "result": "sha256:9d5ac6c4df3e481c039e607260e9b3f79875deea91c50e5e2b5760e8b57720f7"
+  },
+  "exception": null
+}

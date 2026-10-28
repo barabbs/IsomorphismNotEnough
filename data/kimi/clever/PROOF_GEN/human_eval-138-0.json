@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_equal_to_sum_even(n: int) -> bool\n\"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int → Bool)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  let sum_exists := ∃ a b c d : Nat,\n    Even a ∧\n    Even b ∧\n    Even c ∧\n    Even d ∧\n    (a + b + c + d = n);\n  result = true ↔ sum_exists\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Int) : Bool :=\n\ndecide (n >= 8 ∧ Even n)\n\n\n-- [TEST_CASES]\n\n#test implementation 4 = false\n#test implementation 6 = false\n#test implementation 8 = true\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Int)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 138,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:154cabb65f88668f58765e35a1cbd34b855ba4aeb335f6327a993e88eeb00ace",
+  "timing": 4142.9593891077675,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:bf94cee98f3b1df609e165b0e77143e14be40547c8b229be45dd59af61ed1d6d",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:99ae57ef51ee19022c2c52e475dd560eb2969e10ad78dd57120e51a4483734ab",
+    "validation": [
+      {
+        "problem_id": "138",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:5ddcffe2b7572a7591dc3b7a83e3452e46d1348d264a5823f53a7b5b39ca2f7a",
+        "lean_code": "sha256:df7ad2493562043bdf62eb4be2103a1adb240a7df9f9d98d2e616e9b4e62f8a2"
+      }
+    ]
+  },
+  "exception": null
+}

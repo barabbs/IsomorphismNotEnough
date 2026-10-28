@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode(s : str) -> str\n\"\"\"Write a function that takes a message, and encodes in such a\nway that it swaps case of all letters, replaces all vowels in\nthe message with the letter that appears 2 places ahead of that\nvowel in the english alphabet.\nAssume only letters.\n\n>>> encode('test')\n'TGST'\n>>> encode('This is a message')\n'tHKS KS C MGSSCGG'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"test\" = \"TGST\"\n-- #test implementation \"This is a message\" = \"tHKS KS C MGSSCGG\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 93,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c8feda215d85139ef2ee75ce7d50f14351a3bf98d24cd1aae0369f596dda52e6",
+  "timing": 141.55008760999954,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/oo0r83vy/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:552d5b71ddd1f95883aa72358034338ea7026fbe19542deccbd43f893714f7a9",
+    "status": "OK",
+    "result": "sha256:824a49ea745464d5854438c2d2646a70f084a4b26c2d1941c725483d98f7f6ff"
+  },
+  "exception": null
+}

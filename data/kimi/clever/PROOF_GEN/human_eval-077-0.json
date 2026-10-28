@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef iscube(a: int) -> bool\n\"\"\"Write a function that takes an integer a and returns True if this integer is a cube of some integer number.\nNote: you may assume the input is always valid.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  result ↔ exists n: Int, a = n^3\n-- program termination\n∃ result, implementation a = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Int) : Bool :=\n\n  let n := a.natAbs\n  let rec aux (m : Nat) (fuel : Nat) : Bool :=\n    match fuel with\n    | 0 => false\n    | fuel' + 1 =>\n      if m^3 = n then true\n      else if m^3 > n then false\n      else aux (m + 1) fuel'\n  if a = 0 then true else aux 1 (n + 1)\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = True\n#test implementation 2 = False\n#test implementation (-1) = True\n#test implementation 64 = True\n#test implementation 180 = False\n#test implementation 1000 = True\n#test implementation 0 = True\n#test implementation 1729 = False\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Int)\n: problem_spec implementation a\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 77,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:eecb32fdb21fd87ce979772cb2fb6dad61376a66822e31c23f6529262eb816e4",
+  "timing": 3288.9378619464114,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:0d1374c1c9540ca9f1bff3815315d893abfdce8467bbda7826608aeeac633e02",
+    "status": "OK",
+    "result": "sha256:362f8ef0b548099677d2b48b0894eede2e491ce7afa013739e5f48211e8f9ab8",
+    "validation": [
+      {
+        "problem_id": "77",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:6512d8c45210551d955a6cbc8f42ea4f352a00b5fcbefa45e7fbbe762da7f6c9"
+      }
+    ]
+  },
+  "exception": null
+}

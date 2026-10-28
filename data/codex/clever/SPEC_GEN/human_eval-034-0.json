@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique(l: list)\n\"\"\"Return sorted unique elements in a list.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 34,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4f603601c8feafc0686d948b2f4feec89d80c4f16b3962deebbf16af4be608b5",
+  "timing": 101.73680046480149,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:f289b45fc3ab6df4d75c85f6cff0391c5bb0844c64fee39dc5afc3bc661e0998",
+    "status": "OK",
+    "result": "sha256:782bfdc76bc9260cfd164a076efc3bab1c352aa757a13c28ac1098cb38f153f3"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_zero(xs: list)\n\"\"\"xs are coefficients of a polynomial.\nfind_zero find x such that poly(x) = 0.\nfind_zero returns only only zero point, even if there are many.\nMoreover, find_zero only takes list xs having even number of coefficients\nand largest non zero coefficient as it guarantees a solution.\nNote(George): This problem has been modified from the original HumanEval spec because of Real is not a computable type, but a zero does not necessarily exist over the rationals.\n\n>>> find_zero([1, 2])\n-0.5\n>>> find_zero([-6, 11, -6, 1])\n3.0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(xs: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test |implementation [1, 2] - (-1/2)| ≤ 1/1000000\n-- #test |implementation [-6, 11, -6, 1] - 1| ≤ 1/1000000 ∨ |implementation [-6, 11, -6, 1] - 2| ≤ 1/1000000 ∨ |implementation [-6, 11, -6, 1] - 3| ≤ 1/1000000\n",
+  "info": {
+    "dataset": "clever",
+    "id": 32,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:32e430667442bf25642b7d3925b18b0bc75af9413a704850242da10eeb488899",
+  "timing": 130.37722563976422,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:5fcb66d3d90b51c7ebef4f14104dff272272e3cda174185dd24bc5792e1e5052",
+    "status": "OK",
+    "result": "sha256:38c10c01c6e857ddccc1019f45299b8ef84316bf085eb3d145471ec032dea28a"
+  },
+  "exception": null
+}

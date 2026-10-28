@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_duplicates(numbers: List[int]) -> List[int]\n\"\"\"From a list of integers, remove all elements that occur more than once.\nKeep order of elements left the same as in the input.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 26,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9622c09a57075c164bfc4d8ce0e6edca4746079b68af43f53721b9de17ca128f",
+  "timing": 88.91017766299774,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/khnbftwd/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:2ac2ee68d9620c948730d44c9d6640a8cf7722263e4344b27a450da68cb6e09b",
+    "status": "OK",
+    "result": "sha256:38bb5a8de69897ecc0a0e49ebecd8dd24c1858ff77a63fe40e57508363639b1a"
+  },
+  "exception": null
+}

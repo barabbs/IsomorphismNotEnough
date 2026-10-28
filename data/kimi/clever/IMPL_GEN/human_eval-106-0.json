@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef f(n: int) -> List[int]\n\"\"\"Implement the function f that takes n as a parameter,\nand returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\nor the sum of numbers from 1 to i otherwise.\ni starts from 1.\nthe factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → List Int)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (result.length = n) ∧\n  (forall i: Nat, (1 ≤ i ∧ i ≤ n ∧ Even i) → (result[i-1]! = Nat.factorial i)) ∧\n  (forall i: Nat, (1 ≤ i ∧ i ≤ n ∧ Odd i) → (result[i-1]! = (List.range (i+1)).sum))\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = [1, 2, 6, 24, 15]\n-- #test implementation 7 = [1, 2, 6, 24, 15, 720, 28]\n-- #test implementation 1 = [1]\n-- #test implementation 3 = [1, 2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 106,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ab444da6f192af595ff0b2ae7ea10a441fd5ee0511e3b74473a8a11e245d8f9d",
+  "timing": 89.09167209314182,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:21cdb487b89539a83d3c250ea3b6d82e0f7de59f865edaabbff2f61982ea1ab5",
+    "status": "OK",
+    "result": "sha256:fe20df0246e6ea8741ee004a8df867010fff84b10c9e68d88a44759ae1cea0b4"
+  },
+  "exception": null
+}

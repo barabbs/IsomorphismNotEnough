@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_to_n(n: nat) -> nat\n\"\"\"sum_to_n is a function that sums numbers from 1 to n.\n\n>>> sum_to_n(30)\n465\n>>> sum_to_n(100)\n4950\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 30 = 465\n-- #test implementation 100 = 5050\n-- #test implementation 5 = 15\n-- #test implementation 10 = 55\n-- #test implementation 1 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 60,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:15bc7844441f48a9bdc3cbdbcddbe4298f933bb26e88c9a6ff01fa9bcbc19ef5",
+  "timing": 55.62116984199929,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/dpdkfh15/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c22aef6d58125d5601052829ad0b75474e3a2bc801861eea0fcb0ff0544e764b",
+    "status": "OK",
+    "result": "sha256:182729fb12e7bd2ff5022483e4e44f25ccdcba05e4cb919327a7745b8185b5a0"
+  },
+  "exception": null
+}

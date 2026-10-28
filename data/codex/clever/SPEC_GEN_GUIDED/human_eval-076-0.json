@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_simple_power(x: int, n: int) -> bool\n\"\"\"Your task is to write a function that returns true if a number x is a simple\npower of n and false in other cases. x is a simple power of n if n**int=x\n\n>>> is_simple_power(1, 4)\nTrue\n>>> is_simple_power(2, 2)\nTrue\n>>> is_simple_power(8, 2)\nTrue\n>>> is_simple_power(3, 2)\nFalse\n>>> is_simple_power(3, 1)\nFalse\n>>> is_simple_power(5, 3)\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → Int → Bool)\n-- inputs\n(x: Int) (n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 16 2 = True\n-- #test implementation 143214 16 = False\n-- #test implementation 4 2 = True\n-- #test implementation 9 3 = True\n-- #test implementation 16 4 = True\n-- #test implementation 24 2 = False\n-- #test implementation 128 4 = False\n-- #test implementation 12 6 = False\n-- #test implementation 1 1 = True\n-- #test implementation 1 12 = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 76,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:21d4b47faf744b906e2219cf6c183ae4ba7d5f861c5bb3a7b9ca9e26a8a58da2",
+  "timing": 65.16066016023979,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:b79cf53d698f4971651f9153808d0ff6a20b1105a2dd59afe1ff58fcc1ee29c0",
+    "status": "OK",
+    "result": "sha256:15fb01b078a337b05c7fc366b1b9010d52fe05a9f1fc66939014f3701b5524c2"
+  },
+  "exception": null
+}

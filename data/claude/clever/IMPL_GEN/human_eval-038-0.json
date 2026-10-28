@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_cyclic(s: str) -> str\n\"\"\"Returns an encoded string by cycling each group of three consecutive characters.\nSpecifically, each group of exactly three characters 'abc' is transformed to 'bca'.\nGroups of fewer than three characters at the end of the string remain unchanged.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n(impl: String \u2192 String)\n(s: String) :=\nlet n := s.length;\nlet extract (chars: List Char) (start_index: \u2115) (end_index: \u2115) :=\n  (chars.drop start_index).take (end_index - start_index + 1);\nlet spec (result: String) :=\n  let encoded_chars := result.toList;\n  let original_chars := s.toList;\n  encoded_chars.length = n \u2227\n  (\u2200 i : \u2115, i * 3 + 3 \u2264 n \u2192\n    extract encoded_chars (i * 3) (i * 3 + 2) =\n      [original_chars.get! (i * 3 + 1), original_chars.get! (i * 3 + 2), original_chars.get! (i * 3)]) \u2227\n  (n % 3 \u2260 0 \u2192 extract encoded_chars (n - n % 3) (n - 1) =\n    extract original_chars (n - n % 3) (n - 1));\n-- program termination\n\u2203 result,\n  impl s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abcdef\" = \"bcaefd\"\n-- #test implementation \"abcde\" = \"bcade\"\n-- #test implementation \"ab\" = \"ab\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 38,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bb5bc868d6fb33f7ca77d520fd0d9dbd883d33fce986913ea127ed1cd41ff04a",
+  "timing": 63.03711506398395,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/8pxo7tbf/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f39232559fcfa5b1f63023c794b6a13946ee2d04ccc6341ed1f201123cacdd19",
+    "status": "OK",
+    "result": "sha256:8dc727d1fa0207df4b8c983213beb02b87e92bce61c44f83f70b3e6c115417d2"
+  },
+  "exception": null
+}

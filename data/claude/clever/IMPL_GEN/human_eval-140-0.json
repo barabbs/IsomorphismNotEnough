@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fix_spaces(text: str) -> str\n\"\"\"Given a string text, replace all spaces in it with underscores,\nand if a string has more than 2 consecutive spaces,\nthen replace all consecutive spaces with -\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(text: String) :=\n-- spec\nlet spec (result: String) :=\n  (result = \"\" \u2192 text = \"\") \u2227\n  (result \u2260 \"\" \u2192 (\n    (\u2203 pref s, text = pref ++ s\n      \u2227 pref.length = 1\n      \u2227 pref \u2260 \" \"\n      \u2227 result = pref ++ impl s)\n    \u2228\n    (\u2203 pref s : String, text = pref ++ s \u2227 pref \u2260 \"\" \u2227 (\u2200 ch, ch \u2208 pref.toList \u2192 ch = ' ')\n      \u2227 let k := pref.length;\n        (k \u2264 2 \u2192 result = (String.replicate k '_') ++ (impl (text.drop k)))\n      \u2227 (2 < k \u2192 result = \"-\" ++ (impl (text.drop k)))) )\n  )\n-- program termination\n\u2203 result, impl text = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (text: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Example\" = \"Example\"\n-- #test implementation \"Example 1\" = \"Example_1\"\n-- #test implementation \" Example 2\" = \"_Example_2\"\n-- #test implementation \" Example   3\" = \"_Example-3\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 140,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bad65556edb875f8baf9b1b925ef9d8a4cfbbb94e0f281038b4bed9878b000e3",
+  "timing": 118.63636347599095,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/qkat7txx/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:eab887df2150b8b4b3ca0aeabf7e1c45ffd2b1b6b561d9b164738115949464b6",
+    "status": "OK",
+    "result": "sha256:38ea8132a5799c4330ea2e51ca84182d838c46e4d56d8a94908ef20cae6b6e73"
+  },
+  "exception": null
+}

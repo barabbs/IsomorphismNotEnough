@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef longest(strings: List[str]) -> Optional[str]\n\"\"\"Out of list of strings, return the longest one. Return the first one in case of multiple\nstrings of the same length. Return None in case the input list is empty.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 Option String)\n-- inputs\n(strings: List String) :=\n-- spec\nlet spec (result: Option String) :=\n  (result = none \u2194 strings.length = 0) \u2228\n  (\u2203 longest, result = some longest \u2227\n  longest \u2208 strings \u2227\n  \u2200 s, s \u2208 strings \u2192 s.length \u2264 longest.length \u2192\n  (\u2203 i, i < strings.length \u2227\n  strings[i]! = longest \u2227 \u2200 j < i, strings[j]!.length < longest.length));\n-- program termination\n\u2203 result, implementation strings = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) : Option String :=\n\n  strings.foldl (fun acc s =>\n    match acc with\n    | none => some s\n    | some best => if s.length > best.length then some s else acc\n  ) none\n\n\n-- [TEST_CASES]\n\n#test implementation [\"a\", \"b\", \"c\"] = some \"a\"\n#test implementation [\"a\", \"bb\", \"ccc\"] = some \"ccc\"\n#test implementation [] = none\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n: problem_spec implementation strings\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 12,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:dac54d9bd258893283d0a416a4e01d702a7eedb1bdf7a84a283c05ef4ec6df65",
+  "timing": 279.7233067790512,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:40ff1b522e08aa513dbfa6c68813a308427fc22ebd7538535a97af855ff4b2b8",
+    "status": "OK",
+    "result": "sha256:6e49cf17bc0b4ed989049b91ad2d8ad2d0d7d3edcd48dc7cc9f75cb7fe09f54f",
+    "validation": [
+      {
+        "problem_id": "12",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:204a009391731b5df07b03a8552755d641a40d01e302c358d2b465090da4fbba"
+      }
+    ]
+  },
+  "exception": null
+}

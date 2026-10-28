@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rescale_to_unit(numbers: List[float]) -> List[float]\n\"\"\"Given list of numbers (of at least two elements), apply a linear transform to that list,\nsuch that the smallest number will become 0 and the largest will become 1\n\n>>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n[0.0, 0.25, 0.5, 0.75, 1.0]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Rat → List Rat)\n-- inputs\n(numbers: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1.0, 2.0, 3.0, 4.0, 5.0] = [0.0, 0.25, 0.5, 0.75, 1.0]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 21,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:cc209a5dc79cc33343d9c75bbaaa280bfeb8b5d6a13391414b8666841bfe3568",
+  "timing": 342.26151968864724,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:39c9df08d55874af5b28ad8f6c9c34c432a4124e85ed0c92d4d54fb0cc4ed688",
+    "status": "OK",
+    "result": "sha256:7e7ceaee41f26d86b9fe37c245de14484d54ce1f46605073c538497d92879b26"
+  },
+  "exception": null
+}

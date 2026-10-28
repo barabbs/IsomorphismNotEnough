@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef parse_music(music_string: str) -> List[int]\n\"\"\"Input to this function is a string representing musical notes in a special ASCII format.\nYour task is to parse this string and return list of integers corresponding to how many beats does each\nnot last.\n\nHere is a legend:\n'o' - whole note, lasts four beats\n'o|' - half note, lasts two beats\n'.|' - quater note, lasts one beat\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String → List Nat)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 17,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3a04ac7a1170ca80cad35a19e94312bb2b0be5efce21b76b466ac2d8db8feb94",
+  "timing": 143.79830245953053,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:fcf0bb1d2a1c7f9226bd4bed5ac473360f900dbf6d4cc026d6674fdc043429fe",
+    "status": "OK",
+    "result": "sha256:189f67ac1585bf5b7031316bedc83340d9a4d720e5170b50d733252ccca6dabe"
+  },
+  "exception": null
+}

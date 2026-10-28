@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_vowels(string: str) -> str\n\"\"\"remove_vowels is a function that takes string and returns string without vowels.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(string: String) :=\nlet is_consonant (c: Char): Bool :=\n  let vowels := \"aeiouAEIOU\"\n  not (vowels.contains c);\n-- spec\nlet spec (result: String) :=\nresult.all (λ c => is_consonant c) ∧ result.length ≤ string.length ∧\n∀ c, result.contains c → string.contains c ∧\n∀ c , string.contains c ∧ is_consonant c → (result.contains c);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = \"\"\n-- #test implementation \"cat\" = \"ct\"\n-- #test implementation \"cata\" = \"ct\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 51,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:60f0362b530181cbf328913ea2c7e21c577c4a906a73fe815506a3e4cc9ee541",
+  "timing": 92.00684907007962,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:54e29d741dae053b3569f1989dc75164382cb017a66e75e017cdaeb71ce8ba9a",
+    "status": "OK",
+    "result": "sha256:f44488542702bf38c548843f7279062a80205b5f31084fef7d16940fd6b4e609"
+  },
+  "exception": null
+}

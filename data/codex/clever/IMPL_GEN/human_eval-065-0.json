@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef circular_shift(x: int, shift: int) -> str\n\"\"\"Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → String)\n-- inputs\n(x shift: Nat) :=\nlet isReverse (s: String) : Bool :=\n  let n := s.length;\n  ∀ i, i < n / 2 → s.get! ⟨i⟩ = s.get! ⟨n - 1 - i⟩;\n-- spec\nlet spec (result: String) :=\nlet x_str := Nat.repr x;\nresult.length = x_str.length ∧\n(x_str.length < shift → isReverse x_str) ∧\n(shift ≤ x_str.length →\n  x_str.take shift = result.drop (x_str.length - shift) ∧\n  x_str.drop shift = result.take (x_str.length - shift));\n-- program termination\n∃ result, implementation x shift = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x shift: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 12 1 = \"21\"\n-- #test implementation 12 2 = \"12\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 65,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4844cf5810fd019883f0b3e1411c0cfbe86aa179feac3e7344e29c7f552ea4c9",
+  "timing": 100.8208385920152,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:2f6a5513d2440f2110dfb97882b15da84d406b1d15b055c7b3c54bf9ed68e4f8",
+    "status": "OK",
+    "result": "sha256:655ff6e15da7fefda1babef4350186e24a7102f8a5797bfb39dd5336aa6b09e2"
+  },
+  "exception": null
+}

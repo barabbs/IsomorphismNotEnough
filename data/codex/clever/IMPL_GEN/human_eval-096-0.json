@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_up_to(n : int) -> list[int]\n\"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\nintegers that are prime numbers and less than n.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  match n with\n  | 0 => result = []\n  | n => n > 0 → (∀ i, i < result.length → (Nat.Prime (result.get! i)) ∧ (result.get! i) < n) ∧\n         (∀ i : Nat, i < n → Nat.Prime i → i ∈ result)\n-- program termination\n∃ result,\n  implementation n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = [2,3]\n-- #test implementation 11 = [2,3,5,7]\n-- #test implementation 0 = []\n-- #test implementation 20 = [2,3,5,7,11,13,17,19]\n-- #test implementation 1 = []\n-- #test implementation 18 = [2,3,5,7,11,13,17]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 96,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3ca7e38bc12591ed97ae66a4fe40ed178970f90132bba2beedaf6ce776669417",
+  "timing": 66.54722743434832,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:92084bc00984834aea033703f16ee9ad62f28fc64e3f27c2ddccf099dbdb5809",
+    "status": "OK",
+    "result": "sha256:da2e6ae6c04d5efb7cf0c7f50997d5432a23e2d4167c325951738b5a6c0bffa1"
+  },
+  "exception": null
+}

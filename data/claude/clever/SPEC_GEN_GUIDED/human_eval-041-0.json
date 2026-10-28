@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef car_race_collision(x: nat) -> nat\n\"\"\"Imagine a road that's a perfectly straight infinitely long line.\nn cars are driving left to right;  simultaneously, a different set of n cars\nare driving right to left.   The two sets of cars start out being very far from\neach other.  All cars move in the same speed.  Two cars are said to collide\nwhen a car that's moving left to right hits a car that's moving right to left.\nHowever, the cars are infinitely sturdy and strong; as a result, they continue moving\nin their trajectory as if they did not collide.\nThis function outputs the number of such collisions.\n\n>>> car_race_collision(0)\n0\n>>> car_race_collision(5)\n25\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(x: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 0 = 0\n-- #test implementation 5 = 25\n",
+  "info": {
+    "dataset": "clever",
+    "id": 41,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:71b6fcdfa1ac69b3d2e959666f794008098214b42b44e5fb300a4977dffc5bb4",
+  "timing": 57.68576884399954,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ekyxovnt/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:a2ae41ac7c8c773d2ace8d4adb1043892696c8ead0ab20b9d97ed217af4694d5",
+    "status": "OK",
+    "result": "sha256:94807cea0a2cfc38df041b33f58e312ee1b21cf36623da3fec68809233d0cf08"
+  },
+  "exception": null
+}

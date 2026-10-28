@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minSubArraySum(nums : list[int]) -> int\n\"\"\"Given an array of integers nums, find the minimum sum of any non-empty sub-array\nof nums.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  (∀ subarray ∈ nums.sublists,\n    subarray.length > 0 →\n    result ≤ subarray.sum) ∧\n  (∃ subarray ∈ nums.sublists,\n    subarray.length > 0 ∧\n    result = subarray.sum)\n-- program termination\n∃ result,\n  implementation nums = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (nums: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [2, 3, 4, 1, 2, 4] = 1\n-- #test implementation [-1, -2, -3] = -6\n",
+  "info": {
+    "dataset": "clever",
+    "id": 114,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:64b7188b1d2b9d7b7db1dac6bacc06480cc47ce68a763e2eef35fd2857013aa5",
+  "timing": 63.348086717072874,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:954c7c70329b68b8d259054a10a0ee3c937b89cc0ea8d8f9da773c499e88dbce",
+    "status": "OK",
+    "result": "sha256:64a325b3d388268a6efb14b62b66bcfa01606a40c15df76e28d80640d957104e"
+  },
+  "exception": null
+}

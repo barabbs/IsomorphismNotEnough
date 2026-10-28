@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef closest_integer(s : String) -> Option Int\n\"\"\"Create a function that takes a value (string) representing a number\nand returns the closest integer to it. If the number is equidistant\nfrom two integers, round it away from zero.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Option Int)\n-- inputs\n(s: String) :=\n-- spec\nlet numeric_characters := [\"-\", \"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \".\"]\nlet is_valid_string :=\n  s.length > 0 \u2227\n  s.count (\".\".get! 0) \u2264 1 \u2227\n  s.count (\"-\".get! 0) \u2264 1 \u2227\n  s.data.all (fun c => numeric_characters.contains (String.mk [c])) \u2227\n  (s.count (\"-\".get! 0) = 1 \u2192 s.data.head! = '-')\n\nlet spec (result : Option Int) := match result with\n  | some result =>\n    is_valid_string \u2227\n    let parts := s.split (fun c => c = '.')\n    (parts.length = 1 \u2192 result = s.toInt!) \u2227\n    (parts.length = 2 \u2192\n      let integer_part := parts.get! 0\n      let is_negative := s.data.head! = '-'\n      |((integer_part.toInt! - result) : \u211a)| \u2264 0.5 \u2227\n      (is_negative \u2192 |((integer_part.toInt! - result) : \u211a)| = 0.5 \u2192 integer_part.toInt? < result) \u2227\n      (\u00acis_negative \u2192 |((integer_part.toInt! - result) : \u211a)| = 0.5 \u2192 integer_part.toInt? > result)\n    )\n  | none => \u00ac is_valid_string\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Option Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"10\" = some 10\n-- #test implementation \"15.3\" = some 15\n",
+  "info": {
+    "dataset": "clever",
+    "id": 99,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8c7ad208e7a0185dd2a82c94884888d1be4cd43306fb8f1170f16c466c3f06d7",
+  "timing": 247.45235510802013,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/8kcfncg_/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:3c1bc36083d0b8dd6653f6f5ef925bcba1b366fc9baf7f09f200f3c19a6856a9",
+    "status": "OK",
+    "result": "sha256:11ac73387cfcca0bfd9a1a1548690d9a7bf98ed60487f262c6bd9c45c603bdf0"
+  },
+  "exception": null
+}

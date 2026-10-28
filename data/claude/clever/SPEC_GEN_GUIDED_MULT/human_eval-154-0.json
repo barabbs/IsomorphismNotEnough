@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef cycpattern_check(a: str, b: str) -> bool\n\"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word, else False\n\n>>> cycpattern_check('abcd', 'abd')\nFalse\n>>> cycpattern_check('hello', 'ell')\nTrue\n>>> cycpattern_check('whassup', 'psus')\nFalse\n>>> cycpattern_check('abab', 'baa')\nTrue\n>>> cycpattern_check('efef', 'eeff')\nFalse\n>>> cycpattern_check('himenss', 'simen')\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String \u2192 Bool)\n-- inputs\n(a b: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"abcd\" \"abd\" = False\n-- #test implementation \"hello\" \"ell\" = True\n-- #test implementation \"whassup\" \"psus\" = False\n-- #test implementation \"abab\" \"baa\" = True\n-- #test implementation \"efef\" \"eeff\" = False\n-- #test implementation \"himenss\" \"simen\" = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 154,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:d626993f734be2a67c727e41d7fa012d9552f4f2fadce04d38b183167747cac9",
+  "timing": 164.68527871603146,
+  "metadata": {
+    "prompt": "Read problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b5d04bd97519a1e22b7dea110b68066a6eb9762ba8fcbfc12575e7c6a66476a6",
+    "status": "OK",
+    "result": "sha256:0918b0e6ec7d357ed30f38781d9c08c052f6e3733f1633c9d4eefe8967c38ab1"
+  },
+  "exception": null
+}

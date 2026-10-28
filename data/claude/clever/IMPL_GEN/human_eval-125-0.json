@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minPath(grid, k)\n\"\"\"Given a grid with N rows and N columns (N >= 2) and a positive integer k,\neach cell of the grid contains a value. Every integer in the range [1, N * N]\ninclusive appears exactly once on the cells of the grid.\n\nYou have to find the minimum path of length k in the grid. You can start\nfrom any cell, and in each step you can move to any of the neighbor cells,\nin other words, you can go to cells which share an edge with you current\ncell.\nPlease note that a path of length k means visiting exactly k cells (not\nnecessarily distinct).\nYou CANNOT go off the grid.\nA path A (of length k) is considered less than a path B (of length k) if\nafter making the ordered lists of the values on the cells that A and B go\nthrough (let's call them lst_A and lst_B), lst_A is lexicographically less\nthan lst_B, in other words, there exist an integer index i (1 <= i <= k)\nsuch that lst_A[i] < lst_B[i] and for any j (1 <= j < i) we have\nlst_A[j] = lst_B[j].\nIt is guaranteed that the answer is unique.\nReturn an ordered list of the values on the cells that the minimum path go through.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List (List Nat) \u2192 Nat \u2192 List Nat)\n-- inputs\n(grid: List (List Nat))\n(k: Nat) :=\n-- spec\nlet lexographically_less (a b: List Nat) : Prop :=\n  a.length = b.length \u2227 a.length = k \u2227\n  (\u2203 i, i < k \u2227 a.get! i < b.get! i \u2227\n  (\u2200 j, j < i \u2192 a.get! j = b.get! j));\nlet rec is_valid_path (k': Nat) (path: List Nat) (grid: List (List Nat)) : Prop :=\n  let n := grid.length;\n  path.length = k' \u2192\n  (\u2203 i j,\n    (i < n \u2227 j < n \u2227 path.get! 0 = (grid.get! i).get! j) \u2227\n    (1 < path.length \u2192\n      ( \u2203 i' j', i' < n \u2227 j' < n \u2227\n        (path.get! 1 = (grid.get! i').get! j') \u2227\n        ((abs ((i: Int) - (i': Int)) = 1 \u2227 j = j') \u2228\n         (abs ((j: Int) - (j': Int)) = 1 \u2227 i = i'))) \u2227\n      (is_valid_path (k' - 1) (path.drop 1) grid))\n  );\nlet spec (result: List Nat) :=\n  let n := grid.length;\n  (\u2200 i, i < n \u2192 (grid.get! i).length = n) \u2192\n  (\u2200 i j, i < n \u2192 j < n \u2194 ((grid.get! i).get! j) \u2208 [1, n^2]) \u2192\n  is_valid_path k result grid \u2227 (\u2200 path, is_valid_path k path grid \u2192 lexographically_less result path);\n-- program terminates\n\u2203 result, impl grid k = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (grid: List (List Nat)) (k: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [[1,2,3], [4,5,6], [7,8,9]] 3 = [1,2,3]\n-- #test implementation [[5,9,3], [4,1,6], [7,8,2]] 1 = [1]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 125,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b44f01113313546a96d3ad85142a688a4544b17e7a1b29b146c87d634d311c60",
+  "timing": 243.00666348001687,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/0y77_wrr/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:aec262f7b75ddd4027c24b065b9f15f74c5b7926e87c050d179fd64a01ef9eab",
+    "status": "OK",
+    "result": "sha256:86cb9c65dffef6684c85e7e2135998564f18fd62e506ba009de030febbc2a80d"
+  },
+  "exception": null
+}

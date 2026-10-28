@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strange_sort_list(lst: List[int]) -> List[int]\n\"\"\"Given list of integers, return list in strange order.\nStrange sorting is when you start with the minimum value,\nthen the maximum of the remaining integers, then the minimum and so on.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  let sorted_lst := lst.mergeSort;\n  (List.Perm lst result)\n  ∧ (forall i, (0 <= i ∧ i < lst.length ∧ i % 2 = 0) → result[i]! = sorted_lst[i / 2]!)\n  ∧ (forall i, (0 <= i ∧ i < lst.length ∧ i % 2 = 1) → result[i]! = sorted_lst[lst.length - (i-1)/2 - 1]!)\n-- program termination\n∃ result, implementation lst = result ∧ spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int): List Int :=\n\n  let sorted := lst.mergeSort\n  let n := sorted.length\n  let m := n / 2\n  let lows := sorted.take m\n  let highs := sorted.drop m |>.reverse\n  let pairs := List.zip lows highs\n  let interleaved := pairs.foldr (fun (a, b) acc => a :: b :: acc) []\n  if n % 2 = 0 then\n    interleaved\n  else\n    match sorted[m]? with\n    | some x => interleaved ++ [x]\n    | none => interleaved\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3, 4] = [1, 4, 2, 3]\n#test implementation [5, 6, 7, 8, 9] = [5, 9, 6, 8, 7]\n#test implementation [1, 2, 3, 4, 5] = [1, 5, 2, 4, 3]\n#test implementation [5, 6, 7, 8, 9, 1] = [1, 9, 5, 8, 6, 7]\n#test implementation [5, 5, 5, 5] = [5, 5, 5, 5]\n#test implementation [] = []\n#test implementation [1,2,3,4,5,6,7,8] = [1, 8, 2, 7, 3, 6, 4, 5]\n#test implementation [0,2,2,2,5,5,-5,-5] = [-5, 5, -5, 5, 0, 2, 2, 2]\n#test implementation [111111] = [111111]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 70,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8d96182d6f3c4503ab04695a762e7f7e3e6fe33a1ea4330be08f3981600e71fc",
+  "timing": 14413.744194061961,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:25c1370155e6d4fe6b65be4822feb6ed37094e289bbe11a05cf204ac93bfa27b",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "70",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:c32c18ec1ae0d8f9f4c500d7063d6f480b755cf1dc7c2f5cd87c1dd91a89f591"
+      }
+    ]
+  },
+  "exception": null
+}

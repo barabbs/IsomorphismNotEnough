@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_max_triples(n: int) -> int\n\"\"\"You are given a positive integer n. You have to create an integer array a of length n.\nFor each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.\nReturn the number of triples (a[i], a[j], a[k]) of a where i < j < k,\nand a[i] + a[j] + a[k] is a multiple of 3.\n\n>>> get_max_triples(5)\n1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(nums: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 147,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:3dc6121ed75a0d6f4540fbbaf492a51f416abbec1ef008a27b9d7cbeec72e935",
+  "timing": 95.14761392073706,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:aee2b22508333872fce38a0b93d62e174c44b863b73f192aaea0fe11c41a7556",
+    "status": "OK",
+    "result": "sha256:7b5329a886be9374cd6c032f5696b542d29f15be2c7685cc3ab96a0b44ecdb72"
+  },
+  "exception": null
+}

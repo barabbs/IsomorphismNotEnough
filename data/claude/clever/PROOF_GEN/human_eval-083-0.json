@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef starts_one_ends(n: int) -> int\n\"\"\"Given a positive integer n, return the count of the numbers of n-digit\npositive integers that start or end with 1.\nNote: For reviewer, I believe this is the most straightforward spec, and I am relying on Set cardianlity not being computable in general. The point of this problem is really to privide a formula.\nNote: But I guess a program that goes through each number and adds 1 will be the same as a program that computes in O(1) under this view.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  0 < n \u2192\n  result = {k : \u2115 | 10 ^ (n - 1) \u2264 k \u2227 k < 10 ^ n \u2227 (k.repr.front = '1' \u2228 k.repr.back = '1')}.ncard\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  if n == 0 then 0\n  else if n == 1 then 1\n  else 10 ^ (n - 1) + 8 * 10 ^ (n - 2)\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = 1\n#test implementation 2 = 18\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 83,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8459e59473fe0e8e33c67e251febf426d7d944adc13db164d0d324b5993d1893",
+  "timing": 1985.795130265993,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:81e4f987b303371b83b55443d8b8e9fc2e4db5ea8de025f36adad74e44e4d949",
+    "status": "OK",
+    "result": "sha256:3ec8e79e4b9668d5d1c2c6e186662b8e14f73d30ea24bab9d19aceaa44a41bea",
+    "validation": [
+      {
+        "problem_id": "83",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:e4dd6b57dd211da4525836b8ae57a532e1feef0d4d3e29f61b29e44d303c2e11"
+      }
+    ]
+  },
+  "exception": null
+}

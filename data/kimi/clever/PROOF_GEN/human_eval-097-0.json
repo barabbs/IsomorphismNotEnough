@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef multiply(a : int, b : int) -> int\n\"\"\"Complete the function that takes two integers and returns\nthe product of their unit digits.\nAssume the input is always valid.\n-- Note(George): I'm finding it hard to not leak the implementation here, so I opted to make the spec more convoluted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Int → Int)\n-- inputs\n(a b: Int) :=\n-- spec\nlet spec (result : Int) :=\n  |result| ≤ 81 ∧\n  result % 10 = (a * b) % 10 ∧\n  ((b%10) ≠ 0 → (result % (b%10) = 0 ∧ (result/ (b%10)) % 100 = (a%10))) ∧\n  ((a%10) ≠ 0 → (result % (a%10) = 0 ∧ (result/ (a%10)) % 100 = (b%10))) ∧\n  ((a%10 = 0) ∨ (b%10 = 0) → result = 0)\n-- program termination\n∃ result,\n  implementation a b = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: Int) : Int :=\n\n  (a % 10) * (b % 10)\n\n\n-- [TEST_CASES]\n\n#test implementation 148 412 = 16\n#test implementation 19 28 = 72\n#test implementation 2020 1851 = 0\n#test implementation 14 (-15) = 20\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: Int)\n: problem_spec implementation a b\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 97,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:97024befe2d6aa1009da5703e693f9da5ad1fe64733df4c49614281bb8990843",
+  "timing": 2392.071529111825,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:5c1908a6b394170222ed73cd72c4776968dc11c687751b2bd5655e4706195983",
+    "status": "OK",
+    "result": "sha256:53c054f7b2f6092d7737d89ade844df7c7d339bfdde8e240e80ce884cd582e84",
+    "validation": [
+      {
+        "problem_id": "97",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:9d8c630195da8203a058e7e5625da7fe8f91636a69e201fb5f6f5bbcda996b75"
+      }
+    ]
+  },
+  "exception": null
+}

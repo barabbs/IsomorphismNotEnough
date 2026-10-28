@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_numbers(numbers: str) -> str\n\"\"\"Input is a space-delimited string of numberals from 'zero' to 'nine'.\nValid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\nReturn the string with numbers sorted from smallest to largest\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(numbers: String) :=\n-- spec\nlet word_to_number_map : String → Int := fun word =>\n  match word with\n  | \"zero\" => 0\n  | \"one\" => 1\n  | \"two\" => 2\n  | \"three\" => 3\n  | \"four\" => 4\n  | \"five\" => 5\n  | \"six\" => 6\n  | \"seven\" => 7\n  | \"eight\" => 8\n  | \"nine\" => 9\n  | _ => -1;\nlet is_sorted_asc : List Int → Bool := fun numbers =>\nlet rec is_sorted_asc_helper : List Int → Bool → Bool := fun numbers is_sorted =>\n  match numbers with\n  | [] => is_sorted\n  | [x] => is_sorted\n  | x::y::rest => if x <= y then is_sorted_asc_helper (y::rest) true else false;\nis_sorted_asc_helper numbers true;\nlet spec (result: String) :=\nlet result_split := result.splitOn \" \";\nlet numbers_split := numbers.splitOn \" \";\nlet result_mapped_to_numbers := result_split.map word_to_number_map;\nlet numbers_as_str_mapped_to_numbers := numbers_split.map word_to_number_map;\n¬ -1 ∈ numbers_as_str_mapped_to_numbers →\nresult_split.length = numbers_split.length ∧\n(∀ n, n ∈ numbers_as_str_mapped_to_numbers →\n∃ m, m ∈ result_mapped_to_numbers) ∧\n(∀ n, n ∈ result_mapped_to_numbers →\n∃ m, m ∈ numbers_as_str_mapped_to_numbers) ∧\n(∀ n, numbers_as_str_mapped_to_numbers.count n = result_mapped_to_numbers.count n) ∧\nis_sorted_asc result_mapped_to_numbers = true;\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: String) : String :=\n\nlet word_to_value : String → Int := fun word =>\n  match word with\n  | \"zero\" => 0\n  | \"one\" => 1\n  | \"two\" => 2\n  | \"three\" => 3\n  | \"four\" => 4\n  | \"five\" => 5\n  | \"six\" => 6\n  | \"seven\" => 7\n  | \"eight\" => 8\n  | \"nine\" => 9\n  | _ => -1;\nlet words := numbers.splitOn \" \";\nlet sorted := words.mergeSort (fun a b => word_to_value a <= word_to_value b);\nString.intercalate \" \" sorted\n\n\n-- [TEST_CASES]\n\n#test implementation \"three one five\" = \"one three five\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: String)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 19,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:cf64a50e564bd908138c1054b35cf8b047fa5f1eb8c737a8bdfc051416f9a80e",
+  "timing": 9793.78874705499,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c552e88c37c476f6e867a420aed9f215d4f7b80314dfd43852d6155264dc40b8",
+    "status": "FAIL",
+    "result": "sha256:d877b34be2e3db33f95289a1ea89b5049888365242555e97c4ca6432652faab9",
+    "validation": [
+      {
+        "problem_id": "19",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:0b8c96f51f64fb1287beef60983e50f5ac388e5e242da8bf88e2dc9b272d232a",
+        "lean_code": "sha256:5bcecd7b9e39814e5ffe35001a31191c0bdf18ecead9c391adfa3e5262f85c00"
+      }
+    ]
+  },
+  "exception": null
+}

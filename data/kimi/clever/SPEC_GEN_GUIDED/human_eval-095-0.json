@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_dict_case(s : dict[str, str]) -> bool\n\"\"\"Given a dictionary, return True if all keys are strings in lower\ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nNote(George): Modified the problem to use strings only for both keys and values.\n\n>>> check_dict_case({'a': 'apple', 'b': 'banana'})\nTrue\n>>> check_dict_case({'a': 'apple', 'A': 'banana', 'B': 'banana'})\nFalse\n>>> check_dict_case({'a': 'apple', '8': 'banana'})\nFalse\n>>> check_dict_case({'Name': 'John', 'Age': '36', 'City': 'Houston'})\nFalse\n>>> check_dict_case({'STATE': 'NC', 'ZIP': '12345'})\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Std.HashMap String String → Bool)\n-- inputs\n(D: Std.HashMap String String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"b\", \"banana\")]) = true\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"A\", \"banana\"), (\"B\", \"banana\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"8\", \"banana\"), (\"a\", \"apple\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"Name\", \"John\"), (\"Age\", \"36\"), (\"City\", \"Houston\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"STATE\", \"NC\"), (\"ZIP\", \"12345\")]) = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 95,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:d1907a240a0312c92eb1b4ff06f760481ba6487ada0c4a0596d064279d59639c",
+  "timing": 215.33378675114363,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:859549c58176089b6a1aadc3bf86024749127fce6075f1e859049d4190c7f33a",
+    "status": "OK",
+    "result": "sha256:2fcb9f1d9e46d98e89063eb718ae515b4a81a3879552793c35a02d316027a760"
+  },
+  "exception": null
+}

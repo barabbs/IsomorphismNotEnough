@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef search(numbers: List[int]) -> int\n\"\"\"You are given a non-empty list of positive integers. Return the greatest integer that is greater than\nzero, and has a frequency greater than or equal to the value of the integer itself.\nThe frequency of an integer is the number of times it appears in the list.\nIf no such a value exist, return -1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length \u2227 numbers.all (fun n => 0 < n) \u2192\n(result \u2260 -1 \u2194 \u2203 i : Nat, i < numbers.length \u2227\n  numbers[i]! = result \u2227 numbers[i]! > 0 \u2227\n  numbers[i]! \u2264 (numbers.filter (fun x => x = numbers[i]!)).length \u2227\n  (\u00ac\u2203 j : Nat, j < numbers.length \u2227\n  numbers[i]! < numbers[j]! \u2227 numbers[j]! \u2264 numbers.count numbers[j]!));\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : (Int) :=\n\n  let candidates := numbers.filter (fun x => x > 0 && x \u2264 (numbers.count x : Int))\n  candidates.foldl (fun acc x => max acc x) (-1)\n\n\n-- [TEST_CASES]\n\n#test implementation [4, 1, 2, 2, 3, 1] = 2\n#test implementation [1, 2, 2, 3, 3, 3, 4, 4, 4] = 3\n#test implementation [5, 5, 4, 4, 4] = -1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 69,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:87d955c0b5c84c3b3b40e957cc9df7926b83fd0056012c7c3b6a3d482c02eef0",
+  "timing": 1068.1904906790005,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:53c1ae23932c7392b1a4d80b8b529bf7e1a5415111c43445e95e01a55d0ef71d",
+    "status": "OK",
+    "result": "sha256:36cf295c18174dbe82916aaa9ad72f5207c56568d307353ce82ffbb3c3d06890",
+    "validation": [
+      {
+        "problem_id": "69",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:1c470740243c405510636b95bf7c7346866ead74f971b4cc6f040f89192661ad"
+      }
+    ]
+  },
+  "exception": null
+}

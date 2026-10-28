@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef flip_case(string: str) -> str\n\"\"\"For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 27,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ad4e9945b6ef0ad062756a14b1b3aaae1bfb921b748a9469c2f25ef1722ec718",
+  "timing": 153.92965429928154,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:f1acb020dec76114f284cd9af70295da49d2a81e834ba55be9f0c69c0e507dbe",
+    "status": "OK",
+    "result": "sha256:9572af69877734353958643bfffa12d2c4d3521cdb3e4f7596bec8b84ab4bcce"
+  },
+  "exception": null
+}

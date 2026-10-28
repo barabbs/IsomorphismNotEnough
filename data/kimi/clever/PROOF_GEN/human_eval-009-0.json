@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rolling_max(numbers: List[int]) -> List[int]\n\"\"\"From a given list of integers, generate a list of rolling maximum element found until given moment\nin the sequence.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\nresult.length = numbers.length ∧\n∀ i, i < numbers.length →\n(result[i]! ∈ numbers.take (i + 1) ∧\n∀ j, j ≤ i → numbers[j]! ≤ result[i]!);\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : List Int :=\n\n  match numbers with\n  | [] => []\n  | x :: xs => List.scanl max x xs\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3, 2, 3, 4, 2] = [1, 2, 3, 3, 3, 4, 4]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 9,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:52f7d2f98c1517510bf0381f9be76db5f50e0c69c774bd3c5071f74d293d0a66",
+  "timing": 10808.107646354008,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c53f5a102fbaff99833bc3ddace8f62c5a2db841b2de6e1a50df264e954332d8",
+    "status": "OK",
+    "result": "sha256:fb8de573f075e2dcedea9710a2d6b12f28b9c04cad052ede134d47615ef5cf34",
+    "validation": [
+      {
+        "problem_id": "9",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:b9701c9726fc3084504ea2055a235243481049054e750ec34e779c2627f0de83"
+      }
+    ]
+  },
+  "exception": null
+}

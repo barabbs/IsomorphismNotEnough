@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef eat(number: nat, need: nat, remaining: nat) -> List[nat]\n\"\"\"You're a hungry rabbit, and you already have eaten a certain number of carrots,\nbut now you need to eat more carrots to complete the day's meals.\nyou should return an array of [ total number of eaten carrots after your meals,\n                                the number of carrots left after your meals ]\nif there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.\n\nVariables:\n  @number : integer\n      the number of carrots that you have eaten.\n  @need : integer\n      the number of carrots that you need to eat.\n  @remaining : integer\n      the number of remaining carrots thet exist in stock\n\nConstrain:\n* 0 <= number <= 1000\n* 0 <= need <= 1000\n* 0 <= remaining <= 1000\n\n>>> eat(5, 6, 10)\n[11, 4]\n>>> eat(4, 8, 9)\n[12, 1]\n>>> eat(1, 10, 10)\n[11, 0]\n>>> eat(2, 11, 5)\n[7, 0]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Nat → List Nat)\n-- inputs\n(a b c : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 6 10 = [11, 4]\n-- #test implementation 4 8 9 = [12, 1]\n-- #test implementation 1 10 10 = [11, 0]\n-- #test implementation 2 11 5 = [7, 0]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 159,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:33702d988c4b0f226d70c351a2a2e44a4034bc913a8a4fa20cf416660d6a6f32",
+  "timing": 86.62039618333802,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:238e1f1120c4f3bd1bcf370dabb69abee0fbbf250c82bd87589dfd0ba8230863",
+    "status": "OK",
+    "result": "sha256:785e3722c95ceb966910fb8d936b8c174cdbb8858bc7d9a148431f87444a6e0d"
+  },
+  "exception": null
+}

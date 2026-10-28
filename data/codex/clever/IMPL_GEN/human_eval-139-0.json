@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef special_factorial(n: int) -> int\n\"\"\"The Brazilian factorial is defined as:\nbrazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!\nwhere n > 0. Please write a function that computes the Brazilian factorial.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nlet factorial := Nat.factorial n;\n(0 < n → result / factorial = impl (n - 1)) ∧\n(n = 0 → result = 1);\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 4 = 288\n",
+  "info": {
+    "dataset": "clever",
+    "id": 139,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b65caeef4db78fc1a0dc7e0d343628100be19eac49a2fac39ca22f99d9a189dd",
+  "timing": 55.36411751480773,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:8f3b5143163c27a4f1c6eea4df94b52f0d873dbee5cb3f6cf987f5bdb9f21fbf",
+    "status": "OK",
+    "result": "sha256:88f1ffb6b16828700c2ae07c7ee17ce96e536e551950610750d3c928fcc7b8f0"
+  },
+  "exception": null
+}

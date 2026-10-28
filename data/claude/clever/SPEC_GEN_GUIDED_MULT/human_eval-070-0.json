@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strange_sort_list(lst: List[int]) -> List[int]\n\"\"\"Given list of integers, return list in strange order.\nStrange sorting is when you start with the minimum value,\nthen the maximum of the remaining integers, then the minimum and so on.\n\n>>> strange_sort_list([1, 2, 3, 4])\n[1, 4, 2, 3]\n>>> strange_sort_list([5, 5, 5, 5])\n[5, 5, 5, 5]\n>>> strange_sort_list([])\n[]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3, 4] = [1, 4, 2, 3]\n-- #test implementation [5, 6, 7, 8, 9] = [5, 9, 6, 8, 7]\n-- #test implementation [1, 2, 3, 4, 5] = [1, 5, 2, 4, 3]\n-- #test implementation [5, 6, 7, 8, 9, 1] = [1, 9, 5, 8, 6, 7]\n-- #test implementation [5, 5, 5, 5] = [5, 5, 5, 5]\n-- #test implementation [] = []\n-- #test implementation [1,2,3,4,5,6,7,8] = [1, 8, 2, 7, 3, 6, 4, 5]\n-- #test implementation [0,2,2,2,5,5,-5,-5] = [-5, 5, -5, 5, 0, 2, 2, 2]\n-- #test implementation [111111] = [111111]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 70,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:eaf7136953f36853fa7a2c975371f23f9bc1ef9444c7862055a3de6daad3f904",
+  "timing": 248.10672273894306,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/vr5drisj/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e9a317448f5739742db4b7a0d325bee8b816cba62be0e4058b6a73fbd1b21142",
+    "status": "OK",
+    "result": "sha256:36404626916d0307a595494f33f1679f7fc405b37caf60aee1ac56be3250bb98"
+  },
+  "exception": null
+}

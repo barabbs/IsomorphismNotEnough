@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rescale_to_unit(numbers: List[float]) -> List[float]\n\"\"\"Given list of numbers (of at least two elements), apply a linear transform to that list,\nsuch that the smallest number will become 0 and the largest will become 1\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → List Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: List Rat) :=\n2 ≤ numbers.length →\nlet min_elem := numbers.min?.get!;\nlet max_elem := numbers.max?.get!;\nlet range := max_elem - min_elem;\nresult.length = numbers.length ∧\n∀ i, i < numbers.length →\n(min_elem ≠ max_elem →\nresult[i]! = (numbers[i]! - min_elem) / range) ∧\n(min_elem = max_elem →\nresult[i]! = 0);\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat): List Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1.0, 2.0, 3.0, 4.0, 5.0] = [0.0, 0.25, 0.5, 0.75, 1.0]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 21,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:985775373b7f8d39b70fa60ea4d0889a949cf8517536088b1d736988a2eb3694",
+  "timing": 75.14130159281194,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:bc9e98da11d55dd6c0e711d95c7b304829524086b35d31441ded40c1595a5694",
+    "status": "OK",
+    "result": "sha256:952630b9b5c5233a66d8eb81608a19e9f06c2a92461db23170cd19f8a1b34459"
+  },
+  "exception": null
+}

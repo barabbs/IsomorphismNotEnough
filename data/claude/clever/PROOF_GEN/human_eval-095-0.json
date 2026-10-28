@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_dict_case(s : dict[str, str]) -> bool\n\"\"\"Given a dictionary, return True if all keys are strings in lower\ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nNote(George): Modified the problem to use strings only for both keys and values.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Std.HashMap String String \u2192 Bool)\n-- inputs\n(D: Std.HashMap String String) :=\n-- spec\nlet spec (result : Bool) :=\n  match D.isEmpty with\n  | true => result = false\n  | false =>\n    let keys := D.keys\n    let all_lower := keys.all (fun s => s.toLower = s)\n    let all_upper := keys.all (fun s => s.toUpper = s)\n    result = true \u2194 all_lower || all_upper\n-- program termination\n\u2203 result,\n  implementation D = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (D: Std.HashMap String String) : Bool :=\n\n  if D.isEmpty then false\n  else\n    let keys := D.keys\n    let all_lower := keys.all (fun s => s.toLower = s)\n    let all_upper := keys.all (fun s => s.toUpper = s)\n    all_lower || all_upper\n\n\n-- [TEST_CASES]\n\n#test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"b\", \"banana\")]) = true\n#test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"A\", \"banana\"), (\"B\", \"banana\")]) = false\n#test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"8\", \"banana\"), (\"a\", \"apple\")]) = false\n#test implementation (Std.HashMap.ofList [(\"Name\", \"John\"), (\"Age\", \"36\"), (\"City\", \"Houston\")]) = false\n#test implementation (Std.HashMap.ofList [(\"STATE\", \"NC\"), (\"ZIP\", \"12345\")]) = true\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(D: Std.HashMap String String)\n: problem_spec implementation D\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 95,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a8dc749022da38a5e4bae80fb4b216fc5d68f13923a1679e4fe09297df00ccd7",
+  "timing": 138.02157286799047,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:68e9c6f0283eda03b6797ffada8b73327ef3a9c39168462a5766e9f70b0aeef4",
+    "status": "OK",
+    "result": "sha256:62d33cc37fc37698d44a987e9ab988b964a121d8665a6248b4cd7cbaa18803cd",
+    "validation": [
+      {
+        "problem_id": "95",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:ff6efdc2660312fbe7745957eb39ed0b4e8d22216c33149586b26efe6c76a00c",
+        "lean_code": "sha256:3d3993d19f1652c61e2a6c72df002154dbbf7d0060e3c1d4d04465d4dd2ad8c7"
+      }
+    ]
+  },
+  "exception": null
+}

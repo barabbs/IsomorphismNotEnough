@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef bf(planet1: str, planet2: str) -> List[str]\n\"\"\"There are eight planets in our solar system: the closest to the Sun\nis Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn,\nUranus, Neptune.\nWrite a function that takes two planet names as strings planet1 and planet2.\nThe function should return a tuple containing all planets whose orbits are\nlocated between the orbit of planet1 and the orbit of planet2, sorted by\nthe proximity to the sun.\nThe function should return an empty tuple if planet1 or planet2\nare not correct planet names.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String \u2192 List String)\n-- inputs\n(planet1: String)\n(planet2: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 148,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:554e4784f6e6de53238f10e7285234f4ecb46ba31a0bf01ba0fbfd365fe44e2e",
+  "timing": 182.69219350900676,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ain3tfd6/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:5ba9dc5210b982bf77861c325bec80e77ef94b0ad44c1ae3109d79bc09013ba2",
+    "status": "OK",
+    "result": "sha256:19b926cf94c553f4476b1729423509de422696aff77bc0c0a8da16f1ec61e4bf"
+  },
+  "exception": null
+}

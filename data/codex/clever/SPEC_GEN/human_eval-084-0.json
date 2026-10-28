@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: int) -> str\n\"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → String)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 84,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0af190548640e621bb3e39da307a9ddf5081d1a1497beede32e5323dbb37f7bd",
+  "timing": 70.62908112397417,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:e91004165bbeca8aa2ab32efdc7411d75b2e5612ec8be91568d4409e8416ded7",
+    "status": "OK",
+    "result": "sha256:7dc36938252288313fd8ad70d99ef8ad023a2df06a15eb4d56e43c89a182176c"
+  },
+  "exception": null
+}

@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minSubArraySum(nums : list[int]) -> int\n\"\"\"Given an array of integers nums, find the minimum sum of any non-empty sub-array\nof nums.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  (∀ subarray ∈ nums.sublists,\n    subarray.length > 0 →\n    result ≤ subarray.sum) ∧\n  (∃ subarray ∈ nums.sublists,\n    subarray.length > 0 ∧\n    result = subarray.sum)\n-- program termination\n∃ result,\n  implementation nums = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (nums: List Int) : Int :=\n\nmatch nums with\n| [] => 0\n| x :: xs =>\n  let (_, min_sofar) := List.foldl (fun (min_ending_here, min_sofar) y =>\n    let meh := min y (min_ending_here + y)\n    (meh, min min_sofar meh)\n  ) (x, x) xs\n  min_sofar\n\n\n-- [TEST_CASES]\n\n#test implementation [2, 3, 4, 1, 2, 4] = 1\n#test implementation [-1, -2, -3] = -6\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(nums: List Int)\n: problem_spec implementation nums\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 114,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:44453321d0724886c56d3b01e6e4e2b791d44f2bb70e32d742b09d95b26be735",
+  "timing": 2383.251537109725,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:34c39bc254b6ab656ffb56365217a33e566f5f200e0c9c788a061af8e06dc8ff",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:5b61a0298b1c88e9da2b0603d07bcc724554ae81469ccb6e488de98c6b516e08",
+    "validation": [
+      {
+        "problem_id": "114",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:39988a6a3209ee7de27ffc58b2e3d7de98f330863ab370f5b0b4ebda525f188b"
+      }
+    ]
+  },
+  "exception": null
+}

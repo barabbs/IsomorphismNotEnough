@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> Bool\n\"\"\"brackets is a string of \"(\" and \")\".\nreturn True if every opening bracket has a corresponding closing bracket.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(x : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 61,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:389cce433c04450e2aa2b7288f0aa886b4128350fbab3e8a548d6f5687d375a5",
+  "timing": 120.73056827799883,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/z55ulx0w/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:49905bc361500be9007062a8c537e9aa1ac564f434a70e84a12c94decc6ff128",
+    "status": "OK",
+    "result": "sha256:6f8eb66ed25dd32b8de04de3bd4beb7a7fc83962ebd48fe6ff9323cdfc7d11a1"
+  },
+  "exception": null
+}

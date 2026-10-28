@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_cyclic(s: str) -> str\n\"\"\"Returns an encoded string by cycling each group of three consecutive characters.\nSpecifically, each group of exactly three characters 'abc' is transformed to 'bca'.\nGroups of fewer than three characters at the end of the string remain unchanged.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n(impl: String \u2192 String)\n(s: String) :=\nlet n := s.length;\nlet extract (chars: List Char) (start_index: \u2115) (end_index: \u2115) :=\n  (chars.drop start_index).take (end_index - start_index + 1);\nlet spec (result: String) :=\n  let encoded_chars := result.toList;\n  let original_chars := s.toList;\n  encoded_chars.length = n \u2227\n  (\u2200 i : \u2115, i * 3 + 3 \u2264 n \u2192\n    extract encoded_chars (i * 3) (i * 3 + 2) =\n      [original_chars.get! (i * 3 + 1), original_chars.get! (i * 3 + 2), original_chars.get! (i * 3)]) \u2227\n  (n % 3 \u2260 0 \u2192 extract encoded_chars (n - n % 3) (n - 1) =\n    extract original_chars (n - n % 3) (n - 1));\n-- program termination\n\u2203 result,\n  impl s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : String :=\n\nlet chars := s.toList\nlet rec process (cs : List Char) : List Char :=\n  match cs with\n  | a :: b :: c :: rest => b :: c :: a :: process rest\n  | other => other\nString.mk (process chars)\n\n\n-- [TEST_CASES]\n\n#test implementation \"abcdef\" = \"bcaefd\"\n#test implementation \"abcde\" = \"bcade\"\n#test implementation \"ab\" = \"ab\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 38,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8a92bbf2e3568d63ef10fa4f4885599da3c5c62d7a4a6b9dd7bf79b9eaf27677",
+  "timing": 1003.0846623390098,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/v15h74tl/problem.lean --deep=stuck",
+    "claude": "sha256:1b74a5227e91579a2826a04fdd342cb057534f1ebf382609ae837f978aa22673",
+    "status": "OK",
+    "result": "sha256:47d4826e765639dfc915386b8440c2d5aa47ba094348b7dea4a82499c16fa6c7",
+    "validation": [
+      {
+        "problem_id": "38",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:2ff7423831efa7c1d541288b0ff31588a256c67e82137f2085eb68b8a7f70f59"
+      }
+    ]
+  },
+  "exception": null
+}

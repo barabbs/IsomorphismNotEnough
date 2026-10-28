@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_coords_sorted(lst : List[List[int]], x : int) -> List[Tuple[int, int]]\n\"\"\"You are given a 2 dimensional data, as a nested lists,\nwhich is similar to matrix, however, unlike matrices,\neach row may contain a different number of columns.\nGiven lst, and integer x, find integers x in the list,\nand return list of tuples, [(x1, y1), (x2, y2) ...] such that\neach tuple is a coordinate - (row, columns), starting with 0.\nSort coordinates initially by rows in ascending order.\nAlso, sort coordinates of the row by columns in descending order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List (List Int) → Int → List (Nat × Nat))\n-- inputs\n(lst: List (List Int))\n(x: Int) :=\n-- spec\nlet spec (result : List (Nat × Nat)) :=\n  (∀ i, i < result.length →\n    let (row, col) := result[i]!\n    row < lst.length ∧\n    col < lst[row]!.length ∧\n    (lst[row]!)[col]! = x) ∧\n  (∀ᵉ (i < lst.length) (j < lst[i]!.length),\n    (lst[i]!)[j]! = x → (i, j) ∈ result) ∧\n  (result.map (fun (r, c) => r)).Sorted Nat.le ∧\n  (∀ i < result.length,\n    let (row, col) := result[i]!\n    ((result.filter (fun (r, c) => r = row)).map (fun (r, c) => c)).Sorted (fun a b => a ≥ b))\n-- program termination\n∃ result,\n  implementation lst x = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List (List Int)) (x: Int) : List (Nat × Nat) :=\n\n  lst.zipIdx.flatMap (fun (row, i) =>\n    let filtered := row.zipIdx.filter (fun (val, _) => val = x)\n    let descending := filtered.reverse\n    descending.map (fun (_, j) => (i, j))\n  )\n\n\n-- [TEST_CASES]\n\n#test implementation [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 1, 6], [1, 2, 3, 4, 5, 1]] 1 = [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]\n#test implementation [] 1 = []\n#test implementation [[], [1], [1, 2, 3]] 3 = [(2, 2)]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List (List Int))\n(x: Int)\n: problem_spec implementation lst x\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 87,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:88cca1d1ec17fee4f69fdb8bf67445cd5f5674cd9a099275f6e27a184cee8ebc",
+  "timing": 14555.218705241103,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:d7d04eab5921405ceca297af64d68361cf90a26a0f08c21e99e83edfeb0fa9d2",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "87",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:ce0575c450df9612bef43481d220dfa29202bcbdbb52c2c1d37f1b51af189207"
+      }
+    ]
+  },
+  "exception": null
+}

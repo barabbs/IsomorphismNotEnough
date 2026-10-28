@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → Nat)\n-- inputs\n(n p: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n0 < p ∧\nresult < p ∧\n(∃ k : Nat, p * k + result = Nat.pow 2 n)\n-- program termination\n∃ result, implementation n p = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n p: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 5 = 3\n-- #test implementation 1101 101 = 2\n-- #test implementation 0 101 = 1\n-- #test implementation 3 11 = 8\n-- #test implementation 100 101 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:20e20f38d2d73825b584702a2d427abc8b56291c6604668acbad23672fb65b7d",
+  "timing": 42.17995564593002,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:ed353ad950a70b3fc87f5cbef0da94b6238a63a032cdce3c2d05b62eeb6e6043",
+    "status": "OK",
+    "result": "sha256:c5f4da90a04b4ac46451fea5c9959ef6fc9e0d2b427de0dc370f5d99eb884b51"
+  },
+  "exception": null
+}

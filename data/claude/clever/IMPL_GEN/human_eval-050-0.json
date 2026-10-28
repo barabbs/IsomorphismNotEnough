@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_shift(s: String) -> String\n\"\"\"returns encoded string by shifting every character by 5 in the alphabet.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(s : String) :=\nlet isAlphabetic (string: String) : Bool :=\n\u2200 i, i < string.length \u2192\nlet c := string.get! \u27e8i\u27e9;\n('a'.toNat \u2264 c.toNat \u2227 c.toNat \u2264 'z'.toNat) \u2228\n('A'.toNat \u2264 c.toNat \u2227 c.toNat \u2264 'Z'.toNat)\n-- spec\nlet spec (result: String) :=\nisAlphabetic result \u2227 isAlphabetic s \u2227\nresult.length = s.length \u2227\n\u2203 k : Nat, k < 26 \u2227\n\u2200 i : Nat, i < s.length \u2192\n((s.get! \u27e8i\u27e9).toNat + k) % 26 = (result.get! \u27e8i\u27e9).toNat\n\u2192 k = 5\n-- program termination\n\u2203 result, implementation s = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abc\" = \"fgh\"\n-- #test implementation \"xyz\" = \"cde\"\n-- #test implementation \"aaa\" = \"fff\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8cae41c5c7c6bb014eed791775874eb99eeec046015518e53a42fede3586a193",
+  "timing": 111.7538046669797,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/a3qa_9n_/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:e456b1b1c71c28e4c22da7b4cf2ccff8d2a33a616a3333923a6cbc254f33943b",
+    "status": "OK",
+    "result": "sha256:db90cdb7a7c554d08ce7aa980ce6695a1b201829b3a8f68b5b470c26be07ac3e"
+  },
+  "exception": null
+}

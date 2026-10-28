@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef change_base(x: nat, base: nat) -> str\n\"\"\"Change numerical base of input number x to base.\nreturn string representation after the conversion.\nbase numbers are less than 10.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat -> String)\n-- inputs\n(x base: Nat) :=\n-- spec\nlet spec (result: String) :=\nlet result_array := result.toList.map (fun c => c.toNat - '0'.toNat);\nlet pow_array := (List.range result_array.length).map (fun i => base^(result_array.length - i - 1) * result_array[i]!);\nlet pow_sum := pow_array.sum;\n(0 < base ∧ base ≤ 10) ∧\n(∀ i, i < result_array.length →\nresult_array[i]! < base ∧ 0 ≤ result_array[i]! →\npow_sum = x);\n-- program termination\n∃ result, implementation x base = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x base: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 8 3 = \"22\"\n-- #test implementation 8 2 = \"1000\"\n-- #test implementation 7 2 = \"111\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 44,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3322b34d372733603ae6ddea2e547f2e1252e44e258431f45833c16d369c25f7",
+  "timing": 122.98507079528645,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:12962981075507ea1914703cee9d340335245784ed8f66cf67fa92d8ff18f44a",
+    "status": "OK",
+    "result": "sha256:78ea46a1466e69634c77a7f243dbc7106b714d818d900be28cde1adc21623da0"
+  },
+  "exception": null
+}

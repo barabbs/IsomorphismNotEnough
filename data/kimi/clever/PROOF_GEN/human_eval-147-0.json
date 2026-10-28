@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_max_triples(n: int) -> int\n\"\"\"You are given a positive integer n. You have to create an integer array a of length n.\nFor each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.\nReturn the number of triples (a[i], a[j], a[k]) of a where i < j < k,\nand a[i] + a[j] + a[k] is a multiple of 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n∃ (S : Finset (Nat × Nat × Nat)), S.card = result ∧\n  ∀ (triple: Nat × Nat × Nat),\n    let (i, j, k) := triple;\n    let a_i := i * i - i + 1;\n    let a_j := j * j - j + 1;\n    let a_k := k * k - k + 1;\n    (1 ≤ i ∧ i < j ∧ j < k ∧ k ≤ n ∧\n    (a_i + a_j + a_k) % 3 = 0)\n    ↔ triple ∈ S\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  let c1 := n / 3 + (n + 2) / 3;\n  let c0 := (n + 1) / 3;\n  Nat.choose c1 3 + Nat.choose c0 3\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 147,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ac6c69e374cbb52261eaab5cffb64d65ae82c7af62cf0d29677715b1f413aec0",
+  "timing": 8074.704838073812,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:cf4a1e0285c32f4618e256972d6e01d1c27c9f1c4faa64a4b892433bee99a72d",
+    "status": "FAIL",
+    "result": "sha256:83275287ffc79bcbc2c21dc99e95ef47fc69d6ba88706140d11c4b1e39887b33",
+    "validation": [
+      {
+        "problem_id": "147",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:126767c1d12ff65229bc49e8ad2ac339894b1ca6e0b370cec4023e1b596ae4e1",
+        "lean_code": "sha256:ef593e30868690390796742d9901ef9de44d6ec7f83f1137a9ffb409cad47064"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,31 @@
+{
+  "text": "sha256:8d5585a5addfa7225c24d65092bcf5c695f9370db19930c2fe014c4aa8f77199",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:09856190a738e1409c3cf178959dda39f3cd142c419a6806656b6850fb3a9844",
+  "timing": 237.04354458799935,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/7honghtc/problem.lean --deep=stuck",
+    "claude": "sha256:c0f13f8261ebc7e0bb654261f0db4a658710df9969b8fab6c8b934a7e1bee2fa",
+    "status": "ISSUE",
+    "result": "sha256:ec48e28dbbd5c45a995914ccbdcdefd25c4a67ca2a860bfffa97b47455430caa",
+    "comment": "PROB",
+    "validation": [
+      {
+        "problem_id": "50",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:d675bf0cd4c52b8feabe7cbbc58c543b79ee7d8de88e0904a2ce01c013f9d30e"
+      }
+    ],
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

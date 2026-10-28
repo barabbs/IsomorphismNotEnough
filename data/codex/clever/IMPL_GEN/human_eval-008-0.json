@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_product(numbers: List[int]) -> Tuple[int, int]\n\"\"\"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → (Int × Int))\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: (Int × Int)) :=\nlet (sum, prod) := result;\n(numbers = [] → sum = 0 ∧ prod = 1) ∧\n(numbers ≠ [] →\n(let (sum_tail, prod_tail) := implementation numbers.tail;\nsum - sum_tail = numbers[0]! ∧\nsum_tail * prod_tail + prod = sum * prod_tail));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : (Int × Int) :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] = (0, 1)\n-- #test implementation [1, 2, 3, 4] = (10, 24)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 8,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:66942e1093d3901b0032b979e1cb2ead68a5bb148e7d5e6cb2c9c8c1b211287f",
+  "timing": 69.65068743284792,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:ec8bbd38d4697dd258793eff18fd3161161d5f7f04c6fa1304e6c8f977996552",
+    "status": "OK",
+    "result": "sha256:05e72a8f2f9d3a381de6b99da7fac9a94630608d582c8199657759c7f7a72074"
+  },
+  "exception": null
+}

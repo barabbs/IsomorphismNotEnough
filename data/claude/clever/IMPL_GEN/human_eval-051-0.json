@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_vowels(string: str) -> string\n\"\"\"remove_vowels is a function that takes string and returns string without vowels.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(string: String) :=\nlet is_consonant (c: Char): Bool :=\n  let vowels := \"aeiouAEIOU\"\n  not (vowels.contains c);\n-- spec\nlet spec (result: String) :=\nresult.all (\u03bb c => is_consonant c) \u2227 result.length \u2264 string.length \u2227\n\u2200 c, result.contains c \u2192 string.contains c \u2227\n\u2200 c , string.contains c \u2227 is_consonant c \u2192 (result.contains c);\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = \"\"\n-- #test implementation \"cat\" = \"catac\"\n-- #test implementation \"cata\" = \"catac\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 51,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fc4b95798d7b3523b39d3780b3a6c46553566f469fd40b7014b453e895b5e4a4",
+  "timing": 117.69156149498303,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/v_z1ewb6/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:6aa233d0252a818846cca3f03bbb0d31649b7ad320c7e6a715ea598057be0bcf",
+    "status": "OK",
+    "result": "sha256:82785bfdec15e851d8b7577ce6ffde1293cb5e933a72eebdfbe78efeff87abef"
+  },
+  "exception": null
+}

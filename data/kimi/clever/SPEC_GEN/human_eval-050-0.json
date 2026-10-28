@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_shift(s: str) -> str\n\"\"\"returns encoded string by shifting every character by 5 in the alphabet.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d0df0cbd6d4303e9d9e5501f45279ffeeada8a50b4c1ccd47e75e7adf49566f6",
+  "timing": 103.37316829012707,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d77409fd2fc52ab4c870ca4d2f7a62e240c5b25adba887d1e497d9a93ea01476",
+    "status": "OK",
+    "result": "sha256:aa6488fd7ffb0a8c15f021ce9a0e763c20e24d53e1815a1c9f1f94ab355f9f42"
+  },
+  "exception": null
+}

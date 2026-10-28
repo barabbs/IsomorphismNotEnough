@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_distinct_characters(string: str) -> int\n\"\"\"Given a string, find out how many distinct characters (regardless of case) does it consist of\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Nat) :=\nlet string_idx := {i: Nat | i < string.length}.toFinset\nlet characters := string_idx.image (fun i => string.toList.get! i)\nlet lowercase_characters := characters.image (fun c => c.toLower)\nresult = lowercase_characters.card;\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : Nat :=\n\nstring.toList.map Char.toLower |>.toFinset |>.card\n\n\n-- [TEST_CASES]\n\n#test implementation \"xyzXYZ\" = 3\n#test implementation \"Jerry\" = 4\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 16,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:cac07d9fe8f28ee10382255b2c11989daed7c7e84a817ea340c37c2293949050",
+  "timing": 14437.14529429702,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c64fbd1967258f3fd400822eb7e72d4adb12269ec0da32fc9273cd1987fc963e",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "16",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:c33b08d6fdece7fba18c74e68ab83f3efd8f92fa1fdff0b4c28bc9d010566f9b"
+      }
+    ]
+  },
+  "exception": null
+}

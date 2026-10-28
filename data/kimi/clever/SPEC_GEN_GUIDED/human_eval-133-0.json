@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[float]) -> int\n\"\"\"You are given a list of numbers.\nYou need to return the sum of squared numbers in the given list,\nround each element in the list to the upper int(Ceiling) first.\n\n>>> sum_squares([1, 2, 3])\n14\n>>> sum_squares([1, 4, 9])\n98\n>>> sum_squares([1, 3, 5, 7])\n84\n>>> sum_squares([1.4, 4.2, 0])\n29\n>>> sum_squares([-2.4, 1, 1])\n6\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat → Int)\n-- inputs\n(lst: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3] = 14\n-- #test implementation [1, 4, 9] = 98\n-- #test implementation [1, 3, 5, 7] = 84\n-- #test implementation [1.4, 4.2, 0] = 29\n-- #test implementation [-2.4, 1, 1] = 6\n",
+  "info": {
+    "dataset": "clever",
+    "id": 133,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:07db998547c950240caae4d6ae0cfbaf8f1f2b63ead21dab3a4f8c3a810294aa",
+  "timing": 77.60678100213408,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:6d1016bd37c10aaf399841709ec65ffb29fdbe7e32f9379580aea090704574cf",
+    "status": "OK",
+    "result": "sha256:927f4811e2afa7f9ad929318f4f1eecb52758846b498dd7aceda6ff8d26dca6e"
+  },
+  "exception": null
+}

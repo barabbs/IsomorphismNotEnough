@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef decimal_to_binary(decimal: nat) -> string\n\"\"\"You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 String)\n-- inputs\n(decimal: Nat) :=\n-- spec\nlet spec (result: String) :=\n  4 < result.length \u2227\n  result.drop (result.length - 2) = \"db\" \u2227\n  result.take 2 = \"db\" \u2227\n  let resultTrimmed := (result.toList.drop 2).dropLast.dropLast.map (fun c => c.toNat - '0'.toNat)\n  decimal = Nat.ofDigits 2 resultTrimmed.reverse\n-- program termination\n\u2203 result, implementation decimal = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (decimal: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 0 = \"db0db\"\n-- #test implementation 32 = \"db100000db\"\n-- #test implementation 103 = \"db1100111db\"\n-- #test implementation 15 = \"db1111db\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 79,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:17f2ddfd60a2eda8a1f9d613249d9e05f676272df4ef027850d3917f1464255b",
+  "timing": 69.50464271800593,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/3dcippzw/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:7f790a63c4bbbec5b222d0bee0e8b68a8233335778c4f22294f92d6168e6babd",
+    "status": "OK",
+    "result": "sha256:4892d76b52e0eeaed8812077eb14a4e6c45fe61d106d12200b0de3a0caab22df"
+  },
+  "exception": null
+}

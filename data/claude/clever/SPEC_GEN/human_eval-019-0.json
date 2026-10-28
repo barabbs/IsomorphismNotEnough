@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_numbers(numbers: str) -> str\n\"\"\"Input is a space-delimited string of numberals from 'zero' to 'nine'.\nValid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\nReturn the string with numbers sorted from smallest to largest\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(numbers: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 19,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d26c27683d92f7d042c4c4b9dd34a53006a63786941e96bb0de53cd11a8df1bf",
+  "timing": 107.89383344800444,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/c1rcd671/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:44fa2cbf9659a474be288aa4f948d873c2cadc2428a99cb64ab4743bba7db115",
+    "status": "OK",
+    "result": "sha256:38d5e89836f284e1e8ad244e731084e19c4fde4d2f4a7ec88036625687f0d4e2"
+  },
+  "exception": null
+}

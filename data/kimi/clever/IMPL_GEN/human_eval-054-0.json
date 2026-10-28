@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef same_chars(s0: str, s1: str) -> bool\n\"\"\"Check if two words have the same characters.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(s0 s1: String) :=\n-- spec\nlet spec (res: Bool) :=\n  res ↔ (∀ c : Char, c ∈ s0.toList ↔ c ∈ s1.toList)\n-- program terminates\n∃ result, impl s0 s1 = result ∧\n-- return value satisfies spec\nspec result\n-- if result then spec else ¬spec\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s0 s1: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"eabcdzzzz\" \"dddzzzzzzzddeddabc\" = true\n-- #test implementation \"abcd\" \"dddddddabc\" = true\n-- #test implementation \"dddddddabc\" \"abcd\" = true\n-- #test implementation \"eabcd\" \"dddddddabc\" = false\n-- #test implementation \"abcd\" \"dddddddabce\" = false\n-- #test implementation \"eabcdzzzz\" \"dddzzzzzzzddddabc\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 54,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:15f46480d39af64db5085cba885372e3f8ba6ad2feceff25637fdef1fa649a54",
+  "timing": 89.45163532299921,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:ef3d21f03aa389bf25c3e18413813b97f4cec1cb701acf45f2010adf26d8f330",
+    "status": "OK",
+    "result": "sha256:07f7d06a9312c55a96de3feaccba57c0d35253d7392c528952ed12295cdb671a"
+  },
+  "exception": null
+}

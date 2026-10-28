@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique(l: list)\n\"\"\"Return sorted unique elements in a list.\n\n>>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])\n[0, 2, 3, 5, 9, 123]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(l: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [5, 3, 5, 2, 3, 3, 9, 0, 123] = [0, 2, 3, 5, 9, 123]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 34,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:402c48c66ddcd178aaf22d11718444ba436f5f10fc368be731ddbd478f9c86eb",
+  "timing": 119.24143391899997,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/pipyqdm9/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:be77e9af2341ff25e5f55372e61776134f19a857ec93e711a3625addc49bc68c",
+    "status": "OK",
+    "result": "sha256:bbc08841f6257c5dead5ac9d5bbcd15e9298d21c3471c5a5482baca2a4a83503"
+  },
+  "exception": null
+}

@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_simple_power(x: int, n: int) -> bool\n\"\"\"Your task is to write a function that returns true if a number x is a simple\npower of n and false in other cases. x is a simple power of n if n**int=x\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Int → Bool)\n-- inputs\n(x: Int) (n: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  result ↔ exists k: Nat, x = n^k\n-- program termination\n∃ result, implementation x n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x: Int) (n: Int) : Bool :=\n\n  if x == 1 then true\n  else if n == 0 then x == 0\n  else if n == 1 then false\n  else if n == -1 then x == -1\n  else\n    let rec loop (power : Int) : (fuel : Nat) → Bool\n      | 0 => false\n      | fuel + 1 =>\n        if power == x then true\n        else if power.natAbs > x.natAbs then false\n        else loop (power * n) fuel\n    loop n 64\n\n\n-- [TEST_CASES]\n\n#test implementation 16 2 = True\n#test implementation 143214 16 = False\n#test implementation 4 2 = True\n#test implementation 9 3 = True\n#test implementation 16 4 = True\n#test implementation 24 2 = False\n#test implementation 128 4 = False\n#test implementation 12 6 = False\n#test implementation 1 1 = True\n#test implementation 1 12 = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x: Int) (n: Int)\n: problem_spec implementation x n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 76,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d9b069561f2ff040f8cba8ddf385d5e51eec418f7bdf66e75a3deeb344703264",
+  "timing": 276.31457864504773,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:ef0f4869463566a1b8d244e4bbc7d70a96a38caf8aa7e3eaaceacb9b6b204dcf",
+    "status": "ISSUE",
+    "result": "sha256:e615d3870ac892c5b621919db2c11ad39997821c02f58b7162fe6a20a9aabf4e",
+    "validation": [
+      {
+        "problem_id": "76",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:3a7cb99dc5113a6e1c0f2d372a4e6a9491307705812a7311704dcbc8404a98db"
+      }
+    ],
+    "comment": "IMPL",
+    "analysis": "BOUNDED_FUEL"
+  },
+  "exception": null
+}

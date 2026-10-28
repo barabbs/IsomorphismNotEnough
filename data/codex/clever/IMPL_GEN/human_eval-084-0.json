@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: int) -> str\n\"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → String)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : String) :=\n  0 < n →\n  result.all (fun c => c = '0' ∨ c = '1') →\n  Nat.ofDigits 2 (result.data.map (fun c => if c = '0' then 0 else 1)).reverse = (Nat.digits 10 n).sum\n-- program termination\n∃ result,\n  implementation n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1000 = \"1\"\n-- #test implementation 150 = \"110\"\n-- #test implementation 147 = \"1100\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 84,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f35de904b311b7b5992ba90cd33fbb4143c262a0c4f6c9a3a297281d748d7088",
+  "timing": 96.42908919416368,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:038c706fc9ca5e4e2f6aa656f92bb5f322f6ffe424bbaed1830aabbfea1bbbfc",
+    "status": "OK",
+    "result": "sha256:9768312987242a771975887ccf6671f29d8e688f99c867db6719257f4f149cb2"
+  },
+  "exception": null
+}

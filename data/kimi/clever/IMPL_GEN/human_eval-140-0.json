@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fix_spaces(text: str) -> str\n\"\"\"Given a string text, replace all spaces in it with underscores,\nand if a string has more than 2 consecutive spaces,\nthen replace all consecutive spaces with -\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(text: String) :=\n-- spec\nlet spec (result: String) :=\n  (result = \"\" → text = \"\") ∧\n  (result ≠ \"\" → (\n    (∃ pref s, text = pref ++ s\n      ∧ pref.length = 1\n      ∧ pref ≠ \" \"\n      ∧ result = pref ++ impl s)\n    ∨\n    (∃ pref s : String, text = pref ++ s ∧ pref ≠ \"\" ∧ (∀ ch, ch ∈ pref.toList → ch = ' ')\n      ∧ let k := pref.length;\n        (k ≤ 2 → result = (String.replicate k '_') ++ (impl (text.drop k)))\n      ∧ (2 < k → result = \"-\" ++ (impl (text.drop k)))) )\n  )\n-- program termination\n∃ result, impl text = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (text: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Example\" = \"Example\"\n-- #test implementation \"Example 1\" = \"Example_1\"\n-- #test implementation \" Example 2\" = \"_Example_2\"\n-- #test implementation \" Example   3\" = \"_Example-3\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 140,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0f2d3e4962befcc05d34a9f7857ef1482197468b818f73df61e265287f677bef",
+  "timing": 306.5517696598545,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:fa613b59458845b1d4b1061cab1da2e493fdd38737da41365c07f9cb98ff776a",
+    "status": "OK",
+    "result": "sha256:4b019a68cbbef84dec45790fe6970a6d89e14f085e886da18ab4b2cb5b265d4e"
+  },
+  "exception": null
+}

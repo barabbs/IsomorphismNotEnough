@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersection(interval1: Tuple[int, int], interval2: Tuple[int, int]) -> str\n\"\"\"You are given two intervals,\nwhere each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\nThe given intervals are closed which means that the interval (start, end)\nincludes both start and end.\nFor each given interval, it is assumed that its start is less or equal its end.\nYour task is to determine whether the length of intersection of these two\nintervals is a prime number.\nExample, the intersection of the intervals (1, 3), (2, 4) is (2, 3)\nwhich its length is 1, which not a prime number.\nIf the length of the intersection is a prime number, return \"YES\",\notherwise, return \"NO\".\nIf the two intervals don't intersect, return \"NO\".\n\n>>> intersection([1, 2], [2, 3])\n'NO'\n>>> intersection([-1, 1], [0, 4])\n'NO'\n>>> intersection([-3, -1], [-5, 5])\n'YES'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u00d7 Int \u2192 Int \u00d7 Int \u2192 String)\n-- inputs\n(interval1: Int \u00d7 Int)\n(interval2: Int \u00d7 Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation (1, 2) (2, 3) = \"NO\"\n-- #test implementation (-1, 1) (0, 4) = \"NO\"\n-- #test implementation (-3, -1) (-5, 5) = \"YES\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 127,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f51e3d420a8584861d85f68e31b3b14f2545d0b37f1314bbe3d70b124cdb92da",
+  "timing": 95.8031642950009,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/fbf83wlz/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e396a28aae86f74a0da0c6a9616ccc4ab1b71916349d9acaa98d4cd8d7b2e7c3",
+    "status": "OK",
+    "result": "sha256:73d35e83a741bb70153ad8b0b76a5573939f21bf5a7ef6f3ee9876d6eba4b8f3"
+  },
+  "exception": null
+}

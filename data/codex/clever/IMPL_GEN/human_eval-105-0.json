@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef by_length(arr: List[int]) -> List[str]\n\"\"\"Given an array of integers, sort the integers that are between 1 and 9 inclusive,\nreverse the resulting array, and then replace each digit by its corresponding name from\n\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List String)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: List String) :=\n  let digits: List String := [\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\"];\n  (forall s: String, (s ∈ result → s ∈ digits)) ∧\n  (arr.length ≥ result.length) ∧\n  (forall x: Nat, ((x: Int) ∈ arr ∧ 1 ≤ x ∧ x ≤ 9) → (digits[x-1]! ∈ result)) ∧\n  (List.Sorted Int.le (List.map (fun (s: String) => (List.idxOf s digits) + 1) result).reverse)\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [2, 1, 1, 4, 5, 8, 2, 3] = [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n-- #test implementation [] = []\n-- #test implementation [1, -1 , 55] = [\"One\"]\n-- #test implementation [1, -1, 3, 2] = [\"Three\", \"Two\", \"One\"]\n-- #test implementation [9, 4, 8] = [\"Nine\", \"Eight\", \"Four\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 105,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1985ec989583f56ecf37aa107a5def404a18b61d3efac2badf3b67e94a000bdd",
+  "timing": 121.30542185623199,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:91a5217e6868373328a0e78a59a99994d04713b63664dfd97767185eb7966250",
+    "status": "OK",
+    "result": "sha256:1cb059885b043176c815de7a5c2de12f7d95177ae3ee96b6836cde20948c5202"
+  },
+  "exception": null
+}

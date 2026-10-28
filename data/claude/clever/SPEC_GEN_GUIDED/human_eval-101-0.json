@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_string(s: str) -> List[str]\n\"\"\"You will be given a string of words separated by commas or spaces. Your task is\nto split the string into words and return an array of the words.\n\n>>> words_string('Hi, my name is John')\n['Hi', 'my', 'name', 'is', 'John']\n>>> words_string('One, two, three, four, five, six')\n['One', 'two', 'three', 'four', 'five', 'six']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 List String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Hi, my name is John\" = [\"Hi\", \"my\", \"name\", \"is\", \"John\"]\n-- #test implementation \"One, two, three, four, five, six\" = [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]\n-- #test implementation \"Hi, my name\" = [\"Hi\", \"my\", \"name\"]\n-- #test implementation \"One,, two, three, four, five, six,\" = [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]\n-- #test implementation \"\" = []\n-- #test implementation \"ahmed     , gamal\" = [\"ahmed\", \"gamal\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 101,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:dc45791b506f49e297ea2db28970adde210b4fe69b4dc28e433470af53a6404e",
+  "timing": 203.61600559399994,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ph_lrik2/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:2f5b327b1b8ca2dcfbe3ee60290b945866cea22a1ce2ec966f3293956d4ce9c3",
+    "status": "OK",
+    "result": "sha256:65acf6fc12fc4296b5b80aa5d84befc91d81238d6eb9091e79491c2bef7e663d"
+  },
+  "exception": null
+}

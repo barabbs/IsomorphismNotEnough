@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef decimal_to_binary(decimal: nat) -> str\n\"\"\"You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\n>>> decimal_to_binary(15)\n'db1111db'\n>>> decimal_to_binary(32)\n'db100000db'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 String)\n-- inputs\n(decimal: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 0 = \"db0db\"\n-- #test implementation 32 = \"db100000db\"\n-- #test implementation 103 = \"db1100111db\"\n-- #test implementation 15 = \"db1111db\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 79,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:0d948a3c88759611d8f5f548872dcdf3141c5ff20b33096ee4c4b92f9ab70d88",
+  "timing": 132.38417872600075,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/p6_e7d9k/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:2fb829d536b71b2b904fa16244ca448201ea0ab5e9ce1d1b0a09e14134d7ecfe",
+    "status": "OK",
+    "result": "sha256:0d230c2fdde0c4e04c17f88e11edb48faf0b452228c3a093dc19aee8efa9a435"
+  },
+  "exception": null
+}

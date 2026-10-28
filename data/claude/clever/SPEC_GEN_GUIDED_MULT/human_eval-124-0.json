@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef valid_date(date: str) -> bool\n\"\"\"You have to write a function which validates a given date string and\nreturns True if the date is valid otherwise False.\nThe date is valid if all of the following rules are satisfied:\n1. The date string is not empty.\n2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n3. The months should not be less than 1 or higher than 12.\n4. The date should be in the format: mm-dd-yyyy\n\n>>> valid_date('03-11-2000')\nTrue\n>>> valid_date('15-01-2012')\nFalse\n>>> valid_date('04-0-2040')\nFalse\n>>> valid_date('06-04-2020')\nTrue\n>>> valid_date('06/04/2020')\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(date: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"03-11-2000\" = true\n-- #test implementation \"15-01-2012\" = false\n-- #test implementation \"04-0-2040\" = false\n-- #test implementation \"06-04-2020\" = true\n-- #test implementation \"06/04/2020\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 124,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:1a1c3108555126926d50724df6a2c13c2d8e884630846d312c15f3a5f8abc20f",
+  "timing": 351.67531724099535,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/apr1xsyv/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d5943c6e3229ea584a923b975780778656922ca68756261b97ec17d8ca9211ac",
+    "status": "OK",
+    "result": "sha256:ede6d76f7857c69b39c14feb5dc3e822d7cb3ad9d9bb7d595ea9f05a97fc0f3b"
+  },
+  "exception": null
+}

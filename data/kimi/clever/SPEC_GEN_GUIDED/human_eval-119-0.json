@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef match_parens(l : list[str]) -> str\n\"\"\"You are given a list of two strings, both strings consist of open\nparentheses '(' or close parentheses ')' only.\nYour job is to check if it is possible to concatenate the two strings in\nsome order, that the resulting string will be good.\nA string S is considered to be good if and only if all parentheses in S\nare balanced. For example: the string '(())()' is good, while the string\n'())' is not.\nReturn 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\n>>> match_parens(['()(', ')'])\n'Yes'\n>>> match_parens([')', ')'])\n'No'\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String → String)\n-- inputs\n(l: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [\"()(\", \")\"] = \"Yes\"\n-- #test implementation [\")\", \")\"] = \"No\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 119,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:9445c0ce3ff175fa7a52987d802f197ae1b31476f7e0fc7cbe119f23d59b77b4",
+  "timing": 232.78130471007898,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:aeda7393d5463a7bcb593f22420e0912d9e31cd69ac6724809b5f0c2d66cb0a7",
+    "status": "OK",
+    "result": "sha256:7b0df2720fe9a96f2115b1546e9190832de12d126cae4913dc7b45f33097f764"
+  },
+  "exception": null
+}

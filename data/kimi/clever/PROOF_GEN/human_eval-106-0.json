@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef f(n: int) -> List[int]\n\"\"\"Implement the function f that takes n as a parameter,\nand returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\nor the sum of numbers from 1 to i otherwise.\ni starts from 1.\nthe factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → List Int)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (result.length = n) ∧\n  (forall i: Nat, (1 ≤ i ∧ i ≤ n ∧ Even i) → (result[i-1]! = Nat.factorial i)) ∧\n  (forall i: Nat, (1 ≤ i ∧ i ≤ n ∧ Odd i) → (result[i-1]! = (List.range (i+1)).sum))\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Int) : List Int :=\n\n  List.range (Int.toNat n) |>.map fun j =>\n    let i := j + 1\n    if Even i then\n      (Nat.factorial i : Int)\n    else\n      ((List.range (i + 1)).sum : Int)\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = [1, 2, 6, 24, 15]\n#test implementation 7 = [1, 2, 6, 24, 15, 720, 28]\n#test implementation 1 = [1]\n#test implementation 3 = [1, 2, 6]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Int)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 106,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:02f4462daefeb6ae0bc6dbbf812499fa6a6461f95d73345bc2e77fab30440fb5",
+  "timing": 5747.447293962818,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:2ef6188abbac56ba2367adb942eb990a2cac5ba35195a20e72c72a7370c7727d",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:c48beea34f1d6b247f30e2784162eb4edcd5f1fe2642ecdb9375da7682fb99f9",
+    "validation": [
+      {
+        "problem_id": "106",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:9368dbe197242b5512fa2bc3dfdd59bd86421898502d89203b680097e7483075"
+      }
+    ]
+  },
+  "exception": null
+}

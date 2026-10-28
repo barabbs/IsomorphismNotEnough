@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[float]) -> int\n\"\"\"You are given a list of numbers.\nYou need to return the sum of squared numbers in the given list,\nround each element in the list to the upper int(Ceiling) first.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat → Int)\n-- inputs\n(lst: List Rat) :=\n-- spec\nlet spec (result: Int) :=\n  (lst = [] → result = 0) ∧\n  (lst != [] → 0 ≤ result - lst[0]!.ceil^2 ∧ (impl (lst.drop 1) = (result - lst[0]!.ceil^2)))\n-- program termination\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Rat) : Int :=\n\nmatch lst with\n| [] => 0\n| x :: xs => x.ceil ^ 2 + implementation xs\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = 14\n#test implementation [1, 4, 9] = 98\n#test implementation [1, 3, 5, 7] = 84\n#test implementation [1.4, 4.2, 0] = 29\n#test implementation [-2.4, 1, 1] = 6\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Rat)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 133,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4fab9a7c92f10888c1dd860b73369457b8dbd93692207ffe1498b0f19ca1dec1",
+  "timing": 314.65760916331783,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:f4d25b5a8afc3b7e1ff69e67b405c7bb231e44eec0c1c27ac938a95bf25fc376",
+    "status": "OK",
+    "result": "sha256:00a0fb62a395074967032f79da525d535e7fe5cac0235b0b3cebbba688659f82",
+    "validation": [
+      {
+        "problem_id": "133",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:8ce2bc1a74132dfbcaea5e25dea8bc93e542faa15e26107078f9991ee7aa69a4"
+      }
+    ]
+  },
+  "exception": null
+}

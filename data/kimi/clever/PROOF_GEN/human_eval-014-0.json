@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef all_prefixes(string: str) -> List[str]\n\"\"\"Return list of all prefixes from shortest to longest of the input string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → List String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: List String) :=\nresult.length = string.length ∧\n∀ i, i < result.length →\nresult[i]! = string.take (i + 1);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : List String :=\n\nList.map (λ i => string.take (i + 1)) (List.range string.length)\n\n\n-- [TEST_CASES]\n\n#test implementation \"abc\" = [\"a\", \"ab\", \"abc\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 14,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e3bcc48fcfdaee8de4b98d46f84a7e41a573506b5aa01a58b87eae377744e56f",
+  "timing": 735.8345075929537,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:3d045d34c3a62faf589d2273579d697bb00cdb5dab8698fd8e2b369687a28a59",
+    "status": "OK",
+    "result": "sha256:95770cbc46a41d60c8ecb1a852c56813288ec200c34196af4ef0c4609fffae1a",
+    "validation": [
+      {
+        "problem_id": "14",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:1939c4a7105b13c7bc2f56831b98a4ab0f8f9d7bbf0a3ca91527d5d5e4b80a47"
+      }
+    ]
+  },
+  "exception": null
+}

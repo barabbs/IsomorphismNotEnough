@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rolling_max(numbers: List[int]) -> List[int]\n\"\"\"From a given list of integers, generate a list of rolling maximum element found until given moment\nin the sequence.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\nresult.length = numbers.length \u2227\n\u2200 i, i < numbers.length \u2192\n(result[i]! \u2208 numbers.take (i + 1) \u2227\n\u2200 j, j \u2264 i \u2192 numbers[j]! \u2264 result[i]!);\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : List Int :=\n\nmatch numbers with\n| [] => []\n| x :: xs =>\n  let rec go (acc : List Int) (curMax : Int) : List Int \u2192 List Int\n    | [] => acc.reverse\n    | y :: ys =>\n      let newMax := if y > curMax then y else curMax\n      go (newMax :: acc) newMax ys\n  go [x] x xs\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3, 2, 3, 4, 2] = [1, 2, 3, 3, 3, 4, 4]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 9,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1221456cbe6852295f4c4d719394ef9884e39c55ab1508a333231598fdd1616b",
+  "timing": 804.2542994819814,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:7c7034c4b170bf3d9e37038f44038c7661e750bf58bd65bc1a33d5c256007856",
+    "status": "OK",
+    "result": "sha256:fdc466da8c7278bccfed0d3d1f66767a37b73e684eafaa59c1f1ac84d34f4d81",
+    "validation": [
+      {
+        "problem_id": "9",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:c34ba964f72cb48599094b7159d38c3f0f4d9ef2212790daa2edb07f6a33e18f"
+      }
+    ]
+  },
+  "exception": null
+}

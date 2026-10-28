@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef x_or_y(int n, int x, int y) -> int\n\"\"\"A simple program which should return the value of x if n is\na prime number and should return the value of y otherwise.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Int \u2192 Int \u2192 Int)\n-- inputs\n(n x y: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 150,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9f306a0ed45a9bc7b3538e6e7ec5adcf9e6f57625a8c1e9048e317f3cf862d4c",
+  "timing": 65.87404201900063,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/lug5_9i7/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:032e1222281f3e0affdbedd2591349695cd4f56ae32c46556a6eb09f5987ed33",
+    "status": "OK",
+    "result": "sha256:e6e308e9d379c9536969629cdd779355145f5719f29f5399b74a2553cabe63bf"
+  },
+  "exception": null
+}

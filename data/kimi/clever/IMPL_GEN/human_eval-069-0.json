@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef search(numbers: List[int]) -> int\n\"\"\"You are given a non-empty list of positive integers. Return the greatest integer that is greater than\nzero, and has a frequency greater than or equal to the value of the integer itself.\nThe frequency of an integer is the number of times it appears in the list.\nIf no such a value exist, return -1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length ∧ numbers.all (fun n => 0 < n) →\n(result ≠ -1 ↔ ∃ i : Nat, i < numbers.length ∧\n  numbers[i]! = result ∧ numbers[i]! > 0 ∧\n  numbers[i]! ≤ (numbers.filter (fun x => x = numbers[i]!)).length ∧\n  (¬∃ j : Nat, j < numbers.length ∧\n  numbers[i]! < numbers[j]! ∧ numbers[j]! ≤ numbers.count numbers[j]!));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : (Int) :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [4, 1, 2, 2, 3, 1] = 2\n-- #test implementation [1, 2, 2, 3, 3, 3, 4, 4, 4] = 3\n-- #test implementation [5, 5, 4, 4, 4] = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 69,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d95639870f27afb14c72bbfe707fbdef1086fac32b5e1ab0796d12bb93334135",
+  "timing": 118.57467974582687,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:3eb066cf818a32b80ff745f3cf02d33b42ac086253ef0fb5b690c28bbe6b3b6e",
+    "status": "OK",
+    "result": "sha256:33f88575f6796c3b524da689be94346cac37b229c7ef1a5f5efe7f72a263dd8c"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fibfib(n: int)\n\"\"\"The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\nfibfib(0) == 0\nfibfib(1) == 0\nfibfib(2) == 1\nfibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).\nPlease write a function to efficiently compute the n-th element of the fibfib number sequence.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable_3 : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable_3 0 0\n| base1 : fibonacci_non_computable_3 1 0\n| base2 : fibonacci_non_computable_3 2 1\n| step : \u2200 n f\u2081 f\u2082 f\u2083, fibonacci_non_computable_3 n f\u2081 \u2192\nfibonacci_non_computable_3 (n + 1) f\u2082 \u2192\nfibonacci_non_computable_3 (n + 2) f\u2083 \u2192\nfibonacci_non_computable_3 (n + 3) (f\u2081 + f\u2082 + f\u2083)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nfibonacci_non_computable_3 n result\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 0\n-- #test implementation 5 = 4\n-- #test implementation 8 = 24\n",
+  "info": {
+    "dataset": "clever",
+    "id": 63,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a6a53613558a397904e108cd40deff2699d9d040bbe8c91fda5e79ebf45604ba",
+  "timing": 99.81629909999901,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/yvukgv6_/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:740e068ecf8476d6965c237c5a0bdd6a3b46e0e4aa914261bfe6855b043c28a4",
+    "status": "OK",
+    "result": "sha256:3e14a6561eb4bb5a86ecfaa367f8fea7ec52421dc22a2ea0d57026a8ec98d780"
+  },
+  "exception": null
+}

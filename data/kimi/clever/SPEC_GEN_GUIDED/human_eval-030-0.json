@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_positive(l: list)\n\"\"\"Return only positive numbers in the list.\n\n>>> get_positive([-1, 2, -4, 5, 6])\n[2, 5, 6]\n>>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n[5, 3, 2, 3, 9, 123, 1]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [(-1), 2, (-4), 5, 6] = [2, 5, 6]\n-- #test implementation [5, 3, (-5), 2, (-3), 3, 9, 0, 123, 1, (-10)] = [5, 3, 2, 3, 9, 123, 1]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 30,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:62c8d8b39c7da6526fa2f4aa1dd60970617e5b5b3e4eff8731221d1b43f94a47",
+  "timing": 63.91304613184184,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:e21436453edc8c719586d487d3ff164a038c4093f552b1d43cbc15f2f840ddae",
+    "status": "OK",
+    "result": "sha256:71c6a701c0b04bdfe450d73f4fa3bee349af03e393ef733d35ae8a06d698522f"
+  },
+  "exception": null
+}

@@ -1,0 +1,71 @@
+{
+  "text": "sha256:265c06554821de665a65321a6dfbca5b822fe93bfa1fc0e7ac3d667e80718f98",
+  "info": {
+    "dataset": "clever",
+    "id": 104,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:9d5f2a17da1da88a6540accd352bcc1f4019c43a62b7fb062fe857f4041e22a5",
+  "timing": 599.6505458679749,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:c972426d92f29754be322ee6997d7f0e6896a138a70935099588ad3d63b50d1e",
+    "status": [
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH"
+    ],
+    "result": "sha256:4035c367be2ee5a475bb1160b3c0e8b58a2a5a825beace17a7dee9068a6d5587",
+    "raw_status": "\n\n0:MISMATCH\n1:MISMATCH\n2:ISSUE\n3:ISSUE",
+    "comment": [
+      "→",
+      "→",
+      "/",
+      "/"
+    ],
+    "validation": [
+      {
+        "problem_id": "104",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:e204d723d0679de74bd8e9208ddfdd9ab1586bb193c9777ff1e13aa2bccbc63f"
+      },
+      {
+        "problem_id": "104",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:4fd86bdd16e33c83f91a050f9aaaefa25957878f99f56f8a5fb544ec5b9781ee"
+      },
+      {
+        "problem_id": "104",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:b641403df8419ef65cb1f5ad8cb95e51dc0441638a05bc518ff7d5d5c10b5eb0"
+      },
+      {
+        "problem_id": "104",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:8e75a68ac20c0ddea54b4d05c4578c5235cf83971acf00c08ae5d3f1cd60e448"
+      }
+    ],
+    "analysis": [
+      "ORDER",
+      "ORDER",
+      "ORDER+PRECOND",
+      "ORDER+PRECOND"
+    ]
+  },
+  "exception": null
+}

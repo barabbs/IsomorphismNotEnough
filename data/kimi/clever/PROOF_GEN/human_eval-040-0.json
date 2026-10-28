@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triples_sum_to_zero(numbers: List[int]) -> bool\n\"\"\"triples_sum_to_zero takes a list of integers as an input.\nit returns True if there are three distinct elements in the list that\nsum to zero, and False otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Bool)\n-- inputs\n(numbers: List Int) :=\nlet sum_i_j_k (i j k: Nat) : Bool :=\n  numbers[i]! + numbers[j]! + numbers[k]! = 0;\nlet exists_zero := 3 ≤ numbers.length ∧ (∃ i j k, i ≠ j ∧ i ≠ k ∧ j ≠ k ∧\n i < numbers.length ∧ j < numbers.length ∧ k < numbers.length ∧\n sum_i_j_k i j k)\n-- spec\nlet spec (result: Bool) :=\nresult ↔ exists_zero\n-- -- program termination\n∃ result, implementation numbers = result ∧\nspec result\n-- \n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : Bool :=\n\n  let n := numbers.length\n  if n < 3 then false else\n  (List.range n).any fun i =>\n    (List.range n).any fun j =>\n      (List.range n).any fun k =>\n        (i != j) && (i != k) && (j != k) && (numbers[i]! + numbers[j]! + numbers[k]! == 0)\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 3, 5, 0] = false\n#test implementation [1, 3, -2, 1] = true\n#test implementation [1, 2, 3, 7] = false\n#test implementation [2, 4, -5, 3, 9, 7] = true\n#test implementation [1] = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers : List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 40,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a6a475d96a80d9f29ac72b6ae9dd674c4e9b1d56fde96b65630c2fa4e0d277c9",
+  "timing": 3755.0653714612126,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:6a6362b40ebd00977484010d5d1a359231e40b86bb98d367a401c7f9e555d549",
+    "status": "OK",
+    "result": "sha256:e2cf90b97bdd44338495efd823ee803cce32b546999feeea3bb6982bc748f867",
+    "validation": [
+      {
+        "problem_id": "40",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:854eff52c1d4c9ccac314108598f9fcbb47b06c7d6bfbacc34aad80c04f71518"
+      }
+    ]
+  },
+  "exception": null
+}

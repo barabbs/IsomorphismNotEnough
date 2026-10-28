@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fizz_buzz(n: int)\n\"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  (n = 0 \u2192 result = 0) \u2227\n  (0 < n \u2192 result = implementation (n - 1) \u2192\n    ((n - 1) % 11 \u2260  0 \u2227  (n - 1) % 13 \u2260  0) \u2228 (n - 1).repr.count '7' = 0) \u2227\n  (0 < n \u2192 result \u2260 implementation (n - 1) \u2192\n    ((n - 1) % 11 = 0 \u2228  (n - 1) % 13 = 0) \u2227\n    result - implementation (n - 1) = (n - 1).repr.count '7')\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  match n with\n  | 0 => 0\n  | n + 1 =>\n    let prev := implementation n\n    if n % 11 == 0 || n % 13 == 0 then\n      prev + n.repr.count '7'\n    else\n      prev\n\n\n-- [TEST_CASES]\n\n#test implementation 50 = 0\n#test implementation 78 = 2\n#test implementation 79 = 3\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 36,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a3a43fa519c3b42ccd614f4baa5a75b7e7ffc5c8528f010313e461ceefcdf666",
+  "timing": 215.66699024592526,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:ae5dedad30f9ce619612aca738a5148dc79f33ad10dff8f7a9cf03512d964530",
+    "status": "OK",
+    "result": "sha256:3944ccd52fbf8d5ec30e10b9e208ac1724e791c30ccc4640b0d216391e52aaa6",
+    "validation": [
+      {
+        "problem_id": "36",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:1db11ce72a53d111f5d84e305b31389853fc107815cc4eb1cf8eb85294731e9f"
+      }
+    ]
+  },
+  "exception": null
+}

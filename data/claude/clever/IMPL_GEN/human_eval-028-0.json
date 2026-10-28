@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef concatenate(strings: List[str]) -> str\n\"\"\"Concatenate list of strings into a single string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String)\n-- inputs\n(strings: List String) :=\n-- spec\nlet spec (result: String) :=\nlet result_chars := result.toList;\nresult_chars.length = (strings.map (\u03bb s => s.length)).sum \u2227\n\u2200 i, i < strings.length \u2192\n(let string_in_result := strings.get! i;\nlet end_idx := ((strings.take (i + 1)).map (\u03bb s => s.length)).sum;\nlet start_idx := end_idx - string_in_result.length;\nlet corresponding_string_in_result := ((result_chars.take end_idx).drop start_idx).asString;\ncorresponding_string_in_result = string_in_result);\n-- program termination\n\u2203 result, implementation strings = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] = \"\"\n-- #test implementation [\"a\", \"b\", \"c\"] = \"abc\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 28,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f0222b90b697e65f373d3b88d41a3da1253a0969c1d9722640a432369fb63cc3",
+  "timing": 49.92740682000294,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/403c70oj/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f3efdacd5ca03d7236754c2eff3d6dde1400cfb6668cd15b5e4a6df5fe2a4a22",
+    "status": "OK",
+    "result": "sha256:ecc6010b58a39a720560c4566fd11df3bb5b8c9b15b80b9179b87aad23f37f1c"
+  },
+  "exception": null
+}

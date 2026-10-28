@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef concatenate(strings: List[str]) -> str\n\"\"\"Concatenate list of strings into a single string\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String \u2192 String)\n-- inputs\n(strings: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 28,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b1ab54d64a3601cfc90545aefad05aaad12d707c52473d8a1b2742e795de63b4",
+  "timing": 85.38048517200514,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/uhq4czki/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c709a36139e977f4990dd696932791926a397709912e4331bdba2db2be21cd42",
+    "status": "OK",
+    "result": "sha256:210402e10a0e219351a7ab3242ad1c0fe7b815e3372e300105694b3670ed8f0f"
+  },
+  "exception": null
+}

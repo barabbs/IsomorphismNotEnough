@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_array(lst : List[int]) -> List[int]\n\"\"\"Given an array of non-negative integers, return a copy of the given array after sorting,\nyou will sort the given array in ascending order if the sum( first index value, last index value) is odd,\nor sort it in descending order if the sum( first index value, last index value) is even.\nNote(George): I have elected to ignore the copy part.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat \u2192 List Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  lst.length > 0 \u2192\n  result.length = lst.length \u2227\n  (\u2200 i, i < result.length \u2192\n    result[i]! \u2208 lst \u2227\n    lst[i]! \u2208 result \u2227\n    result.count (lst[i]!) = lst.count (lst[i]!)) \u2227\n  (lst.head! + lst.getLast!) \u2261 1 [MOD 2] \u2192\n    result.Sorted Nat.le \u2227\n  (lst.head! + lst.getLast!) \u2261 0 [MOD 2] \u2192\n    result.Sorted (fun a b => a \u2265 b)\n-- program termination\n\u2203 result,\n  implementation lst = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Nat) : List Nat :=\n\n  match lst with\n  | [] => []\n  | [x] => [x]\n  | l =>\n    let first := l.head!\n    let last := l.getLast!\n    if (first + last) % 2 == 1 then\n      l.mergeSort (\u00b7 \u2264 \u00b7)\n    else\n      l.mergeSort (\u00b7 \u2265 \u00b7)\n\n\n-- [TEST_CASES]\n\n#test implementation [] = []\n#test implementation [5] = [5]\n#test implementation [2, 4, 3, 0, 1, 5] = [0, 1, 2, 3, 4, 5]\n#test implementation [2, 4, 3, 0, 1, 5, 6] = [6, 5, 4, 3, 2, 1, 0]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Nat)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 88,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8df94afa490f8116ec148a5f113c50bb48b105390835d62705624dcb0c6c33e9",
+  "timing": 176.46890644100495,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:2059dafa1f4ea41efe7aa1e7c1cd2aec9dc6ad367ecb1c3edaa18beb20cf284f",
+    "status": "OK",
+    "result": "sha256:a014952db51ca30e98571585f143ceee84736e37edd35407129311a37f1b4186",
+    "validation": [
+      {
+        "problem_id": "88",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:106d1f95711676e7789c6d04231ee3c5d9f1922cd1eadeca3395d8238df9937a"
+      }
+    ]
+  },
+  "exception": null
+}

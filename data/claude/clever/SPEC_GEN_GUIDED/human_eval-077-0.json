@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef iscube(a: int) -> bool\n\"\"\"Write a function that takes an integer a and returns True if this integer is a cube of some integer number.\nNote: you may assume the input is always valid.\n\n>>> iscube(1)\nTrue\n>>> iscube(2)\nFalse\n>>> iscube(-1)\nTrue\n>>> iscube(64)\nTrue\n>>> iscube(0)\nTrue\n>>> iscube(180)\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Bool)\n-- inputs\n(a: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 1 = True\n-- #test implementation 2 = False\n-- #test implementation -1 = True\n-- #test implementation 64 = True\n-- #test implementation 180 = False\n-- #test implementation 1000 = True\n-- #test implementation 0 = True\n-- #test implementation 1729 = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 77,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:97d736deba1e1f01a530738112bd25417d8c5e86cb6b95372b0f55db687c4ed2",
+  "timing": 68.18360419300006,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/afiykdws/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:9924971b135c9983612d17f2c9f5a68172acc32369ccb48a6a8b2e4021503ae5",
+    "status": "OK",
+    "result": "sha256:09ef27fadbc453d48e58c4dcc8358fffaaf1d5f6a39a2607f25242cab307e29c"
+  },
+  "exception": null
+}

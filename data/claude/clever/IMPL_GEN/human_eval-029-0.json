@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that start with a given prefix.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String \u2192 List String)\n-- inputs\n(strings: List String)\n(pref: String) :=\n-- spec\nlet spec (result: List String) :=\nresult.all (\u03bb s => s.startsWith pref) \u2227\nresult.all (\u03bb s => s \u2208 strings) \u2227\nstrings.all (\u03bb s => s.startsWith pref \u2192 s \u2208 result) \u2227\n\u2200 s : String, s \u2208 result \u2192 result.count s = strings.count s;\n-- program termination\n\u2203 result, implementation strings pref = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) (pref: String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] \"a\" = []\n-- #test implementation [\"abc\", \"bcd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"array\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 29,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:65dee35b2e3eea28d23b4b40ab35760f4b06bb74fd70afbf05450cf35734efe3",
+  "timing": 67.20341660600388,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/zo0_7ve_/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:a53bc037cc5a807fa998117374ceef4976973b107c1601a3b6a9e29d0ba5a608",
+    "status": "OK",
+    "result": "sha256:e103b1b8db591166c5c03c45da5d8ceb1a3e887793461c97287fbd0695954d29"
+  },
+  "exception": null
+}

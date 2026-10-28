@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef flip_case(string: str) -> str\n\"\"\"For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: String) :=\nlet chars_in_result := result.toList;\nlet chars_in_string := string.toList;\nchars_in_result.length = string.length \u2227\n(\u2200 i, i < chars_in_result.length \u2192\n  let c := chars_in_result.get! i;\n  let c' := chars_in_string.get! i;\n  (c.isUpper \u2192 c'.isLower) \u2227\n  (c.isLower \u2192 c'.isUpper) \u2227\n  ((\u00ac c.isUpper \u2227 \u00ac c.isLower) \u2192 c = c')\n);\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : String :=\n\nString.map (fun c =>\n  if c.isUpper then c.toLower\n  else if c.isLower then c.toUpper\n  else c) string\n\n\n-- [TEST_CASES]\n\n#test implementation \"Hello\" = \"hELLO\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 27,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4da83da9cd1f671a483f58dafe102d0936db18c572a9df73d33ee4d08a1f2cc7",
+  "timing": 903.4519621350046,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/ksfnafgz/problem.lean --deep=stuck",
+    "claude": "sha256:cd7ee050c3b49c481dc5e1636cd57e11bb1946ef97f2ff53099ab17a81d408db",
+    "status": "OK",
+    "result": "sha256:8840e9845d1e93f63c4ca83599f8b82216a3c857658ced74d81a7ef28459d396",
+    "validation": [
+      {
+        "problem_id": "27",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:0532da8236c1802b4938436f3da14937114a83a25da845d7c50bc92dd92041cf"
+      }
+    ]
+  },
+  "exception": null
+}

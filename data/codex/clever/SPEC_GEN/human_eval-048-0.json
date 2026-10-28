@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_palindrome(string: str) -> bool\n\"\"\"Checks if given string is a palindrome\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(x: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 48,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7a615023a479b0ceafd95b8add269f5857a225b52f1b2c513b22362c0a6678ef",
+  "timing": 123.39265282312408,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:6caec73586ff15849caa6ea22910e067c07c5fbbacbf3a8b06658b4773ba9425",
+    "status": "OK",
+    "result": "sha256:b1ea6544b6eaaeb9412f8d59bf1644fea9ecea63a421f1ba22e651786b31bbee"
+  },
+  "exception": null
+}

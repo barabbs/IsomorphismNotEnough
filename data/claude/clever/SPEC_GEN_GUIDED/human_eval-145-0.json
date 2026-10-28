@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef order_by_points(nums: List[int]) -> List[int]\n\"\"\"Write a function which sorts the given list of integers\nin ascending order according to the sum of their digits.\nNote: if there are several items with similar sum of their digits,\norder them based on their index in original list.\n\n>>> order_by_points([1, 11, -1, -11, -12])\n[-1, -11, 1, -12, 11]\n>>> order_by_points([])\n[]\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef digit_sum (n : Int) : Int :=\n  let ds := (toString n.natAbs).toList.map fun c => c.toNat - Char.toNat '0'\n  match ds with\n  | [] => 0\n  | d :: ds' =>\n    let tail := ds'.foldl (\u00b7 + \u00b7) 0\n    if n < 0 then Int.ofNat tail - Int.ofNat d\n    else Int.ofNat (d + tail)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List Int)\n-- inputs\n(nums: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 11, -1, -11, -12] = [-1, -11, 1, -12, 11]\n-- #test implementation [] = []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 145,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:9aa8cff4d596db54d61977efb2096157a4728cbe37b35260083d898e9e96612e",
+  "timing": 120.18125420999968,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mw255xl3/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:07a1ba0ef00dadb2b97c1a85cf6db52e1bff99838672d2fd14aca2ebdb387f4e",
+    "status": "OK",
+    "result": "sha256:bbefbb480e03508aa19ad33e4a440f769d2d2757b02e109d2d87414e6e524aa3"
+  },
+  "exception": null
+}

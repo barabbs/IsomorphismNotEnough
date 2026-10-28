@@ -1,0 +1,45 @@
+[project]
+name = "appv"
+version = "0.1.0"
+description = "APPV"
+requires-python = "==3.13.12"
+dependencies = [
+    "claude-agent-sdk==0.1.52",
+    "clever-bench",
+    "openai-agents>=0.17.3",
+]
+
+# Optional agentic backends, kept out of the core resolve:
+#  * openai-codex bundles a native `codex` binary (openai-codex-cli-bin) that
+#    currently only ships musl wheels for linux, so it fails to resolve on a
+#    glibc host — install the SDK with `uv pip install --no-deps openai-codex`
+#    and let CodexConfig fall back to the system `codex` CLI.
+#  * openhands-sdk / openhands-tools pull a large litellm stack. fastapi is
+#    listed explicitly because fastmcp>=3 splits into fastmcp-slim, whose
+#    `fastmcp.utilities.lifespan` imports fastapi without declaring it — the
+#    OpenHands MCP client hits that module at runtime.
+# The `-p codex` / `-p kimi|minimax|glm` options register only when the
+# matching SDK is importable (see scripts/clever.py).
+#
+# The VERINA benchmark is deliberately NOT an extra of this project: nothing in
+# core/ or scripts/ imports the `verina` package, and its dependency closure is
+# both huge (vllm -> torch + nvidia-cu12 wheels) and incompatible with the base
+# resolve — verina needs prefect, which requires the `griffe` 1.x
+# distribution, while openai-agents requires `griffelib` 2.x; BOTH distributions
+# install the same top-level `griffe/` module directory, so co-installing them
+# clobbers files and leaves a broken import ("cannot import name ... unknown
+# location"). Run VERINA work from its own project env instead:
+#     uv run --project benchmarks/verina ...
+[project.optional-dependencies]
+codex = ["openai-codex"]
+openhands = ["openhands-sdk", "openhands-tools", "fastapi"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["core*"]
+
+[tool.uv.sources]
+clever-bench = { path = "benchmarks/clever", editable = true }

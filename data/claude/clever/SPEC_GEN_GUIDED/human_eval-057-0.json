@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef monotonic(numbers: List[int]) -> bool\n\"\"\"Return True if list elements are monotonically increasing or decreasing.\n\n>>> monotonic([1, 2, 4, 20])\nTrue\n>>> monotonic([1, 20, 4, 10])\nFalse\n>>> monotonic([4, 1, 0, -10])\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Bool)\n-- inputs\n(numbers : List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 4, 20] = true\n-- #test implementation [1, 20, 4, 10] = false\n-- #test implementation [4, 1, 0, -10] = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 57,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:8a96f51b0dc758a02486e626ac226f932ffca0f824f862be03667b8867c53a3b",
+  "timing": 62.34355957099979,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/sa7xa0_0/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:121a58be426c6c8d3899f50ee95972137c3ca27dfb9b6ad91c00aace5ce45264",
+    "status": "OK",
+    "result": "sha256:a688561dc5393bea3e1e5674f998714fa50a9854515ad3eaaec983508d7d1b81"
+  },
+  "exception": null
+}

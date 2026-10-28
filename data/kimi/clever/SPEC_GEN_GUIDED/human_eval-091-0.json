@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_bored(s: str) -> int\n\"\"\"You'll be given a string of words, and your task is to count the number\nof boredoms. A boredom is a sentence that starts with the word \"I\".\nSentences are delimited by '.', '?' or '!'.\n\n>>> is_bored('Hello world')\n0\n>>> is_bored('The sky is blue. The sun is shining. I love this weather')\n1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Nat)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Hello world\" = 0\n-- #test implementation \"The sky is blue. The sun is shining. I love this weather\" = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 91,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:cd01538445a250e8f897188f1b7559b3c3077a2dd461b7f59242ad68ad6441cf",
+  "timing": 335.84626173833385,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d2ada15bb3bd82421754a5f978b7046ba13d5d9c3fbd62ca8997ff939428d764",
+    "status": "OK",
+    "result": "sha256:87730051177a5266b0c535058e6708ca6b1f676fa577af7ac23de808968e175e"
+  },
+  "exception": null
+}

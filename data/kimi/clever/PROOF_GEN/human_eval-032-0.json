@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_zero(xs: list)\n\"\"\"xs are coefficients of a polynomial.\nfind_zero find x such that poly(x) = 0.\nfind_zero returns only only zero point, even if there are many.\nMoreover, find_zero only takes list xs having even number of coefficients\nand largest non zero coefficient as it guarantees a solution.\nNote(George): This problem has been modified from the original HumanEval spec because of Real is not a computable type, but a zero does not necessarily exist over the rationals.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(xs: List Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  let eps := (1: Rat) / 1000000;\n  xs.length ≥ 1 → xs.length % 2 = 0 →\n  ∀ poly : Polynomial Rat,\n    poly.degree = some (xs.length - 1) →\n    (∀ i, i ≤ xs.length - 1 → poly.coeff i = xs[i]!) →\n    |poly.eval result| ≤ eps;\n-- program termination\n∃ result,\n  implementation xs = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (xs: List Rat) : Rat :=\n\nlet rec pow2 (n : Nat) : Rat :=\n  match n with\n  | 0 => 1\n  | n + 1 => 2 * pow2 n\n\nlet p := fun x => xs.foldr (fun c acc => acc * x + c) 0\n\nlet rec findBracket (fuel : Nat) (n : Nat) : Option (Rat × Rat) :=\n  match fuel with\n  | 0 => none\n  | fuel' + 1 =>\n    let step := pow2 n\n    let p0 := p 0\n    let pStep := p step\n    let pNegStep := p (-step)\n    if p0 = 0 then some (0, 0)\n    else if pStep = 0 then some (step, step)\n    else if pNegStep = 0 then some (-step, -step)\n    else if (p0 > 0 ∧ pStep < 0) ∨ (p0 < 0 ∧ pStep > 0) then\n      some (0, step)\n    else if (p0 > 0 ∧ pNegStep < 0) ∨ (p0 < 0 ∧ pNegStep > 0) then\n      some (-step, 0)\n    else\n      findBracket fuel' (n + 1)\n\nlet rec bisect (fuel : Nat) (a b : Rat) : Rat :=\n  match fuel with\n  | 0 => (a + b) / 2\n  | fuel' + 1 =>\n    let pa := p a\n    let pb := p b\n    if pa = 0 then a\n    else if pb = 0 then b\n    else\n      let mid := (a + b) / 2\n      let pmid := p mid\n      if pmid = 0 then mid\n      else if (pa > 0 ∧ pmid < 0) ∨ (pa < 0 ∧ pmid > 0) then\n        bisect fuel' a mid\n      else\n        bisect fuel' mid b\n\nmatch findBracket 10000 0 with\n| none => 0\n| some (a, b) =>\n  if a = b then a else bisect 80 a b\n\n\n-- [TEST_CASES]\n\n#test |implementation [1, 2] - (-1/2)| ≤ 1/1000000\n#test |implementation [-6, 11, -6, 1] - 1| ≤ 1/1000000 ∨ |implementation [-6, 11, -6, 1] - 2| ≤ 1/1000000 ∨ |implementation [-6, 11, -6, 1] - 3| ≤ 1/1000000\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(xs: List Rat)\n: problem_spec implementation xs\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 32,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4ab2dd2c944a3e0fee31292424f2f37e03b2986da0cc3664aa8fc974f8e4b373",
+  "timing": 8776.67846987769,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:4c4acdd6093e1a042449d3296c821040d71826748f803eca06238bf2164cc64f",
+    "status": "ISSUE",
+    "comment": "IMPL",
+    "result": "sha256:2e7e8405fa655f1f6de5c8602f590e050b889f360822093dec1bfec580381489",
+    "validation": [
+      {
+        "problem_id": "32",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:7ca091c4e36f5e98fa06dd361b8d97857959956471b42ce720a2f1d77446e846"
+      }
+    ]
+  },
+  "exception": null
+}

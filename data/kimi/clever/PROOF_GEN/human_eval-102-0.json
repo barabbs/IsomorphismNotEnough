@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef choose_num(x: int, y: int) -> int\n\"\"\"This function takes two positive numbers x and y and returns the\nbiggest even integer number that is in the range [x, y] inclusive. If\nthere's no such number, then the function should return -1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Int → Int)\n-- inputs\n(x: Int) (y: Int) :=\n-- spec\nlet spec (result: Int) :=\n  (result = -1 ∨ (x ≤ result ∧ result ≤ y ∧ Even result)) ∧\n  (result = -1 ∨ (forall i: Int, (x ≤ i ∧ i ≤ y ∧ Even i) → result ≥ i)) ∧\n  (result = -1 ↔ (x > y ∨ (x == y ∧ Odd x ∧ Odd y)))\n-- program termination\n∃ result, implementation x y = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x: Int) (y: Int) : Int :=\n\n  if x > y then\n    (-1 : Int)\n  else if y % 2 = (0 : Int) then\n    y\n  else if y - 1 ≥ x then\n    y - 1\n  else\n    (-1 : Int)\n\n\n-- [TEST_CASES]\n\n#test implementation 12 15 = 14\n#test implementation 13 12 = -1\n#test implementation 33 12354 = 12354\n#test implementation 5234 5233 = -1\n#test implementation 6 29 = 28\n#test implementation 27 10 = (-1)\n#test implementation 7 7 = -1\n#test implementation 546 546 = 546\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x: Int) (y: Int)\n: problem_spec implementation x y\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 102,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4e9b3383dd32fae4dde8ac7ef0abbb8a5db54aed081309e40ebd4076a4d99b75",
+  "timing": 968.4762419653125,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:96708573c9e44e29510f291c067ef637f785f60767aba4aef6c34e7f2cd02de6",
+    "status": "OK",
+    "result": "sha256:040c869b5c520f83e0e51f87fa4029dfd76f4426e7b676ac82202563f1197890",
+    "validation": [
+      {
+        "problem_id": "102",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:ee0ce96143d1d469c54cb20ed036ff78669c4fa78be0d4a68903c6347c487de2"
+      }
+    ]
+  },
+  "exception": null
+}

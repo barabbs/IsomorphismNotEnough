@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_max(words: List[str]) -> str\n\"\"\"Write a function that accepts a list of strings.\nThe list contains different words. Return the word with maximum number\nof unique characters. If multiple strings have maximum number of unique\ncharacters, return the one which comes first in lexicographical order.\n\n>>> find_max(['name', 'of', 'string'])\n'string'\n>>> find_max(['name', 'enam', 'game'])\n'enam'\n>>> find_max(['aaaaaaa', 'bb', 'cc'])\n'aaaaaaa'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String \u2192 String)\n-- inputs\n(words: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [\"name\", \"of\", \"string\"]= \"string\"\n-- #test implementation [\"name\", \"enam\", \"game\"] = \"enam\"\n-- #test implementation [\"aaaaaaa\", \"bb\" ,\"cc\"] = \"aaaaaaa\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 158,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:520686fc95060d67e7ff93decb99e277ea9f7601eef6b1bbbd29e1805be49b6f",
+  "timing": 257.05645482899854,
+  "metadata": {
+    "prompt": "Read problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:4ab9f83f60e89bfad5e176bd715640cea434a23b5cfb65597d7276335319c9dc",
+    "status": "OK",
+    "result": "sha256:55e715ba62e5269e7e17af49912c80c1e0f72a0bf460df55e6d269fa9da8d579"
+  },
+  "exception": null
+}

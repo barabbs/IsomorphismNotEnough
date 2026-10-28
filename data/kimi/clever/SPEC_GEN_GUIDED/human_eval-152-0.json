@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef compare(scores: List[float], guesses: List[float]) -> List[float]\n\"\"\"I think we all remember that feeling when the result of some long-awaited\nevent is finally known. The feelings and thoughts you have at that moment are\ndefinitely worth noting down and comparing.\nYour task is to determine if a person correctly guessed the results of a number of matches.\nYou are given two arrays of scores and guesses of equal length, where each index shows a match.\nReturn an array of the same length denoting how far off each guess was. If they have guessed correctly,\nthe value is 0, and if not, the value is the absolute difference between the guess and the score.\n\nNote: to reviewer, the reason for not using |.| to get the absolute value is to avoid leaking the implementation.\n\n>>> compare([1, 2, 3, 4, 5, 1], [1, 2, 3, 4, 2, -2])\n[0, 0, 0, 0, 3, 3]\n>>> compare([0, 5, 0, 0, 0, 4], [4, 1, 1, 0, 0, -2])\n[4, 4, 1, 0, 0, 6]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat → List Rat → List Rat)\n-- inputs\n(scores guesses: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1,2,3,4,5,1] [1,2,3,4,2,-2] = [0,0,0,0,3,3]\n-- #test implementation [0,5,0,0,0,4] [4,1,1,0,0,-2] = [4,4,1,0,0,6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 152,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:5f55052f1cb57d70938d389e5c15574512214d90fc6a1b7d968308958a27389e",
+  "timing": 105.975149103906,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:a327a2b04544ea3e9f4b1cf5d6fdfcdb051c2509551285168ac58fe2cc5bb366",
+    "status": "OK",
+    "result": "sha256:c087e30a249533d6a91d4e2ba2f0c85bb7b193b353d118e2b65e28d820845e4d"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_even(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the odd indicies, while its values at the even indicies are equal\nto the values of the even indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  l.length = result.length ∧\n  let even_idx := (List.range l.length).filter (λ i => i % 2 = 0);\n  let even_val_in_result := even_idx.map (λ i => result.get! i);\n  let even_val := even_idx.map (λ i => l.get! i);\n  (∀ i, i < l.length → (i % 2 ≠ 0 → l.get! i = result.get! i)) ∧\n  List.Sorted Int.le even_val_in_result ∧\n  even_val.all (λ x => even_val_in_result.count x = even_val.count x);\n-- program termination\n∃ result, implementation l = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List Int) : List Int :=\n\n  let even_vals := (List.range l.length).filter (λ i => i % 2 = 0) |>.map (λ i => l.get! i)\n  let sorted_evens := even_vals.mergeSort\n  let rec build (idx : Nat) (evens : List Int) (res : List Int) : List Int :=\n    if idx >= l.length then res.reverse\n    else if idx % 2 = 1 then build (idx + 1) evens (l.get! idx :: res)\n    else match evens with\n      | [] => res.reverse\n      | h :: t => build (idx + 1) t (h :: res)\n  build 0 sorted_evens []\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = [1, 2, 3]\n#test implementation [5, 6, 3, 4] = [3, 6, 5, 4]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List Int)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 37,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:67214e7e7f7a3efecd48ac60aeb5dce48d06c27013ca6c9cc6646f4f0837a385",
+  "timing": 9719.207596248016,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:1fe44d68fc351efc39681acacdeff97f210561507514436d128f43111d02191b",
+    "status": "FAIL",
+    "result": "sha256:ad7a804e36ea7b74826c3bb876f1be329a1b3758ecae033b26a9fa3dd25b39c6",
+    "validation": [
+      {
+        "problem_id": "37",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:9ae8c54f844f8467b315d23fae8aff62b4da4df132d5a922681dad3c5436323e"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_equal_to_sum_even(n: int) -> Bool\n\"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int \u2192 Bool)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  let sum_exists := \u2203 a b c d : Nat,\n    Even a \u2227\n    Even b \u2227\n    Even c \u2227\n    Even d \u2227\n    (a + b + c + d = n);\n  result = true \u2194 sum_exists\n-- program termination\n\u2203 result, impl n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 4 = false\n-- #test implementation 6 = false\n-- #test implementation 8 = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 138,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d86bb785fb86cae9db20d590e3cb17902b14fb1604672e3842094471ebf11961",
+  "timing": 122.87238733400591,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/6wv1cq33/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:ad898bce81ed4f7d3e57423560643deec9f177ceabc7877ebdbe543e300d005e",
+    "status": "OK",
+    "result": "sha256:61ce27bad0a19eba5852425b5df2eb8cd88c51f5882e795f2e8e020b7584cb9a"
+  },
+  "exception": null
+}

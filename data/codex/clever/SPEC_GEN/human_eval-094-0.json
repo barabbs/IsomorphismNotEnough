@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_largest_prime(lst : list[int]) -> int\n\"\"\"You are given a list of integers.\nYou need to find the largest prime value and return the sum of its digits.\nNote(George): Modified to use List of nats because all examples are nats.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat → Nat)\n-- inputs\n(lst: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 94,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e533ddf256cbb5d58a8fb59168ed3a041149cae2e42f96da9caa2a317223f307",
+  "timing": 77.08228702377528,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:c04dc5da8ef4658068b604edfd5a47c5510fb13e69f6f3125ad275c9d1b6344a",
+    "status": "OK",
+    "result": "sha256:2e7153159ebd46b430049e95a849ace42d2b1993381f0dbb2dc0341813076958"
+  },
+  "exception": null
+}

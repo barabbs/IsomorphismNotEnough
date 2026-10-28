@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef cycpattern_check(a: str, b: str) -> bool\n\"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word, else False\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(a b: String) :=\n-- spec\nlet spec (result: Bool) :=\n(b.length = 0 → result) ∧\n(0 < b.length →\nresult ↔ ((b.length ≤ a.length) ∧\n  (∃ i : Nat, i < b.length ∧\n  let b_rotation := b.drop i ++ b.take i;\n  a.containsSubstr b_rotation)));\n-- program terminates\n∃ result, impl a b = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abcd\" \"abd\" = False\n-- #test implementation \"hello\" \"ell\" = True\n-- #test implementation \"whassup\" \"psus\" = False\n-- #test implementation \"abab\" \"baa\" = True\n-- #test implementation \"efef\" \"eeff\" = False\n-- #test implementation \"himenss\" \"simen\" = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 154,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:85d2688be10c0d4f00f232fc1a0854289d03b1509f5cb9d70665d1c4bc3f9009",
+  "timing": 80.84130255365744,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:f6f11d98d83408f5dc79c50fa04c2eedb2b83636c9b2c50299c271bec6bf16d0",
+    "status": "OK",
+    "result": "sha256:ba88640c0e226f69c57dec1733411ef859144bdc05b8f9786750dcf27a694e65"
+  },
+  "exception": null
+}

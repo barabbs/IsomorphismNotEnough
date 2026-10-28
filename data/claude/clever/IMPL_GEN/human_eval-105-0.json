@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef by_length(arr: List[int]) -> List[string]\n\"\"\"Given an array of integers, sort the integers that are between 1 and 9 inclusive,\nreverse the resulting array, and then replace each digit by its corresponding name from\n\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List String)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: List String) :=\n  let digits: List String := [\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\"];\n  (forall s: String, (s \u2208 result \u2192 s \u2208 digits)) \u2227\n  (arr.length \u2265 result.length) \u2227\n  (forall x: Nat, ((x: Int) \u2208 arr \u2227 1 \u2264 x \u2227 x \u2264 9) \u2192 (digits[x-1]! \u2208 result)) \u2227\n  (List.Sorted Int.le (List.map (fun (s: String) => (List.idxOf s digits) + 1) result).reverse)\n-- program termination\n\u2203 result, implementation arr = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [2, 1, 1, 4, 5, 8, 2, 3] = [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n-- #test implementation [] = []\n-- #test implementation [1, -1 , 55] = [\"One\"]\n-- #test implementation [1, -1, 3, 2] = [\"Three\", \"Two\", \"One\"]\n-- #test implementation [9, 4, 8] = [\"Nine\", \"Eight\", \"Four\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 105,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:113c835ae6f23f28861f3dd574e43cc957275aa245cdfae350eb0bdee307d921",
+  "timing": 62.43413881701417,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/by7i1k5n/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:b7ce1fcc8bef9494981642effc42d82ddf9cc024d174309cd3ba406fed614b7a",
+    "status": "OK",
+    "result": "sha256:abaea3416a6b66cf1541b287e08d5dc05edbcec978b0a0956db2737984f8d017"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_positive(l: list)\n\"\"\"Return only positive numbers in the list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.all (λ x => x > 0 ∧ x ∈ numbers) ∧\n  numbers.all (λ x => x > 0 → x ∈ result) ∧\n  result.all (λ x => result.count x = numbers.count x);\n-- program termination\n∃ result,\n  implementation numbers = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int): List Int :=\n\nnumbers.filter (λ x => x > 0)\n\n\n-- [TEST_CASES]\n\n#test implementation [(-1), 2, (-4), 5, 6] = [2, 5, 6]\n#test implementation [5, 3, (-5), 2, (-3), 3, 9, 0, 123, 1, (-10)] = [5, 3, 2, 3, 9, 123, 1]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 30,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b19a12cfc58bac3589dfd1b6c40faeda5362b1f1e0e024a11ed7deca08b7c953",
+  "timing": 2287.0662480238825,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:77915bc4c789739c406f6aaaf40fc98ffd6a8f47f69b90117bf1245f86ff7d44",
+    "status": "OK",
+    "result": "sha256:826027abdef2ebcda1a34191fccc4d672f72e8f1081725bffa95e0cdeb93c33e",
+    "validation": [
+      {
+        "problem_id": "30",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:fb71fb412381444efc26dd03e1f19faa0886b5bf96457a3cc99bc4786c86b567"
+      }
+    ]
+  },
+  "exception": null
+}

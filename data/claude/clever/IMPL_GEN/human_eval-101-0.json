@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_string(s: string) -> List[string]\n\"\"\"You will be given a string of words separated by commas or spaces. Your task is\nto split the string into words and return an array of the words.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 List String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result: List String) :=\n  let chars := s.toList;\n  let trimmed := String.mk (chars.dropWhile (fun c => c = ' ' \u2228 c = ','));\n  let first := trimmed.takeWhile (fun c => c \u2260 ',' \u2227 c \u2260 ' ');\n  (result = [] \u2194 (\u2200 x \u2208 chars, x = ' ' \u2228 x = ',') \u2228 s = \"\") \u2227\n  (result \u2260 [] \u2194 result = [first] ++ (implementation (trimmed.drop (first.length + 1))))\n\n-- program termination\n\u2203 result, implementation s = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hi, my name is John\" = [\"Hi\", \"my\", \"name\", \"is\", \"John\"]\n-- #test implementation \"One, two, three, four, five, six\" = [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]\n-- #test implementation \"Hi, my name\" = [\"Hi\", \"my\", \"name\"]\n-- #test implementation \"One,, two, three, four, five, six,\" = [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]\n-- #test implementation \"\" = []\n-- #test implementation \"ahmed     , gamal\" = [\"ahmed\", \"gamal\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 101,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2e5d5c65422149310828400ee98d02c98b0ba12bb78cc4c381d692b15112403e",
+  "timing": 92.73586621598224,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/qjqt9hko/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f4fe956cdb5cb930c2353037696a727ce98bb7ea258791a2ac74a40d711c6b19",
+    "status": "OK",
+    "result": "sha256:a79ad534feb2b7ac2968f3dcb2a2d9c88f96fe46ef83cfc174e12bc04f275a4c"
+  },
+  "exception": null
+}

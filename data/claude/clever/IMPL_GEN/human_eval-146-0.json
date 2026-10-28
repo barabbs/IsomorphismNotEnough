@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef specialFilter(nums: List[int]) -> int\n\"\"\"Write a function that takes an array of numbers as input and returns\nthe number of elements in the array that are greater than 10 and both\nfirst and last digits of a number are odd (1, 3, 5, 7, 9).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result: Int) :=\nmatch nums with\n| [] => result = 0\n| head::tail =>\n  let first_digit := (toString head.natAbs).toList[0]!.toNat - Char.toNat '0';\n  let last_digit := head % 10;\n  let valid := head > 10 \u2227 Odd first_digit \u2227 Odd last_digit\n  if valid then result = 1 + impl tail else result = impl tail\n-- program termination\n\u2203 result, impl nums = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (nums: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [15, -73, 14, -15] = 1\n-- #test implementation [33, -2, -3, 45, 21, 109] = 2\n",
+  "info": {
+    "dataset": "clever",
+    "id": 146,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3700242ca9fff4ea07f9bb00747e53c49be53030bc5dfde23d3dd52ca578d7e3",
+  "timing": 89.22909418999916,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ccyg6sdi/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:3de5ecdb36a805bc037f96c42682aa9c62d3fc5263feae8d443630c5c36d811a",
+    "status": "OK",
+    "result": "sha256:497981dbece8f04a1e5249dd84e9724d3edd00c2bfbb3aa5b8610f7dbb32c0a2"
+  },
+  "exception": null
+}

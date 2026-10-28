@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef compare(scores: List[float], guesses: List[float]) -> List[float]\n\"\"\"I think we all remember that feeling when the result of some long-awaited\nevent is finally known. The feelings and thoughts you have at that moment are\ndefinitely worth noting down and comparing.\nYour task is to determine if a person correctly guessed the results of a number of matches.\nYou are given two arrays of scores and guesses of equal length, where each index shows a match.\nReturn an array of the same length denoting how far off each guess was. If they have guessed correctly,\nthe value is 0, and if not, the value is the absolute difference between the guess and the score.\n\nNote: to reviewer, the reason for not using |.| to get the absolute value is to avoid leaking the implementation.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat → List Rat → List Rat)\n-- inputs\n(scores guesses: List Rat) :=\n-- spec\nlet spec (result: List Rat) :=\n  result.length = scores.length ∧\n  scores.length = guesses.length ∧\n  ∀ i, i < scores.length →\n  if scores[i]! > guesses[i]! then result[i]! + guesses[i]! = scores[i]!\n  else result[i]! + scores[i]! = guesses[i]!\n-- program terminates\n∃ result, impl scores guesses = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (scores guesses: List Rat) : List Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1,2,3,4,5,1] [1,2,3,4,2,-2] = [0,0,0,0,3,3]\n-- #test implementation [0,5,0,0,0,4] [4,1,1,0,0,-2] = [4,4,1,0,0,6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 152,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8482ad2157c4e5267213e6c7debf482554c9b01d4e95cf8b765b17b5731f1d71",
+  "timing": 67.13963009696454,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:56d96eef918e13737540d16155103d17b074286c94f923f4dc599058fad6c69d",
+    "status": "OK",
+    "result": "sha256:df09c4cd8dd4cf70486baea83ba4b8c902a0e4f280cfaf78a1168390db0cbd43"
+  },
+  "exception": null
+}

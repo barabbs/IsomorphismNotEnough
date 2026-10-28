@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef special_factorial(n: int) -> int\n\"\"\"The Brazilian factorial is defined as:\nbrazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!\nwhere n > 0. Please write a function that computes the Brazilian factorial.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 139,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5387f1da60b6069c23ff462f952a20d8498afb68da98ee242f5621422e6bb722",
+  "timing": 80.12245568500657,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/gammu9q2/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:ac1d243c57cd0f6d21b920bb96fbbce848e5a6c262e9469df1002a1b15857a45",
+    "status": "OK",
+    "result": "sha256:a1f393e21a6a9d36ac2244e6605e44775b2f8689e87d4d03a015cf4b9931f3f1"
+  },
+  "exception": null
+}

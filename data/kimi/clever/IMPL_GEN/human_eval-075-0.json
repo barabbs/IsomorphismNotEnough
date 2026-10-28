@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_multiply_prime(a: int) -> bool\n\"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\nand false otherwise. Knowing that (a) is less then 100.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  (a < 100) →\n    result ↔ exists a' b c, (Nat.Prime a') ∧ (Nat.Prime b) ∧ (Nat.Prime c) ∧ (a == a'*b*c)\n-- program termination\n∃ result, implementation a = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = False\n-- #test implementation 30 = True\n-- #test implementation 8 = True\n-- #test implementation 10 = False\n-- #test implementation 125 = True\n-- #test implementation (3 * 5 * 7) = True\n-- #test implementation (3 * 6 * 7) = False\n-- #test implementation (9 * 9 * 9) = False\n-- #test implementation (11 * 9 * 9) = False\n-- #test implementation (11*13*7) = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 75,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f4788ef8d5ddad8e12a58d8e18952805742e3cc98a3814bf3adc05de0f36a8ae",
+  "timing": 144.6725575979799,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:2cfe4f6bb14827bced0134f4cf9b3dcb06c4be02af6c9ea96891dcf969637c49",
+    "status": "OK",
+    "result": "sha256:6c18046325d3a3e8b045e2ad4557cacfaacaece17d26b8aac70fbe054d71d4c2"
+  },
+  "exception": null
+}

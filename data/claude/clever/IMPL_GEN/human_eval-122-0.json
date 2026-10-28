@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add_elements(arr: List[int], k: int) -> int\n\"\"\"Given a non-empty array of integers arr and an integer k, return\nthe sum of the elements with at most two digits from the first k elements of arr.\n\nConstraints:\n    1. 1 <= len(arr) <= 100\n    2. 1 <= k <= len(arr)\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Nat \u2192 Int)\n-- inputs\n(arr: List Int)\n(k: Nat) :=\n-- spec\nlet spec (result: Int) :=\n  1 \u2264 arr.length \u2192 arr.length \u2264 100 \u2192 1 \u2264 k \u2192 k \u2264 arr.length \u2192\n  ((\u2200 i, 0 \u2264 i \u2227 i < k \u2192 \u00ac(arr[i]! \u2264 99 \u2227 -99 \u2264 arr[i]!)) \u2192 result = 0) \u2227\n  \u2203 i, i < k\n    \u2227 arr[i]! \u2264 99 \u2227 -99 \u2264 arr[i]!\n    \u2227 result = arr[i]! + (if i = 0 then 0 else impl arr i)\n    \u2227 \u2200 i', i < i' \u2227 i' < k \u2192 \u00ac(arr[i']! \u2264 99 \u2227 -99 \u2264 arr[i']!)\n-- program termination\n\u2203 result, impl arr k = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) (k: Nat) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([111, 21, 3, 4000, 5, 6, 7, 8, 9]: List Int) 4 = 24\n",
+  "info": {
+    "dataset": "clever",
+    "id": 122,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ad998471bd92da959ca3e25ae9e5c41440e6e434091ea633ac5d1c22d65039ce",
+  "timing": 71.65723261001403,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/u3gnvnv3/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:86d2cdc47358a4fa5e5d3dc175d59cab8fc9c120cacf917a4827b37e27effc2c",
+    "status": "OK",
+    "result": "sha256:ccc961e92cacda4826705868fba69b3c5cbe6cc12bd3955668f8a4504eedc5ec"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prod_signs(arr: List[int]) -> Optional[int]\n\"\"\"You are given an array arr of integers and you need to return\nsum of magnitudes of integers multiplied by product of all signs\nof each number in the array, represented by 1, -1 or 0.\nNote: return None for empty arr.\n\n>>> prod_signs([1, 2, 2, -4])\n-9\n>>> prod_signs([0, 1])\n0\n>>> prod_signs([])\nNone\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Option Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ([1, 2, 2, -4]: List Int) = (-9: Int)\n-- #test implementation ([0, 1]: List Int) = (0: Int)\n-- #test implementation ([]: List Int) = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 128,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:cf5d720550c3c0c1318cceaa3d5312c9a29646bcae142e00e3985d267375ecb3",
+  "timing": 130.72639109100055,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/t6704zrf/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:5923ad76bc23efc66fe739735921a2daca86492166a5421e0933875ab80fdfdb",
+    "status": "OK",
+    "result": "sha256:2af18a90a4ce302247ac80af6e464c54a605d0ea96edaf48a9fb1b241525e2f3"
+  },
+  "exception": null
+}

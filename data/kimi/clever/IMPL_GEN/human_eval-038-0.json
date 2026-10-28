@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_cyclic(s: str) -> str\n\"\"\"Returns an encoded string by cycling each group of three consecutive characters.\nSpecifically, each group of exactly three characters 'abc' is transformed to 'bca'.\nGroups of fewer than three characters at the end of the string remain unchanged.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n(impl: String → String)\n(s: String) :=\nlet n := s.length;\nlet extract (chars: List Char) (start_index: ℕ) (end_index: ℕ) :=\n  (chars.drop start_index).take (end_index - start_index + 1);\nlet spec (result: String) :=\n  let encoded_chars := result.toList;\n  let original_chars := s.toList;\n  encoded_chars.length = n ∧\n  (∀ i : ℕ, i * 3 + 3 ≤ n →\n    extract encoded_chars (i * 3) (i * 3 + 2) =\n      [original_chars.get! (i * 3 + 1), original_chars.get! (i * 3 + 2), original_chars.get! (i * 3)]) ∧\n  (n % 3 ≠ 0 → extract encoded_chars (n - n % 3) (n - 1) =\n    extract original_chars (n - n % 3) (n - 1));\n-- program termination\n∃ result,\n  impl s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abcdef\" = \"bcaefd\"\n-- #test implementation \"abcde\" = \"bcade\"\n-- #test implementation \"ab\" = \"ab\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 38,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b3097a7091df2552fe4afa72ff496c70e7d46b38300bdd1c0a0fe8b87972b831",
+  "timing": 56.93805363075808,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:25c28936b3b0d685cc188fe3fff388b5571b62badff44c46b1fd9f961722f73e",
+    "status": "OK",
+    "result": "sha256:91ea080a0230536f4632a710e076323efdf2eee2c3989d93a8123bea6109e1cb"
+  },
+  "exception": null
+}

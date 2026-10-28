@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef generate_integers(a : nat, b : nat) -> List[nat]\n\"\"\"Given two positive integers a and b, return the even digits between a\nand b, in ascending order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat → List Nat)\n-- inputs\n(a b : Nat) :=\nlet isAscendingBy2 (r : List Nat) :=\n∀ i, i < r.length - 1 → r[i+1]! - r[i]! = 2\n-- spec\nlet spec (result: List Nat) :=\nresult.all (fun n => n % 2 = 0) ∧ isAscendingBy2 result ∧\n1 < result.length ∧\nlet min_a_b := min a b;\nlet max_a_b := max a b;\nif min_a_b = max_a_b ∧ (min_a_b % 2 = 1)\nthen result = []\nelse ((result[0]! = if 2 ∣ min_a_b then min_a_b else (min_a_b + 1)) ∧\n(result[result.length-1]! = if 2 ∣ max_a_b then max_a_b else max_a_b - 1))\n-- program terminates\n∃ result, impl a b = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: Nat) : List Nat :=\n\n  let lo := min a b\n  let hi := max a b\n  let start := if lo % 2 = 0 then lo else lo + 1\n  if start > hi then []\n  else\n    let count := (hi - start) / 2 + 1\n    (List.range count).map (fun i => start + 2 * i)\n\n\n-- [TEST_CASES]\n\n#test implementation 2 8 = [2, 4, 6, 8]\n#test implementation 8 2 = [2, 4, 6, 8]\n#test implementation 10 14 = [10, 12, 14]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: Nat)\n: problem_spec implementation a b :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 163,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3cff402f880a5efe490162ae5fbe1631e8d5431af69d0efe56f28c39ab950f71",
+  "timing": 99.98300031595863,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:fb0fc22018c4872f751a3d45ab5cfc9c754f980e843595b43c33ce052664738a",
+    "status": "ISSUE",
+    "result": "sha256:e3f8c301e98244cd3ec39860c27a30cf57475f6cf980c0a807ef70b423ad1c87",
+    "validation": [
+      {
+        "problem_id": "163",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:99ec42a3cd90d32e261127bd4e11cd0f362653e7f9e5b80b4f8817cfe8283b0f"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

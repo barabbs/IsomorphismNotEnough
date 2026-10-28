@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[float]) -> int\n\"\"\"You are given a list of numbers.\nYou need to return the sum of squared numbers in the given list,\nround each element in the list to the upper int(Ceiling) first.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat → Int)\n-- inputs\n(lst: List Rat) :=\n-- spec\nlet spec (result: Int) :=\n  (lst = [] → result = 0) ∧\n  (lst != [] → 0 ≤ result - lst[0]!.ceil^2 ∧ (impl (lst.drop 1) = (result - lst[0]!.ceil^2)))\n-- program termination\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Rat) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = 14\n-- #test implementation [1, 4, 9] = 98\n-- #test implementation [1, 3, 5, 7] = 84\n-- #test implementation [1.4, 4.2, 0] = 29\n-- #test implementation [-2.4, 1, 1] = 6\n",
+  "info": {
+    "dataset": "clever",
+    "id": 133,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:23f960f22bdb9e91bfc90f9ff634c0fb2f743cac8e4ca4942695e463deeac99d",
+  "timing": 62.90880677709356,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:aabfd94e9dff2be072db67c3caf9ef411dd6cb925e4c8f184b23c442e8e79102",
+    "status": "OK",
+    "result": "sha256:879a93a45e7ff6ee599939b82a898acb5d97cf1d71bd7776be67d513243e1bff"
+  },
+  "exception": null
+}

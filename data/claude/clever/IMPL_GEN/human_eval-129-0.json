@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef split_words(txt)\n\"\"\"Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\nshould split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\nalphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n-- return a tuple of Option (List String) and Option Nat\n(impl: String \u2192 Option (List String) \u00d7 Option Nat)\n-- inputs\n(text: String) :=\n-- spec\nlet spec (result: Option (List String) \u00d7 Option Nat) :=\n  -- both cannot be None\n  let words := result.fst;\n  let ord := result.snd;\n  0 < text.length \u2192\n  \u00ac (words = none \u2227 ord = none) \u2227\n    (words = none \u2194 \u2200 ch, ch \u2208 text.toList \u2192  (ch = ',' \u2228 ch = ' ')) \u2227\n    (\u2200 num, ord = some num \u2192 (text.get! 0).toNat = num) \u2227\n    (\u2200 lst, words = some lst \u2192 \u2200 i, i < lst.length \u2192\n      let str := lst.get! i;\n      text.containsSubstr str) \u2227\n    (\u2200 lst, words = some lst \u2192\n      let first := text.takeWhile (fun c => c \u2260 ',' \u2227 c \u2260 ' ');\n      let nextImpl := impl (text.drop (first.length + 1));\n      let nextWords := nextImpl.fst;\n      (\u2203 nextLst, nextWords = some nextLst \u2227\n        lst = [first] ++ nextLst))\n-- program terminates\n\u2203 result, impl text = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (text: String) : Option (List String) \u00d7 Option Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hello world!\" = (some [\"Hello\", \"world!\"], none)\n-- #test implementation \"Hello,world!\" = (some [\"Hello\", \"world!\"], none)\n-- #test implementation \"abcdef\" = (none, some 3)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 129,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:dc957fc3b73d19e2b08e3d102f0c08407372f76007e6b899125fdca24fceb0e4",
+  "timing": 86.70885485500912,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ce8k_qkr/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:58a5f634b8a49b24145953262a10d6f143f9eb816b4d7c761d3a73dfa07a281e",
+    "status": "OK",
+    "result": "sha256:ab8d85337bdb87c0252fe68d3d666436195957a95cbe9fe715569160d29295bb"
+  },
+  "exception": null
+}

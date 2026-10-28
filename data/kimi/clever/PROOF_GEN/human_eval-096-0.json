@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_up_to(n : int) -> list[int]\n\"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\nintegers that are prime numbers and less than n.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  match n with\n  | 0 => result = []\n  | n => n > 0 → (∀ i, i < result.length → (Nat.Prime (result.get! i)) ∧ (result.get! i) < n) ∧\n         (∀ i : Nat, i < n → Nat.Prime i → i ∈ result)\n-- program termination\n∃ result,\n  implementation n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : List Nat :=\n\n(List.range n).filter Nat.Prime\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = [2,3]\n#test implementation 11 = [2,3,5,7]\n#test implementation 0 = []\n#test implementation 20 = [2,3,5,7,11,13,17,19]\n#test implementation 1 = []\n#test implementation 18 = [2,3,5,7,11,13,17]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 96,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b985d4c3fc843a18d21dd4c32142ce1174d628fe680b5b9c2b7efb003d4ae05a",
+  "timing": 402.159720628988,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:91c6753d413aae8feae73c17d711ca272b35d82135cee9ca7d4bacf0c3d0bcc5",
+    "status": "OK",
+    "result": "sha256:7712235a05aa10aaacb805d08114fab47d8fa9f4255bb0bd0703454e8e5be403",
+    "validation": [
+      {
+        "problem_id": "96",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:c8555261a58d7fb421a1e087e5e3d030c16270705051898cc5a0df6987e1855e"
+      }
+    ]
+  },
+  "exception": null
+}

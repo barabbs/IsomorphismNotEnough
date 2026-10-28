@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef anti_shuffle(s : str) -> str\n\"\"\"\"\"\"\nWrite a function that takes a string and returns an ordered version of it.\nOrdered version of string, is a string where all words (separated by space)\nare replaced by a new word where all the characters arranged in\nascending order based on ascii value.\nNote: You should keep the order of words and blank spaces in the sentence.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 86,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ba8f80a126fb810c2e33fefc86e8bda90fe3b618c820478dddc09a11c5165229",
+  "timing": 101.58818873099517,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/lzpvnr9a/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:50e027f54db149f5d199acff11fc840bb9ec67f8938fd877c399287017363652",
+    "status": "OK",
+    "result": "sha256:22b66272d1c17b53d0e7dfd2519e4cee760aae899aeedec201fd0b2854d366d0"
+  },
+  "exception": null
+}

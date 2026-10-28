@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_divisor(n: int) -> int\n\"\"\"For a given number n, find the largest number that divides n evenly, smaller than n\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n0 < n \u2192 0 < result \u2192 result \u2223 n \u2192 \u2200 x, x \u2223 n \u2192 x \u2260 n \u2192 x \u2264 result;\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  if n \u2264 1 then 0\n  else\n    let rec findDiv (k : Nat) : Nat :=\n      match k with\n      | 0 => 0\n      | k' + 1 =>\n        if n % (k' + 1) == 0 then k' + 1\n        else findDiv k'\n    findDiv (n - 1)\n\n\n-- [TEST_CASES]\n\n#test implementation 15 = 5\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 24,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7db94f2966c366f7fef2f7f983d8c2c000910dcfa1507a558f90caa8c89371e2",
+  "timing": 507.7655802089721,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:9cf8eafae77800a8304d0337f691dc3f357b0178d2faaec4137f4b47d8c309bf",
+    "status": "OK",
+    "result": "sha256:c9b5482d94d1bceadc82df864481dacba1879047b85ba923516ac6374dd01cb1",
+    "validation": [
+      {
+        "problem_id": "24",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:404a180e2696d1784e8b0f6cdae327e340c670484b6473525eb8016e5db8d177"
+      }
+    ]
+  },
+  "exception": null
+}

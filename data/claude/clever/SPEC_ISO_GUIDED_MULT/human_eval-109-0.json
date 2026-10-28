@@ -1,0 +1,71 @@
+{
+  "text": "sha256:4fa7fb6d8d6bdc65a92eaebbad4375978aa8613dcb8d767a198c127412078f6d",
+  "info": {
+    "dataset": "clever",
+    "id": 109,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:863147bc12f319808af66044858704010b6c01715769cf0e363631132682f222",
+  "timing": 574.6179363409756,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:bf1acfa03ec43bc083f4b0c93cf5d22a91921fe779c452a8fbfc4d3eb2f6e6a3",
+    "status": [
+      "ISSUE",
+      "ISSUE",
+      "ISSUE",
+      "ISSUE"
+    ],
+    "result": "sha256:ea102583a23467912394b2027ead90d2f4339c221bedfcd22627860fd23c67f5",
+    "raw_status": "0:ISSUE\n1:ISSUE\n2:ISSUE\n3:ISSUE",
+    "comment": [
+      "PROB",
+      "PROB",
+      "PROB",
+      "PROB"
+    ],
+    "validation": [
+      {
+        "problem_id": "109",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:5ef840bff1ec60ebd7e4fae189dac0d5351e31b9237bbf8d2d97b2f99aa94a8b"
+      },
+      {
+        "problem_id": "109",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:1c880bfe5441e133c19894cde437cc17c4e41e84c0246274a1e292f0faa41415"
+      },
+      {
+        "problem_id": "109",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:a4e588499d4a8979459eb61627926084a89841c93971e2c6046bcc6c8d1c5179"
+      },
+      {
+        "problem_id": "109",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:62a307be85d63e5ae4b03bcb9e9daa2d6b2c83c1e987e7b9842ddbcc856c2ff5"
+      }
+    ],
+    "analysis": [
+      "NAT",
+      "NAT",
+      "NAT",
+      "NAT"
+    ]
+  },
+  "exception": null
+}

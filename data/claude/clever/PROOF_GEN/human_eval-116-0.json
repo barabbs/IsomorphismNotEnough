@@ -1,0 +1,34 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_array(lst : List[int]) -> List[int]\n\"\"\"Please write a function that sorts an array of non-negative integers according to\nnumber of ones in their binary representation in ascending order.\nFor similar number of ones, sort based on decimal value.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat → List Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  ∀ x : Nat, lst.count x = result.count x ∧\n  result.length = lst.length ∧\n  (∀ i j : Nat, i < j → j < result.length →\n    Nat.digits 2 (result.get! i) < Nat.digits 2 (result.get! j) ∨\n    (Nat.digits 2 (result.get! i) = Nat.digits 2 (result.get! j) ∧ result.get! i < result.get! j))\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Nat) : List Nat :=\n\nlst.mergeSort (· ≤ ·)\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 5, 2, 3, 4] = [1, 2, 4, 3, 5]\n#test implementation [1, 0, 2, 3, 4] = [0, 1, 2, 4, 3]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Nat)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 116,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a3b933f91e7dfb9385b50f5cffbf68e41449badce4f3da8054c931376811dd48",
+  "timing": 283.8926007580012,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:2a4760ca14f5c6203fe8da990efb971b3bb15957386d0c87a891b9099c3a36f5",
+    "status": "ISSUE",
+    "result": "sha256:6707a18806e5b02a158fb86fb4dff5f355e5c97448e84bee7f4b7e7f69ed0762",
+    "validation": [
+      {
+        "problem_id": "116",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:8bae7816e396352f76108f46293f1f5a2a33751b172e18236a020fe0a17da9ec",
+        "lean_code": "sha256:4e1ff912c3ee3f8fc342266ebbd2d1dc8a17b25377d4e93fc89ceb41f829b668"
+      }
+    ],
+    "comment": "BOTH",
+    "analysis": [
+      "WRONG",
+      "WRONG_ALGO"
+    ]
+  },
+  "exception": null
+}

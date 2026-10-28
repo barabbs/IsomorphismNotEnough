@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef odd_count(lst : list[str]) -> list[str]\n\"\"\"Given a list of strings, where each string consists of only digits, return a list.\nEach element i of the output should be \"the number of odd elements in the\nstring i of the input.\" where all the i's should be replaced by the number\nof odd digits in the i'th string of the input.\nNote(George): Found it hard to not leak the implementation, so I opted for a recursive statement.\n\n>>> odd_count(['1234567'])\n['the number of odd elements 4n the str4ng 4 of the 4nput.']\n>>> odd_count(['3', '11111111'])\n['the number of odd elements 1n the str1ng 1 of the 1nput.', 'the number of odd elements 8n the str8ng 8 of the 8nput.']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String \u2192 List String)\n-- inputs\n(lst: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ['1234567'] = [\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n-- #test implementation ['3',\"11111111\"] = [\"the number of odd elements 1n the str1ng 1 of the 1nput.\", \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 113,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:94b9d895c71712e3da9b2bd2e3f916d34aeca7ee7956cc1ac69deb879fb05954",
+  "timing": 251.2430707589956,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/h9cqnm3s/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b216f257b6dd45fa9e567f6105d9b230666a01ba1f20cdd3b07804421dd3378f",
+    "status": "OK",
+    "result": "sha256:a9dae7596de8aadda22129d5371b07ea8fecc4279dcb03fe19ab12e3b90d9d0e"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strlen(string: str) -> int\n\"\"\"Return length of given string\n\n>>> strlen('')\n0\n>>> strlen('abc')\n3\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 Nat)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"\" = 0\n-- #test implementation \"abc\" = 3\n",
+  "info": {
+    "dataset": "clever",
+    "id": 23,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:44930ce1b36a72d869e08714769c91127dbdb3da26b6eec6acba2d59e7326b97",
+  "timing": 101.96319605095778,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/a_gcmsnw/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:09fef6b034736a6d91e36a364a3f1106e0c83f61fbdfda4e06b8c79a7c2f298b",
+    "status": "OK",
+    "result": "sha256:a87a27c2e8035c1337ae1db57c165370a0283f7cf5a5ab25a587218f6b502f31"
+  },
+  "exception": null
+}

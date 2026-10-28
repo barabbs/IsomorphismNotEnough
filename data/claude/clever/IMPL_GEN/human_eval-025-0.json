@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef factorize(n: int) -> List[int]\n\"\"\"Return list of prime factors of given integer in the order from smallest to largest.\nEach of the factors should be listed number of times corresponding to how many times it appeares in factorization.\nInput number should be equal to the product of all factors\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\n2 \u2264 n \u2192\n(result.prod = n \u2227\nList.Sorted Nat.le result \u2227\nresult.all (\u03bb i => n % i = 0 \u2227 Nat.Prime i));\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 8 = [2, 2, 2]\n-- #test implementation 25 = [5, 5]\n-- #test implementation 70 = [2, 5, 7]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 25,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8d1ff78259244991e5660065a93ea48f03d1afec67baa879cdbb8ad9b5f47040",
+  "timing": 47.23467401700327,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/g0xfibsd/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:51704f972476dd6ba403edd6dc0ef406b0725b5c5dab7f14aa46ea87e721e3b2",
+    "status": "OK",
+    "result": "sha256:b8321a3ede180bfc5020e763c432e5340ee75fca41f1d334744458388c8e45d0"
+  },
+  "exception": null
+}

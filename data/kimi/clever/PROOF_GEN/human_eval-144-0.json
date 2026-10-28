@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef simplify(x: str, n: str) -> bool\n\"\"\"Your task is to implement a function that will simplify the expression\nx * n. The function returns True if x * n evaluates to a whole number and False\notherwise. Both x and n, are string representation of a fraction, and have the following format,\n<numerator>/<denominator> where both numerator and denominator are positive whole numbers.\n\nYou can assume that x, and n are valid fractions, and do not have zero as denominator.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(x: String) (n: String) :=\n-- spec\nlet spec (result: Bool) :=\nlet fx := x.splitOn \"/\";\nlet fn := n.splitOn \"/\";\nfx.length = 2 → fn.length = 2 →\nfx.all String.isNat → fn.all String.isNat →\nlet p1 := fx[0]!.toNat!;\nlet q1 := fx[1]!.toNat!;\nlet p2 := fn[0]!.toNat!;\nlet q2 := fn[1]!.toNat!;\nq1 ≠ 0 → q2 ≠ 0 →\n(result ↔ (∃ k, k * p1 * p2 = q1 * q2))\n-- program termination\n∃ result, impl x n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x: String) (n: String) : Bool :=\n\n  let fx := x.splitOn \"/\"\n  let fn := n.splitOn \"/\"\n  match fx[0]!.toNat?, fx[1]!.toNat?, fn[0]!.toNat?, fn[1]!.toNat? with\n  | some p1, some q1, some p2, some q2 =>\n    (q1 * q2) ∣ (p1 * p2)\n  | _, _, _, _ => false\n\n\n-- [TEST_CASES]\n\n#test implementation \"1/5\" \"5/1\" = True\n#test implementation \"1/6\" \"2/1\" = False\n#test implementation \"7/10\" \"10/2\" = False\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x: String) (n: String)\n: problem_spec implementation x n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 144,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9baa3c34a49e5b4f75188f34fd1b42c5c22d4d55366ff305e7c717b1d32aa122",
+  "timing": 4262.398265446071,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:08ae84464f4bb59797e24ca98e81915dac6f592285552646c1ddaab957061d10",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:1110c7a03de0452f16751647df3ebea0ec1d14f0dc51d2034f6ea9ee1f6f6698",
+    "validation": [
+      {
+        "problem_id": "144",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:a7bf822d87f2562f378b15efbaae029b9368c7c1a5e9c8ccfe323772d76222d4"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_up_to(n : int) -> list[int]\n\"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\nintegers that are prime numbers and less than n.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → List Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 96,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8000390e8b0a4904c67f12e74122272db92febd355e06dda2c3d63216ef43625",
+  "timing": 90.35037659713998,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:4f4a84f49131968da19a8784211ff81d02ccf5f501eab30e66ceb0d493c25138",
+    "status": "OK",
+    "result": "sha256:10651c9aa78b67f26c4cba13b981b482610ea6ac2ca19489962b8dc86fabb68f"
+  },
+  "exception": null
+}

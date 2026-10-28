@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]\n\"\"\"From a supplied list of numbers (of length at least two) select and return two that are the closest to each\nother and return them in order (smaller number, larger number).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Rat → (Rat × Rat))\n-- inputs\n(numbers: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 20,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e4d4d78d4fd55b8489726ac8fec7aa7c93b5130603a89718e3129f242d92c6e2",
+  "timing": 75.22319473698735,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:ede057af8595f297f4977e527ea7a521e06b3e28b4e21ca10e6f944ed792bd24",
+    "status": "OK",
+    "result": "sha256:b01889715f64f969b75cf791b4e0062e404a7403b0bf06153f9ba6c03ef4d56c"
+  },
+  "exception": null
+}

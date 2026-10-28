@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef by_length(arr: List[int]) -> List[str]\n\"\"\"Given an array of integers, sort the integers that are between 1 and 9 inclusive,\nreverse the resulting array, and then replace each digit by its corresponding name from\n\"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\n>>> by_length([2, 1, 1, 4, 5, 8, 2, 3])\n['Eight', 'Five', 'Four', 'Three', 'Two', 'Two', 'One', 'One']\n>>> by_length([])\n[]\n>>> by_length([1, -1, 55])\n['One']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List String)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [2, 1, 1, 4, 5, 8, 2, 3] = [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n-- #test implementation [] = []\n-- #test implementation [1, -1 , 55] = [\"One\"]\n-- #test implementation [1, -1, 3, 2] = [\"Three\", \"Two\", \"One\"]\n-- #test implementation [9, 4, 8] = [\"Nine\", \"Eight\", \"Four\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 105,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:58a00705bdb30e470d85f58ec5b6b8af78f1dae9d9211da32b7b7784c876a2f8",
+  "timing": 102.00237820500115,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/jvv7k16_/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c26568c4ba8c3f8d2637afd1138c980ef97272a431ebc8ec60ea68de6f9a44b0",
+    "status": "OK",
+    "result": "sha256:2d9f3a05213ee18aa62e17900abfe537242bc0554ee7e5eb9fc9d89e9f0d109e"
+  },
+  "exception": null
+}

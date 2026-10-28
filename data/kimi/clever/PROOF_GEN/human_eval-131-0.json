@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digits(n: int) -> int\n\"\"\"Given a positive integer n, return the product of the odd digits.\nReturn 0 if all digits are even.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  0 < n →\n  (n < 10 → (n % 2 = 1 → result = n) ∧ (n % 2 = 0 → result = 0)) ∧\n  (10 ≤ n →\n    let digit := n % 10;\n    let rest := n / 10;\n    (digit % 2 = 1 →\n      if (Nat.toDigits 10 rest).all (fun x => Even (x.toNat - '0'.toNat))\n        then impl rest = 0 ∧ result = digit\n      else\n        result = impl rest * digit)\n    ∧\n    (digit % 2 = 0 →\n      result = impl rest))\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\nif n < 10 then\n  if n % 2 = 1 then n else 0\nelse\n  let digit := n % 10\n  let rest := n / 10\n  if digit % 2 = 1 then\n    if implementation rest = 0 then digit else implementation rest * digit\n  else\n    implementation rest\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = 1\n#test implementation 4 = 0\n#test implementation 235 = 15\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 131,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:729d15cf44abb1accdbc6080c92b8b9413f4aa551ef66be4feb2eb1f8c388180",
+  "timing": 14554.010698564816,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:9492d1edc17817689022e7cfb7f1f67445e866745eb93b1ebd32682c84a0a38e",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "131",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:76ad4ee418ca3c20d00b945d0ed7c14ce68f7d79a7578fa08453304b430f85f8",
+        "lean_code": "sha256:e3acc1e3447d8179bcbbc58fd048237328acc6f652cb52211d480c7329ed9a69"
+      }
+    ]
+  },
+  "exception": null
+}

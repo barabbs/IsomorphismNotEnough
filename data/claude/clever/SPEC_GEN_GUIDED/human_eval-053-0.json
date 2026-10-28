@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add(x: int, y: int) -> int\n\"\"\"Add two numbers x and y\n>>> add(2, 3)\n5\n>>> add(5, 7)\n12\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Int \u2192 Int)\n-- inputs\n(x y: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 2 3 = 5\n-- #test implementation 5 7 = 12\n",
+  "info": {
+    "dataset": "clever",
+    "id": 53,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:3c838cafc8c27d9bb96d24740f5a4b6e27ee5c15dc7c36e04e42c26baf4c0211",
+  "timing": 50.78123204500116,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/gbj40rkv/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:4e219581d2708698748578c2dd9a8beb94f6656ca04a67e47602e271afe15b0e",
+    "status": "OK",
+    "result": "sha256:bee15228402cba8c8814e7af7709746a43a4b2567f9a2fd0e171b9cfdc72a830"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(string : str) -> str\n\"\"\"You are given a string s.\nif s[i] is a letter, reverse its case from lower to upper or vise versa,\notherwise keep it as it is.\nIf the string contains no letters, reverse the string.\nThe function should return the resulted string.\n\n>>> solve('1234')\n'4321'\n>>> solve('ab')\n'AB'\n>>> solve('#a@C')\n'#A@c'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"1234\" = \"4321\"\n-- #test implementation \"ab\" = \"AB\"\n-- #test implementation \"#a@C\" = \"#A@c\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 161,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:1776c73345e6f865ad884e66f6463bd3bcbea32ae8f504c593a17802949317bd",
+  "timing": 212.7887812019908,
+  "metadata": {
+    "prompt": "Read problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:9aed55b6c3bca7add8449f8d9019ded644e3371201f74900b07fa196ac34be1a",
+    "status": "OK",
+    "result": "sha256:f280e6f08cba715864cba6d1810d7a7e4deea305db5e880363243470287f2590"
+  },
+  "exception": null
+}

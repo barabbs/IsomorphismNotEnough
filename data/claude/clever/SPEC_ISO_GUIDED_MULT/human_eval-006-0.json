@@ -1,0 +1,60 @@
+{
+  "text": "sha256:47e256a843e99b04d7867b6da093c449d8dceee27aa74296223744065a6ea3b2",
+  "info": {
+    "dataset": "clever",
+    "id": 6,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:7a4e98a26cdab1bf58798c196fedddbfb20529535dbd3e24865a150e37bc1a7e",
+  "timing": 1495.5998475450324,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean --deep=stuck",
+    "claude": "sha256:2557deb5f14b1845ac87077faced9fe1a77077117e17600096de7f177f8a5893",
+    "status": [
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH"
+    ],
+    "result": "sha256:f0adb864371fe4cea55731f2f298ff154cf97854d7695e62988d3d570f0a13de",
+    "raw_status": "Background build completed successfully (exit 0). All files are already verified — no further action needed.",
+    "comment": [
+      "/",
+      "/",
+      "→"
+    ],
+    "validation": [
+      {
+        "problem_id": "6",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:bbb4650c474e6587d3d105d01508ee78298a44d20e7341403cf016da6ae220af"
+      },
+      {
+        "problem_id": "6",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:bd5ab274cd1be5a8c68bd396c2d3e03cd9b8d30f5a38952b3d4ac82ab4856f26"
+      },
+      {
+        "problem_id": "6",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:2f6602a15f7d093d65498932a3075b3b7b6c9eba594a8540fe62612e18d259b7"
+      }
+    ],
+    "analysis": [
+      "STRUCT",
+      "STRUCT",
+      "STRUCT+PRECOND"
+    ]
+  },
+  "exception": null
+}

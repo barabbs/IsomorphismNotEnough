@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_xor(a: str, b: str) -> str\n\"\"\"Input are two strings a and b consisting only of 1s and 0s.\nPerform binary XOR on these inputs and return result also as a string.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String → String)\n-- inputs\n(a b: String) :=\n-- spec\nlet spec (result: String) :=\n  a.all (fun c => c = '0' ∨ c = '1') →\n  b.all (fun c => c = '0' ∨ c = '1') →\n  a.length = b.length →\n  result.length = a.length ∧\n  result.all (fun c => c = '0' ∨ c = '1') ∧\n  (∀ i, i < a.length →\n  let i_pos := String.Pos.mk i;\n  (a.get i_pos = b.get i_pos → result.get i_pos = '0') ∧\n  (a.get i_pos ≠ b.get i_pos → result.get i_pos = '1'));\n-- program termination\n∃ result, implementation a b = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"010\" \"110\" = \"100\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 11,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c4c9140834d131582b44a62a58a3c0657b151a60c3c2cddf84e32cc400317679",
+  "timing": 85.73902050219476,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:176f22088c2b973a513e86a678d8bd81c56affb6ab8055c2587196f575d884a8",
+    "status": "OK",
+    "result": "sha256:1e1219d30a4aa2369849bacf14d52a072cedecd8ee2cbe79e4262d95cdf88aae"
+  },
+  "exception": null
+}

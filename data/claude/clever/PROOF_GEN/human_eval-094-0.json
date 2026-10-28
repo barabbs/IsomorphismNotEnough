@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_largest_prime(lst : list[int]) -> int\n\"\"\"You are given a list of integers.\nYou need to find the largest prime value and return the sum of its digits.\nNote(George): Modified to use List of nats because all examples are nats.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat → Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  lst.any (fun num => Nat.Prime num) →\n    result > 0 ∧ ∃ i, i < lst.length ∧ Prime (lst.get! i) ∧\n    (∀ j, j < lst.length ∧ Prime (lst.get! j) → lst.get! i ≤ lst.get! j) ∧\n    result = (Nat.digits 10 (lst.get! i)).sum\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Nat) : Nat :=\n\n  let isPrime (n : Nat) : Bool :=\n    if n < 2 then false\n    else\n      let rec loop (i : Nat) (fuel : Nat) : Bool :=\n        match fuel with\n        | 0 => true\n        | fuel + 1 =>\n          if i * i > n then true\n          else if n % i == 0 then false\n          else loop (i + 1) fuel\n      loop 2 n\n  let primes := lst.filter isPrime\n  let maxPrime := primes.foldl max 0\n  (Nat.digits 10 maxPrime).sum\n\n\n-- [TEST_CASES]\n\n#test implementation [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] = 10\n#test implementation [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] = 25\n#test implementation [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] = 13\n#test implementation [0,724,32,71,99,32,6,0,5,91,83,0,5,6] = 11\n#test implementation [0,81,12,3,1,21] = 3\n#test implementation [0,8,1,2,1,7] = 7\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Nat)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 94,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6596f1d3947dd5270561f8371628e3a1cb01d62c7dd09536549968ac57440727",
+  "timing": 624.007643313962,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:0817e7389f26d0ec52321f8a1f156bdd2d97dcc62b7a898eae4c557a195c0239",
+    "status": "ISSUE",
+    "result": "sha256:e0c79e39241bcecdf244f1a132238c1788401df1d210ff0a420485a1ef52ce8c",
+    "validation": [
+      {
+        "problem_id": "94",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:bdd75084675c25d29f7726ef56a2ce0a2f3ad0e0efab4cc315958c76fc59a2ec"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "WRONG"
+  },
+  "exception": null
+}

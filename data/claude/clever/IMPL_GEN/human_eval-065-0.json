@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef circular_shift(x: Int, shift: Int) -> String\n\"\"\"Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat \u2192 String)\n-- inputs\n(x shift: Nat) :=\nlet isReverse (s: String) : Bool :=\n  let n := s.length;\n  \u2200 i, i < n / 2 \u2192 s.get! \u27e8i\u27e9 = s.get! \u27e8n - 1 - i\u27e9;\n-- spec\nlet spec (result: String) :=\nlet x_str := Nat.repr x;\nresult.length = x_str.length \u2227\n(x_str.length < shift \u2192 isReverse x_str) \u2227\n(shift \u2264 x_str.length \u2192\n  x_str.take shift = result.drop (x_str.length - shift) \u2227\n  x_str.drop shift = result.take (x_str.length - shift));\n-- program termination\n\u2203 result, implementation x shift = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x shift: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation (12 : Int) (1 : Int) = \"21\"\n-- #test implementation (12 : Int) (2 : Int) = \"12\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 65,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:33c0ae1eaf7d5bd4a0357510f63ecf2ce9764125cd4dc95227922356c9db33bb",
+  "timing": 93.37114492000546,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/r8fqojwk/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:655a83795c4e8a271870489caa48e360cc320d418065465a6536052d22592bdd",
+    "status": "OK",
+    "result": "sha256:cbd3c07fc7f184698b3118def090bd88879388b1bf38962f0294835316e5489e"
+  },
+  "exception": null
+}

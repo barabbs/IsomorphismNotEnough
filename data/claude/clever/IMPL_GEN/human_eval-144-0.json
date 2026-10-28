@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef simplify(x: str, n: str) -> Bool\n\"\"\"Your task is to implement a function that will simplify the expression\nx * n. The function returns True if x * n evaluates to a whole number and False\notherwise. Both x and n, are string representation of a fraction, and have the following format,\n<numerator>/<denominator> where both numerator and denominator are positive whole numbers.\n\nYou can assume that x, and n are valid fractions, and do not have zero as denominator.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String \u2192 Bool)\n-- inputs\n(x: String) (n: String) :=\n-- spec\nlet spec (result: Bool) :=\nlet fx := x.splitOn \"/\";\nlet fn := n.splitOn \"/\";\nfx.length = 2 \u2192 fn.length = 2 \u2192\nfx.all String.isNat \u2192 fn.all String.isNat \u2192\nlet p1 := fx[0]!.toNat!;\nlet q1 := fx[1]!.toNat!;\nlet p2 := fn[0]!.toNat!;\nlet q2 := fn[1]!.toNat!;\nq1 \u2260 0 \u2192 q2 \u2260 0 \u2192\n(result \u2194 (\u2203 k, k * p1 * p2 = q1 * q2))\n-- program termination\n\u2203 result, impl x n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x: String) (n: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"1/5\" \"5/1\" = True\n-- #test implementation \"1/6\" \"2/1\" = False\n-- #test implementation \"7/10\" \"10/2\" = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 144,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:235f225e2e189a81cb6ff9f4ca15e7c565e35815573d854a2fc40248a81ac3b4",
+  "timing": 92.40300708499853,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/6vcu51ev/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:7374e67baa022eee711e0bb382222da243775030d7b9cb9d744056a35227e701",
+    "status": "OK",
+    "result": "sha256:e653cc47f67c3a35745d4da2e68196c41b028c32861505dcb00f7696056a9735"
+  },
+  "exception": null
+}

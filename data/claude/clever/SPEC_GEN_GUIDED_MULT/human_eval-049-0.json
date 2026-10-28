@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\n>>> modp(3, 5)\n3\n>>> modp(1101, 101)\n2\n>>> modp(0, 101)\n0\n>>> modp(100, 101)\n1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 Nat)\n-- inputs\n(n p: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 3 5 = 3\n-- #test implementation 1101 101 = 2\n-- #test implementation 0 101 = 1\n-- #test implementation 3 11 = 8\n-- #test implementation 100 101 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:5be8b9119d4a4c085ec7ada347de476eab8bb40d53ab61411c97c53c6f88effe",
+  "timing": 210.32738051598426,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/asr78tj5/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:83e418e04c754c190736ad2b519dcb0da06444d971ee7ad63ee0b4aae25d11ea",
+    "status": "OK",
+    "result": "sha256:2cb7da4a617ce66e3f4128b0f7e2965f7c5c33e6f5b0c02404dc0a3baa03e7f7"
+  },
+  "exception": null
+}

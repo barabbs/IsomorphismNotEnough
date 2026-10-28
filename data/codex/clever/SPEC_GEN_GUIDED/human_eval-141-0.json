@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef file_name_check(file_name: str) -> str\n\"\"\"Create a function which takes a string representing a file's name, and returns\n'Yes' if the the file's name is valid, and returns 'No' otherwise.\nA file's name is considered to be valid if and only if all the following conditions\nare met:\n- There should not be more than three digits ('0'-'9') in the file's name.\n- The file's name contains exactly one dot '.'\n- The substring before the dot should not be empty, and it starts with a letter from\nthe latin alphapet ('a'-'z' and 'A'-'Z').\n- The substring after the dot should be one of these: ['txt', 'exe', 'dll']\n\n>>> file_name_check('example.txt')\n'Yes'\n>>> file_name_check('1example.dll')\n'No'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(file_name: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"example.txt\" = \"Yes\"\n-- #test implementation \"1example.dll\" = \"No\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 141,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:2ef41c50e48c14ec9d5aa06979dc66d713f7431cf6806cff91756e22c2bb4806",
+  "timing": 177.23368979105726,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:b7880c1423b5a53ca898a587402d32174d90adb829e9f65ebefbfa4139a0cfcc",
+    "status": "OK",
+    "result": "sha256:c00a8f4e116479de6c251ece5440c0bcd953283b48dd8dabf23e33baa0147184"
+  },
+  "exception": null
+}

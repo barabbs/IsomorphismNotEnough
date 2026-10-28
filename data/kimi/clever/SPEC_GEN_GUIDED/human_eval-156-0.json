@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef int_to_mini_roman(num: nat) -> str\n\"\"\"Given a positive integer, obtain its roman numeral equivalent as a string,\nand return it in lowercase.\nRestrictions: 1 <= num <= 1000\n\n>>> int_to_mini_roman(19)\n'xix'\n>>> int_to_mini_roman(152)\n'clii'\n>>> int_to_mini_roman(426)\n'cdxxvi'\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef romanCharToValue : Char → Nat\n| 'i' => 1\n| 'v' => 5\n| 'x' => 10\n| 'l' => 50\n| 'c' => 100\n| 'd' => 500\n| 'm' => 1000\n| _   => 0\n\ndef validSubtractivePairs : List (Char × Char) :=\n  [('i', 'v'), ('i', 'x'), ('x', 'l'), ('x', 'c'), ('c', 'd'), ('c', 'm')]\n\ndef maxRepetitions : Char → Nat\n| 'i' | 'x' | 'c' | 'm' => 3\n| 'v' | 'l' | 'd'       => 1\n| _                    => 0\n\ndef countRepetitions : List Char → Char → Nat → Nat\n| [], _, n => n\n| (h :: t), c, n => if h = c then countRepetitions t c (n + 1) else n\n\npartial def validRepetition : List Char → Bool\n| [] => true\n| c :: rest =>\n  let max := maxRepetitions c\n  let count := countRepetitions rest c 1\n  count ≤ max ∧ validRepetition (rest.drop (count - 1))\n\ndef validSubtractiveOrder : List Char → Bool\n| [] | [_] => true\n| c1 :: c2 :: rest =>\n  match romanCharToValue c1, romanCharToValue c2 with\n  | v1, v2 =>\n    if v1 < v2 then\n      -- check if c1 and c2 form a legal subtractive pair\n      (c1, c2) ∈ validSubtractivePairs ∧ validSubtractiveOrder rest\n    else if v1 = 0 ∨ v2 = 0 then\n      false\n    else\n      validSubtractiveOrder (c2 :: rest)\n\ndef isValidRoman (s : String) : Bool :=\n  s.data.all (λ c => romanCharToValue c ≠ 0) ∧\n  validRepetition s.data ∧\n  validSubtractiveOrder s.data\n\ndef romanToDecimalAux : List Char → Nat\n| [] => 0\n| c1 :: c2 :: rest =>\n    let val1 := romanCharToValue c1\n    let val2 := romanCharToValue c2\n    if val1 < val2 then\n      -- subtractive notation\n      (val2 - val1) + romanToDecimalAux rest\n    else\n      val1 + romanToDecimalAux (c2 :: rest)\n| [c] => romanCharToValue c\n\ndef romanToDecimal (s : String) : Nat :=\n  romanToDecimalAux s.data\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → String)\n-- inputs\n(num: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 19 = \"xix\"\n-- #test implementation 152 = \"clii\"\n-- #test implementation 426 = \"cdxxvi\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 156,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:3bf232c5d1980ebbdce7868754dfd1b0b7e1baeea6bfb1991785cc2817b0a203",
+  "timing": 100.51273989584297,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:0dc6e82c93bdb668be4fe342ba65857052b4dc85d1c4e62d68c408ccd547563d",
+    "status": "OK",
+    "result": "sha256:9b64d3ecf2c7c6f6ef803e0edfef3457cd14c2dcb5df9271ed10ea2c7e5ae28d"
+  },
+  "exception": null
+}

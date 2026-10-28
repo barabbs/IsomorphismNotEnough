@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef multiply(a : int, b : int) -> int\n\"\"\"Complete the function that takes two integers and returns\nthe product of their unit digits.\nAssume the input is always valid.\n-- Note(George): I'm finding it hard to not leak the implementation here, so I opted to make the spec more convoluted.\n\n>>> multiply(148, 412)\n16\n>>> multiply(19, 28)\n72\n>>> multiply(2020, 1851)\n0\n>>> multiply(14, -15)\n20\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → Int → Int)\n-- inputs\n(a b: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 148 412 = 16\n-- #test implementation 19 28 = 72\n-- #test implementation 2020 1851 = 0\n-- #test implementation 14 (-15) = 20\n",
+  "info": {
+    "dataset": "clever",
+    "id": 97,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:397788373811c4c2e220ef7ed39ab9112c508541aa2fed6139239a8b4613f0c5",
+  "timing": 90.735347378999,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:4b5af2101900663d8681bf6a7de7d13b69051a0a8b6ac5a027615bf98b6304f4",
+    "status": "OK",
+    "result": "sha256:d2976dd1dc3e720a54ff60a7cc6b2e412f55b932afd19c45a82ff185d521322c"
+  },
+  "exception": null
+}

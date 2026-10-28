@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef f(n: int) -> List[int]\n\"\"\"Implement the function f that takes n as a parameter,\nand returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\nor the sum of numbers from 1 to i otherwise.\ni starts from 1.\nthe factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 List Int)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (result.length = n) \u2227\n  (forall i: Nat, (1 \u2264 i \u2227 i \u2264 n \u2227 Even i) \u2192 (result[i-1]! = Nat.factorial i)) \u2227\n  (forall i: Nat, (1 \u2264 i \u2227 i \u2264 n \u2227 Odd i) \u2192 (result[i-1]! = (List.range (i+1)).sum))\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = [1, 2, 6, 24, 15]\n-- #test implementation 7 = [1, 2, 6, 24, 15, 720, 28]\n-- #test implementation 1 = [1]\n-- #test implementation 3 = [1, 2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 106,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3c0aa937d5ef212a5e7d8d94205a58bd56af6111fc27c1d0fee191ea2c89372b",
+  "timing": 72.24007962201722,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/l4_mg19b/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:dbcbfb88eee101cdecbdd986d61c6e92c355cc5bb90b367c86f762036bdae3d2",
+    "status": "OK",
+    "result": "sha256:c72bd4a0b0f5eea35866788718bf932bd028f5349e747bb012d4470a47db1d35"
+  },
+  "exception": null
+}

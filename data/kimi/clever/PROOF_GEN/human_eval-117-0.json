@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef select_words(s : str, n : int) -> list[str]\n\"\"\"Given a string s and a natural number n, you have been tasked to implement\na function that returns a list of all words from string s that contain exactly\nn consonants, in order these words appear in the string s.\nIf the string s is empty then the function should return an empty list.\nNote: you may assume the input string contains only letters and spaces.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat → List String)\n-- inputs\n(s: String)\n(n: Nat) :=\n-- spec\nlet spec (result : List String) :=\n  let is_consonant (c: Char) :=\n    c ∉ ['a', 'e', 'i', 'o', 'u'] ∧\n    c ∉ ['A', 'E', 'I', 'O', 'U'] ∧\n    c.isAlpha\n  s.all (fun c => c = ' ' ∨ c.isAlpha) →\n  let words := s.splitOn \" \"\n  (result = [] ↔ (s.length = 0 ∨ words.all (fun word => (word.data.filter (fun c => is_consonant c)).length ≠ n))) ∧\n  (result.length > 0 →\n    let first_word := result[0]!\n    first_word ∈ words ∧\n    (first_word.data.filter (fun c => is_consonant c)).length = n ∧\n    let first_word_idx := words.idxOf first_word\n    (∀ i, i < first_word_idx →\n      (words[i]!.data.filter (fun c => is_consonant c)).length ≠ n) ∧\n    result.tail! =\n      implementation ((words.drop (first_word_idx + 1)).foldl (fun acc word => acc ++ \" \" ++ word) \"\") n\n  )\n\n-- program termination\n∃ result,\n  implementation s n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) (n: Nat) : List String :=\n\n  if s = \"\" then\n    []\n  else\n    let is_consonant (c: Char) : Bool :=\n      !(['a', 'e', 'i', 'o', 'u'].contains c) &&\n      !(['A', 'E', 'I', 'O', 'U'].contains c) &&\n      c.isAlpha\n    let words := s.splitOn \" \"\n    words.filter (fun word => (word.data.filter is_consonant).length == n)\n\n\n-- [TEST_CASES]\n\n#test implementation \"Mary had a little lamb\" 4 = [\"little\"]\n#test implementation \"Mary had a little lamb\" 3 = [\"Mary\", \"lamb\"]\n#test implementation \"simple white space\" 2 = []\n#test implementation \"Hello world\" 4 = [\"world\"]\n#test implementation \"Uncle sam\" 3 = [\"Uncle\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n(n: Nat)\n: problem_spec implementation s n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 117,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f56b02756a662b1b94b6582b916df2e4001fb2990e8fb730b21b4b3e22e5c932",
+  "timing": 14607.516625675838,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:7ccdfe88cc564d12ead416b527d22ccdc368adb0f6848c05b92b7556043d338a",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "117",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:41cb561f8dd3e8c773f147bfb59b12e1db719bbc3752fbe510e2ba2f1efca45e",
+        "lean_code": "sha256:b3361ae7134359accc7cc42e65d5f5cdf7efdcf4cf5bb186a4039572aa92b802"
+      }
+    ]
+  },
+  "exception": null
+}

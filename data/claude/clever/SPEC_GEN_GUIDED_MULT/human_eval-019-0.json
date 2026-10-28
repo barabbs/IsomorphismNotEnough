@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_numbers(numbers: str) -> str\n\"\"\"Input is a space-delimited string of numberals from 'zero' to 'nine'.\nValid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\nReturn the string with numbers sorted from smallest to largest\n\n>>> sort_numbers('three one five')\n'one three five'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(numbers: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"three one five\" = \"one three five\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 19,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:9bbd6b7597a1c954b1818a0fbe061dce84c4f5cc7a410f9d8bfe268403ba0aeb",
+  "timing": 206.88863331300672,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/rt56kq5z/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e174fb973fa0c4092cc21fec70612484e04e8666171bb100915b21370d17820b",
+    "status": "OK",
+    "result": "sha256:428abc4ef2eea3225da659b559fa15e0c89ae30b66691123342944b31894dd1b"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_palindrome(string: str) -> str\n\"\"\"Find the shortest palindrome that begins with a supplied string.\nAlgorithm idea is simple:\n- Find the longest postfix of supplied string that is a palindrome.\n- Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: String) :=\nis_palindrome result \u2227\nresult.length \u2265 string.length \u2227\nstring.isPrefixOf result \u2227\n-- comprehensive check that the result is the shortest palindrome\n(\u2200 (possible_palindrome: String),\nstring.isPrefixOf possible_palindrome \u2192\nis_palindrome possible_palindrome \u2192\nresult.length \u2264 possible_palindrome.length);\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : String :=\n\n  let s := string.toList\n  let n := s.length\n  let rec findSuffix (i : Nat) (fuel : Nat) : Nat :=\n    match fuel with\n    | 0 => n\n    | fuel' + 1 =>\n      let suffix := s.drop i\n      if suffix == suffix.reverse then i\n      else findSuffix (i + 1) fuel'\n  let i := findSuffix 0 (n + 1)\n  let pre := s.take i\n  string ++ pre.reverse.asString\n\n\n-- [TEST_CASES]\n\n#test implementation \"\" = \"\"\n#test implementation \"cat\" = \"catac\"\n#test implementation \"cata\" = \"catac\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 10,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:90b4c647407f4f364c67a0b4515e475a0614f9127e921723bcd10c18e741153e",
+  "timing": 3646.2918927870924,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:7b795a733e680d0cecaac7e1d023a82bc75768d108f8685bf1b6015f096c2554",
+    "status": "TIMEOUT",
+    "result": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "validation": [
+      {
+        "problem_id": "10",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:d9c7af8caf5584c5173f8b005f90d2ab5c93512dd2ef1675eec763c7ce40fb1b"
+      }
+    ]
+  },
+  "exception": null
+}

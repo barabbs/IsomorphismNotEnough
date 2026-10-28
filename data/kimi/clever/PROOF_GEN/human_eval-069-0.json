@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef search(numbers: List[int]) -> int\n\"\"\"You are given a non-empty list of positive integers. Return the greatest integer that is greater than\nzero, and has a frequency greater than or equal to the value of the integer itself.\nThe frequency of an integer is the number of times it appears in the list.\nIf no such a value exist, return -1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length ∧ numbers.all (fun n => 0 < n) →\n(result ≠ -1 ↔ ∃ i : Nat, i < numbers.length ∧\n  numbers[i]! = result ∧ numbers[i]! > 0 ∧\n  numbers[i]! ≤ (numbers.filter (fun x => x = numbers[i]!)).length ∧\n  (¬∃ j : Nat, j < numbers.length ∧\n  numbers[i]! < numbers[j]! ∧ numbers[j]! ≤ numbers.count numbers[j]!));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : (Int) :=\n\n  numbers.foldl (fun acc x =>\n    let freq := (numbers.filter (fun y => y == x)).length\n    let count := Int.ofNat freq\n    if x > 0 ∧ count ≥ x then\n      max x acc\n    else\n      acc\n  ) (-1)\n\n\n-- [TEST_CASES]\n\n#test implementation [4, 1, 2, 2, 3, 1] = 2\n#test implementation [1, 2, 2, 3, 3, 3, 4, 4, 4] = 3\n#test implementation [5, 5, 4, 4, 4] = -1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 69,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b0829b703b567bd1d6897bd7ab22cd889521c5cfab2db9b786eca75e03d7efcb",
+  "timing": 11586.083956956863,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:ad4fb2993577f4913e31105817ab1ad50dcfd3586398994694b547a3e07614ef",
+    "status": "OK",
+    "result": "sha256:ceb699d0bf9f718bb6b8fdbece20c47a62031002560227fff04fbaeefd1ea725",
+    "validation": [
+      {
+        "problem_id": "69",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:a75bb6fd15795afe5b73b92fff7cf236f383d0761810adcecd0be55710bcc6d3"
+      }
+    ]
+  },
+  "exception": null
+}

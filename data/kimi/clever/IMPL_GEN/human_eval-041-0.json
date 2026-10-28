@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef car_race_collision(x: nat) -> nat\n\"\"\"Imagine a road that's a perfectly straight infinitely long line.\nn cars are driving left to right;  simultaneously, a different set of n cars\nare driving right to left.   The two sets of cars start out being very far from\neach other.  All cars move in the same speed.  Two cars are said to collide\nwhen a car that's moving left to right hits a car that's moving right to left.\nHowever, the cars are infinitely sturdy and strong; as a result, they continue moving\nin their trajectory as if they did not collide.\nThis function outputs the number of such collisions.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(x : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  ∃ x_list : List Nat, x_list.length = x ∧ x_list.all (fun i => i = x)\n  ∧ x_list.sum = result\n-- -- program termination\n∃ result, implementation x = result ∧\nspec result\n-- \n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x : Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 0 = 0\n-- #test implementation 5 = 25\n",
+  "info": {
+    "dataset": "clever",
+    "id": 41,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4f6d6d7a5957fdd635292d261718a634795385bbf77b57499273fc6fa921d1b2",
+  "timing": 45.41035981988534,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:563d310f419fdad8e1c34946b727f626237be99f5906198d6e4b9a5d6b2f9e88",
+    "status": "OK",
+    "result": "sha256:50af06ea059deb871c4030ff5cd0afcf6eecb7dbc22cdc7c9c16ad5a30a31fc4"
+  },
+  "exception": null
+}

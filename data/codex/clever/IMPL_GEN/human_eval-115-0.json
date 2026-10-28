@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"You are given a rectangular grid of wells. Each row represents a single well,\nand each 1 in a row represents a single unit of water.\nEach well has a corresponding bucket that can be used to extract water from it,\nand all buckets have the same capacity.\nYour task is to use the buckets to empty the wells.\nOutput the number of times you need to lower the buckets.\nConstraints:\n    * all wells have the same length\n    * 1 <= grid.length <= 10^2\n    * 1 <= grid[:,1].length <= 10^2\n    * grid[i][j] -> 0 | 1\n    * 1 <= capacity <= 10\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List (List Nat) → Nat → Nat)\n-- inputs\n(grid: List (List Nat))\n(capacity: Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  (grid.all (fun row => row.all (fun cell => cell = 0 ∨ cell = 1))) →\n  (∃ len : Nat, grid.all (fun row => row.length = len)) →\n  (result = 0 ↔ grid.length = 0) ∧\n  (grid.length > 0 →\n    let well_water_count := grid.head!.sum;\n    result - (well_water_count / capacity) - (if well_water_count % capacity > 0 then 1 else 0) = implementation grid.tail! capacity)\n-- program termination\n∃ result,\n  implementation grid capacity = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (grid: List (List Nat)) (capacity: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [[0,0,1,0], [0,1,0,0], [1,1,1,1]] 1 = 6\n-- #test implementation [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]] 2 = 5\n-- #test implementation [[0,0,0], [0,0,0]] 5 = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 115,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f0da819ddbf222c8efcdb1e9fc95eb79b21a670df4e65a57f965a5933c239a16",
+  "timing": 71.04178475402296,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:4160afdd73927fb1461d4f13412dbc3fe853ad537a7f858a52bcb4d3836bb17e",
+    "status": "OK",
+    "result": "sha256:cd442c8f655e84e7b23ab8f528eebe3b1983cc1f6768012b7b544932cf5ab050"
+  },
+  "exception": null
+}

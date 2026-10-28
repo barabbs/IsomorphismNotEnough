@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"(\" and \")\".\nreturn True if every opening bracket has a corresponding closing bracket.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(brackets: String) :=\n-- spec\nlet spec (result: Bool) :=\n  brackets.data.all (fun c => c = '(' ∨ c = ')') →\n  (result ↔ balanced_paren_non_computable brackets '(' ')')\n-- program terminates\n∃ result, impl brackets = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (paren_string: String) : Bool :=\n\n  let rec go (cs : List Char) (bal : Int) : Bool :=\n    match cs with\n    | [] => bal = 0\n    | '(' :: cs' => go cs' (bal + 1)\n    | ')' :: cs' => bal > 0 && go cs' (bal - 1)\n    | _ :: _ => false\n  go paren_string.toList 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"(\" = false\n#test implementation \"()\" = true\n#test implementation \"(()())\" = true\n#test implementation \")(()\" = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(brackets: String)\n: problem_spec implementation brackets :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 61,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:28311c3bc865deb66ed0c30ba0ac68cbbcc5d3fa71d7fcb5329e90bca668b998",
+  "timing": 5009.261972455308,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:556ae8b21e1292db5add061748a543cfae5606fb56d0999deb61f45846e69a68",
+    "status": "OK",
+    "result": "sha256:a3df2d486aadad79440eb1a79a2926cf50c9c9a1fdf13d91b13b45b1e870f66c",
+    "validation": [
+      {
+        "problem_id": "61",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:6d39e15fe8bcff2c6e8422673b9159a13be4e3fd819ba10f063eed679bc0d928"
+      }
+    ]
+  },
+  "exception": null
+}

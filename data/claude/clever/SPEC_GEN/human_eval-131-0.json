@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digits(n: int) -> int\n\"\"\"Given a positive integer n, return the product of the odd digits.\nReturn 0 if all digits are even.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 131,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d0f71a91396ab12aebf28959df0fbd9f3593372d55c72ee6d69ede76f0c997f1",
+  "timing": 68.7534588510025,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/lvs1i95n/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f85c438e7591ff7bc24c5ac06d1a8a78f95665078b8001268153445daf97eef0",
+    "status": "OK",
+    "result": "sha256:06dbeddb6bd28b2769c6a4adba24dccd2a5349e7a33f2eea8bfa68bd2c03e02f"
+  },
+  "exception": null
+}

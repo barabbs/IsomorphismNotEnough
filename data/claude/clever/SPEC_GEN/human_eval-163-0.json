@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef generate_integers(a : Nat, b : Nat) -> List Nat\n\"\"\"Given two positive integers a and b, return the even digits between a\nand b, in ascending order.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 List Nat)\n-- inputs\n(a b : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 163,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:dc3f8199440f798dd577b94b61551b0ec9c91b7aeab79177316c23c758ea417a",
+  "timing": 87.49747005300014,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/xonewd4w/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b6e990fd5b33cb5e43bdbc9dd6746c3aa5aae282b010eea6a816e8c47a181c8f",
+    "status": "OK",
+    "result": "sha256:b82680f28506af899111c8ce24f54903af110bfd1661b4893502a669e0b1db6e"
+  },
+  "exception": null
+}

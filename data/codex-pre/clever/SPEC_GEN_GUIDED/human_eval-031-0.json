@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_prime(n)\n\"\"\"Return true if a given number is prime, and false otherwise.\n\n>>> is_prime(6)\nFalse\n>>> is_prime(101)\nTrue\n>>> is_prime(11)\nTrue\n>>> is_prime(13441)\nTrue\n>>> is_prime(61)\nTrue\n>>> is_prime(4)\nFalse\n>>> is_prime(1)\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat → Bool)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 6 = false\n-- #test implementation 101 = true\n-- #test implementation 11 = true\n-- #test implementation 13441 = true\n-- #test implementation 61 = true\n-- #test implementation 4 = false\n-- #test implementation 1 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 31,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:0488d6ec2d5fd0c687268b804fcc83f5be000c5d45947f7d3fbfc6aac8054fa5",
+  "timing": 47.817673628014745,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:32ff915bbb1c9538015d01f881ad29bcee2dc32f3e07deec62d28599c9e7bce5",
+    "status": "OK",
+    "result": "sha256:d43a6a0ded705bb79ccdb48fefe5a0e2f363007a35278feccf7993b380f834d9"
+  },
+  "exception": null
+}

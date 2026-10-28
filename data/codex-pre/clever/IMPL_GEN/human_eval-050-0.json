@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_shift(s: str) -> str\n\"\"\"returns encoded string by shifting every character by 5 in the alphabet.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(s : String) :=\nlet isAlphabetic (string: String) : Bool :=\n∀ i, i < string.length →\nlet c := string.get! ⟨i⟩;\n('a'.toNat ≤ c.toNat ∧ c.toNat ≤ 'z'.toNat) ∨\n('A'.toNat ≤ c.toNat ∧ c.toNat ≤ 'Z'.toNat)\n-- spec\nlet spec (result: String) :=\nisAlphabetic result ∧ isAlphabetic s ∧\nresult.length = s.length ∧\n∃ k : Nat, k < 26 ∧\n∀ i : Nat, i < s.length →\n((s.get! ⟨i⟩).toNat + k) % 26 = (result.get! ⟨i⟩).toNat\n→ k = 5\n-- program termination\n∃ result, implementation s = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"abc\" = \"fgh\"\n-- #test implementation \"xyz\" = \"cde\"\n-- #test implementation \"aaa\" = \"fff\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5229cc13979c86732dcec90ba7579556d362896817747ebd45b37be454b40834",
+  "timing": 128.01449442800367,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex-pre": "sha256:f2d10aac7de72f97bc1cb4509c2bc7849e4b9b6c2178d15d8395fedf09d5a936",
+    "status": "OK",
+    "result": "sha256:f5936f8b19175196f3f3bee54fb5b8e99bed4cae5da2e6c170a119617cb9666f"
+  },
+  "exception": null
+}

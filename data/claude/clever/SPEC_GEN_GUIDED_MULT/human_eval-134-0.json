@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_if_last_char_is_a_letter(txt: str) -> bool\n\"\"\"Create a function that returns True if the last character\nof a given string is an alphabetical character and is not\na part of a word, and False otherwise.\nNote: \"word\" is a group of characters separated by space.\n\n>>> check_if_last_char_is_a_letter('apple pie')\nFalse\n>>> check_if_last_char_is_a_letter('apple pi e')\nTrue\n>>> check_if_last_char_is_a_letter('apple pi e ')\nFalse\n>>> check_if_last_char_is_a_letter('')\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(txt: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"apple pie\" = false\n-- #test implementation \"apple pi e\" = true\n-- #test implementation \"apple pi e \" = false\n-- #test implementation \"\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 134,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:03ee49fa1143ead9bc70bcb3edb49936e4a4036c3474de566987bf0750be20bb",
+  "timing": 152.5067339700181,
+  "metadata": {
+    "prompt": "Read problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:fa1013f08ba32f47529a948b763452c0c31399ce436c2bf3035d38bd51b95d2b",
+    "status": "OK",
+    "result": "sha256:db0a4e78f276b2aa63877c724b76d7e0dacbc0770734d437a0d7d4789cb355db"
+  },
+  "exception": null
+}

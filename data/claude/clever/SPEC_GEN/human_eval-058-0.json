@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef common(l1: List[Int], l2: List[Int]) -> List[Int]\n\"\"\"Return sorted unique common elements for two lists.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List Int \u2192 List Int)\n-- inputs\n(x y: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 58,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:64d9d1d73e24ce127a81845f0d73f9ff50b1d27a370b7ad3a1a3961cfc6ce856",
+  "timing": 78.21558115800144,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/y41khgaq/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c983ffca5ec205bc223e90aacdfe142c69914967929d29c8a5c34cf198716093",
+    "status": "OK",
+    "result": "sha256:cbcdaae60c6af08080f668dd4802ba753931e50e27fb103749f19a3236ca0cca"
+  },
+  "exception": null
+}

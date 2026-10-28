@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encrypt(str : str) -> str\n\"\"\"Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated.\nThe alphabet should be rotated in a manner such that the letters\nshift down by two multiplied to two places.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(str: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 89,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:37bebeffed0545349c435fb0f8539f3a0eaa70851d3334750e29b056890d616c",
+  "timing": 190.687289013993,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:6e0672c05d470ea2c179edfd3e98a11e9c7c5d0b7933993174369cc8501a9da1",
+    "status": "OK",
+    "result": "sha256:b4d49227fb3f187c2b9355274ecf320837f488117c95fdba64c39c9ae005c370"
+  },
+  "exception": null
+}

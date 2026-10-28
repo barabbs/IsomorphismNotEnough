@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef flip_case(string: str) -> str\n\"\"\"For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: String) :=\nlet chars_in_result := result.toList;\nlet chars_in_string := string.toList;\nchars_in_result.length = string.length ∧\n(∀ i, i < chars_in_result.length →\n  let c := chars_in_result.get! i;\n  let c' := chars_in_string.get! i;\n  (c.isUpper → c'.isLower) ∧\n  (c.isLower → c'.isUpper) ∧\n  ((¬ c.isUpper ∧ ¬ c.isLower) → c = c')\n);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : String :=\n\nstring.map fun c =>\n  if c.isUpper then c.toLower\n  else if c.isLower then c.toUpper\n  else c\n\n\n-- [TEST_CASES]\n\n#test implementation \"Hello\" = \"hELLO\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 27,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:27456b1e2f902884e344a258cd38aa1da6e2012b762bb240488c981c2c122be8",
+  "timing": 14505.965385768097,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:45d00f5f56edc51d8fd13d50781a64242d788530c52b45ed6d7b5c2c4d805fa9",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "27",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:3f07409cdf6528364c8b6b05ea41cc1f36777a492214282913ddbd6ba5666c9f",
+        "lean_code": "sha256:47132c03d591ba4a918593ab68e070b3bd246fa7c134a6978202d9e63a53e5f5"
+      }
+    ]
+  },
+  "exception": null
+}

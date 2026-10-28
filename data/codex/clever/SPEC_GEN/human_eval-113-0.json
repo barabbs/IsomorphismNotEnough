@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef odd_count(lst : list[str]) -> list[str]\n\"\"\"Given a list of strings, where each string consists of only digits, return a list.\nEach element i of the output should be \"the number of odd elements in the\nstring i of the input.\" where all the i's should be replaced by the number\nof odd digits in the i'th string of the input.\nNote(George): Found it hard to not leak the implementation, so I opted for a recursive statement.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String → List String)\n-- inputs\n(lst: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 113,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:92a9c6de4796803917b69b898959f561252a8c250d858ebf2cb2a2b2f1dc9779",
+  "timing": 115.91331023117527,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:3d2fe307909fc6a0f5cf3c99504dc1ecce75fe888f2e6a60251c3b9e755064de",
+    "status": "OK",
+    "result": "sha256:67be9ede52142ac4b943a705508c2f7c50c146d63488c6581305cb7d36cdd5c9"
+  },
+  "exception": null
+}

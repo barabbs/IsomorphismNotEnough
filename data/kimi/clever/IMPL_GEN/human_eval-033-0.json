@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_third(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the indicies that are not divisible by three, while its values at the indicies that are divisible by three are equal\nto the values of the corresponding indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  l.length = result.length ∧\n  let every_third_idx := (List.range l.length).filter (λ i => i % 3 = 0);\n  let every_third_val_in_result := every_third_idx.map (λ i => result.get! i);\n  let every_third_val := every_third_idx.map (λ i => l.get! i);\n  (∀ i, i < l.length → (i % 3 ≠ 0 → l.get! i = result.get! i)) ∧\n  List.Sorted Int.le every_third_val_in_result ∧\n  every_third_val.all (λ x => every_third_val_in_result.count x = every_third_val.count x);\n-- program termination\n∃ result, implementation l = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = [1, 2, 3]\n-- #test implementation [5, 6, 3, 4, 8, 9, 2] = [2, 6, 3, 4, 8, 9, 5]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 33,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d11af4039d268d9d210dae45d09069342b1d949721b78ebf1076d28f17577450",
+  "timing": 125.8416159749031,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:56f9a4235015e5c6e1a4e523e89aa154070d20ddc403fb9e20cb3bd364f89164",
+    "status": "OK",
+    "result": "sha256:7d434c5cbbcbbd6363aa4a40c33863f224dd63f05b9cf078ad0f71d1fcd33fb3"
+  },
+  "exception": null
+}

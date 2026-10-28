@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef minSubArraySum(nums : list[int]) -> int\n\"\"\"Given an array of integers nums, find the minimum sum of any non-empty sub-array\nof nums.\n\n>>> minSubArraySum([2, 3, 4, 1, 2, 4])\n1\n>>> minSubArraySum([-1, -2, -3])\n-6\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(nums: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [2, 3, 4, 1, 2, 4] = 1\n-- #test implementation [-1, -2, -3] = -6\n",
+  "info": {
+    "dataset": "clever",
+    "id": 114,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:b34b6a2da02c5815e6ef8532b9b3f6a2b1124192fb91a5cf5b585d9f46a66f27",
+  "timing": 152.67211704794317,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:4937e6381e45320a03b590e414f304cdd3d5231b6476ab59a176e683b70dbcfd",
+    "status": "OK",
+    "result": "sha256:9e5226a5faf52c83606fdfef6ac2a9123923789a17baa70ea852fff1d4c4b801"
+  },
+  "exception": null
+}

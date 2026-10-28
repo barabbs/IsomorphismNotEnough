@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef mean_absolute_deviation(numbers: List[float]) -> float\n\"\"\"For a given list of input numbers, calculate Mean Absolute Deviation\naround the mean of this dataset.\nMean Absolute Deviation is the average absolute difference between each\nelement and a centerpoint (mean in this case):\nMAD = average | x - x_mean |\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat \u2192 Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: Rat):=\n0 < numbers.length \u2192\n0 \u2264 result \u2227\nresult * numbers.length * numbers.length =\n(numbers.map (fun x => |x * numbers.length - numbers.sum|)).sum;\n-- program terminates\n\u2203 result, implementation numbers = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Rat) : Rat :=\n\n  let n : Rat := numbers.length\n  let s : Rat := numbers.sum\n  let absDevs := numbers.map (fun x => |x * n - s|)\n  absDevs.sum / (n * n)\n\n\n-- [TEST_CASES]\n\n#test implementation [1.0, 2.0, 3.0, 4.0] = 1.0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Rat)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 4,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ca5d487dece34c387293f14b37ca3ff20ddc754a879a89e00d97ad6ad0d80cae",
+  "timing": 144.589752734988,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:e00ea3f7d224862a650b207c7375171dc065bbb08035681ed57e724f9393eee6",
+    "status": "OK",
+    "result": "sha256:6078cfb20f7c28cb3532ecadbae272a9851e638309fe0c9db8e80101986b599d",
+    "validation": [
+      {
+        "problem_id": "4",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:7cd335a51f34100032069819ef3c2998e53fb002f1644313cc1cb5f17d8532b5"
+      }
+    ]
+  },
+  "exception": null
+}

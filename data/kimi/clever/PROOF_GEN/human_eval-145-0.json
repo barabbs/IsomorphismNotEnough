@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef order_by_points(nums: List[int]) -> List[int]\n\"\"\"Write a function which sorts the given list of integers\nin ascending order according to the sum of their digits.\nNote: if there are several items with similar sum of their digits,\norder them based on their index in original list.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef digit_sum (n : Int) : Int :=\n  let ds := (toString n.natAbs).toList.map fun c => c.toNat - Char.toNat '0'\n  match ds with\n  | [] => 0\n  | d :: ds' =>\n    let tail := ds'.foldl (· + ·) 0\n    if n < 0 then Int.ofNat tail - Int.ofNat d\n    else Int.ofNat (d + tail)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result: List Int) :=\nList.Perm nums result ∧\nmatch result with\n| [] => nums = []\n| head::tail =>\n  let head_sum := digit_sum head;\n  (∀ num ∈ nums,\n    let sum := digit_sum num;\n    sum > head_sum ∨\n   (sum = head_sum ∧ nums.idxOf num ≥ nums.idxOf head))\n  ∧ impl (nums.erase head) = tail\n-- program termination\n∃ result, impl nums = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (nums: List Int) : List Int :=\n\n  nums.zipIdx |>.mergeSort (fun (a, i) (b, j) =>\n    let sa := digit_sum a\n    let sb := digit_sum b\n    if sa < sb then true\n    else if sa = sb then i ≤ j\n    else false) |>.map (·.1)\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 11, -1, -11, -12] = [-1, -11, 1, -12, 11]\n#test implementation [] = []\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(nums: List Int)\n: problem_spec implementation nums :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 145,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4103fb20ec1af60a0435f6afad1a66638d2ca0929d236f28b68c5b0cf48a4427",
+  "timing": 7087.025707662106,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:2d6e039a4e80ae88ff627a4ded34020279c14eaa3cec7d2c9884181d34afce39",
+    "status": "FAIL",
+    "result": "sha256:4a61759d77b2aa1b9f85c61eb35dfb16223fe4648664f676c90f9f880851fcf8",
+    "validation": [
+      {
+        "problem_id": "145",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:1ab761e5351de6b9d8eac90c6ab6fcb7c83f6858fd4dc9838eeed0a85e27a62c",
+        "lean_code": "sha256:e671cbc986c19ab738cf2bb24993dd7c3d639f4df521b398cc0ce1dcc4802fde"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,71 @@
+{
+  "text": "sha256:952d67eef5e77c9efde0ba6273c3eca03b8b0adc0e22bcd9e7407617a2cb40f2",
+  "info": {
+    "dataset": "clever",
+    "id": 1,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:75233eaf39628c57b840b63c7f38271ee4c5b562095252c72908da2adfe333f7",
+  "timing": 449.877943828993,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:c0c2237bba2f6b9844c450ae2b6b339ee982f3848687bf21eb4acf3f0a2b3475",
+    "status": [
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH"
+    ],
+    "result": "sha256:21a5e1c1e61df080c47da7a464900854c62d835334cfe44d1430f144decb15b7",
+    "raw_status": "0:MISMATCH\n1:MISMATCH\n2:MISMATCH\n3:MISMATCH",
+    "comment": [
+      "/",
+      "/",
+      "/",
+      "/"
+    ],
+    "validation": [
+      {
+        "problem_id": "1",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:a6bd6ef1ce0375baf1099c16b422d3c43bbca7b6154c8be469a1250592995f2d"
+      },
+      {
+        "problem_id": "1",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:2f34b2130306cbaf556f9bbf36db34d9bacf4ce58c85eba064410f31700b2d18"
+      },
+      {
+        "problem_id": "1",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:a7f7c4a7744f072db0c109dc2eebcf056a930049179d68602505052b23efda8f"
+      },
+      {
+        "problem_id": "1",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:9366fe02eb71e15c7f338d4bb2ea21dec247942c4dc7072e1e4510c806f0fe77"
+      }
+    ],
+    "analysis": [
+      "STRUCT",
+      "STRUCT",
+      "STRUCT",
+      "STRUCT"
+    ]
+  },
+  "exception": null
+}

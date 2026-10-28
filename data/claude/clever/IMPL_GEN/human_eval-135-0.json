@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef can_arrange(arr: List[int]) -> int\n\"\"\"Create a function which returns the largest index of an element which\nis not greater than or equal to the element immediately preceding it. If\nno such element exists then return -1. The given array will not contain\nduplicate values.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: Int) :=\n  \u00acarr.any (fun x => 1 < arr.count x) \u2192\n  (arr.length = 0 \u2228 arr.length = 1 \u2192 result = -1) \u2227\n  (1 < arr.length \u2192\n    let last := arr.length-1;\n    let i := if arr[last]! < arr[last-1]! then Int.ofNat last else -1;\n    result = max (impl (arr.take last)) i);\n-- program termination\n\u2203 result, impl arr = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 4, 3, 5] = 3\n-- #test implementation [1, 2, 3] = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 135,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:53ffad1290007e216a06ca5fa363c8361bc1146aa55e4da209773b789e88554c",
+  "timing": 78.7063902990194,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/wolirpsa/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:ae4ac2e41eaa9e228c9c144c127020723a51fd8a9de4d4060e4678ccf82b62c1",
+    "status": "OK",
+    "result": "sha256:6bc71c6eeeb412568f690bb764b717f6a917de5b16a4ece6073ca66f6011203f"
+  },
+  "exception": null
+}

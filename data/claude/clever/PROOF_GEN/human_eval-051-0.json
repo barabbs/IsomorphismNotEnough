@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_vowels(string: str) -> str\n\"\"\"remove_vowels is a function that takes string and returns string without vowels.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(string: String) :=\nlet is_consonant (c: Char): Bool :=\n  let vowels := \"aeiouAEIOU\"\n  not (vowels.contains c);\n-- spec\nlet spec (result: String) :=\nresult.all (\u03bb c => is_consonant c) \u2227 result.length \u2264 string.length \u2227\n\u2200 c, result.contains c \u2192 string.contains c \u2227\n\u2200 c , string.contains c \u2227 is_consonant c \u2192 (result.contains c);\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : String :=\n\nlet vowels := \"aeiouAEIOU\"\nstring.toList.filter (fun c => !vowels.contains c) |> String.mk\n\n\n-- [TEST_CASES]\n\n#test implementation \"\" = \"\"\n#test implementation \"cat\" = \"ct\"\n#test implementation \"cata\" = \"ct\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 51,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9bccd664d3ac9a1b32aeef6c4b59dd83cfa08205b4032ef72346363d878aadc5",
+  "timing": 293.54721395892557,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:fdcfaab76210fd384a2502d180ea3efecbd09dd0545bce0aea9e4fa7c76c3330",
+    "status": "OK",
+    "result": "sha256:d54c2895cf0796c45b991c9ad6810f2b3f8f521162cd964b7c426a59548a4dd8",
+    "validation": [
+      {
+        "problem_id": "51",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:7ff5d8d112a2263269f133173217fec27a9edac24c67d483aa1ed27afa0dd35a"
+      }
+    ]
+  },
+  "exception": null
+}

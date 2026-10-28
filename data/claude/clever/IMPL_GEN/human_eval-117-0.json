@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef select_words(s : str, n : int) -> list[str]\n\"\"\"Given a string s and a natural number n, you have been tasked to implement\na function that returns a list of all words from string s that contain exactly\nn consonants, in order these words appear in the string s.\nIf the string s is empty then the function should return an empty list.\nNote: you may assume the input string contains only letters and spaces.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Nat \u2192 List String)\n-- inputs\n(s: String)\n(n: Nat) :=\n-- spec\nlet spec (result : List String) :=\n  let is_consonant (c: Char) :=\n    c \u2209 ['a', 'e', 'i', 'o', 'u'] \u2227\n    c \u2209 ['A', 'E', 'I', 'O', 'U'] \u2227\n    c.isAlpha\n  s.all (fun c => c = ' ' \u2228 c.isAlpha) \u2192\n  let words := s.splitOn \" \"\n  (result = [] \u2194 (s.length = 0 \u2228 words.all (fun word => (word.data.filter (fun c => is_consonant c)).length \u2260 n))) \u2227\n  (result.length > 0 \u2192\n    let first_word := result[0]!\n    first_word \u2208 words \u2227\n    (first_word.data.filter (fun c => is_consonant c)).length = n \u2227\n    let first_word_idx := words.idxOf first_word\n    (\u2200 i, i < first_word_idx \u2192\n      (words[i]!.data.filter (fun c => is_consonant c)).length \u2260 n) \u2227\n    result.tail! =\n      implementation ((words.drop (first_word_idx + 1)).foldl (fun acc word => acc ++ \" \" ++ word) \"\") n\n  )\n\n-- program termination\n\u2203 result,\n  implementation s n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) (n: Nat) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Mary had a little lamb\" 4 = [\"little\"]\n-- #test implementation \"Mary had a little lamb\" 3 = [\"Mary\", \"lamb\"]\n-- #test implementation \"simple white space\" 2 = []\n-- #test implementation \"Hello world\" 4 = [\"world\"]\n-- #test implementation \"Uncle sam\" 3 = [\"Uncle\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 117,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:775219eff661aace742bf7307724e7216cb1e7ce99721397391368a5989ff6ca",
+  "timing": 98.14547726599267,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4pi35upg/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:45483c58ebb5d069b810d97c14b8e1bbb1d1081ce5985d3a1f36df2ff48c34d5",
+    "status": "OK",
+    "result": "sha256:3ed381e2c09ef969df16f45dafa2146097d0f0ca1d670d8b0dd8c5c3ed726a99"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, h: float) -> float\n\"\"\"Given length of a side and high return area for a triangle.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat -> Rat)\n-- inputs\n(a h: Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  a = 0 → result = 0 ∧\n  (a ≠ 0 → (2 * result) / a = h);\n-- -- program termination\n∃ result, implementation a h = result ∧\nspec result\n-- \n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a h: Rat) : Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 3 = 7.5\n-- #test implementation 8 2 = 8.0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 45,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ef3cd334aa6e160038a30f479629cc1918a788aabd09373185e008063cd1f875",
+  "timing": 53.136873616371304,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:61085e18f37fd0efcdebd2e8683cc1202fc00265adeea6b0da2533ecdd0c5ccb",
+    "status": "OK",
+    "result": "sha256:ac87b77ab06c5c02b56cd829667ff5a6f3e6169c3da508e45bbe4445c3e6cb0c"
+  },
+  "exception": null
+}

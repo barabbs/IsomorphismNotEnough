@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solution(lst: List[int]) -> int\n\"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that\nare in even positions.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Int) :=\nlst \u2260 [] \u2192 \u2200 i,  i < lst.length \u2227 i % 2 = 0 \u2192\n  (lst.length = 1 \u2192 impl lst = 0) \u2227\n  (i + 1 < lst.length \u2192\n    (lst[i + 1]! % 2 = 1 \u2192\n    impl (lst.drop i) = lst[i + 1]! + (if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)) \u2227\n    (lst[i + 1]! % 2 = 0 \u2192\n    impl (lst.drop i) = if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)\n  )\n-- program terminates\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([5, 8, 7, 1]: List Int) = 12\n-- #test implementation ([3, 3, 3, 3, 3]: List Int) = 9\n-- #test implementation ([30, 13, 24, 321]: List Int) = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 121,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7e7645297c61a87fd5e0585c31aeaa1b4dae74ed72a007520732158a599c8cd0",
+  "timing": 124.53038707599626,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/had0iiin/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:394328741d6a26fc1cc9a2c497d4f742ba2fe4f101f30a71faeb8b2377886b38",
+    "status": "OK",
+    "result": "sha256:67b789915b2fdc544246747e683320cfc3e669cc58fa62dad4a834eb33c0e3a4"
+  },
+  "exception": null
+}

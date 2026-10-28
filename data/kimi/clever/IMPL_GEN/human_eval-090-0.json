@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef next_smallest(lst: List[int]) -> Optional[int]\n\"\"\"You are given a list of integers.\nWrite a function next_smallest() that returns the 2nd smallest element of the list.\nReturn None if there is no such element.\nTODO(George): Remove this when being reviewed\nThe spec is defined as: if result is none there is no second smallest element, which\nexists in a finite list iff there are at least two distinct elements in the list.\nIf result is some x, then x is the second smallest element of the list, the spec\nobtains the sublist of elements smaller than the result, and checks that this\nsublist does not contain two distinct elements (they are all the same).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Option Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Option Int) :=\n  match result with\n  | none => ¬ (∃ i j, i < lst.length ∧ j < lst.length ∧ i ≠ j ∧ lst.get! i < lst.get! j)\n  | some result =>\n    let smaller_els := lst.filter (· < result);\n    0 < smaller_els.length ∧\n    smaller_els.all (λ x => x = smaller_els.get! 0);\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int) : Option Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3, 4, 5] = some 2\n-- #test implementation [5, 1, 4, 3, 2] = some 2\n-- #test implementation [] = none\n-- #test implementation [1, 1] = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 90,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d39e0893182d900c065a7a2ed71e28008c4d048d9696be9c00e39d0ddf4aa0f8",
+  "timing": 127.0832669842057,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:f987ec86eb07f325d1dae796b931dc1e5c9e349407a80dba5d881e0bdc1275d8",
+    "status": "OK",
+    "result": "sha256:3f30dc1be5b07f8bf68fd0be0a61ce2510c759e3c3478ef26331704768576c60"
+  },
+  "exception": null
+}

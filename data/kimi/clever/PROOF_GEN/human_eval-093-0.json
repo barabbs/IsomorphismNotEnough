@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode(s : str) -> str\n\"\"\"Write a function that takes a message, and encodes in such a\nway that it swaps case of all letters, replaces all vowels in\nthe message with the letter that appears 2 places ahead of that\nvowel in the english alphabet.\nAssume only letters.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (λ c => c.isAlpha) →\n  result.length = s.length ∧\n  (∀ i, i < s.length →\n    let c := s.data.get! i;\n    let c' := result.data.get! i;\n    match c with\n    | 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' =>\n      c.isUpper → c'.val = c.toLower.val + 2 ∧\n      c.isLower → c'.val = c.toUpper.val + 2\n    | _ =>\n      c.isUpper → c' = c.toLower ∧\n      c.isLower → c' = c.toUpper)\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : String :=\n\n  let trans (c : Char) : Char :=\n    if c = 'a' || c = 'e' || c = 'i' || c = 'o' || c = 'u' then\n      Char.ofNat (c.toUpper.val.toNat + 2)\n    else if c = 'A' || c = 'E' || c = 'I' || c = 'O' || c = 'U' then\n      Char.ofNat (c.toLower.val.toNat + 2)\n    else if c.isUpper then c.toLower else c.toUpper\n  s.data.map trans |> String.mk\n\n\n-- [TEST_CASES]\n\n#test implementation \"test\" = \"TGST\"\n#test implementation \"This is a message\" = \"tHKS KS C MGSSCGG\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 93,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6a0b9ee34239ad6693754f537146e7229889141b13c29c94d3c1ac682209c40d",
+  "timing": 10653.442654696759,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:3c7921bb2c1f33673b6e9c13da09b03cbb368ab0e871cae5f9b019fab473fda3",
+    "status": "OK",
+    "result": "sha256:7c96ef5b72e1dd40529a1920d9044255863c021aeb79073b097781997377e0bb",
+    "validation": [
+      {
+        "problem_id": "93",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:64ba06f4ad6d7621f4c53c00c23aac77e20765ee9305da7345193a62f0ed0d1f"
+      }
+    ]
+  },
+  "exception": null
+}

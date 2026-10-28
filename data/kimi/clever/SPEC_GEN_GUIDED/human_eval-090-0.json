@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef next_smallest(lst: List[int]) -> Optional[int]\n\"\"\"You are given a list of integers.\nWrite a function next_smallest() that returns the 2nd smallest element of the list.\nReturn None if there is no such element.\nTODO(George): Remove this when being reviewed\nThe spec is defined as: if result is none there is no second smallest element, which\nexists in a finite list iff there are at least two distinct elements in the list.\nIf result is some x, then x is the second smallest element of the list, the spec\nobtains the sublist of elements smaller than the result, and checks that this\nsublist does not contain two distinct elements (they are all the same).\n\n>>> next_smallest([1, 2, 3, 4, 5])\n2\n>>> next_smallest([5, 1, 4, 3, 2])\n2\n>>> next_smallest([])\nNone\n>>> next_smallest([1, 1])\nNone\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Option Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3, 4, 5] = some 2\n-- #test implementation [5, 1, 4, 3, 2] = some 2\n-- #test implementation [] = none\n-- #test implementation [1, 1] = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 90,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:74b2b6004ba92288ac6ac157e1ef0faef3cff867120c1af23e2e3b6cf73ad0a4",
+  "timing": 179.89177003409714,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:fb278b80ce865d9c55503030f8cc7bcb55b9acb17e97cb6e949a96a0cf66693b",
+    "status": "OK",
+    "result": "sha256:4fde724340cedb659d62b08608f58e999dfada945187fa048022cfbe71f06d6b"
+  },
+  "exception": null
+}

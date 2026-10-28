@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_product(numbers: List[int]) -> Tuple[int, int]\n\"\"\"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → (Int × Int))\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: (Int × Int)) :=\nlet (sum, prod) := result;\n(numbers = [] → sum = 0 ∧ prod = 1) ∧\n(numbers ≠ [] →\n(let (sum_tail, prod_tail) := implementation numbers.tail;\nsum - sum_tail = numbers[0]! ∧\nsum_tail * prod_tail + prod = sum * prod_tail));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : (Int × Int) :=\n\nmatch numbers with\n| [] => (0, 1)\n| x :: xs =>\n  let (sum_tail, prod_tail) := implementation xs\n  (sum_tail + x, prod_tail * x)\n\n\n-- [TEST_CASES]\n\n#test implementation [] = (0, 1)\n#test implementation [1, 2, 3, 4] = (10, 24)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 8,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e5dd7027848833705b75b204165a45236ed2bf93b713ebc49ad169ba5a79803b",
+  "timing": 390.63783952686936,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:96d0ac09a7c13a4e84ab7bef92e0c3438942c60899059c65cd4ed138d6962981",
+    "status": "OK",
+    "result": "sha256:ce66d86ec00fc37b7b3e4256543e71eaaa3f61ae206aee97c2d6513df733c49b",
+    "validation": [
+      {
+        "problem_id": "8",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:b03206338442640a5aadb0923a483c57ce58ecca43b3dcaf03d064c3d03829d0"
+      }
+    ]
+  },
+  "exception": null
+}

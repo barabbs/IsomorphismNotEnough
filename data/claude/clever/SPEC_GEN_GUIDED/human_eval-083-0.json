@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef starts_one_ends(n: int) -> int\n\"\"\"Given a positive integer n, return the count of the numbers of n-digit\npositive integers that start or end with 1.\nNote: For reviewer, I believe this is the most straightforward spec, and I am relying on Set cardianlity not being computable in general. The point of this problem is really to privide a formula.\nNote: But I guess a program that goes through each number and adds 1 will be the same as a program that computes in O(1) under this view.\n\n>>> starts_one_ends(1)\n1\n>>> starts_one_ends(2)\n18\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 1 = 1\n-- #test implementation 2 = 18\n",
+  "info": {
+    "dataset": "clever",
+    "id": 83,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:78afbebdd9b2eba26083ea9272765b5b2b2ab6d944f37d5efa26120d91dcc851",
+  "timing": 79.18791703500028,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/u39d8307/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f22eb5789a159ae89b4a68a37e32caaffae1c1f96312d5707463613727b05011",
+    "status": "OK",
+    "result": "sha256:48707eb15106a0680ac7e64ac902a4c9f3df74292ae9735d7a778b97e444b01c"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"<\" and \">\".\nreturn True if every opening bracket has a corresponding closing bracket, i.e., (each open bracket is properly closed)\n\n>>> correct_bracketing('<')\nFalse\n>>> correct_bracketing('<>')\nTrue\n>>> correct_bracketing('<<><>>')\nTrue\n>>> correct_bracketing('><<>')\nFalse\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(brackets : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"<\" = false\n-- #test implementation \"<>\" = true\n-- #test implementation \"<<><>>\" = true\n-- #test implementation \"><<>\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 56,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:89460b1e267e7a99ecc5ee6bebb3b7b28c08157feee8f9bcd00c2f8cab2d24cd",
+  "timing": 131.28991341002984,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mpfkea3a/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:2933f4b6e4410c340821bc0c6247c0f39bee09a2b1cd2df976df954d0ba1f4c8",
+    "status": "OK",
+    "result": "sha256:d47bab6e4d1336b169b1134866e21d74a94f8278b69b55e1c9e9839b827e61db"
+  },
+  "exception": null
+}

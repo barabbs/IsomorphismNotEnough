@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[int]) -> int\n\"\"\"This function will take a list of integers. For all entries in the list, the function shall square the integer entry if its index is a\nmultiple of 3 and will cube the integer entry if its index is a multiple of 4 and not a multiple of 3. The function will not\nchange the entries in the list whose indexes are not a multiple of 3 or 4. The function shall then return the sum of all entries.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(lst : List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 142,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:713f246d8fbdc49aedaa9e117de4ada16b45677c221eab8e1d2943af5458af2c",
+  "timing": 145.1807647079986,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/5vbhrjjr/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:a94f57a1a8b91d4eec225ab8f947da8500fc5f26f319ed43dc03ddd8e321db23",
+    "status": "OK",
+    "result": "sha256:2a1e900263ee4e20b524fb3cfe204bc9f6bc8d09b8dad37e634ba2abed9e5ae4"
+  },
+  "exception": null
+}

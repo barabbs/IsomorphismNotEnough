@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sorted_list_sum(lst: List[str]) -> List[str]\n\"\"\"Write a function that accepts a list of strings as a parameter,\ndeletes the strings that have odd lengths from it,\nand returns the resulted list with a sorted order,\nThe list is always a list of strings and never an array of numbers,\nand it may contain duplicates.\nThe order of the list should be ascending by length of each word, and you\nshould return the list sorted by that rule.\nIf two words have the same length, sort the list alphabetically.\nThe function should return a list of strings in sorted order.\nYou may assume that all words will have the same length.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List String → List String)\n-- inputs\n(lst: List String) :=\n-- spec\nlet spec (result: List String) :=\nmatch result with\n| [] => ∀ str ∈ lst, Odd str.length\n| head::tail =>\n  Even head.length ∧\n  (∀ str ∈ lst,\n    Odd str.length ∨\n    str.length > head.length ∨\n    str.length = head.length ∧ str ≥ head)\n  ∧ impl (lst.erase head) = tail\n-- program termination\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List String) : List String :=\n\n  List.mergeSort\n    (lst.filter (fun (s : String) => s.length % 2 == 0))\n    (fun (s₁ s₂ : String) =>\n      if s₁.length < s₂.length then true\n      else if s₁.length > s₂.length then false\n      else s₁ ≤ s₂)\n\n\n-- [TEST_CASES]\n\n#test implementation [\"aa\", \"a\", \"aaa\"] = [\"aa\"]\n#test implementation [\"ab\", \"a\", \"aaa\", \"cd\"] = [\"ab\", \"cd\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List String)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 149,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:45042b7ba06136fefa946fcf2180178decc965a918bcc918eebdcf23473a24b6",
+  "timing": 7063.441530306824,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:e1839cfcb681293be9b26fabf4d950511135905e13dd7bcf79f7b556958bc99c",
+    "status": "OK",
+    "result": "sha256:6ed6d5b7357efcb52837aef6aa914aaba69275aa9a2990eb74b612f7f4877743",
+    "validation": [
+      {
+        "problem_id": "149",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:90777aed8ee17feb1e779703e15610d5b6b4a0b38990a43652323e95058e6303"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\n>>> modp(3, 5)\n3\n>>> modp(1101, 101)\n2\n>>> modp(0, 101)\n0\n>>> modp(100, 101)\n1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Nat)\n-- inputs\n(n p: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 3 5 = 3\n-- #test implementation 1101 101 = 2\n-- #test implementation 0 101 = 1\n-- #test implementation 3 11 = 8\n-- #test implementation 100 101 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:b3bbb2620ec6fca13d3ebbcb7f406ebe7a9fe63d3d575a7f1b20c23d0006e8d6",
+  "timing": 38.652544162236154,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:326e085c91e0615d60d80afe74a65aa8f4b4d87594f75096315d655dd93ba6ad",
+    "status": "OK",
+    "result": "sha256:d2d32b404385d53d0f7418932b0acfa9fce5f439e7cd164dbfd0debece8863d0"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef parse_nested_parens(paren_string: str) -> List[int]\n\"\"\"Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\nFor each of the group, output the deepest level of nesting of parentheses.\nE.g. (()()) has maximum two levels of nesting while ((())) has three.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef string_eq_iff_data_eq (s1: String) (s2: String)\n: s1.data = s2.data \u2194 s1 = s2 :=\nby\n  apply Iff.intro\n  intro h\n  cases s1\n  cases s2\n  simp at h\n  simp [h]\n  intro h\n  apply String.data_eq_of_eq\n  exact h\n\ndef string_is_paren_balanced_helper\n(paren_string: String) (num_open: Int): Bool\n:=\n-- Recursively check if the string is balanced\nif paren_string.isEmpty then\n  num_open = 0\nelse\n  let c := paren_string.get! 0\n  if c == '(' then\n    string_is_paren_balanced_helper (paren_string.drop 1) (num_open + 1)\n  else if c == ')' then\n    string_is_paren_balanced_helper (paren_string.drop 1) (num_open - 1)\n  else\n    string_is_paren_balanced_helper (paren_string.drop 1) num_open\ntermination_by paren_string.length\ndecreasing_by\n  all_goals\n  {\n    rename_i h_non_empty_string\n    rw [String.drop_eq, String.length]\n    simp\n    rw [String.isEmpty_iff] at h_non_empty_string\n    by_cases h_paren_nil : paren_string.length \u2264 0\n    rw [Nat.le_zero_eq] at h_paren_nil\n    rw [\u2190string_eq_iff_data_eq] at h_non_empty_string\n    have h_temp : \"\".data = [] := by simp\n    rw [h_temp] at h_non_empty_string\n    rw [String.length] at h_paren_nil\n    rw [List.length_eq_zero_iff] at h_paren_nil\n    contradiction\n    have h_temp : paren_string.length > 0 := by linarith\n    assumption\n  }\n\ndef string_is_paren_balanced\n(paren_string: String): Bool\n:=\nstring_is_paren_balanced_helper paren_string 0\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\ndef count_max_paren_depth_helper\n(paren_string: String) (num_open: Int) (max_depth: Nat): Nat :=\n-- Recursively count the maximum depth of parentheses\nif paren_string.isEmpty then\n  max_depth\nelse\n  let c := paren_string.get! 0\n  if c == '(' then\n    let new_num_open := num_open + 1\n    count_max_paren_depth_helper (paren_string.drop 1) (new_num_open) (max_depth.max new_num_open.toNat)\n  else if c == ')' then\n    count_max_paren_depth_helper (paren_string.drop 1) (num_open - 1) max_depth\n  else\n    count_max_paren_depth_helper (paren_string.drop 1) num_open max_depth\ntermination_by paren_string.length\ndecreasing_by\n  all_goals\n  {\n    rename_i h_non_empty_string\n    rw [String.drop_eq, String.length]\n    simp\n    rw [String.isEmpty_iff] at h_non_empty_string\n    by_cases h_paren_nil : paren_string.length \u2264 0\n    rw [Nat.le_zero_eq] at h_paren_nil\n    rw [\u2190string_eq_iff_data_eq] at h_non_empty_string\n    have h_temp : \"\".data = [] := by simp\n    rw [h_temp] at h_non_empty_string\n    rw [String.length] at h_paren_nil\n    rw [List.length_eq_zero_iff] at h_paren_nil\n    contradiction\n    have h_temp : paren_string.length > 0 := by linarith\n    assumption\n  }\n\ndef count_max_paren_depth\n(paren_string: String): Nat :=\ncount_max_paren_depth_helper paren_string 0 0\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 List Nat)\n-- inputs\n(paren_string: String)\n:=\n-- spec\nlet spec (result: List Nat) :=\nlet paren_space_split := paren_string.split (fun x => x = ' ');\nresult.length = paren_space_split.length \u2227\n\u2200 i, i < result.length \u2192\nlet group := paren_space_split[i]!;\nbalanced_paren_non_computable group '(' ')' \u2192\ncount_max_paren_depth group = result[i]!;\n-- program termination\n\u2203 result, implementation paren_string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (paren_string: String) : List Nat :=\n\n(paren_string.split (fun x => x = ' ')).map count_max_paren_depth\n\n\n-- [TEST_CASES]\n\n#test implementation \"(()()) ((())) () ((())()())\" = [2, 3, 1, 3]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(paren_string: String)\n: problem_spec implementation paren_string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 6,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:98a8e34348132037edaefb42989c297211846682cd10d7cafe56b998aae9614c",
+  "timing": 258.64129032799974,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/typczfmq/problem.lean --deep=stuck",
+    "claude": "sha256:c5eade72839c8091ef11380398920b9a9acef5245d036df1f01fc4163a165338",
+    "status": "OK",
+    "result": "sha256:f032cea7a46ac5612bfd2bc51fe952053d9523d12002e21c54af5debdf5f396c",
+    "validation": [
+      {
+        "problem_id": "6",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:452a5db3e96741c3138a623b49f28f99174cf7217631495254aca7340b9c6928"
+      }
+    ]
+  },
+  "exception": null
+}

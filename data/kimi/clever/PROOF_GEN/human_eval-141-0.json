@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef file_name_check(file_name: str) -> str\n\"\"\"Create a function which takes a string representing a file's name, and returns\n'Yes' if the the file's name is valid, and returns 'No' otherwise.\nA file's name is considered to be valid if and only if all the following conditions\nare met:\n- There should not be more than three digits ('0'-'9') in the file's name.\n- The file's name contains exactly one dot '.'\n- The substring before the dot should not be empty, and it starts with a letter from\nthe latin alphapet ('a'-'z' and 'A'-'Z').\n- The substring after the dot should be one of these: ['txt', 'exe', 'dll']\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(file_name : String) :=\n-- spec\nlet spec (result: String) :=\nlet valid := (file_name.toList.filter Char.isDigit).length ≤ 3 ∧\n  (file_name.toList.filter (· = '.')).length = 1 ∧\n  ∃ before after : String,\n    file_name = before ++ \".\" ++ after ∧\n    before != \"\" ∧\n    Char.isAlpha (before.get! 0) ∧\n    (after = \"txt\" ∨ after = \"exe\" ∨ after = \"dll\")\n(result = \"Yes\" ↔ valid) ∧\n(result = \"No\" ↔ ¬valid)\n\n-- program termination\n∃ result, impl file_name = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (file_name : String) : String :=\n\n  let digit_count := (file_name.toList.filter Char.isDigit).length\n  let dot_count := (file_name.toList.filter (· = '.')).length\n  if digit_count ≤ 3 ∧ dot_count = 1 then\n    let parts := file_name.split (· = '.')\n    match parts with\n    | [before, after] =>\n      if before.length > 0 then\n        let first_char := before.toList[0]!\n        if Char.isAlpha first_char ∧ (after = \"txt\" ∨ after = \"exe\" ∨ after = \"dll\") then\n          \"Yes\"\n        else \"No\"\n      else \"No\"\n    | _ => \"No\"\n  else \"No\"\n\n\n-- [TEST_CASES]\n\n#test implementation \"example.txt\" = \"Yes\"\n#test implementation \"1example.dll\" = \"No\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(file_name : String)\n: problem_spec implementation file_name :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 141,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:89904dc3d1e8ec39ac5f50bf6634fabdde0013ce0d59f4663c70722a3744d524",
+  "timing": 4923.817214102484,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:f7cc22121a3ca8fdb78f5546d03de5e56941f0c78d3cb1f76e3adc0919fb50b1",
+    "status": "FAIL",
+    "result": "sha256:36eeb4b2068fe282b2bfbc9cce9dfccbfebcfd213834d61ab6a35337980dad16",
+    "validation": [
+      {
+        "problem_id": "141",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:f85b686d233e8888195e4146b79ea1494a8de8e456c5499234d42f1cb41ffbf4"
+      }
+    ]
+  },
+  "exception": null
+}

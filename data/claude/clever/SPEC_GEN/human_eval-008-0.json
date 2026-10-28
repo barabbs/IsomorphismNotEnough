@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_product(numbers: List[int]) -> Tuple[int, int]\n\"\"\"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 (Int \u00d7 Int))\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 8,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:be526cfb3543c96d30e63e7585bca28e4293ad3a6f9854cdb2827d6993288a5f",
+  "timing": 120.98005884699523,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mljgb25j/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:890effda4aa5a4790acb6c15d55b9d8d0f6ae63907f7928ec8a36849de6e0f94",
+    "status": "OK",
+    "result": "sha256:3842cf8844db2b536b9de6e46cf55fc9803ac02d3e5bcc7f160e947f00f08742"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"You are given a rectangular grid of wells. Each row represents a single well,\nand each 1 in a row represents a single unit of water.\nEach well has a corresponding bucket that can be used to extract water from it,\nand all buckets have the same capacity.\nYour task is to use the buckets to empty the wells.\nOutput the number of times you need to lower the buckets.\nConstraints:\n    * all wells have the same length\n    * 1 <= grid.length <= 10^2\n    * 1 <= grid[:,1].length <= 10^2\n    * grid[i][j] -> 0 | 1\n    * 1 <= capacity <= 10\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List (List Nat) → Nat → Nat)\n-- inputs\n(grid: List (List Nat))\n(capacity: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 115,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e82cf8a706975c406e03e49affded875e156d5d562784f269b58a18618c61e67",
+  "timing": 117.64495715824887,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:07036418ad1c083e75d8a283e5b43bf0f0fbaf4043204c5fcfe6a8f3f1792483",
+    "status": "OK",
+    "result": "sha256:52a86700358314fbb7cba525137819301df709a8af1cbf56fa9f3ce617e89448"
+  },
+  "exception": null
+}

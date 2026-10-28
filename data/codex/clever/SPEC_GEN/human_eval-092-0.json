@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef any_int(a: float, b: float, c: float) -> bool\n\"\"\"Create a function that takes 3 numbers.\nReturns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\nReturns false in any other cases.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Rat → Rat → Rat → Bool)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 92,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a83da71b7f2ab6bb878c3b5700b245d39ac7231225c90b16b2239b805e9c2c9f",
+  "timing": 91.2174924169667,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:2903de8fa6bfecc4beb7e6150d11e9b409ae8c7ccc6363a5a6cf222e7b27dedb",
+    "status": "OK",
+    "result": "sha256:6264f15f78be16e2b4b92fdacd44ad7c08cdfb8e01d6bbf603b4314605cd7601"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rolling_max(numbers: List[int]) -> Tuple[int, int]\n\"\"\"From a given list of integers, generate a list of rolling maximum element found until given moment\nin the sequence.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 9,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b216930ea522f6b6b09313d45a7402b05f1608dc75c1d5e7bf2dc95251fd7368",
+  "timing": 120.76658243700513,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/jxzj385l/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:0576a589b0ff918fca6017695fb935f447443d8a8dacd35e78616f066ab0f877",
+    "status": "OK",
+    "result": "sha256:bdcfb93d40925c0e0decc7783d1a40822bade6927dfc81afc08a487dc71f198f"
+  },
+  "exception": null
+}

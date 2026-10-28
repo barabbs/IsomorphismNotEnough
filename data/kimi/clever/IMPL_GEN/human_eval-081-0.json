@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef numerical_letter_grade(grades: list[float]) -> list[str]\n\"\"\"It is the last week of the semester and the teacher has to give the grades\nto students. The teacher has been making her own algorithm for grading.\nThe only problem is, she has lost the code she used for grading.\nShe has given you a list of GPAs for some students and you have to write\na function that can output a list of letter grades using the following table:\n         GPA       |    Letter grade\n          4.0                A+\n        > 3.7                A\n        > 3.3                A-\n        > 3.0                B+\n        > 2.7                B\n        > 2.3                B-\n        > 2.0                C+\n        > 1.7                C\n        > 1.3                C-\n        > 1.0                D+\n        > 0.7                D\n        > 0.0                D-\n          0.0                E\nNote: I have included a hypothesis that Float is hashable, not sure if this will mess up proving attempts but we can modify it if so. Reviewer: please think if there's a better way.\nExample:\ngrade_equation([4.0, 3, 1.7, 2, 3.5]) ==> ['A+', 'B', 'C-', 'C', 'A-']\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Float → List String)\n-- inputs\n(grades: List Float) :=\n-- spec\nlet grade_dict : List (Float × String) :=\n  [\n    (4.0, \"A+\"),\n    (3.7, \"A\"),\n    (3.3, \"A-\"),\n    (3.0, \"B+\"),\n    (2.7, \"B\"),\n    (2.3, \"B-\"),\n    (2.0, \"C+\"),\n    (1.7, \"C\"),\n    (1.3, \"C-\"),\n    (1.0, \"D+\"),\n    (0.7, \"D\"),\n    (0.0, \"D-\")\n  ]\nlet spec (result : List String) :=\n  grades.all (fun grade => 0.0 ≤ grade ∧ grade ≤ 4.0) ∧\n  result.length = grades.length ∧\n  ∀ i, i < grades.length →\n    let number_grade := grades[i]!\n    let number_grade_keys := grade_dict.map (fun (g, _) => g)\n    if 0.0 < number_grade then\n      ∃ i : Nat, i < number_grade_keys.length ∧\n        number_grade_keys[i]! ≤ number_grade ∧\n        (∀ k' : Nat, k' < number_grade_keys.length → number_grade_keys[k']! ≤ number_grade → number_grade_keys[k']! ≤ number_grade_keys[i]!) ∧\n        result[i]! = (grade_dict[i]!).snd\n    else\n      result[i]! = \"E\"\n-- program termination\n∃ result,\n  implementation grades = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (grades: List Float) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [4.0, 3, 1.7, 2, 3.5] = [\"A+\", \"B\", \"C-\", \"C\", \"A-\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 81,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2f57d82634ea3d02a7e2c1437ca636fb2d8d675deb8a7162aea83b39bd8cff89",
+  "timing": 421.56746214674786,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:77ae88fe4977d351ddbce786420cd590410468b3661822c00403e97a54003415",
+    "status": "OK",
+    "result": "sha256:36b4445d8afc748445c63bcb63f61f13009a81191568c4c765fe15cf4e44c7c5"
+  },
+  "exception": null
+}

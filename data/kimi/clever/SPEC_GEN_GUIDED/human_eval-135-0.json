@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef can_arrange(arr: List[int]) -> int\n\"\"\"Create a function which returns the largest index of an element which\nis not greater than or equal to the element immediately preceding it. If\nno such element exists then return -1. The given array will not contain\nduplicate values.\n\n>>> can_arrange([1, 2, 4, 3, 5])\n3\n>>> can_arrange([1, 2, 3])\n-1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 4, 3, 5] = 3\n-- #test implementation [1, 2, 3] = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 135,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:bdb69ea07a01a3358d0defce6805d577159fb25ae2a6bd8546301042dcbae074",
+  "timing": 169.6236829343252,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:b76d132b0fae0b803c300348e1c8799ac5aad5a55923eaed3b6570c8802f5bef",
+    "status": "OK",
+    "result": "sha256:b771d44488137969251f1b87abb18549077ca0d8d26d8aa459b4e4d434c3a146"
+  },
+  "exception": null
+}

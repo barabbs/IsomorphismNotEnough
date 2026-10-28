@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef select_words(s : str, n : int) -> list[str]\n\"\"\"Given a string s and a natural number n, you have been tasked to implement\na function that returns a list of all words from string s that contain exactly\nn consonants, in order these words appear in the string s.\nIf the string s is empty then the function should return an empty list.\nNote: you may assume the input string contains only letters and spaces.\n\n>>> select_words('Mary had a little lamb', 4)\n['little']\n>>> select_words('Mary had a little lamb', 3)\n['Mary', 'lamb']\n>>> select_words('simple white space', 2)\n[]\n>>> select_words('Hello world', 4)\n['world']\n>>> select_words('Uncle sam', 3)\n['Uncle']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Nat \u2192 List String)\n-- inputs\n(s: String)\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Mary had a little lamb\" 4 = [\"little\"]\n-- #test implementation \"Mary had a little lamb\" 3 = [\"Mary\", \"lamb\"]\n-- #test implementation \"simple white space\" 2 = []\n-- #test implementation \"Hello world\" 4 = [\"world\"]\n-- #test implementation \"Uncle sam\" 3 = [\"Uncle\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 117,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:11069462604913666cc6c575f66ad5ed2f610622b3aa7b38edb466c865c5b052",
+  "timing": 281.03891908802325,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/fc8sxmmv/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:ca58facb398d5f5e5c3384e2707a8b2ef0ff497cb265798b7ef2d700668e70af",
+    "status": "OK",
+    "result": "sha256:74cfee39b79150d8734be63d5b0b19e491c6007e071f68c390973400dbae95e2"
+  },
+  "exception": null
+}

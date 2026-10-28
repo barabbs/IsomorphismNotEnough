@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rounded_avg(n: nat, m: nat) -> Optional[str]\n\"\"\"You are given two positive integers n and m, and your task is to compute the\naverage of the integers from n through m (including n and m).\nRound the answer to the nearest integer and convert that to binary.\nIf n is greater than m, return none.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Option String)\n-- inputs\n(n: Nat) (m: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:716ca5cabf724456995fc827f81c63f656410625296d659853f8626d914bd159",
+  "timing": 133.33800341608003,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:e321142e141d99cb8476f6b4214df20c5e71094acffdb8b05d3de8a1b4212268",
+    "status": "OK",
+    "result": "sha256:3a0a6604e87e7a3e73ccc12734705aa49c4b6aa00e60ca19ad884ef3bc4f1e8b"
+  },
+  "exception": null
+}

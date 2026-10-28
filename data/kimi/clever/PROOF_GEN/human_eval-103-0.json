@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rounded_avg(n: nat, m: nat) -> Optional[str]\n\"\"\"You are given two positive integers n and m, and your task is to compute the\naverage of the integers from n through m (including n and m).\nRound the answer to the nearest integer and convert that to binary.\nIf n is greater than m, return none.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → Option String)\n-- inputs\n(n: Nat) (m: Nat) :=\n-- spec\nlet spec (result: Option String) :=\n  (n > m ↔ result.isNone) ∧\n  (n ≤ m ↔ result.isSome) ∧\n  (n ≤ m →\n    (result.isSome ∧\n    let val := Option.getD result \"\";\n    let xs := List.Ico n (m+1);\n    let avg := xs.sum / xs.length;\n    (val.take 2 = \"0b\") ∧\n    (Nat.ofDigits 2 ((val.drop 2).toList.map (fun c => c.toNat - '0'.toNat)).reverse = avg)))\n-- program termination\n∃ result, implementation n m = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) (m: Nat) : Option String :=\n\n  if n > m then\n    none\n  else\n    let avg := (n + m) / 2\n    some (\"0b\" ++ List.asString (Nat.toDigits 2 avg))\n\n\n-- [TEST_CASES]\n\n#test implementation 1 5 = some \"0b11\"\n#test implementation 7 13 = some \"0b1010\"\n#test implementation 964 977 = some \"0b1111001010\"\n#test implementation 996 997 = some \"0b1111100100\"\n#test implementation 185 546 = some \"0b101101101\"\n#test implementation 362 496 = some \"0b110101101\"\n#test implementation 350 902 = some \"0b1001110010\"\n#test implementation 197 233 = some \"0b11010111\"\n#test implementation 7 5 = none\n#test implementation 5 1 = none\n#test implementation 5 5 = some \"0b101\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat) (m: Nat)\n: problem_spec implementation n m\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b81a9e811e595ee80cc86952fcfc95629e743ca96e17c70766c8a7fb34ccf519",
+  "timing": 3418.5445950916037,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:a20f638ec33e22346854d429fcc847aadce416555c34df5d8f77102d7f44c27e",
+    "status": "OK",
+    "result": "sha256:84a779c7e73f174d56262413fbb6b473b3662bac9698febbe06a7bc32a7d532e",
+    "validation": [
+      {
+        "problem_id": "103",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:98036bf67aaf9d77698aba8ac844da16f78001794a9e4bf6b288628187e2549a"
+      }
+    ]
+  },
+  "exception": null
+}

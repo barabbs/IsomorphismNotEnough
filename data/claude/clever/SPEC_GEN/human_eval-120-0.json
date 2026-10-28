@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef maximum(arr: List[int], k: int) -> List[int]\n\"\"\"Given an array arr of integers and a positive integer k, return a sorted list of length\nk with the maximum k numbers in arr.\nNote:\n    1. The length of the array will be in the range of [1, 1000].\n    2. The elements in the array will be in the range of [-1000, 1000].\n    3. 0 <= k <= len(arr)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int \u2192 List Int)\n-- inputs\n(arr: List Int)\n(k: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 120,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b30a5354e641c2c9d50cfb992929c0b9f63131ff182e3ee86b1cb7e61304a167",
+  "timing": 100.14733528500074,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/x6i5qxjq/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:5c75a04cd4631e1a0b4e7b2ebf594e5765e1efebebcb83a5e6971c826d9327b7",
+    "status": "OK",
+    "result": "sha256:eb1c5be67f085f96b79f5bb47079c6f9078d6a3f61e2d9c0d900a2441b261a03"
+  },
+  "exception": null
+}

@@ -1,0 +1,20 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_dict_case(s : dict[str, str]) -> bool\n\"\"\"Given a dictionary, return True if all keys are strings in lower\ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nNote(George): Modified the problem to use strings only for both keys and values.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Std.HashMap String String \u2192 Bool)\n-- inputs\n(D: Std.HashMap String String) :=\n-- spec\nlet spec (result : Bool) :=\n  match D.isEmpty with\n  | true => result = false\n  | false =>\n    let keys := D.keys\n    let all_lower := keys.all (fun s => s.toLower = s)\n    let all_upper := keys.all (fun s => s.toUpper = s)\n    result = true \u2194 all_lower || all_upper\n-- program termination\n\u2203 result,\n  implementation D = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (D: Std.HashMap String String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"b\", \"banana\")]) = true\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"A\", \"banana\"), (\"B\", \"banana\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"b\", \"banana\"), (\"a\", \"apple\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"Name\", \"John\"), (\"Age\", \"36\"), (\"City\", \"Houston\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"STATE\", \"NC\"), (\"ZIP\", \"12345\")]) = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 95,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e469e0f8c31892296f65a12c7b2c7b3adb4d61e3b13298d1bc2dd342f3437d90",
+  "timing": 113.31118773599155,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ak4eybjd/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:1d101e6ded53c627c3d3563450a92166e6856d5c97ee6e49a305cde37572577a",
+    "raw_status": "OK",
+    "status": "ISSUE",
+    "result": "sha256:c1f17ff207cb5eff83a989104eb501d5ab931bbe16e3d595116881249d1e1b61"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef will_it_fly(q: List[int], w: int) -> bool\n\"\"\"Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is\nless than or equal the maximum possible weight w.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int → Bool)\n-- inputs\n(q: List Int) (w: Int) :=\n-- spec\nlet spec (result : Bool) :=\n  (result → (List.Palindrome q)) ∧\n  (result → (List.sum q ≤ w)) ∧\n  (¬(List.Palindrome q) → ¬ result) ∧\n  (¬(List.sum q ≤ w) → ¬ result)\n-- program termination\n∃ result, implementation q w = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (q: List Int) (w: Int) : Bool :=\n\nif q = q.reverse ∧ q.sum ≤ w then true else false\n\n\n-- [TEST_CASES]\n\n#test implementation [3, 2, 3] 9 = True\n#test implementation [1, 2] 5 = False\n#test implementation [3] 5 = True\n#test implementation [3, 2, 3] 1 = False\n#test implementation [1, 2, 3] 6 = False\n#test implementation [5] 5 = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(q: List Int) (w: Int)\n: problem_spec implementation q w\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 72,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1df598d03ce038bde9aa15199d0e6c2ac2d0fafb15d1bb3a3f81bf8b7fd08cba",
+  "timing": 488.3847515382804,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:5270bc32b5d2e1378fde9d4917e77f7743adffc7df12c5099529890aa04eb242",
+    "status": "OK",
+    "result": "sha256:939be24610c2f3e03d2d86e1edb27788463be690a2d28fdcb618af12e0d1190f",
+    "validation": [
+      {
+        "problem_id": "72",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:3e0e31fe819c50cdd9dcdc423c1b6714109d6d46c315f744eb6f3f1ec63e23e0"
+      }
+    ]
+  },
+  "exception": null
+}

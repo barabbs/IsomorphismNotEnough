@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that start with a given prefix.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String → List String)\n-- inputs\n(strings: List String)\n(pref: String) :=\n-- spec\nlet spec (result: List String) :=\nresult.all (λ s => s.startsWith pref) ∧\nresult.all (λ s => s ∈ strings) ∧\nstrings.all (λ s => s.startsWith pref → s ∈ result) ∧\n∀ s : String, s ∈ result → result.count s = strings.count s;\n-- program termination\n∃ result, implementation strings pref = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) (pref: String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] \"a\" = []\n-- #test implementation [\"abc\", \"bcd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"array\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 29,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8c7fd81b38b5d5b1dfc670b2291a5f03d4bb7dbf10d84b009543b1a9544cbbdf",
+  "timing": 25.40566603699699,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:29bf5e3e9ae237e2886bc1f954e6122c3da55176b3abed974e9ce8757945f5c3",
+    "status": "OK",
+    "result": "sha256:ecd30913e6ca58010f739633f4a78fd87b5df19229ce31d65fde0aac4fe4fd6b"
+  },
+  "exception": null
+}

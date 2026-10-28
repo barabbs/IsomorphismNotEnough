@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef all_prefixes(string: str) -> List[str]\n\"\"\"Return list of all prefixes from shortest to longest of the input string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 List String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: List String) :=\nresult.length = string.length \u2227\n\u2200 i, i < result.length \u2192\nresult[i]! = string.take (i + 1);\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : List String :=\n\n(List.range string.length).map (fun i => string.take (i + 1))\n\n\n-- [TEST_CASES]\n\n#test implementation \"abc\" = [\"a\", \"ab\", \"abc\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 14,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1f132e0878116f79db3ba47990793954f17cd228a2970e81feeaed3a577964d7",
+  "timing": 175.34313460599515,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/tl6lqmn8/problem.lean --deep=stuck",
+    "claude": "sha256:6894454333628eb010d72310e540caa61750996b8d7038072a469b9f640afb70",
+    "status": "OK",
+    "result": "sha256:7d0162cff0336cac5873ec9cf0e4c9cbe1112782b414d5aa5468ff31f4bdce54",
+    "validation": [
+      {
+        "problem_id": "14",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:6c89d5224a874f0eb38ffb358583575e296edfc1ac667290f7aabb64f23295ca"
+      }
+    ]
+  },
+  "exception": null
+}

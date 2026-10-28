@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef closest_integer(s : str) -> Optional[int]\n\"\"\"Create a function that takes a value (string) representing a number\nand returns the closest integer to it. If the number is equidistant\nfrom two integers, round it away from zero.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Option Int)\n-- inputs\n(s: String) :=\n-- spec\nlet numeric_characters := [\"-\", \"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \".\"]\nlet is_valid_string :=\n  s.length > 0 ∧\n  s.count (\".\".get! 0) ≤ 1 ∧\n  s.count (\"-\".get! 0) ≤ 1 ∧\n  s.data.all (fun c => numeric_characters.contains (String.mk [c])) ∧\n  (s.count (\"-\".get! 0) = 1 → s.data.head! = '-')\n\nlet spec (result : Option Int) := match result with\n  | some result =>\n    is_valid_string ∧\n    let parts := s.split (fun c => c = '.')\n    (parts.length = 1 → result = s.toInt!) ∧\n    (parts.length = 2 →\n      let integer_part := parts.get! 0\n      let is_negative := s.data.head! = '-'\n      |((integer_part.toInt! - result) : ℚ)| ≤ 0.5 ∧\n      (is_negative → |((integer_part.toInt! - result) : ℚ)| = 0.5 → integer_part.toInt? < result) ∧\n      (¬is_negative → |((integer_part.toInt! - result) : ℚ)| = 0.5 → integer_part.toInt? > result)\n    )\n  | none => ¬ is_valid_string\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : Option Int :=\n\n  let validChars : List String := [\"-\", \"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \".\"]\n  if s.isEmpty then none\n  else if decide (s.count (\".\".get! 0) > 1) then none\n  else if decide (s.count (\"-\".get! 0) > 1) then none\n  else if !(s.data.all (fun c => validChars.contains (String.mk [c]))) then none\n  else if decide (s.count (\"-\".get! 0) = 1) && !(s.data.head! == '-') then none\n  else\n    let parts := s.split (fun c => c = '.')\n    if parts.length == 1 then\n      s.toInt?\n    else\n      let intStr := parts.get! 0\n      if intStr.isEmpty || intStr == \"-\" then some 0\n      else intStr.toInt?\n\n\n-- [TEST_CASES]\n\n#test implementation \"10\" = some 10\n#test implementation \"15.3\" = some 15\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 99,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a0133c3f2304aae0fee480422bd4e5e423efd235c2075145c9b4a01f551cdc6e",
+  "timing": 621.8076326530427,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:d6d95bec16406e97e48c19558f3c032365a7ff7dcfb102865c3aec4b19e99d91",
+    "status": "ISSUE",
+    "result": "sha256:af324430418881eb38cad9e618c153127064addc9d7ed80dc98a72f2198b1be6",
+    "validation": [
+      {
+        "problem_id": "99",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:3cbba285be34f0fa433b9bbfa38a8cb900d171ddc162ba17340c71f895fc4db8"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "MCONS"
+  },
+  "exception": null
+}

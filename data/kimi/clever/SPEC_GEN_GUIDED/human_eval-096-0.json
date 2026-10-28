@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_up_to(n : int) -> list[int]\n\"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\nintegers that are prime numbers and less than n.\n\n>>> count_up_to(5)\n[2, 3]\n>>> count_up_to(11)\n[2, 3, 5, 7]\n>>> count_up_to(0)\n[]\n>>> count_up_to(20)\n[2, 3, 5, 7, 11, 13, 17, 19]\n>>> count_up_to(1)\n[]\n>>> count_up_to(18)\n[2, 3, 5, 7, 11, 13, 17]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → List Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 = [2,3]\n-- #test implementation 11 = [2,3,5,7]\n-- #test implementation 0 = []\n-- #test implementation 20 = [2,3,5,7,11,13,17,19]\n-- #test implementation 1 = []\n-- #test implementation 18 = [2,3,5,7,11,13,17]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 96,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c5bac43da3414b68897d58ba8823d816432f6fdfe1b554e637aa54f0da51edc9",
+  "timing": 101.57479579141364,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:2992a1b0238e7d5ce685c9ad311ba857625216b07d2c24081075ee74781d1762",
+    "status": "OK",
+    "result": "sha256:6c7436af1daa9a1b6bfd0e892957e73ef3a63e53a1b9bcee5ad9bb2060efd0e6"
+  },
+  "exception": null
+}

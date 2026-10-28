@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef right_angle_triangle(a: nat, b: nat, c: nat) -> bool\n\"\"\"Given the lengths of the three sides of a triangle. Return True if the three\nsides form a right-angled triangle, False otherwise.\nA right-angled triangle is a triangle in which one angle is right angle or\n90 degree.\n\n>>> right_angle_triangle(3, 4, 5)\nTrue\n>>> right_angle_triangle(1, 2, 3)\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Nat → Bool)\n-- inputs\n(a b c: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 3 4 5 = true\n-- #test implementation 1 2 3 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 157,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:230a785e740d5dc688c0a51a4f31ef3deebafb9ed6add5e7e757e8493699cec4",
+  "timing": 112.31410491187125,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:f0c390ba9002017dc32d3031a77aa307cb496a38b379dc031cc897c98e3e67cf",
+    "status": "OK",
+    "result": "sha256:c9a3b190f931fb0eb6743dd501b865224983ad446fd119a15c152dc3ba66e14c"
+  },
+  "exception": null
+}

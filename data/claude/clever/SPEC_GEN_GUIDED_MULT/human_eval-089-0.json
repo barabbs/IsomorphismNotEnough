@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encrypt(str : str) -> str\n\"\"\"Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated.\nThe alphabet should be rotated in a manner such that the letters\nshift down by two multiplied to two places.\n\n>>> encrypt('hi')\n'lm'\n>>> encrypt('asdfghjkl')\n'ewhjklnop'\n>>> encrypt('gf')\n'kj'\n>>> encrypt('et')\n'ix'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(str: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"hi\" = \"lm\"\n-- #test implementation \"asdfghjkl\" = \"ewhjklnop\"\n-- #test implementation \"gf\" = \"kj\"\n-- #test implementation \"et\" = \"ix\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 89,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:4649efc79fc872d17c38a6fc087a8464d32d74920fba103fd064590d1aff84c0",
+  "timing": 139.61197237996385,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/5dnobc94/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:90955d22230db82f79215437b0d5a36325e02dc747f112f3f888c089178dbb56",
+    "status": "OK",
+    "result": "sha256:c08ed0e955ea2edff8dec91ac789f886a86fce39ca20cb81175e36fc36e4dd78"
+  },
+  "exception": null
+}

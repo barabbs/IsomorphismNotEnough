@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef next_smallest(lst: List[int]) -> Optional[int]\n\"\"\"You are given a list of integers.\nWrite a function next_smallest() that returns the 2nd smallest element of the list.\nReturn None if there is no such element.\nTODO(George): Remove this when being reviewed\nThe spec is defined as: if result is none there is no second smallest element, which\nexists in a finite list iff there are at least two distinct elements in the list.\nIf result is some x, then x is the second smallest element of the list, the spec\nobtains the sublist of elements smaller than the result, and checks that this\nsublist does not contain two distinct elements (they are all the same).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Option Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 90,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:56236b277993173d51b93a85476645107ee40e9419266064acc6af0a9d339840",
+  "timing": 114.51913398411125,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:c18e977498eee63f373d63b033dc7dfc56ae718e8c6fe524814ee364edbd7bbd",
+    "status": "OK",
+    "result": "sha256:097dc22723f71b9bc6953e15c536df4c845bc24dff72814f55a992fc71f542a7"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef concatenate(strings: List[str]) -> str\n\"\"\"Concatenate list of strings into a single string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String)\n-- inputs\n(strings: List String) :=\n-- spec\nlet spec (result: String) :=\nlet result_chars := result.toList;\nresult_chars.length = (strings.map (λ s => s.length)).sum ∧\n∀ i, i < strings.length →\n(let string_in_result := strings.get! i;\nlet end_idx := ((strings.take (i + 1)).map (λ s => s.length)).sum;\nlet start_idx := end_idx - string_in_result.length;\nlet corresponding_string_in_result := ((result_chars.take end_idx).drop start_idx).asString;\ncorresponding_string_in_result = string_in_result);\n-- program termination\n∃ result, implementation strings = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] = \"\"\n-- #test implementation [\"a\", \"b\", \"c\"] = \"abc\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 28,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:696a519fc8274acac3c78418052bad4a60a47ed93da02bfec326dc5f2a0caa7c",
+  "timing": 61.591715360060334,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:ff328009b7ce26020147195d7c9b9faae3d216c78b4c3d3f0581a883a74a0629",
+    "status": "OK",
+    "result": "sha256:ead4b91fd561d0889a1b103bdf67a867ef844b33dbfd20a0c3fa906ed8693c2f"
+  },
+  "exception": null
+}

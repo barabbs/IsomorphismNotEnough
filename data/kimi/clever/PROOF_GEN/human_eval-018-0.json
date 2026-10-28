@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef how_many_times(string: str, substring: str) -> int\n\"\"\"Find how many times a given substring can be found in the original string. Count overlaping cases.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String → Nat)\n-- inputs\n(string substring: String) :=\n-- spec\nlet spec (result: Nat) :=\n(substring.length = 0 → result = string.length)\n∧\n(substring.length ≠ 0 →\n(string.length < substring.length → result = 0)\n∧\n(string.length = substring.length →\n((string = substring ↔ result = 1) ∧\n(substring ≠ string ↔ result = 0)))\n∧\n(substring.length < string.length  →\nlet substring_start_idx := {i: Nat | i < string.length - substring.length + 1};\nlet substring_occurrences := {i ∈ substring_start_idx | (string.drop i).take substring.length = substring };\nresult = substring_occurrences.toFinset.card));\n-- program termination\n∃ result, implementation string substring = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) (substring: String) : Nat :=\n\n  if _ : substring.length = 0 then\n    string.length\n  else if string.length < substring.length then\n    0\n  else\n    (List.range (string.length - substring.length + 1)).filter (λ i => (string.drop i).take substring.length = substring) |>.length\n\n\n-- [TEST_CASES]\n\n#test implementation \"aaa\" \"a\" = 3\n#test implementation \"aaaa\" \"aa\" = 3\n#test implementation \"\" \"a\" = 0\n#test implementation \"a\" \"\" = 1\n#test implementation \"a\" \"a\" = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n(substring: String)\n: problem_spec implementation string substring\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 18,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:425741f45518a386acad75915a32595c904d24ae840b9e68c31253c4ad2090a7",
+  "timing": 13814.42035698006,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:270de41b333a6d3d2421a9139d147f095cd146013311c9ebedc18cd459a7fd41",
+    "status": "FAIL",
+    "result": "sha256:a70a4ff7fe2db296b2d164219a28221d93844beb60225b374d5adebfc6d0e83d",
+    "validation": [
+      {
+        "problem_id": "18",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:125e4b4c53a2114ec0ff501e5670f42e277195ae22bf77c1b174a2f931e36303",
+        "lean_code": "sha256:98d5bbb2a869c389c2e25357dd20fb4c6c7f115ddabc13552bc4422d9fcd3acd"
+      }
+    ]
+  },
+  "exception": null
+}

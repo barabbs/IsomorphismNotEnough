@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that contain given substring\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String → String → List String)\n-- inputs\n(strings: List String)\n(substring: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 7,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c20075ad73af39c6653110ececc12766b5f116bbc5676a2cebebb2f63a61deca",
+  "timing": 141.9665423091501,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:8c17748a9df8c9b84d8c9f341866d76f82a9115a597cdf1b1c26174404a07867",
+    "status": "OK",
+    "result": "sha256:c521f90333626d57e095f82f9ed82aaee1f9e3f40d7553e3a049f334747dc1d2"
+  },
+  "exception": null
+}

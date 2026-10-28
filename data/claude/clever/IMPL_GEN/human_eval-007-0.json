@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that contain given substring\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String \u2192 List String)\n-- inputs\n(strings: List String)\n(substring: String)\n:=\n-- spec\nlet spec (result: List String) :=\n(\u2200 i, i < result.length \u2192 result[i]!.containsSubstr substring \u2192\n\u2200 j, j < strings.length \u2227 strings[j]!.containsSubstr substring \u2192 strings[j]! \u2208 result \u2192\n\u2200 j, j < result.length \u2192 result.count result[j]! = strings.count result[j]!);\n-- program termination\n\u2203 result, implementation strings substring = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) (substring: String): List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] \"a\" = []\n-- #test implementation [\"abc\", \"bacd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"bacd\", \"array\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 7,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:22ceb490905cffb3f8c3408001449f1415a2bc650d7e7de100bdcabf419ffaff",
+  "timing": 54.67558646897669,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/7x8cdlnu/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:4512a03537d9764c12dc6b31a7084a10661c9f506797dd0148ca8469d56eaa64",
+    "status": "OK",
+    "result": "sha256:970b01f493c0889d07ccbf3b045a9f4738534a4502dbad670ce9c1a2c69188c9"
+  },
+  "exception": null
+}

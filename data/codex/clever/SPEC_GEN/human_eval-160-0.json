@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef do_algebra(operator: List[str], operand: List[nat]) -> int\n\"\"\"Given two lists operator, and operand. The first list has basic algebra operations, and\nthe second list is a list of integers. Use the two given lists to build the algebric\nexpression and return the evaluation of this expression.\n\nThe basic algebra operations:\nAddition ( + )\nSubtraction ( - )\nMultiplication ( * )\nFloor division ( // )\nExponentiation ( ** )\n\nNote:\n    The length of operator list is equal to the length of operand list minus one.\n    Operand is a list of of non-negative integers.\n    Operator list has at least one operator, and operand list has at least two operands.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef mergeAlternately : List Nat → List String → List String\n| [], []       => []\n| [], y :: ys  => y :: mergeAlternately [] ys\n| x :: xs, []  => x.repr :: mergeAlternately xs []\n| x :: xs, y :: ys => x.repr :: y :: mergeAlternately xs ys\n\ndef applyOp (x y : Int) : String → Option Int\n  | \"+\"  => some (x + y)\n  | \"-\"  => some (x - y)\n  | \"*\"  => some (x * y)\n  | \"//\" => if y == 0 then none else some (x / y)\n  | \"**\" =>\n    if x < 0 then none\n    else some (Int.ofNat ((Int.toNat x) ^ (Int.toNat y)))\n  | _     => none\n\ninductive evalArith_pass : List String → Int → Prop\n| num {s : String} {n : Nat} (h : s.toNat! = n) :\n    evalArith_pass [s] (Int.ofNat n)\n| binOp {ts1 ts2 : List String} {op : String} {r1 r2 r : Int}\n    (h1 : evalArith_pass ts1 r1)\n    (h2 : evalArith_pass ts2 r2)\n    (hop : applyOp r1 r2 op = some r) :\n    evalArith_pass (ts1 ++ op :: ts2) r\n\ninductive evalArith_exp : List String → Int → Prop\n| of_pass {ts r} (h : evalArith_pass ts r) : evalArith_exp ts r\n| step {ts1 ts2 r1 r2 r} (h1 : evalArith_exp ts1 r1) (h2 : evalArith_exp ts2 r2)\n    (hop : applyOp r1 r2 \"**\" = some r) :\n    evalArith_exp (ts1 ++ \"**\" :: ts2) r\n\ninductive evalArith_mul : List String → Int → Prop\n| of_exp {ts r} (h : evalArith_exp ts r) : evalArith_mul ts r\n| step {ts1 ts2 r1 r2 r} (h1 : evalArith_mul ts1 r1) (h2 : evalArith_mul ts2 r2)\n    (hop : applyOp r1 r2 \"*\" = some r ∨ applyOp r1 r2 \"//\" = some r) :\n    evalArith_mul (ts1 ++ \"*\" :: ts2) r\n\ninductive evalArith_add : List String → Int → Prop\n| of_mul {ts r} (h : evalArith_mul ts r) : evalArith_add ts r\n| step {ts1 ts2 r1 r2 r} (h1 : evalArith_add ts1 r1) (h2 : evalArith_add ts2 r2)\n    (hop : applyOp r1 r2 \"+\" = some r ∨ applyOp r1 r2 \"-\" = some r) :\n    evalArith_add (ts1 ++ \"+\" :: ts2) r\n\ndef evalArith_precedence (ts : List String) (r : Int) : Prop :=\n  evalArith_add ts r\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String → List Nat → Int)\n-- inputs\n(operator : List String)\n(operand : List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 160,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8358729db2239484c816384c69ae216da17960b7c76e5f1d79845fba5e89cffc",
+  "timing": 107.76180458907038,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:5c9802e544e585eddfa9cad5d9441ef98569600d73c23884dc67ae22c265cca1",
+    "status": "OK",
+    "result": "sha256:2d56d45c657bbeb2188f80ad4d06a0ab949eac02063edfcacb1d31c39ff9ce87"
+  },
+  "exception": null
+}

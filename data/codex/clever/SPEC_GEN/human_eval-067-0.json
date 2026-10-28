@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, n: nat) -> nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Nat → Nat)\n-- inputs\n(x: String) (y: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d7f9bf97bd08c723a1bc44530cc6e35703650c122bfa8dbc6ee5f2f6e8add507",
+  "timing": 99.9218498300761,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:604cd3f3e163362d216dd02cddcfb755b3f658e40f9b5834239297618e0dfaed",
+    "status": "OK",
+    "result": "sha256:08a5cc372de799aba859658ddb9ad51f7bbc8693f513c88a2d1cada443456dfa"
+  },
+  "exception": null
+}

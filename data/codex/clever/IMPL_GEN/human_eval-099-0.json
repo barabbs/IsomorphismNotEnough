@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef closest_integer(s : str) -> Optional[int]\n\"\"\"Create a function that takes a value (string) representing a number\nand returns the closest integer to it. If the number is equidistant\nfrom two integers, round it away from zero.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Option Int)\n-- inputs\n(s: String) :=\n-- spec\nlet numeric_characters := [\"-\", \"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \".\"]\nlet is_valid_string :=\n  s.length > 0 ∧\n  s.count (\".\".get! 0) ≤ 1 ∧\n  s.count (\"-\".get! 0) ≤ 1 ∧\n  s.data.all (fun c => numeric_characters.contains (String.mk [c])) ∧\n  (s.count (\"-\".get! 0) = 1 → s.data.head! = '-')\n\nlet spec (result : Option Int) := match result with\n  | some result =>\n    is_valid_string ∧\n    let parts := s.split (fun c => c = '.')\n    (parts.length = 1 → result = s.toInt!) ∧\n    (parts.length = 2 →\n      let integer_part := parts.get! 0\n      let is_negative := s.data.head! = '-'\n      |((integer_part.toInt! - result) : ℚ)| ≤ 0.5 ∧\n      (is_negative → |((integer_part.toInt! - result) : ℚ)| = 0.5 → integer_part.toInt? < result) ∧\n      (¬is_negative → |((integer_part.toInt! - result) : ℚ)| = 0.5 → integer_part.toInt? > result)\n    )\n  | none => ¬ is_valid_string\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Option Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"10\" = some 10\n-- #test implementation \"15.3\" = some 15\n",
+  "info": {
+    "dataset": "clever",
+    "id": 99,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3b2e7dd606688bc61a3079aa864f47822937436b0869063da769179ea94f954b",
+  "timing": 195.99625098938122,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:83a325ff3a377679b7c4cfe4b87a63092cf4f76594aef97aa98a670ecdc85a23",
+    "status": "OK",
+    "result": "sha256:d3558cfded7592eb8f3ece179b7be4a682eb8b8153806fb3ffcf9ef6dc724b5e"
+  },
+  "exception": null
+}

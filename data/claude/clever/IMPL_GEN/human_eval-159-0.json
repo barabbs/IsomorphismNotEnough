@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef eat(number: Nat, need: Nat, remaining: Nat) -> List Nat\n\"\"\"You're a hungry rabbit, and you already have eaten a certain number of carrots,\nbut now you need to eat more carrots to complete the day's meals.\nyou should return an array of [ total number of eaten carrots after your meals,\n                                the number of carrots left after your meals ]\nif there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.\n\nVariables:\n  @number : integer\n      the number of carrots that you have eaten.\n  @need : integer\n      the number of carrots that you need to eat.\n  @remaining : integer\n      the number of remaining carrots thet exist in stock\n\nConstrain:\n* 0 <= number <= 1000\n* 0 <= need <= 1000\n* 0 <= remaining <= 1000\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 Nat \u2192 List Nat)\n-- inputs\n(number need remaining: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\nnumber \u2264 1000 \u2192 need \u2264 1000 \u2192 remaining \u2264 1000 \u2192\nresult.length = 2 \u2227\n(need \u2264 remaining \u2192 result[0]! - need = number \u2227\nneed = remaining - result[1]!) \u2227\n(remaining < need \u2192 result[0]! - remaining = number \u2227\nresult[1]! = 0);\n-- program terminates\n\u2203 result, impl number need remaining = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b c: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 6 10 = [11, 4]\n-- #test implementation 4 8 9 = [12, 1]\n-- #test implementation 1 10 10 = [11, 0]\n-- #test implementation 2 11 5 = [7, 0]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 159,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ac77246a16117fec685e6dd77b572e4cb35dfb4c600702eaa09c67ed34d61a9f",
+  "timing": 54.591513721999945,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/h_lfs9py/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:a01dfc88af76b862873d6a1283132a9a84bf2fc09bd737919434ac749bb67efb",
+    "status": "OK",
+    "result": "sha256:53fb89bda625ed3bcc824363f440f6767c6b6c0c6a01a543278eed33ce546a02"
+  },
+  "exception": null
+}

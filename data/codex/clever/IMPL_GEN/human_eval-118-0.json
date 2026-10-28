@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_closest_vowel(s : str) -> str\n\"\"\"You are given a word. Your task is to find the closest vowel that stands between\ntwo consonants from the right side of the word (case sensitive).\n\nVowels in the beginning and ending doesn't count. Return empty string if you didn't\nfind any vowel met the above condition.\n\nYou may assume that the given string contains English letter only.\nNote: The \"closest\" is interpreted as the closest to the end of the word, not the closest to the consonants.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (fun c => c.isAlpha) →\n  let is_consonant (c: Char) :=\n    c ∉ ['a', 'e', 'i', 'o', 'u'] ∧\n    c ∉ ['A', 'E', 'I', 'O', 'U'] ∧\n    c.isAlpha\n  (result = \"\" → ¬ ∃ (i j k : Nat), i < j ∧ j < k ∧ k < s.length ∧ is_consonant s.data[i]! ∧ ¬ is_consonant s.data[j]! ∧ is_consonant s.data[k]!) ∧\n  (result ≠ \"\" →\n    result.length = 1 ∧\n    result.data[0]! ∈ s.data ∧\n    ¬ is_consonant result.data[0]! ∧\n    ∃ (i j k : Nat),\n      i < j ∧ j < k ∧ k < s.length ∧\n      is_consonant s.data[i]! ∧ ¬ is_consonant s.data[j]! ∧ is_consonant s.data[k]! ∧\n      result.data[0]! = s.data[j]! ∧\n      (∀ (i' j' k' : Nat),\n        i' < j' ∧ j' < k' ∧ k' < s.length ∧ is_consonant s.data[i']! ∧ ¬ is_consonant s.data[j']! ∧ is_consonant s.data[k']! →\n        j' ≤ j)\n  )\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"yogurt\" = \"u\"\n-- #test implementation \"FULL\" = \"U\"\n-- #test implementation \"quick\" = \"i\"\n-- #test implementation \"ab\" = \"\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 118,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fb1a975e9d171c36c351d029191bd937dcfe2d2cf79f1777fe0f345a1c4defe2",
+  "timing": 111.3679829207249,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:c4f12fab1111eedfc74b2dc0ffad2cb73eab05962c585650842d61c4fb58096e",
+    "status": "OK",
+    "result": "sha256:c97c106bef0a236efa1d1dc92e44909a64593bee2b55d1dafedcb2f674cff583"
+  },
+  "exception": null
+}

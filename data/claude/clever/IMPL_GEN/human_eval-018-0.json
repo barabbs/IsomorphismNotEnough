@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef how_many_times(string: str, substring: str) -> int\n\"\"\"Find how many times a given substring can be found in the original string. Count overlaping cases.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String \u2192 Nat)\n-- inputs\n(string substring: String) :=\n-- spec\nlet spec (result: Nat) :=\n(substring.length = 0 \u2192 result = string.length)\n\u2227\n(substring.length \u2260 0 \u2192\n(string.length < substring.length \u2192 result = 0)\n\u2227\n(string.length = substring.length \u2192\n((string = substring \u2194 result = 1) \u2227\n(substring \u2260 string \u2194 result = 0)))\n\u2227\n(substring.length < string.length  \u2192\nlet substring_start_idx := {i: Nat | i < string.length - substring.length + 1};\nlet substring_occurrences := {i \u2208 substring_start_idx | (string.drop i).take substring.length = substring };\nresult = substring_occurrences.toFinset.card));\n-- program termination\n\u2203 result, implementation string substring = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) (substring: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"aaa\" \"a\" = 3\n-- #test implementation \"aaaa\" \"aa\" = 3\n-- #test implementation \"\" \"a\" = 0\n-- #test implementation \"a\" \"\" = 1\n-- #test implementation \"a\" \"a\" = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 18,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5b6cc648a7de35aa368aed71f1bf560f2ba480b2774c2c9c2114b086276e38dd",
+  "timing": 60.691122828022344,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ztztp3p9/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:6db40a466246a4e58d273fb17c02cc36a7ce73b29b37063286141eeb2ba97bab",
+    "status": "OK",
+    "result": "sha256:f52178c37b820b0363471a0efcf405863441a1abd2f3d3332145b962b0f5fa35"
+  },
+  "exception": null
+}

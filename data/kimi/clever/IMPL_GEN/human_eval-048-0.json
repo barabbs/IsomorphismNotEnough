@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_palindrome(string: str) -> bool\n\"\"\"Checks if given string is a palindrome\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Bool)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Bool) :=\nresult ↔ is_palindrome string\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = true\n-- #test implementation \"aba\" = true\n-- #test implementation \"aaaaa\" = true\n-- #test implementation \"zbcd\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 48,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:844f398affa8f9c509d6e01f06d67815e1901bf4472201ef8c84624dd3041e15",
+  "timing": 30.035653047263622,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:57cfa3683a4ca4eba66c38697fd03154ddfab1f23739ec71bbaabca02ea4a186",
+    "status": "OK",
+    "result": "sha256:d8f1883a0dde5d7d407450e02164bc1b6cbeb56d52ae4c525d9afcf522e50f05"
+  },
+  "exception": null
+}

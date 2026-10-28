@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sorted_list_sum(lst: List[str]) -> List[str]\n\"\"\"Write a function that accepts a list of strings as a parameter,\ndeletes the strings that have odd lengths from it,\nand returns the resulted list with a sorted order,\nThe list is always a list of strings and never an array of numbers,\nand it may contain duplicates.\nThe order of the list should be ascending by length of each word, and you\nshould return the list sorted by that rule.\nIf two words have the same length, sort the list alphabetically.\nThe function should return a list of strings in sorted order.\nYou may assume that all words will have the same length.\n\n>>> sorted_list_sum(['aa', 'a', 'aaa'])\n['aa']\n>>> sorted_list_sum(['ab', 'a', 'aaa', 'cd'])\n['ab', 'cd']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String → List String)\n-- inputs\n(lst: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [\"aa\", \"a\", \"aaa\"] = [\"aa\"]\n-- #test implementation [\"ab\", \"a\", \"aaa\", \"cd\"] = [\"ab\", \"cd\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 149,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:38a2e87a21194168e80837bb7a16f7f41f602ea15f19b7121ffb4032a337ee3a",
+  "timing": 111.22455912968144,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:d864f196c372761b7ef37433d6afee662ce4060e7b12056b04749b931ce14129",
+    "status": "OK",
+    "result": "sha256:51d912b8829ef76fdb21c02d27a3938e997bc40757210d34fa6a1ce1a5f04fbb"
+  },
+  "exception": null
+}

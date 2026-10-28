@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_nums(arr: List[int]) -> int\n\"\"\"Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n\n>>> count_nums([])\n0\n>>> count_nums([-1, 11, -11])\n1\n>>> count_nums([1, 1, 2])\n3\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] = 0\n-- #test implementation [-1, -2, 0] = 0\n-- #test implementation [1, 1, 2, -2, 3, 4, 5] = 6\n-- #test implementation [1, 6, 9, -6, 0, 1, 5] = 5\n-- #test implementation [1, 100, 98, -7, 1, -1] = 4\n-- #test implementation [12, 23, 34, -45, -56, 0] = 5\n-- #test implementation [-0, 1^0] = 1\n-- #test implementation [1] = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 108,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:cd2c993fc9bfdb57dc47482596afe663bf6fe7db1534b86c06aaad134e8a3a8f",
+  "timing": 130.0199247598648,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:8c402696f6d63f0dda0c7e68cb837c713f9c501c584cfd30e7c42f96df88b1e3",
+    "status": "OK",
+    "result": "sha256:8aaa36f3c524bc2980aa0f2063494146f9803328e5d9b4f86a14a22b916a55aa"
+  },
+  "exception": null
+}

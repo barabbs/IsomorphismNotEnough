@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef change_base(x: nat, base: nat) -> str\n\"\"\"Change numerical base of input number x to base.\nreturn string representation after the conversion.\nbase numbers are less than 10.\n\n>>> change_base(8, 3)\n'22'\n>>> change_base(8, 2)\n'1000'\n>>> change_base(7, 2)\n'111'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 String)\n-- inputs\n(x base: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 8 3 = '22'\n-- #test implementation 8 2 = '1000'\n-- #test implementation 7 2 = '111'\n",
+  "info": {
+    "dataset": "clever",
+    "id": 44,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:88f08e3605167d0275236fb868587f62d118d38051fde69f8a8225f22de80aca",
+  "timing": 74.1388113030007,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/e09nhbkw/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:41c8f7376a0c0224c36a3fe7627161defe783a85231b0d4e519c12d6fd8fe85b",
+    "status": "OK",
+    "result": "sha256:3df4115d4d2a6b97bff9912110e346135bd90426df7ad556cd81261574be3141"
+  },
+  "exception": null
+}

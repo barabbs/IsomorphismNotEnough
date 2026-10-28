@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_a_pile(n: int) -> List[int]\n\"\"\"Given a positive integer n, you have to make a pile of n levels of stones.\nThe first level has n stones.\nThe number of stones in the next level is:\n  - the next odd number if n is odd.\n  - the next even number if n is even.\nReturn the number of stones in each level in a list, where element at index\ni represents the number of stones in the level (i+1).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → List Int)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.length = n ∧\n  (forall i: Nat, (1 <= i ∧ i < n) → (result[i]! = result[i-1]! + 2)) ∧\n  result[0]! = n\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 = [3, 5, 7]\n-- #test implementation 4 = [4,6,8,10]\n-- #test implementation 5 = [5, 7, 9, 11, 13]\n-- #test implementation 6 = [6, 8, 10, 12, 14, 16]\n-- #test implementation 8 = [8, 10, 12, 14, 16, 18, 20, 22]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 100,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ed17d575b5ff4612e09386e968c5c4f6d8fc2bbdbc288f525e1c7f9d0125912c",
+  "timing": 71.0186284747906,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:9219f8d869bbf9a7a6fa2c0194f493353c8a112dd7a17df37423e8a2922b14a7",
+    "status": "OK",
+    "result": "sha256:68fec88402922f957cf7ed7d4e48209d3efdfebd65e04cb6cbf815ca5934b80a"
+  },
+  "exception": null
+}

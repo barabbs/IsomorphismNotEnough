@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef median(numbers: List[float]) -> float\n\"\"\"Return median of elements in the list l\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  0 < numbers.length →\n  let less_eq := (numbers.filter (fun x => x ≤ result));\n  let more_eq := (numbers.filter (fun x => result ≤ x));\n  let max_more_eq := more_eq.max?;\n  let min_less_eq := less_eq.min?;\n  let less_eq_count := less_eq.length;\n  let more_eq_count := more_eq.length;\n  let eq_count := (numbers.filter (fun x => x = result)).length;\n  (less_eq_count + more_eq_count - eq_count = numbers.length →\n  numbers.length ≤ 2 * less_eq_count →\n  numbers.length ≤ 2 * more_eq_count) ∧\n  ((numbers.length % 2 = 1 →\n    result ∈ numbers) ∧\n    (numbers.length % 2 = 0 → max_more_eq.isSome ∧\n    min_less_eq.isSome ∧\n    2 * result = max_more_eq.get! + min_less_eq.get!));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat) : Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 1, 2, 4, 5] = 3\n-- #test implementation [-10, 4, 6, 1000, 10, 20] = 8.0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7c681b5649c324abe58bd95e400cc0d01476f3812c7fca6786ca0f077cb541b0",
+  "timing": 141.09500838490203,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:1680d596fa1434cc177a1389d4bba6ed94118fc5d2097bcf23711902fe6e9d60",
+    "status": "OK",
+    "result": "sha256:b570917128b6abe5d0f0a3508dd64380d8d0307d48cb8cd90d159e52423724ee"
+  },
+  "exception": null
+}

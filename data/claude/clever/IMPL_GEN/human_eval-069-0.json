@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef search(numbers: List[int]) -> int\n\"\"\"You are given a non-empty list of positive integers. Return the greatest integer that is greater than\nzero, and has a frequency greater than or equal to the value of the integer itself.\nThe frequency of an integer is the number of times it appears in the list.\nIf no such a value exist, return -1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length \u2227 numbers.all (fun n => 0 < n) \u2192\n(result \u2260 -1 \u2194 \u2203 i : Nat, i < numbers.length \u2227\n  numbers[i]! = result \u2227 numbers[i]! > 0 \u2227\n  numbers[i]! \u2264 (numbers.filter (fun x => x = numbers[i]!)).length \u2227\n  (\u00ac\u2203 j : Nat, j < numbers.length \u2227\n  numbers[i]! < numbers[j]! \u2227 numbers[j]! \u2264 numbers.count numbers[j]!));\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) : (Int) :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [4, 1, 2, 2, 3, 1] = 2\n-- #test implementation [1, 2, 2, 3, 3, 4, 4, 4] = 3\n-- #test implementation [5, 5, 4, 4, 4] = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 69,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c219b9880f819ec88c33614e60dc5a4ed1e7d3832c8b46b8e17a74369f857671",
+  "timing": 239.91367099698982,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/pc5l5vln/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f5ccc3c131aa1219b3c5203fa18f7571f80267382219be265aced8aacd6fa520",
+    "status": "OK",
+    "result": "sha256:7f573b4399ca2cfd9d08f42048b1c1f91fee6b3c098ff012c36e9d63b18bca8e"
+  },
+  "exception": null
+}

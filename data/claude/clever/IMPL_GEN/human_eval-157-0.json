@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef right_angle_triangle(a: Nat, b: Nat, c: Nat) -> Bool\n\"\"\"Given the lengths of the three sides of a triangle. Return True if the three\nsides form a right-angled triangle, False otherwise.\nA right-angled triangle is a triangle in which one angle is right angle or\n90 degree.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 Nat \u2192 Bool)\n-- inputs\n(a b c: Nat) :=\n-- spec\nlet spec (result: Bool) :=\nresult \u2194\n  0 < a \u2227 0 < b \u2227 0 < c \u2227\n  ((a * a + b * b = c * c) \u2228\n  (a * a + c * c = b * b) \u2228\n  (b * b + c * c = a * a))\n-- program terminates\n\u2203 result, impl a b c = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b c: Nat) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 2, 2, -4]: List Int) = (-9: Int)\n-- #test implementation ([0, 1]: List Int) = (0: Int)\n-- #test implementation ([]: List Int) = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 157,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5dac2559bf05c33dba142d61c6e25ac42b0c54e1421f3617bc951508e2432e8b",
+  "timing": 57.05073592698318,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/6ntcxwt5/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:fd795b1084cac580135de24e8358f96937c0dc18d1331fff037125c708d06e0b",
+    "status": "OK",
+    "result": "sha256:54ae84db384bcb78f74ffcea8fca61e568be9830fd4f28f0219530ca4d595422"
+  },
+  "exception": null
+}

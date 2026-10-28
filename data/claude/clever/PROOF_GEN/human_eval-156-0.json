@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef int_to_mini_roman(num: nat) -> str\n\"\"\"Given a positive integer, obtain its roman numeral equivalent as a string,\nand return it in lowercase.\nRestrictions: 1 <= num <= 1000\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef romanCharToValue : Char \u2192 Nat\n| 'i' => 1\n| 'v' => 5\n| 'x' => 10\n| 'l' => 50\n| 'c' => 100\n| 'd' => 500\n| 'm' => 1000\n| _   => 0\n\ndef validSubtractivePairs : List (Char \u00d7 Char) :=\n  [('i', 'v'), ('i', 'x'), ('x', 'l'), ('x', 'c'), ('c', 'd'), ('c', 'm')]\n\ndef maxRepetitions : Char \u2192 Nat\n| 'i' | 'x' | 'c' | 'm' => 3\n| 'v' | 'l' | 'd'       => 1\n| _                    => 0\n\ndef countRepetitions : List Char \u2192 Char \u2192 Nat \u2192 Nat\n| [], _, n => n\n| (h :: t), c, n => if h = c then countRepetitions t c (n + 1) else n\n\npartial def validRepetition : List Char \u2192 Bool\n| [] => true\n| c :: rest =>\n  let max := maxRepetitions c\n  let count := countRepetitions rest c 1\n  count \u2264 max \u2227 validRepetition (rest.drop (count - 1))\n\ndef validSubtractiveOrder : List Char \u2192 Bool\n| [] | [_] => true\n| c1 :: c2 :: rest =>\n  match romanCharToValue c1, romanCharToValue c2 with\n  | v1, v2 =>\n    if v1 < v2 then\n      -- check if c1 and c2 form a legal subtractive pair\n      (c1, c2) \u2208 validSubtractivePairs \u2227 validSubtractiveOrder rest\n    else if v1 = 0 \u2228 v2 = 0 then\n      false\n    else\n      validSubtractiveOrder (c2 :: rest)\n\ndef isValidRoman (s : String) : Bool :=\n  s.data.all (\u03bb c => romanCharToValue c \u2260 0) \u2227\n  validRepetition s.data \u2227\n  validSubtractiveOrder s.data\n\ndef romanToDecimalAux : List Char \u2192 Nat\n| [] => 0\n| c1 :: c2 :: rest =>\n    let val1 := romanCharToValue c1\n    let val2 := romanCharToValue c2\n    if val1 < val2 then\n      -- subtractive notation\n      (val2 - val1) + romanToDecimalAux rest\n    else\n      val1 + romanToDecimalAux (c2 :: rest)\n| [c] => romanCharToValue c\n\ndef romanToDecimal (s : String) : Nat :=\n  romanToDecimalAux s.data\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 String)\n-- inputs\n(num: Nat) :=\n-- spec\nlet spec (result: String) :=\n1 \u2264 num \u2227 num \u2264 1000 \u2227 (result.data.all (fun c => c.isLower)) \u2192\nisValidRoman result \u2227 romanToDecimal result = num\n-- program terminates\n\u2203 result, impl num = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (num: Nat) : String :=\n\n  let table : List (Nat \u00d7 String) :=\n    [(1000, \"m\"), (900, \"cm\"), (500, \"d\"), (400, \"cd\"),\n     (100, \"c\"), (90, \"xc\"), (50, \"l\"), (40, \"xl\"),\n     (10, \"x\"), (9, \"ix\"), (5, \"v\"), (4, \"iv\"), (1, \"i\")]\n  let rec go (n : Nat) (tbl : List (Nat \u00d7 String)) (fuel : Nat) : String :=\n    match fuel with\n    | 0 => \"\"\n    | fuel' + 1 =>\n      match tbl with\n      | [] => \"\"\n      | (val, sym) :: rest =>\n        if val \u2264 n then\n          sym ++ go (n - val) tbl fuel'\n        else\n          go n rest fuel'\n  go num table 100\n\n\n-- [TEST_CASES]\n\n#test implementation 19 = \"xix\"\n#test implementation 152 = \"clii\"\n#test implementation 426 = \"cdxxvi\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(num: Nat)\n: problem_spec implementation num :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 156,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2411d2c82b11b073fe3231bbb8c1276304045474beb0298019357017aceb43e1",
+  "timing": 220.90065742190927,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:64f2e15a799fdfe38a297dabc5579282ab487ea0b3e1d2d6c6fc7554aa002c4a",
+    "status": "OK",
+    "result": "sha256:7919538de1dd6bb3a8a57ea4ff2fc385c4bdc1c041dc2888c9df614c9d8ddbee",
+    "validation": [
+      {
+        "problem_id": "156",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:7bf99a0f5c1dbab8c899894e4cb0904bb0195fb549f6920f6452ba7b48abfa61"
+      }
+    ]
+  },
+  "exception": null
+}

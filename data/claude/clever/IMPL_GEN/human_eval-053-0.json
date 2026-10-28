@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add(x: Int, y: Int) -> Int\n\"\"\"Add two numbers x and y\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int \u2192 Int \u2192 Int)\n-- inputs\n(x y: Int) :=\n-- spec\nlet spec (res: Int) :=\n  res - x - y = 0\n-- program terminates\n\u2203 result, impl x y = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x y: Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 2 3 = 5\n-- #test implementation 5 7 = 12\n",
+  "info": {
+    "dataset": "clever",
+    "id": 53,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f677685bdbe1e1ec08aade08dd20529bc328eefa3a01458f188f848c870de9ec",
+  "timing": 46.75410086399643,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/bth4cq4e/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:df78fe91a9f7d34f57e390b8a76c976e9d217596699f888baff2e19d23715669",
+    "status": "OK",
+    "result": "sha256:2d5e3b07ebc01c201eef260c72a2778ed4d75355d62e66ccd5ebbb97b51cfba1"
+  },
+  "exception": null
+}

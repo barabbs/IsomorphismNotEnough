@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_squares(lst: List[float]) -> int\n\"\"\"You are given a list of numbers.\nYou need to return the sum of squared numbers in the given list,\nround each element in the list to the upper int(Ceiling) first.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat \u2192 Int)\n-- inputs\n(lst: List Rat) :=\n-- spec\nlet spec (result: Int) :=\n  (lst = [] \u2192 result = 0) \u2227\n  (lst != [] \u2192 0 \u2264 result - lst[0]!.ceil^2 \u2227 (impl (lst.drop 1) = (result - lst[0]!.ceil^2)))\n-- program termination\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Rat) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = 14\n-- #test implementation [1, 4, 9] = 98\n-- #test implementation [1, 3, 5, 7] = 84\n-- #test implementation [1.4, 4.2, 0] = 29\n-- #test implementation [-2.4, 1, 1] = 6\n",
+  "info": {
+    "dataset": "clever",
+    "id": 133,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:85c9affa524258005839dd9a1e143410ec6a87c22d91081dbd134b82e612a59a",
+  "timing": 58.45776150401798,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/nh2ow8np/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:7764723a83a308dd66f7c7fcd875d4aec70e653cf7f72d40ce73c4660dc27a81",
+    "status": "OK",
+    "result": "sha256:73a5460025477a9c6f7c13df35bfecc4c4516807718c9994279ab03c166ab754"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef valid_date(date: str) -> Bool\n\"\"\"You have to write a function which validates a given date string and\nreturns True if the date is valid otherwise False.\nThe date is valid if all of the following rules are satisfied:\n1. The date string is not empty.\n2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n3. The months should not be less than 1 or higher than 12.\n4. The date should be in the format: mm-dd-yyyy\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(date: String) :=\n-- spec\nlet spec (result: Bool) :=\n  result = true \u2194\n    \u2203 m1 m2 sep1 d1 d2 sep2 y1 y2 y3 y4 : Char,\n    date = String.mk [m1, m2, sep1, d1, d2, sep2, y1, y2, y3, y4] \u2227\n    sep1 = '-' \u2227 sep2 = '-' \u2227\n    [m1, m2, d1, d2, y1, y2, y3, y4].all Char.isDigit \u2227\n    let month := (String.mk [m1, m2]).toNat!;\n    let day := (String.mk [d1, d2]).toNat!;\n    1 \u2264 month \u2227 month \u2264 12 \u2227\n    (month \u2208 ({4, 6, 9, 11}: List Nat) \u2192 1 \u2264 day \u2227 day \u2264 30) \u2227\n    (month \u2208 ({1, 3, 5, 7, 8, 10, 12}: List Nat) \u2192 1 \u2264 day \u2227 day \u2264 31) \u2227\n    (month \u2208 ({2}: List Nat) \u2192 1 \u2264 day \u2227 day \u2264 29)\n-- program terminates\n\u2203 result, impl date = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (date: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"03-11-2000\" = true\n-- #test implementation \"15-01-2012\" = false\n-- #test implementation \"04-0-2040\" = false\n-- #test implementation \"06-04-2020\" = true\n-- #test implementation \"06/04/2020\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 124,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:28aeba100d14956d0e7165f524fdfa994df87bd0228c8a693572c0f6a98b3c45",
+  "timing": 96.5528661730059,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/uadvrsff/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:3ed20bdd2043f11a81fbf2d81de603b9630a1a88686240dcf11c055719fd7f30",
+    "status": "OK",
+    "result": "sha256:db3d24aa35e0ee786fe6977c15f85881c1c7f0d023b0fb95934bf970aa70bb5a"
+  },
+  "exception": null
+}

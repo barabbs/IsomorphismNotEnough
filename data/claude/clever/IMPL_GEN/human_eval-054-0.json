@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef same_chars(s0: string, s1: string) -> Bool\n\"\"\"Check if two words have the same characters.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String \u2192 Bool)\n-- inputs\n(s0 s1: String) :=\n-- spec\nlet spec (res: Bool) :=\n  res \u2194 (\u2200 c : Char, c \u2208 s0.toList \u2194 c \u2208 s1.toList)\n-- program terminates\n\u2203 result, impl s0 s1 = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s0 s1: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 'eabcdzzzz' 'dddzzzzzzzddeddabc' = true\n-- #test implementation 'abcd' 'dddddddabc' = true\n-- #test implementation 'dddddddabc' 'abcd' = true\n-- #test implementation 'eabcd' 'dddddddabc' = false\n-- #test implementation 'abcd' 'dddddddabce' = false\n-- #test implementation 'eabcdzzzz' 'dddzzzzzzzddddabc' = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 54,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2a5b79943c5387fcabbcd0846954539efd9c5ea374b50e653f40e79fe58ad52f",
+  "timing": 74.40815608299454,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/x39i6pnq/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:7546fdffa379eff785a7027ff131a8f34f8ec0b4b353b394bf7da4760c2eddfc",
+    "status": "OK",
+    "result": "sha256:ec4923b0c8668327a13cb00fada765c7a0155e9202a51e4c063784cfcf5f3f9d"
+  },
+  "exception": null
+}

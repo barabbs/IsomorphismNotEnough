@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersection(interval1: Tuple[int, int], interval2: Tuple[int, int]) -> str\n\"\"\"You are given two intervals,\nwhere each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\nThe given intervals are closed which means that the interval (start, end)\nincludes both start and end.\nFor each given interval, it is assumed that its start is less or equal its end.\nYour task is to determine whether the length of intersection of these two\nintervals is a prime number.\nExample, the intersection of the intervals (1, 3), (2, 4) is (2, 3)\nwhich its length is 1, which not a prime number.\nIf the length of the intersection is a prime number, return \"YES\",\notherwise, return \"NO\".\nIf the two intervals don't intersect, return \"NO\".\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int × Int → Int × Int → String)\n-- inputs\n(interval1: Int × Int)\n(interval2: Int × Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 127,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1e11797246d25a06549bb5cdfa743416ae954970c351d559231c93fc8e50490f",
+  "timing": 117.0715993619524,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:12cab11ab55b623e08dbbf2b283822c214f3117a85a205a8a99a163749f04524",
+    "status": "OK",
+    "result": "sha256:0b30aeecd8192cef4e35689123cbf0602395143c5a1706ed1f0297cea82ba856"
+  },
+  "exception": null
+}

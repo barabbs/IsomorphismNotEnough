@@ -1,0 +1,34 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef median(numbers: List[float]) -> float\n\"\"\"Return median of elements in the list l\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  0 < numbers.length →\n  let less_eq := (numbers.filter (fun x => x ≤ result));\n  let more_eq := (numbers.filter (fun x => result ≤ x));\n  let max_more_eq := more_eq.max?;\n  let min_less_eq := less_eq.min?;\n  let less_eq_count := less_eq.length;\n  let more_eq_count := more_eq.length;\n  let eq_count := (numbers.filter (fun x => x = result)).length;\n  (less_eq_count + more_eq_count - eq_count = numbers.length →\n  numbers.length ≤ 2 * less_eq_count →\n  numbers.length ≤ 2 * more_eq_count) ∧\n  ((numbers.length % 2 = 1 →\n    result ∈ numbers) ∧\n    (numbers.length % 2 = 0 → max_more_eq.isSome ∧\n    min_less_eq.isSome ∧\n    2 * result = max_more_eq.get! + min_less_eq.get!));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Rat) : Rat :=\n\n  let sorted := numbers.mergeSort (· ≤ ·)\n  let n := sorted.length\n  if n == 0 then 0\n  else if n % 2 == 1 then\n    sorted.get! (n / 2)\n  else\n    let a := sorted.get! (n / 2)\n    let b := sorted.get! (n / 2 + 1)\n    (a + b) / 2\n\n\n-- [TEST_CASES]\n\n#test implementation [3, 1, 2, 4, 5] = 3\n#test implementation [-10, 4, 6, 1000, 10, 20] = 8.0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Rat)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bf2eb0761662c3ab292aa54919c52a5889ab014b356dfa84fdae662e4ac4d8d5",
+  "timing": 502.6666236559395,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:720a13e7a23cb0169f8cafa4e3b0a20263648869acebd29ac777480e50e6c245",
+    "status": "ISSUE",
+    "result": "sha256:ffa20121defc71b69f0bef8338ca0609575d365c16f682d97f5b58392d3b61b0",
+    "validation": [
+      {
+        "problem_id": "47",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:0f5a8807eeab3ae0fb9b624e3b6dfccf88e369a5ed7771f9d9011b7d5b299dcd",
+        "lean_code": "sha256:6dbdd639fec9db781c0423bd7834773bb695df15b5b3b2bf5900ef13a16cadec"
+      }
+    ],
+    "comment": "BOTH",
+    "analysis": [
+      "WRONG",
+      "OFF_BY_ONE"
+    ]
+  },
+  "exception": null
+}

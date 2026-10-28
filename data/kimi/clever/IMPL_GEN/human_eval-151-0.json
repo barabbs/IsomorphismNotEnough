@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef double_the_difference(numbers: List[float]) -> int\n\"\"\"Given a list of numbers, return the sum of squares of the numbers\nin the list that are odd. Ignore numbers that are negative or not integers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat → Int)\n-- inputs\n(numbers: List Rat) :=\nlet isEven (n : Rat) := n % 2 = 0;\nlet isNegative (n : Rat) := n < 0;\nlet isNotInteger (n : Rat) := ¬ n.isInt;\n-- spec\nlet spec (result: Int) :=\n0 < numbers.length →\n0 ≤ result ∧\nif numbers.length = 1\nthen result = if (isEven numbers[0]! ∨ isNegative numbers[0]! ∨ isNotInteger numbers[0]!) then (0 : Int) else numbers[0]!.floor ^ 2\nelse result = if (isEven numbers[0]! ∨ isNegative numbers[0]! ∨ isNotInteger numbers[0]!) then (0 : Int) else numbers[0]!.floor ^ 2 + impl numbers.tail\n-- program terminates\n∃ result, impl numbers = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 3, 2, 0]: List Rat) = (10: Int)\n-- #test implementation ([-1, -2, 0]: List Int) = (0: Int)\n-- #test implementation ([9, -2]: List Int) = 81\n-- #test implementation ([0]: List Int) = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 151,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:80befa88107bb93dc25d8cdf94452cd7e8281602ec3e5b2a7dadc7bf900b1833",
+  "timing": 281.8849283629097,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:2de1e842435f3b176cc7ddef0de176f0de35e1130f53b9129651cdf8158f89b5",
+    "status": "OK",
+    "result": "sha256:ea3b6639fa9572b7706b9e53adc9a5ae0cf5729bd1738569c2d2730a2ff0d9f8"
+  },
+  "exception": null
+}

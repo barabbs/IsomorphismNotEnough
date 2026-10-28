@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_element(l: list)\n\"\"\"Return maximum element in the list.\n\n>>> max_element([1, 2, 3])\n3\n>>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n123\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 Int)\n-- inputs\n(l: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3] = 3\n-- #test implementation [5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10] = 123\n",
+  "info": {
+    "dataset": "clever",
+    "id": 35,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:e6e1f3e254a591246c46a946ae5d56b22d1f0e86d0026bb04be3f4bc9b581611",
+  "timing": 62.87582337200001,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/m2q1xe5e/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b354a2369e8a0af2bcb8fd2d35fc420ef61ee552c986a6649ac2be679096529c",
+    "status": "OK",
+    "result": "sha256:c089ed31c1f7be8b253c67f7bdeee319b46929b713462fa2818a3403bff0f680"
+  },
+  "exception": null
+}

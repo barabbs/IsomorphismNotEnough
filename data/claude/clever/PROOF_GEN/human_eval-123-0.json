@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_odd_collatz (n: int) -> List[int]\n\"\"\"Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\nThe Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\nas follows: start with any positive integer n. Then each term is obtained from the\nprevious term as follows: if the previous term is even, the next term is one half of\nthe previous term. If the previous term is odd, the next term is 3 times the previous\nterm plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\nNote:\n    1. Collatz(1) is [1].\n    2. returned list sorted in increasing order.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef collatz_reachable (n m : Nat) : Prop :=\n  ∃ k, Nat.iterate (fun x => if x % 2 = 0 then x / 2 else x * 3 + 1) k n = m\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\nn > 0 →\nresult.Sorted (· < ·) ∧\n∀ m, m ∈ result ↔ Odd m ∧ collatz_reachable n m -- m is reachable from starting point n\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : List Nat :=\n\n  let rec collatz (fuel : Nat) (x : Nat) (acc : List Nat) : List Nat :=\n    match fuel with\n    | 0 => acc\n    | fuel + 1 =>\n      let acc' := if x % 2 = 1 then x :: acc else acc\n      if x ≤ 1 then acc'\n      else collatz fuel (if x % 2 = 0 then x / 2 else x * 3 + 1) acc'\n  (collatz 1000 n []).mergeSort (· ≤ ·)\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = [1, 5]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 123,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2ed5457021ad2291a84deb5d05f28e6eb774346513d924f7a9d7a4bb459cf3ce",
+  "timing": 324.27223789098207,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:52ada6d7d0e1731b8abd1a58aad6061f711fbba49d463e2667a5f17865c4235a",
+    "status": "ISSUE",
+    "result": "sha256:1bc461e58937b73c3a005e4eb2e2d0e6248c9e46723e93184457a6a7fad1ae34",
+    "validation": [
+      {
+        "problem_id": "123",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:755b0b5b299b38ef65037bd04efdf44bd045ab098ec4a686e852b3da142a0c2c"
+      }
+    ],
+    "comment": "BASE",
+    "analysis": "UNDECIDED_THM"
+  },
+  "exception": null
+}

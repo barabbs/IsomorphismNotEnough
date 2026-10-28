@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strange_sort_list(lst: List[int]) -> List[int]\n\"\"\"Given list of integers, return list in strange order.\nStrange sorting is when you start with the minimum value,\nthen the maximum of the remaining integers, then the minimum and so on.\n\n>>> strange_sort_list([1, 2, 3, 4])\n[1, 4, 2, 3]\n>>> strange_sort_list([5, 5, 5, 5])\n[5, 5, 5, 5]\n>>> strange_sort_list([])\n[]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3, 4] = [1, 4, 2, 3]\n-- #test implementation [5, 6, 7, 8, 9] = [5, 9, 6, 8, 7]\n-- #test implementation [1, 2, 3, 4, 5] = [1, 5, 2, 4, 3]\n-- #test implementation [5, 6, 7, 8, 9, 1] = [1, 9, 5, 8, 6, 7]\n-- #test implementation [5, 5, 5, 5] = [5, 5, 5, 5]\n-- #test implementation [] = []\n-- #test implementation [1,2,3,4,5,6,7,8] = [1, 8, 2, 7, 3, 6, 4, 5]\n-- #test implementation [0,2,2,2,5,5,-5,-5] = [-5, 5, -5, 5, 0, 2, 2, 2]\n-- #test implementation [111111] = [111111]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 70,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:16d2135e94636c93a03da8287f3960f8dbf6eb9692724b747e65179962f4915a",
+  "timing": 138.10051214694977,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:512fd752493498068cdb684fd6361d183822165e32a0cf8641eb524613d5a4fd",
+    "status": "OK",
+    "result": "sha256:bacd8678b120daeaf37b135ef70606e7e8e1a91fb6e32621e37db90dd96edc11"
+  },
+  "exception": null
+}

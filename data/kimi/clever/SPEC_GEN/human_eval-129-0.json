@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef split_words(txt)\n\"\"\"Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\nshould split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\nalphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Option (List String) × Option Nat)\n-- inputs\n(text: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 129,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:166a0eb7c5d083e05e094595286f9a30d7a49aa36cf17481f55154c112b3e145",
+  "timing": 258.84757646825165,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:a1aaa7abc90512864d09a678f36364c328654cb14fbced8e6d1b8f35e3a3458b",
+    "status": "OK",
+    "result": "sha256:506d78a24704e43d67e9afb68811bf47cd1002a2e35bfd0b0dcdc2baac395e44"
+  },
+  "exception": null
+}

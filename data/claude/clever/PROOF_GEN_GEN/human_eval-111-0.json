@@ -1,0 +1,29 @@
+{
+  "text": "sha256:6bf6fd8a86a7dd6eea052fe7a0c3287d4dd8de40d283370937baf16e27a618e2",
+  "info": {
+    "dataset": "clever",
+    "id": 111,
+    "subset": "human_eval",
+    "task": "PROOF_GEN_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:61895437d224602cbcd82b11d57c1f940f1377d767ebd250a8e1911c48cccda3",
+  "timing": 254.47193402098492,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:67c901ac8e7aa193aaee3a75a43eff59d08a70b36e81a1162b8dd9f17b198cae",
+    "status": "OK",
+    "result": "sha256:ac5ada6fca581a2dacae44bf1cff72d68efc23cc27e2fd029fff6a8449c7515a",
+    "validation": [
+      {
+        "problem_id": "111",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:cc6f6d8f3088811b5f2ce86c400b12886037d8217e20d5f2e18c3e52ebc58161",
+        "lean_code": "sha256:7cf4e22129fa9a123bba3097391df273eef44032ce59c7969cadf9ca154c2df6"
+      }
+    ]
+  },
+  "exception": null
+}

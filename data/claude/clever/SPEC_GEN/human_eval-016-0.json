@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_distinct_characters(string: str) -> int\n\"\"\"Given a string, find out how many distinct characters (regardless of case) does it consist of\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 Nat)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 16,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f0660b98fcfd02b3ca04bfb8fec64784f92d2340d82ad703b258afaf119d8a55",
+  "timing": 65.97956275299657,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/0i52va1x/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:329baf0331ba4d2e43d7b31e3e61f3069c7db12e0859a440b5b966878ea14002",
+    "status": "OK",
+    "result": "sha256:ab4b41582ade6a65a2c79e709487f0b108f7e0616d4714abf17642388756b3bf"
+  },
+  "exception": null
+}

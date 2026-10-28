@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef circular_shift(x: int, shift: int) -> str\n\"\"\"Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n\n>>> circular_shift(12, 1)\n'21'\n>>> circular_shift(12, 2)\n'12'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 String)\n-- inputs\n(x y: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation (12 : Int) (1 : Int) = \"21\"\n-- #test implementation (12 : Int) (2 : Int) = \"12\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 65,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:6e6a57db2efdc329ce93d94a29b637b21c9e19d84953746f084db41232e93da4",
+  "timing": 98.65966974300136,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/q8qv4j3o/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:61447c7633a5ac6926ab79f6c74bc5490be782bbee8df6dce8e8f4eba5e34947",
+    "status": "OK",
+    "result": "sha256:4e8aa50c62d792605c248c0aca28ea9963139cb6db033f574d6154d65671eb1b"
+  },
+  "exception": null
+}

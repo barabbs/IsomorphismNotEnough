@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef derivative(xs: List[int]) -> List[int]\n\"\"\"xs represent coefficients of a polynomial.\nxs[0] + xs[1] * x + xs[2] * x^2 + ....\n Return derivative of this polynomial in the same form.\n\n>>> derivative([3, 1, 2, 4, 5])\n[1, 4, 12, 20]\n>>> derivative([1, 2, 3])\n[2, 6]\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\nnoncomputable def check_derivative : List ℤ → List ℤ\n  | []       => []\n  | (x::rest)  => (Polynomial.eval 1 (Polynomial.derivative (Polynomial.C x * Polynomial.X ^ rest.length))) :: (check_derivative rest)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(xs : List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test (implementation [3, 1, 2, 4, 5] : List Int) = [1, 4, 12, 20]\n-- #test (implementation [1, 2, 3] : List Int) = [2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 62,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:dc00b94854de83d00aa606c8629314c7398f376b0a4bd1d7aacadec6d38f38cb",
+  "timing": 86.40438795043156,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:3ac95791efb37d2342ad86df88cd14cee5222460f6fa8c18a5c255379855c769",
+    "status": "OK",
+    "result": "sha256:c8d10634fa590701b902605b8827ad272857d00cf88e0cbb8a73d43c073ee0f6"
+  },
+  "exception": null
+}

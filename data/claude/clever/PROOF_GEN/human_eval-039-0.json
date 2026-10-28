@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_fib(n: int)\n\"\"\"prime_fib returns n-th prime Fibonacci number.\nNote(George): A proof of this problem requires the resolution of the open conjecture: there are infinitely many prime Fibonacci numbers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  n > 0 \u2192\n    (\u2203 i, Nat.fib i = result \u2227 Nat.Prime result \u2227\n      (\u2203! S : Finset Nat, S.card = n - 1 \u2227\n      (\u2200 y \u2208 S, (\u2203 k, y = Nat.fib k) \u2227 y < result \u2227 Nat.Prime y))\n    )\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  let isPrime (p : Nat) : Bool :=\n    if p < 2 then false\n    else\n      let rec check (d : Nat) (fuel : Nat) : Bool :=\n        match fuel with\n        | 0 => true\n        | fuel + 1 =>\n          if d * d > p then true\n          else if p % d == 0 then false\n          else check (d + 1) fuel\n      check 2 p\n  let rec go (a b count fuel : Nat) : Nat :=\n    match fuel with\n    | 0 => 0\n    | fuel + 1 =>\n      if isPrime b then\n        if count + 1 == n then b\n        else go b (a + b) (count + 1) fuel\n      else go b (a + b) count fuel\n  go 0 1 0 10000\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = 2\n#test implementation 2 = 3\n#test implementation 3 = 5\n#test implementation 4 = 13\n#test implementation 5 = 89\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 39,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e4037457c38e9b8923fd139c0b1cc22beebfb962e0ecafecc7e26be614b732f0",
+  "timing": 3782.9454484189628,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:233590f35d6fa01775e712ed1e4f5107d233a2723f8fa1386d4dfac480c0e446",
+    "status": "TIMEOUT",
+    "result": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "validation": [
+      {
+        "problem_id": "39",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:e1774c32335e4f5ffa2c701d9dbf04a5ec4d8c50b75e614779cd4eb104712e80",
+        "lean_code": "sha256:bd1274f8c6f5c5041cbfeb62a9679ed4f8d323fbe7c0cd0f0cb22832814f824e"
+      }
+    ]
+  },
+  "exception": null
+}

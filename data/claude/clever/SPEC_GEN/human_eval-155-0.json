@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_count(num: int) -> Tuple[int, int]\n\"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Int \u00d7 Int)\n-- inputs\n(num: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 155,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3090590dfe7783bd1299c01ecbdc0ef2effe9445808516416eb908f85e9fa7d4",
+  "timing": 61.82225148800353,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/b49mfck4/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d31275788a8cb53318706e7a428c8ef6398bc5b1d9a36a77808bfc7df0a073a6",
+    "status": "OK",
+    "result": "sha256:4249653cf7a4c8d15562deddd22fbe8f27f855a5ac3bd68c7c0dbb32fce60b8d"
+  },
+  "exception": null
+}

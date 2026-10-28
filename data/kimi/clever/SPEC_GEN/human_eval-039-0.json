@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_fib(n: int)\n\"\"\"prime_fib returns n-th prime Fibonacci number.\nNote(George): A proof of this problem requires the resolution of the open conjecture: there are infinitely many prime Fibonacci numbers.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 39,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:859b6c6d6881f389f942a1f54612c59813da6ac673a1cebb560ec189c33d0038",
+  "timing": 324.8268533037044,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:42d1d6e9a622ad986af0393fd30a2ffaa19556dfa44d4b9dc51876b4eef0d105",
+    "status": "OK",
+    "result": "sha256:dc333ee6240d0896cc059849cbb786154c5793567235ae81d785ba23aa9ad6b0"
+  },
+  "exception": null
+}

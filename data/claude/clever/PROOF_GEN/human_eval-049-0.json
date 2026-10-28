@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → Nat)\n-- inputs\n(n p: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n0 < p ∧\nresult < p ∧\n(∃ k : Nat, p * k + result = Nat.pow 2 n)\n-- program termination\n∃ result, implementation n p = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n p: Nat) : Nat :=\n\n(2 ^ n) % p\n\n\n-- [TEST_CASES]\n\n#test implementation 3 5 = 3\n#test implementation 1101 101 = 2\n#test implementation 0 101 = 1\n#test implementation 3 11 = 8\n#test implementation 100 101 = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n p: Nat)\n: problem_spec implementation n p\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e205d1fef3340b72d5a2017f79bdd888ff62299fb8383415a97a50db6c153d41",
+  "timing": 255.06434770300984,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:2b7bf522a1b5bc500c42f6e3bd04c81227ca8ee6e2b81270d6cc90bab13ac853",
+    "status": "ISSUE",
+    "result": "sha256:75758067680e35f2dff41ca4732a4941b527e5aacc6d36d87c230929dd19d59c",
+    "validation": [
+      {
+        "problem_id": "49",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:d378c11551eed5914810e63cef771c17a17bd5b3e747ce95e2604e952d05eefe"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

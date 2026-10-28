@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_in_sentence(sentence: str) -> str\n\"\"\"You are given a string representing a sentence,\nthe sentence contains some words separated by a space,\nand you have to return a string that contains the words from the original sentence,\nwhose lengths are prime numbers,\nthe order of the words in the new string should be the same as the original one.\n\nConstraints:\n* 1 <= len(sentence) <= 100\n* sentence contains only letters\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(sentence: String) :=\n-- spec\nlet spec (result: String) :=\nlet words := sentence.splitOn;\nlet result_words := result.splitOn;\n  1 ≤ sentence.length → sentence.length ≤ 100 →\n  sentence.all (fun x => Char.isAlpha x) →\n  result_words.length ≤ words.length ∧\n  (∀ word ∈ result_words, word ∈ words ∧ Nat.Prime word.length) ∧\n  match result_words with\n  | [] => ∀ word ∈ words, ¬(Nat.Prime word.length)\n  | head :: tail => if Nat.Prime head.length ∧ head = words[0]! then String.join tail = impl (String.join (words.drop 1))\n    else result = impl (String.join (words.drop 1))\n-- program termination\n∃ result, impl sentence = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (sentence : String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"This is a test\" = \"is\"\n-- #test implementation \"lets go for swimming\" = \"go for\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 143,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d6b8cccb2f040315d1e771f81a1cda6530fae7760e6befd7bad72136175e5dff",
+  "timing": 135.5511561469175,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:eaabfaad8e8637e95487166ecdab1f1b41b26c257808f86ddd332bc6dffecd45",
+    "status": "OK",
+    "result": "sha256:4fd95fa6903645b5db5bd7cc5a4a7a969779eda7f8db94e0762b397ded7c164f"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef maximum(arr: List[int], k: int) -> List[int]\n\"\"\"Given an array arr of integers and a positive integer k, return a sorted list of length\nk with the maximum k numbers in arr.\nNote:\n    1. The length of the array will be in the range of [1, 1000].\n    2. The elements in the array will be in the range of [-1000, 1000].\n    3. 0 <= k <= len(arr)\n\n>>> maximum([2, 4, 3, 1], 3)\n[2, 3, 4]\n>>> maximum([2, 4, 3, 1], 0)\n[]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int \u2192 List Int)\n-- inputs\n(arr: List Int)\n(k: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [2, 4, 3, 1] 3 = [2, 3, 4]\n-- #test implementation [2, 4, 3, 1] 0 = []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 120,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:4f560c06f65926a8e5f81c96fc10778c1099e7b28335eb0abf87cbcc3b2eb59e",
+  "timing": 92.03604731999985,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mehgu_p1/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:fc201ca7d4777a7357501c0cb172d69a08b4699e1a46051ffd18a3da1cf43446",
+    "status": "OK",
+    "result": "sha256:c420c52cadd336095287dd731de5199f65bb2a11e810dec0228f2204f5e2c827"
+  },
+  "exception": null
+}

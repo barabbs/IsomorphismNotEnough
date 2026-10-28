@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef f(n: int) -> List[int]\n\"\"\"Implement the function f that takes n as a parameter,\nand returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\nor the sum of numbers from 1 to i otherwise.\ni starts from 1.\nthe factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n\n>>> f(5)\n[1, 2, 6, 24, 15]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → List Int)\n-- inputs\n(n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 = [1, 2, 6, 24, 15]\n-- #test implementation 7 = [1, 2, 6, 24, 15, 720, 28]\n-- #test implementation 1 = [1]\n-- #test implementation 3 = [1, 2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 106,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f49ee967e675a2cdddc5e831b98186ae9f5222aa76bcbc07c197a09b4d957a93",
+  "timing": 85.46275873389095,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:5f314c81322406d2ce1605b918a6478400590fbe775b2dee02d230b3de11e75f",
+    "status": "OK",
+    "result": "sha256:5c483b884a739c22bfb00ce88136c9396886900ff70b053af219133a91095cc8"
+  },
+  "exception": null
+}

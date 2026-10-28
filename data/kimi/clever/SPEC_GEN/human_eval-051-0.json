@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_vowels(string: str) -> str\n\"\"\"remove_vowels is a function that takes string and returns string without vowels.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(string : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 51,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7e6be61647196a6b52cf4732f1724d9a287be794aaa31d473049c8ab14fffd15",
+  "timing": 74.7696232511662,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:c821c35522a7888b56ffc603672b2344e063d3332c6643c2f93fe5c13617aff6",
+    "status": "OK",
+    "result": "sha256:a37b8d4720d96a3427d434acf81d560eba5c0f40bac541896ea818b7ae2cdf45"
+  },
+  "exception": null
+}

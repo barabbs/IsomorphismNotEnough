@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, n: nat) -> nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\n>>> fruit_distribution('5 apples and 6 oranges', 19)\n8\n>>> fruit_distribution('0 apples and 1 oranges', 3)\n2\n>>> fruit_distribution('2 apples and 3 oranges', 100)\n95\n>>> fruit_distribution('100 apples and 1 oranges', 120)\n19\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Nat \u2192 Nat)\n-- inputs\n(x: String) (y: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"5 apples and 6 oranges\" 19 = 8\n-- #test implementation \"0 apples and 1 oranges\" 3 = 2\n-- #test implementation \"2 apples and 3 oranges\" 100 = 95\n-- #test implementation \"100 apples and 1 oranges\" 120 = 19\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:88b96f02c5614b248afe3d45abbb4a64f003117f8c68552c5ed31713d88e7e06",
+  "timing": 199.88334937102627,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/wworep04/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:6541fea548710d2b46c8b35fe51907cbfcba82361c08a705403bfbcb4025ec16",
+    "status": "OK",
+    "result": "sha256:1ca59452d03314965a70e05dea4bf8eff3ee266fb6dbfd4e4598b3595cc256a6"
+  },
+  "exception": null
+}

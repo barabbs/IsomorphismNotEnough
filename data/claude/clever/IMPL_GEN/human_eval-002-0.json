@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef truncate_number(number: float) -> float\n\"\"\"Given a positive floating point number, it can be decomposed into\nand integer part (largest integer smaller than given number) and decimals\n(leftover part always smaller than 1).\n\nReturn the decimal part of the number.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Rat \u2192 Rat)\n-- inputs\n(number: Rat) :=\n-- spec\nlet spec (res) :=\n0 \u2264 res \u2227\nres < 1 \u2227\nnumber.floor + res = number;\nnumber > 0 \u2192\n-- program terminates\n(\u2203 result, impl number = result \u2227\n-- return value satisfies spec\nspec result)\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (number: Rat) : Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3.5 = 0.5\n",
+  "info": {
+    "dataset": "clever",
+    "id": 2,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:31108668ac60c8552d918976346420affa182bea2a0bada30ed0bc18bf32547d",
+  "timing": 84.9430148100073,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/252sl2g8/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:5b8288a963d4f2ec23e1663d4de50cfdcf69e10694c7e11fe9cf2dc741d1afc0",
+    "status": "OK",
+    "result": "sha256:d1d6945d3ef4f2f111a0d7ec6df1abde456b612f7ca57755f4dbc4b62e471687"
+  },
+  "exception": null
+}

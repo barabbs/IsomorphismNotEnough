@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, h: float) -> float\n\"\"\"Given length of a side and high return area for a triangle.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat -> Rat)\n-- inputs\n(a h: Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  a = 0 → result = 0 ∧\n  (a ≠ 0 → (2 * result) / a = h);\n-- -- program termination\n∃ result, implementation a h = result ∧\nspec result\n-- \n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a h: Rat) : Rat :=\n\na * h / 2\n\n\n-- [TEST_CASES]\n\n#test implementation 5 3 = 7.5\n#test implementation 8 2 = 8.0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a h : Rat)\n: problem_spec implementation a h\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 45,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f80b3a4f3e4adf231f52c2690ab63ea4ae502f50d6e7bfdb0776ba98390b84f1",
+  "timing": 85.67645020689815,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:2fbe335e3135fbc31f1e86a3dfa7540585668de7388c2126652ee4d796715f86",
+    "status": "OK",
+    "result": "sha256:f82bc3f5c567f6ebc465b0e0ad457215a7549b155364d1192977a7b481f36692",
+    "validation": [
+      {
+        "problem_id": "45",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:e827134b7ddd08c3f8a54bee19827848622fc0a061c33455a1d3feaefcc3c60b"
+      }
+    ]
+  },
+  "exception": null
+}

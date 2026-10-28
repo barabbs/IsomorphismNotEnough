@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_distinct_characters(string: str) -> int\n\"\"\"Given a string, find out how many distinct characters (regardless of case) does it consist of\n\n>>> count_distinct_characters('xyzXYZ')\n3\n>>> count_distinct_characters('Jerry')\n4\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 Nat)\n-- inputs\n(string: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"xyzXYZ\" = 3\n-- #test implementation \"Jerry\" = 4\n",
+  "info": {
+    "dataset": "clever",
+    "id": 16,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:c9833b728c7dee11120ed4efc5d62c2714f79cf8118fa6fe43e3fce9c8fe0a6a",
+  "timing": 73.33399895100047,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ja_r2bi0/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:0ad5d31e9ff380b85606de04946436f4664eda4f3604815f12ec787df55f7c1a",
+    "status": "OK",
+    "result": "sha256:6e4a2e74207b93dc6a7efd407fe49078c2c26a024247bae5de105907b4cc52ba"
+  },
+  "exception": null
+}

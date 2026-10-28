@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_third(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the indicies that are not divisible by three, while its values at the indicies that are divisible by three are equal\nto the values of the corresponding indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  l.length = result.length \u2227\n  let every_third_idx := (List.range l.length).filter (\u03bb i => i % 3 = 0);\n  let every_third_val_in_result := every_third_idx.map (\u03bb i => result.get! i);\n  let every_third_val := every_third_idx.map (\u03bb i => l.get! i);\n  (\u2200 i, i < l.length \u2192 (i % 3 \u2260 0 \u2192 l.get! i = result.get! i)) \u2227\n  List.Sorted Int.le every_third_val_in_result \u2227\n  every_third_val.all (\u03bb x => every_third_val_in_result.count x = every_third_val.count x);\n-- program termination\n\u2203 result, implementation l = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List Int) : List Int :=\n\n  let indices := (List.range l.length).filter (fun i => i % 3 == 0)\n  let thirdVals := indices.map (fun i => l[i]!)\n  let sorted := List.mergeSort thirdVals (\u00b7 \u2264 \u00b7)\n  let rec go (xs : List Int) (sv : List Int) (idx : Nat) : List Int :=\n    match xs with\n    | [] => []\n    | x :: rest =>\n      if idx % 3 == 0 then\n        match sv with\n        | [] => x :: go rest [] (idx + 1)\n        | s :: ss => s :: go rest ss (idx + 1)\n      else\n        x :: go rest sv (idx + 1)\n  go l sorted 0\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = [1, 2, 3]\n#test implementation [5, 6, 3, 4, 8, 9, 2] = [2, 6, 3, 4, 8, 9, 5]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List Int)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 33,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:73cfd730abdf434cef81ab0c359f4ab87b14811a768cd6e9bdfefc6f3a695a87",
+  "timing": 1802.5814866400324,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:d0b005de74e8a222af7d9c85813abfbce1acfea14073fd864b44d8e37b598873",
+    "status": "OK",
+    "result": "sha256:4935a0814346767c20d770ff90c482c784c258911c34c69f7d52ebb67d249050",
+    "validation": [
+      {
+        "problem_id": "33",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:3537ce5f220faff9ffc7bea38c25298963a642ec438b68e49d4a73232862d56e"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef move_one_ball(arr: List[int]) -> bool\n\"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\nnumbers in the array will be randomly ordered. Your task is to determine if\nit is possible to get an array sorted in non-decreasing order by performing\nthe following operation on the given array:\n    You are allowed to perform right shift operation any number of times.\n\nOne right shift operation means shifting all elements of the array by one\nposition in the right direction. The last element of the array will be moved to\nthe starting position in the array i.e. 0th index.\n\nIf it is possible to obtain the sorted array by performing the above operation\nthen return True else return False.\nIf the given array is empty then return True.\n\nNote: The given list is guaranteed to have unique elements.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Bool)\n-- inputs\n(arr: List Int) :=\nlet is_shifted (xs: List Int) (ys: List Int) (i: Nat) :=\n  (xs.length = ys.length) ∧\n  (0 <= i) ∧\n  (i < xs.length) ∧\n  (forall j, (0 <= j ∧ j < ys.length) → (ys[j]! = xs[(j-i) % xs.length]!))\n-- spec\nlet spec (result: Bool) :=\n  ((arr = []) → (result = True)) ∧\n  result ↔ (exists i, exists arr_shifted, (is_shifted arr arr_shifted i) ∧ (List.Sorted Int.le arr_shifted))\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 4, 5, 1, 2] = True\n-- #test implementation [3, 5, 10, 1, 2] = True\n-- #test implementation [4, 3, 1, 2] = False\n-- #test implementation [3, 5, 4, 1, 2] = False\n-- #test implementation [] = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 109,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8f1a0f4baf7368d4f75944f8270fec24967a941efd0fbb950ec38b373f473046",
+  "timing": 314.9293682621792,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:32c28d2a8f8bf7884fd3957414e89cd639439ccb27142f03b5ade1ee0c1b95c9",
+    "status": "OK",
+    "result": "sha256:0b9b119f0303fe386044fbf716d0399213cd1cc917415237ec7ef3a57eaffd66"
+  },
+  "exception": null
+}

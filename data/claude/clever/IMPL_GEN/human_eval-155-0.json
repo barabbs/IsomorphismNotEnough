@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_count(num: int) -> Tuple[int, int]\n\"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int \u2192 Int \u00d7 Int)\n-- inputs\n(num: Int) :=\n-- spec\nlet spec (result: Int \u00d7 Int) :=\n  let (even_count, odd_count) := result;\n  let numAbs := |num|.toNat;\n  let numBy10 := numAbs/10;\n  let (even_count', odd_count') := impl numBy10;\n  (result = impl numAbs) \u2227\n  (0 \u2264 num \u2192 (Even num \u2194 1 + even_count' = even_count) \u2227 (Odd num \u2194 even_count' = even_count)) \u2227\n  (0 \u2264 num \u2192 (Odd num \u2194 1 + odd_count' = odd_count) \u2227 (Even num \u2194 odd_count' = odd_count));\n-- program terminates\n\u2203 result, impl num = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (num: Int) : Int \u00d7 Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation -12 = (1, 1)\n-- #test implementation 123 = (1, 2)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 155,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:28b13653327e21c61d0c75debb676d1250acef5340cace48242e447db0731311",
+  "timing": 98.74348152399762,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/d1lax5eu/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:fe98c8ff800f06edcf853b20ed094f7bb03dc18634b5fde41e38f66d4fa4581d",
+    "status": "OK",
+    "result": "sha256:72bfd9c01775126f75a6829d6f9b6c8e1d28027a525c5ec452e0fe4776dfd533"
+  },
+  "exception": null
+}

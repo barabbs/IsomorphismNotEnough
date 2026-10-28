@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef common(l1: List[int], l2: List[int]) -> List[int]\n\"\"\"Return sorted unique common elements for two lists.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int \u2192 List Int)\n-- inputs\n(l1 l2: List Int) :=\nlet is_unique (result: List Int) :=\n  \u2200 i j, i < result.length \u2192 j < result.length \u2192\n  i \u2260 j \u2192 result[i]! \u2260 result[j]!;\nlet is_sorted (result: List Int) :=\n  \u2200 i, i < result.length - 1 \u2192\n  result[i]! \u2264 result[i + 1]!;\n-- spec\nlet spec (result: List Int) :=\n  is_unique result \u2227\n  is_sorted result \u2227\n  (\u2200 i : Int, i \u2208 result \u2194 i \u2208 l1 \u2227 i \u2208 l2)\n-- program termination\n\u2203 result, implementation l1 l2 = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l1 l2: List Int) : List Int :=\n\n  ((l1.filter (\u00b7 \u2208 l2)).eraseDups).mergeSort (\u00b7 \u2264 \u00b7)\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 4, 3, 34, 653, 2, 5] [5, 7, 1, 5, 9, 653, 121] = [1, 5, 653]\n#test implementation [5, 3, 2, 8] [3, 2] = [2, 3]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l1 l2: List Int)\n: problem_spec implementation l1 l2\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 58,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c608b17f55eb337c4206163c2573a4b5178a3e5dc39c3e6e1dae9bfc37cd0c63",
+  "timing": 1361.5280071099987,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:c772379872eb742eefe3652367552fb31964c9c77c8f245fe93940e157418e72",
+    "status": "OK",
+    "result": "sha256:4f91b5c8305e3e1798433c3106caf6a21ba6be3513b0721ac943bbceae62234a",
+    "validation": [
+      {
+        "problem_id": "58",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:edf2f374edd9f1d058dd199e7f049096d847f58e4823e2909770e227e29923ac"
+      }
+    ]
+  },
+  "exception": null
+}

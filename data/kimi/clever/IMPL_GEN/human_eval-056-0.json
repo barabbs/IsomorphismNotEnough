@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"<\" and \">\".\nreturn True if every opening bracket has a corresponding closing bracket, i.e., (each open bracket is properly closed)\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(brackets: String) :=\n-- spec\nlet spec (result: Bool) :=\n  brackets.data.all (fun c => c = '<' ∨ c = '>') →\n  (result ↔ balanced_paren_non_computable brackets '<' '>')\n-- program terminates\n∃ result, impl brackets = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (brackets: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"<\" = false\n-- #test implementation \"<>\" = true\n-- #test implementation \"<<><>>\" = true\n-- #test implementation \"><<>\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 56,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:db65f7c159e86113b0178b72a3d893d9cdc0a69b6ef43272f4a907b44ec6ae46",
+  "timing": 93.3110268660821,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:b7e9253efa65191c1ec181f1f6bdf5ca3bc485274d2bbf95891e39143142d3d1",
+    "status": "OK",
+    "result": "sha256:32cea05d3093ea799cf4752b475198baa789155d535253cba6dd09e326ab670d"
+  },
+  "exception": null
+}

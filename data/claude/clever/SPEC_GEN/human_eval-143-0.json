@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_in_sentence(sentence: str) -> str\n\"\"\"You are given a string representing a sentence,\nthe sentence contains some words separated by a space,\nand you have to return a string that contains the words from the original sentence,\nwhose lengths are prime numbers,\nthe order of the words in the new string should be the same as the original one.\n\nConstraints:\n* 1 <= len(sentence) <= 100\n* sentence contains only letters\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(sentence: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 143,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8083200338f26fc430ddf2c5bc88f21a1731f947380029e7746909d3ee5b81e3",
+  "timing": 62.559699331992306,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/611asjgg/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:68114cace390241ea7d36ac735d87cafb9f77aedf50e6b560d7e5c433d24c54e",
+    "status": "OK",
+    "result": "sha256:ce2064e3945e405eab8876dfc97796f21a9374a94ad415a5add9b6846d7282e7"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef parse_music(music_string: str) -> List[int]\n\"\"\"Input to this function is a string representing musical notes in a special ASCII format.\nYour task is to parse this string and return list of integers corresponding to how many beats does each\nnot last.\n\nHere is a legend:\n'o' - whole note, lasts four beats\n'o|' - half note, lasts two beats\n'.|' - quater note, lasts one beat\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → List Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet not_map := fun\n  | \"o\" => 4\n  | \"o|\" => 2\n  | \".|\" => 1\n  | _ => 0;\nlet spec (result: List Nat) :=\nlet space_split := string.splitOn \" \";\nspace_split.length = result.length ∧\n∀ i < result.length, not_map (space_split.get! i) = result.get! i;\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"o o| .| o| o| .| .| .| .| o o\" = [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 17,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:40fd0ba33f7109daeb2ffc2920553ac6fb74f6d7b6112329a0480d22df8a0b85",
+  "timing": 30.636833698954433,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:b2030259008193baf4898cc496e677e4bf5141ce1c6a7706f90466fb52eb9329",
+    "status": "OK",
+    "result": "sha256:56c7772f5aee6efe3ad4a6d8f4c8b0676e81390edf44c8a6d23ed6a26637c84b"
+  },
+  "exception": null
+}

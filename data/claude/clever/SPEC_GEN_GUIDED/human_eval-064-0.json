@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef vowels_count(string: str) -> nat\n\"\"\"Write a function vowels_count which takes a string representing\na word as input and returns the number of vowels in the string.\nVowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\nvowel, but only when it is at the end of the given word.\n\n>>> vowels_count('abcde')\n2\n>>> vowels_count('ACEDY')\n3\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Nat)\n-- inputs\n(x : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"abcde\" = 2\n-- #test implementation \"ACEDY\" = 3\n",
+  "info": {
+    "dataset": "clever",
+    "id": 64,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:008e6c3ef4396624ef62ddd7fb941257087e20a106aec88449118016a9f32552",
+  "timing": 81.80824533499981,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ub8mgadn/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:89fd6fda45b84f74759dc1fedae6d62c8626b8c20dd6c6ea7c4746206e3755d2",
+    "status": "OK",
+    "result": "sha256:ee4e15beab8c24166bda7e98e0e4d5ccee9c31d5ae882f46f33b02a6ad05556c"
+  },
+  "exception": null
+}

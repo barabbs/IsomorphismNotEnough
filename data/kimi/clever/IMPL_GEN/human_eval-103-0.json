@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rounded_avg(n: nat, m: nat) -> Optional[str]\n\"\"\"You are given two positive integers n and m, and your task is to compute the\naverage of the integers from n through m (including n and m).\nRound the answer to the nearest integer and convert that to binary.\nIf n is greater than m, return none.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → Option String)\n-- inputs\n(n: Nat) (m: Nat) :=\n-- spec\nlet spec (result: Option String) :=\n  (n > m ↔ result.isNone) ∧\n  (n ≤ m ↔ result.isSome) ∧\n  (n ≤ m →\n    (result.isSome ∧\n    let val := Option.getD result \"\";\n    let xs := List.Ico n (m+1);\n    let avg := xs.sum / xs.length;\n    (val.take 2 = \"0b\") ∧\n    (Nat.ofDigits 2 ((val.drop 2).toList.map (fun c => c.toNat - '0'.toNat)).reverse = avg)))\n-- program termination\n∃ result, implementation n m = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) (m: Nat) : Option String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 5 = some \"0b11\"\n-- #test implementation 7 13 = some \"0b1010\"\n-- #test implementation 964 977 = some \"0b1111001010\"\n-- #test implementation 996 997 = some \"0b1111100100\"\n-- #test implementation 185 546 = some \"0b101101101\"\n-- #test implementation 362 496 = some \"0b110101101\"\n-- #test implementation 350 902 = some \"0b1001110010\"\n-- #test implementation 197 233 = some \"0b11010111\"\n-- #test implementation 7 5 = none\n-- #test implementation 5 1 = none\n-- #test implementation 5 5 = some \"0b101\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0bf814a5804a1b100e00e990d952d1297bdaef7745c5f96bb3a09a1db7bc1a56",
+  "timing": 196.803760307841,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:1bdf6e6d36c978e690d57cb9b74f4d43c414f0cac1c947fa10893439ce21c690",
+    "status": "OK",
+    "result": "sha256:19505b5faf1ad5633c4e7d4155453811d2b2fb928bed2f8d1a4ab4e9e868a5cd"
+  },
+  "exception": null
+}

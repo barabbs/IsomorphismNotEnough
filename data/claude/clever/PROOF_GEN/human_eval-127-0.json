@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersection(interval1: Tuple[int, int], interval2: Tuple[int, int]) -> str\n\"\"\"You are given two intervals,\nwhere each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\nThe given intervals are closed which means that the interval (start, end)\nincludes both start and end.\nFor each given interval, it is assumed that its start is less or equal its end.\nYour task is to determine whether the length of intersection of these two\nintervals is a prime number.\nExample, the intersection of the intervals (1, 3), (2, 4) is (2, 3)\nwhich its length is 1, which not a prime number.\nIf the length of the intersection is a prime number, return \"YES\",\notherwise, return \"NO\".\nIf the two intervals don't intersect, return \"NO\".\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int \u00d7 Int \u2192 Int \u00d7 Int \u2192 String)\n-- inputs\n(interval1: Int \u00d7 Int)\n(interval2: Int \u00d7 Int) :=\n-- spec\nlet spec (result: String) :=\nlet (s1, e1) := interval1;\nlet (s2, e2) := interval2;\ns1 \u2264 e1 \u2192 s2 \u2264 e2 \u2192\nlet intersectionStart := max s1 s2;\nlet intersectionEnd := min e1 e2;\nlet hasIntersection := intersectionStart \u2264 intersectionEnd;\nlet isPrime := Nat.Prime (intersectionEnd - intersectionStart).toNat;\n(result = \"YES\" \u2194 hasIntersection \u2227 isPrime) \u2227\n(result = \"NO\" \u2194 \u00achasIntersection \u2228 \u00acisPrime) \u2227\n(result = \"YES\" \u2228 result = \"NO\")\n-- program terminates\n\u2203 result, impl interval1 interval2 = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (interval1: Int \u00d7 Int) (interval2: Int \u00d7 Int) : String :=\n\n  let (s1, e1) := interval1\n  let (s2, e2) := interval2\n  let intersectionStart := max s1 s2\n  let intersectionEnd := min e1 e2\n  if intersectionStart \u2264 intersectionEnd then\n    let len := (intersectionEnd - intersectionStart).toNat\n    if Nat.Prime len then \"YES\" else \"NO\"\n  else \"NO\"\n\n\n-- [TEST_CASES]\n\n#test implementation (1, 2) (2, 3) = \"NO\"\n#test implementation (-1, 1) (0, 4) = \"NO\"\n#test implementation (-3, -1) (-5, 5) = \"YES\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(interval1: Int \u00d7 Int)\n(interval2: Int \u00d7 Int)\n: problem_spec implementation interval1 interval2 :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 127,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ab828bfa30d3162a8d1def8bec6371f979c6b1f1d485ea07f447b416c98157ff",
+  "timing": 125.4049571849173,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:213caa238f1a02409749308d84f8ae84814630792c9f0747c095fabe18438247",
+    "status": "OK",
+    "result": "sha256:79e59f04412be259129ea95919aff2287f82c6b6f7ddfdc4c06a880c7c571559",
+    "validation": [
+      {
+        "problem_id": "127",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:21a969dee8f82bc459f81106b5964c69da12cebee02a07fe6aec7f74ff6982b6"
+      }
+    ]
+  },
+  "exception": null
+}

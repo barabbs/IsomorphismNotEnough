@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_odd_collatz (n: int) -> List[int]\n\"\"\"Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\nThe Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\nas follows: start with any positive integer n. Then each term is obtained from the\nprevious term as follows: if the previous term is even, the next term is one half of\nthe previous term. If the previous term is odd, the next term is 3 times the previous\nterm plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\nNote:\n    1. Collatz(1) is [1].\n    2. returned list sorted in increasing order.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef collatz_reachable (n m : Nat) : Prop :=\n  ∃ k, Nat.iterate (fun x => if x % 2 = 0 then x / 2 else x * 3 + 1) k n = m\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\nn > 0 →\nresult.Sorted (· < ·) ∧\n∀ m, m ∈ result ↔ Odd m ∧ collatz_reachable n m -- m is reachable from starting point n\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : List Nat :=\n\n  let collatz_step (x : Nat) : Nat := if x % 2 = 0 then x / 2 else x * 3 + 1\n  let rec collect_odds (fuel : Nat) (x : Nat) (acc : List Nat) : List Nat :=\n    match fuel with\n    | 0 => acc\n    | fuel+1 =>\n      if x = 1 then\n        1 :: acc\n      else\n        let new_acc := if x % 2 = 1 then x :: acc else acc\n        collect_odds fuel (collatz_step x) new_acc\n  let odds := collect_odds 100000 n []\n  List.insertionSort (· < ·) odds\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = [1, 5]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 123,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8ae91750b5decc0fe3e27c748802140a1be50c4f23faa99e8c9d0676876ccc36",
+  "timing": 3072.015977957286,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:7857f2dcef5dab46a116689cc8cd5cfaf0848fd7e96a15d563330f36e8457805",
+    "status": "ISSUE",
+    "comment": "IMPL",
+    "result": "sha256:138199ebcfde80cca42b9b2a5ca343fd3ca2ad6601b36ef3af63da691efa72cb",
+    "validation": [
+      {
+        "problem_id": "123",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:4414fed6e744e718b46225ff5b765dacdeef289a7d4209d075baf18810d9a8a5"
+      }
+    ]
+  },
+  "exception": null
+}

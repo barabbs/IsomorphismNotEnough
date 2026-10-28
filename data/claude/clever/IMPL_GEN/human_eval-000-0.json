@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef has_close_elements(numbers: List[float], threshold: float) -> bool\n\"\"\"Check if in given list of numbers, are any two numbers closer to each other than given threshold.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat \u2192 Rat \u2192 Bool)\n-- inputs\n(numbers: List Rat)\n(threshold: Rat) :=\n-- spec\nlet numbers_within_threshold :=\n(\u2203 i j, i < numbers.length \u2227 j < numbers.length \u2227\ni \u2260 j \u2227 |numbers.get! i - numbers.get! j| < threshold);\nlet spec (res: Bool) :=\nnumbers.length > 1 \u2192\nif res then numbers_within_threshold else \u00acnumbers_within_threshold;\n-- program terminates\n\u2203 result, impl numbers threshold = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat) (threshold: Rat) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 2, 3]: List Rat) 0.5 = false\n-- #test implementation ([1, 2.8, 3, 4, 5, 2]: List Rat) 0.3 = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 0,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:95720cf385c7af25f3821912f89bd296151a936c0762d6c2d573931866139f61",
+  "timing": 75.45834789401852,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/9umkpbl5/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:1cf881db84854948b2840f32571756eff3a1f6dc811033c8552bb2ee61651b8a",
+    "status": "OK",
+    "result": "sha256:4649e6a37244b89950160ecac254a8fecc49edf3c1c5ba8ee1e54c8e3f4e8c34"
+  },
+  "exception": null
+}

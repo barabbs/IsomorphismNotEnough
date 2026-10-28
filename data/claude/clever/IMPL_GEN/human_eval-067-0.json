@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, Nat n) -> Nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Nat \u2192 Nat)\n-- inputs\n(string: String)\n(n : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n\u2203 x y : Nat, x + y = n - result\n\u2227 (String.join [x.repr, \" apples and \", y.repr, \" oranges\"] = string)\n-- program termination\n\u2203 result, implementation string n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"5 apples and 6 oranges\" 19 = 8\n-- #test implementation \"0 apples and 1 oranges\" 3 = 2\n-- #test implementation \"2 apples and 3 oranges\" 100 = 95\n-- #test implementation \"100 apples and 1 oranges\" 120 = 19\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:977ab51ace18d3c73369fda8104db66af15f10af949184346b427c8e1b9466bf",
+  "timing": 59.0818757879897,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/5y3otqpr/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:2d2413020263925114e257b922c989ca48deacf72d20831c722d97b557b8e4c6",
+    "status": "OK",
+    "result": "sha256:a47f904e9b18f3eacbf4b1e4e044a7ab8ff17954a39da3cb248fff8601da265e"
+  },
+  "exception": null
+}

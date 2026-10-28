@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef maximum(arr: List[int], k: int) -> List[int]\n\"\"\"Given an array arr of integers and a positive integer k, return a sorted list of length\nk with the maximum k numbers in arr.\nNote:\n    1. The length of the array will be in the range of [1, 1000].\n    2. The elements in the array will be in the range of [-1000, 1000].\n    3. 0 <= k <= len(arr)\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int → List Int)\n-- inputs\n(arr: List Int)\n(k: Int) :=\n-- spec\nlet spec (result: List Int) :=\n    1 ≤ arr.length → arr.length ≤ 1000 → arr.all (fun x => -1000 ≤ x ∧ x ≤ 1000) → 0 ≤ k → k ≤ arr.length →\n    result.length = k ∧\n    result.Sorted (· ≤ ·) ∧\n    ∀ x ∈ result, x ∈ arr ∧\n\n    let result_reversed := result.reverse; -- reverse to get last element\n    match result_reversed with\n    | [] => k = 0\n    | max :: remaining_reversed =>\n      arr.max? = some max ∧\n      impl (arr.erase max) (k-1) = (remaining_reversed.reverse)\n-- program terminates\n∃ result, impl arr k = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) (k: Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [2, 4, 3, 1] 3 = [2, 3, 4]\n-- #test implementation [2, 4, 3, 1] 0 = []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 120,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3004da9424d3b0c54db494bfd27180e96540ef0b2b3728e27d8dd95c975f5732",
+  "timing": 166.58983100298792,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:5c74818248f21f07dff4b41ab2861164139bacd9b83b4d0c3ae70b5927694205",
+    "status": "OK",
+    "result": "sha256:14e2a727fee38034c320a6c1ae950291aac8f316ba730b421894aa164fff0350"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef Strongest_Extension(class_name: str, extensions: List[str]) -> str\n\"\"\"You will be given the name of a class (a string) and a list of extensions.\nThe extensions are to be used to load additional classes to the class. The\nstrength of the extension is as follows: Let CAP be the number of the uppercase\nletters in the extension's name, and let SM be the number of lowercase letters\nin the extension's name, the strength is given by the fraction CAP - SM.\nYou should find the strongest extension and return a string in this\nformat: ClassName.StrongestExtensionName.\nIf there are two or more extensions with the same strength, you should\nchoose the one that comes first in the list.\nFor example, if you are given \"Slices\" as the class and a list of the\nextensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should\nreturn 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the strongest extension\n(its strength is -1).\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → List String → String)\n-- inputs\n(class_name: String)\n(extensions: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 153,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b6c0eff4785396d6f044d3c19f3d3f4034cc0c45d0502f27398ec185b5d29e92",
+  "timing": 93.5973996007815,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:f9e0e35b4d630af7538075adb11f05777e6ce5a5fa1f2a2a0e2f75627a139c2f",
+    "status": "OK",
+    "result": "sha256:fe6be4f742fb8c61b59af594b825e6cdac06f2aef0a1c50d3fa7a8b375bbc612"
+  },
+  "exception": null
+}

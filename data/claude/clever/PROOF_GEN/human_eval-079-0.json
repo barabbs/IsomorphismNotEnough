@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef decimal_to_binary(decimal: nat) -> str\n\"\"\"You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 String)\n-- inputs\n(decimal: Nat) :=\n-- spec\nlet spec (result: String) :=\n  4 < result.length \u2227\n  result.drop (result.length - 2) = \"db\" \u2227\n  result.take 2 = \"db\" \u2227\n  let resultTrimmed := (result.toList.drop 2).dropLast.dropLast.map (fun c => c.toNat - '0'.toNat)\n  decimal = Nat.ofDigits 2 resultTrimmed.reverse\n-- program termination\n\u2203 result, implementation decimal = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (decimal: Nat) : String :=\n\n  let rec toBin (n : Nat) : String :=\n    if n < 2 then toString n\n    else toBin (n / 2) ++ toString (n % 2)\n  \"db\" ++ toBin decimal ++ \"db\"\n\n\n-- [TEST_CASES]\n\n#test implementation 0 = \"db0db\"\n#test implementation 32 = \"db100000db\"\n#test implementation 103 = \"db1100111db\"\n#test implementation 15 = \"db1111db\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(decimal: Nat)\n: problem_spec implementation decimal\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 79,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9c4a202ff29bb409671a7954667608fffedd49ce3b54c6505a396f1b74458e37",
+  "timing": 1110.1909619619837,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:64b35c1c806ae54fc325f2d093d795d2e4bbd620d64af16fead7c60ff7d7bdcd",
+    "status": "OK",
+    "result": "sha256:8b52959d62d42ead79598588213ffade1a0e1023eb0d7eec8f3c1bb6d9b5abef",
+    "validation": [
+      {
+        "problem_id": "79",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:641358a2662545be64d709257de89566233293111a0bb6d94f19817c43b1deb0"
+      }
+    ]
+  },
+  "exception": null
+}

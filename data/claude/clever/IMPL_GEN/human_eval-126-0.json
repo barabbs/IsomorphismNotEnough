@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_sorted(lst: List[int]) -> Bool\n\"\"\"Given a list of numbers, return whether or not they are sorted\nin ascending order. If list has more than 1 duplicate of the same\nnumber, return False. Assume no negative numbers and only integers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Bool)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet sorted_ascending := lst.Sorted (\u00b7 \u2264 \u00b7);\nlet ms := Multiset.ofList lst;\nlet multiple_duplicates := \u2203 i, i \u2208 lst \u2227 2 < ms.count i;\nlet spec (res: Bool) :=\n  res \u2192 sorted_ascending \u2227\n  res \u2192 \u00acmultiple_duplicates \u2227\n  multiple_duplicates \u2192 \u00acres \u2227\n  \u00acsorted_ascending \u2192 \u00acres;\n-- program terminates\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [5] = true\n-- #test implementation [1, 2, 3, 4, 5] = true\n-- #test implementation [1, 3, 2, 4, 5] = false\n-- #test implementation [1, 2, 3, 4, 5, 6] = true\n-- #test implementation [1, 2, 3, 4, 5, 6, 7] = true\n-- #test implementation [1, 3, 2, 4, 5, 6, 7] = false\n-- #test implementation [1, 2, 2, 3, 3, 4] = true\n-- #test implementation [1, 2, 2, 2, 3, 4] = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 126,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:63c04b0ad47aa54c97e082d3bb45d3416cbfeaf230adcc9ad7c0d986c545747d",
+  "timing": 87.79742091702064,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/6on5icvh/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:135e44515dd5f6e0509fe56007668d12cb44e68103b1e1bb673a11c29a1eabe2",
+    "status": "OK",
+    "result": "sha256:94c428fc729f609542b66ac8abda4ed9181b9cb8cbbfd466b56dc78784e2cff3"
+  },
+  "exception": null
+}

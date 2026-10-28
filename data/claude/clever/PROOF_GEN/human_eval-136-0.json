@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_smallest_integers(lst: List[int]) -> Tuple[Optional[int], Optional[int]]\n\"\"\"Create a function that returns a tuple (a, b), where 'a' is\nthe largest of negative integers, and 'b' is the smallest\nof positive integers in a list.\nIf there is no negative or positive integers, return them as None.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Option Int \u00d7 Option Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result: Option Int \u00d7 Option Int) :=\n  let (a, b) := result;\n  (match a with\n  | none => \u00ac(\u2203 i, i \u2208 lst \u2227 i < 0)\n  | some a => a < 0 \u2227 a \u2208 lst \u2227 \u2200 i, i \u2208 lst \u2227 i < 0 \u2192 i \u2264 a) \u2227\n  (match b with\n  | none => \u00ac(\u2203 i, i \u2208 lst \u2227 0 < i)\n  | some b => 0 < b \u2227 b \u2208 lst \u2227 \u2200 i, i \u2208 lst \u2227 0 < i \u2192 b \u2264 i)\n-- program termination\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int) : (Option Int \u00d7 Option Int) :=\n\n  let negatives := lst.filter (\u00b7 < 0)\n  let positives := lst.filter (\u00b7 > 0)\n  let a := negatives.foldl (fun acc x => match acc with | none => some x | some v => if x > v then some x else acc) none\n  let b := positives.foldl (fun acc x => match acc with | none => some x | some v => if x < v then some x else acc) none\n  (a, b)\n\n\n-- [TEST_CASES]\n\n#test implementation [2, 4, 1, 3, 5, 7] = (none, some 1)\n#test implementation [] = (none, none)\n#test implementation [0] = (none, none)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 136,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e258d6e8851867a59cb947af1cab0401fd3dd99b0f94448bbb338306576c6471",
+  "timing": 418.34133353899233,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:234c9bd6d9d17243ec73c98e282633b499f58fc41f2141bc7fb412c398adc033",
+    "status": "OK",
+    "result": "sha256:dc0a2f29ec0ff2dc10cc8987ff4e9700979d8cfa8e69e3cb9de81fe8a0496b21",
+    "validation": [
+      {
+        "problem_id": "136",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:96ebe0b2dc2faf50a566516dbbc0d0493c9be899d38439630c5d35c48a217036"
+      }
+    ]
+  },
+  "exception": null
+}

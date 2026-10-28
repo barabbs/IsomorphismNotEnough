@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encrypt(str : str) -> str\n\"\"\"Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated.\nThe alphabet should be rotated in a manner such that the letters\nshift down by two multiplied to two places.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(str: String) :=\n-- spec\nlet spec (result : String) :=\n  result.data.all (fun c => c.isLower) →\n  result.length = str.length ∧\n  (∀ i, i < str.length →\n    let c := str.data[i]!\n    let c' := result.data[i]!\n    ((c'.toNat - 97) + 2 * 2) % 26 = (c.toNat - 97))\n-- program termination\n∃ result,\n  implementation str = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (str: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"hi\" = \"lm\"\n-- #test implementation \"asdfghjkl\" = \"ewhjklnop\"\n-- #test implementation \"gf\" = \"kj\"\n-- #test implementation \"et\" = \"ix\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 89,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:538be0fd9df12a044f8f3f0b7a54d401ca1bc60a22e659475d680257a1d1e6d9",
+  "timing": 68.35269802017137,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:a5488c2c602498b1ade3d3bac570d0a03a633ecfe2ce58b016da04348cd50e05",
+    "status": "OK",
+    "result": "sha256:d282572b7cf0e0a56d2ec58899ae6866a0d2ba24e788e39babd1ec6ee45ec410"
+  },
+  "exception": null
+}

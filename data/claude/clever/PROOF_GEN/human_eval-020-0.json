@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]\n\"\"\"From a supplied list of numbers (of length at least two) select and return two that are the closest to each\nother and return them in order (smaller number, larger number).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat \u2192 (Rat \u00d7 Rat))\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: (Rat \u00d7 Rat)) :=\n2 \u2264 numbers.length \u2192\n(let (smaller, larger) := result;\nlet abs_diff := |larger - smaller|;\nsmaller \u2264 larger \u2227\nsmaller \u2208 numbers \u2227\nlarger \u2208 numbers \u2227\n(\u2200 x y, x \u2208 numbers \u2192 y \u2208 numbers \u2192 x \u2260 y \u2192 abs_diff \u2264 |x - y|) \u2227\n(smaller = larger \u2192 2 \u2264 (numbers.filter (fun z => z = smaller)).length));\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Rat): (Rat \u00d7 Rat) :=\n\n  let sorted := numbers.mergeSort (\u00b7 \u2264 \u00b7)\n  let pairs := sorted.zip sorted.tail\n  match pairs with\n  | [] => (0, 0)\n  | p :: ps =>\n    ps.foldl (fun acc q =>\n      let d1 := q.2 - q.1\n      let d2 := acc.2 - acc.1\n      if d1 < d2 then q else acc) p\n\n\n-- [TEST_CASES]\n\n#test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.2] = (2.0, 2.2)\n#test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.0] = (2.0, 2.0)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Rat)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 20,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:76289850ff590694f76ed85a43a94fa9b3da472672130515843df4959a478717",
+  "timing": 2351.028278395068,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:0c3bbe513b54e4e143b37fd10d450020dc2bc220f7e7f53094b4e97a118cf113",
+    "status": "OK",
+    "result": "sha256:83288f15eeb75658141410cddd49e4f7ca14574f967d1cbf689efeba1c747ac2",
+    "validation": [
+      {
+        "problem_id": "20",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:75688ffc388c9162fe7d3445a1d8a9a4ff8e9a841a1d584a2954e6b508a4f5ba"
+      }
+    ]
+  },
+  "exception": null
+}

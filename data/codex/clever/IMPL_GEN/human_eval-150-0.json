@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef x_or_y(n: int, x: int, y: int) -> int\n\"\"\"A simple program which should return the value of x if n is\na prime number and should return the value of y otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int → Int → Int → Int)\n-- inputs\n(n x y: Int) :=\n-- spec\nlet spec (result: Int) :=\n(result = x ↔ Nat.Prime n.toNat) ∧\n(result = y ↔ (¬ Nat.Prime n.toNat ∨ n ≤ 1))\n-- program terminates\n∃ result, impl n x y = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n x y: Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 7 34 12 = 34\n-- #test implementation 15 8 5 = 5\n",
+  "info": {
+    "dataset": "clever",
+    "id": 150,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:163324dbf99170f741a077c22a9c4d56f3c3acb79820bb33c74587dd137a6425",
+  "timing": 78.81191837508231,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:ed529606feb9e93487209de291a6998d728fa1997d4cb68e6392a4aa6fa59d09",
+    "status": "OK",
+    "result": "sha256:cd309ac7ad81ba9f305b9e76a288b249a7c8b0b52f40650a83fe06662768ce2b"
+  },
+  "exception": null
+}

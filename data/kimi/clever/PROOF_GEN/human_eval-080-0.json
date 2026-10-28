@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_happy(s: str) -> bool\n\"\"\"You are given a string s.\nYour task is to check if the string is happy or not.\nA string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Bool)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Bool) :=\n  result ↔\n  (3 ≤ s.length) ∧\n  ¬ (∃ i j, i < j ∧ j < s.length ∧ j - i ≤ 2 ∧ s.data.get! i = s.data.get! j)\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : Bool :=\n\n  if s.length < 3 then false\n  else\n    List.range (s.length - 2) |>.all (fun i =>\n      (s.data.get! i != s.data.get! (i + 1)) &&\n      (s.data.get! i != s.data.get! (i + 2)) &&\n      (s.data.get! (i + 1) != s.data.get! (i + 2))\n    )\n\n\n-- [TEST_CASES]\n\n#test implementation \"a\" = False\n#test implementation \"aa\" = False\n#test implementation \"abcd\" = True\n#test implementation \"aabb\" = False\n#test implementation \"adb\" = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 80,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fd8b0f35a904e06f7d58caf5c020690b79e782fcc386deb5cc6504ee4e1e4334",
+  "timing": 2200.357689694036,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:8815df53d6b673155698910c5adddde9cfa7ab80dccf5d1724d371859d63864c",
+    "status": "OK",
+    "result": "sha256:3a9f56db47071562a31e1af932b56f07936a6e96add9c8819d855b50f6fc0167",
+    "validation": [
+      {
+        "problem_id": "80",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5927070eb2e54646266ad3f6148add816470101749fc33ec1a8794d6822bc394"
+      }
+    ]
+  },
+  "exception": null
+}

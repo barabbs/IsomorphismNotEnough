@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef decimal_to_binary(decimal: nat) -> str\n\"\"\"You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → String)\n-- inputs\n(decimal: Nat) :=\n-- spec\nlet spec (result: String) :=\n  4 < result.length ∧\n  result.drop (result.length - 2) = \"db\" ∧\n  result.take 2 = \"db\" ∧\n  let resultTrimmed := (result.toList.drop 2).dropLast.dropLast.map (fun c => c.toNat - '0'.toNat)\n  decimal = Nat.ofDigits 2 resultTrimmed.reverse\n-- program termination\n∃ result, implementation decimal = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (decimal: Nat) : String :=\n\n  \"db\" ++ String.mk (Nat.toDigits 2 decimal) ++ \"db\"\n\n\n-- [TEST_CASES]\n\n#test implementation 0 = \"db0db\"\n#test implementation 32 = \"db100000db\"\n#test implementation 103 = \"db1100111db\"\n#test implementation 15 = \"db1111db\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(decimal: Nat)\n: problem_spec implementation decimal\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 79,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:276b8e9fc3678d910ff6b38c08ba3efbf1d7d69f3b8e05367f259be22a598c47",
+  "timing": 4043.712023035623,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:f564aa2014c08f3f601b85d439cc2e176528740d3e782b394e6a0f11373e648b",
+    "status": "FAIL",
+    "result": "sha256:318287620c69402e79a39d4256063a4291e2e269f366eda1b32d38efc4029ea5",
+    "validation": [
+      {
+        "problem_id": "79",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:c977127ac8603da5a69771a921b6455656c0c2aa786b19e2e7c0c762963b4f90",
+        "lean_code": "sha256:5080d3b63d7c14a073872002fca3d5e1002b44704e37111a8ec732ced1b94c9a"
+      }
+    ]
+  },
+  "exception": null
+}

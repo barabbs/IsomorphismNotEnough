@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"(\" and \")\".\nreturn True if every opening bracket has a corresponding closing bracket.\n\n>>> correct_bracketing('(')\nFalse\n>>> correct_bracketing('()')\nTrue\n>>> correct_bracketing('(()())')\nTrue\n>>> correct_bracketing(')(()')\nFalse\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(x : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"(\" = false\n-- #test implementation \"()\" = true\n-- #test implementation \"(()())\" = true\n-- #test implementation \")(()\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 61,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:841d084cb66a270ded4949119b1c81a29526026e65be8460802ab61ffcb29c74",
+  "timing": 110.65333654603455,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/skc9vfnn/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b12cf52b11c40a51ed2ae70097a2e6a9b39ebd2f3969827221da342fb75d464f",
+    "status": "OK",
+    "result": "sha256:c28709ad2ac56e45cd7c6b6fa602bbcdff2fbf3ec9ef39e9f7627fca0630d18f"
+  },
+  "exception": null
+}

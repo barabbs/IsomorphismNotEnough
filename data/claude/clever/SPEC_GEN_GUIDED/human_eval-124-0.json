@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef valid_date(date: str) -> bool\n\"\"\"You have to write a function which validates a given date string and\nreturns True if the date is valid otherwise False.\nThe date is valid if all of the following rules are satisfied:\n1. The date string is not empty.\n2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.\n3. The months should not be less than 1 or higher than 12.\n4. The date should be in the format: mm-dd-yyyy\n\n>>> valid_date('03-11-2000')\nTrue\n>>> valid_date('15-01-2012')\nFalse\n>>> valid_date('04-0-2040')\nFalse\n>>> valid_date('06-04-2020')\nTrue\n>>> valid_date('06/04/2020')\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(date: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"03-11-2000\" = true\n-- #test implementation \"15-01-2012\" = false\n-- #test implementation \"04-0-2040\" = false\n-- #test implementation \"06-04-2020\" = true\n-- #test implementation \"06/04/2020\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 124,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:e387e32e1916ec04e34680dfcaefdb8d3a3af307202b30a0153a39d30e4b1f5d",
+  "timing": 132.53940489600063,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/9ad8t4e8/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:34ae894b6c1f802becd941714213e99dd7cecfb4a07f3b19b20e3d1ff7958785",
+    "status": "OK",
+    "result": "sha256:168e092d2e1eb1bfdd898cdbfbf4ee686834cb70b077fef88b50fb0aa93346b4"
+  },
+  "exception": null
+}

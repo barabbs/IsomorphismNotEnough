@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib(n: int) -> int\n\"\"\"Return n-th Fibonacci number.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable : ℕ → ℕ → Prop\n| base0 : fibonacci_non_computable 0 0\n| base1 : fibonacci_non_computable 1 1\n| step  : ∀ n f₁ f₂, fibonacci_non_computable n f₁ →\nfibonacci_non_computable (n + 1) f₂ →\nfibonacci_non_computable (n + 2) (f₁ + f₂)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nfibonacci_non_computable n result\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\nmatch n with\n| 0 => 0\n| 1 => 1\n| n + 2 => implementation n + implementation (n + 1)\ntermination_by n\n\n\n-- [TEST_CASES]\n\n#test implementation 10 = 55\n#test implementation 1 = 1\n#test implementation 8 = 21\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 55,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7ea6102354270baf6c2ef8bda4778f5cd8b72cdbf481a65fefdbbc9303b480b3",
+  "timing": 385.0710192839615,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:b8f52e3aecc1dc576ec51fa19e4a77d1396987844d683dea95f9c4159653aace",
+    "status": "OK",
+    "result": "sha256:21ae935e369d0f0e456513dc5e5dc14e7efb6f37e0df3ff847c3f3065a997de3",
+    "validation": [
+      {
+        "problem_id": "55",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:2398d94815e442f2aaaddbe155a4ad009241908a20e9eb585810083dba044d86"
+      }
+    ]
+  },
+  "exception": null
+}

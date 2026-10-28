@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef parse_music(music_string: str) -> List[int]\n\"\"\"Input to this function is a string representing musical notes in a special ASCII format.\nYour task is to parse this string and return list of integers corresponding to how many beats does each\nnot last.\n\nHere is a legend:\n'o' - whole note, lasts four beats\n'o|' - half note, lasts two beats\n'.|' - quater note, lasts one beat\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 List Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet not_map := fun\n  | \"o\" => 4\n  | \"o|\" => 2\n  | \".|\" => 1\n  | _ => 0;\nlet spec (result: List Nat) :=\nlet space_split := string.splitOn \" \";\nspace_split.length = result.length \u2227\n\u2200 i < result.length, not_map (space_split.get! i) = result.get! i;\n-- program termination\n\u2203 result, implementation string = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : List Nat :=\n\n(string.splitOn \" \").map fun s =>\n  if s == \"o\" then 4\n  else if s == \"o|\" then 2\n  else if s == \".|\" then 1\n  else 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"o o| .| o| o| .| .| .| .| o o\" = [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(string: String)\n: problem_spec implementation string\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 17,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0583d7b657beea993ede4811478f5f1e37e0bab2706896375087d3d27ce5646c",
+  "timing": 346.4417450769979,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/nq753gj2/problem.lean --deep=stuck",
+    "claude": "sha256:224b4cd4ed9700e84a3524cd5d1b64f32b617713eca39ba9ad5b8aca26b812d1",
+    "status": "OK",
+    "result": "sha256:53fe754fce372483657964a0def7ba142c713e872772ee993b07d0170295705c",
+    "validation": [
+      {
+        "problem_id": "17",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:61a158abb03b860831cc3884a4a0cebfc859d7ada92780829c147bfa5ad8268c"
+      }
+    ]
+  },
+  "exception": null
+}

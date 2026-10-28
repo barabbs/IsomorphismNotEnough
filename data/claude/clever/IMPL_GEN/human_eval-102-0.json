@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef choose_num(x: int, y: int) -> int\n\"\"\"This function takes two positive numbers x and y and returns the\nbiggest even integer number that is in the range [x, y] inclusive. If\nthere's no such number, then the function should return -1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 Int \u2192 Int)\n-- inputs\n(x: Int) (y: Int) :=\n-- spec\nlet spec (result: Int) :=\n  (result = -1 \u2228 (x \u2264 result \u2227 result \u2264 y \u2227 Even result)) \u2227\n  (result = -1 \u2228 (forall i: Int, (x \u2264 i \u2227 i \u2264 y \u2227 Even i) \u2192 result \u2265 i)) \u2227\n  (result = -1 \u2194 (x > y \u2228 (x == y \u2227 Odd x \u2227 Odd y)))\n-- program termination\n\u2203 result, implementation x y = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x: Int) (y: Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 12 15 = 14\n-- #test implementation 13 12 = -1\n-- #test implementation 33 12354 = 12354\n-- #test implementation 5234 5233 = -1\n-- #test implementation 6 29 = 28\n-- #test implementation 27 10 = (-1)\n-- #test implementation 7 7 = -1\n-- #test implementation 546 546 = 546\n",
+  "info": {
+    "dataset": "clever",
+    "id": 102,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3900e002307064f5bbe7da94549b8337371c812a4b1d836d145f23028d8187ab",
+  "timing": 53.98882510099793,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/8bdgtx1j/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:365ce4273ed320d56574cc113daef47c154348344b26508a5a1be458c0f6b1b6",
+    "status": "OK",
+    "result": "sha256:5573ff74cf187c1b5988f68abf981d531efc7d8526e896491be1ea0a3c477593"
+  },
+  "exception": null
+}

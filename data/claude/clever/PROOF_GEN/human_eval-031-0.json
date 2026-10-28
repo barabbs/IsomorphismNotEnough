@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_prime(n)\n\"\"\"Return true if a given number is prime, and false otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Bool)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Bool) :=\n  result \u2194 (2 \u2264 n \u2227 \u00ac (\u2203 k, 2 \u2264 k \u2227 k < n \u2227 n % k = 0));\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat): Bool :=\n\n  if n < 2 then false\n  else\n    let rec loop (k : Nat) (fuel : Nat) : Bool :=\n      if fuel = 0 then true\n      else if k >= n then true\n      else if n % k = 0 then false\n      else loop (k + 1) (fuel - 1)\n    loop 2 (n - 2)\n\n\n-- [TEST_CASES]\n\n#test implementation 6 = false\n#test implementation 101 = true\n#test implementation 11 = true\n#test implementation 13441 = true\n#test implementation 61 = true\n#test implementation 4 = false\n#test implementation 1 = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 31,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d483373fcedc95a873b7875311f151cd7d05e5f6ce3f94f6698f09a377186862",
+  "timing": 227.4706882860046,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:9ccf92ed464c0748ae9c4d225d3d4b9a932add4d97c89c6c1fc3f4b6a9f1d5d7",
+    "status": "OK",
+    "result": "sha256:55018098779f61cfece43d78f6d3f0a01114031198e8c1b4d5c61abb0aecb773",
+    "validation": [
+      {
+        "problem_id": "31",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:87d611f25ef2460ce29ee9b6878fbbd28aedeb81a0e2bec5b2b2f0fb75449f43"
+      }
+    ]
+  },
+  "exception": null
+}

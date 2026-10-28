@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef generate_integers(a : nat, b : nat) -> List[nat]\n\"\"\"Given two positive integers a and b, return the even digits between a\nand b, in ascending order.\n\n>>> generate_integers(2, 8)\n[2, 4, 6, 8]\n>>> generate_integers(8, 2)\n[2, 4, 6, 8]\n>>> generate_integers(10, 14)\n[10, 12, 14]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 List Nat)\n-- inputs\n(a b : Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 2 8 = [2, 4, 6, 8]\n-- #test implementation 8 2 = [2, 4, 6, 8]\n-- #test implementation 10 14 = [10, 12, 14]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 163,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:d0bf3d276edb704cfd609d6d0f39f4b688412d1c3d133bf4c3416f4d77d1af08",
+  "timing": 64.09859977299857,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/il3qtlc6/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f8f9a977d32b40df98168265336355ff3d8e477db3fcf7e8663431028890250e",
+    "status": "OK",
+    "result": "sha256:40104c5435d1d34f0f8b643efa1bfaad8c5430818d8c8f3d5f1a25de286d4ab0"
+  },
+  "exception": null
+}

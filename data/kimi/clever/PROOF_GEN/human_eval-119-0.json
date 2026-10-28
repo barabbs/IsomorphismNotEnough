@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef match_parens(l : list[str]) -> str\n\"\"\"You are given a list of two strings, both strings consist of open\nparentheses '(' or close parentheses ')' only.\nYour job is to check if it is possible to concatenate the two strings in\nsome order, that the resulting string will be good.\nA string S is considered to be good if and only if all parentheses in S\nare balanced. For example: the string '(())()' is good, while the string\n'())' is not.\nReturn 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String)\n-- inputs\n(l: List String) :=\n-- spec\nlet spec (result : String) :=\n  l.length = 2 →\n  l[0]!.all (fun c => c = '(' ∨ c = ')') →\n  l[1]!.all (fun c => c = '(' ∨ c = ')') →\n  let res := (balanced_paren_non_computable (l[0]! ++ l[1]!) '(' ')' ∨\n            balanced_paren_non_computable (l[1]! ++ l[0]!) '(' ')')\n  (res → result = \"Yes\") ∧\n  (¬ res → result = \"No\")\n-- program termination\n∃ result,\n  implementation l = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List String) : String :=\n\nlet rec isBalanced (chars : List Char) (depth : Nat) : Bool :=\n  match chars with\n  | [] => depth = 0\n  | '(' :: rest => isBalanced rest (depth + 1)\n  | ')' :: rest => depth > 0 && isBalanced rest (depth - 1)\n  | _ :: _ => false\nmatch l with\n| [s1, s2] =>\n  if isBalanced (s1 ++ s2).toList 0 || isBalanced (s2 ++ s1).toList 0 then \"Yes\" else \"No\"\n| _ => \"No\"\n\n\n-- [TEST_CASES]\n\n#test implementation [\"()(\", \")\"] = \"Yes\"\n#test implementation [\")\", \")\"] = \"No\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List String)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 119,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0ba807841586b632bc7e306a4c82914b0313983e1a126a4de168953ae0d87198",
+  "timing": 3493.989541467745,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:af2dd93b01e1383e796a84f399050e6f64c672d909793b8cb240c4683898956b",
+    "status": "FAIL",
+    "result": "sha256:5105c20ce96f49867cc33b0ce579b551e4fb63c1a2935c656fb4f8325f85d291",
+    "validation": [
+      {
+        "problem_id": "119",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:b33768b5e806b2ec18bd25b9b4a687801404549d16510a44dd91a0a11c0bebfb",
+        "lean_code": "sha256:554ecfb3f2fda8f8e7326b2ed79967e50e85927ff91128022e07a5b86dc995d7"
+      }
+    ]
+  },
+  "exception": null
+}

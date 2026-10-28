@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef flip_case(string: str) -> str\n\"\"\"For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: String) :=\nlet chars_in_result := result.toList;\nlet chars_in_string := string.toList;\nchars_in_result.length = string.length ∧\n(∀ i, i < chars_in_result.length →\n  let c := chars_in_result.get! i;\n  let c' := chars_in_string.get! i;\n  (c.isUpper → c'.isLower) ∧\n  (c.isLower → c'.isUpper) ∧\n  ((¬ c.isUpper ∧ ¬ c.isLower) → c = c')\n);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hello\" = \"hELLO\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 27,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c459cf194de2284a09869b1af6f9ab2d5801ff7ddd37c2369043ca7e8053944a",
+  "timing": 70.45027173310518,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:535c20561f1d162ac05389d3520da93b9f6ee7699b2fab0d3de10ecf774fb7f4",
+    "status": "OK",
+    "result": "sha256:e4a5b8f5419215b555c1fcd460853a4caa545f079a1330ba5da9257f8f0fee6d"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(string : str) -> str\n\"\"\"You are given a string s.\nif s[i] is a letter, reverse its case from lower to upper or vise versa,\notherwise keep it as it is.\nIf the string contains no letters, reverse the string.\nThe function should return the resulted string.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(string : String) :=\n-- spec\nlet spec (result: String) :=\nresult.length = string.length ∧\nlet hasNoAlphabet := string.all (λ c => not (c.isAlpha));\n(hasNoAlphabet →\n  result.toList = string.toList.reverse) ∧\n(hasNoAlphabet = false →\n  ∀ i, i < string.length →\n  let c := string.get! ⟨i⟩;\n  (c.isAlpha → ((c.isLower → c.toUpper = result.get! ⟨i⟩) ∨\n              (c.isUpper → c.toLower = result.get! ⟨i⟩))) ∧\n  (¬ c.isAlpha → c = result.get! ⟨i⟩))\n-- program terminates\n∃ result, impl string = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"1234\" = \"4321\"\n-- #test implementation \"ab\" = \"AB\"\n-- #test implementation \"#a@C\" = \"#A@c\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 161,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:41fb66d0916aecdc04556d2f3717a9560ef4997f4da4224767d7dadf22382c8e",
+  "timing": 96.80873817531392,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:461e24ae6d6f494687526f8f1cb8f073d536d45e30b86087aaf6923ab6a4d728",
+    "status": "OK",
+    "result": "sha256:81eb798d829cd162abeb9a510167439ba01bf27bbc6d6bfd2fd8c3974a4ee23c"
+  },
+  "exception": null
+}

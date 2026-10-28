@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef hex_key(num: str) -> int\n\"\"\"You have been tasked to write a function that receives\na hexadecimal number as a string and counts the number of hexadecimal\ndigits that are primes (prime number, or a prime, is a natural number\ngreater than 1 that is not a product of two smaller natural numbers).\nHexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.\nPrime numbers are 2, 3, 5, 7, 11, 13, 17,...\nSo you have to determine a number of the following digits: 2, 3, 5, 7,\nB (=decimal 11), D (=decimal 13).\nNote: you may assume the input is always correct or empty string,\nand symbols A,B,C,D,E,F are always uppercase.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Int)\n-- inputs\n(num: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 78,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:207f5081271ce15d76b9f8b6d568010f981b932dc9d18e3389065b440b41539a",
+  "timing": 144.7249520639889,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:fa3c443e209bf314ec2ce3278b978cce5ea0bd7ddae2c766cb9a1c19b0c6419c",
+    "status": "OK",
+    "result": "sha256:66b739597087fde6ffce730cbde5e0ff5b8f1b4e75c7abc0c0bc63f9cbebd691"
+  },
+  "exception": null
+}

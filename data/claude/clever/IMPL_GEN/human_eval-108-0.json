@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_nums(arr: List[int]) -> int\n\"\"\"Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int)\n-- inputs\n(arr: List Int) :=\n\n-- spec\nlet spec (result: Int) :=\n  let dig_sum (x: Int): Int :=\n    let digs := Nat.digits 10 x.natAbs;\n    if x >= 0 then\n      (List.map (fun t => (t: Int)) digs).sum\n    else\n      (List.map (fun t => (t: Int)) (digs.drop 1)).sum - (digs[0]! : Int);\n  (arr = [] \u2192 result = 0) \u2227\n  (arr \u2260 [] \u2192 0 < (dig_sum arr[0]!) \u2192 result = 1 + implementation (arr.drop 1)) \u2227\n  (arr \u2260 [] \u2192 (dig_sum arr[0]!) \u2264 0 \u2192 result = implementation (arr.drop 1));\n-- program termination\n\u2203 result, implementation arr = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] = 0\n-- #test implementation [-1, -2, 0] = 0\n-- #test implementation [1, 1, 2, -2, 3, 4, 5] = 6\n-- #test implementation [1, 6, 9, -6, 0, 1, 5] = 5\n-- #test implementation [1, 100, 98, -7, 1, -1] = 4\n-- #test implementation [12, 23, 34, -45, -56, 0] = 5\n-- #test implementation [-0, 1^0] = 1\n-- #test implementation [1] = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 108,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:46085176341a49413ef8d90c57fd969343dbbe6137e2fb77b998980c90425fcb",
+  "timing": 151.99560985001153,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ey1d6vcm/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:74d5f8dfe6f2ccdda1d400456efb02ff43eb71d17af5af1a8bcd98a3dafbb11a",
+    "status": "OK",
+    "result": "sha256:37af40c389d2aad37a50d7ab3507cd94690a55a608aa2e7b770ae2f1e218092e"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef double_the_difference(numbers: List[float]) -> Int\n\"\"\"Given a list of numbers, return the sum of squares of the numbers\nin the list that are odd. Ignore numbers that are negative or not integers.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat \u2192 Int)\n-- inputs\n(numbers: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 151,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:54c406f6b3f7c59f26cadc8af1674cb5b83f2e3c39bc06ed6a3ad851926d9b20",
+  "timing": 88.32873964299506,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/hfxfowbc/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:905727c71873d0220088fa0fa57cbc599e56765d7c5291b307794621d598cd9d",
+    "status": "OK",
+    "result": "sha256:88415051da240acaf094ea28014763de8588b9fa4b5c78959de7dee8808d3f5e"
+  },
+  "exception": null
+}

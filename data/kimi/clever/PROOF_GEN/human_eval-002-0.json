@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef truncate_number(number: float) -> float\n\"\"\"Given a positive floating point number, it can be decomposed into\nand integer part (largest integer smaller than given number) and decimals\n(leftover part always smaller than 1).\n\nReturn the decimal part of the number.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Rat → Rat)\n-- inputs\n(number: Rat) :=\n-- spec\nlet spec (res) :=\nnumber > 0 →\n0 ≤ res ∧\nres < 1 ∧\nnumber.floor + res = number;\n-- program terminates\n∃ result, impl number = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (number: Rat) : Rat :=\n\n  number - (number.floor : Rat)\n\n\n-- [TEST_CASES]\n\n#test implementation 3.5 = 0.5\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(number: Rat)\n: problem_spec implementation number :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 2,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1aa1d04ac6ab0a7362e392b2527e2a187542eb753fe851d109e3ebb08200a998",
+  "timing": 129.52915021590889,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:4ea8f91db3fed67970a6d5f93ca84ac5be3bf861caad58f5c55c6a3b95a4bc2d",
+    "status": "OK",
+    "result": "sha256:301b431957213f85b2253459cff9e03a467af152bb04eed7b2948bb900aba6a0",
+    "validation": [
+      {
+        "problem_id": "2",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:77722008dcb5ce51c178c938f5cb6e0e574ef9e528c17f8bc236b5cec865113e"
+      }
+    ]
+  },
+  "exception": null
+}

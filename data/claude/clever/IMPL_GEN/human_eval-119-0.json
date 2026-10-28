@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef match_parens(l : list[str]) -> str\n\"\"\"You are given a list of two strings, both strings consist of open\nparentheses '(' or close parentheses ')' only.\nYour job is to check if it is possible to concatenate the two strings in\nsome order, that the resulting string will be good.\nA string S is considered to be good if and only if all parentheses in S\nare balanced. For example: the string '(())()' is good, while the string\n'())' is not.\nReturn 'Yes' if there's a way to make a good string, and return 'No' otherwise.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(\u2200 (i : \u2115), i \u2264 chars.length \u2192 ((chars.take i).count bracket_type_right) \u2264 ((chars.take i).count bracket_type_left)) \u2227\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String)\n-- inputs\n(l: List String) :=\n-- spec\nlet spec (result : String) :=\n  l.length = 2 \u2192\n  l[0]!.all (fun c => c = '(' \u2228 c = ')') \u2192\n  l[1]!.all (fun c => c = '(' \u2228 c = ')') \u2192\n  let res := (balanced_paren_non_computable (l[0]! ++ l[1]!) '(' ')' \u2228\n            balanced_paren_non_computable (l[1]! ++ l[0]!) '(' ')')\n  (res \u2192 result = \"Yes\") \u2227\n  (\u00ac res \u2192 result = \"No\")\n-- program termination\n\u2203 result,\n  implementation l = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l: List String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ['()(', ')'] = \"Yes\"\n-- #test implementation [')', ')'] = \"No\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 119,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:283132b332029874f1e1ee03b8d5bf9d90641f7c8848a5edb879e615720beec7",
+  "timing": 85.77144364701235,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/uyieih6y/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f40265aa2f41100312e3af41e8ce4fcb359455ec5518b92cdabe8d5137ac44c9",
+    "status": "OK",
+    "result": "sha256:8c3be320d583c04fb6b189832568d7446f387bc6f5424a273cc2958e7f18e5e0"
+  },
+  "exception": null
+}

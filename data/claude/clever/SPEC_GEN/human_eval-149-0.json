@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sorted_list_sum(lst: List[str]) -> List[str]\n\"\"\"Write a function that accepts a list of strings as a parameter,\ndeletes the strings that have odd lengths from it,\nand returns the resulted list with a sorted order,\nThe list is always a list of strings and never an array of numbers,\nand it may contain duplicates.\nThe order of the list should be ascending by length of each word, and you\nshould return the list sorted by that rule.\nIf two words have the same length, sort the list alphabetically.\nThe function should return a list of strings in sorted order.\nYou may assume that all words will have the same length.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String \u2192 List String)\n-- inputs\n(lst: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 149,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f2d4a6e0a938095e1dde6f22d25f733d91f5defdc8d71e0f5fbe7239285b3921",
+  "timing": 142.2731835450104,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/e3gkvg2b/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:810ecc879d21439e8605b49797228963a93cfc0f9e5604ce14f7303ee427ec6e",
+    "status": "OK",
+    "result": "sha256:976bcd5ce9bb187d78a73aed33225ded209d836db5be8318e00864333da024c6"
+  },
+  "exception": null
+}

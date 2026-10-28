@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef rounded_avg(n: nat, m: nat) -> Optional[str]\n\"\"\"You are given two positive integers n and m, and your task is to compute the\naverage of the integers from n through m (including n and m).\nRound the answer to the nearest integer and convert that to binary.\nIf n is greater than m, return none.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat \u2192 Option String)\n-- inputs\n(n: Nat) (m: Nat) :=\n-- spec\nlet spec (result: Option String) :=\n  (n > m \u2194 result.isNone) \u2227\n  (n \u2264 m \u2194 result.isSome) \u2227\n  (n \u2264 m \u2192\n    (result.isSome \u2227\n    let val := Option.getD result \"\";\n    let xs := List.Ico n (m+1);\n    let avg := xs.sum / xs.length;\n    (val.take 2 = \"0b\") \u2227\n    (Nat.ofDigits 2 ((val.drop 2).toList.map (fun c => c.toNat - '0'.toNat)).reverse = avg)))\n-- program termination\n\u2203 result, implementation n m = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) (m: Nat) : Option String :=\n\n  if n > m then none\n  else\n    let xs := List.Ico n (m + 1)\n    let avg := xs.sum / xs.length\n    some (\"0b\" ++ natToBin avg)\nwhere\n  natToBin (k : Nat) : String :=\n    if k = 0 then \"0\"\n    else go k \"\"\n  go (k : Nat) (acc : String) : String :=\n    if k = 0 then acc\n    else go (k / 2) ((if k % 2 = 0 then \"0\" else \"1\") ++ acc)\n  termination_by k\n  decreasing_by exact Nat.div_lt_self (by omega) (by omega)\n\n\n-- [TEST_CASES]\n\n#test implementation 1 5 = some \"0b11\"\n#test implementation 7 13 = some \"0b1010\"\n#test implementation 964 977 = some \"0b1111001010\"\n#test implementation 996 997 = some \"0b1111100100\"\n#test implementation 185 546 = some \"0b101101101\"\n#test implementation 362 496 = some \"0b110101101\"\n#test implementation 350 902 = some \"0b1001110010\"\n#test implementation 197 233 = some \"0b11010111\"\n#test implementation 7 5 = none\n#test implementation 5 1 = none\n#test implementation 5 5 = some \"0b101\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat) (m: Nat)\n: problem_spec implementation n m\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:237c651c6b1140af6711a9dedeec4a46aeb736be805cfb0d67e93e789bb5baca",
+  "timing": 1002.230863688048,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:d9d65300a5dbfad99309c30b6734a272841ca8b4d23cb65c8199ed658483e565",
+    "status": "OK",
+    "result": "sha256:7db282521a4d66b0439e112b71f295a59a08c06d2f37f9f2bfb61f6d772b1b59",
+    "validation": [
+      {
+        "problem_id": "103",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:edd5d84a4190689551a6c91011491a2330492307cff2a0ac133ce224503cefd2"
+      }
+    ]
+  },
+  "exception": null
+}

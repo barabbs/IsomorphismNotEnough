@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_length(s: str) -> bool\n\"\"\"Write a function that takes a string and returns True if the string\nlength is a prime number or False otherwise\n\n>>> prime_length('Hello')\nTrue\n>>> prime_length('abcdcba')\nTrue\n>>> prime_length('kittens')\nTrue\n>>> prime_length('orange')\nFalse\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Hello\" = True\n-- #test implementation \"abcdcba\" = True\n-- #test implementation \"kittens\" = True\n-- #test implementation \"orange\" = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 82,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:4460a13880499098289048c09701745b77e6ae4edd86d62b6241fac3278c4ada",
+  "timing": 37.66861861012876,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d5e3ba444c27fd5d9ed7b97b9b11e970778d66e3c918ccd7ab1c78b7da59d110",
+    "status": "OK",
+    "result": "sha256:4aca523008688ff8eab47ab60ca87aeec98684f4ffb75c9ce7fc38dacf0f15a0"
+  },
+  "exception": null
+}

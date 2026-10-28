@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that start with a given prefix.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String \u2192 String \u2192 List String)\n-- inputs\n(strings: List String)\n(pref: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 29,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:cc76e9ba5ea30e15372770d8692b0bc9088ed35f04a7ae47309cdf139a468d5f",
+  "timing": 62.8411328719958,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/hbqpx5zz/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f067c418e302a85fe2cd4c8886827bf8e378bf6df7b39ce3a13fc60f69f8ddc5",
+    "status": "OK",
+    "result": "sha256:824158d1986aaf4f850997cd21f32135a05b1b9905ec041f0aa2f907260c044f"
+  },
+  "exception": null
+}

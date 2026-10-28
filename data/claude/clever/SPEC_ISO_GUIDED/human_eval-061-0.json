@@ -1,0 +1,31 @@
+{
+  "text": "sha256:536fc08156f71290383473944194ded6895c0913e16d2b03998b32ea15830811",
+  "info": {
+    "dataset": "clever",
+    "id": 61,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:a80d73e442d3fd4f46a43d8a0aaae59c748e60c29b089733ff231edb3a3c3ac8",
+  "timing": 609.9623963930062,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/c1ewnbxc/problem.lean --deep=stuck",
+    "claude": "sha256:593baf22a63ea941645d3bd9207e0cace3a6a81a1716f33f1f104618f147eeb1",
+    "status": "MISMATCH",
+    "result": "sha256:8570bfa346781ba1ec953f33f4299f97d87594c5626e071b157beb7d96750f51",
+    "comment": "→",
+    "validation": [
+      {
+        "problem_id": "61",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:badcf8133aa3caaadb30b357aa49eb719e5630e35d2fcf6c26f27fe219e48b71"
+      }
+    ],
+    "analysis": "PRECOND"
+  },
+  "exception": null
+}

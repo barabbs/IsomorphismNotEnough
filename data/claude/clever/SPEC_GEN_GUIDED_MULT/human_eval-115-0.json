@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"You are given a rectangular grid of wells. Each row represents a single well,\nand each 1 in a row represents a single unit of water.\nEach well has a corresponding bucket that can be used to extract water from it,\nand all buckets have the same capacity.\nYour task is to use the buckets to empty the wells.\nOutput the number of times you need to lower the buckets.\nConstraints:\n    * all wells have the same length\n    * 1 <= grid.length <= 10^2\n    * 1 <= grid[:,1].length <= 10^2\n    * grid[i][j] -> 0 | 1\n    * 1 <= capacity <= 10\n\n>>> max_fill_count([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1)\n6\n>>> max_fill_count([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], 2)\n5\n>>> max_fill_count([[0, 0, 0], [0, 0, 0]], 5)\n0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List (List Nat) \u2192 Nat \u2192 Nat)\n-- inputs\n(grid: List (List Nat))\n(capacity: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [[0,0,1,0], [0,1,0,0], [1,1,1,1]] 1 = 6\n-- #test implementation [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]] 2 = 5\n-- #test implementation [[0,0,0], [0,0,0]] 5 = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 115,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:81b1c772657549dea8a8f86cfe2c8914ffe5297c5409d8da9453d3f42740b5fa",
+  "timing": 208.1208190949983,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/q0j5hk6v/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:523cc616143f1b003e8b9d195c9a1536d804eeff18ca78635fb80f05e7153cad",
+    "status": "OK",
+    "result": "sha256:ba3c88132cb1b53e94930b2a27e4f69c88d32ca4def650f41f7b6472895c7883"
+  },
+  "exception": null
+}

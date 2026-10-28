@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef starts_one_ends(n: int) -> int\n\"\"\"Given a positive integer n, return the count of the numbers of n-digit\npositive integers that start or end with 1.\nNote: For reviewer, I believe this is the most straightforward spec, and I am relying on Set cardianlity not being computable in general. The point of this problem is really to privide a formula.\nNote: But I guess a program that goes through each number and adds 1 will be the same as a program that computes in O(1) under this view.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  0 < n \u2192\n  result = {k : \u2115 | 10 ^ (n - 1) \u2264 k \u2227 k < 10 ^ n \u2227 (k.repr.front = '1' \u2228 k.repr.back = '1')}.ncard\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 1\n-- #test implementation 2 = 18\n",
+  "info": {
+    "dataset": "clever",
+    "id": 83,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b20bef521aeae8ead1ce5ba701d5a391a8d05bc2201f5ee5d66ff76988568363",
+  "timing": 69.13668472500285,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ruo1o96v/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:3d066abe2692042f24b4b47cdffddc61a31268c0e47ca2d5e81e6d21c6bb29c2",
+    "status": "OK",
+    "result": "sha256:6d20fe74326e9e6c336acf618665257c6b0f25d82d149425be93aa8e9f0a14e2"
+  },
+  "exception": null
+}

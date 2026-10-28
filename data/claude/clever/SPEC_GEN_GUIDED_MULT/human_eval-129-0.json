@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef split_words(txt)\n\"\"\"Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\nshould split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\nalphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n\n>>> split_words('Hello world!')\n['Hello', 'world!']\n>>> split_words('Hello,world!')\n['Hello', 'world!']\n>>> split_words('abcdef')\n3\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Option (List String) \u00d7 Option Nat)\n-- inputs\n(text: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Hello world!\" = (some [\"Hello\", \"world!\"], none)\n-- #test implementation \"Hello,world!\" = (some [\"Hello\", \"world!\"], none)\n-- #test implementation \"abcdef\" = (none, some 3)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 129,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:0418188f22aaf386357e83d6cd6340f93144f2ebd937f5b21098fe9532f25ade",
+  "timing": 437.54088510602014,
+  "metadata": {
+    "prompt": "Read problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:076533939d6b5022d0aee2c3a2071e146c64e276208eafd4cd2370e430b3b0e8",
+    "status": "OK",
+    "result": "sha256:3781f741d813aa5d518abba5db3e5f3927d5bea83605cc084bbe5666d13adc86"
+  },
+  "exception": null
+}

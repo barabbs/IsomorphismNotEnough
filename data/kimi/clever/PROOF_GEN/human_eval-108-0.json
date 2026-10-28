@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_nums(arr: List[int]) -> int\n\"\"\"Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(arr: List Int) :=\n\n-- spec\nlet spec (result: Int) :=\n  let dig_sum (x: Int): Int :=\n    let digs := Nat.digits 10 x.natAbs;\n    if x >= 0 then\n      (List.map (fun t => (t: Int)) digs).sum\n    else\n      (List.map (fun t => (t: Int)) (digs.drop 1)).sum - (digs[0]! : Int);\n  (arr = [] → result = 0) ∧\n  (arr ≠ [] → 0 < (dig_sum arr[0]!) → result = 1 + implementation (arr.drop 1)) ∧\n  (arr ≠ [] → (dig_sum arr[0]!) ≤ 0 → result = implementation (arr.drop 1));\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : Int :=\n\n  match arr with\n  | [] => 0\n  | x :: xs =>\n      let digs := Nat.digits 10 x.natAbs\n      let sum := (List.map (fun t => (t : Int)) digs).sum\n      let signedSum := if x >= 0 then sum else sum - 2 * (digs.getLast! : Int)\n      if signedSum > 0 then 1 + implementation xs else implementation xs\n\n\n-- [TEST_CASES]\n\n#test implementation [] = 0\n#test implementation [-1, -2, 0] = 0\n#test implementation [1, 1, 2, -2, 3, 4, 5] = 6\n#test implementation [1, 6, 9, -6, 0, 1, 5] = 5\n#test implementation [1, 100, 98, -7, 1, -1] = 4\n#test implementation [12, 23, 34, -45, -56, 0] = 5\n#test implementation [-0, 1^0] = 1\n#test implementation [1] = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 108,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d51938a83a1159e5bfdaf54b951a9e75f9c38c41665c2c48ec062416308f94c9",
+  "timing": 7767.23436140921,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:38ca0bf634b44f67d72cf974de6706a49324d6cdc3bb184818d184808aac1a46",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:8b44f69d3a11a82515c5d47470f6e18af9e0d9872b7292d3c893660f46681fc4",
+    "validation": [
+      {
+        "problem_id": "108",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:8fcd6635ab24a28610390e653f213d6e0921eab245b2df6837991081d04e6c9f"
+      }
+    ]
+  },
+  "exception": null
+}

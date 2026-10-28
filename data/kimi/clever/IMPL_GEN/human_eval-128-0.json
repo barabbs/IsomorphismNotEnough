@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prod_signs(arr: List[int]) -> Optional[int]\n\"\"\"You are given an array arr of integers and you need to return\nsum of magnitudes of integers multiplied by product of all signs\nof each number in the array, represented by 1, -1 or 0.\nNote: return None for empty arr.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Option Int)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: Option Int) :=\n  match result with\n  | none => arr = []\n  | some result =>\n  let magnitude_sum := (arr.map (fun x => Int.ofNat x.natAbs)).sum;\n    let neg_count_odd := (arr.filter (fun x => x < 0)).length % 2 = 1;\n    let has_zero := 0 ∈ arr;\n    (result < 0 ↔ (neg_count_odd ∧ ¬has_zero)\n      ∧ result = magnitude_sum * -1) ∧\n    (0 < result ↔ (¬neg_count_odd ∧ ¬has_zero)\n      ∧ result = magnitude_sum) ∧\n    (result = 0 ↔ has_zero)\n-- program terminates\n∃ result, impl arr = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Option Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 2, 2, -4]: List Int) = (-9: Int)\n-- #test implementation ([0, 1]: List Int) = (0: Int)\n-- #test implementation ([]: List Int) = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 128,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:efcc48a65dac9c82066247931198407c17eef33acc21ac734c56f5258b3859dd",
+  "timing": 106.0434870030731,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:e02d8943283c203981dc69ac6b2c14769a522a8a98cc5644c10b64cfbececc21",
+    "status": "OK",
+    "result": "sha256:1734b29a5daf00c65b1f249914a6f6dbb6d7e16d728a94bc2da0ace6f842b6bb"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"Please write a function that sorts an array of non-negative integers according to\nnumber of ones in their binary representation in ascending order.\nFor similar number of ones, sort based on decimal value.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat \u2192 List Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  \u2200 x : Nat, lst.count x = result.count x \u2227\n  result.length = lst.length \u2227\n  (\u2200 i j : Nat, i < j \u2192 j < result.length \u2192\n    Nat.digits 2 (result.get! i) < Nat.digits 2 (result.get! j) \u2228\n    (Nat.digits 2 (result.get! i) = Nat.digits 2 (result.get! j) \u2227 result.get! i < result.get! j))\n-- program termination\n\u2203 result,\n  implementation lst = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 5, 2, 3, 4] = [1, 2, 3, 4, 5]\n-- #test implementation [1, 0, 2, 3, 4] = [0, 1, 2, 3, 4]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 116,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9f09ce08b6930cfee1d82ba83b1bacfd60329a794dcbd1fe6d318116e989caad",
+  "timing": 142.6551406510116,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/7n444nxb/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:fca716dd357981c1f3973714996e0b5b82d8b7b496d1d231fe698dc0a50b6f05",
+    "status": "OK",
+    "result": "sha256:ba32f8212c4ffb273ed1bf7767b69da437a533ec81fe2670ff995c1d699032cf"
+  },
+  "exception": null
+}

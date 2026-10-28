@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prod_signs(arr: List[int]) -> Optional[int]\n\"\"\"You are given an array arr of integers and you need to return\nsum of magnitudes of integers multiplied by product of all signs\nof each number in the array, represented by 1, -1 or 0.\nNote: return None for empty arr.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Option Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 128,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f38b551f8ef325c15a501c7082e80c211bc94c0bd173add977d3059cc486c4e8",
+  "timing": 48.94826417301374,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/w335yef7/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:2aaa8df2ad231be7e404e7d6c7650b0fbafae09fd86fd9305e4d58a7a9467e26",
+    "status": "OK",
+    "result": "sha256:0fba796fd0ff5fbc8b07462a398954330569fa8c5d377026245994702d943820"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digits(n: int) -> int\n\"\"\"Given a positive integer n, return the product of the odd digits.\nReturn 0 if all digits are even.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  0 < n \u2192\n  (n < 10 \u2192 (n % 2 = 1 \u2192 result = n) \u2227 (n % 2 = 0 \u2192 result = 0)) \u2227\n  (10 \u2264 n \u2192\n    let digit := n % 10;\n    let rest := n / 10;\n    (digit % 2 = 1 \u2192\n      if (Nat.toDigits 10 rest).all (fun x => Even (x.toNat - '0'.toNat))\n        then impl rest = 0 \u2227 result = digit\n      else\n        result = impl rest * digit)\n    \u2227\n    (digit % 2 = 0 \u2192\n      result = impl rest))\n-- program termination\n\u2203 result, impl n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 1\n-- #test implementation 4 = 0\n-- #test implementation 235 = 15\n",
+  "info": {
+    "dataset": "clever",
+    "id": 131,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d9e656cd1cc2ac2a3f622ef6c9d8effa2b629bc78fe04384c42e7d59ea1019ca",
+  "timing": 62.26871064500301,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/_g9sth71/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:6a01e213b9449df85baba675f6ae3a78254186e1b2e16f63762dc7dca72c7be3",
+    "status": "OK",
+    "result": "sha256:0d97a4cc17585b9da051388c8f8d6604e751d30a0bf5b663ba7c88bf89e8d34b"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_product(numbers: List[int]) -> Tuple[int, int]\n\"\"\"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n\n>>> sum_product([])\n(0, 1)\n>>> sum_product([1, 2, 3, 4])\n(10, 24)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → (Int × Int))\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] = (0, 1)\n-- #test implementation [1, 2, 3, 4] = (10, 24)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 8,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:14c04e37efeb42399a7637feec67761f9326a63b5de1bbedc1fcaa914f2985e6",
+  "timing": 74.35867523495108,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:892b7c4ca972e04584cbec315fe9be34fd03bb3104748f9fc1682360e5f139ef",
+    "status": "OK",
+    "result": "sha256:95025ccccfb9865c8a7531c1856c8f4287daa0e13d3ed3dc814bf122104c999e"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef monotonic(numbers: List[int]) -> bool\n\"\"\"Return True if list elements are monotonically increasing or decreasing.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(numbers : List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 57,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7da2dd71146c8d5f5c1b98f0a1bb53efc9e3ce3bbade9bcd55ac27d49da98c19",
+  "timing": 170.1152854450047,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:5a58bd9fb2fb654d19865b76c1ce1afb988b2688acee8a19d87edd79a2921a04",
+    "status": "OK",
+    "result": "sha256:5c058693e4ee72227f493cb3aa372da4e35890656a60065a0432a6fb4ed964aa"
+  },
+  "exception": null
+}

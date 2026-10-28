@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef exchange(lst1: list[int], lst2: list[int]) -> str\n\"\"\"In this problem, you will implement a function that takes two lists of numbers,\nand determines whether it is possible to perform an exchange of elements\nbetween them to make lst1 a list of only even numbers.\nThere is no limit on the number of exchanged elements between lst1 and lst2.\nIf it is possible to exchange elements between the lst1 and lst2 to make\nall the elements of lst1 to be even, return \"YES\".\nOtherwise, return \"NO\". It is assumed that the input lists will be non-empty.\n\n>>> exchange([1, 2, 3, 4], [1, 2, 3, 4])\n'YES'\n>>> exchange([1, 2, 3, 4], [1, 5, 3, 4])\n'NO'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List Int \u2192 String)\n-- inputs\n(lst1: List Int)\n(lst2: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ([1, 2, 3, 4], [1, 2, 3, 4]) = \"YES\"\n-- #test implementation ([1, 2, 3, 4], [1, 5, 3, 4]) = \"NO\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 110,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:0ca630ac6cc85efc4cf44f3f4cf679a12e961dae26fae1575033ecf0f9536c87",
+  "timing": 72.03686638399995,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/c_fn5rn4/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e4bbf74ed11a3d84b998887745fc6e4a392719e75ac4f4ce9f5d88ff8005c2f1",
+    "status": "OK",
+    "result": "sha256:6508219c6c2e91bff96f1240dd771e26b4303aba6901092c4f0ff7197673c5e2"
+  },
+  "exception": null
+}

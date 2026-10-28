@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encode_shift(s: str) -> str\n\"\"\"returns encoded string by shifting every character by 5 in the alphabet.\n\n>>> encode_shift('abc')\n'fgh'\n>>> encode_shift('xyz')\n'cde'\n>>> encode_shift('aaa')\n'fff'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"abc\" = \"fgh\"\n-- #test implementation \"xyz\" = \"cde\"\n-- #test implementation \"aaa\" = \"fff\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 50,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:46635ffc71e2c12902ee7fd085959156618a3b131768a273fb2719a497e61423",
+  "timing": 86.7494339900004,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/6aheqwsu/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d6a5a9567f9a1fe8b5ce58bac0be382fe96272451e01e0511ef3d67fc7d41ae1",
+    "status": "OK",
+    "result": "sha256:cc1223d508ebf8b1ffbbc954732b89fe4b3d1ddfa5139a4c9504b7bc559347ae"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef multiply(a : int, b : int) -> int\n\"\"\"Complete the function that takes two integers and returns\nthe product of their unit digits.\nAssume the input is always valid.\n-- Note(George): I'm finding it hard to not leak the implementation here, so I opted to make the spec more convoluted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 Int \u2192 Int)\n-- inputs\n(a b: Int) :=\n-- spec\nlet spec (result : Int) :=\n  |result| \u2264 81 \u2227\n  result % 10 = (a * b) % 10 \u2227\n  ((b%10) \u2260 0 \u2192 (result % (b%10) = 0 \u2227 (result/ (b%10)) % 100 = (a%10))) \u2227\n  ((a%10) \u2260 0 \u2192 (result % (a%10) = 0 \u2227 (result/ (a%10)) % 100 = (b%10))) \u2227\n  ((a%10 = 0) \u2228 (b%10 = 0) \u2192 result = 0)\n-- program termination\n\u2203 result,\n  implementation a b = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: Int) : Int :=\n\n(a % 10) * (b % 10)\n\n\n-- [TEST_CASES]\n\n#test implementation 148 412 = 16\n#test implementation 19 28 = 72\n#test implementation 2020 1851 = 0\n#test implementation 14 (-15) = 20\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: Int)\n: problem_spec implementation a b\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 97,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6e5ecc8bdcf6e2a169f8b9b5d4cb460cce585b12459979b4ea573458877052f8",
+  "timing": 187.81194902595598,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:f1c571e46c4fbe85e7d7d2ff97086d17075b6aec075412afa140a5c293e16260",
+    "status": "OK",
+    "result": "sha256:17bc10b6750c5062af77e3819c57de447bd0b452ba6242e841fc491a567f28f2",
+    "validation": [
+      {
+        "problem_id": "97",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:d2928662b4060734bbcaea19436e8d2a6f13184b8dffe5053620e27698c6b18a"
+      }
+    ]
+  },
+  "exception": null
+}

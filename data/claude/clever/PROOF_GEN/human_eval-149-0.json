@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sorted_list_sum(lst: List[str]) -> List[str]\n\"\"\"Write a function that accepts a list of strings as a parameter,\ndeletes the strings that have odd lengths from it,\nand returns the resulted list with a sorted order,\nThe list is always a list of strings and never an array of numbers,\nand it may contain duplicates.\nThe order of the list should be ascending by length of each word, and you\nshould return the list sorted by that rule.\nIf two words have the same length, sort the list alphabetically.\nThe function should return a list of strings in sorted order.\nYou may assume that all words will have the same length.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List String \u2192 List String)\n-- inputs\n(lst: List String) :=\n-- spec\nlet spec (result: List String) :=\nmatch result with\n| [] => \u2200 str \u2208 lst, Odd str.length\n| head::tail =>\n  Even head.length \u2227\n  (\u2200 str \u2208 lst,\n    Odd str.length \u2228\n    str.length > head.length \u2228\n    str.length = head.length \u2227 str \u2265 head)\n  \u2227 impl (lst.erase head) = tail\n-- program termination\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List String) : List String :=\n\n  let filtered := lst.filter (fun s => s.length % 2 == 0)\n  filtered.mergeSort (fun a b =>\n    if a.length != b.length then a.length \u2264 b.length\n    else a \u2264 b)\n\n\n-- [TEST_CASES]\n\n#test implementation [\"aa\", \"a\", \"aaa\"] = [\"aa\"]\n#test implementation [\"ab\", \"a\", \"aaa\", \"cd\"] = [\"ab\", \"cd\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List String)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 149,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:841712c1ec93b20294a2b31dd00758df80f2bb3509d768e9735fe479bca3121f",
+  "timing": 1705.1379222369287,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:a968c9ba1dd40cfc26151fd5a4bebdd351630d0cf1556aebd0fa8c6207de0f07",
+    "status": "OK",
+    "result": "sha256:4cc342339b42cfd4b33b30a63f3014d28aba31f3347e32e51431a7879d57a053",
+    "validation": [
+      {
+        "problem_id": "149",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:2d21be4d0bcdff2db66d1898d111ff217495d2a012c47404acbfb97b149b6411"
+      }
+    ]
+  },
+  "exception": null
+}

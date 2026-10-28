@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_threshold(numbers: List[int], threshold: int) -> bool\n\"\"\"Return True if all numbers in the list l are below threshold t, and False otherwise.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Int \u2192 Bool)\n-- inputs\n(numbers: List Int)\n(threshold: Int) :=\n-- spec\nlet numbers_below_threshold :=\n  \u2200 i, i < numbers.length \u2192 numbers[i]! < threshold;\nlet spec (res: Bool) :=\n(numbers.length = 0 \u2192 res) \u2227\n(res \u2194 numbers_below_threshold)\n-- program terminates\n\u2203 result, impl numbers threshold = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) (threshold: Int) : Bool :=\n\nnumbers.all (\u00b7 < threshold)\n\n\n-- [TEST_CASES]\n\n#test implementation ([1, 2, 4, 10]: List Int) 100 = true\n#test implementation ([1, 20, 4, 10]: List Int) 5 = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n(threshold: Int)\n: problem_spec implementation numbers threshold  :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 52,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:da765cf99c8e4bb057707793beefb15ebce64b336da2885537a570afdddffe9b",
+  "timing": 162.2029550059233,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:8c75ecc3b0d22c5bc21985ce526c305424c25bbf81a37507748466357c9588b9",
+    "status": "OK",
+    "result": "sha256:4a93724a94d26d7754a084b9ae36092fe98925d01d844972c0d669d366fdb186",
+    "validation": [
+      {
+        "problem_id": "52",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:d19314361cdb4db3d0865dc90e97723c8dfa052bc8f982e690b8fdcf12ae00c8"
+      }
+    ]
+  },
+  "exception": null
+}

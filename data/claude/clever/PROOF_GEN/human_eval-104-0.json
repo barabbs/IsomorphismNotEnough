@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique_digits(x: List[nat]) -> List[nat]\n\"\"\"Given a list of positive integers x. return a sorted list of all\nelements that hasn't any even digit.\n\nNote: Returned list should be sorted in increasing order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat \u2192 List Nat)\n-- inputs\n(x: List Nat) :=\n-- spec\nlet spec (result: List Nat) :=\n  let has_even_digits(i: Nat): Bool :=\n    (List.filter (fun d => Even d) (Nat.digits 10 i)).length > 0;\n  (List.Sorted Nat.le result) \u2227\n  (forall i, i \u2208 result \u2194 (i \u2208 x \u2227 !(has_even_digits i)))\n-- program termination\n\u2203 result, implementation x = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x: List Nat) : List Nat :=\n\n  let has_even_digits (i : Nat) : Bool :=\n    (List.filter (fun d => Even d) (Nat.digits 10 i)).length > 0\n  let filtered := x.filter (fun i => !has_even_digits i)\n  filtered.mergeSort (\u00b7 \u2264 \u00b7)\n\n\n-- [TEST_CASES]\n\n#test implementation [15, 33, 1422, 1] = [1, 15, 33]\n#test implementation [152, 323, 1422, 10] = []\n#test implementation [12345, 2033, 111, 151] = [111, 151]\n#test implementation [135, 103, 31] = [31, 135]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x: List Nat)\n: problem_spec implementation x\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 104,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d898f3028c42e173a04ab552f02e2620317b095a69ccb61c009972b05a88523c",
+  "timing": 204.26277227699757,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:8d3145dc7d06b767b831fc639de8db86d1d09827164d627b4e251b2192f4919e",
+    "status": "OK",
+    "result": "sha256:efdf7620f5d9d4aedeb6cdd34eac26addb99217ae20c96a4137b5b0340440394",
+    "validation": [
+      {
+        "problem_id": "104",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:db703dcf6fede22c997e3579364ddaf0a9353388dba5253aa7bb01580805c59a"
+      }
+    ]
+  },
+  "exception": null
+}

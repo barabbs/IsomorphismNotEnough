@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solution(lst: List[int]) -> int\n\"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that\nare in even positions.\n\n>>> solution([5, 8, 7, 1])\n12\n>>> solution([3, 3, 3, 3, 3])\n9\n>>> solution([30, 13, 24, 321])\n0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ([5, 8, 7, 1]: List Int) = 12\n-- #test implementation ([3, 3, 3, 3, 3]: List Int) = 9\n-- #test implementation ([30, 13, 24, 321]: List Int) = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 121,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:77316f1a10c0947198ce7726c6f658eedfe62d24c29f6a6e6d68db03b75e8fec",
+  "timing": 85.5408333381638,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:6859ce4dcc7494d5b39e53a333dbb2613525b94837c53cb351d1fbc45b2a5ab1",
+    "status": "OK",
+    "result": "sha256:d9c068674f0deac7d41ca782c4ac2f8b215c48a1a0dfaec92eda67810d8961fa"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef pluck(numbers: List[int]) -> List[int]\n\"\"\"Given an array representing a branch of a tree that has non-negative integer nodes\nyour task is to pluck one of the nodes and return it.\nThe plucked node should be the node with the smallest even value.\nIf multiple nodes with the same smallest even value are found return the node that has smallest index.\n\nThe plucked node should be returned in a list, [ smallest_value, its index ],\nIf there are no even values or the given array is empty, return [].\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat \u2192 List Nat)\n-- inputs\n(numbers: List Nat) :=\n-- spec\nlet spec (result: List Nat) :=\n(result.length = 0 \u2194 \u2200 i, i < numbers.length \u2192 numbers[i]! % 2 = 1) \u2227\n(result.length = 2 \u2194 \u2203 i, i < numbers.length \u2227\n  numbers[i]! % 2 = 0 \u2227\n  result[0]! = numbers[i]! \u2227\n  result[1]! = i \u2227\n  (\u2200 j, j < numbers.length \u2192 j < i \u2192 (numbers[j]! % 2 = 1 \u2228 numbers[i]! < numbers[j]!)) \u2227\n  (\u2200 k, k < numbers.length \u2192 numbers[k]! % 2 = 0 \u2192 numbers[i]! \u2264 numbers[k]!));\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Nat) : List Nat :=\n\nlet rec aux (lst : List Nat) (idx : Nat) (best : Option (Nat \u00d7 Nat)) : Option (Nat \u00d7 Nat) :=\n  match lst with\n  | [] => best\n  | x :: xs =>\n    let newBest :=\n      if x % 2 = 0 then\n        match best with\n        | none => some (x, idx)\n        | some (v, i) => if x < v then some (x, idx) else some (v, i)\n      else best\n    aux xs (idx + 1) newBest\nmatch aux numbers 0 none with\n| none => []\n| some (v, i) => [v, i]\n\n\n-- [TEST_CASES]\n\n#test implementation [4, 2, 3] = [2, 1]\n#test implementation [1, 2, 3] = [2, 1]\n#test implementation [] = []\n#test implementation [5, 0, 3, 0, 4, 2] = [0, 1]\n\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Nat)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 68,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d51b521452ab4c74b3bf9f4a8199d677dc442756ad8dbef92569b0478a5c5ef7",
+  "timing": 1505.094239996979,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:c16c351ee4f2ce4844c6449c3f4c2b53245f8ecd597d4976188ebfe73748c685",
+    "status": "OK",
+    "result": "sha256:519866d0016a793c689a14efef81cb9b0ae6f3fddbad95a5aae0c5890eb6dac2",
+    "validation": [
+      {
+        "problem_id": "68",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:194b6472c76293e2b486ead116257bd0dc5044a798d8cd496c4b28c06ea29523"
+      }
+    ]
+  },
+  "exception": null
+}

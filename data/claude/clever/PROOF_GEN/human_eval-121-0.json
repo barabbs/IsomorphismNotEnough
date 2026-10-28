@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solution(lst: List[int]) -> int\n\"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that\nare in even positions.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Int) :=\nlst ≠ [] → ∀ i,  i < lst.length ∧ i % 2 = 0 →\n  (lst.length = 1 → impl lst = 0) ∧\n  (i + 1 < lst.length →\n    (lst[i + 1]! % 2 = 1 →\n    impl (lst.drop i) = lst[i + 1]! + (if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)) ∧\n    (lst[i + 1]! % 2 = 0 →\n    impl (lst.drop i) = if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)\n  )\n-- program terminates\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int) : Int :=\n\n  match lst with\n  | [] => 0\n  | [x] => if x % 2 != 0 then x else 0\n  | x :: _ :: rest => (if x % 2 != 0 then x else 0) + implementation rest\n\n\n-- [TEST_CASES]\n\n#test implementation ([5, 8, 7, 1]: List Int) = 12\n#test implementation ([3, 3, 3, 3, 3]: List Int) = 9\n#test implementation ([30, 13, 24, 321]: List Int) = 0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 121,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:157a076b38c2bd818b30774e80595883cb40df2ca68df4389ccb53bf1007fb3e",
+  "timing": 237.69783662899863,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:59049effd709d2a7d1733af80570e9be8bd6e533afb9669be546deb86cb01679",
+    "status": "ISSUE",
+    "result": "sha256:10a4aa0edc713bca98e0c626ca8fa4f42ebf9a567411727ebe25acca87d55160",
+    "validation": [
+      {
+        "problem_id": "121",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:8d510817c60500d7c1bcb4fa681db031b11e6dff7e357ded269d1fe5350e7689"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "WRONG"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prod_signs(arr: List[int]) -> Optional[int]\n\"\"\"You are given an array arr of integers and you need to return\nsum of magnitudes of integers multiplied by product of all signs\nof each number in the array, represented by 1, -1 or 0.\nNote: return None for empty arr.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Option Int)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: Option Int) :=\n  match result with\n  | none => arr = []\n  | some result =>\n  let magnitude_sum := (arr.map (fun x => Int.ofNat x.natAbs)).sum;\n    let neg_count_odd := (arr.filter (fun x => x < 0)).length % 2 = 1;\n    let has_zero := 0 \u2208 arr;\n    (result < 0 \u2194 (neg_count_odd \u2227 \u00achas_zero)\n      \u2227 result = magnitude_sum * -1) \u2227\n    (0 < result \u2194 (\u00acneg_count_odd \u2227 \u00achas_zero)\n      \u2227 result = magnitude_sum) \u2227\n    (result = 0 \u2194 has_zero)\n-- program terminates\n\u2203 result, impl arr = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (arr: List Int) : Option Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 2, 2, -4]: List Int) = (-9: Int)\n-- #test implementation ([0, 1]: List Int) = (0: Int)\n-- #test implementation ([]: List Int) = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 128,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:89f566d85d8c66dfd9733ae6b5d79d24b76929db39e492f016661224fc88ce03",
+  "timing": 64.98973069299245,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/9iezvnba/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:547f5f4d2d24f89d296427b4c5db726ce39a782df5ffabb985ea9333a960f783",
+    "status": "OK",
+    "result": "sha256:3b76d37d25d548ed55216e4c91340c09a2cdd8cb2360cd2a626b2a15a8c2b898"
+  },
+  "exception": null
+}

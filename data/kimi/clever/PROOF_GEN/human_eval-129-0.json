@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef split_words(txt)\n\"\"\"Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\nshould split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\nalphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n-- return a tuple of Option (List String) and Option Nat\n(impl: String → Option (List String) × Option Nat)\n-- inputs\n(text: String) :=\n-- spec\nlet spec (result: Option (List String) × Option Nat) :=\n  -- both cannot be None\n  let words := result.fst;\n  let ord := result.snd;\n  0 < text.length →\n  ¬ (words = none ∧ ord = none) ∧\n    (words = none ↔ ∀ ch, ch ∈ text.toList →  (ch = ',' ∨ ch = ' ')) ∧\n    (∀ num, ord = some num → (text.get! 0).toNat = num) ∧\n    (∀ lst, words = some lst → ∀ i, i < lst.length →\n      let str := lst.get! i;\n      text.containsSubstr str) ∧\n    (∀ lst, words = some lst →\n      let first := text.takeWhile (fun c => c ≠ ',' ∧ c ≠ ' ');\n      let nextImpl := impl (text.drop (first.length + 1));\n      let nextWords := nextImpl.fst;\n      (∃ nextLst, nextWords = some nextLst ∧\n        lst = [first] ++ nextLst))\n-- program terminates\n∃ result, impl text = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (text: String) : Option (List String) × Option Nat :=\n\n  if text.contains ' ' then\n    (some (text.splitOn \" \"), none)\n  else if text.contains ',' then\n    (some (text.splitOn \",\"), none)\n  else\n    let count := text.toList.filter (fun c => 'a' ≤ c ∧ c ≤ 'z' ∧ (c.toNat - 'a'.toNat) % 2 = 1) |>.length\n    (none, some count)\n\n\n-- [TEST_CASES]\n\n#test implementation \"Hello world!\" = (some [\"Hello\", \"world!\"], none)\n#test implementation \"Hello,world!\" = (some [\"Hello\", \"world!\"], none)\n#test implementation \"abcdef\" = (none, some 3)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(text: String)\n: problem_spec implementation text :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 129,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7be293737f1067745b33b61e75cba7861bfc85cde45b4a22d42c24b4e9d40594",
+  "timing": 5213.123345762957,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:4d784cbf6707cd4635aa9c0fea5d5e07b868480c5299225cebce686b34ed7568",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:8002b7a33f32ddefc78a9cb97ef9c99d222b8d1675d923fecae38cd4605435da",
+    "validation": [
+      {
+        "problem_id": "129",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:4217f927f8bd314df531ec92b82814accf8273db700c580bf80d4e6615e1b7e8"
+      }
+    ]
+  },
+  "exception": null
+}

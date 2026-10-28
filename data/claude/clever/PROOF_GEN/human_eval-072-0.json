@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef will_it_fly(q: List[int], w: int) -> bool\n\"\"\"Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is\nless than or equal the maximum possible weight w.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int \u2192 Bool)\n-- inputs\n(q: List Int) (w: Int) :=\n-- spec\nlet spec (result : Bool) :=\n  (result \u2192 (List.Palindrome q)) \u2227\n  (result \u2192 (List.sum q \u2264 w)) \u2227\n  (\u00ac(List.Palindrome q) \u2192 \u00ac result) \u2227\n  (\u00ac(List.sum q \u2264 w) \u2192 \u00ac result)\n-- program termination\n\u2203 result, implementation q w = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (q: List Int) (w: Int) : Bool :=\n\n  q == q.reverse && decide (q.sum \u2264 w)\n\n\n-- [TEST_CASES]\n\n#test implementation [3, 2, 3] 9 = True\n#test implementation [1, 2] 5 = False\n#test implementation [3] 5 = True\n#test implementation [3, 2, 3] 1 = False\n#test implementation [1, 2, 3] 6 = False\n#test implementation [5] 5 = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(q: List Int) (w: Int)\n: problem_spec implementation q w\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 72,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:873d83a4bd113f7ba077d78d382379d423a8790d6ac2f41484724a57e912c692",
+  "timing": 173.7644346380839,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:fc471530c48791b6bcb4d7490d92dea5e0402ae82c3a8f92a441e8c4ac939342",
+    "status": "OK",
+    "result": "sha256:59404735e49d0bf9ea7940b946d797d5246111f7ea550a643e9e182540bd3222",
+    "validation": [
+      {
+        "problem_id": "72",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5240fa3e80a1cea42a933bcca67f5fbf74897de5d5a3d02e874d62276a9054b2"
+      }
+    ]
+  },
+  "exception": null
+}

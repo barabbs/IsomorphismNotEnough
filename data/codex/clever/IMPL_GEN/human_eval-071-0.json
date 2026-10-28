@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triangle_area(a: float, b: float, c: float) -> float\n\"\"\"Given the lengths of the three sides of a triangle. Return the area of the triangle rounded to 2 decimal points\nif the three sides form a valid triangle. Otherwise return -1. Three sides make a valid triangle when the sum of\nany two sides is greater than the third side.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Rat → Rat → Rat → Rat)\n-- inputs\n(a: Rat) (b: Rat) (c: Rat) :=\n-- spec\nlet spec (result : Rat) :=\n  let is_valid_triangle :=\n    (a + b > c) ∧  (a + c > b) ∧ (b + c > a);\n  let s :=\n    (a + b + c) / 2;\n  if is_valid_triangle then\n    |result^2 - (s * (s-a) * (s-b) * (s-c))| ≤ ((1: Rat)/10000)\n  else\n    result = -1\n-- program termination\n∃ result, implementation a b c = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a: Rat) (b: Rat) (c: Rat): Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 4 5 = 6.00\n-- #test implementation 1 2 10 = -1\n-- #test implementation 4 8 5 = 8.18\n-- #test implementation 2 2 2 = 1.73\n-- #test implementation 1 2 3 = -1\n-- #test implementation 10 5 7 = 16.25\n-- #test implementation 2 6 3 = -1\n-- #test implementation 1 1 1 =  0.43\n-- #test implementation 2 2 10 = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 71,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7401503a1f2cf5bba3524fc953296f47cbcbed0c7f135122a3eebbff9f1056e8",
+  "timing": 242.92327497620136,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:c86f2cbcd041425945fe0c84aa41f4cd39a8204793e4401b162445908b3607d2",
+    "status": "ISSUE",
+    "result": "sha256:18503dae9a9c9165d9e3069f675778ca425a57d4d2218fc7e7ef3cf733c019c7"
+  },
+  "exception": null
+}

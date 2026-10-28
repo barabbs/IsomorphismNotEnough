@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef greatest_common_divisor(a: int, b: int) -> int\n\"\"\"Return a greatest common divisor of two integers a and b\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 Int \u2192 Int)\n-- inputs\n(a b: Int) :=\n-- spec\nlet spec (result: Int) :=\n(result \u2223 a) \u2227\n(result \u2223 b) \u2227\n(result \u2265 0) \u2227\n(\u2200 (d': Int),\n(d' \u2223 a) \u2192 (d' \u2223 b) \u2192\nd' \u2223 result);\n-- program termination\n\u2203 result, implementation a b = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: Int) : Int :=\n\n(Int.gcd a b : Int)\n\n\n-- [TEST_CASES]\n\n#test implementation 25 15 = 5\n#test implementation 3 5 = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: Int)\n: problem_spec implementation a b\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 13,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:cc8b73107cf80da82ad40712639995715c3006918c31446b36f5c1661a8e9d7f",
+  "timing": 109.44091709001805,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/5550t8uj/problem.lean --deep=stuck",
+    "claude": "sha256:e48302c9d93bc6229d516651109c98112546306a81ed5149b5e1ca7d28a94728",
+    "status": "OK",
+    "result": "sha256:5d33f12ea0ce68e5075ef46af7073df5d45097490942f3786cc68dedeb60e4d2",
+    "validation": [
+      {
+        "problem_id": "13",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:70efc91d837d761850345e2296e9491b48e378c26889cdd78fa832c20c585f10"
+      }
+    ]
+  },
+  "exception": null
+}

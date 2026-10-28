@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef f(n: int) -> List[int]\n\"\"\"Implement the function f that takes n as a parameter,\nand returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\nor the sum of numbers from 1 to i otherwise.\ni starts from 1.\nthe factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n\n>>> f(5)\n[1, 2, 6, 24, 15]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 List Int)\n-- inputs\n(n: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 = [1, 2, 6, 24, 15]\n-- #test implementation 7 = [1, 2, 6, 24, 15, 720, 28]\n-- #test implementation 1 = [1]\n-- #test implementation 3 = [1, 2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 106,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:619650a89a4cc7ca71fb713a7497def9e5d3ebeb7c5e610efdbe0324ce89d3c2",
+  "timing": 166.07829649897758,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/c1lporbi/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:095a04facb6db11b5e59a617cd232324cff8d267c20e70bd90c58b55b65eb429",
+    "status": "OK",
+    "result": "sha256:519b0009ca48ddfa84768e3c9e83dfdf87f554710aa7da9ed97c6b20c12b2071"
+  },
+  "exception": null
+}

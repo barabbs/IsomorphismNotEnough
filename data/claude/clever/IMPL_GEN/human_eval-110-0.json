@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef exchange(lst1: list[int], lst2: list[int]) -> str\n\"\"\"In this problem, you will implement a function that takes two lists of numbers,\nand determines whether it is possible to perform an exchange of elements\nbetween them to make lst1 a list of only even numbers.\nThere is no limit on the number of exchanged elements between lst1 and lst2.\nIf it is possible to exchange elements between the lst1 and lst2 to make\nall the elements of lst1 to be even, return \"YES\".\nOtherwise, return \"NO\". It is assumed that the input lists will be non-empty.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int \u2192 String)\n-- inputs\n(lst1: List Int)\n(lst2: List Int) :=\n-- spec\nlet spec (result : String) :=\n  lst1 \u2260 [] \u2192 lst2 \u2260 [] \u2192\n  let bool_result := \u2203 exchange: List (Nat \u00d7 Nat),\n    let lst1_idxs := exchange.map (fun (a, b) => a)\n    let lst2_idxs := exchange.map (fun (a, b) => b)\n    lst1_idxs.all (fun i => i < lst1.length) \u2227\n    lst2_idxs.all (fun i => i < lst2.length) \u2227\n    lst1_idxs.Nodup \u2227\n    lst2_idxs.Nodup \u2227\n    \u2200 i, i < lst1.length \u2192\n      (i \u2209 lst1_idxs \u2192 Even (lst1.get! i)) \u2227\n      (i \u2208 lst1_idxs \u2192\n        -- find the (a, b) in exchange where a = i\n        let i_idx := (lst1_idxs.indexesOf i).head!\n        Even (lst2.get! (lst2_idxs.get! i_idx)))\n  (bool_result \u2192 result = \"YES\") \u2227\n  (result = \"NO\" \u2192 \u00ac bool_result) \u2227\n  (result \u2260 \"YES\" \u2227 result \u2260 \"NO\" \u2192 False)\n-- program termination\n\u2203 result,\n  implementation lst1 lst2 = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst1: List Int) (lst2: List Int) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 2, 3, 4], [1, 2, 3, 4]) = \"YES\"\n-- #test implementation ([1, 2, 3, 4], [1, 5, 3, 4]) = \"NO\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 110,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:425a9928004a8af7ad4f2e2eda4ea1f9f4d257dc4fd0c6c3ac95711e603b8e87",
+  "timing": 68.54235510900617,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4zg66zve/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:7c129f23410c1bbfbefc79da42d84e306f5a4227f6f47ec44fba202f42b51db6",
+    "status": "OK",
+    "result": "sha256:c8b3dd382ced190ccadbb8ef65e3f38bc7d40a4b92cc8007c593625bd3e515f3"
+  },
+  "exception": null
+}

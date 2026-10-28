@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_zero(operations: List[int]) -> bool\n\"\"\"You're given a list of deposit and withdrawal operations on a bank account that starts with\nzero balance. Your task is to detect if at any point the balance of account fallls below zero, and\nat that point function should return True. Otherwise it should return False.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(operations: List Int) :=\n-- spec\nlet below_zero_condition := ∃ i, i ≤ operations.length ∧\n(operations.take i).sum < 0;\nlet spec (result: Bool) :=\nif result then below_zero_condition else ¬below_zero_condition;\n-- program terminates\n∃ result, impl operations = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (operations: List Int) : Bool :=\n\n  let rec go (ops : List Int) (bal : Int) : Bool :=\n    match ops with\n    | [] => false\n    | op :: ops' =>\n      let bal' := bal + op\n      if bal' < 0 then true else go ops' bal'\n  go operations 0\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = false\n#test implementation [1, 2, -4, 5] = true\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(operations: List Int)\n: problem_spec implementation operations\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 3,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1dc1d7bf834b55334e3f5a6c1607cc558c90898a373da741b9af615f7b296ff1",
+  "timing": 1822.1923826411366,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:3dbf2a5d60591cd3bd0daf4503841edd56911cfd74515c7730efe7a68493c49f",
+    "status": "OK",
+    "result": "sha256:22506fac9581b9ad2ca93848bcd84fb1fca0ada4f5538726bb732b6e4312c49e",
+    "validation": [
+      {
+        "problem_id": "3",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:f96a440f8f035c020e2f21d044d350869c4565e2c8dfce68e399857fdef8452d"
+      }
+    ]
+  },
+  "exception": null
+}

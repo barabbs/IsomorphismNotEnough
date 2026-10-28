@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef iscube(a: int) -> bool\n\"\"\"Write a function that takes an integer a and returns True if this integer is a cube of some integer number.\nNote: you may assume the input is always valid.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → Bool)\n-- inputs\n(a: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 77,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ebb76f20795136cebde00969923b5995c3f86b2ca5848f04359b2f41265a4fa0",
+  "timing": 65.63795931311324,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:4451a0195e9e8bbb35e49487e36dab45d8339048486b1159818f9063099bb937",
+    "status": "OK",
+    "result": "sha256:55986747675a5465ae797d80548c5619245406585e13ffdb0d7b654fb721c169"
+  },
+  "exception": null
+}

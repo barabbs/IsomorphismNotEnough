@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef eat(number: nat, need: nat, remaining: nat) -> List[nat]\n\"\"\"You're a hungry rabbit, and you already have eaten a certain number of carrots,\nbut now you need to eat more carrots to complete the day's meals.\nyou should return an array of [ total number of eaten carrots after your meals,\n                                the number of carrots left after your meals ]\nif there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.\n\nVariables:\n  @number : integer\n      the number of carrots that you have eaten.\n  @need : integer\n      the number of carrots that you need to eat.\n  @remaining : integer\n      the number of remaining carrots thet exist in stock\n\nConstrain:\n* 0 <= number <= 1000\n* 0 <= need <= 1000\n* 0 <= remaining <= 1000\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat \u2192 Nat \u2192 List Nat)\n-- inputs\n(number need remaining: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\nnumber \u2264 1000 \u2192 need \u2264 1000 \u2192 remaining \u2264 1000 \u2192\nresult.length = 2 \u2227\n(need \u2264 remaining \u2192 result[0]! - need = number \u2227\nneed = remaining - result[1]!) \u2227\n(remaining < need \u2192 result[0]! - remaining = number \u2227\nresult[1]! = 0);\n-- program terminates\n\u2203 result, impl number need remaining = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b c: Nat) : List Nat :=\n\nif b \u2264 c then [a + b, c - b] else [a + c, 0]\n\n\n-- [TEST_CASES]\n\n#test implementation 5 6 10 = [11, 4]\n#test implementation 4 8 9 = [12, 1]\n#test implementation 1 10 10 = [11, 0]\n#test implementation 2 11 5 = [7, 0]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b c: Nat)\n: problem_spec implementation a b c :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 159,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7fe93bf5ab3dc82bf14222763926bc09dd335d6c4972916490ce8d907cf9adbc",
+  "timing": 136.00851230800617,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:a45eed7a782cf7733b352ed76e03bb0afa0a4d702c6ca1054de12cb3870ee862",
+    "status": "OK",
+    "result": "sha256:3b1e6c2a95763aaf8443294b43368e72c035dcc420eea989c729df9e5361f509",
+    "validation": [
+      {
+        "problem_id": "159",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:9406c7c09734bebdde4d6b123235602102a7679ab16590c991fb76e64eec762d"
+      }
+    ]
+  },
+  "exception": null
+}

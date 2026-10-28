@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_prime(n)\n\"\"\"Return true if a given number is prime, and false otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Bool)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Bool) :=\n  result \u2194 (2 \u2264 n \u2227 \u00ac (\u2203 k, 2 \u2264 k \u2227 k < n \u2227 n % k = 0));\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat): Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 6 = false\n-- #test implementation 101 = true\n-- #test implementation 11 = true\n-- #test implementation 13441 = true\n-- #test implementation 61 = true\n-- #test implementation 4 = false\n-- #test implementation 1 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 31,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0544089cf7ff7b5550aff5767f72b977991c0448e5fe07db33b96d7f5ed88634",
+  "timing": 69.01538203802193,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/u3i72_as/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:6626918bd69a3ff65fb7c37b73c17d698414c5da9559e3d5f53cb5130e01449f",
+    "status": "OK",
+    "result": "sha256:5b01bd5368b42019b8d0f935838cb1ebd9d61de4cc8952e265fc0e3cec09a183"
+  },
+  "exception": null
+}

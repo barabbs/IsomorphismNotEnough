@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef anti_shuffle(s : str) -> str\n\"\"\"Write a function that takes a string and returns an ordered version of it.\nOrdered version of string, is a string where all words (separated by space)\nare replaced by a new word where all the characters arranged in\nascending order based on ascii value.\nNote: You should keep the order of words and blank spaces in the sentence.\n\n>>> anti_shuffle('Hi')\n'Hi'\n>>> anti_shuffle('hello')\n'ehllo'\n>>> anti_shuffle('Hello World!!!')\n'Hello !!!Wdlor'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Hi\" = \"Hi\"\n-- #test implementation \"hello\" = \"ehllo\"\n-- #test implementation \"Hello World!!!\" = \"Hello !!!Wdlor\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 86,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:4819c812193aa9ab49e265eca7d837454696590c50629e9df1fab0ef48d5b210",
+  "timing": 197.27809059701394,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/2oiaakr_/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:e43dbec2eeb3896a8a34700188cb490cd8d1ab456060a85597099e18a6cca134",
+    "status": "OK",
+    "result": "sha256:b72db51e5161d31fe1d18c98fcefddabbae735f77bc73fcb7bc4b506b5292d1b"
+  },
+  "exception": null
+}

@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_equal_to_sum_even(n: int) -> bool\n\"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int → Bool)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  let sum_exists := ∃ a b c d : Nat,\n    Even a ∧\n    Even b ∧\n    Even c ∧\n    Even d ∧\n    (a + b + c + d = n);\n  result = true ↔ sum_exists\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Int) : Bool :=\n\nif n ≥ 8 ∧ n % 2 = 0 then true else false\n\n\n-- [TEST_CASES]\n\n#test implementation 4 = false\n#test implementation 6 = false\n#test implementation 8 = true\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Int)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 138,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:826afff888a3dfc0361d7e8db8247bde5b2a65448adc5cf322f883e72958b5ab",
+  "timing": 317.0916743539274,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:372f71c2f66a59d3b4c98d03a5b33e0c88a0d207a1c959205e69a06ac5a71030",
+    "status": "ISSUE",
+    "result": "sha256:34108006fb0e918d0a19019755c513af443beb4e4fd34b2a6b63993168085510",
+    "validation": [
+      {
+        "problem_id": "138",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:05e9a144fac9fc2f96068adea764db48b794f0227f32be3f15acbd3d5732e8b1"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "MCONS"
+  },
+  "exception": null
+}

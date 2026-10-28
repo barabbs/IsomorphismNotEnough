@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_element(l: list)\n\"\"\"Return maximum element in the list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: Int) :=\n  l.length > 0 →\n  ((∀ i, i < l.length → l.get! i ≤ result) ∧\n  (∃ i, i < l.length ∧ l.get! i = result));\n-- program termination\n∃ result, implementation l = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List Int) : Int :=\n\nmatch l with\n| [] => 0\n| x :: xs => xs.foldl max x\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = 3\n#test implementation [5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10] = 123\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List Int)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 35,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:50357c41b1318b175f26dab0ff28c14c15c87735322b54195bee4fec9f66af24",
+  "timing": 1998.4321260578,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:7429a926dfa342445ea8a6fad1a0c48e096e16aa6d7c79ee42996db02b55c07c",
+    "status": "OK",
+    "result": "sha256:63814eeab9d0d5f0eaa7291c4ecb3b42dc91a5bf368b9057d8f85f192c767795",
+    "validation": [
+      {
+        "problem_id": "35",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:a960d114365a79866c0c3823f03a3b9a25ace85851c555b96f88b13c50838ba0"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef bf(planet1: str, planet2: str) -> List[str]\n\"\"\"There are eight planets in our solar system: the closest to the Sun\nis Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn,\nUranus, Neptune.\nWrite a function that takes two planet names as strings planet1 and planet2.\nThe function should return a tuple containing all planets whose orbits are\nlocated between the orbit of planet1 and the orbit of planet2, sorted by\nthe proximity to the sun.\nThe function should return an empty tuple if planet1 or planet2\nare not correct planet names.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → List String)\n-- inputs\n(planet1: String)\n(planet2: String) :=\n-- spec\nlet spec (result: List String) :=\nlet planets := [\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\"];\nif planet1 ∉ planets ∨ planet2 ∉ planets then\n  result = []\nelse\n  let index1 := planets.idxOf planet1;\n  let index2 := planets.idxOf planet2;\n  let minIdx := if index1 < index2 then index1 else index2;\n  let maxIdx := if index1 < index2 then index2 else index1;\n  (∀ str ∈ result, str ∈ planets) ∧\n  (∀ planet ∈ planets, planet ∈ result ↔\n    planets.idxOf planet < maxIdx ∧\n    minIdx < planets.idxOf planet) ∧\n  result.Sorted (fun a b => planets.idxOf a < planets.idxOf b)\n-- program termination\n∃ result, impl planet1 planet2 = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (planet1: String) (planet2: String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Jupiter\" \"Neptune\" = [\"Saturn\", \"Uranus\"]\n-- #test implementation \"Earth\" \"Mercury\" = [\"Venus\"]\n-- #test implementation \"Mercury\" \"Uranus\" = [\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 148,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f3055a7463c1de9422736ac57aa9e270d1ee86c088b9f2fd7a1d77661a3ae986",
+  "timing": 70.50124672986567,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:44f54c33ea09ef17888fabc08cc0a84d5b31e790f76cc4fad41dee54ac19010a",
+    "status": "OK",
+    "result": "sha256:2891452c2c88ae0fa7d16b6c1bcbff6ba5f89049c5bcb974bbd6ade15c17e9cc"
+  },
+  "exception": null
+}

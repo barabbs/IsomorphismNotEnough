@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encrypt(str : str) -> str\n\"\"\"Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated.\nThe alphabet should be rotated in a manner such that the letters\nshift down by two multiplied to two places.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(str: String) :=\n-- spec\nlet spec (result : String) :=\n  result.data.all (fun c => c.isLower) \u2192\n  result.length = str.length \u2227\n  (\u2200 i, i < str.length \u2192\n    let c := str.data[i]!\n    let c' := result.data[i]!\n    ((c'.toNat - 97) + 2 * 2) % 26 = (c.toNat - 97))\n-- program termination\n\u2203 result,\n  implementation str = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (str: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"hi\" = \"lm\"\n-- #test implementation \"asdfghjkl\" = \"ewhjklnop\"\n-- #test implementation \"gf\" = \"kj\"\n-- #test implementation \"et\" = \"ix\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 89,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9fbe04a4b34c3e68a2771fc8146e0e43043220602269f435fc7ac491dacb3968",
+  "timing": 84.6284589759889,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ds38j0o_/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:cd4812509f0f23c8712234c76314cca4a516f63299420666b0d3cd9335bafdec",
+    "status": "OK",
+    "result": "sha256:f37b133eb176d584cb1ea15a2a170572da420d5050ba838d44def767ac624ea1"
+  },
+  "exception": null
+}

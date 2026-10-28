@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef how_many_times(string: str, substring: str) -> int\n\"\"\"Find how many times a given substring can be found in the original string. Count overlaping cases.\n\n>>> how_many_times('', 'a')\n0\n>>> how_many_times('aaa', 'a')\n3\n>>> how_many_times('aaaa', 'aa')\n3\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String → String → Nat)\n-- inputs\n(string substring: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"aaa\" \"a\" = 3\n-- #test implementation \"aaaa\" \"aa\" = 3\n-- #test implementation \"\" \"a\" = 0\n-- #test implementation \"a\" \"\" = 1\n-- #test implementation \"a\" \"a\" = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 18,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:d4746aefed9441643aa4d391ccdec973e08045027d0e0967ad9c89fc071863e7",
+  "timing": 449.77553012780845,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:02f3ddcfccfecde762fcbef6549621852fdab2fb33210992720348d9d2320c51",
+    "status": "OK",
+    "result": "sha256:2e38bc597df4a87088978777dba4ea7eb1c1e21da8f76d27d2f94f831f510ece"
+  },
+  "exception": null
+}

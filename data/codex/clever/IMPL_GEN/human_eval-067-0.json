@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, n: nat) -> nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat → Nat)\n-- inputs\n(string: String)\n(n : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n∃ x y : Nat, x + y = n - result\n∧ (String.join [x.repr, \" apples and \", y.repr, \" oranges\"] = string)\n-- program termination\n∃ result, implementation string n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"5 apples and 6 oranges\" 19 = 8\n-- #test implementation \"0 apples and 1 oranges\" 3 = 2\n-- #test implementation \"2 apples and 3 oranges\" 100 = 95\n-- #test implementation \"100 apples and 1 oranges\" 120 = 19\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1a2def7b8f8c82e3754489bbaa8a264b77bc7d155bf8777648b796b5504e71bc",
+  "timing": 99.57642383826897,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:bf0bec103cd128cac0b52fd7d776edeaf6ef4c05eb28230bc299e34cb9ea05bc",
+    "status": "OK",
+    "result": "sha256:64dbc38e2d5cfcd76460d1a62ecc829c33008fdb1df9a932bdeb310ae2a60f13"
+  },
+  "exception": null
+}

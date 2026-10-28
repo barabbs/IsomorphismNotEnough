@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_distinct_characters(string: str) -> int\n\"\"\"Given a string, find out how many distinct characters (regardless of case) does it consist of\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Nat) :=\nlet string_idx := {i: Nat | i < string.length}.toFinset\nlet characters := string_idx.image (fun i => string.toList.get! i)\nlet lowercase_characters := characters.image (fun c => c.toLower)\nresult = lowercase_characters.card;\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"xyzXYZ\" = 3\n-- #test implementation \"Jerry\" = 4\n",
+  "info": {
+    "dataset": "clever",
+    "id": 16,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:13939c1db6ebf102dbbb9bee919731021516d82016788a54cc8cc3447012acc0",
+  "timing": 92.54926098696887,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:4bced0528de7a847db5e033f87f9fc4079d90d261924b68dfdadbb7bd2f4dc19",
+    "status": "OK",
+    "result": "sha256:9e9b81724677ec065809af733ead918727b3b1e167604682e3316e1487638767"
+  },
+  "exception": null
+}

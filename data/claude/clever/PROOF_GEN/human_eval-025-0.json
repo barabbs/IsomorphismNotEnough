@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef factorize(n: int) -> List[int]\n\"\"\"Return list of prime factors of given integer in the order from smallest to largest.\nEach of the factors should be listed number of times corresponding to how many times it appeares in factorization.\nInput number should be equal to the product of all factors\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\n2 \u2264 n \u2192\n(result.prod = n \u2227\nList.Sorted Nat.le result \u2227\nresult.all (\u03bb i => n % i = 0 \u2227 Nat.Prime i));\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : List Nat :=\n\nlet rec aux (n : Nat) (d : Nat) (fuel : Nat) : List Nat :=\n  match fuel with\n  | 0 => []\n  | fuel' + 1 =>\n    if d * d > n then\n      if n > 1 then [n] else []\n    else if n % d = 0 then\n      d :: aux (n / d) d fuel'\n    else\n      aux n (d + 1) fuel'\naux n 2 (n + 1)\n\n\n-- [TEST_CASES]\n\n#test implementation 8 = [2, 2, 2]\n#test implementation 25 = [5, 5]\n#test implementation 70 = [2, 5, 7]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 25,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:769d732147d6bbf8846d2dc2329de0d9d59712a308aec09522f4f5a991ef0a8a",
+  "timing": 1594.939112678985,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/ae1fzfkr/problem.lean --deep=stuck",
+    "claude": "sha256:c3f69bdce44a98e4679ec5891c2291f46d5a94a3d2778be73d6cfb5d63866753",
+    "status": "OK",
+    "result": "sha256:2ad63e1dd5ef35552f4728b20131e7e60c0c82faa963e90572d23c5f088d5212",
+    "validation": [
+      {
+        "problem_id": "25",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:2a7190dc6e2a75c2e753b675b22cda8220e91ab29841d90dddf34f25d171843e"
+      }
+    ]
+  },
+  "exception": null
+}

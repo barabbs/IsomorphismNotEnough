@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef median(numbers: List[float]) -> float\n\"\"\"Return median of elements in the list l\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat \u2192 Rat)\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: Rat) :=\n  0 < numbers.length \u2192\n  let less_eq := (numbers.filter (fun x => x \u2264 result));\n  let more_eq := (numbers.filter (fun x => result \u2264 x));\n  let max_more_eq := more_eq.max?;\n  let min_less_eq := less_eq.min?;\n  let less_eq_count := less_eq.length;\n  let more_eq_count := more_eq.length;\n  let eq_count := (numbers.filter (fun x => x = result)).length;\n  (less_eq_count + more_eq_count - eq_count = numbers.length \u2192\n  numbers.length \u2264 2 * less_eq_count \u2192\n  numbers.length \u2264 2 * more_eq_count) \u2227\n  ((numbers.length % 2 = 1 \u2192\n    result \u2208 numbers) \u2227\n    (numbers.length % 2 = 0 \u2192 max_more_eq.isSome \u2227\n    min_less_eq.isSome \u2227\n    2 * result = max_more_eq.get! + min_less_eq.get!));\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat) : Rat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 1, 2, 4, 5] = 3\n-- #test implementation [-10, 4, 6, 1000, 10, 20] = 15.0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:593bc66669e2a27daf9f799bcad6c107c16a216c10e529469933a3ad66e020b2",
+  "timing": 206.58637142999214,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/pzc5w2t0/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:86298acf349346cf11ee0bb378e5cb798cb3170a46deced58068f649ca0025e2",
+    "status": "OK",
+    "result": "sha256:d27734e1324d22935e0346736f9b8f21f01139d8fe7ca0f096776a609fbd7e1f"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_fib(n: int)\n\"\"\"prime_fib returns n-th prime Fibonacci number.\nNote(George): A proof of this problem requires the resolution of the open conjecture: there are infinitely many prime Fibonacci numbers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  n > 0 \u2192\n    (\u2203 i, Nat.fib i = result \u2227 Nat.Prime result \u2227\n      (\u2203! S : Finset Nat, S.card = n - 1 \u2227\n      (\u2200 y \u2208 S, (\u2203 k, y = Nat.fib k) \u2227 y < result \u2227 Nat.Prime y))\n    )\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 2\n-- #test implementation 2 = 3\n-- #test implementation 3 = 5\n-- #test implementation 4 = 13\n-- #test implementation 5 = 89\n",
+  "info": {
+    "dataset": "clever",
+    "id": 39,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d555c3ae11561ab57ba496cf6c868747412e97de7bfde15f56ae0cf0c48c476f",
+  "timing": 103.99656343899551,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/l2_n7ep5/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:d3f267330dc49e713537c4e4b574bacca3a5d3957d3e26e065e8494860c0873d",
+    "status": "OK",
+    "result": "sha256:70c54628c59d507bc9ba85b190fb52d83cbd358a2eaa4e3eb729fc8a7b9319cf"
+  },
+  "exception": null
+}

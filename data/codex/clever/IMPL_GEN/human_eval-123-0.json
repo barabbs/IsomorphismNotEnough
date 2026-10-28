@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_odd_collatz (n: int) -> List[int]\n\"\"\"Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\nThe Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\nas follows: start with any positive integer n. Then each term is obtained from the\nprevious term as follows: if the previous term is even, the next term is one half of\nthe previous term. If the previous term is odd, the next term is 3 times the previous\nterm plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\nNote:\n    1. Collatz(1) is [1].\n    2. returned list sorted in increasing order.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef collatz_reachable (n m : Nat) : Prop :=\n  ∃ k, Nat.iterate (fun x => if x % 2 = 0 then x / 2 else x * 3 + 1) k n = m\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\nn > 0 →\nresult.Sorted (· < ·) ∧\n∀ m, m ∈ result ↔ Odd m ∧ collatz_reachable n m -- m is reachable from starting point n\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = [1, 5]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 123,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:76d176df2b8527cf8ca6cdd9fcbb4c957530816e31edd110cfc6bc08cd633d3f",
+  "timing": 176.9893516828306,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:be69091d4545312891968111cb84f5892fc87489edb03d1f6fc567d738be8ebb",
+    "status": "OK",
+    "result": "sha256:819e28e0c8c6551ee38dbc46968a8a9ff6578bfb30c11fa3d1b61fcfad099a1e"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef search(numbers: List[int]) -> int\n\"\"\"You are given a non-empty list of positive integers. Return the greatest integer that is greater than\nzero, and has a frequency greater than or equal to the value of the integer itself.\nThe frequency of an integer is the number of times it appears in the list.\nIf no such a value exist, return -1.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(x: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 69,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c3d94319d42aa974e7cb6b85c83d2d1dc254ad0b7980a32da6396df6aa5f46a8",
+  "timing": 116.40942837300827,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/zx3f25wn/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f76b77d96aa082abc8caa04670817dcbe1a59d6aa1b88364f05ceec814805bca",
+    "status": "OK",
+    "result": "sha256:124cae69cb45c06972b3638905f809f655be73d5a69b1c5300e1f8a0d74616ac"
+  },
+  "exception": null
+}

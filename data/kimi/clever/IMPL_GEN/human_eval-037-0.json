@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_even(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the odd indicies, while its values at the even indicies are equal\nto the values of the even indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  l.length = result.length ∧\n  let even_idx := (List.range l.length).filter (λ i => i % 2 = 0);\n  let even_val_in_result := even_idx.map (λ i => result.get! i);\n  let even_val := even_idx.map (λ i => l.get! i);\n  (∀ i, i < l.length → (i % 2 ≠ 0 → l.get! i = result.get! i)) ∧\n  List.Sorted Int.le even_val_in_result ∧\n  even_val.all (λ x => even_val_in_result.count x = even_val.count x);\n-- program termination\n∃ result, implementation l = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3] = [1, 2, 3]\n-- #test implementation [5, 6, 3, 4] = [3, 6, 5, 4]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 37,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9d317bad38916160de98f8a1bf8b8db4a718f728d0393035fdf1b2fdb03b87f8",
+  "timing": 106.80581335071474,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:333fb74a10f56f6242df42c09fe58d4f2d6f1b300a7204593088b55bf5ee4bec",
+    "status": "OK",
+    "result": "sha256:b8d12b47a50d256bf4ab5993f6ce16ebdde20369efcf63789e1436c665558b52"
+  },
+  "exception": null
+}

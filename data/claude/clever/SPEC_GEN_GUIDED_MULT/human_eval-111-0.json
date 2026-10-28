@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef histogram(s : str) -> Dict[str, int]\n\"\"\"Given a string representing a space separated lowercase letters, return a dictionary\nof the letter with the most repetition and containing the corresponding count.\nIf several letters have the same occurrence, return all of them.\n-- Note(George): I believe the equality extensionality for HashMaps makes this spec true.\n\n>>> histogram('a b c')\n{'a': 1, 'b': 1, 'c': 1}\n>>> histogram('a b b a')\n{'a': 2, 'b': 2}\n>>> histogram('a b c a b')\n{'a': 2, 'b': 2}\n>>> histogram('b b b b a')\n{'b': 4}\n>>> histogram('')\n{}\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Std.HashMap Char Nat)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 'a b c' = {'a': 1, 'b': 1, 'c': 1}\n-- #test implementation 'a b b a' = {'a': 2, 'b': 2}\n-- #test implementation 'a b c a b' = {'a': 2, 'b': 2}\n-- #test implementation 'b b b b a' = {'b': 4}\n-- #test implementation '' = {}\n",
+  "info": {
+    "dataset": "clever",
+    "id": 111,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:d50d49c29d9fb0acbab1ac6d18c2120f9bb68a50499cc2d49fef6fe8e12d4dd5",
+  "timing": 259.5693164879922,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/q3_5gpp7/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:730e554ca123d3ecce1c9b338bbf7c18c4e97c1966fda65d07132f4921ac26fe",
+    "status": "OK",
+    "result": "sha256:adc2149eded4dac39b4e737c58b3db2f2b591e70625a6838c93192a2372066aa"
+  },
+  "exception": null
+}

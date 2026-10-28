@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_prefix(strings: List[str], prefix: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that start with a given prefix.\n\n>>> filter_by_prefix([], 'a')\n[]\n>>> filter_by_prefix(['abc', 'bcd', 'cde', 'array'], 'a')\n['abc', 'array']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String \u2192 String \u2192 List String)\n-- inputs\n(strings: List String)\n(pref: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] \"a\" = []\n-- #test implementation [\"abc\", \"bcd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"array\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 29,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:22afdcc47adc216a10eff8a6f5ebfb292a1340b7dea0bf72dc5f11618652d2cf",
+  "timing": 90.96038618700004,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/zcztkcw8/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b74c5afbe9ad7ddc859c6f0362b3bbce1739524d927a644a80975bc67b127bdc",
+    "status": "OK",
+    "result": "sha256:c6844d72a799faee2be1c57835584b80ba05cda161760a45d7a6cb701c2a9c1b"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef truncate_number(number: float) -> float\n\"\"\"Given a positive floating point number, it can be decomposed into\nand integer part (largest integer smaller than given number) and decimals\n(leftover part always smaller than 1).\n\nReturn the decimal part of the number.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Rat \u2192 Rat)\n-- inputs\n(number: Rat) :=\n-- spec\nlet spec (res) :=\nnumber > 0 \u2192\n0 \u2264 res \u2227\nres < 1 \u2227\nnumber.floor + res = number;\n-- program terminates\n\u2203 result, impl number = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (number: Rat) : Rat :=\n\nInt.fract number\n\n\n-- [TEST_CASES]\n\n#test implementation 3.5 = 0.5\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(number: Rat)\n: problem_spec implementation number :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 2,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d98bfe3721e15341b83cd6475f0d026ee583471aa0dcf00108ae859ee2708d26",
+  "timing": 179.06130361999385,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:e40738f4d92671f18543a670b14094e151cb96478864afa59197831daf5e96de",
+    "status": "OK",
+    "result": "sha256:2dac39f02f3fd5bfdadd171c7f484471f601aa0a0037a448abcd46fa194ae075",
+    "validation": [
+      {
+        "problem_id": "2",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:c57ec3692fcd7ffd7bea17afa82f1cb900621a7596d0fe78e6d5eec348154dce"
+      }
+    ]
+  },
+  "exception": null
+}

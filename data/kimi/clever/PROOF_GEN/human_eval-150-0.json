@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef x_or_y(n: int, x: int, y: int) -> int\n\"\"\"A simple program which should return the value of x if n is\na prime number and should return the value of y otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int → Int → Int → Int)\n-- inputs\n(n x y: Int) :=\n-- spec\nlet spec (result: Int) :=\n(result = x ↔ Nat.Prime n.toNat) ∧\n(result = y ↔ (¬ Nat.Prime n.toNat ∨ n ≤ 1))\n-- program terminates\n∃ result, impl n x y = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n x y: Int) : Int :=\n\nif Nat.Prime n.toNat then x else y\n\n\n-- [TEST_CASES]\n\n#test implementation 7 34 12 = 34\n#test implementation 15 8 5 = 5\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n x y: Int)\n: problem_spec implementation n x y :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 150,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:691656dc9c01bc320fb0b33b21b78825089745035c6959879789263dee7e6c49",
+  "timing": 437.651578983292,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:80da07e500c64a1fd0e3a77e2c64a04c97f26c632b4542f5e3dd64e38e1e0554",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:745e3522ee89b6fe6b5c8d059a700d56454ba336793e37184267e6d82b4d9a34",
+    "validation": [
+      {
+        "problem_id": "150",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:fa579867a5d62cede07d862ecd1034f02fd6c54416e5fd3edea8ee009bda093e",
+        "lean_code": "sha256:59b5254db2dafd85ae7fd6cad59ec3e81fe427d3c4fcb09acd360db904fcf1d0"
+      }
+    ]
+  },
+  "exception": null
+}

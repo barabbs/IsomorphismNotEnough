@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef histogram(s : str) -> Dict[str, int]\n\"\"\"Given a string representing a space separated lowercase letters, return a dictionary\nof the letter with the most repetition and containing the corresponding count.\nIf several letters have the same occurrence, return all of them.\n-- Note(George): I believe the equality extensionality for HashMaps makes this spec true.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Std.HashMap Char Nat)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Std.HashMap Char Nat) :=\n    let chars := s.splitOn \" \"\n    chars.all (fun c => c.length = 1) ∧ s.all (fun c => c.isLower ∨ c = ' ') →\n    ∀ key ∈ result.keys,\n      (key.isLower ∧\n      key ∈ s.data ∧\n      result.get! key = s.count key) ∧\n    (∀ char ∈ s.data, char.isLower →\n      ((∃ char2 ∈ s.data, char2.isLower ∧ char2 ≠ char ∧\n      s.count char < s.count char2) ↔ char ∉ result.keys))\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Std.HashMap Char Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test (implementation \"a b c\").size == 3 && (implementation \"a b c\").getD 'a' 0 == 1 && (implementation \"a bc\").getD 'b' 0 == 1 && (implementation \"a b c\").getD 'c' 0 == 1\n-- #test (implementation \"a b b a\").size == 2 && (implementation \"a b b a\").getD 'a' 0 == 2 && (implementation \"a b b a\").getD 'b' 0 == 2\n-- #test (implementation \"a b c a b\").size == 2 && (implementation \"a b c a b\").getD 'a' 0 == 2 && (implementation \"a b c a b\").getD 'b' 0 == 2\n-- #test (implementation \"b b b b a\").size == 1 && (implementation \"b b b b a\").getD 'b' 0 == 4\n-- #test (implementation \"\").size == 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 111,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7ff5721b0bdb64b831c2e976786d325d8391a64b7796b60b76d4a95900293396",
+  "timing": 148.82251867000014,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:f3d6e22c67c92fc08898aa5acd9c39b18268da23c313c855e34a24210b14cb75",
+    "status": "OK",
+    "result": "sha256:117a2b972a924988db8ec13df2130e6b0b80466b4f38354b0bb149ed4ee5e393"
+  },
+  "exception": null
+}

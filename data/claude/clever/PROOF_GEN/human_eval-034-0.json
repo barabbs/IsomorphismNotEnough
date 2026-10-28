@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef unique(l: list)\n\"\"\"Return sorted unique elements in a list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  (\u2200 x, x \u2208 result \u2194 x \u2208 l \u2227 result.count x = 1) \u2227\n  List.Sorted Int.le result\n-- program termination\n\u2203 result,\n  implementation l = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List Int) : List Int :=\n\n  (l.eraseDups).mergeSort (\u00b7 \u2264 \u00b7)\n\n\n-- [TEST_CASES]\n\n#test implementation [5, 3, 5, 2, 3, 3, 9, 0, 123] = [0, 2, 3, 5, 9, 123]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List Int)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 34,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7135cf3287f3992362c5428b4b6ed9dee4547c8e96707efa96d6dd0ce1b181ba",
+  "timing": 1381.7406169810565,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:3a7e7c5e861a20782e80352d43576e5c5e2d06f731def668ddc65d45cddfa1a8",
+    "status": "OK",
+    "result": "sha256:584e2b3c78cada1eb3fbe66d87cee32316868035eb01c132902dc15d8f53ce39",
+    "validation": [
+      {
+        "problem_id": "34",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5049a6cb971b356e514b880183630340b96b3ea47eaa8daa236caf02a39d9df7"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef right_angle_triangle(a: nat, b: nat, c: nat) -> bool\n\"\"\"Given the lengths of the three sides of a triangle. Return True if the three\nsides form a right-angled triangle, False otherwise.\nA right-angled triangle is a triangle in which one angle is right angle or\n90 degree.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat → Nat → Bool)\n-- inputs\n(a b c: Nat) :=\n-- spec\nlet spec (result: Bool) :=\nresult ↔\n  0 < a ∧ 0 < b ∧ 0 < c ∧\n  ((a * a + b * b = c * c) ∨\n  (a * a + c * c = b * b) ∨\n  (b * b + c * c = a * a))\n-- program terminates\n∃ result, impl a b c = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b c: Nat) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 4 5 = true\n-- #test implementation 1 2 3 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 157,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0e93cf9c060b1f1235745f209cb3a8d100e115ff4843db35543fac7594eedc6e",
+  "timing": 72.05840064398944,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:38bfd9b8e981ff9ffbdcdb13e17df32ad2e3ca53c4e93acf103b026cf12e0519",
+    "status": "OK",
+    "result": "sha256:560dff57f24187c27848cbd400eda7e8a45b9916b6edecaacd39b5235a9b88c0"
+  },
+  "exception": null
+}

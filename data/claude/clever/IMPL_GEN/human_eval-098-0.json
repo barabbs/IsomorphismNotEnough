@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_upper(s : String) -> Int\n\"\"\"Given a string s, count the number of uppercase vowels in even indices.\n-- Note(George): I also feel like this one is hard to not leak, I tried a trick about keeping implementation for a recursive call in the spec. Let me know if this doesn't work..\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Int)\n-- inputs\n(s: String) :=\n-- spec\nlet uppercase_vowels := ['A', 'E', 'I', 'O', 'U']\nlet spec (result : Int) :=\n  let chars := s.toList\n  (result = 0 \u2194 \u2200 i, i < chars.length \u2192 chars[i]! \u2209 uppercase_vowels) \u2227\n  (1 < chars.length \u2192\n    (result - 1 = implementation (chars.drop 2).toString \u2194 chars[0]! \u2208 uppercase_vowels) \u2228\n    (result = implementation (chars.drop 2).toString \u2194 chars[0]! \u2209 uppercase_vowels)\n  )\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"aBCdEf\" = 1\n-- #test implementation \"abcdefg\" = 0\n-- #test implementation \"dBBE\" = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 98,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ecf78d5b0bd80d43123d69eda25013001941ff5ebe78ff78c4f2df1a4ec9bdb2",
+  "timing": 62.08837331298855,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/eisnqm5k/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:44494eb26c68f635eb1273ddfe8fdf2944cc5521837cd28bb957db78e8d2c685",
+    "status": "OK",
+    "result": "sha256:72cbe1d6af61139caed43b469e0cc5cb0761a1eb406dd9c328a2753bdb0d133e"
+  },
+  "exception": null
+}

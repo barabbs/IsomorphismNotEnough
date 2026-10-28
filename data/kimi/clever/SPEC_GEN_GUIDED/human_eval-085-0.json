@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: list[int]) -> int\n\"\"\"Given a non-empty list of integers lst, add the even elements that are at odd indices.\n\n>>> solve([4, 2, 6, 7])\n2\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [4, 2, 6, 7] = 2\n",
+  "info": {
+    "dataset": "clever",
+    "id": 85,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:305fdd238ce8d332bbaa13b97741346beb2fb5544fd47d8a4a472ba1d19e0683",
+  "timing": 89.48274353798479,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:410db12c2d4c96d6d594b566f82de871b55e66a2947d3842850ee43c3a26a10f",
+    "status": "OK",
+    "result": "sha256:41eb2c5de394794f4fa8f7460c16f2f4b7b004f2a717447c1de5884c2e4768cd"
+  },
+  "exception": null
+}

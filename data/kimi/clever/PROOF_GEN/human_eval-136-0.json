@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_smallest_integers(lst: List[int]) -> Tuple[Optional[int], Optional[int]]\n\"\"\"Create a function that returns a tuple (a, b), where 'a' is\nthe largest of negative integers, and 'b' is the smallest\nof positive integers in a list.\nIf there is no negative or positive integers, return them as None.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Option Int × Option Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result: Option Int × Option Int) :=\n  let (a, b) := result;\n  (match a with\n  | none => ¬(∃ i, i ∈ lst ∧ i < 0)\n  | some a => a < 0 ∧ a ∈ lst ∧ ∀ i, i ∈ lst ∧ i < 0 → i ≤ a) ∧\n  (match b with\n  | none => ¬(∃ i, i ∈ lst ∧ 0 < i)\n  | some b => 0 < b ∧ b ∈ lst ∧ ∀ i, i ∈ lst ∧ 0 < i → b ≤ i)\n-- program termination\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int) : (Option Int × Option Int) :=\n\n  let (a, b) := lst.foldl (fun (a, b) i =>\n    if i < 0 then\n      (some (match a with | none => i | some a => max a i), b)\n    else if 0 < i then\n      (a, some (match b with | none => i | some b => min b i))\n    else\n      (a, b)\n  ) (none, none);\n  (a, b)\n\n\n-- [TEST_CASES]\n\n#test implementation [2, 4, 1, 3, 5, 7] = (none, some 1)\n#test implementation [] = (none, none)\n#test implementation [0] = (none, none)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 136,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:44b9cf6262738389a4b69a73281540268027c6e36ab9f3b8b87d8fe7c8cfe1ad",
+  "timing": 3166.512682026252,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:60258368750da69dd26b04e3331b509198789e0ba4400ece5e1506d2e1bdfe85",
+    "status": "FAIL",
+    "result": "sha256:27938e6ef90f01f7343555d008800817015aed8d1f24dafe70bc1d64a838f018",
+    "validation": [
+      {
+        "problem_id": "136",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:a7b3435c2087fa0acb87e2d1261d01ea9479246d2b25407fd8940014fcfbe70a",
+        "lean_code": "sha256:4baf71109784a6a14cd6a7972699a5d4fc0b2b3acf5d820d629c0d99ffa9a22f"
+      }
+    ]
+  },
+  "exception": null
+}

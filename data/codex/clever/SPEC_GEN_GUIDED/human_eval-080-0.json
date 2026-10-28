@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_happy(s: str) -> bool\n\"\"\"You are given a string s.\nYour task is to check if the string is happy or not.\nA string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n\n>>> is_happy('a')\nFalse\n>>> is_happy('aa')\nFalse\n>>> is_happy('abcd')\nTrue\n>>> is_happy('aabb')\nFalse\n>>> is_happy('adb')\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"a\" = False\n-- #test implementation \"aa\" = False\n-- #test implementation \"abcd\" = True\n-- #test implementation \"aabb\" = False\n-- #test implementation \"adb\" = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 80,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:496a7404d608f934f47b8644949f6824703369f6a10ac5b3e0a09b4837d8858d",
+  "timing": 74.73212101310492,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:76c75d8a3695c04cecfa3f1e63fa90f05b4535355cd028e78a1f726eed17263d",
+    "status": "OK",
+    "result": "sha256:551f561c7b3b0e4c38e5c50769187cc73371f20ad24e9d265deee5b30ac03472"
+  },
+  "exception": null
+}

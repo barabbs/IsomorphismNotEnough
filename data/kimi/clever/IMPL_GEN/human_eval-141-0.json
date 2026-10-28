@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef file_name_check(file_name: str) -> str\n\"\"\"Create a function which takes a string representing a file's name, and returns\n'Yes' if the the file's name is valid, and returns 'No' otherwise.\nA file's name is considered to be valid if and only if all the following conditions\nare met:\n- There should not be more than three digits ('0'-'9') in the file's name.\n- The file's name contains exactly one dot '.'\n- The substring before the dot should not be empty, and it starts with a letter from\nthe latin alphapet ('a'-'z' and 'A'-'Z').\n- The substring after the dot should be one of these: ['txt', 'exe', 'dll']\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String)\n-- inputs\n(file_name : String) :=\n-- spec\nlet spec (result: String) :=\nlet valid := (file_name.toList.filter Char.isDigit).length ≤ 3 ∧\n  (file_name.toList.filter (· = '.')).length = 1 ∧\n  ∃ before after : String,\n    file_name = before ++ \".\" ++ after ∧\n    before != \"\" ∧\n    Char.isAlpha (before.get! 0) ∧\n    (after = \"txt\" ∨ after = \"exe\" ∨ after = \"dll\")\n(result = \"Yes\" ↔ valid) ∧\n(result = \"No\" ↔ ¬valid)\n\n-- program termination\n∃ result, impl file_name = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (file_name : String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"example.txt\" = \"Yes\"\n-- #test implementation \"1example.dll\" = \"No\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 141,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:07a52b76016945472b306406607c559810d5cc69c3e3dced821dc027ee7c3dc3",
+  "timing": 64.60808437876403,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:57f3a3a7ff3061303dd93bc1cd9737970ed8816104525af8465ceff0f7d693d1",
+    "status": "OK",
+    "result": "sha256:11bca5a48f65932748d00ea281b174e9cd8b6d77d66615efd0b124cea249eb91"
+  },
+  "exception": null
+}

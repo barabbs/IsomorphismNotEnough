@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef will_it_fly(q: List[int], w: int) -> bool\n\"\"\"Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is\nless than or equal the maximum possible weight w.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int \u2192 Bool)\n-- inputs\n(q: List Int) (w: Int) :=\n-- spec\nlet spec (result : Bool) :=\n  (result \u2192 (List.Palindrome q)) \u2227\n  (result \u2192 (List.sum q \u2264 w)) \u2227\n  (\u00ac(List.Palindrome q) \u2192 \u00ac result) \u2227\n  (\u00ac(List.sum q \u2264 w) \u2192 \u00ac result)\n-- program termination\n\u2203 result, implementation q w = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (q: List Int) (w: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 2, 3] 9 = True\n-- #test implementation [1, 2] 5 = False\n-- #test implementation [3] 5 = True\n-- #test implementation [3, 2, 3] 1 = False\n-- #test implementation [1, 2, 3] 6 = False\n-- #test implementation [5] 5 = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 72,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b0dc3c9e78d03f076d0e85cb1a779682872dc0827bac72f15fd00a967d6b47b3",
+  "timing": 63.24411261000205,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/i2bq5i9o/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:68e0adae6552cd40b7427cd835eb1a3a50025696f51363c8659d10002785ee28",
+    "status": "OK",
+    "result": "sha256:7540d42c961c8d1723280ca9fa1e7029c452be4b86bc8d32e79467f155d50412"
+  },
+  "exception": null
+}

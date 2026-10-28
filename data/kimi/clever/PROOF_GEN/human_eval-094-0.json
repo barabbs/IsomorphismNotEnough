@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_largest_prime(lst : list[int]) -> int\n\"\"\"You are given a list of integers.\nYou need to find the largest prime value and return the sum of its digits.\nNote(George): Modified to use List of nats because all examples are nats.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat → Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  lst.any (fun num => Nat.Prime num) →\n    result > 0 ∧ ∃ i, i < lst.length ∧ Prime (lst.get! i) ∧\n    (∀ j, j < lst.length ∧ Prime (lst.get! j) → lst.get! i ≤ lst.get! j) ∧\n    result = (Nat.digits 10 (lst.get! i)).sum\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Nat) : Nat :=\n\n  let primes := lst.filter Nat.Prime\n  match primes with\n  | [] => 0\n  | _ =>\n    match primes.maximum with\n    | none => 0\n    | some largest => (Nat.digits 10 largest).sum\n\n\n-- [TEST_CASES]\n\n#test implementation [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] = 10\n#test implementation [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] = 25\n#test implementation [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] = 13\n#test implementation [0,724,32,71,99,32,6,0,5,91,83,0,5,6] = 11\n#test implementation [0,81,12,3,1,21] = 3\n#test implementation [0,8,1,2,1,7] = 7\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Nat)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 94,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b68865bfb616c9aa3bf00203abc748322961cc2c574b019cf8596ac7da6eaef4",
+  "timing": 14408.228039645124,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:6eda223641039b9528ec31fa0ee2431011248dbd2307a2ddf8afa86900e41fd1",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "94",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:0ef419600255fa8e98ab77a649f1c2f709f6e8809644b4f9959920fcbaff37f8",
+        "lean_code": "sha256:204f24296b77a28ca3ed720f93c425300c1c7aff41b16bf8701ca2912d365cd1"
+      }
+    ]
+  },
+  "exception": null
+}

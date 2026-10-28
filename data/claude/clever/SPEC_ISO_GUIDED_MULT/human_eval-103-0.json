@@ -1,0 +1,71 @@
+{
+  "text": "sha256:cdec8924ac58bc0ae23ad173e2963388b5f410b63ad2dc034aeb691e9e7284f4",
+  "info": {
+    "dataset": "clever",
+    "id": 103,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:3a09c98c899f7f0998a5c98828b3bfb9e36087d0a2209746c52e5568081b460e",
+  "timing": 1178.8931568800472,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:9af515f1d9e66a688f4ed17a34bf26fadb4094cb7e12c34eb8b45db07829f124",
+    "status": [
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH"
+    ],
+    "result": "sha256:afef6550736ede83ac64f6fc5aa9760f14baa5fcca9b8fcfdca795c474b16907",
+    "raw_status": "0:MISMATCH\n1:MISMATCH\n2:MISMATCH\n3:MISMATCH",
+    "comment": [
+      "/",
+      "/",
+      "/",
+      "/"
+    ],
+    "validation": [
+      {
+        "problem_id": "103",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:50f525b5fea552ae3e0bce40d80421e47da2db6a9f44097babbf8132fa587ccb"
+      },
+      {
+        "problem_id": "103",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:5449abd4f4d1e957d19c5571c0e68b6688b4adb128e300c849e216108aebc5d0",
+        "lean_code": "sha256:43cd02e0478323badb6f19cb64949db7440eab3755d5bc67ade975d135f9ca04"
+      },
+      {
+        "problem_id": "103",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:40e1fcfcbe93d539bee9a64f090cf849dd0cff7b48fa2a796cbc438a37e8e0bc"
+      },
+      {
+        "problem_id": "103",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:215905f95683763db6553652fb586ae268f7fdbb2aaebfdd2ad2192cf4f2c290"
+      }
+    ],
+    "analysis": [
+      "PRECOND+CANON",
+      "CANON",
+      "PRECOND+CANON",
+      "CANON"
+    ]
+  },
+  "exception": null
+}

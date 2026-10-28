@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prod_signs(arr: List[int]) -> Optional[int]\n\"\"\"You are given an array arr of integers and you need to return\nsum of magnitudes of integers multiplied by product of all signs\nof each number in the array, represented by 1, -1 or 0.\nNote: return None for empty arr.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Option Int)\n-- inputs\n(arr: List Int) :=\n-- spec\nlet spec (result: Option Int) :=\n  match result with\n  | none => arr = []\n  | some result =>\n  let magnitude_sum := (arr.map (fun x => Int.ofNat x.natAbs)).sum;\n    let neg_count_odd := (arr.filter (fun x => x < 0)).length % 2 = 1;\n    let has_zero := 0 \u2208 arr;\n    (result < 0 \u2194 (neg_count_odd \u2227 \u00achas_zero)\n      \u2227 result = magnitude_sum * -1) \u2227\n    (0 < result \u2194 (\u00acneg_count_odd \u2227 \u00achas_zero)\n      \u2227 result = magnitude_sum) \u2227\n    (result = 0 \u2194 has_zero)\n-- program terminates\n\u2203 result, impl arr = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : Option Int :=\n\n  match arr with\n  | [] => none\n  | _ =>\n    if arr.any (\u00b7 == 0) then some 0\n    else\n      let magnitudeSum := (arr.map (fun x => Int.ofNat x.natAbs)).sum\n      let negCount := (arr.filter (fun x => x < 0)).length\n      if negCount % 2 == 1 then some (-magnitudeSum)\n      else some magnitudeSum\n\n\n-- [TEST_CASES]\n\n#test implementation ([1, 2, 2, -4]: List Int) = (-9: Int)\n#test implementation ([0, 1]: List Int) = (0: Int)\n#test implementation ([]: List Int) = none\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 128,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:04e9d68258163cb5a91f7f8d4bbf3547862949161ed81526d19c366b3f4d266e",
+  "timing": 749.1478364010109,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:e8f21853ed55bdf2012ae809e3d850c907db2e69a79a080f70aa0d66eae37496",
+    "status": "OK",
+    "result": "sha256:13708b0977ef3a5a0e560647e6a57c54b2158a9c7547f1ee4c1cb3565e823e08",
+    "validation": [
+      {
+        "problem_id": "128",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:c5bed97a5eb074e66ba0ff898d6c24e721498a4f8a27d30ae094bdf3d06a1edf"
+      }
+    ]
+  },
+  "exception": null
+}

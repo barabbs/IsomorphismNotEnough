@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_nums(arr: List[int]) -> int\n\"\"\"Write a function count_nums which takes an array of integers and returns\nthe number of elements which has a sum of digits > 0.\nIf a number is negative, then its first signed digit will be negative:\ne.g. -123 has signed digits -1, 2, and 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(arr: List Int) :=\n\n-- spec\nlet spec (result: Int) :=\n  let dig_sum (x: Int): Int :=\n    let digs := Nat.digits 10 x.natAbs;\n    if x >= 0 then\n      (List.map (fun t => (t: Int)) digs).sum\n    else\n      (List.map (fun t => (t: Int)) (digs.drop 1)).sum - (digs[0]! : Int);\n  (arr = [] → result = 0) ∧\n  (arr ≠ [] → 0 < (dig_sum arr[0]!) → result = 1 + implementation (arr.drop 1)) ∧\n  (arr ≠ [] → (dig_sum arr[0]!) ≤ 0 → result = implementation (arr.drop 1));\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : Int :=\n\n  let dig_sum (x : Int) : Int :=\n    let digs := Nat.digits 10 x.natAbs\n    if x >= 0 then\n      (List.map (fun t => (t : Int)) digs).sum\n    else\n      (List.map (fun t => (t : Int)) (digs.dropLast)).sum - (digs.getLast! : Int)\n  match arr with\n  | [] => 0\n  | a :: rest =>\n    if 0 < dig_sum a then\n      1 + implementation rest\n    else\n      implementation rest\n\n\n-- [TEST_CASES]\n\n#test implementation [] = 0\n#test implementation [-1, -2, 0] = 0\n#test implementation [1, 1, 2, -2, 3, 4, 5] = 6\n#test implementation [1, 6, 9, -6, 0, 1, 5] = 5\n#test implementation [1, 100, 98, -7, 1, -1] = 4\n#test implementation [12, 23, 34, -45, -56, 0] = 5\n#test implementation [-0, 1^0] = 1\n#test implementation [1] = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 108,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:86d1512498d33ff546b1fafe87f9211f9f80f8e3f6a9f51ba57110a743eb027e",
+  "timing": 195.01779724808875,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:efba95c2bf747e4642e859f9ba92717cb03fed3b37340dc06c5702e8ec5862a6",
+    "status": "ISSUE",
+    "result": "sha256:980da50dabdfa9449f94133c423e5afbc1496d250e595092a89bccaaf99d143e",
+    "validation": [
+      {
+        "problem_id": "108",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:3781f1213723e8528601fc8fe909999245da10241c4fc62ab3e54993831b62ca"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "WRONG"
+  },
+  "exception": null
+}

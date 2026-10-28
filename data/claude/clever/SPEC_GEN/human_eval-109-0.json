@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef move_one_ball(arr: List[int]) -> bool\n\"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\nnumbers in the array will be randomly ordered. Your task is to determine if\nit is possible to get an array sorted in non-decreasing order by performing\nthe following operation on the given array:\n    You are allowed to perform right shift operation any number of times.\n\nOne right shift operation means shifting all elements of the array by one\nposition in the right direction. The last element of the array will be moved to\nthe starting position in the array i.e. 0th index.\n\nIf it is possible to obtain the sorted array by performing the above operation\nthen return True else return False.\nIf the given array is empty then return True.\n\nNote: The given list is guaranteed to have unique elements.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Bool)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 109,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:79573553cada7db1dbf0f74be255ecc0edb60a8521857dde978d6be1185ee0d6",
+  "timing": 81.17256324499613,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ag2f575d/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:5b9ec4c9bb5a30dd885d103c49510eaa22d792780903cbb7848580f0dd47ddfc",
+    "status": "OK",
+    "result": "sha256:66e50dcdc62601cdd2047b72dd488aad1219f684e1f763ea7710ad6d6464b39b"
+  },
+  "exception": null
+}

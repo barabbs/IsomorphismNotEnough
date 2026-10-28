@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef special_factorial(n: int) -> int\n\"\"\"The Brazilian factorial is defined as:\nbrazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!\nwhere n > 0. Please write a function that computes the Brazilian factorial.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nlet factorial := Nat.factorial n;\n(0 < n → result / factorial = impl (n - 1)) ∧\n(n = 0 → result = 1);\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\nmatch n with\n| 0 => 1\n| n + 1 => implementation n * Nat.factorial (n + 1)\n\n\n-- [TEST_CASES]\n\n#test implementation 4 = 288\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 139,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:194fe7e1daa1290629f64fe1cc75dcb1fb63910f6f73d37d8300fdb009f0ff2d",
+  "timing": 398.24195844493806,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:43c112c391ae971eb4b773bc92398d248c86584ced5398b9b26641208617e7e1",
+    "status": "OK",
+    "result": "sha256:92fa1864fa4180ff1393e29eb91ae424ce2104e87e5c5bf4340cb35d4f0275d1",
+    "validation": [
+      {
+        "problem_id": "139",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:0877851ba8d07a3884bbc0e1f2e8340a3d0aa0e4bdf24d9cf059619e5dccf241"
+      }
+    ]
+  },
+  "exception": null
+}

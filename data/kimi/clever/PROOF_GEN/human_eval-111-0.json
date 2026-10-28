@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef histogram(s : str) -> Dict[str, int]\n\"\"\"Given a string representing a space separated lowercase letters, return a dictionary\nof the letter with the most repetition and containing the corresponding count.\nIf several letters have the same occurrence, return all of them.\n-- Note(George): I believe the equality extensionality for HashMaps makes this spec true.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Std.HashMap Char Nat)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Std.HashMap Char Nat) :=\n    let chars := s.splitOn \" \"\n    chars.all (fun c => c.length = 1) ∧ s.all (fun c => c.isLower ∨ c = ' ') →\n    ∀ key ∈ result.keys,\n      (key.isLower ∧\n      key ∈ s.data ∧\n      result.get! key = s.count key) ∧\n    (∀ char ∈ s.data, char.isLower →\n      ((∃ char2 ∈ s.data, char2.isLower ∧ char2 ≠ char ∧\n      s.count char < s.count char2) ↔ char ∉ result.keys))\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : Std.HashMap Char Nat :=\n\nlet chars := (s.data.filter Char.isLower).dedup\nlet maxCount := (chars.map (fun c => s.count c)).maximum.unbotD 0\n(chars.filter (fun c => s.count c == maxCount)).foldl (fun m c => m.insert c (s.count c)) (Std.HashMap.emptyWithCapacity)\n\n\n-- [TEST_CASES]\n\n#test (implementation \"a b c\").size == 3 && (implementation \"a b c\").getD 'a' 0 == 1 && (implementation \"a bc\").getD 'b' 0 == 1 && (implementation \"a b c\").getD 'c' 0 == 1\n#test (implementation \"a b b a\").size == 2 && (implementation \"a b b a\").getD 'a' 0 == 2 && (implementation \"a b b a\").getD 'b' 0 == 2\n#test (implementation \"a b c a b\").size == 2 && (implementation \"a b c a b\").getD 'a' 0 == 2 && (implementation \"a b c a b\").getD 'b' 0 == 2\n#test (implementation \"b b b b a\").size == 1 && (implementation \"b b b b a\").getD 'b' 0 == 4\n#test (implementation \"\").size == 0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 111,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a714e500e9dcc7ae06cf01bbf6049c4832c847e454c033755bd6a83e5431ca02",
+  "timing": 14452.913254544605,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:63c225c90371f0a36de95b85ea309a3c4961128a72d645edcb58e70641b52f5d",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "111",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:22f0dd21ed8e4f8dd99b78d0f3a1fff6085231fb416db8812929cadd7cad5887",
+        "lean_code": "sha256:d6ad84c7811f8028e3db7378a55cd8861a2083b6ec7a3dfe0c7469aea247e500"
+      }
+    ]
+  },
+  "exception": null
+}

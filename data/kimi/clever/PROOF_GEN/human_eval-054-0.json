@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef same_chars(s0: str, s1: str) -> bool\n\"\"\"Check if two words have the same characters.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(s0 s1: String) :=\n-- spec\nlet spec (res: Bool) :=\n  res ↔ (∀ c : Char, c ∈ s0.toList ↔ c ∈ s1.toList)\n-- program terminates\n∃ result, impl s0 s1 = result ∧\n-- return value satisfies spec\nspec result\n-- if result then spec else ¬spec\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s0 s1: String) : Bool :=\n\ndecide (s0.toList.toFinset = s1.toList.toFinset)\n\n\n-- [TEST_CASES]\n\n#test implementation \"eabcdzzzz\" \"dddzzzzzzzddeddabc\" = true\n#test implementation \"abcd\" \"dddddddabc\" = true\n#test implementation \"dddddddabc\" \"abcd\" = true\n#test implementation \"eabcd\" \"dddddddabc\" = false\n#test implementation \"abcd\" \"dddddddabce\" = false\n#test implementation \"eabcdzzzz\" \"dddzzzzzzzddddabc\" = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s0 s1: String)\n: problem_spec implementation s0 s1  :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 54,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1ef1929805533b82beae574ce0d00c249d678bbfeb6d20c807d37066cd4c4090",
+  "timing": 135.17386668501422,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c2afc91082a36f6a2fe4174abf1b6de7f0650fb8233e7939679dcb90ef9f9327",
+    "status": "OK",
+    "result": "sha256:f7b770d7f7d02af122ee0a4fc229320b4af331bb89fe2f1bd6cabc28699e4ea8",
+    "validation": [
+      {
+        "problem_id": "54",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5f9d7a087134fe974cd98e61c4185f56c50211f2d2dcfba5535365ed9baf4144"
+      }
+    ]
+  },
+  "exception": null
+}

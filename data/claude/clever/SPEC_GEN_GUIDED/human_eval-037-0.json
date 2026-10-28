@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_even(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the odd indicies, while its values at the even indicies are equal\nto the values of the even indicies of l, but sorted.\n\n>>> sort_even([1, 2, 3])\n[1, 2, 3]\n>>> sort_even([5, 6, 3, 4])\n[3, 6, 5, 4]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(l: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3] = [1, 2, 3]\n-- #test implementation [5, 6, 3, 4] = [3, 6, 5, 4]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 37,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:a8668486ca28b46865684af2df504aef87e2f836872176850752e39b03d3148d",
+  "timing": 107.40252062400032,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/cksvuhuw/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:5e1de3591daf0e6e78b65e0bdfa397fd47bc80fc6a27a38f6508960e04ada496",
+    "status": "OK",
+    "result": "sha256:ad577b4cfde06cb1487cc5b35a3c9c445f74568e81bad6aa2104d9eab197358f"
+  },
+  "exception": null
+}

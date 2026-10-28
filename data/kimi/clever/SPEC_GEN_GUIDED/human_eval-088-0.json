@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_array(lst : List[int]) -> List[int]\n\"\"\"Given an array of non-negative integers, return a copy of the given array after sorting,\nyou will sort the given array in ascending order if the sum( first index value, last index value) is odd,\nor sort it in descending order if the sum( first index value, last index value) is even.\nNote(George): I have elected to ignore the copy part.\n\n>>> sort_array([])\n[]\n>>> sort_array([5])\n[5]\n>>> sort_array([2, 4, 3, 0, 1, 5])\n[0, 1, 2, 3, 4, 5]\n>>> sort_array([2, 4, 3, 0, 1, 5, 6])\n[6, 5, 4, 3, 2, 1, 0]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat → List Nat)\n-- inputs\n(lst: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] = []\n-- #test implementation [5] = [5]\n-- #test implementation [2, 4, 3, 0, 1, 5] = [0, 1, 2, 3, 4, 5]\n-- #test implementation [2, 4, 3, 0, 1, 5, 6] = [6, 5, 4, 3, 2, 1, 0]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 88,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:6df69e046eaa40b389fb551d87f4d295f9ea968cff42216c7d3f6f121aee93d1",
+  "timing": 283.9812321481295,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d8d6d2e76fa35570ec9bb1a505e61e8c5499399b85b0be3b8d49827edf74a4ee",
+    "status": "OK",
+    "result": "sha256:d64cacfa4399670baee2c11f84d2e36e70f30d44b9a8404bd4c9152d914582c1"
+  },
+  "exception": null
+}

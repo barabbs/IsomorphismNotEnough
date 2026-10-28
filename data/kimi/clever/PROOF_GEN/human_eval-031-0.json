@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_prime(n)\n\"\"\"Return true if a given number is prime, and false otherwise.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Bool)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Bool) :=\n  result ↔ (2 ≤ n ∧ ¬ (∃ k, 2 ≤ k ∧ k < n ∧ n % k = 0));\n-- program termination\n∃ result,\n  implementation n = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat): Bool :=\n\ndecide (Nat.Prime n)\n\n\n-- [TEST_CASES]\n\n#test implementation 6 = false\n#test implementation 101 = true\n#test implementation 11 = true\n#test implementation 13441 = true\n#test implementation 61 = true\n#test implementation 4 = false\n#test implementation 1 = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 31,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7048f959701fe4582d246505bc6a42b173b6f8aa73c9208b0bd147c867380e7f",
+  "timing": 1695.176376027055,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:2c87921f72b6478a08be45e31bb570c5de9fb715d4368a3ce65f1596ddd670b4",
+    "status": "OK",
+    "result": "sha256:eccc31230fb09f2c2bc970a571acae672515e46d96b833defea0e123b03d5479",
+    "validation": [
+      {
+        "problem_id": "31",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5ee67da218258056491aa7b3dc293965a1a153ac7de4db71fe1f775d18d87156"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_count(num: int) -> Tuple[int, int]\n\"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int → Int × Int)\n-- inputs\n(num: Int) :=\n-- spec\nlet spec (result: Int × Int) :=\n  let (even_count, odd_count) := result;\n  let numAbs := |num|.toNat;\n  let numBy10 := numAbs/10;\n  let (even_count', odd_count') := impl numBy10;\n  (result = impl numAbs) ∧\n  (0 ≤ num → (Even num ↔ 1 + even_count' = even_count) ∧ (Odd num ↔ even_count' = even_count)) ∧\n  (0 ≤ num → (Odd num ↔ 1 + odd_count' = odd_count) ∧ (Even num ↔ odd_count' = odd_count));\n-- program terminates\n∃ result, impl num = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (num: Int) : Int × Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation (-12) = (1, 1)\n-- #test implementation 123 = (1, 2)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 155,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5955396621e24a00262e2dd23668fa53f773ca2531aeb01f4d93742b76948807",
+  "timing": 300.7006913512014,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:a0364d598c1d134aeaeffca2cfab6d66c44988620d84c172ab6b13f2c61addbf",
+    "status": "OK",
+    "result": "sha256:b3483bf0bf23d4fe89faf2df5adda82abe434e620a2943a3b9a87618efc34e5f"
+  },
+  "exception": null
+}

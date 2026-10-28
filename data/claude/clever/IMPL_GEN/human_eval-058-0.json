@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef common(l1: List[Int], l2: List[Int]) -> List[Int]\n\"\"\"Return sorted unique common elements for two lists.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int \u2192 List Int)\n-- inputs\n(l1 l2: List Int) :=\nlet is_unique (result: List Int) :=\n  \u2200 i j, i < result.length \u2192 j < result.length \u2192\n  i \u2260 j \u2192 result[i]! \u2260 result[j]!;\nlet is_sorted (result: List Int) :=\n  \u2200 i, i < result.length - 1 \u2192\n  result[i]! \u2264 result[i + 1]!;\n-- spec\nlet spec (result: List Int) :=\n  is_unique result \u2227\n  is_sorted result \u2227\n  (\u2200 i : Int, i \u2208 result \u2194 i \u2208 l1 \u2227 i \u2208 l2)\n-- program termination\n\u2203 result, implementation l1 l2 = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (l1 l2: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 4, 3, 34, 653, 2, 5] [5, 7, 1, 5, 9, 653, 121] = [1, 5, 653]\n-- #test implementation [5, 3, 2, 8] [3, 2] = [2, 3]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 58,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ee990f141527ae4d6a193f6255e35744dc106d098fdafd2ed74ec16a4b167ab0",
+  "timing": 62.66895774099976,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/l4oi18rz/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:11f203b821d579d164a9191a603147a79a516248fa0ee462c42e9f3bce70f319",
+    "status": "OK",
+    "result": "sha256:f2fa0c74f6db719891833927c0aee6780bad7471e26d769063e41ac26f5d9f6b"
+  },
+  "exception": null
+}

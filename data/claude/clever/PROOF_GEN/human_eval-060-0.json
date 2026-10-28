@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_to_n(n: nat) -> nat\n\"\"\"sum_to_n is a function that sums numbers from 1 to n.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  0 < n \u2192\n  (result = 1 \u2194 n = 1) \u2227\n  (\u2200 i, implementation (i + 1) - (implementation i) = i + 1)\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\nn * (n + 1) / 2\n\n\n-- [TEST_CASES]\n\n#test implementation 30 = 465\n#test implementation 100 = 5050\n#test implementation 5 = 15\n#test implementation 10 = 55\n#test implementation 1 = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 60,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1d476e8c6c3714f18c96a239224ecd5ff1fdbb7d77efc52aafafbf8845d168c6",
+  "timing": 242.12334397702944,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:c5c1ee2e445a2084ee346461baef51966c1322a5f490f843dafe9338cf3dafd0",
+    "status": "OK",
+    "result": "sha256:da8ac7f7c4d3061678d28a250e52927081111df60cd3f979cf3c6836b9a36f1a",
+    "validation": [
+      {
+        "problem_id": "60",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:726aaa800e610f5ff3cd75f52f5d918aba30925c62299bae9bac83e2858fc20d"
+      }
+    ]
+  },
+  "exception": null
+}

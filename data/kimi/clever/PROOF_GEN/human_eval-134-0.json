@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_if_last_char_is_a_letter(txt: str) -> bool\n\"\"\"Create a function that returns True if the last character\nof a given string is an alphabetical character and is not\na part of a word, and False otherwise.\nNote: \"word\" is a group of characters separated by space.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(txt: String) :=\n-- spec\nlet spec (result: Bool) :=\n  let words := txt.splitOn \" \";\n  match words with\n  | [] => result = False\n  | [last_word] => (result ↔ last_word.length = 1 ∧ (let diff := (last_word.get 0).toLower.toNat - 'a'.toNat; 0 ≤ diff ∧ diff ≤ 25))\n  | head::tail => result ↔ (let tail_txt := String.join tail; impl tail_txt);\n-- program terminates\n∃ result, impl txt = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (txt: String) : Bool :=\n\n  let words := txt.splitOn \" \"\n  match words with\n  | [] => false\n  | ws =>\n    let last_word := ws.getLast!\n    last_word.length = 1 && (last_word.get 0).isAlpha\n\n\n-- [TEST_CASES]\n\n#test implementation \"apple pie\" = false\n#test implementation \"apple pi e\" = true\n#test implementation \"apple pi e \" = false\n#test implementation \"\" = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(txt: String)\n: problem_spec implementation txt :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 134,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5055c8bc4701f1f8f3f9f8a222cbdc9a6d028139e62467d3115275749cd4918a",
+  "timing": 2261.7810033028945,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:689154069171c2cd89e347f00534f3135e0daae4bf593b5eca18696f17ff5dc6",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:2f84856d3c2d012c1e83045b82913bf6429b9e0e403a45363f597571c9858500",
+    "validation": [
+      {
+        "problem_id": "134",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:ff68c36f232a90b02633c859fbf8052751dee0e5712b99c5a9475b4b9a65bf3a"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef Strongest_Extension(class_name: String, extensions: List[String]) -> String\n\"\"\"You will be given the name of a class (a string) and a list of extensions.\nThe extensions are to be used to load additional classes to the class. The\nstrength of the extension is as follows: Let CAP be the number of the uppercase\nletters in the extension's name, and let SM be the number of lowercase letters\nin the extension's name, the strength is given by the fraction CAP - SM.\nYou should find the strongest extension and return a string in this\nformat: ClassName.StrongestExtensionName.\nIf there are two or more extensions with the same strength, you should\nchoose the one that comes first in the list.\nFor example, if you are given \"Slices\" as the class and a list of the\nextensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should\nreturn 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the strongest extension\n(its strength is -1).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 List String \u2192 String)\n-- inputs\n(class_name: String)\n(extensions: List String) :=\nlet strength (extension: String) :=\n  let cap := (extension.toList.filter (fun c => c.isUpper)).length;\n  let sm := (extension.toList.filter (fun c => c.isLower)).length;\n  cap - sm;\n-- spec\nlet spec (result: String) :=\nlet last_pos := result.revPosOf '.';\n0 < extensions.length \u2227 extensions.all (fun x => 0 < x.length) \u2227 0 < class_name.length \u2192\n0 < result.length \u2227\nlast_pos.isSome \u2227\nlet class_name' := result.take (last_pos.get!).byteIdx;\nlet extension_name := result.drop ((last_pos.get!).byteIdx + 1);\nclass_name' = class_name \u2227\nextension_name \u2208 extensions \u2227\nlet strength_of_extensions := extensions.map (fun ext => strength ext);\n\u2203 j : Nat, j < extensions.length \u2227\n  extensions[j]! = extension_name \u2227\n  (\u2200 i : Nat, i < j \u2192 strength_of_extensions[i]! < strength_of_extensions[j]!)\n  \u2227 strength_of_extensions[j]! = strength_of_extensions.max?.get!;\n-- program terminates\n\u2203 result, impl class_name extensions = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (class_name: String) (extensions: List String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 'my_class', ['AA', 'Be', 'CC'] = 'my_class.AA'\n",
+  "info": {
+    "dataset": "clever",
+    "id": 153,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:dddbebcc89489d90022f556f1d3372b53e0b1d8355fa2f9f24d1b5d681258e19",
+  "timing": 77.59602974299924,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ja1c26v9/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:130b3bdfa0a3fabc3864a27b51821d9f86c038b5e0e66362ff177a17232f37cc",
+    "status": "OK",
+    "result": "sha256:6d7afad22d10b22d28a702246c3c2418526b392099d98785173233455588da37"
+  },
+  "exception": null
+}

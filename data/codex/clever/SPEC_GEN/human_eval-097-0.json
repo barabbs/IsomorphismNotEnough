@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef multiply(a : int, b : int) -> int\n\"\"\"Complete the function that takes two integers and returns\nthe product of their unit digits.\nAssume the input is always valid.\n-- Note(George): I'm finding it hard to not leak the implementation here, so I opted to make the spec more convoluted.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → Int → Int)\n-- inputs\n(a b: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 97,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ecce5c94a47ab12251d5c876f618eead8660becdd9b868129acf5bf4728c9910",
+  "timing": 89.80110107176006,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:c6a0bd4ab7c6ac0a854fd805a51512fcb1bac8db3fb37c48789e98ac9cc59070",
+    "status": "OK",
+    "result": "sha256:da289dc8bb8fddc253da67c335046cfca7cacf598d394ac190557acf0ee87da5"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef common(l1: List[int], l2: List[int]) -> List[int]\n\"\"\"Return sorted unique common elements for two lists.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int → List Int)\n-- inputs\n(l1 l2: List Int) :=\nlet is_unique (result: List Int) :=\n  ∀ i j, i < result.length → j < result.length →\n  i ≠ j → result[i]! ≠ result[j]!;\nlet is_sorted (result: List Int) :=\n  ∀ i, i < result.length - 1 →\n  result[i]! ≤ result[i + 1]!;\n-- spec\nlet spec (result: List Int) :=\n  is_unique result ∧\n  is_sorted result ∧\n  (∀ i : Int, i ∈ result ↔ i ∈ l1 ∧ i ∈ l2)\n-- program termination\n∃ result, implementation l1 l2 = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l1 l2: List Int) : List Int :=\n\n  (l1.filter (fun x => x ∈ l2)).dedup.mergeSort (fun a b => a ≤ b)\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 4, 3, 34, 653, 2, 5] [5, 7, 1, 5, 9, 653, 121] = [1, 5, 653]\n#test implementation [5, 3, 2, 8] [3, 2] = [2, 3]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l1 l2: List Int)\n: problem_spec implementation l1 l2\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 58,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b2473bbb6bb93689a3f3bebcece066a20c406feb351442ea54b9279ea39d0b3d",
+  "timing": 1110.2500809133053,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:534e73af9a9d783c2763ed598d23a78ec7a274a2aaa5891e08961c97d93b724f",
+    "status": "OK",
+    "result": "sha256:4864084c7b54215dfc332e29c8fb70edcb116bd7aecf8c8f783005baf256075a",
+    "validation": [
+      {
+        "problem_id": "58",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:dd0dd2007d8e880154582e886612dd64d3edf6d4310b3ed9832e0acd2e568855"
+      }
+    ]
+  },
+  "exception": null
+}

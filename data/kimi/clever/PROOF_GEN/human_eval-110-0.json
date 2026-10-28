@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef exchange(lst1: list[int], lst2: list[int]) -> str\n\"\"\"In this problem, you will implement a function that takes two lists of numbers,\nand determines whether it is possible to perform an exchange of elements\nbetween them to make lst1 a list of only even numbers.\nThere is no limit on the number of exchanged elements between lst1 and lst2.\nIf it is possible to exchange elements between the lst1 and lst2 to make\nall the elements of lst1 to be even, return \"YES\".\nOtherwise, return \"NO\". It is assumed that the input lists will be non-empty.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int → String)\n-- inputs\n(lst1: List Int)\n(lst2: List Int) :=\n-- spec\nlet spec (result : String) :=\n  lst1 ≠ [] → lst2 ≠ [] →\n  let bool_result := ∃ exchange: List (Nat × Nat),\n    let lst1_idxs := exchange.map (fun (a, b) => a)\n    let lst2_idxs := exchange.map (fun (a, b) => b)\n    lst1_idxs.all (fun i => i < lst1.length) ∧\n    lst2_idxs.all (fun i => i < lst2.length) ∧\n    lst1_idxs.Nodup ∧\n    lst2_idxs.Nodup ∧\n    ∀ i, i < lst1.length →\n      (i ∉ lst1_idxs → Even (lst1.get! i)) ∧\n      (i ∈ lst1_idxs →\n        -- find the (a, b) in exchange where a = i\n        let i_idx := (lst1_idxs.indexesOf i).head!\n        Even (lst2.get! (lst2_idxs.get! i_idx)))\n  (bool_result → result = \"YES\") ∧\n  (result = \"NO\" → ¬ bool_result) ∧\n  (result ≠ \"YES\" ∧ result ≠ \"NO\" → False)\n-- program termination\n∃ result,\n  implementation lst1 lst2 = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst1: List Int) (lst2: List Int) : String :=\n\nif (lst1.filter (fun x => ¬ Even x)).length ≤ (lst2.filter (fun x => Even x)).length then \"YES\" else \"NO\"\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3, 4] [1, 2, 3, 4] = \"YES\"\n#test implementation [1, 2, 3, 4] [1, 5, 3, 4] = \"NO\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst1: List Int)\n(lst2: List Int)\n: problem_spec implementation lst1 lst2\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 110,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1f665eed2c98c15ce561585eb22093063228a091634f91573e1d9732751dd2d5",
+  "timing": 5951.000154445879,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:dc5ef9109b4d374fe40813ef562f8c64cc223275860115d73af489e25fd28206",
+    "status": "FAIL",
+    "result": "sha256:2466d1db52902e6e76b00d3bf299988ad158c36c99eb6e35496b1660b3c266a4",
+    "validation": [
+      {
+        "problem_id": "110",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:22e89fbebcad7c9d598dacf6501acfa0aa30b344b46b9b0df5d95d71bf7f4b83"
+      }
+    ]
+  },
+  "exception": null
+}

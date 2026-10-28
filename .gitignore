@@ -1,0 +1,26 @@
+# Python / build artifacts
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# Lean build artifacts
+.lake/
+
+# Backups / scratch
+*.old
+*.bak
+*.bak[0-9]
+
+# Credentials (never committed)
+agents/keys/
+.env
+.mcp.json
+
+# Editor settings
+.idea/
+.vscode/
+
+# Plot outputs
+plots/out/
+

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef total_match(lst1: List[str], lst2: List[str]) -> List[str]\n\"\"\"Write a function that accepts two lists of strings and returns the list that has\ntotal number of chars in the all strings of the list less than the other list.\nIf the two lists have the same number of chars, return the first list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → List String → List String)\n-- inputs\n(lst1: List String) (lst2: List String) :=\nlet sum_chars (xs: List String) : Int :=\n  xs.foldl (λ acc a => acc + a.length) 0;\n-- spec\nlet spec (result : List String) :=\n  ((result = lst1) ∨ (result = lst2))\n  ∧\n  (sum_chars result ≤ sum_chars lst1)\n  ∧\n  (sum_chars result ≤ sum_chars lst2)\n  ∧\n  ((sum_chars lst1 = sum_chars lst2) → (result = lst1))\n-- program termination\n∃ result, implementation lst1 lst2 = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst1: List String) (lst2: List String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] [] = []\n-- #test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\"] = [\"hi\", \"hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\", \"admin\", \"project\"] = [\"hi\", \"admin\"]\n-- #test implementation [\"4\"] [\"1\", \"2\", \"3\", \"4\", \"5\"] = [\"4\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"Hi\"] = [\"hI\", \"Hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hi\"] = [\"hI\", \"hi\", \"hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hii\"] = [\"hi\", \"admin\"]\n-- #test implementation [] [\"this\"] = []\n-- #test implementation [\"this\"] [] == []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 74,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:da7ee1456c58617fb4e9a7c084e58ebb85f7bf8ca025d3e55bf8646fb3b90cc8",
+  "timing": 99.52820826973766,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:0b18beb5ea65c06ce24d4c7cf4bd22de8f0522869e7595aa1d5d540475fb289e",
+    "status": "OK",
+    "result": "sha256:5e12126b8fa263934bbcf2e4119e9596e68b761429cf96ed192f216329667e29"
+  },
+  "exception": null
+}

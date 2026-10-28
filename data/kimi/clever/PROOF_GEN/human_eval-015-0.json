@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_sequence(n: int) -> str\n\"\"\"Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → String)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: String) :=\nlet result_nums := result.splitOn \" \";\nresult_nums.length = n + 1 ∧\n∀ i, i < n + 1 → result_nums[i]! = i.repr;\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : String :=\n\n\" \".intercalate (List.map (fun i => i.repr) (List.range (n + 1)))\n\n\n-- [TEST_CASES]\n\n#test implementation 0 = \"0\"\n#test implementation 5 = \"0 1 2 3 4 5\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 15,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ae84166c827dc91ab2de912b1a9059c7ceb0accedc95f61fadf8c9a5c0ff020e",
+  "timing": 14402.631467293948,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:64a0a5fc257651e550d23731c85d711d320cbe015295d4a965b1022863e36434",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "15",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:b6b26bd8daf67e237eef06db56d03f6c90665817a7883b72a73ed5731fd94998"
+      }
+    ]
+  },
+  "exception": null
+}

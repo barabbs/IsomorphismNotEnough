@@ -1,0 +1,80 @@
+{
+  "text": "sha256:00fb0a215079ef3d5c28a14667cdc9ffc36c0df7715c7b1382a72b8f90889190",
+  "info": {
+    "dataset": "clever",
+    "id": 132,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:2d7d12d6a0599260056055225d52636ddd0f7fa30f824dc172e1477e473600ca",
+  "timing": 3318.519633741991,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean problem_3.lean --deep=stuck",
+    "claude": "sha256:4bb7aeea954d04ec03e53c14d33f1de80ca13eb7279822533932a8b6dfb2ac44",
+    "status": [
+      "ISSUE",
+      "ISSUE",
+      "ISSUE",
+      "ISSUE"
+    ],
+    "result": "sha256:e2bf20b85225212cdd8cbc0f295615d4fa64d6177a00721517e9abb06524d45f",
+    "raw_status": "All files have exactly 1 sorry and detailed counterexample arguments. Each file compiles cleanly (no errors beyond the expected sorry warning).\n\n0:ISSUE\n1:ISSUE\n2:ISSUE\n3:ISSUE\n\nAll four theorems are unprovable due to a **parsing bug in the ground truth specification**: `A → B ↔ C` parses as `(A → B) ↔ C` in Lean 4, but the intended meaning is `A → (B ↔ C)`. This makes `problem_spec` unsatisfiable for non-paren strings like `\"a\"`, while the generated specs handle them correctly. Additionally, problems 0, 2, and 3 have further specification mismatches (missing preconditions, contiguous substring vs subsequence) that would persist even with corrected parsing.",
+    "comment": [
+      "BOTH",
+      "PROB",
+      "BOTH",
+      "BOTH"
+    ],
+    "validation": [
+      {
+        "problem_id": "132",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:cb062116ad8f4c9089609fcaac64784ce745a0f5c8157b9720e71759b3af4352"
+      },
+      {
+        "problem_id": "132",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:67e70630334c5dddf145e9c9395868c724516df9065a10c56c86232691acf78e"
+      },
+      {
+        "problem_id": "132",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:e3722161a01b45e2ee134e49dae9137ba6e0aa8434b865d1c0a5f90c44a4c92b"
+      },
+      {
+        "problem_id": "132",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:a323f09a20a3c066270b4fbecb1d23e85d35dd64df9b03e2e0b7150fe0f01980"
+      }
+    ],
+    "analysis": [
+      [
+        "PREC",
+        "MCONS"
+      ],
+      "PREC",
+      [
+        "PREC",
+        "MCONS+WRONG"
+      ],
+      [
+        "PREC",
+        "WRONG"
+      ]
+    ]
+  },
+  "exception": null
+}

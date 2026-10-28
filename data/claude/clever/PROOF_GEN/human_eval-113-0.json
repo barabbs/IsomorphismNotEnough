@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef odd_count(lst : list[str]) -> list[str]\n\"\"\"Given a list of strings, where each string consists of only digits, return a list.\nEach element i of the output should be \"the number of odd elements in the\nstring i of the input.\" where all the i's should be replaced by the number\nof odd digits in the i'th string of the input.\nNote(George): Found it hard to not leak the implementation, so I opted for a recursive statement.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 List String)\n-- inputs\n(lst: List String) :=\n-- spec\nlet spec (result : List String) :=\n  lst.all (fun s => s.data.all (fun c => c.isDigit)) \u2192\n  (result.length = 0 \u2194 lst.length = 0) \u2227\n  (result.length > 0 \u2192\n  let num_odd_digits := (lst.head!.data.filter (fun c => c.isDigit \u2227 c.toNat % 2 = 1)).length\n  result.head! = \"the number of odd elements \" ++ num_odd_digits.repr ++ \"n the str\" ++ num_odd_digits.repr ++ \"ng \" ++ num_odd_digits.repr ++ \" of the \" ++ num_odd_digits.repr ++ \"nput.\"\n  \u2227 result.tail! = implementation lst.tail!)\n-- program termination\n\u2203 result,\n  implementation lst = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List String) : List String :=\n\nmatch lst with\n| [] => []\n| s :: rest =>\n  let num_odd_digits := (s.data.filter (fun c => c.isDigit \u2227 c.toNat % 2 = 1)).length\n  let msg := \"the number of odd elements \" ++ num_odd_digits.repr ++ \"n the str\" ++ num_odd_digits.repr ++ \"ng \" ++ num_odd_digits.repr ++ \" of the \" ++ num_odd_digits.repr ++ \"nput.\"\n  msg :: implementation rest\n\n\n-- [TEST_CASES]\n\n#test implementation [\"1234567\"] = [\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n#test implementation [\"3\",\"11111111\"] = [\"the number of odd elements 1n the str1ng 1 of the 1nput.\", \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List String)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 113,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3349b303d2f86eb8464f450b197b28a58053e658a24b5a1e00e4a6a1e90e492d",
+  "timing": 156.19821930595208,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:37799e111e5a6f4f38176c23157b1d43c78ba03e983749ef905939845b3e6a7d",
+    "status": "OK",
+    "result": "sha256:8de8219ff6aeb09d0987430028f432a12bb771bc4763683d96ee0a67b887f4dd",
+    "validation": [
+      {
+        "problem_id": "113",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:ee2e0ef56a8f43405b3ae36b01c1ebd95cf516f49934450295298467b9d0e561"
+      }
+    ]
+  },
+  "exception": null
+}

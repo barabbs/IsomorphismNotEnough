@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef derivative(xs: List Int) -> List Int\n\"\"\"xs represent coefficients of a polynomial.\nxs[0] + xs[1] * x + xs[2] * x^2 + ....\n Return derivative of this polynomial in the same form.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\nnoncomputable def check_derivative : List \u2124 \u2192 List \u2124\n  | []       => []\n  | (x::rest)  => (Polynomial.eval 1 (Polynomial.derivative (Polynomial.C x * Polynomial.X ^ rest.length))) :: (check_derivative rest)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 List Int)\n-- inputs\n(xs: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.length = xs.length - 1 \u2227\n  result = (check_derivative xs.reverse).reverse\n-- program terminates\n\u2203 result, impl xs = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (xs: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [3, 1, 2, 4, 5] : List Int = [1, 4, 12, 20]\n-- #test implementation [1, 2, 3] : List Int = [2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 62,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e14867eec5165ccf95d83f33ccc718f1edde7f495851dd586f4ee5ee42f37d9a",
+  "timing": 115.80534733302193,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/bmzpo98v/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:1d17ce4367afaa1c8d45a1b84cdf7fe1dce90b7eb6718b56b596b436cb1068a9",
+    "status": "OK",
+    "result": "sha256:6772d271d7f011a2b9ec91e1774106dc36c1e609c5bdd58166e9ce4ab0b669b4"
+  },
+  "exception": null
+}

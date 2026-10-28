@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef encrypt(str : str) -> str\n\"\"\"Create a function encrypt that takes a string as an argument and\nreturns a string encrypted with the alphabet being rotated.\nThe alphabet should be rotated in a manner such that the letters\nshift down by two multiplied to two places.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(str: String) :=\n-- spec\nlet spec (result : String) :=\n  result.data.all (fun c => c.isLower) →\n  result.length = str.length ∧\n  (∀ i, i < str.length →\n    let c := str.data[i]!\n    let c' := result.data[i]!\n    ((c'.toNat - 97) + 2 * 2) % 26 = (c.toNat - 97))\n-- program termination\n∃ result,\n  implementation str = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (str: String) : String :=\n\nString.map (fun c => Char.ofNat (((c.toNat - 97 + 4) % 26) + 97)) str\n\n\n-- [TEST_CASES]\n\n#test implementation \"hi\" = \"lm\"\n#test implementation \"asdfghjkl\" = \"ewhjklnop\"\n#test implementation \"gf\" = \"kj\"\n#test implementation \"et\" = \"ix\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(str: String)\n: problem_spec implementation str\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 89,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:fffbf4fa17ceba3a9704d40ac62def28ee2b12448a740a3212afeb3a2b344a67",
+  "timing": 10393.815638159402,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:fa8580eddf8c26d2af0520330b4793bbb2f0c7ed0078f0f05ea773665d979ad8",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:0a874d17881198f87a3d8aa0e7d5c80df304c7fcef78bbaa92eda2f1a143c2aa",
+    "validation": [
+      {
+        "problem_id": "89",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:693c5d90f657d8e49a31b1405f11741644dd22594006692b4f379fb8119d75de"
+      }
+    ]
+  },
+  "exception": null
+}

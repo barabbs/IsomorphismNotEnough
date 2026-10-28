@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_largest_prime(lst : list[int]) -> int\n\"\"\"You are given a list of integers.\nYou need to find the largest prime value and return the sum of its digits.\nNote(George): Modified to use List of nats because all examples are nats.\n\n>>> sum_largest_prime([0, 3, 2, 1, 3, 5, 7, 4, 5, 5, 5, 2, 181, 32, 4, 32, 3, 2, 32, 324, 4, 3])\n10\n>>> sum_largest_prime([1, 0, 1, 8, 2, 4597, 2, 1, 3, 40, 1, 2, 1, 2, 4, 2, 5, 1])\n25\n>>> sum_largest_prime([1, 3, 1, 32, 5107, 34, 83278, 109, 163, 23, 2323, 32, 30, 1, 9, 3])\n13\n>>> sum_largest_prime([0, 724, 32, 71, 99, 32, 6, 0, 5, 91, 83, 0, 5, 6])\n11\n>>> sum_largest_prime([0, 81, 12, 3, 1, 21])\n3\n>>> sum_largest_prime([0, 8, 1, 2, 1, 7])\n7\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat \u2192 Nat)\n-- inputs\n(lst: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] = 10\n-- #test implementation [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] = 25\n-- #test implementation [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] = 13\n-- #test implementation [0,724,32,71,99,32,6,0,5,91,83,0,5,6] = 11\n-- #test implementation [0,81,12,3,1,21] = 3\n-- #test implementation [0,8,1,2,1,7] = 7\n",
+  "info": {
+    "dataset": "clever",
+    "id": 94,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:72c96207797ef89557bc653d15041105525a7e057d6dbed71156664916c3b56d",
+  "timing": 158.54184986196924,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/bdl_f7jg/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:b47c494dcd49d5f29df8416ef958551006aed49e1cc2ece529617d40699cd814",
+    "status": "OK",
+    "result": "sha256:3b9fd26a8be316414c42f1f74fb6dce6bf597e605f958f803870ce621363a6aa"
+  },
+  "exception": null
+}

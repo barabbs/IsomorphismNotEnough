@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef longest(strings: List[str]) -> Optional[str]\n\"\"\"Out of list of strings, return the longest one. Return the first one in case of multiple\nstrings of the same length. Return None in case the input list is empty.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List String \u2192 Option String)\n-- inputs\n(strings: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 12,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:dbf60c212fc2cc6bafc48ce08dcd5061fda1b1c8f57fdcc7d5779998cf1c4db0",
+  "timing": 110.14384935700218,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/zxx4qpxc/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:06d9c5aaa0d62190b61798f49fc9d68b1f2c1e7a034a24819762a2f42befb446",
+    "status": "OK",
+    "result": "sha256:40c5a2b14253c4b275a9cab4ece04f897a41908f6941f02be17b887a0beb8b2c"
+  },
+  "exception": null
+}

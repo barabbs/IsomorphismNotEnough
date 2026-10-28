@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef hex_key(num: str) -> int\n\"\"\"You have been tasked to write a function that receives\na hexadecimal number as a string and counts the number of hexadecimal\ndigits that are primes (prime number, or a prime, is a natural number\ngreater than 1 that is not a product of two smaller natural numbers).\nHexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.\nPrime numbers are 2, 3, 5, 7, 11, 13, 17,...\nSo you have to determine a number of the following digits: 2, 3, 5, 7,\nB (=decimal 11), D (=decimal 13).\nNote: you may assume the input is always correct or empty string,\nand symbols A,B,C,D,E,F are always uppercase.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Int)\n-- inputs\n(num: String) :=\n-- spec\nlet spec (result: Int) :=\n  let num_val (ch : Char) :=\n    if ch.isDigit then\n      (ch.toNat - '0'.toNat)\n    else if ch.isUpper then\n      ((ch.toNat - 'A'.toNat) + 10)\n    else 0;\n  0 < num.length \u2192\n  (\n    let char_val := num_val num.toList[0]!;\n    let is_prime_hex := Nat.Prime char_val \u2227 char_val \u2264 15;\n    (is_prime_hex \u2192\n      (1 < num.length \u2192 result = 1 + implementation (num.drop 1)) \u2227\n      (1 = num.length \u2192 result = 1)) \u2227\n    (\u00acis_prime_hex \u2192\n      (1 < num.length \u2192 result = implementation (num.drop 1)) \u2227\n      (1 = num.length \u2192 result = 0))\n  )\n-- program termination\n\u2203 result, implementation num = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (num: String) : Int :=\n\n  let isPrimeHex (ch : Char) : Bool :=\n    ch == '2' || ch == '3' || ch == '5' || ch == '7' || ch == 'B' || ch == 'D'\n  (num.toList.filter isPrimeHex).length\n\n\n-- [TEST_CASES]\n\n#test implementation \"AB\" = 1\n#test implementation \"1077E\" = 2\n#test implementation \"ABED1A33\" = 4\n#test implementation \"2020\" = 2\n#test implementation \"123456789ABCDEF0\" = 6\n#test implementation \"112233445566778899AABBCCDDEEFF00\" = 12\n#test implementation \"\" = 0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(num: String)\n: problem_spec implementation num\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 78,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:037acaabc2d97d740e4557888c9ba5e8a83641455c942f56251f0eec9c8c7c82",
+  "timing": 1927.5409641530132,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:1f2e2e419fea05296af8812ff684d7ce29927e1fd04c964c0d4c69aca69f64ef",
+    "status": "OK",
+    "result": "sha256:d1b63c7dfca568028bb81bebceb49cb72b369adb7f4443fef3cebe5e52cadb3d",
+    "validation": [
+      {
+        "problem_id": "78",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:506ad72c09b2d6f0b72062d2725a58b4d05485c0e1da2822463b60ccbcb37a4b"
+      }
+    ]
+  },
+  "exception": null
+}

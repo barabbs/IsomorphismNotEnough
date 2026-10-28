@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef derivative(xs: List[int]) -> List[int]\n\"\"\"xs represent coefficients of a polynomial.\nxs[0] + xs[1] * x + xs[2] * x^2 + ....\n Return derivative of this polynomial in the same form.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\nnoncomputable def check_derivative : List ℤ → List ℤ\n  | []       => []\n  | (x::rest)  => (Polynomial.eval 1 (Polynomial.derivative (Polynomial.C x * Polynomial.X ^ rest.length))) :: (check_derivative rest)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → List Int)\n-- inputs\n(xs: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.length = xs.length - 1 ∧\n  result = (check_derivative xs.reverse).reverse\n-- program terminates\n∃ result, impl xs = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (xs: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test (implementation [3, 1, 2, 4, 5] : List Int) = [1, 4, 12, 20]\n-- #test (implementation [1, 2, 3] : List Int) = [2, 6]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 62,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:941e7c22c7203dfc1b0dca0e3f601327946f1cdb04d8e7beefa8a95310f1cca8",
+  "timing": 89.23602999327704,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:1952e1bf13431d661d8568152d102ca9a2fb7980b4e0fcffb0070ef8535125f3",
+    "status": "OK",
+    "result": "sha256:52171d806d236c96bcc11ebfe5eb7580d3a0240e38c877aea99d76a449759af3"
+  },
+  "exception": null
+}

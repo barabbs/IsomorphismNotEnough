@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef triples_sum_to_zero(numbers: List[int]) -> Bool\n\"\"\"triples_sum_to_zero takes a list of integers as an input.\nit returns True if there are three distinct elements in the list that\nsum to zero, and False otherwise.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Bool)\n-- inputs\n(x: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 40,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5633d9bed966d2b083754fc1d6086bbb54c46138a36424f8357c7d7e9d073e13",
+  "timing": 67.45282159501221,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/n3qi_1x_/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:16da345fc68d936aa8ddc0a789b9ea4bd4774c4aa798472b3eb3c9d143dcb61d",
+    "status": "OK",
+    "result": "sha256:1b555f715d8178a7333d6da7261cb786c272a32182a6536e51bd06ed3d0faa5b"
+  },
+  "exception": null
+}

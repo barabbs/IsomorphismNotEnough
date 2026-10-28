@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef pluck(numbers: List[int]) -> List[int]\n\"\"\"Given an array representing a branch of a tree that has non-negative integer nodes\nyour task is to pluck one of the nodes and return it.\nThe plucked node should be the node with the smallest even value.\nIf multiple nodes with the same smallest even value are found return the node that has smallest index.\n\nThe plucked node should be returned in a list, [ smallest_value, its index ],\nIf there are no even values or the given array is empty, return [].\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat → List Nat)\n-- inputs\n(x: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 68,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2e517b956ce4185fa9ed3d9d4f12b88f8d148d9b5c46993be5a41ac326c02210",
+  "timing": 250.35893309209496,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:b94bf3f7ab5c00649c6749140651cd3fa4032605c234a39c39987e5b3b768fe2",
+    "status": "OK",
+    "result": "sha256:03295a177e81937d79470b981a8f18b7798413f49675b3b1be3c26522d81b9b8"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef tri(n: int) -> List[int]\n\"\"\"Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in\nthe last couple centuries. However, what people don't know is Tribonacci sequence.\nTribonacci sequence is defined by the recurrence:\ntri(1) = 3\ntri(n) = 1 + n / 2, if n is even.\ntri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.\nFor example:\ntri(2) = 1 + (2 / 2) = 2\ntri(4) = 3\ntri(3) = tri(2) + tri(1) + tri(4)\n       = 2 + 3 + 3 = 8\nYou are given a non-negative integer number n, you have to a return a list of the\nfirst n + 1 numbers of the Tribonacci sequence.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → List Int)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 130,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:09ffbee84b680f0eaf735420c3d314e974712c60033b4e61e0cedf47b4a250c0",
+  "timing": 110.33372054016218,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:6d2a3e3c496adbbd86b9ec65f479a963a66a2b773448e4c046b53782b075144f",
+    "status": "OK",
+    "result": "sha256:ec20cd3aa4c46665b89a7ffc9a2cc1ae5df1761c08147a738f92938e29430256"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef correct_bracketing(brackets: str) -> bool\n\"\"\"brackets is a string of \"<\" and \">\".\nreturn True if every opening bracket has a corresponding closing bracket, i.e., (each open bracket is properly closed)\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef balanced_paren_non_computable\n(paren_string: String) (bracket_type_left : Char) (bracket_type_right: Char): Prop\n:=\nlet chars := paren_string.toList;\n(∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧\n(chars.count bracket_type_left = chars.count bracket_type_right)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(brackets: String) :=\n-- spec\nlet spec (result: Bool) :=\n  brackets.data.all (fun c => c = '<' ∨ c = '>') →\n  (result ↔ balanced_paren_non_computable brackets '<' '>')\n-- program terminates\n∃ result, impl brackets = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (brackets: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"<\" = false\n-- #test implementation \"<>\" = true\n-- #test implementation \"<<><>>\" = true\n-- #test implementation \"><<>\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 56,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bbf3be77951d1de126dcab88a1385342065509930be854cb782408da6a7edbdb",
+  "timing": 72.03343717614189,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:255c8d30e61671bc01e11a8a61377526d4dd71c4b95cd67eb39872d45a85be43",
+    "status": "OK",
+    "result": "sha256:5940af91b61c26c00bc5d8bc5d09eeb5a79222cc9992f2d5e24db4350f3034a5"
+  },
+  "exception": null
+}

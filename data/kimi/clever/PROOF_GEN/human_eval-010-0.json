@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_palindrome(string: str) -> str\n\"\"\"Find the shortest palindrome that begins with a supplied string.\nAlgorithm idea is simple:\n- Find the longest postfix of supplied string that is a palindrome.\n- Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef is_palindrome\n(s: String): Bool :=\ns = s.toList.reverse.asString\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: String) :=\nis_palindrome result ∧\nresult.length ≥ string.length ∧\nstring.isPrefixOf result ∧\n-- comprehensive check that the result is the shortest palindrome\n(∀ (possible_palindrome: String),\nstring.isPrefixOf possible_palindrome →\nis_palindrome possible_palindrome →\nresult.length ≤ possible_palindrome.length);\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (string: String) : String :=\n\n  let rec find (i : Nat) : Nat :=\n    if i < string.length then\n      let suffix := String.drop string i\n      if is_palindrome suffix then\n        i\n      else\n        find (i + 1)\n    else\n      i\n  let i := find 0\n  let pref := String.take string i\n  string ++ pref.toList.reverse.asString\n\n\n-- [TEST_CASES]\n\n#test implementation \"\" = \"\"\n#test implementation \"cat\" = \"catac\"\n#test implementation \"cata\" = \"catac\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 10,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:56b3dff0018557687c0fc1fa809e47b8a8c14ad6f57cdc30393c3cc58ded24b3",
+  "timing": 13975.28951372765,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:759839d65d790288f35d5e9db7f5961ca121ef08ae8c64f44013e815a3401e73",
+    "status": "FAIL",
+    "result": "sha256:52134438661b65bcb8edce241feeadb41ba6c09586f0a599abef1c4c4c29fd25",
+    "validation": [
+      {
+        "problem_id": "10",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:6d114eeb374fcd4158a760806c8ea650026dddbc45578c5bba31d3778529e380"
+      }
+    ]
+  },
+  "exception": null
+}

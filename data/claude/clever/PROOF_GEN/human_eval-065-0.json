@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef circular_shift(x: int, shift: int) -> str\n\"\"\"Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → String)\n-- inputs\n(x shift: Nat) :=\nlet isReverse (s: String) : Bool :=\n  let n := s.length;\n  ∀ i, i < n / 2 → s.get! ⟨i⟩ = s.get! ⟨n - 1 - i⟩;\n-- spec\nlet spec (result: String) :=\nlet x_str := Nat.repr x;\nresult.length = x_str.length ∧\n(x_str.length < shift → isReverse x_str) ∧\n(shift ≤ x_str.length →\n  x_str.take shift = result.drop (x_str.length - shift) ∧\n  x_str.drop shift = result.take (x_str.length - shift));\n-- program termination\n∃ result, implementation x shift = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x shift: Nat) : String :=\n\n  let x_str := Nat.repr x\n  if x_str.length < shift then\n    ⟨x_str.data.reverse⟩\n  else\n    x_str.drop shift ++ x_str.take shift\n\n\n-- [TEST_CASES]\n\n#test implementation 12 1 = \"21\"\n#test implementation 12 2 = \"12\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x shift: Nat)\n: problem_spec implementation x shift\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 65,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0e949da2f48f47be708ef53793fa802d237f35c92c6e77102793856bdf4c47e3",
+  "timing": 294.1189880319871,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:63a194067dabdc1c2f3ac8447a4055431fbd23110f22a51017c4eb77d8e562aa",
+    "status": "ISSUE",
+    "result": "sha256:81e8eed7d4627097f64a9395ad2435ec76ac51123de6414b5c8b8b4b304350e4",
+    "validation": [
+      {
+        "problem_id": "65",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:d2b95ce66c8dd5ffbb9cefc6c5415e3e11e1f0299e33f9f5929150b9c615bdad"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "WRONG"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersperse(numbers: List[int], delimeter: int) -> List[int]\n\"\"\"Insert a number 'delimeter' between every two consecutive elements of input list `numbers'\n\n>>> intersperse([], 4)\n[]\n>>> intersperse([1, 2, 3], 4)\n[1, 4, 2, 4, 3]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → Int → List Int)\n-- inputs\n(numbers: List Int)\n(delimeter: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3] 4 = [1, 4, 2, 4, 3]\n-- #test implementation [] 4 = []\n-- #test implementation [1] 4 = [1]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 5,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f2411ae28a8ceda051fa3e374675b5ffc3d4b93b8ec9f47ed2101445c5eb3519",
+  "timing": 78.74979075510055,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d5b2d9b32835d5e04c278dd989321d028b47c97027e37842cc79898b9785df7c",
+    "status": "OK",
+    "result": "sha256:ea8bdd97ff151466926cf0859c119560e16977b67e58443f2516e998fe50ff71"
+  },
+  "exception": null
+}

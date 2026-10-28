@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_fib(n: int)\n\"\"\"prime_fib returns n-th prime Fibonacci number.\nNote(George): A proof of this problem requires the resolution of the open conjecture: there are infinitely many prime Fibonacci numbers.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  n > 0 →\n    (∃ i, Nat.fib i = result ∧ Nat.Prime result ∧\n      (∃! S : Finset Nat, S.card = n - 1 ∧\n      (∀ y ∈ S, (∃ k, y = Nat.fib k) ∧ y < result ∧ Nat.Prime y))\n    )\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  let primes := (List.range 15).filterMap fun i =>\n    let fi := Nat.fib (i + 1)\n    if Nat.Prime fi then some fi else none\n  primes.getD (n - 1) 0\n\n\n-- [TEST_CASES]\n\n#test implementation 1 = 2\n#test implementation 2 = 3\n#test implementation 3 = 5\n#test implementation 4 = 13\n#test implementation 5 = 89\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 39,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f718e66f0720ba72e4f20d2e459bc3cc6562df93e33a4ad6c3f3371cb92f3ba3",
+  "timing": 14443.668231314048,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:72c53e14c97e8e349edfb331c85e4973a9c25ff23081b083b2570195c748e162",
+    "status": "TIMEOUT",
+    "result": "sha256:12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+    "validation": [
+      {
+        "problem_id": "39",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:dadb6130b6c530ab4d51307c8333237f2f9c14ba2595ecf431daf3dbd91d6141",
+        "lean_code": "sha256:961b64dd7e38f064c4d12b293f6ceefafd825ed5ef71c37a44f737a94d1db261"
+      }
+    ]
+  },
+  "exception": null
+}

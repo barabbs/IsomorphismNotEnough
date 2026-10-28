@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(string : str) -> str\n\"\"\"You are given a string s.\nif s[i] is a letter, reverse its case from lower to upper or vise versa,\notherwise keep it as it is.\nIf the string contains no letters, reverse the string.\nThe function should return the resulted string.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(string : String) :=\n-- spec\nlet spec (result: String) :=\nresult.length = string.length \u2227\nlet hasNoAlphabet := string.all (\u03bb c => not (c.isAlpha));\n(hasNoAlphabet \u2192\n  result.toList = string.toList.reverse) \u2227\n(hasNoAlphabet = false \u2192\n  \u2200 i, i < string.length \u2192\n  let c := string.get! \u27e8i\u27e9;\n  (c.isAlpha \u2192 ((c.isLower \u2192 c.toUpper = result.get! \u27e8i\u27e9) \u2228\n              (c.isUpper \u2192 c.toLower = result.get! \u27e8i\u27e9))) \u2227\n  (\u00ac c.isAlpha \u2192 c = result.get! \u27e8i\u27e9))\n-- program terminates\n\u2203 result, impl string = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : String :=\n\nlet hasAlpha := s.any Char.isAlpha\nif hasAlpha then\n  \u27e8s.toList.map (fun c =>\n    if c.isAlpha then\n      if c.isLower then c.toUpper else c.toLower\n    else c)\u27e9\nelse\n  \u27e8s.toList.reverse\u27e9\n\n\n-- [TEST_CASES]\n\n#test implementation \"1234\" = \"4321\"\n#test implementation \"ab\" = \"AB\"\n#test implementation \"#a@C\" = \"#A@c\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 161,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:881106af3cc8a8185a82d2d80592a1a32af22b3a9cab008ade02de56d0825b10",
+  "timing": 1869.1280985630583,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:031ee1b1092bf66ec0ff135175fdc0125432f7352dd12543a925b474586fe45b",
+    "status": "OK",
+    "result": "sha256:f99fed859989102474d6cdca3580f39f75027a8c20d66cf4a1b759eb5ff7db0f",
+    "validation": [
+      {
+        "problem_id": "161",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:c3a0c78260bb58d6e0926254fdeb1cb244b97f561f0684faccf863ce2434d810"
+      }
+    ]
+  },
+  "exception": null
+}

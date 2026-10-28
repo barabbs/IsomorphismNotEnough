@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef median(numbers: List[float]) -> float\n\"\"\"Return median of elements in the list l\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat \u2192 Rat)\n-- inputs\n(x: List Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c6d467c57df15296471fc53d581b66503ed0cea94741966ce51e2727eaace1e7",
+  "timing": 121.15839770399907,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/etj3l66y/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:320371042068bb27bdf7438373fe7ea6dcbbf563242d96d673b688d5418df6cd",
+    "status": "OK",
+    "result": "sha256:5ff1831b272e80385015a8c7c5388913477fc8f57fb271faa626166a038082fe"
+  },
+  "exception": null
+}

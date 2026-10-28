@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef iscube(a: int) -> bool\n\"\"\"Write a function that takes an integer a and returns True if this integer is a cube of some integer number.\nNote: you may assume the input is always valid.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  result \u2194 exists n: Int, a = n^3\n-- program termination\n\u2203 result, implementation a = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = True\n-- #test implementation 2 = False\n-- #test implementation -1 = True\n-- #test implementation 64 = True\n-- #test implementation 180 = False\n-- #test implementation 1000 = True\n-- #test implementation 0 = True\n-- #test implementation 1729 = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 77,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:04b3de5894413f4c7da97fc2bfc6a1dbeab63b81ad706dcf13bc04949029cd5e",
+  "timing": 114.69018703800975,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ykwv_ryt/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f6cccccadd05a84d7e18c8337757f383d1930920de7b1de6a90b5e733996904e",
+    "status": "OK",
+    "result": "sha256:462dc848250ad126292f67dcd8ae51ccf4607ae25890b1303dc79c0ce78f2917"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_third(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the indicies that are not divisible by three, while its values at the indicies that are divisible by three are equal\nto the values of the corresponding indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 33,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b3e8c766120013a0018cceaccea1601e6c64dcdb464d97c63bd09402f2bee6ab",
+  "timing": 115.2337336842902,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:cd0fb3ac558a1f1348b5fb06ea9119ad78eff9778a80a57f61386596e4f9cf1d",
+    "status": "OK",
+    "result": "sha256:0a7db520aeb10a21fd75f4ba3c3ab565a8065e7dd38529ad7aec03c517f86d58"
+  },
+  "exception": null
+}

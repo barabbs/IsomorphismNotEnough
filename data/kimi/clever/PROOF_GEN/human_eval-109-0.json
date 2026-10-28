@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef move_one_ball(arr: List[int]) -> bool\n\"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\nnumbers in the array will be randomly ordered. Your task is to determine if\nit is possible to get an array sorted in non-decreasing order by performing\nthe following operation on the given array:\n    You are allowed to perform right shift operation any number of times.\n\nOne right shift operation means shifting all elements of the array by one\nposition in the right direction. The last element of the array will be moved to\nthe starting position in the array i.e. 0th index.\n\nIf it is possible to obtain the sorted array by performing the above operation\nthen return True else return False.\nIf the given array is empty then return True.\n\nNote: The given list is guaranteed to have unique elements.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Bool)\n-- inputs\n(arr: List Int) :=\nlet is_shifted (xs: List Int) (ys: List Int) (i: Nat) :=\n  (xs.length = ys.length) ∧\n  (0 <= i) ∧\n  (i < xs.length) ∧\n  (forall j, (0 <= j ∧ j < ys.length) → (ys[j]! = xs[(j-i) % xs.length]!))\n-- spec\nlet spec (result: Bool) :=\n  ((arr = []) → (result = True)) ∧\n  result ↔ (exists i, exists arr_shifted, (is_shifted arr arr_shifted i) ∧ (List.Sorted Int.le arr_shifted))\n-- program termination\n∃ result, implementation arr = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (arr: List Int) : Bool :=\n\n  let n := arr.length\n  if n = 0 then true\n  else\n    let descents := (List.range n).filter (fun i =>\n      let curr := arr[i]!\n      let next := arr[(i + 1) % n]!\n      curr > next)\n    descents.length ≤ 1\n\n\n-- [TEST_CASES]\n\n#test implementation [3, 4, 5, 1, 2] = True\n#test implementation [3, 5, 10, 1, 2] = True\n#test implementation [4, 3, 1, 2] = False\n#test implementation [3, 5, 4, 1, 2] = False\n#test implementation [] = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(arr: List Int)\n: problem_spec implementation arr\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 109,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:45abc4ec5bc139c22816446e89fa6efc98c07b54b2489d64ee49171e24d5da5a",
+  "timing": 11878.075392521918,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:51121492931a122a02bcd9a14e250d3ec8da2924ee0f34c867b7ee353fbe34db",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:4fbe9479c169b22cd189e9dcc2cba89791471171929a54050890ee6db12aa2fb",
+    "validation": [
+      {
+        "problem_id": "109",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:1fe21f239461eb20a0d043fdf9df28ab905432a927fd479a10964ed8d171e924"
+      }
+    ]
+  },
+  "exception": null
+}

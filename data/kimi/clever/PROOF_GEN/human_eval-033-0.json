@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_third(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the indicies that are not divisible by three, while its values at the indicies that are divisible by three are equal\nto the values of the corresponding indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  l.length = result.length ∧\n  let every_third_idx := (List.range l.length).filter (λ i => i % 3 = 0);\n  let every_third_val_in_result := every_third_idx.map (λ i => result.get! i);\n  let every_third_val := every_third_idx.map (λ i => l.get! i);\n  (∀ i, i < l.length → (i % 3 ≠ 0 → l.get! i = result.get! i)) ∧\n  List.Sorted Int.le every_third_val_in_result ∧\n  every_third_val.all (λ x => every_third_val_in_result.count x = every_third_val.count x);\n-- program termination\n∃ result, implementation l = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List Int) : List Int :=\n\n  let everyThird := (List.range l.length).filter (λ i => i % 3 = 0) |>.map (λ i => l[i]!)\n  let sortedThird := everyThird.mergeSort (λ a b => decide (a ≤ b))\n  (List.range l.length).map (λ i =>\n    if i % 3 = 0 then sortedThird[i / 3]! else l[i]!\n  )\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = [1, 2, 3]\n#test implementation [5, 6, 3, 4, 8, 9, 2] = [2, 6, 3, 4, 8, 9, 5]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List Int)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 33,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9570e64a6ea4c8d958074d78c9d2a837b30457b67e1f169ca9e541c0ada47055",
+  "timing": 14427.257397609763,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:d5c5f18d1df3dccc9692ce6879a461bde5fa555e089362e48e5cbce9170f932a",
+    "status": "TIMEOUT",
+    "result": "sha256:07012c525ff82157f81f8786f88cd989299aa129e1b5c754db6700a378ec37a4",
+    "validation": [
+      {
+        "problem_id": "33",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:3fe29db2e296b357bab606752a703730cff51729a5d8022d5d01dfb7178b1e4d"
+      }
+    ]
+  },
+  "exception": null
+}

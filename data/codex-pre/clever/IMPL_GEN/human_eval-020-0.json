@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]\n\"\"\"From a supplied list of numbers (of length at least two) select and return two that are the closest to each\nother and return them in order (smaller number, larger number).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Rat → (Rat × Rat))\n-- inputs\n(numbers: List Rat) :=\n-- spec\nlet spec (result: (Rat × Rat)) :=\n2 ≤ numbers.length →\n(let (smaller, larger) := result;\nlet abs_diff := |larger - smaller|;\nsmaller ≤ larger ∧\nsmaller ∈ numbers ∧\nlarger ∈ numbers ∧\n(∀ x y, x ∈ numbers → y ∈ numbers → x ≠ y → abs_diff ≤ |x - y|) ∧\n(smaller = larger → 2 ≤ (numbers.filter (fun z => z = smaller)).length));\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Rat): (Rat × Rat) :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.2] = (2.0, 2.2)\n-- #test implementation [1.0, 2.0, 3.0, 4.0, 5.0, 2.0] = (2.0, 2.0)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 20,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e4ba54eac721b567e4d7c8beed3cbb0447d1ca904a87ded685f91426140c93d6",
+  "timing": 375.1700085269986,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex-pre": "sha256:70041645fda98ca4872e496793795c020b787820c6555da45e8a1d08dfff5ac6",
+    "status": "OK",
+    "result": "sha256:d67b479a4255b5454d9d89d1273b341bd23361495bf9897507b13b2a7c2a66e8"
+  },
+  "exception": null
+}

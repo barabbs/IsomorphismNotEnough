@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef factorize(n: int) -> List[int]\n\"\"\"Return list of prime factors of given integer in the order from smallest to largest.\nEach of the factors should be listed number of times corresponding to how many times it appeares in factorization.\nInput number should be equal to the product of all factors\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat → List Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 25,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4a9a1a79fb19ee9dbd207e0714db68d7d025b044b3ddd8b800f9b07ed5555072",
+  "timing": 67.43130771024153,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:59cd7326f8162b5347e6afb429fbf6cb5b637ada8bb605cc83fd2d03c4b8c89d",
+    "status": "OK",
+    "result": "sha256:3b22ee6a451e5187844690eaa7a857f72b4d6e59f188c7a409017d614b602e31"
+  },
+  "exception": null
+}

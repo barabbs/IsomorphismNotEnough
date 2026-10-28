@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sorted_list_sum(lst: List[str]) -> List[str]\n\"\"\"Write a function that accepts a list of strings as a parameter,\ndeletes the strings that have odd lengths from it,\nand returns the resulted list with a sorted order,\nThe list is always a list of strings and never an array of numbers,\nand it may contain duplicates.\nThe order of the list should be ascending by length of each word, and you\nshould return the list sorted by that rule.\nIf two words have the same length, sort the list alphabetically.\nThe function should return a list of strings in sorted order.\nYou may assume that all words will have the same length.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List String \u2192 List String)\n-- inputs\n(lst: List String) :=\n-- spec\nlet spec (result: List String) :=\nmatch result with\n| [] => \u2200 str \u2208 lst, Odd str.length\n| head::tail =>\n  Even head.length \u2227\n  (\u2200 str \u2208 lst,\n    Odd str.length \u2228\n    str.length > head.length \u2228\n    str.length = head.length \u2227 str \u2265 head)\n  \u2227 impl (lst.erase head) = tail\n-- program termination\n\u2203 result, impl lst = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [\"aa\", \"a\", \"aaa\"] = [\"aa\"]\n-- #test implementation [\"ab\", \"a\", \"aaa\", \"cd\"] = [\"ab\", \"cd\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 149,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c545efb875c61c63231b881301500029f7a18afa4a1df462e6d3b28dc9d24d16",
+  "timing": 197.45856454098248,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/zs5_iy6m/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:36e8c7c459df19f7e30afd4a4172829aae3979642fde889d194440bd0b3b5554",
+    "status": "OK",
+    "result": "sha256:b464eff321eefac49fefc10c29cf280c59d516e5e1cda7e333403c31152cfcc4"
+  },
+  "exception": null
+}

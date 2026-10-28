@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef total_match(lst1: List[str], lst2: List[str]) -> List[str]\n\"\"\"Write a function that accepts two lists of strings and returns the list that has\ntotal number of chars in the all strings of the list less than the other list.\nIf the two lists have the same number of chars, return the first list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → List String → List String)\n-- inputs\n(lst1: List String) (lst2: List String) :=\nlet sum_chars (xs: List String) : Int :=\n  xs.foldl (λ acc a => acc + a.length) 0;\n-- spec\nlet spec (result : List String) :=\n  ((result = lst1) ∨ (result = lst2))\n  ∧\n  (sum_chars result ≤ sum_chars lst1)\n  ∧\n  (sum_chars result ≤ sum_chars lst2)\n  ∧\n  ((sum_chars lst1 = sum_chars lst2) → (result = lst1))\n-- program termination\n∃ result, implementation lst1 lst2 = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst1: List String) (lst2: List String) : List String :=\n\nlet s1 := lst1.foldl (λ (acc : Nat) (a : String) => acc + a.length) 0\nlet s2 := lst2.foldl (λ (acc : Nat) (a : String) => acc + a.length) 0\nif s1 ≤ s2 then lst1 else lst2\n\n\n-- [TEST_CASES]\n\n#test implementation [] [] = []\n#test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\"] = [\"hi\", \"hi\"]\n#test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\", \"admin\", \"project\"] = [\"hi\", \"admin\"]\n#test implementation [\"4\"] [\"1\", \"2\", \"3\", \"4\", \"5\"] = [\"4\"]\n#test implementation [\"hi\", \"admin\"] [\"hI\", \"Hi\"] = [\"hI\", \"Hi\"]\n#test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hi\"] = [\"hI\", \"hi\", \"hi\"]\n#test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hii\"] = [\"hi\", \"admin\"]\n#test implementation [] [\"this\"] = []\n#test implementation [\"this\"] [] == []\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst1: List String) (lst2: List String)\n: problem_spec implementation lst1 lst2\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 74,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c4558e3c178f63fa03d7544e268ac8829a46ebd77306e9a6e7c9c886e3bb6ba3",
+  "timing": 940.917617850937,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:fa0e8d82a98e64d8e05cffaf0e0e6ff3c6c780238f85d63401d40878286291d7",
+    "status": "FAIL",
+    "result": "sha256:b5ee32743d8935c1320c7ba330277416359afc642ea1c6c7256e556c408c6fa7",
+    "validation": [
+      {
+        "problem_id": "74",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:e8039f73c8b549a60635f9f8bb36c0547bece8f9ee99f3512298ad7ebe13b7a4",
+        "lean_code": "sha256:d59e4beb6f1b4a2cf65f913630dbcf11f51d9241807f33eeb269fd1a1db2ce5d"
+      }
+    ]
+  },
+  "exception": null
+}

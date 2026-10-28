@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_up_to(n : int) -> list[int]\n\"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\nintegers that are prime numbers and less than n.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  match n with\n  | 0 => result = []\n  | n => n > 0 \u2192 (\u2200 i, i < result.length \u2192 (Nat.Prime (result.get! i)) \u2227 (result.get! i) < n) \u2227\n         (\u2200 i : Nat, i < n \u2192 Nat.Prime i \u2192 i \u2208 result)\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = [2,3]\n-- #test implementation 11 = [2,3,5,7]\n-- #test implementation 0 = []\n-- #test implementation 20 = [2,3,5,7,11,13,17,19]\n-- #test implementation 1 = []\n-- #test implementation 18 = [2,3,5,7,11,13,17]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 96,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:92101f040a0e3d20150381b2e4aa3ead893a5cb9a22ba1a4991207265d3e60b1",
+  "timing": 73.52130615297938,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/5_dyogdt/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:80c21097893fe998826fe8e0f00b44ff42e03ff4caf7f569cc10dc1189a00cd5",
+    "status": "OK",
+    "result": "sha256:a67987fcdff11464c3b1d60d26b5d89429184555aa8757c3fb087759a0ae6c03"
+  },
+  "exception": null
+}

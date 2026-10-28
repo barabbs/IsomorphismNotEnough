@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef total_match(lst1: List[str], lst2: List[str]) -> List[str]\n\"\"\"Write a function that accepts two lists of strings and returns the list that has\ntotal number of chars in the all strings of the list less than the other list.\nIf the two lists have the same number of chars, return the first list.\n\n>>> total_match([], [])\n[]\n>>> total_match(['hi', 'admin'], ['hI', 'Hi'])\n['hI', 'Hi']\n>>> total_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project'])\n['hi', 'admin']\n>>> total_match(['hi', 'admin'], ['hI', 'hi', 'hi'])\n['hI', 'hi', 'hi']\n>>> total_match(['4'], ['1', '2', '3', '4', '5'])\n['4']\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List String \u2192 List String \u2192 List String)\n-- inputs\n(lst1: List String) (lst2: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [] [] = []\n-- #test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\"] = [\"hi\", \"hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hi\", \"hi\", \"admin\", \"project\"] = [\"hi\", \"admin\"]\n-- #test implementation [\"4\"] [\"1\", \"2\", \"3\", \"4\", \"5\"] = [\"4\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"Hi\"] = [\"hI\", \"Hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hi\"] = [\"hI\", \"hi\", \"hi\"]\n-- #test implementation [\"hi\", \"admin\"] [\"hI\", \"hi\", \"hii\"] = [\"hi\", \"admin\"]\n-- #test implementation [] [\"this\"] = []\n-- #test implementation [\"this\"] [] == []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 74,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:3cbdbe48be46c5d665cfef127633269f7b9f1bfa57d5c4273409a029c0136b36",
+  "timing": 65.17596349999985,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/r_m9827g/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f52318f25a4725758b150ebdc274ea25eab94592882cc454861ec88980c6b239",
+    "status": "OK",
+    "result": "sha256:d8d230e00e0dea6a5aa0560c0254c17864ed81fde9f0e22f666106b05d225e5f"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"You are given a rectangular grid of wells. Each row represents a single well,\nand each 1 in a row represents a single unit of water.\nEach well has a corresponding bucket that can be used to extract water from it,\nand all buckets have the same capacity.\nYour task is to use the buckets to empty the wells.\nOutput the number of times you need to lower the buckets.\nConstraints:\n    * all wells have the same length\n    * 1 <= grid.length <= 10^2\n    * 1 <= grid[:,1].length <= 10^2\n    * grid[i][j] -> 0 | 1\n    * 1 <= capacity <= 10\n\n>>> max_fill_count([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], 1)\n6\n>>> max_fill_count([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], 2)\n5\n>>> max_fill_count([[0, 0, 0], [0, 0, 0]], 5)\n0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List (List Nat) \u2192 Nat \u2192 Nat)\n-- inputs\n(grid: List (List Nat))\n(capacity: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [[0,0,1,0], [0,1,0,0], [1,1,1,1]] 1 = 6\n-- #test implementation [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]] 2 = 5\n-- #test implementation [[0,0,0], [0,0,0]] 5 = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 115,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:9eb30362fc71bd2a5bda0694b0b38d7d7363b7f5ee7c89963edf90a1e19f7bcc",
+  "timing": 104.87474933799967,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/fpup1l1d/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:9bcd604b8e4ac50fb6c86c90c5c9e7877a3a7152f2e0b34c0fc075315fe0fe3c",
+    "status": "OK",
+    "result": "sha256:bbaad14018249386c60a42fb1ca2de444140566c0b362b59c569a2cac4a1848c"
+  },
+  "exception": null
+}

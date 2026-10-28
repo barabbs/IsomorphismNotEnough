@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef anti_shuffle(s : str) -> str\n\"\"\"\"\"\"\nWrite a function that takes a string and returns an ordered version of it.\nOrdered version of string, is a string where all words (separated by space)\nare replaced by a new word where all the characters arranged in\nascending order based on ascii value.\nNote: You should keep the order of words and blank spaces in the sentence.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  result.length = s.length \u2227\n  let words := result.split (fun c => c = ' ');\n  let s_words := s.split (fun c => c = ' ');\n  s_words.length = words.length \u2227\n  \u2200 i, i < words.length \u2192\n    words[i]!.length = s_words[i]!.length \u2227\n    ((\u2200 j, j < words[i]!.length \u2192\n      (words[i]!.data[j]! \u2208 s_words[i]!.data \u2227\n      s_words[i]!.data[j]! \u2208 words[i]!.data \u2227\n      words[i]!.data.count (words[i]!.data[j]!) = s_words[i]!.data.count (s_words[i]!.data[j]!))) \u2227\n    List.Sorted Nat.le (words[i]!.data.map (fun c => c.val.toNat)))\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hi\" = \"Hi\"\n-- #test implementation \"hello\" = \"ehllo\"\n-- #test implementation \"Hello World!!!\" = \"Hello !!!Wdlor\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 86,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:028d5fea409647cc7936d5e7030bfde34a0a9c23a915c4ce87da55141762a4d1",
+  "timing": 76.92494847800117,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/e892pn6n/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:e547ca7c4c34d066647681da09aa495e5f9a5cf721fb2ec89dd74ce6cd89f1f9",
+    "status": "OK",
+    "result": "sha256:d55bb38c0b75244ef1473b94be690007c18a48fd04bb89adc176586dd2c24427"
+  },
+  "exception": null
+}

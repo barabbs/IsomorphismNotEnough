@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_if_last_char_is_a_letter(txt: str) -> bool\n\"\"\"Create a function that returns True if the last character\nof a given string is an alphabetical character and is not\na part of a word, and False otherwise.\nNote: \"word\" is a group of characters separated by space.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → Bool)\n-- inputs\n(txt: String) :=\n-- spec\nlet spec (result: Bool) :=\n  let words := txt.splitOn \" \";\n  match words with\n  | [] => result = False\n  | [last_word] => (result ↔ last_word.length = 1 ∧ (let diff := (last_word.get 0).toLower.toNat - 'a'.toNat; 0 ≤ diff ∧ diff ≤ 25))\n  | head::tail => result ↔ (let tail_txt := String.join tail; impl tail_txt);\n-- program terminates\n∃ result, impl txt = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (txt: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"apple pie\" = false\n-- #test implementation \"apple pi e\" = true\n-- #test implementation \"apple pi e \" = false\n-- #test implementation \"\" = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 134,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8a5cbadb90739c9a7a701b78cc1d31c683a829332099e586528acca9c2872fe0",
+  "timing": 208.82900474593043,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:29f0f1d806be9a948c4e96dc9fe38634d15b9319c44a2d5fbb35139a95a9ac93",
+    "status": "ISSUE",
+    "result": "sha256:e9948026de1c70636951e5b73e9d50e0a6aa3905e1f07dbfa9fbdd1cbc319557"
+  },
+  "exception": null
+}

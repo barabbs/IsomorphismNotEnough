@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef bf(planet1: str, planet2: str) -> List[str]\n\"\"\"There are eight planets in our solar system: the closest to the Sun\nis Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn,\nUranus, Neptune.\nWrite a function that takes two planet names as strings planet1 and planet2.\nThe function should return a tuple containing all planets whose orbits are\nlocated between the orbit of planet1 and the orbit of planet2, sorted by\nthe proximity to the sun.\nThe function should return an empty tuple if planet1 or planet2\nare not correct planet names.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → List String)\n-- inputs\n(planet1: String)\n(planet2: String) :=\n-- spec\nlet spec (result: List String) :=\nlet planets := [\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\"];\nif planet1 ∉ planets ∨ planet2 ∉ planets then\n  result = []\nelse\n  let index1 := planets.idxOf planet1;\n  let index2 := planets.idxOf planet2;\n  let minIdx := if index1 < index2 then index1 else index2;\n  let maxIdx := if index1 < index2 then index2 else index1;\n  (∀ str ∈ result, str ∈ planets) ∧\n  (∀ planet ∈ planets, planet ∈ result ↔\n    planets.idxOf planet < maxIdx ∧\n    minIdx < planets.idxOf planet) ∧\n  result.Sorted (fun a b => planets.idxOf a < planets.idxOf b)\n-- program termination\n∃ result, impl planet1 planet2 = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (planet1: String) (planet2: String) : List String :=\n\nlet planets := [\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\"]\nif planet1 ∉ planets ∨ planet2 ∉ planets then\n  []\nelse\n  let index1 := planets.idxOf planet1\n  let index2 := planets.idxOf planet2\n  let minIdx := if index1 < index2 then index1 else index2\n  let maxIdx := if index1 < index2 then index2 else index1\n  planets.filter (fun p => let i := planets.idxOf p; minIdx < i && i < maxIdx)\n\n\n-- [TEST_CASES]\n\n#test implementation \"Jupiter\" \"Neptune\" = [\"Saturn\", \"Uranus\"]\n#test implementation \"Earth\" \"Mercury\" = [\"Venus\"]\n#test implementation \"Mercury\" \"Uranus\" = [\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(planet1: String)\n(planet2: String)\n: problem_spec implementation planet1 planet2 :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 148,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:280c8339b35511877a8fc0a39e29c4c95e0463f3e59d45d8e2c7d0e486ed8a9d",
+  "timing": 2000.9854659619741,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:2fc51172fae26e4d04f75607d9748bc8f87e7f1c36f08d248ffd797e46c5b8f7",
+    "status": "OK",
+    "result": "sha256:f0ecdf0c1b32991a973940c00e0f6d6d095d11b35707d8d3ae851d7971014da7",
+    "validation": [
+      {
+        "problem_id": "148",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:f60c78376df55e76349adf83be4746ae0fe509e5690da2ec9f823bc7f6a3ccef"
+      }
+    ]
+  },
+  "exception": null
+}

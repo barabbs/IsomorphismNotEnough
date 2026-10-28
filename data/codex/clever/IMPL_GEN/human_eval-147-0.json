@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_max_triples(n: int) -> int\n\"\"\"You are given a positive integer n. You have to create an integer array a of length n.\nFor each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.\nReturn the number of triples (a[i], a[j], a[k]) of a where i < j < k,\nand a[i] + a[j] + a[k] is a multiple of 3.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n∃ (S : Finset (Nat × Nat × Nat)), S.card = result ∧\n  ∀ (triple: Nat × Nat × Nat),\n    let (i, j, k) := triple;\n    let a_i := i * i - i + 1;\n    let a_j := j * j - j + 1;\n    let a_k := k * k - k + 1;\n    (1 ≤ i ∧ i < j ∧ j < k ∧ k ≤ n ∧\n    (a_i + a_j + a_k) % 3 = 0)\n    ↔ triple ∈ S\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 5 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 147,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:66b568e297ac98f38a923af86725a7c24fa773f638fe058988ea4e5101491e8a",
+  "timing": 85.81725748581812,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:ab776410b5efdd58dad14e04572d5a070f1cceabddad0958b5e61d888b8626aa",
+    "status": "OK",
+    "result": "sha256:cd88eed2d20f88fc0edd49e4402064929ad72b7a3d6a89f76594c4b1bfc71c4f"
+  },
+  "exception": null
+}

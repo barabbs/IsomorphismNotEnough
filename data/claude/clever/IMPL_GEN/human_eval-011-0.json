@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_xor(a: str, b: str) -> str\n\"\"\"Input are two strings a and b consisting only of 1s and 0s.\nPerform binary XOR on these inputs and return result also as a string.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String \u2192 String)\n-- inputs\n(a b: String) :=\n-- spec\nlet spec (result: String) :=\n  a.all (fun c => c = '0' \u2228 c = '1') \u2192\n  b.all (fun c => c = '0' \u2228 c = '1') \u2192\n  a.length = b.length \u2192\n  result.length = a.length \u2227\n  result.all (fun c => c = '0' \u2228 c = '1') \u2227\n  (\u2200 i, i < a.length \u2192\n  let i_pos := String.Pos.mk i;\n  (a.get i_pos = b.get i_pos \u2192 result.get i_pos = '0') \u2227\n  (a.get i_pos \u2260 b.get i_pos \u2192 result.get i_pos = '1'));\n-- program termination\n\u2203 result, implementation a b = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a b: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"010\" \"110\" = \"100\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 11,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:542c3239ba047eb01dc15508b15c28fea1869ad0c5b9ede7147290af77f30b5d",
+  "timing": 63.355520585988415,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/iiyxjqvq/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:ddf790e25f81e44114a7a6e6f47bff87821e5752c75c767921ceb4ea32b08d86",
+    "status": "OK",
+    "result": "sha256:776faa70dd67ef9a5edc64c8b5b5667925bd740931c4b1fef9f0380311c13314"
+  },
+  "exception": null
+}

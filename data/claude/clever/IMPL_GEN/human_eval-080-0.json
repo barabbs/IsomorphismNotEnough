@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_happy(s: str) -> bool\n\"\"\"You are given a string s.\nYour task is to check if the string is happy or not.\nA string is happy if its length is at least 3 and every 3 consecutive letters are distinct\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Bool)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Bool) :=\n  result \u2194\n  (3 \u2264 s.length) \u2227\n  \u00ac (\u2203 i j, i < j \u2227 j < s.length \u2227 j - i \u2264 2 \u2227 s.data.get! i = s.data.get! j)\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"a\" = False\n-- #test implementation \"aa\" = False\n-- #test implementation \"abcd\" = True\n-- #test implementation \"aabb\" = False\n-- #test implementation \"adb\" = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 80,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:8fa691b5820f33e755d28307e3649f819692ea73feb321ee71d1459d2a3cc8b9",
+  "timing": 77.95616164497915,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/l0je2deo/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:b72e6ab30c5322d73aad8ae5e3e87287a20a87d3c5d7f7b98e5c56bcdccb5b62",
+    "status": "OK",
+    "result": "sha256:3bb9f230f3157e0df065473c3958c1a17bfdfc13832e4e6d19a8c1ceb9574440"
+  },
+  "exception": null
+}

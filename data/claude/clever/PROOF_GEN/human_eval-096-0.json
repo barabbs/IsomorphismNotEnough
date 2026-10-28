@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef count_up_to(n : int) -> list[int]\n\"\"\"Implement a function that takes an non-negative integer and returns an array of the first n\nintegers that are prime numbers and less than n.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  match n with\n  | 0 => result = []\n  | n => n > 0 \u2192 (\u2200 i, i < result.length \u2192 (Nat.Prime (result.get! i)) \u2227 (result.get! i) < n) \u2227\n         (\u2200 i : Nat, i < n \u2192 Nat.Prime i \u2192 i \u2208 result)\n-- program termination\n\u2203 result,\n  implementation n = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : List Nat :=\n\n  (List.range n).filter fun i => decide (Nat.Prime i)\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = [2,3]\n#test implementation 11 = [2,3,5,7]\n#test implementation 0 = []\n#test implementation 20 = [2,3,5,7,11,13,17,19]\n#test implementation 1 = []\n#test implementation 18 = [2,3,5,7,11,13,17]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 96,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:96bd4db009450f44b03022e6d39a41fccce9a6eeab5335c3d0bb44102e72db41",
+  "timing": 293.2466750310268,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:d1eff5b12cfdefb95fc2e29d1797f7b33a6429ac67c5ad0502e3fcef036af341",
+    "status": "OK",
+    "result": "sha256:42beaae040763d67e44eaec2637796a885773c02d55df6eb87af88378fdc15ff",
+    "validation": [
+      {
+        "problem_id": "96",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:dec7e9c36354000c77548732862941859dc68e20e7ee7c9fed7fb7eeda2495bc"
+      }
+    ]
+  },
+  "exception": null
+}

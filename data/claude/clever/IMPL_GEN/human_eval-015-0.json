@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_sequence(n: int) -> str\n\"\"\"Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 String)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: String) :=\nlet result_nums := result.splitOn \" \";\nresult_nums.length = n + 1 \u2227\n\u2200 i, i < n + 1 \u2192 result_nums[i]! = i.repr;\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 0 = \"0\"\n-- #test implementation 5 = \"0 1 2 3 4 5\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 15,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4b93b7691f07b01e9606ea72fc4fe5245f38db3980a7a10f9a9bfe6ab7712969",
+  "timing": 46.78482349100523,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/g9jcsguc/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:dfa0f82f3304150c4dfe97275a82b70f5e30fead93ebb45e02143e3f3a21ea51",
+    "status": "OK",
+    "result": "sha256:f59d7483511fe493a5821bb459eeeb6e13b728e28275fce55106e5aff5d81042"
+  },
+  "exception": null
+}

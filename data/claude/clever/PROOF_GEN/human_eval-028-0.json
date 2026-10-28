@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef concatenate(strings: List[str]) -> str\n\"\"\"Concatenate list of strings into a single string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 String)\n-- inputs\n(strings: List String) :=\n-- spec\nlet spec (result: String) :=\nlet result_chars := result.toList;\nresult_chars.length = (strings.map (\u03bb s => s.length)).sum \u2227\n\u2200 i, i < strings.length \u2192\n(let string_in_result := strings.get! i;\nlet end_idx := ((strings.take (i + 1)).map (\u03bb s => s.length)).sum;\nlet start_idx := end_idx - string_in_result.length;\nlet corresponding_string_in_result := ((result_chars.take end_idx).drop start_idx).asString;\ncorresponding_string_in_result = string_in_result);\n-- program termination\n\u2203 result, implementation strings = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (strings: List String) : String :=\n\nString.join strings\n\n\n-- [TEST_CASES]\n\n#test implementation [] = \"\"\n#test implementation [\"a\", \"b\", \"c\"] = \"abc\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(strings: List String)\n: problem_spec implementation strings\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 28,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:95c107505160279aee3a5b7eb0cbcd10785742297c3090e7497cefc16517fa03",
+  "timing": 1551.3339234669984,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/u6e5poo1/problem.lean --deep=stuck",
+    "claude": "sha256:0b918f5a78b2509de0ddc588348aa8163018394455f0a8f442fc6c00d592b831",
+    "status": "OK",
+    "result": "sha256:3973a366c5bf142321a2f8927efb05f9c3d6cb74368980716d26c6ffe63e3d62",
+    "validation": [
+      {
+        "problem_id": "28",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:862497c3f9cfc8289c3bedaf1176abc443a169926fa1cddba676c035cc14776b"
+      }
+    ]
+  },
+  "exception": null
+}

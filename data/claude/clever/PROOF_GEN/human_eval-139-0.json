@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef special_factorial(n: int) -> int\n\"\"\"The Brazilian factorial is defined as:\nbrazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!\nwhere n > 0. Please write a function that computes the Brazilian factorial.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nlet factorial := Nat.factorial n;\n(0 < n \u2192 result / factorial = impl (n - 1)) \u2227\n(n = 0 \u2192 result = 1);\n-- program termination\n\u2203 result, impl n = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  match n with\n  | 0 => 1\n  | n + 1 => Nat.factorial (n + 1) * implementation n\n\n\n-- [TEST_CASES]\n\n#test implementation 4 = 288\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 139,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:476242cdd0808d09fb83c9698daca84505a590e0850092586a525fa885a18515",
+  "timing": 85.43497218599077,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:6f974eb77496fe3339b31ec365a7737019087a50577968186cd08221585cd484",
+    "status": "OK",
+    "result": "sha256:da5c5a424b1d6ff163255687c6b61a1a68c38589f003566bbdc385330116d847",
+    "validation": [
+      {
+        "problem_id": "139",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:39a76bed5bc6aea5c12892ac0e0dc8e89897b825c8fa4f60de9dea19ec01d5f7"
+      }
+    ]
+  },
+  "exception": null
+}

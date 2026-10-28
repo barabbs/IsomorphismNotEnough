@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_threshold(numbers: List[Int], threshold: Int) -> bool\n\"\"\"Return True if all numbers in the list l are below threshold t, and False otherwise.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 Int \u2192 Bool)\n-- inputs\n(numbers: List Int)\n(threshold: Int) :=\n-- spec\nlet numbers_below_threshold :=\n  \u2200 i, i < numbers.length \u2192 numbers[i]! < threshold;\nlet spec (res: Bool) :=\n(numbers.length = 0 \u2192 res) \u2227\n(res \u2194 numbers_below_threshold)\n-- program terminates\n\u2203 result, impl numbers threshold = result \u2227\n-- return value satisfies spec\nspec result\n-- if result then spec else \u00acspec\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: List Int) (threshold: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([1, 2, 4, 10]: List Int) 100 = true\n-- #test implementation ([1, 20, 4, 10]: List Int) 5 = false\n",
+  "info": {
+    "dataset": "clever",
+    "id": 52,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d6492461846d176c00c18707880d1c34890e65d2425f892f2274270d54d8c3f2",
+  "timing": 50.22005424200324,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/9d1bt4yh/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:8b08f456e6a0822944fc72d422c6034ff1ea939aeb20eb40f6e6c951407044a6",
+    "status": "OK",
+    "result": "sha256:92964e190eacc7bdf6b1e2e7b54d6c427bd41f62512b17d61d9513cda8e9fcad"
+  },
+  "exception": null
+}

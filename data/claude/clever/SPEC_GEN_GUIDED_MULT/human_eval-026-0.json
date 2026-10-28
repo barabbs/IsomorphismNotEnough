@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef remove_duplicates(numbers: List[int]) -> List[int]\n\"\"\"From a list of integers, remove all elements that occur more than once.\nKeep order of elements left the same as in the input.\n\n>>> remove_duplicates([1, 2, 3, 2, 4])\n[1, 3, 4]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3, 2, 4] = [1, 3, 4]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 26,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:210068b30193d36105b5309106ea7d7df6dd4cc4fb5de9a52f618b1f5c9e4702",
+  "timing": 231.34567796596093,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/u4xxkisx/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d49f656a262ec65a42285cbfea9def4ab2560e5173137c1c8181a8bbbea0d5ac",
+    "status": "OK",
+    "result": "sha256:8a3d8089d07b7257f1b17658504de56fda0e25316a1f3a28fe3674121893e56f"
+  },
+  "exception": null
+}

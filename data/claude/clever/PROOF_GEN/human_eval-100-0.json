@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_a_pile(n: int) -> List[int]\n\"\"\"Given a positive integer n, you have to make a pile of n levels of stones.\nThe first level has n stones.\nThe number of stones in the next level is:\n  - the next odd number if n is odd.\n  - the next even number if n is even.\nReturn the number of stones in each level in a list, where element at index\ni represents the number of stones in the level (i+1).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → List Int)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.length = n ∧\n  (forall i: Nat, (1 <= i ∧ i < n) → (result[i]! = result[i-1]! + 2)) ∧\n  result[0]! = n\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Int) : List Int :=\n\n(List.range n.toNat).map (fun i => n + 2 * (Int.ofNat i))\n\n\n-- [TEST_CASES]\n\n#test implementation 3 = [3, 5, 7]\n#test implementation 4 = [4,6,8,10]\n#test implementation 5 = [5, 7, 9, 11, 13]\n#test implementation 6 = [6, 8, 10, 12, 14, 16]\n#test implementation 8 = [8, 10, 12, 14, 16, 18, 20, 22]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Int)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 100,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:89299c77a6883554d6c22a25e8ff526ba3b3a7c5cd40e60a9479e1975e5af3cb",
+  "timing": 217.88621575498837,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/kgk14fz2/problem.lean --deep=stuck",
+    "claude": "sha256:348911babb425a6acfff638f30adc119018a037ca1de5d94d8b303ada6074093",
+    "status": "ISSUE",
+    "result": "sha256:5c1c11a4889be1d2fe4d0fe8038b6e9e8f59f61c72f47cac14a127195981d41f",
+    "validation": [
+      {
+        "problem_id": "100",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:ec8061a400cbd3718216f0afbecd846057ddb89a38034f1d2991c45f22120582"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "TYPE"
+  },
+  "exception": null
+}

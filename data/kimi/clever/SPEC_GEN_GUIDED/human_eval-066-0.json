@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digitSum(string: str) -> nat\n\"\"\"Write a function that takes a string as input and returns the sum of the upper characters only'\nASCII codes.\n\n>>> digitSum('')\n0\n>>> digitSum('abAB')\n131\n>>> digitSum('helloE')\n69\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Nat)\n-- inputs\n(x: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"\" = 0\n-- #test implementation \"abAB\" = 131\n-- #test implementation \"abcCd\" = 67\n-- #test implementation \"helloE\" = 69\n-- #test implementation \"woArBld\" = 131\n-- #test implementation \"aAaaaXa\" = 153\n",
+  "info": {
+    "dataset": "clever",
+    "id": 66,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f2198616861595d56727217c0f011a300dac74b9ec123ae8c7ea3ee2179213ef",
+  "timing": 269.36123711569235,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:d614539bc694b86ca5100d844ee85b5b58ca188c2726df4bb7b555bde8ea6354",
+    "status": "OK",
+    "result": "sha256:7894c2f5836615f428768cbf9d091bf12b9d9c8b3778f92ef227064fdf4d6a11"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef incr_list(numbers: List[int]) -> List[int]\n\"\"\"incr_list takes a list of integers as input and returns a new list\nwhere each element is incremented by 1.\n\n>>> incr_list([])\n[]\n>>> incr_list([1, 3, -2, 1])\n[2, 4, -1, 2]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 List Int)\n-- inputs\n(x: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1, 2, 3] = [2, 3, 4]\n-- #test implementation [5, 3, 5, 2, 3, 3, 9, 0, 123] = [6, 4, 6, 3, 4, 4, 10, 1, 124]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 42,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f411bd47cceb19ed197f2384ccbee14e9975c6a1231909b7591881760086351c",
+  "timing": 73.338624764001,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/vdrta7n0/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:96789931b06a5e76b8a98b1413b1995dc290998b354ccfda3f9935816c39c598",
+    "status": "OK",
+    "result": "sha256:32ab3c8a802147e1f720f985cf69faf2faf3e3dec29e9bc50215af98ad201115"
+  },
+  "exception": null
+}

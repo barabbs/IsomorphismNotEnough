@@ -1,0 +1,32 @@
+{
+  "text": "sha256:e131c1d5c9fb41a37633c7e7cee75baa89ce20673eb3192a86ab1a10f8372809",
+  "info": {
+    "dataset": "clever",
+    "id": 99,
+    "subset": "human_eval",
+    "task": "SPEC_ISO",
+    "attempt": 0
+  },
+  "solution": "sha256:e131c1d5c9fb41a37633c7e7cee75baa89ce20673eb3192a86ab1a10f8372809",
+  "timing": 115.90608499199152,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:445fffaad6254a6fa7b81b0bbdd0f842ff52e6b5a014e5f3cd7ac7871215b42d",
+    "status": "ISSUE",
+    "result": "sha256:cac44bd67025d49c03c38aa08def50af55abce7318941ea12c30f2163c8e7912",
+    "raw_status": "ISSUE",
+    "comment": "GEN",
+    "validation": [
+      {
+        "problem_id": "99",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:eeb173adf444c1c5f1d2578459642767aa61167446591b19e937f3b78d34e1f7"
+      }
+    ],
+    "analysis": "TRIV"
+  },
+  "exception": null
+}

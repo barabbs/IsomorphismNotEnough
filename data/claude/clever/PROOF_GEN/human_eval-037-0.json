@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_even(l: list)\n\"\"\"This function takes a list l and returns a list l' such that\nl' is identical to l in the odd indicies, while its values at the even indicies are equal\nto the values of the even indicies of l, but sorted.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(l: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  l.length = result.length \u2227\n  let even_idx := (List.range l.length).filter (\u03bb i => i % 2 = 0);\n  let even_val_in_result := even_idx.map (\u03bb i => result.get! i);\n  let even_val := even_idx.map (\u03bb i => l.get! i);\n  (\u2200 i, i < l.length \u2192 (i % 2 \u2260 0 \u2192 l.get! i = result.get! i)) \u2227\n  List.Sorted Int.le even_val_in_result \u2227\n  even_val.all (\u03bb x => even_val_in_result.count x = even_val.count x);\n-- program termination\n\u2203 result, implementation l = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (l: List Int) : List Int :=\n\n  let rec getEvens (xs : List Int) (idx : Nat) : List Int :=\n    match xs with\n    | [] => []\n    | x :: rest =>\n      if idx % 2 == 0 then x :: getEvens rest (idx + 1)\n      else getEvens rest (idx + 1)\n  let sortedEvens := (getEvens l 0).mergeSort (\u00b7 \u2264 \u00b7)\n  let rec build (remaining : List Int) (evens : List Int) (idx : Nat) : List Int :=\n    match remaining with\n    | [] => []\n    | x :: xs =>\n      if idx % 2 == 0 then\n        match evens with\n        | [] => x :: build xs [] (idx + 1)\n        | e :: es => e :: build xs es (idx + 1)\n      else\n        x :: build xs evens (idx + 1)\n  build l sortedEvens 0\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 3] = [1, 2, 3]\n#test implementation [5, 6, 3, 4] = [3, 6, 5, 4]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(l: List Int)\n: problem_spec implementation l\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 37,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:36f5fe3ead4e751f11750bd70dfb0e35e5dea133bbaaf0676cf36cc8e8f93f77",
+  "timing": 2365.3152874629013,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:cefd1b6485c57388340bf47c6603b4f6b7d7103f7f4abe6f60b5f4b3fcb7665f",
+    "status": "OK",
+    "result": "sha256:646fb195c7ef9dc2a21f9a9068fe5dd64a5432417c63e55f12acc09f6bf82e0a",
+    "validation": [
+      {
+        "problem_id": "37",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:90a1201547a0c14cbde219551d3d04d48781e4eac549b69263cae34a524079bf"
+      }
+    ]
+  },
+  "exception": null
+}

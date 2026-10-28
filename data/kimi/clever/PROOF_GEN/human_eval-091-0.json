@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_bored(s: str) -> int\n\"\"\"You'll be given a string of words, and your task is to count the number\nof boredoms. A boredom is a sentence that starts with the word \"I\".\nSentences are delimited by '.', '?' or '!'.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Nat) :=\n  let is_sentence_is_boredom (s: String) : Bool :=\n    (s.startsWith \"I \" ∨ s.startsWith \" I\") ∧ '.' ∉ s.data ∧ '?' ∉ s.data ∧ '!' ∉ s.data\n  match s.data.findIdx? (λ c => c = '.' ∨ c = '?' ∨ c = '!') with\n  | some i =>\n    let j := i + 1;\n    let substring := s.drop j;\n    result = (if is_sentence_is_boredom substring then 1 else 0) + implementation substring\n  | none =>\n    result = if is_sentence_is_boredom s then 1 else 0\n-- program termination\n∃ result,\n  implementation s = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : Nat :=\n\n  let isIStart (str : String) : Bool := str.startsWith \"I \" ∨ str.startsWith \" I\"\n  let rec process (cs : List Char) (current : List Char) (acc : Nat) : Nat :=\n    match cs with\n    | [] =>\n      acc + if isIStart (String.mk current.reverse) then 1 else 0\n    | c :: rest =>\n      if c = '.' ∨ c = '?' ∨ c = '!' then\n        process rest [] (acc + if isIStart (String.mk current.reverse) then 1 else 0)\n      else\n        process rest (c :: current) acc\n  process s.data [] 0\n\n\n-- [TEST_CASES]\n\n#test implementation \"Hello world\" = 0\n#test implementation \"The sky is blue. The sun is shining. I love this weather\" = 1\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 91,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6d33cb00e909f7472a9cb5ddceff4222ec88f9f021e08410f0a8e0394c3bcf25",
+  "timing": 2722.244411638938,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c4ee3bca8f564c5eae125c7d04eb7df72fe49afd9985459ffd02a9f775c534ab",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:6abd8dd598c9d4993af339cc58abc499781c98bf90aff1f3299d0ad5d94f263b",
+    "validation": [
+      {
+        "problem_id": "91",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:7bc1f8a7b085bbbae6bb0f897656b50a80494d8cd6824c9f1f7c61c9e598afba"
+      }
+    ]
+  },
+  "exception": null
+}

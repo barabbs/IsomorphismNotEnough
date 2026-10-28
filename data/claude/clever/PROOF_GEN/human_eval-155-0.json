@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_count(num: int) -> Tuple[int, int]\n\"\"\"Given an integer. return a tuple that has the number of even and odd digits respectively.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int → Int × Int)\n-- inputs\n(num: Int) :=\n-- spec\nlet spec (result: Int × Int) :=\n  let (even_count, odd_count) := result;\n  let numAbs := |num|.toNat;\n  let numBy10 := numAbs/10;\n  let (even_count', odd_count') := impl numBy10;\n  (result = impl numAbs) ∧\n  (0 ≤ num → (Even num ↔ 1 + even_count' = even_count) ∧ (Odd num ↔ even_count' = even_count)) ∧\n  (0 ≤ num → (Odd num ↔ 1 + odd_count' = odd_count) ∧ (Even num ↔ odd_count' = odd_count));\n-- program terminates\n∃ result, impl num = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (num: Int) : Int × Int :=\n\n  let n := num.natAbs\n  let rec helper (n : Nat) : Int × Int :=\n    if n < 10 then\n      if n % 2 == 0 then (1, 0) else (0, 1)\n    else\n      let (e, o) := helper (n / 10)\n      if n % 2 == 0 then (1 + e, o) else (e, 1 + o)\n  helper n\n\n\n-- [TEST_CASES]\n\n#test implementation (-12) = (1, 1)\n#test implementation 123 = (1, 2)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(num: Int)\n: problem_spec implementation num :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 155,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:06624f670c191b30185fb84f6f60516697698cbb49dc5c81dd812322c13bccb8",
+  "timing": 275.5679714799626,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:919f859adb0c2c5f1510f026edc7a95481618e93ca9096b0441e8288b3404103",
+    "status": "ISSUE",
+    "result": "sha256:b509f035e45c634791839205782905f5f815c8977f5321dda3431652f733de10",
+    "validation": [
+      {
+        "problem_id": "155",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:b77ad9edf45507a9bf796c7cdb5f5b214010f55046d61f7e86bd6a132ca84c7c"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "UNIV"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef reverse_delete(s : str, c : str) -> (str, bool)\n\"\"\"We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\nthen check if the result string is palindrome.\nA string is called palindrome if it reads the same backward as forward.\nYou should return a tuple containing the result string and True/False for the check.\n-- Note: We assume the deletions preserve the order of the remaining characters.\n\n>>> reverse_delete('abcde', 'ae')\n('bcd', False)\n>>> reverse_delete('abcdef', 'b')\n('acdef', False)\n>>> reverse_delete('abcdedcba', 'ab')\n('cdedc', True)\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String \u2192 (String \u00d7 Bool))\n-- inputs\n(s: String)\n(c: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"abcde\" \"ae\" = (\"bcd\", False)\n-- #test implementation \"abcdef\" \"b\" = (\"acdef\", False)\n-- #test implementation \"abcdedcba\" \"ab\" = (\"cdedc\", True)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 112,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:29671f708d3f1c744777c38a203c72234e2e57e06af25787b835b7fad9cd1516",
+  "timing": 82.76803249500153,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/u_knau6k/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:9f114f3d4335011095d97bae31a2fd52d107dca1e2c263def6a15c365363c961",
+    "status": "OK",
+    "result": "sha256:9bd68838d59cc7d40a3379c3e0e250b72d10f0fe59c1c9d2c994aa8985550057"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef will_it_fly(q: List[int], w: int) -> bool\n\"\"\"Write a function that returns True if the object q will fly, and False otherwise.\nThe object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is\nless than or equal the maximum possible weight w.\n\n>>> will_it_fly([1, 2], 5)\nFalse\n>>> will_it_fly([3, 2, 3], 1)\nFalse\n>>> will_it_fly([3, 2, 3], 9)\nTrue\n>>> will_it_fly([3], 5)\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int → Bool)\n-- inputs\n(q: List Int) (w: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [3, 2, 3] 9 = True\n-- #test implementation [1, 2] 5 = False\n-- #test implementation [3] 5 = True\n-- #test implementation [3, 2, 3] 1 = False\n-- #test implementation [1, 2, 3] 6 = False\n-- #test implementation [5] 5 = True\n",
+  "info": {
+    "dataset": "clever",
+    "id": 72,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:21dd8944788c74bdecbb77e03f2b553c65cbefc370282665ea3a9341f6b5eede",
+  "timing": 56.33093194803223,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:678df64c2e7d66284a0b97afba91f69a2f42b606b206ad1d8b1bedcd966e2184",
+    "status": "OK",
+    "result": "sha256:8ca7484dfe0ea9616fe33e4463ab46fc5e76db4f8863ed4f669b2cc0029eacd0"
+  },
+  "exception": null
+}

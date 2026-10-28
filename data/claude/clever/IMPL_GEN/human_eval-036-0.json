@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fizz_buzz(n: int)\n\"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  (n = 0 \u2192 result = 0) \u2227\n  (0 < n \u2192 result = implementation (n - 1) \u2192\n    ((n - 1) % 11 \u2260  0 \u2227  (n - 1) % 13 \u2260  0) \u2228 (n - 1).repr.count '7' = 0) \u2227\n  (0 < n \u2192 result \u2260 implementation (n - 1) \u2192\n    ((n - 1) % 11 = 0 \u2228  (n - 1) % 13 = 0) \u2227\n    result - implementation (n - 1) = (n - 1).repr.count '7')\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 50 = 0\n-- #test implementation 78 = 2\n-- #test implementation 79 = 3\n",
+  "info": {
+    "dataset": "clever",
+    "id": 36,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3bc3214d8840ff51798950393b86fcaabe6ad99be74d320371b993676f958e4a",
+  "timing": 73.6037528179877,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/fgzsph67/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f82a291a3408eed05a985e0f7123ed3baf1be1955dea200c78ba967989e71e18",
+    "status": "OK",
+    "result": "sha256:c0ac77aab96401495c766eb01690ab6ab6ae96adc5901cd2de8bab0448a68963"
+  },
+  "exception": null
+}

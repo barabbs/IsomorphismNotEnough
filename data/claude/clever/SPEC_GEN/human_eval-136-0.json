@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_smallest_integers(lst: List[int]) -> Tuple[ Optional[Int], Optional[Int] ]\n\"\"\"Create a function that returns a tuple (a, b), where 'a' is\nthe largest of negative integers, and 'b' is the smallest\nof positive integers in a list.\nIf there is no negative or positive integers, return them as None.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Option Int \u00d7 Option Int)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 136,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ad4e9f70b27434dbd3df07afd3488543951be553606cbde0690dee1daf91872c",
+  "timing": 82.84252279500652,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/zuhedxnu/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:956958071a6f5c198a6c2dc80a1ae3feaa668f5df528a3854eec415b07226136",
+    "status": "OK",
+    "result": "sha256:4047a68c36ef07a5ea0fb7c7945123eba09226f7d6edb300c297b9fe715747be"
+  },
+  "exception": null
+}

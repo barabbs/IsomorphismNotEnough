@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fruit_distribution(string: str, n: nat) -> nat\n\"\"\"In this task, you will be given a string that represents a number of apples and oranges\nthat are distributed in a basket of fruit this basket contains\napples, oranges, and mango fruits. Given the string that represents the total number of\nthe oranges and apples and an integer that represent the total number of the fruits\nin the basket return the number of the mango fruits in the basket.\n\n>>> fruit_distribution('5 apples and 6 oranges', 19)\n8\n>>> fruit_distribution('0 apples and 1 oranges', 3)\n2\n>>> fruit_distribution('2 apples and 3 oranges', 100)\n95\n>>> fruit_distribution('100 apples and 1 oranges', 120)\n19\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → Nat → Nat)\n-- inputs\n(x: String) (y: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"5 apples and 6 oranges\" 19 = 8\n-- #test implementation \"0 apples and 1 oranges\" 3 = 2\n-- #test implementation \"2 apples and 3 oranges\" 100 = 95\n-- #test implementation \"100 apples and 1 oranges\" 120 = 19\n",
+  "info": {
+    "dataset": "clever",
+    "id": 67,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:0930b2296b6d2e1cdbec8e6be8866b016fbddcbd9e340340568430c5864fc71f",
+  "timing": 120.5477220970206,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:1798bf189343ffe86247b84c0923708237db54abe24655feacf546b8ac4ceae6",
+    "status": "OK",
+    "result": "sha256:960b146552227f08f7c531ec140470fe7773e8d454291217b991de6a0ae1d529"
+  },
+  "exception": null
+}

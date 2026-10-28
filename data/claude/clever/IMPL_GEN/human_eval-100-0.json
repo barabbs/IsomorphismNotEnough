@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef make_a_pile(n: int) -> List[int]\n\"\"\"Given a positive integer n, you have to make a pile of n levels of stones.\nThe first level has n stones.\nThe number of stones in the next level is:\n  - the next odd number if n is odd.\n  - the next even number if n is even.\nReturn the number of stones in each level in a list, where element at index\ni represents the number of stones in the level (i+1).\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int \u2192 List Int)\n-- inputs\n(n: Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.length = n \u2227\n  (forall i: Nat, (1 <= i \u2227 i < n) \u2192 (result[i]! = result[i-1]! + 2)) \u2227\n  result[0]! = n\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 3 = [3, 5, 7]\n-- #test implementation 4 = [4,6,8,10]\n-- #test implementation 5 = [5, 7, 9, 11, 13]\n-- #test implementation 6 = [6, 8, 10, 12, 14, 16]\n-- #test implementation 8 = [8, 10, 12, 14, 16, 18, 20, 22]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 100,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:18f0a5d2063b714a75a6d53381ea8bdf064006e927d4e4c04af743dd5b861f37",
+  "timing": 55.40292429301189,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/dzgpn40y/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:7e6ba1c69d7c2d4e8a4ea9c412792309c2e10f45b078816cc43411491620380b",
+    "status": "OK",
+    "result": "sha256:c432373240290f9de99ac68f54e591330596800c6494f861f888ee8aeea16388"
+  },
+  "exception": null
+}

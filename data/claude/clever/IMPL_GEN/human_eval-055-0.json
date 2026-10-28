@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fib(n: int) -> int\n\"\"\"Return n-th Fibonacci number.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ninductive fibonacci_non_computable : \u2115 \u2192 \u2115 \u2192 Prop\n| base0 : fibonacci_non_computable 0 0\n| base1 : fibonacci_non_computable 1 1\n| step  : \u2200 n f\u2081 f\u2082, fibonacci_non_computable n f\u2081 \u2192\nfibonacci_non_computable (n + 1) f\u2082 \u2192\nfibonacci_non_computable (n + 2) (f\u2081 + f\u2082)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\nfibonacci_non_computable n result\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 10 = 55\n-- #test implementation 1 = 1\n-- #test implementation 8 = 21\n",
+  "info": {
+    "dataset": "clever",
+    "id": 55,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:93cef8c9f518246b5df3d0f320a2447fb5afcd200afc514058515b3777ae9bea",
+  "timing": 75.01667220701347,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/2ygnmizq/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:40d723c16c650da4070e3299aec3b2d7fd0258b33a40b017d003fb032ad5cdc5",
+    "status": "OK",
+    "result": "sha256:0b9d6303b04fb5345e4afc5dfc4610c35c5134666df4eff425c85484ddb3273c"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_palindrome(n: nat) -> (nat, nat)\n\"\"\"Given a positive integer n, return a tuple that has the number of even and odd\ninteger palindromes that fall within the range(1, n), inclusive.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat × Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat × Nat) :=\n  let is_palindrome (k: Nat): Prop :=\n    List.Palindrome (Nat.digits 10 k);\n  let even_palindrome (k: Nat): Prop :=\n    (Even k) ∧ (is_palindrome k);\n  let odd_palindrome (k: Nat): Prop :=\n    (Odd k) ∧ (is_palindrome k);\n  n > 0 →\n  (1 < n →\n    let impl_n_minus_1 := implementation (n - 1);\n    ((even_palindrome n) → result.1 = 1 + impl_n_minus_1.1) ∧\n    ((odd_palindrome n) → result.2 = 1 + impl_n_minus_1.2) ∧\n    (¬ (odd_palindrome n) → result.2 = impl_n_minus_1.2) ∧\n    (¬ (even_palindrome n) → result.1 = impl_n_minus_1.1))\n  ∧\n  (n = 1 → (result.1 = 0) ∧ (result.2 = 1));\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat × Nat :=\n\nmatch n with\n| 0 => (0, 0)\n| 1 => (0, 1)\n| n + 1 =>\n  let prev := implementation n\n  let s := Nat.digits 10 (n + 1)\n  if List.Palindrome s then\n    if (n + 1) % 2 = 0 then (prev.1 + 1, prev.2)\n    else (prev.1, prev.2 + 1)\n  else prev\n\n\n-- [TEST_CASES]\n\n#test implementation 123 = (8, 13)\n#test implementation 12 = (4, 6)\n#test implementation 3 = (1, 2)\n#test implementation 63 = (6, 8)\n#test implementation 25 = (5, 6)\n#test implementation 19 = (4, 6)\n#test implementation 9 = (4, 5)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 107,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1f9e72e07abd6c188df13eb67304d3ffb45a0e70137c20501056dc56a1130db7",
+  "timing": 2549.5228705094196,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:7f2541f52eb07504f389bcfddece72116eecc638806394d3e4a7dac207ecbf07",
+    "status": "OK",
+    "result": "sha256:40f55fb96f76b2b8e601ff6bd5ccf8cc4ad82fde674952ee85b520009e547efd",
+    "validation": [
+      {
+        "problem_id": "107",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:56e3e285d4c1fb160a17b3ea49759cbffc4bee318e794e222e4fde151abb7356"
+      }
+    ]
+  },
+  "exception": null
+}

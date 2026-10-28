@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef has_close_elements(numbers: List[float], threshold: float) -> bool\n\"\"\"Check if in given list of numbers, are any two numbers closer to each other than given threshold.\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat → Rat → Bool)\n-- inputs\n(numbers: List Rat)\n(threshold: Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 0,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0bda7b29d72af7b138f84646f25fcdda1f20bb767f54feba2a952e2c46f6a52a",
+  "timing": 116.74387756036595,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:e95d2e8f3a4bb735140fc11f9d7a30fb6acf0613472af9ee2b5f48d88704f170",
+    "status": "OK",
+    "result": "sha256:cad908204a5a2b372a3501e8e3dc3bfca4791501acea47ce6b6006d9ef94b9b4"
+  },
+  "exception": null
+}

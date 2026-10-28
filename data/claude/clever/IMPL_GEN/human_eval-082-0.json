@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_length(s: str) -> bool\n\"\"\"Write a function that takes a string and returns True if the string\nlength is a prime number or False otherwise\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 Bool)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : Bool) :=\nlet is_prime (n: Nat) : Prop :=\n  2 \u2264 n \u2227 \u00ac (\u2203 k, 2 \u2264 k \u2227 k < n \u2227 n % k = 0);\n  result \u2194 is_prime s.length\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (s: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hello\" = True\n-- #test implementation \"abcdcba\" = True\n-- #test implementation \"kittens\" = True\n-- #test implementation \"orange\" = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 82,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c627533bacc4972325ee3502305a4365f867534fa15ed44db3f17953407503d5",
+  "timing": 66.97664686699864,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4a7cpp1q/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:e25df0c1bb30d65bebd6fcdc21ce5e9ebeee4370815fbec8127b4dc684787b3f",
+    "status": "OK",
+    "result": "sha256:a84cb14c1d14d603d97cff49e661da6a86e089c2b6ece25ba616fee543e885b1"
+  },
+  "exception": null
+}

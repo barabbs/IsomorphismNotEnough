@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef search(numbers: List[int]) -> int\n\"\"\"You are given a non-empty list of positive integers. Return the greatest integer that is greater than\nzero, and has a frequency greater than or equal to the value of the integer itself.\nThe frequency of an integer is the number of times it appears in the list.\nIf no such a value exist, return -1.\n\n>>> search([4, 1, 2, 2, 3, 1])\n2\n>>> search([1, 2, 2, 3, 3, 3, 4, 4, 4])\n3\n>>> search([5, 5, 4, 4, 4])\n-1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(x: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [4, 1, 2, 2, 3, 1] = 2\n-- #test implementation [1, 2, 2, 3, 3, 3, 4, 4, 4] = 3\n-- #test implementation [5, 5, 4, 4, 4] = -1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 69,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:2bc9d3e135f8f649bf5293fe2e2b2329d97efeca47f20eeb92893c68a22b2d62",
+  "timing": 89.25208843173459,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:8d780309e72f19e4c894daf2d712024309891e842d58c0dc4c95cd1db7972af2",
+    "status": "OK",
+    "result": "sha256:5190e3ecf6bfee46dafa7740ee50ed0ec979d63d4aa22251c8cbcc4657af081e"
+  },
+  "exception": null
+}

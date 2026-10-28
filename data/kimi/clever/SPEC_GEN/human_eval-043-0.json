@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef pairs_sum_to_zero(numbers: List[int]) -> bool\n\"\"\"pairs_sum_to_zero takes a list of integers as an input.\nit returns True if there are two distinct elements in the list that\nsum to zero, and False otherwise.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(x: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 43,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:27dec8ee7794d0c1cb7847e4f15177e94034c21bdf45422ba23612eb5caa4bcd",
+  "timing": 51.09528130479157,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:4cb89b8dee1564044b118558dfba5b5fe3fae85457cc0bad670a9d9773d47026",
+    "status": "OK",
+    "result": "sha256:f17cee5a45abf588832ad68fc5faadcf9dd08d5e09cfbf184fe0fd19a392091a"
+  },
+  "exception": null
+}

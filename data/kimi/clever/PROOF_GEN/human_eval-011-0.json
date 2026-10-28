@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_xor(a: str, b: str) -> str\n\"\"\"Input are two strings a and b consisting only of 1s and 0s.\nPerform binary XOR on these inputs and return result also as a string.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String → String)\n-- inputs\n(a b: String) :=\n-- spec\nlet spec (result: String) :=\n  a.all (fun c => c = '0' ∨ c = '1') →\n  b.all (fun c => c = '0' ∨ c = '1') →\n  a.length = b.length →\n  result.length = a.length ∧\n  result.all (fun c => c = '0' ∨ c = '1') ∧\n  (∀ i, i < a.length →\n  let i_pos := String.Pos.mk i;\n  (a.get i_pos = b.get i_pos → result.get i_pos = '0') ∧\n  (a.get i_pos ≠ b.get i_pos → result.get i_pos = '1'));\n-- program termination\n∃ result, implementation a b = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a b: String) : String :=\n\n  let xorChar (c1 c2 : Char) : Char := if c1 = c2 then '0' else '1'\n  String.mk (List.zipWith xorChar a.toList b.toList)\n\n\n-- [TEST_CASES]\n\n#test implementation \"010\" \"110\" = \"100\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a b: String)\n: problem_spec implementation a b\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 11,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d26897f58ec55b7b9fc9f48eadd4068fb85b3f44a7effa8c35bc803a562e8ac6",
+  "timing": 14283.213751669973,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:90b3a68d3a7e1c7c3698943c1bce05bbe0bd35bf7ab93d3745e044322bead30c",
+    "status": "FAIL",
+    "result": "sha256:fdc3befb8f55e4ad6f3439e5d6aeabed0d16816b6d25f5ac95e75f676cde86f2",
+    "validation": [
+      {
+        "problem_id": "11",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:9ae4c9c1719e6d1c076c5ee4f8cd216771facd14cb1106cca812270637b48f69",
+        "lean_code": "sha256:5389cb07f70c50f3f0f53631a5fa0eb9551e071ddde6456a5fd4dfe7549b5442"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef cycpattern_check(String a, String b) -> Bool\n\"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word, else False\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String \u2192 Bool)\n-- inputs\n(a b: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 154,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f0f585037db9388e9f73fd8bfb4c6e8d542f0d5efab294d9c4cbdc0088de88d4",
+  "timing": 76.12907207998796,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/fe8qgjzn/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:68260fdd806afce334f878f744ce5cae8c242d88f35e9f5e17d91bd553713c93",
+    "status": "OK",
+    "result": "sha256:9067836220d6dcf7d2795dca594eabcd70199be36d2e70676954401aae12af47"
+  },
+  "exception": null
+}

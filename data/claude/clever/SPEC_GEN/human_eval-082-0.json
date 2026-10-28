@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef prime_length(s: str) -> bool\n\"\"\"Write a function that takes a string and returns True if the string\nlength is a prime number or False otherwise\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 Bool)\n-- inputs\n(s: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 82,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:0566d27a3d7c0a577647b3664e58f983b21f95c9b727bd171c101839602b9d70",
+  "timing": 103.40173202299047,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/vlsux_a6/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d23d2b69846b762f46d005fff4c84132d68893319a162bd31077f40386dece81",
+    "status": "OK",
+    "result": "sha256:65adffbddb33fa0a560ca8aa204bae1810821f01fbe78a67f2b196309195d2b8"
+  },
+  "exception": null
+}

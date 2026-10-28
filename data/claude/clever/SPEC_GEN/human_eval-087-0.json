@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_coords_sorted(lst : list(list(int)), x : int) -> list((int, int))\n\"\"\"You are given a 2 dimensional data, as a nested lists,\nwhich is similar to matrix, however, unlike matrices,\neach row may contain a different number of columns.\nGiven lst, and integer x, find integers x in the list,\nand return list of tuples, [(x1, y1), (x2, y2) ...] such that\neach tuple is a coordinate - (row, columns), starting with 0.\nSort coordinates initially by rows in ascending order.\nAlso, sort coordinates of the row by columns in descending order.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List (List Int) \u2192 Int \u2192 List (Nat \u00d7 Nat))\n-- inputs\n(lst: List (List Int))\n(x: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 87,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:30e63af0c60466bae9aeaff0b8464d70319abcb19a34280ca66ec6767bcb9f51",
+  "timing": 71.91262117298902,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/b7nkofci/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d7dc15bacbd6f2ed0e9b2dd1e580e2e9af0946b78ddca1f874b9f9e072d8ebf8",
+    "status": "OK",
+    "result": "sha256:49bf5f8ced0f231b60882fe4f37689ce406534981e547f335a893523657d0555"
+  },
+  "exception": null
+}

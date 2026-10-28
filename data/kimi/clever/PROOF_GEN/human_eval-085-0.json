@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: list[int]) -> int\n\"\"\"Given a non-empty list of integers lst, add the even elements that are at odd indices.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  lst.length = 0 → result = 0 ∧\n  lst.length > 0 →\n    if lst.length > 1 then\n      result = (if Even lst[1]! then lst[1]! else 0) + implementation (lst.drop 2)\n    else\n      result = (if Even lst[1]! then lst[1]! else 0)\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int) : Int :=\n\nmatch lst with\n  | [] => 0\n  | [_] => 0\n  | _ :: x :: xs => (if Even x then x else 0) + implementation xs\n\n\n-- [TEST_CASES]\n\n#test implementation [4, 2, 6, 7] = 2\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 85,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:39a6d18429fb2f094af69a96010ca68b3ca95f8faac0369d8130055abf6ff442",
+  "timing": 1240.2367921099067,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:366a39f96f426210c905ce9a059d5f777c4b6e5fe308f30cfb975556f8efc337",
+    "status": "OK",
+    "result": "sha256:b55d855ff5ef106ac4edfe6fdb83c8b3aa2f3fd220eb39fa05d6c78028fdb728",
+    "validation": [
+      {
+        "problem_id": "85",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5e1dd834fc4b2ee2ad589fb37001b3030bfe9031761757d49e0dba56b610f5c4"
+      }
+    ]
+  },
+  "exception": null
+}

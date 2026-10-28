@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef longest(strings: List[str]) -> Optional[str]\n\"\"\"Out of list of strings, return the longest one. Return the first one in case of multiple\nstrings of the same length. Return None in case the input list is empty.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 Option String)\n-- inputs\n(strings: List String) :=\n-- spec\nlet spec (result: Option String) :=\n  (result = none \u2194 strings.length = 0) \u2228\n  (\u2203 longest, result = some longest \u2227\n  longest \u2208 strings \u2227\n  \u2200 s, s \u2208 strings \u2192 s.length \u2264 longest.length \u2192\n  (\u2203 i, i < strings.length \u2227\n  strings[i]! = longest \u2227 \u2200 j < i, strings[j]!.length < longest.length));\n-- program termination\n\u2203 result, implementation strings = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) : Option String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [\"a\", \"b\", \"c\"] = some \"a\"\n-- #test implementation [\"a\", \"bb\", \"ccc\"] = some \"ccc\"\n-- #test implementation [] = none\n",
+  "info": {
+    "dataset": "clever",
+    "id": 12,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:6e41cec7f8b5d307077387663d0bab858ef186ff8b9076a7614fb2dd85ce4cfd",
+  "timing": 63.60304531498696,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/9io0zjqd/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:93719477e7170416550febbc57f51c1ac7f01342b36b146a86d4318d71af07a9",
+    "status": "OK",
+    "result": "sha256:e91e094619d7abcec20f232ae1149957bf7bd202443730d05cdb42d539016b5d"
+  },
+  "exception": null
+}

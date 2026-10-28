@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef add(x: int, y: int) -> int\n\"\"\"Add two numbers x and y\n>>> add(2, 3)\n5\n>>> add(5, 7)\n12\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → Int → Int)\n-- inputs\n(x y: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 2 3 = 5\n-- #test implementation 5 7 = 12\n",
+  "info": {
+    "dataset": "clever",
+    "id": 53,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:ba565d37b95a2aa2edf3a52c36f7ccdfebdc8112606efffe85d6a9b923ce1182",
+  "timing": 52.03923584613949,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:8de8ea0de5aac352efb1b030b71d26d2f879e4cb5d5cfd95475cbd62e8fb9496",
+    "status": "OK",
+    "result": "sha256:3d553a22f1129611ea13ccc3051e8acbd58e727407fa102de7c45ce6b6df3ce0"
+  },
+  "exception": null
+}

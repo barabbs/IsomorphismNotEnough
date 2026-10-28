@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef choose_num(x: int, y: int) -> int\n\"\"\"This function takes two positive numbers x and y and returns the\nbiggest even integer number that is in the range [x, y] inclusive. If\nthere's no such number, then the function should return -1.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Int \u2192 Int)\n-- inputs\n(x: Int) (y: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 102,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c16390dad0ce382b216f7a2e2697598c307a6e1665907bce495f8a71c9f3aa3d",
+  "timing": 72.21833894500742,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/tr8yd6de/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:29cca0c44b2762f5a42dc93d28b626b6891339b0948f42763fbd9739084f78fd",
+    "status": "OK",
+    "result": "sha256:f3a58dc1890d67e1f1057f74ba23ac002278470071fccc289509fb6a6b26cb23"
+  },
+  "exception": null
+}

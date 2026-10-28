@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: int) -> str\n\"\"\"Given a positive integer N, return the total sum of its digits in binary.\n\n>>> solve(1000)\n'1'\n>>> solve(150)\n'110'\n>>> solve(147)\n'1100'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 String)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 1000 = \"1\"\n-- #test implementation 150 = \"110\"\n-- #test implementation 147 = \"1100\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 84,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:95cdee525262b7bddc59a6e04eb4221d74d10b13204b84f859f210143bbf92ba",
+  "timing": 213.7540434349794,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mbcm_px7/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:9cddfdb3686fc61ad08c4a348764e0eb30cd7cd2ecf309c146a0bae442950676",
+    "status": "OK",
+    "result": "sha256:aae71a654c03edcf7b6891a6323cab03ec854532a1aa8dc38534df0e61009cb1"
+  },
+  "exception": null
+}

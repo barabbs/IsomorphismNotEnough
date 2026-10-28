@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_array(lst : List[int]) -> List[int]\n\"\"\"Please write a function that sorts an array of non-negative integers according to\nnumber of ones in their binary representation in ascending order.\nFor similar number of ones, sort based on decimal value.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat → List Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  ∀ x : Nat, lst.count x = result.count x ∧\n  result.length = lst.length ∧\n  (∀ i j : Nat, i < j → j < result.length →\n    Nat.digits 2 (result.get! i) < Nat.digits 2 (result.get! j) ∨\n    (Nat.digits 2 (result.get! i) = Nat.digits 2 (result.get! j) ∧ result.get! i < result.get! j))\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Nat) : List Nat :=\n\n  let countOnes (n : Nat) := (Nat.bits n).count true\n  List.mergeSort lst (fun a b =>\n    let ca := countOnes a\n    let cb := countOnes b\n    if ca < cb then true\n    else if ca = cb then a ≤ b\n    else false\n  )\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 5, 2, 3, 4] = [1, 2, 4, 3, 5]\n#test implementation [1, 0, 2, 3, 4] = [0, 1, 2, 4, 3]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Nat)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 116,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5790acfcb663ded1ea447c9ced5a1d7b23dd6711afadbcbe36f406cc83de5017",
+  "timing": 3559.9272357062437,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:ef5ecf6606d26c925f31fcc98c3dda3fd5533b5ba03874ef83217ef75f339b31",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:778f9fa7d4b540681a0b14e12eea43e7b0b22807674c1b3bd45ddd2d31370da1",
+    "validation": [
+      {
+        "problem_id": "116",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:61ed61db4ed0d56cdb7b1a810b8b0dab0c0270523b27792c25ae27e9c61d6de7"
+      }
+    ]
+  },
+  "exception": null
+}

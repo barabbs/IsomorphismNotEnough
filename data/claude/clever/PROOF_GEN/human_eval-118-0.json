@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_closest_vowel(s : str) -> str\n\"\"\"You are given a word. Your task is to find the closest vowel that stands between\ntwo consonants from the right side of the word (case sensitive).\n\nVowels in the beginning and ending doesn't count. Return empty string if you didn't\nfind any vowel met the above condition.\n\nYou may assume that the given string contains English letter only.\nNote: The \"closest\" is interpreted as the closest to the end of the word, not the closest to the consonants.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String \u2192 String)\n-- inputs\n(s: String) :=\n-- spec\nlet spec (result : String) :=\n  s.data.all (fun c => c.isAlpha) \u2192\n  let is_consonant (c: Char) :=\n    c \u2209 ['a', 'e', 'i', 'o', 'u'] \u2227\n    c \u2209 ['A', 'E', 'I', 'O', 'U'] \u2227\n    c.isAlpha\n  (result = \"\" \u2192 \u00ac \u2203 (i j k : Nat), i < j \u2227 j < k \u2227 k < s.length \u2227 is_consonant s.data[i]! \u2227 \u00ac is_consonant s.data[j]! \u2227 is_consonant s.data[k]!) \u2227\n  (result \u2260 \"\" \u2192\n    result.length = 1 \u2227\n    result.data[0]! \u2208 s.data \u2227\n    \u00ac is_consonant result.data[0]! \u2227\n    \u2203 (i j k : Nat),\n      i < j \u2227 j < k \u2227 k < s.length \u2227\n      is_consonant s.data[i]! \u2227 \u00ac is_consonant s.data[j]! \u2227 is_consonant s.data[k]! \u2227\n      result.data[0]! = s.data[j]! \u2227\n      (\u2200 (i' j' k' : Nat),\n        i' < j' \u2227 j' < k' \u2227 k' < s.length \u2227 is_consonant s.data[i']! \u2227 \u00ac is_consonant s.data[j']! \u2227 is_consonant s.data[k']! \u2192\n        j' \u2264 j)\n  )\n-- program termination\n\u2203 result,\n  implementation s = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (s: String) : String :=\n\n  let chars := s.data\n  let len := chars.length\n  let is_vowel (c : Char) : Bool :=\n    c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||\n    c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'\n  let is_consonant (c : Char) : Bool :=\n    c.isAlpha && !is_vowel c\n  let has_consonant (l : List Char) : Bool := l.any is_consonant\n  let rec loop (fuel : Nat) (j : Nat) : String :=\n    match fuel with\n    | 0 => \"\"\n    | fuel' + 1 =>\n      if j < 1 then \"\"\n      else\n        let c := chars[j]!\n        if is_vowel c && has_consonant (chars.take j) && has_consonant (chars.drop (j + 1)) then\n          c.toString\n        else loop fuel' (j - 1)\n  if len < 3 then \"\" else loop len (len - 2)\n\n\n-- [TEST_CASES]\n\n#test implementation \"yogurt\" = \"u\"\n#test implementation \"FULL\" = \"U\"\n#test implementation \"quick\" = \"i\"\n#test implementation \"ab\" = \"\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(s: String)\n: problem_spec implementation s\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 118,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:c02a0275de32d4d2ac0a714ed1f3da327822469a05a34b63a50e4dbd3673fae0",
+  "timing": 2527.09682942403,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:1a71cedc2b78165b8c513189b16b302abcae1e38616b031368c6c2b131dad480",
+    "status": "OK",
+    "result": "sha256:798345eb88a1c865f418f8fa97c7b52cfec663c922c1243922b9086d6b399d87",
+    "validation": [
+      {
+        "problem_id": "118",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:1b18e08151994f0b2c37ff7f9cdaeb63ab87e00cdc71b8c585e2c41b98752a63"
+      }
+    ]
+  },
+  "exception": null
+}

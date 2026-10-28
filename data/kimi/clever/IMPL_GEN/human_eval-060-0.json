@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_to_n(n: nat) -> nat\n\"\"\"sum_to_n is a function that sums numbers from 1 to n.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n : Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  0 < n →\n  (result = 1 ↔ n = 1) ∧\n  (∀ i, implementation (i + 1) - (implementation i) = i + 1)\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 30 = 465\n-- #test implementation 100 = 5050\n-- #test implementation 5 = 15\n-- #test implementation 10 = 55\n-- #test implementation 1 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 60,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:25d592536b4a0ee1d458d90436c9197cc2ac02d74a4eb24c9fced501deb246ff",
+  "timing": 70.76958726998419,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:7afd3e2ec08287e569640f4fcafb4aadb6ad4c2d34f76419a94dfe248ee1d84d",
+    "status": "OK",
+    "result": "sha256:f9d8846125f5ad9d6c2c1cafa053fd71aa613a313c92216b5ef0a46ad0c8632b"
+  },
+  "exception": null
+}

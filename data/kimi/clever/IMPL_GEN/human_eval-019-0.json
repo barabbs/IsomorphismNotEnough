@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_numbers(numbers: str) -> str\n\"\"\"Input is a space-delimited string of numberals from 'zero' to 'nine'.\nValid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\nReturn the string with numbers sorted from smallest to largest\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → String)\n-- inputs\n(numbers: String) :=\n-- spec\nlet word_to_number_map : String → Int := fun word =>\n  match word with\n  | \"zero\" => 0\n  | \"one\" => 1\n  | \"two\" => 2\n  | \"three\" => 3\n  | \"four\" => 4\n  | \"five\" => 5\n  | \"six\" => 6\n  | \"seven\" => 7\n  | \"eight\" => 8\n  | \"nine\" => 9\n  | _ => -1;\nlet is_sorted_asc : List Int → Bool := fun numbers =>\nlet rec is_sorted_asc_helper : List Int → Bool → Bool := fun numbers is_sorted =>\n  match numbers with\n  | [] => is_sorted\n  | [x] => is_sorted\n  | x::y::rest => if x <= y then is_sorted_asc_helper (y::rest) true else false;\nis_sorted_asc_helper numbers true;\nlet spec (result: String) :=\nlet result_split := result.splitOn \" \";\nlet numbers_split := numbers.splitOn \" \";\nlet result_mapped_to_numbers := result_split.map word_to_number_map;\nlet numbers_as_str_mapped_to_numbers := numbers_split.map word_to_number_map;\n¬ -1 ∈ numbers_as_str_mapped_to_numbers →\nresult_split.length = numbers_split.length ∧\n(∀ n, n ∈ numbers_as_str_mapped_to_numbers →\n∃ m, m ∈ result_mapped_to_numbers) ∧\n(∀ n, n ∈ result_mapped_to_numbers →\n∃ m, m ∈ numbers_as_str_mapped_to_numbers) ∧\n(∀ n, numbers_as_str_mapped_to_numbers.count n = result_mapped_to_numbers.count n) ∧\nis_sorted_asc result_mapped_to_numbers = true;\n-- program termination\n∃ result, implementation numbers = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (numbers: String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"three one five\" = \"one three five\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 19,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:02c35564568e180d2ec04187eb2b6bf3db1040c3e18c46ad81c0b84b1b916fd7",
+  "timing": 75.3550922786817,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:fe379f009f995c34aaca50a250427a97a489471dc9e3f2c4b07072f894180a12",
+    "status": "OK",
+    "result": "sha256:01bf54f553ac89f199a42d40da3407cc7ed1f94c9eca4ebc5eb5cdf1f77f684d"
+  },
+  "exception": null
+}

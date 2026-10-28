@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef decimal_to_binary(decimal: nat) -> str\n\"\"\"You will be given a number in decimal form and your task is to convert it to\nbinary format. The function should return a string, with each character representing a binary\nnumber. Each character in the string will be '0' or '1'.\n\nThere will be an extra couple of characters 'db' at the beginning and at the end of the string.\nThe extra characters are there to help with the format.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → String)\n-- inputs\n(decimal: Nat) :=\n-- spec\nlet spec (result: String) :=\n  4 < result.length ∧\n  result.drop (result.length - 2) = \"db\" ∧\n  result.take 2 = \"db\" ∧\n  let resultTrimmed := (result.toList.drop 2).dropLast.dropLast.map (fun c => c.toNat - '0'.toNat)\n  decimal = Nat.ofDigits 2 resultTrimmed.reverse\n-- program termination\n∃ result, implementation decimal = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (decimal: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 0 = \"db0db\"\n-- #test implementation 32 = \"db100000db\"\n-- #test implementation 103 = \"db1100111db\"\n-- #test implementation 15 = \"db1111db\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 79,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7cb284107b2bcd88bf5f37e41ddd32c73a98a2aef1bc20f12ec706002ab6bbe9",
+  "timing": 57.799005650915205,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:2b97c0fec2b7c8ab825fb6fdf257f97a6069ef6d3b777d2cc91824c71650631f",
+    "status": "OK",
+    "result": "sha256:58f4ff5a2f4231fc486f4aa040107d3f695c5ef9630db43c0c5b87af5fd65933"
+  },
+  "exception": null
+}

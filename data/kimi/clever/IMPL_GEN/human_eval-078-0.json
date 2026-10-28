@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef hex_key(num: str) -> int\n\"\"\"You have been tasked to write a function that receives\na hexadecimal number as a string and counts the number of hexadecimal\ndigits that are primes (prime number, or a prime, is a natural number\ngreater than 1 that is not a product of two smaller natural numbers).\nHexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.\nPrime numbers are 2, 3, 5, 7, 11, 13, 17,...\nSo you have to determine a number of the following digits: 2, 3, 5, 7,\nB (=decimal 11), D (=decimal 13).\nNote: you may assume the input is always correct or empty string,\nand symbols A,B,C,D,E,F are always uppercase.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Int)\n-- inputs\n(num: String) :=\n-- spec\nlet spec (result: Int) :=\n  let num_val (ch : Char) :=\n    if ch.isDigit then\n      (ch.toNat - '0'.toNat)\n    else if ch.isUpper then\n      ((ch.toNat - 'A'.toNat) + 10)\n    else 0;\n  0 < num.length →\n  (\n    let char_val := num_val num.toList[0]!;\n    let is_prime_hex := Nat.Prime char_val ∧ char_val ≤ 15;\n    (is_prime_hex →\n      (1 < num.length → result = 1 + implementation (num.drop 1)) ∧\n      (1 = num.length → result = 1)) ∧\n    (¬is_prime_hex →\n      (1 < num.length → result = implementation (num.drop 1)) ∧\n      (1 = num.length → result = 0))\n  )\n-- program termination\n∃ result, implementation num = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (num: String) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"AB\" = 1\n-- #test implementation \"1077E\" = 2\n-- #test implementation \"ABED1A33\" = 4\n-- #test implementation \"2020\" = 2\n-- #test implementation \"123456789ABCDEF0\" = 6\n-- #test implementation \"112233445566778899AABBCCDDEEFF00\" = 12\n-- #test implementation \"\" = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 78,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5b94560229507e46a77c53a24f02393d63dab0c1ee5d8c8a2ce7ef1ef00313f5",
+  "timing": 96.13040965097025,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:4b80e8a039a200643b0fba905ba37b77e61aedbdfad70d6ae8579c046c50941d",
+    "status": "OK",
+    "result": "sha256:81ffd9ce4a1a91818898e414f5b5c9f4fe0c700e0b445820fc17c16b3622436c"
+  },
+  "exception": null
+}

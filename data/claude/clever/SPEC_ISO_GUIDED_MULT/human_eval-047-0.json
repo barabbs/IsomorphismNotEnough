@@ -1,0 +1,63 @@
+{
+  "text": "sha256:a8a94f6f62de91e67f8b9e834bee9273a2da264a6b65b99bd777e421f0e7cc02",
+  "info": {
+    "dataset": "clever",
+    "id": 47,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:a29d4a86efe15d505bec5148366cc048265d07f405c974ad79bf02b005328fd6",
+  "timing": 828.3519977799733,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean --deep=stuck",
+    "claude": "sha256:5aa2bb1a778be5b7d3134a212a01e79fdf47c3b025208fac5fe1c91a1e5bc7af",
+    "status": [
+      "ISSUE",
+      "ISSUE",
+      "ISSUE"
+    ],
+    "result": "sha256:a52cafd0b6af6120bbb880fda529610974043c74be66a14b89fac60891dba0f7",
+    "raw_status": "0:ISSUE\n1:ISSUE\n2:ISSUE",
+    "comment": [
+      "PROB",
+      "PROB",
+      "BOTH"
+    ],
+    "validation": [
+      {
+        "problem_id": "47",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:093b9a8d23a5f43c0a4e61270bab973a0755e78cf64d13ad103d0f8a79f06c93"
+      },
+      {
+        "problem_id": "47",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:b8a6c34f035f5d27f70f04a9f6ad84e8c38a9f6b6df2d2029065488555277e36"
+      },
+      {
+        "problem_id": "47",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:ebcd006383f1e8963cc26fba74041f559d210617f054c38f06f11d2664cca2a2"
+      }
+    ],
+    "analysis": [
+      "WRONG",
+      "WRONG",
+      [
+        "WRONG",
+        "WRONG"
+      ]
+    ]
+  },
+  "exception": null
+}

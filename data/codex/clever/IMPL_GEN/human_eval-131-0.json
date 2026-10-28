@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef digits(n: int) -> int\n\"\"\"Given a positive integer n, return the product of the odd digits.\nReturn 0 if all digits are even.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  0 < n →\n  (n < 10 → (n % 2 = 1 → result = n) ∧ (n % 2 = 0 → result = 0)) ∧\n  (10 ≤ n →\n    let digit := n % 10;\n    let rest := n / 10;\n    (digit % 2 = 1 →\n      if (Nat.toDigits 10 rest).all (fun x => Even (x.toNat - '0'.toNat))\n        then impl rest = 0 ∧ result = digit\n      else\n        result = impl rest * digit)\n    ∧\n    (digit % 2 = 0 →\n      result = impl rest))\n-- program termination\n∃ result, impl n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = 1\n-- #test implementation 4 = 0\n-- #test implementation 235 = 15\n",
+  "info": {
+    "dataset": "clever",
+    "id": 131,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f0215353c2cb64918d792e6d21545b42b6d05d248d1862dc9dd44d218e43333e",
+  "timing": 134.57088210294023,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:1ded952edc6858d124436089a6df0cbf1198435c2bfb4625fff8ddbcc8391154",
+    "status": "OK",
+    "result": "sha256:a3e380de29eaf780a2b48d9c6ffcd9c610b628353fe80d8666d79457b7a61cc3"
+  },
+  "exception": null
+}

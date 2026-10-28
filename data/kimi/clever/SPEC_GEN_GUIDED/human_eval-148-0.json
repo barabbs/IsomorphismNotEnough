@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef bf(planet1: str, planet2: str) -> List[str]\n\"\"\"There are eight planets in our solar system: the closest to the Sun\nis Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn,\nUranus, Neptune.\nWrite a function that takes two planet names as strings planet1 and planet2.\nThe function should return a tuple containing all planets whose orbits are\nlocated between the orbit of planet1 and the orbit of planet2, sorted by\nthe proximity to the sun.\nThe function should return an empty tuple if planet1 or planet2\nare not correct planet names.\n\n>>> bf('Jupiter', 'Neptune')\n('Saturn', 'Uranus')\n>>> bf('Earth', 'Mercury')\n'Venus'\n>>> bf('Mercury', 'Uranus')\n('Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn')\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String → List String)\n-- inputs\n(planet1: String)\n(planet2: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"Jupiter\" \"Neptune\" = [\"Saturn\", \"Uranus\"]\n-- #test implementation \"Earth\" \"Mercury\" = [\"Venus\"]\n-- #test implementation \"Mercury\" \"Uranus\" = [\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 148,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:03d40e94a1ea42e9c8252ded8f969b71e4f20ae37a1ca76c56da7d7e82431549",
+  "timing": 118.80374652566388,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:70d894ff7bcec67fabd8b6a9036069eaab7339821244f50fef5bc44a0c7996b8",
+    "status": "OK",
+    "result": "sha256:e888d40fc316b16abcfda92f8fa0793544b556acfd304458f7df1a6e2d1e04d1"
+  },
+  "exception": null
+}

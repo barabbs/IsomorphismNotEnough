@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef intersection(interval1: Tuple[Int, Int], interval2: Tuple[Int, Int]) -> str\n\"\"\"You are given two intervals,\nwhere each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\nThe given intervals are closed which means that the interval (start, end)\nincludes both start and end.\nFor each given interval, it is assumed that its start is less or equal its end.\nYour task is to determine whether the length of intersection of these two\nintervals is a prime number.\nExample, the intersection of the intervals (1, 3), (2, 4) is (2, 3)\nwhich its length is 1, which not a prime number.\nIf the length of the intersection is a prime number, return \"YES\",\notherwise, return \"NO\".\nIf the two intervals don't intersect, return \"NO\".\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: Int \u00d7 Int \u2192 Int \u00d7 Int \u2192 String)\n-- inputs\n(interval1: Int \u00d7 Int)\n(interval2: Int \u00d7 Int) :=\n-- spec\nlet spec (result: String) :=\nlet (s1, e1) := interval1;\nlet (s2, e2) := interval2;\ns1 \u2264 e1 \u2192 s2 \u2264 e2 \u2192\nlet intersectionStart := max s1 s2;\nlet intersectionEnd := min e1 e2;\nlet hasIntersection := intersectionStart \u2264 intersectionEnd;\nlet isPrime := Nat.Prime (intersectionEnd - intersectionStart).toNat;\n(result = \"YES\" \u2194 hasIntersection \u2227 isPrime) \u2227\n(result = \"NO\" \u2194 \u00achasIntersection \u2228 \u00acisPrime) \u2227\n(result = \"YES\" \u2228 result = \"NO\")\n-- program terminates\n\u2203 result, impl interval1 interval2 = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (interval1: Int \u00d7 Int) (interval2: Int \u00d7 Int) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation (1, 2) (2, 3) = \"NO\"\n-- #test implementation (-1, 1) (0, 4) = \"NO\"\n-- #test implementation (-3, -1) (-5, 5) = \"YES\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 127,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:be2dbce4dbce7407c65f8f56fcf2369a71c2cd4f4013081a426028b022e4082a",
+  "timing": 69.70061505300691,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/kq9jm0x5/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:22d5c6833f21497b1d5646a5f79b142f0d051ad922e91c92988d1f84e64066fb",
+    "status": "OK",
+    "result": "sha256:ee88a766fa4d64e09ea7e8d1330b9b2ca0918aace99611af0336981096e93e39"
+  },
+  "exception": null
+}

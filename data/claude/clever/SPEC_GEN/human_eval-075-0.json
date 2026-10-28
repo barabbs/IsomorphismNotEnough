@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_multiply_prime(a: int) -> bool\n\"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\nand false otherwise. Knowing that (a) is less then 100.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int \u2192 Bool)\n-- inputs\n(a: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 75,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e8925b12292093bf26d53033eb2de6fc42a04c3498fbe2d880758eef432649bc",
+  "timing": 192.75454613899637,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/mzpsv6dx/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:4e5fe34a76993167d3ae8630167f759c9aef3c5d3ca6192f3c2f5b82850270c1",
+    "status": "OK",
+    "result": "sha256:750019c2a654fc340d4a5e9aab4e80ee2b8e80d61c0a4ac1136c7dc94eaacef4"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_coords_sorted(lst : List[List[int]], x : int) -> List[Tuple[int, int]]\n\"\"\"You are given a 2 dimensional data, as a nested lists,\nwhich is similar to matrix, however, unlike matrices,\neach row may contain a different number of columns.\nGiven lst, and integer x, find integers x in the list,\nand return list of tuples, [(x1, y1), (x2, y2) ...] such that\neach tuple is a coordinate - (row, columns), starting with 0.\nSort coordinates initially by rows in ascending order.\nAlso, sort coordinates of the row by columns in descending order.\n\n>>> get_coords_sorted([[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 1, 6], [1, 2, 3, 4, 5, 1]], 1)\n[[0, 0], [1, 4], [1, 0], [2, 5], [2, 0]]\n>>> get_coords_sorted([], 1)\n[]\n>>> get_coords_sorted([[], [1], [1, 2, 3]], 3)\n[[2, 2]]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List (List Int) → Int → List (Nat × Nat))\n-- inputs\n(lst: List (List Int))\n(x: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 1, 6], [1, 2, 3, 4, 5, 1]] 1 = [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]\n-- #test implementation [] 1 = []\n-- #test implementation [[], [1], [1, 2, 3]] 3 = [(2, 2)]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 87,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:f9e47fed116cde496528c5550598503876870eb3a416665073be08d82dba2244",
+  "timing": 260.26113418099703,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex-pre": "sha256:906dabf87df0e0a6847c4880f4c23a4223be389929ef1d7b82b25447135faef8",
+    "status": "OK",
+    "result": "sha256:c6d312d1c4301db2d9d68d894d46bf13fed3a92c9714996b2bffa66de537c6a4"
+  },
+  "exception": null
+}

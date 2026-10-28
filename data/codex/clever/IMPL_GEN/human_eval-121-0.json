@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solution(lst: List[int]) -> int\n\"\"\"Given a non-empty list of integers, return the sum of all of the odd elements that\nare in even positions.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Int) :=\nlst ≠ [] → ∀ i,  i < lst.length ∧ i % 2 = 0 →\n  (lst.length = 1 → impl lst = 0) ∧\n  (i + 1 < lst.length →\n    (lst[i + 1]! % 2 = 1 →\n    impl (lst.drop i) = lst[i + 1]! + (if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)) ∧\n    (lst[i + 1]! % 2 = 0 →\n    impl (lst.drop i) = if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)\n  )\n-- program terminates\n∃ result, impl lst = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int) : Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ([5, 8, 7, 1]: List Int) = 12\n-- #test implementation ([3, 3, 3, 3, 3]: List Int) = 9\n-- #test implementation ([30, 13, 24, 321]: List Int) = 0\n",
+  "info": {
+    "dataset": "clever",
+    "id": 121,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f448e762d17123cce3bfa77d6256c32c4c67a2ec90dbb70b2d285c0c86e5470d",
+  "timing": 91.0012536039576,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:0fb5ea05ebf0de61eed0c54ed2d5810a33d527c28c4e0b6d77bd8c6efb7198c5",
+    "status": "OK",
+    "result": "sha256:c1cced4cdbafbdb012268cf7d441c96ddc77927ffea9184313978229c1918046"
+  },
+  "exception": null
+}

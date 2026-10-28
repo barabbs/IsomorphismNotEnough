@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"Please write a function that sorts an array of non-negative integers according to\nnumber of ones in their binary representation in ascending order.\nFor similar number of ones, sort based on decimal value.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Nat \u2192 List Nat)\n-- inputs\n(lst: List Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 116,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5c7fbee9fb920f6416b846466e416fce292c8233d3a78fbc9b56bc5854677c25",
+  "timing": 124.72563660801097,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/sgg757_g/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:22f77605b07048a801795568c3392513fbd5200063e38753c64ce7a5efb40aa6",
+    "status": "OK",
+    "result": "sha256:b8050bd2d6e75bf5c96e52879ca30eca17ce8e7b2ca800be4e36dfa18d0ce37c"
+  },
+  "exception": null
+}

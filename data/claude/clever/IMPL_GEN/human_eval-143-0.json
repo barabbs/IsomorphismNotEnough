@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef words_in_sentence(sentence: str) -> str\n\"\"\"You are given a string representing a sentence,\nthe sentence contains some words separated by a space,\nand you have to return a string that contains the words from the original sentence,\nwhose lengths are prime numbers,\nthe order of the words in the new string should be the same as the original one.\n\nConstraints:\n* 1 <= len(sentence) <= 100\n* sentence contains only letters\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(sentence: String) :=\n-- spec\nlet spec (result: String) :=\nlet words := sentence.splitOn;\nlet result_words := result.splitOn;\n  1 \u2264 sentence.length \u2192 sentence.length \u2264 100 \u2192\n  sentence.all (fun x => Char.isAlpha x) \u2192\n  result_words.length \u2264 words.length \u2227\n  (\u2200 word \u2208 result_words, word \u2208 words \u2227 Nat.Prime word.length) \u2227\n  match result_words with\n  | [] => \u2200 word \u2208 words, \u00ac(Nat.Prime word.length)\n  | head :: tail => if Nat.Prime head.length \u2227 head = words[0]! then String.join tail = impl (String.join (words.drop 1))\n    else result = impl (String.join (words.drop 1))\n-- program termination\n\u2203 result, impl sentence = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (sentence : String) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"This is a test\" = \"is\"\n-- #test implementation \"lets go for swimming\" = \"go for\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 143,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:af56cef71c78db15d99334c44f0d4bd3a734223fcd09cb6ead49002236b0cd99",
+  "timing": 75.49597470401204,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/kzg67bui/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:0535babb2b322588c0c961c511a4a6614dcce812fe2c04ade0f60ce4bfead169",
+    "status": "OK",
+    "result": "sha256:81c63f44160941956641074df6a4d7df9a7dd57cc54424768b572e19685abbaa"
+  },
+  "exception": null
+}

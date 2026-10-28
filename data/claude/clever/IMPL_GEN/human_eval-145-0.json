@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef order_by_points(nums: List[int]) -> List[int]\n\"\"\"Write a function which sorts the given list of integers\nin ascending order according to the sum of their digits.\nNote: if there are several items with similar sum of their digits,\norder them based on their index in original list.\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef digit_sum (n : Int) : Int :=\n  let ds := (toString n.natAbs).toList.map fun c => c.toNat - Char.toNat '0'\n  match ds with\n  | [] => 0\n  | d :: ds' =>\n    let tail := ds'.foldl (\u00b7 + \u00b7) 0\n    if n < 0 then Int.ofNat tail - Int.ofNat d\n    else Int.ofNat (d + tail)\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int \u2192 List Int)\n-- inputs\n(nums: List Int) :=\n-- spec\nlet spec (result: List Int) :=\nList.Perm nums result \u2227\nmatch result with\n| [] => nums = []\n| head::tail =>\n  let head_sum := digit_sum head;\n  (\u2200 num \u2208 nums,\n    let sum := digit_sum num;\n    sum > head_sum \u2228\n   (sum = head_sum \u2227 nums.idxOf num \u2265 nums.idxOf head))\n  \u2227 impl (nums.erase head) = tail\n-- program termination\n\u2203 result, impl nums = result \u2227\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (nums: List Int) : List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 11, -1, -11, -12] = [-1, -11, 1, -12, 11]\n-- #test implementation [] = []\n",
+  "info": {
+    "dataset": "clever",
+    "id": 145,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3ee0c706bc80e2d2aad4215fb25528c3b8200ab30e645a73d72238527a1312ca",
+  "timing": 250.94262560099014,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/anaxz_o8/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:4adbac590663ebcf7cd5441c09c5b5621f0a2b72554a6e5f25a94070a59ecd5d",
+    "status": "OK",
+    "result": "sha256:54198fd678cc1c06d3a659a32bf5cfc71770542314bfd5771217747d554b68f3"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef monotonic(numbers: List[int]) -> bool\n\"\"\"Return True if list elements are monotonically increasing or decreasing.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Bool)\n-- inputs\n(numbers: List Int) :=\nlet non_ordered := \u2203 i j,\ni < numbers.length - 1 \u2227\nj < numbers.length - 1 \u2227\n(numbers[i]! < numbers[i+1]!) \u2227\n(numbers[j+1]! < numbers[j]!);\n-- spec\nlet spec (result: Bool) :=\n  (1 < numbers.length) \u2192\n  (result \u2194 \u00acnon_ordered);\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : Bool :=\n\n  let pairs := numbers.zip numbers.tail\n  let allNonDecreasing := pairs.all fun (a, b) => a \u2264 b\n  let allNonIncreasing := pairs.all fun (a, b) => b \u2264 a\n  allNonDecreasing || allNonIncreasing\n\n\n-- [TEST_CASES]\n\n#test implementation [1, 2, 4, 20] = true\n#test implementation [1, 20, 4, 10] = false\n#test implementation [4, 1, 0, -10] = true\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 57,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:ca1411cbdd973b9f40141acd5db63196a42fc57da0f6aae0afc4afea27a07b6c",
+  "timing": 560.6901366329985,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:9ae95dc21f6e1d6c13c2970bdb3a3e28410377e2adeda26afbcfef9f05d356ca",
+    "status": "OK",
+    "result": "sha256:982be9a849d12ed09878fe8a5c214582a7c2ab12b8f29f5c77008598f8933b74",
+    "validation": [
+      {
+        "problem_id": "57",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:32e1860a52c05918ad213f277076513589416a34e849777dd5c9d636b771ab41"
+      }
+    ]
+  },
+  "exception": null
+}

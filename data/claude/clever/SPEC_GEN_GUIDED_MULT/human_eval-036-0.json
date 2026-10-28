@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fizz_buzz(n: int)\n\"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n\n>>> fizz_buzz(50)\n0\n>>> fizz_buzz(78)\n2\n>>> fizz_buzz(79)\n3\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 50 = 0\n-- #test implementation 78 = 2\n-- #test implementation 79 = 3\n",
+  "info": {
+    "dataset": "clever",
+    "id": 36,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:7e57d8c511cc948bfecb89f4f7bc0b673b8279ac3329eede5c1a5b3c3b0dadb1",
+  "timing": 186.09635100100422,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/g51w1tn3/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:78004189397a090725e0ceee9bb517a696ae8fc0ce0bb285e0aa69bed3979bd9",
+    "status": "OK",
+    "result": "sha256:2ed94f826e059dcb8f5e58aac8587f5393443aee29bc70a92f382009783eab34"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_positive(l: list)\n\"\"\"Return only positive numbers in the list.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  result.all (\u03bb x => x > 0 \u2227 x \u2208 numbers) \u2227\n  numbers.all (\u03bb x => x > 0 \u2192 x \u2208 result) \u2227\n  result.all (\u03bb x => result.count x = numbers.count x);\n-- program termination\n\u2203 result,\n  implementation numbers = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int): List Int :=\n\nnumbers.filter (\u00b7 > 0)\n\n\n-- [TEST_CASES]\n\n#test implementation [(-1), 2, (-4), 5, 6] = [2, 5, 6]\n#test implementation [5, 3, (-5), 2, (-3), 3, 9, 0, 123, 1, (-10)] = [5, 3, 2, 3, 9, 123, 1]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 30,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:92092a4dc49da320edca8f09a13e54e41b830c901b28ac2e6634076167301d26",
+  "timing": 194.54631015102495,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/7fbogsk5/problem.lean --deep=stuck",
+    "claude": "sha256:e0a273d4e78ca5ac89e67575e0aaf80e7ea481a3dcea9a40c7d4604555fa58ec",
+    "status": "OK",
+    "result": "sha256:ed6e72a1e27efac50993d94363f02a8653b46219beb560338ad96befa94663b5",
+    "validation": [
+      {
+        "problem_id": "30",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:cba612f2ac791a0f6af77e98334587b48f332f78d77b2e9b8742459edac2a37f"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef factorize(n: int) -> List[int]\n\"\"\"Return list of prime factors of given integer in the order from smallest to largest.\nEach of the factors should be listed number of times corresponding to how many times it appeares in factorization.\nInput number should be equal to the product of all factors\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → List Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: List Nat) :=\n2 ≤ n →\n(result.prod = n ∧\nList.Sorted Nat.le result ∧\nresult.all (λ i => n % i = 0 ∧ Nat.Prime i));\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : List Nat :=\n\nn.primeFactorsList\n\n\n-- [TEST_CASES]\n\n#test implementation 8 = [2, 2, 2]\n#test implementation 25 = [5, 5]\n#test implementation 70 = [2, 5, 7]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 25,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:4e0ad953a9a142818500c79d0d68164454152ecdd229190e64362a2776168650",
+  "timing": 329.32127046817914,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:d5c49432a3f15d0b7d5b6e41de5bdac394600654f93734aea2991da06591d6cc",
+    "status": "OK",
+    "result": "sha256:0828a87d60b2cbd0b9371d7a252ae5495f596fed03bebac80f8c8326e02ea20a",
+    "validation": [
+      {
+        "problem_id": "25",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:b865c3a2c6dea5c1d7a92b442645c78c93a1c05dfd0053952d9f9dbee27e9101"
+      }
+    ]
+  },
+  "exception": null
+}

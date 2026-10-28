@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef modp(n: nat, p: nat) -> nat\n\"\"\"Return 2^n modulo p (be aware of numerics).\n\n>>> modp(3, 5)\n3\n>>> modp(1101, 101)\n2\n>>> modp(0, 101)\n0\n>>> modp(100, 101)\n1\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat → Nat → Nat)\n-- inputs\n(n p: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 3 5 = 3\n-- #test implementation 1101 101 = 2\n-- #test implementation 0 101 = 1\n-- #test implementation 3 11 = 8\n-- #test implementation 100 101 = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 49,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:73cf4c29118ed73117d0891cacc0610355850f7974df79fd9ff4b5b4e71ef19e",
+  "timing": 74.59117338014767,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:9b6c06cc7c20769b38d254866b4259be742218bbb25f7676c114695f00cad2c7",
+    "status": "OK",
+    "result": "sha256:01bd96b2504e2fb09d18a71ceb019417660e64923d8f86b9ea9a71bb508db9be"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fizz_buzz(n: int)\n\"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat \u2192 Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 36,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e86ebab972f5e59bf526d80503bab3a9528ffc30e6b9e7cada92018a160e9fdb",
+  "timing": 74.2208105030004,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/gd4fjo0r/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:d6d971121439460e652cd618425e1feddf6e35b30f88f8813bc7184e70bcc858",
+    "status": "OK",
+    "result": "sha256:975a1fb826c04ba3b8b23805b319056caeaff8797611e4b4127962d5695695ea"
+  },
+  "exception": null
+}

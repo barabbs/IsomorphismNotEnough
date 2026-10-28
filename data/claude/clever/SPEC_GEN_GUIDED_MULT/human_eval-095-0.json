@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef check_dict_case(s : dict[str, str]) -> bool\n\"\"\"Given a dictionary, return True if all keys are strings in lower\ncase or all keys are strings in upper case, else return False.\nThe function should return False is the given dictionary is empty.\nNote(George): Modified the problem to use strings only for both keys and values.\n\n>>> check_dict_case({'a': 'apple', 'b': 'banana'})\nTrue\n>>> check_dict_case({'a': 'apple', 'A': 'banana', 'B': 'banana'})\nFalse\n>>> check_dict_case({'a': 'apple', '8': 'banana'})\nFalse\n>>> check_dict_case({'Name': 'John', 'Age': '36', 'City': 'Houston'})\nFalse\n>>> check_dict_case({'STATE': 'NC', 'ZIP': '12345'})\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Std.HashMap String String \u2192 Bool)\n-- inputs\n(D: Std.HashMap String String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"b\", \"banana\")]) = true\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"A\", \"banana\"), (\"B\", \"banana\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"a\", \"apple\"), (\"8\", \"banana\"), (\"a\", \"apple\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"Name\", \"John\"), (\"Age\", \"36\"), (\"City\", \"Houston\")]) = false\n-- #test implementation (Std.HashMap.ofList [(\"STATE\", \"NC\"), (\"ZIP\", \"12345\")]) = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 95,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:fe44a3865c83cbbaede7b32ea63ed7504f65de5fab7e96d98d0360920f7fda65",
+  "timing": 157.78752478898969,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/3lmj98ef/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:846dfcb49ad34e9959c0343a514680788d72c2a052d0b2765ae540de3895734f",
+    "status": "OK",
+    "result": "sha256:d784cb2cce040a4138445ce66acc88ac6142ec960d2228e90b2f504519cebf49"
+  },
+  "exception": null
+}

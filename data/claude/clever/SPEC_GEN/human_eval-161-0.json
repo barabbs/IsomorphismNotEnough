@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(string : String) -> String\n\"\"\"You are given a string s.\nif s[i] is a letter, reverse its case from lower to upper or vise versa,\notherwise keep it as it is.\nIf the string contains no letters, reverse the string.\nThe function should return the resulted string.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String \u2192 String)\n-- inputs\n(s : String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 161,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:abfb96858615cb5c23ac22e066cb5e222de090cfb912051d1984c899092e52fa",
+  "timing": 74.64420752700244,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/cxopf1bw/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:dd01a69ed4ac51f5fd59172079efabcfac05d2dd6c3d185cc4b62ba679c36291",
+    "status": "OK",
+    "result": "sha256:3ba47cb3ad437b013e08be444d37e3c94a424a265ec041d54443600900d2bdf1"
+  },
+  "exception": null
+}

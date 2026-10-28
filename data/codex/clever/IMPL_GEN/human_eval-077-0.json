@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef iscube(a: int) -> bool\n\"\"\"Write a function that takes an integer a and returns True if this integer is a cube of some integer number.\nNote: you may assume the input is always valid.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  result ↔ exists n: Int, a = n^3\n-- program termination\n∃ result, implementation a = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (a: Int) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 1 = True\n-- #test implementation 2 = False\n-- #test implementation (-1) = True\n-- #test implementation 64 = True\n-- #test implementation 180 = False\n-- #test implementation 1000 = True\n-- #test implementation 0 = True\n-- #test implementation 1729 = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 77,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d4361e8ef7185913e91a5e5ea2411789100bbdac3a095eb92a5e82b147b11f03",
+  "timing": 101.89673222461715,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:98cc385a1dd7f95894a8a05d2f9e8015851e2bab8fa524e78d2ee11add31e023",
+    "status": "OK",
+    "result": "sha256:aafeef7d34bab0740a2f70e06137e0d74f54c84c380238c07876438b91f82631"
+  },
+  "exception": null
+}

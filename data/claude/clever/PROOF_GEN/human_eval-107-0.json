@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_palindrome(n: nat) -> (nat, nat)\n\"\"\"Given a positive integer n, return a tuple that has the number of even and odd\ninteger palindromes that fall within the range(1, n), inclusive.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat \u00d7 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat \u00d7 Nat) :=\n  let is_palindrome (k: Nat): Prop :=\n    List.Palindrome (Nat.digits 10 k);\n  let even_palindrome (k: Nat): Prop :=\n    (Even k) \u2227 (is_palindrome k);\n  let odd_palindrome (k: Nat): Prop :=\n    (Odd k) \u2227 (is_palindrome k);\n  n > 0 \u2192\n  (1 < n \u2192\n    let impl_n_minus_1 := implementation (n - 1);\n    ((even_palindrome n) \u2192 result.1 = 1 + impl_n_minus_1.1) \u2227\n    ((odd_palindrome n) \u2192 result.2 = 1 + impl_n_minus_1.2) \u2227\n    (\u00ac (odd_palindrome n) \u2192 result.2 = impl_n_minus_1.2) \u2227\n    (\u00ac (even_palindrome n) \u2192 result.1 = impl_n_minus_1.1))\n  \u2227\n  (n = 1 \u2192 (result.1 = 0) \u2227 (result.2 = 1));\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat \u00d7 Nat :=\n\n  match n with\n  | 0 => (0, 0)\n  | 1 => (0, 1)\n  | n + 2 =>\n    let prev := implementation (n + 1)\n    let k := n + 2\n    let digits := Nat.digits 10 k\n    if digits == digits.reverse then\n      if k % 2 == 0 then (prev.1 + 1, prev.2)\n      else (prev.1, prev.2 + 1)\n    else prev\n\n\n-- [TEST_CASES]\n\n#test implementation 123 = (8, 13)\n#test implementation 12 = (4, 6)\n#test implementation 3 = (1, 2)\n#test implementation 63 = (6, 8)\n#test implementation 25 = (5, 6)\n#test implementation 19 = (4, 6)\n#test implementation 9 = (4, 5)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 107,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3bc436275d5c71209fde8ce6b9c1530dfebc05ba7d6ea75599a478291a82555f",
+  "timing": 289.0607064239448,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:8cd8ae1a4c59fa1dce29485ea9fa497ef09e0c70d0328695cb58ed0fc1f99a0f",
+    "status": "OK",
+    "result": "sha256:a86fcb2e33f960764b93bd0fc0e1d795576501666f899376934bb4a2b780fb66",
+    "validation": [
+      {
+        "problem_id": "107",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:134fb00f8be2b0fee1904a081146f46e638c5f3f8832d63749d7a6bea93999a3"
+      }
+    ]
+  },
+  "exception": null
+}

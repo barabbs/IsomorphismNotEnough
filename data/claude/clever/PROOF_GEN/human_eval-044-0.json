@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef change_base(x: nat, base: nat) -> str\n\"\"\"Change numerical base of input number x to base.\nreturn string representation after the conversion.\nbase numbers are less than 10.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat -> String)\n-- inputs\n(x base: Nat) :=\n-- spec\nlet spec (result: String) :=\nlet result_array := result.toList.map (fun c => c.toNat - '0'.toNat);\nlet pow_array := (List.range result_array.length).map (fun i => base^(result_array.length - i - 1) * result_array[i]!);\nlet pow_sum := pow_array.sum;\n(0 < base ∧ base ≤ 10) ∧\n(∀ i, i < result_array.length →\nresult_array[i]! < base ∧ 0 ≤ result_array[i]! →\npow_sum = x);\n-- program termination\n∃ result, implementation x base = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x base: Nat) : String :=\n\n  if base ≤ 1 then toString x\n  else if _ : x < base then toString x\n  else implementation (x / base) base ++ toString (x % base)\ntermination_by x\ndecreasing_by\n  apply Nat.div_lt_self\n  · omega\n  · omega\n\n\n-- [TEST_CASES]\n\n#test implementation 8 3 = \"22\"\n#test implementation 8 2 = \"1000\"\n#test implementation 7 2 = \"111\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x base : Nat)\n: problem_spec implementation x base\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 44,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:749d3b761ab996a41c26c5dde752ccc4b68600b8f4661e384decf3d87b0f083e",
+  "timing": 282.4155697840033,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:a68b4c99238276cf96ee8dbae9c70d4f1570727c594c96577658967d389a0e2f",
+    "status": "ISSUE",
+    "result": "sha256:0a2d7ac662c8ccdf02c56854342a0b017cc9434cffbffc4afe6964114751e2dd",
+    "validation": [
+      {
+        "problem_id": "44",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:478daf159889cc4a8daae9e50dafdb971e07e16d408f97ffcf5b243328d21987"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

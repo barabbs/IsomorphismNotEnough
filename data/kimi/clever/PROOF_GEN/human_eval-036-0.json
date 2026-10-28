@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef fizz_buzz(n: int)\n\"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  (n = 0 → result = 0) ∧\n  (0 < n → result = implementation (n - 1) →\n    ((n - 1) % 11 ≠  0 ∧  (n - 1) % 13 ≠  0) ∨ (n - 1).repr.count '7' = 0) ∧\n  (0 < n → result ≠ implementation (n - 1) →\n    ((n - 1) % 11 = 0 ∨  (n - 1) % 13 = 0) ∧\n    result - implementation (n - 1) = (n - 1).repr.count '7')\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\nif n = 0 then 0\nelse\n  let prev := implementation (n - 1)\n  if (n - 1) % 11 = 0 ∨ (n - 1) % 13 = 0 then\n    prev + (n - 1).repr.count '7'\n  else\n    prev\n\n\n-- [TEST_CASES]\n\n#test implementation 50 = 0\n#test implementation 78 = 2\n#test implementation 79 = 3\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 36,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2a3a461c7a7d0ee62a8ea02a833b785d8fe3e6257f64bff720e0b74132fdb3b7",
+  "timing": 3797.2724177353084,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:c3450b9b062c686756bbc1eba99ff2a9ca93942c771d4fcee621a976a8ab0d8e",
+    "status": "OK",
+    "result": "sha256:fdb68c0615cb7c0173611846509747b9b334a3c5f6af9055cf75567272fbba73",
+    "validation": [
+      {
+        "problem_id": "36",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:74cd299632b677ba940ffe11b069e9d013471a1dd054830de985e3cf384d5d6d"
+      }
+    ]
+  },
+  "exception": null
+}

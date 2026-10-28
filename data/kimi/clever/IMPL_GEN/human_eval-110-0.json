@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef exchange(lst1: list[int], lst2: list[int]) -> str\n\"\"\"In this problem, you will implement a function that takes two lists of numbers,\nand determines whether it is possible to perform an exchange of elements\nbetween them to make lst1 a list of only even numbers.\nThere is no limit on the number of exchanged elements between lst1 and lst2.\nIf it is possible to exchange elements between the lst1 and lst2 to make\nall the elements of lst1 to be even, return \"YES\".\nOtherwise, return \"NO\". It is assumed that the input lists will be non-empty.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int → List Int → String)\n-- inputs\n(lst1: List Int)\n(lst2: List Int) :=\n-- spec\nlet spec (result : String) :=\n  lst1 ≠ [] → lst2 ≠ [] →\n  let bool_result := ∃ exchange: List (Nat × Nat),\n    let lst1_idxs := exchange.map (fun (a, b) => a)\n    let lst2_idxs := exchange.map (fun (a, b) => b)\n    lst1_idxs.all (fun i => i < lst1.length) ∧\n    lst2_idxs.all (fun i => i < lst2.length) ∧\n    lst1_idxs.Nodup ∧\n    lst2_idxs.Nodup ∧\n    ∀ i, i < lst1.length →\n      (i ∉ lst1_idxs → Even (lst1.get! i)) ∧\n      (i ∈ lst1_idxs →\n        -- find the (a, b) in exchange where a = i\n        let i_idx := (lst1_idxs.indexesOf i).head!\n        Even (lst2.get! (lst2_idxs.get! i_idx)))\n  (bool_result → result = \"YES\") ∧\n  (result = \"NO\" → ¬ bool_result) ∧\n  (result ≠ \"YES\" ∧ result ≠ \"NO\" → False)\n-- program termination\n∃ result,\n  implementation lst1 lst2 = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst1: List Int) (lst2: List Int) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3, 4] [1, 2, 3, 4] = \"YES\"\n-- #test implementation [1, 2, 3, 4] [1, 5, 3, 4] = \"NO\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 110,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:eceac31944a34053b35c08bbd37149c4a82e1e3db3ca3bc79aa4c5e27190296c",
+  "timing": 62.42423785291612,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:75534b08eefad8b160b83765cdad8148978e84a49118ed8f318cca3d0d9762c7",
+    "status": "OK",
+    "result": "sha256:ce45eadb39603a55b7817863738e38577c74041a2b4fe346001cd9a4b825cd6c"
+  },
+  "exception": null
+}

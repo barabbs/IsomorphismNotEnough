@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef same_chars(s0: str, s1: str) -> bool\n\"\"\"Check if two words have the same characters.\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(s0 s1: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 54,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:75f2c27264fb91c14c5f444d53d1b50d27e976ae60f4a6e83d6168303dd08218",
+  "timing": 86.97877189377323,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "codex": "sha256:cac3237602fca93192f4c0d6b1eb87c7be0f58bcebb6c5dfcc4795ea62ab1dee",
+    "status": "OK",
+    "result": "sha256:28153c0cd112777733de2d3fa33c8b78cdd5b9a7809e2c8273e5bdb0876bf920"
+  },
+  "exception": null
+}

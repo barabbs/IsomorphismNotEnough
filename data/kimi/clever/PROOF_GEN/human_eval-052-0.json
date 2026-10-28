@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_threshold(numbers: List[int], threshold: int) -> bool\n\"\"\"Return True if all numbers in the list l are below threshold t, and False otherwise.\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Int → Int → Bool)\n-- inputs\n(numbers: List Int)\n(threshold: Int) :=\n-- spec\nlet numbers_below_threshold :=\n  ∀ i, i < numbers.length → numbers[i]! < threshold;\nlet spec (res: Bool) :=\n(numbers.length = 0 → res) ∧\n(res ↔ numbers_below_threshold)\n-- program terminates\n∃ result, impl numbers threshold = result ∧\n-- return value satisfies spec\nspec result\n-- if result then spec else ¬spec\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) (threshold: Int) : Bool :=\n\nnumbers.all (fun x => x < threshold)\n\n\n-- [TEST_CASES]\n\n#test implementation ([1, 2, 4, 10]: List Int) 100 = true\n#test implementation ([1, 20, 4, 10]: List Int) 5 = false\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n(threshold: Int)\n: problem_spec implementation numbers threshold  :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 52,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:e2377f91a5f3512d5da0adddf336b3710dd3a88a83556d3f04831dcc60859e29",
+  "timing": 396.5850001210347,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:3fbfa15d9b2c183718c9c5394a6df85b7d079a875e8fca7e6a7b97b138899590",
+    "status": "OK",
+    "result": "sha256:949c7c911b0cd89f79c08b1c623e5ede84ab5b9634de12b9bad91e53805699a0",
+    "validation": [
+      {
+        "problem_id": "52",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:4b243f917010eb6a455880470ca14c7d863b282eac13e2a52681c34e1a204de8"
+      }
+    ]
+  },
+  "exception": null
+}

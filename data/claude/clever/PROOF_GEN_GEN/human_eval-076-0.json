@@ -1,0 +1,31 @@
+{
+  "text": "sha256:b72934f7c3b7679c81b2af3bd6b5847fc39593714ad759fc9349e5fadde51613",
+  "info": {
+    "dataset": "clever",
+    "id": 76,
+    "subset": "human_eval",
+    "task": "PROOF_GEN_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:101b1631935887b3a36762f15d4c8085af2d74e33a8bd5971516234c449d9eb6",
+  "timing": 211.9660933399573,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:491c4af9baa9fffa7367b1c63598308b26e683630f7b6142ed7032b3d6206066",
+    "status": "ISSUE",
+    "result": "sha256:41fdaecad1c21563948fdfeb3e1b4b7042e00177d23d53effb68d53b779bc112",
+    "validation": [
+      {
+        "problem_id": "76",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:e14341b61cb851ab708038fa46a14181637c45b6e906b621e6c658153bc67e1f",
+        "lean_code": "sha256:fa7b39a71565d978635b140f61094815ca7fd76c7bc462a0326204b78c503e2c"
+      }
+    ],
+    "comment": "IMPL",
+    "analysis": "BOUNDED_FUEL"
+  },
+  "exception": null
+}

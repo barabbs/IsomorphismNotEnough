@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef change_base(x: Nat, base: Nat) -> String\n\"\"\"Change numerical base of input number x to base.\nreturn string representation after the conversion.\nbase numbers are less than 10.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat -> String)\n-- inputs\n(x base: Nat) :=\n-- spec\nlet spec (result: String) :=\nlet result_array := result.toList.map (fun c => c.toNat - '0'.toNat);\nlet pow_array := (List.range result_array.length).map (fun i => base^(result_array.length - i - 1) * result_array[i]!);\nlet pow_sum := pow_array.sum;\n(0 < base \u2227 base \u2264 10) \u2227\n(\u2200 i, i < result_array.length \u2192\nresult_array[i]! < base \u2227 0 \u2264 result_array[i]! \u2192\npow_sum = x);\n-- program termination\n\u2203 result, implementation x base = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x base: Nat) : String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 8 3 = '22'\n-- #test implementation 8 2 = '1000'\n-- #test implementation 7 2 = '111'\n",
+  "info": {
+    "dataset": "clever",
+    "id": 44,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:a6efa235b3e1aa3277f79ff35fe6c61674a4dc9520d2101b6e09d6e749a53eea",
+  "timing": 95.78538090901566,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/lnq6o8ba/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:576755026240fedc4389cbf282ea421255dec8d6b857b5eef00a053641c7b54c",
+    "status": "OK",
+    "result": "sha256:b17605b2ab9260b0cf293dcfc6fc967548700b271eeb8ad4c0a2302db30e7d93"
+  },
+  "exception": null
+}

@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef numerical_letter_grade(grades: list[float]) -> list[str]\n\"\"\"It is the last week of the semester and the teacher has to give the grades\nto students. The teacher has been making her own algorithm for grading.\nThe only problem is, she has lost the code she used for grading.\nShe has given you a list of GPAs for some students and you have to write\na function that can output a list of letter grades using the following table:\n         GPA       |    Letter grade\n          4.0                A+\n        > 3.7                A\n        > 3.3                A-\n        > 3.0                B+\n        > 2.7                B\n        > 2.3                B-\n        > 2.0                C+\n        > 1.7                C\n        > 1.3                C-\n        > 1.0                D+\n        > 0.7                D\n        > 0.0                D-\n          0.0                E\nNote: I have included a hypothesis that Float is hashable, not sure if this will mess up proving attempts but we can modify it if so. Reviewer: please think if there's a better way.\nExample:\ngrade_equation([4.0, 3, 1.7, 2, 3.5]) ==> ['A+', 'B', 'C-', 'C', 'A-']\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Float → List String)\n-- inputs\n(grades: List Float) :=\n-- spec\nlet grade_dict : List (Float × String) :=\n  [\n    (4.0, \"A+\"),\n    (3.7, \"A\"),\n    (3.3, \"A-\"),\n    (3.0, \"B+\"),\n    (2.7, \"B\"),\n    (2.3, \"B-\"),\n    (2.0, \"C+\"),\n    (1.7, \"C\"),\n    (1.3, \"C-\"),\n    (1.0, \"D+\"),\n    (0.7, \"D\"),\n    (0.0, \"D-\")\n  ]\nlet spec (result : List String) :=\n  grades.all (fun grade => 0.0 ≤ grade ∧ grade ≤ 4.0) ∧\n  result.length = grades.length ∧\n  ∀ i, i < grades.length →\n    let number_grade := grades[i]!\n    let number_grade_keys := grade_dict.map (fun (g, _) => g)\n    if 0.0 < number_grade then\n      ∃ i : Nat, i < number_grade_keys.length ∧\n        number_grade_keys[i]! ≤ number_grade ∧\n        (∀ k' : Nat, k' < number_grade_keys.length → number_grade_keys[k']! ≤ number_grade → number_grade_keys[k']! ≤ number_grade_keys[i]!) ∧\n        result[i]! = (grade_dict[i]!).snd\n    else\n      result[i]! = \"E\"\n-- program termination\n∃ result,\n  implementation grades = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (grades: List Float) : List String :=\n\nList.map (fun grade =>\n  if grade == 4.0 then \"A+\"\n  else if grade > 3.7 then \"A\"\n  else if grade > 3.3 then \"A-\"\n  else if grade > 3.0 then \"B+\"\n  else if grade > 2.7 then \"B\"\n  else if grade > 2.3 then \"B-\"\n  else if grade > 2.0 then \"C+\"\n  else if grade > 1.7 then \"C\"\n  else if grade > 1.3 then \"C-\"\n  else if grade > 1.0 then \"D+\"\n  else if grade > 0.7 then \"D\"\n  else if grade > 0.0 then \"D-\"\n  else \"E\"\n) grades\n\n\n-- [TEST_CASES]\n\n#test implementation [4.0, 3, 1.7, 2, 3.5] = [\"A+\", \"B\", \"C-\", \"C\", \"A-\"]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(grades: List Float)\n: problem_spec implementation grades\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 81,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:5a8592cdcf245361b33c3f84e5534efc98b819a3176df84d04123a1bac49b35d",
+  "timing": 3877.6949148462154,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:f3c8e378e2e3ce8ae827ac20095429b7f94f28aaecfb47824fdd0b6e12183d47",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:8e1985976edc2e503f3ea23051b0ab30482d45278ad742a52202f19e6f7ca5ec",
+    "validation": [
+      {
+        "problem_id": "81",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:8b13f578b9803153eb3a285f1ef5f13f9ec220b264e4a138b7ee74015e282c07"
+      }
+    ]
+  },
+  "exception": null
+}

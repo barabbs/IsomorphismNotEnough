@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strange_sort_list(lst: List[int]) -> List[int]\n\"\"\"Given list of integers, return list in strange order.\nStrange sorting is when you start with the minimum value,\nthen the maximum of the remaining integers, then the minimum and so on.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 List Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result: List Int) :=\n  let sorted_lst := lst.mergeSort;\n  (List.Perm lst result)\n  \u2227 (forall i, (0 <= i \u2227 i < lst.length \u2227 i % 2 = 0) \u2192 result[i]! = sorted_lst[i / 2]!)\n  \u2227 (forall i, (0 <= i \u2227 i < lst.length \u2227 i % 2 = 1) \u2192 result[i]! = sorted_lst[lst.length - (i-1)/2 - 1]!)\n-- program termination\n\u2203 result, implementation lst = result \u2227 spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Int): List Int :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [1, 2, 3, 4] = [1, 4, 2, 3]\n-- #test implementation [5, 6, 7, 8, 9] = [5, 9, 6, 8, 7]\n-- #test implementation [1, 2, 3, 4, 5] = [1, 5, 2, 4, 3]\n-- #test implementation [5, 6, 7, 8, 9, 1] = [1, 9, 5, 8, 6, 7]\n-- #test implementation [5, 5, 5, 5] = [5, 5, 5, 5]\n-- #test implementation [] = []\n-- #test implementation [1,2,3,4,5,6,7,8] = [1, 8, 2, 7, 3, 6, 4, 5]\n-- #test implementation [0,2,2,2,5,5,-5,-5] = [-5, 5, -5, 5, 0, 2, 2, 2]\n-- #test implementation [111111] = [111111]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 70,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:70bb0563c2e8413e9654ade3ceb57b610bfe18dfe8ecef9571e0e7666c9f2ec1",
+  "timing": 119.36012625999865,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ehfwfkpu/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:794542450a2df58a11e026b6564ecfd80fd30d51c4277c2221a570c761bc389f",
+    "status": "OK",
+    "result": "sha256:6b4a05a9d86b11197609e0cd3a9956bd07ee9f0bb383ab5fb6264c6816acf24f"
+  },
+  "exception": null
+}

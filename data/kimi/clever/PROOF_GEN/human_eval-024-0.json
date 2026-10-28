@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_divisor(n: int) -> int\n\"\"\"For a given number n, find the largest number that divides n evenly, smaller than n\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n0 < n → 0 < result → result ∣ n → ∀ x, x ∣ n → x ≠ n → x ≤ result;\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  if n < 2 then\n    1\n  else\n    let rec find (k : Nat) : Nat :=\n      match k with\n      | 0 => 1\n      | k' + 1 =>\n        if n % (k' + 1) = 0 then k' + 1 else find k'\n    find (n - 1)\n\n\n-- [TEST_CASES]\n\n#test implementation 15 = 5\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 24,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:d0d079d3588e78e29a5c9ad1881fe07f6172f05b3112fab1decc9971abd34e36",
+  "timing": 1597.0117710186169,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:71f4bb2dff733e4902a4ab19eff51e0eddff59f2d189009b07b96a9757eca3eb",
+    "status": "OK",
+    "result": "sha256:f9cb2080ec40c153e60147bfafacba28d968f4fbda9407e66594a218afcbca6d",
+    "validation": [
+      {
+        "problem_id": "24",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:5034fd38320cadb10aa1f87019dd89870868db123cf9cbaaab2b93f10ce80914"
+      }
+    ]
+  },
+  "exception": null
+}

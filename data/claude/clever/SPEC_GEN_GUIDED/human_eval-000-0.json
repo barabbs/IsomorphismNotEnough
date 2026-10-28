@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef has_close_elements(numbers: List[float], threshold: float) -> bool\n\"\"\"Check if in given list of numbers, are any two numbers closer to each other than given threshold.\n>>> has_close_elements([1.0, 2.0, 3.0], 0.5)\nFalse\n>>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\nTrue\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Rat \u2192 Rat \u2192 Bool)\n-- inputs\n(numbers: List Rat)\n(threshold: Rat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation ([1, 2, 3]: List Rat) 0.5 = false\n-- #test implementation ([1, 2.8, 3, 4, 5, 2]: List Rat) 0.3 = true\n",
+  "info": {
+    "dataset": "clever",
+    "id": 0,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:92c6387ba2cd8adfd1723f6da718166980a2350127818e0e8b0383562a6b75f8",
+  "timing": 51.53240842100058,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/4ixc6_pi/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:961266967342c4d839d21c3f20c8e167dfbcd638919983c3b3ea90c532c47e9e",
+    "status": "OK",
+    "result": "sha256:fb9f1ef8e9b86a45a4cd850dbec68841d4f24da95128a0577cd07e9560ae7699"
+  },
+  "exception": null
+}

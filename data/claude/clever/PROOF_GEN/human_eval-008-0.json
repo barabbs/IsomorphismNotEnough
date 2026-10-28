@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sum_product(numbers: List[int]) -> Tuple[int, int]\n\"\"\"For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.\nEmpty sum should be equal to 0 and empty product should be equal to 1.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 (Int \u00d7 Int))\n-- inputs\n(numbers: List Int) :=\n-- spec\nlet spec (result: (Int \u00d7 Int)) :=\nlet (sum, prod) := result;\n(numbers = [] \u2192 sum = 0 \u2227 prod = 1) \u2227\n(numbers \u2260 [] \u2192\n(let (sum_tail, prod_tail) := implementation numbers.tail;\nsum - sum_tail = numbers[0]! \u2227\nsum_tail * prod_tail + prod = sum * prod_tail));\n-- program termination\n\u2203 result, implementation numbers = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (numbers: List Int) : (Int \u00d7 Int) :=\n\nmatch numbers with\n| [] => (0, 1)\n| n :: ns =>\n  let (s, p) := implementation ns\n  (n + s, n * p)\n\n\n-- [TEST_CASES]\n\n#test implementation [] = (0, 1)\n#test implementation [1, 2, 3, 4] = (10, 24)\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(numbers: List Int)\n: problem_spec implementation numbers\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 8,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:16b81e2fa02c84b6ba9d77fd49e4464a29796f4f7f309908f7c5ffb48948de28",
+  "timing": 89.64408446502057,
+  "metadata": {
+    "prompt": "/lean4:autoprove /tmp/appv/envs/zhdpm5dr/problem.lean --deep=stuck",
+    "claude": "sha256:2ddf278540cb2ebb93655d4887550d04215b221372842e48bd99a5785b6cef88",
+    "status": "OK",
+    "result": "sha256:eda39b99318f32acc081e4523ed3482bf538890d13924a1bb9cb1bb9195fae5f",
+    "validation": [
+      {
+        "problem_id": "8",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:00687bcaedfab6fa0dfe2f49462db55b07480c659c218a476d42c24225a0a743"
+      }
+    ]
+  },
+  "exception": null
+}

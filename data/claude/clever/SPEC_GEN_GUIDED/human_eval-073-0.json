@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef smallest_change(arr: List[int]) -> int\n\"\"\"Given an array arr of integers, find the minimum number of elements that\nneed to be changed to make the array palindromic. A palindromic array is an array that\nis read the same backwards and forwards. In one change, you can change one element to any other element.\n\n>>> smallest_change([1, 2, 3, 5, 4, 7, 9, 6])\n4\n>>> smallest_change([1, 2, 3, 4, 3, 2, 2])\n1\n>>> smallest_change([1, 2, 3, 2, 1])\n0\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int \u2192 Int)\n-- inputs\n(arr: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation [1,2,3,5,4,7,9,6] = 4\n-- #test implementation [1, 2, 3, 4, 3, 2, 2] = 1\n-- #test implementation [1, 4, 2] = 1\n-- #test implementation [1, 4, 4, 2] = 1\n-- #test implementation [1, 2, 3, 2, 1] = 0\n-- #test implementation [3, 1, 1, 3] = 0\n-- #test implementation [1] = 0\n-- #test implementation [0, 1] = 1\n",
+  "info": {
+    "dataset": "clever",
+    "id": 73,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:df5b122fb8b26c493e8100aed9ef2f003ef16dd4a7a47a2920a81a189edb0162",
+  "timing": 103.77792703199884,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/g_uaf_km/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:f08847c44b128272cf1292de5d87d636051b30ee4c5a70e02a4c09072ea7b6b9",
+    "status": "OK",
+    "result": "sha256:f6b0ad4edda3d3a57f14d6151b668fca2d1b381a643c6b625b7432c56f85fdec"
+  },
+  "exception": null
+}

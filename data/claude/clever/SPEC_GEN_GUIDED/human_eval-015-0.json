@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_sequence(n: int) -> str\n\"\"\"Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n\n>>> string_sequence(0)\n'0'\n>>> string_sequence(5)\n'0 1 2 3 4 5'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat \u2192 String)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 0 = \"0\"\n-- #test implementation 5 = \"0 1 2 3 4 5\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 15,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:3433153f55cf7a03b1968dc30b0ba192af3facb43b4985c3b4977944b02ef53f",
+  "timing": 86.2323731109991,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ow0ckbd_/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:65dadce26c2d47c9b4e4afb0c43706f88196712a32035b3ff21d35ea14bf3749",
+    "status": "OK",
+    "result": "sha256:1da9fd79d6202e62533ec602cb61baf2cf157cf21fc54acd395c76a84555a3cd"
+  },
+  "exception": null
+}

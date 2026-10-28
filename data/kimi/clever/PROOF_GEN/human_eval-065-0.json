@@ -1,0 +1,30 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef circular_shift(x: int, shift: int) -> str\n\"\"\"Circular shift the digits of the integer x, shift the digits right by shift\nand return the result as a string.\nIf shift > number of digits, return digits reversed.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat → String)\n-- inputs\n(x shift: Nat) :=\nlet isReverse (s: String) : Bool :=\n  let n := s.length;\n  ∀ i, i < n / 2 → s.get! ⟨i⟩ = s.get! ⟨n - 1 - i⟩;\n-- spec\nlet spec (result: String) :=\nlet x_str := Nat.repr x;\nresult.length = x_str.length ∧\n(x_str.length < shift → isReverse x_str) ∧\n(shift ≤ x_str.length →\n  x_str.take shift = result.drop (x_str.length - shift) ∧\n  x_str.drop shift = result.take (x_str.length - shift));\n-- program termination\n∃ result, implementation x shift = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (x shift: Nat) : String :=\n\n  let x_str := Nat.repr x\n  if shift > x_str.length then\n    String.mk (x_str.toList.reverse)\n  else\n    x_str.drop shift ++ x_str.take shift\n\n\n-- [TEST_CASES]\n\n#test implementation 12 1 = \"21\"\n#test implementation 12 2 = \"12\"\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(x shift: Nat)\n: problem_spec implementation x shift\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 65,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:738fd0e598b6c46b55eb09186526ae7080d032f735a9fe9125b5297660d46e24",
+  "timing": 4386.147599444259,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:85e017d03794d69509a887219208fcf1f7b108a9efbc906d445187fd7e2313cf",
+    "status": "ISSUE",
+    "comment": "SPEC",
+    "result": "sha256:a83c759a75eb7983ef8724e98571372d0b03a03d7127b3aa3e4d8147cdfc200f",
+    "validation": [
+      {
+        "problem_id": "65",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": false,
+        "error_message": "sha256:32ab6606233bd6576318a9d9f6ecf287ddec1a7515c3a16aaa9f1964c911fc1a",
+        "lean_code": "sha256:7f63782d1a06ce8ce2c788f53d47adb10f65aea336ea4aaa052d439904ded236"
+      }
+    ]
+  },
+  "exception": null
+}

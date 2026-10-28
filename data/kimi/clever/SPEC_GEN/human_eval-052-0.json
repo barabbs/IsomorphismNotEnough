@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef below_threshold(numbers: List[int], threshold: int) -> bool\n\"\"\"Return True if all numbers in the list l are below threshold t, and False otherwise.\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Int → Bool)\n-- inputs\n(numbers : List Int)\n(threshold : Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 52,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:686eff3bf66b33a4a70a392d99b2d9243dd42c3ea5a4227f3253456c1151fb36",
+  "timing": 45.011093489360064,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:5792edf98e02bf3bdb0196c6f13466db8d93e6e1407919d3c64279648734fd41",
+    "status": "OK",
+    "result": "sha256:df645ebcbae11d80ca57991e089a0b79c5a9ba2a6f8580b4b67aa9ed5fdd5170"
+  },
+  "exception": null
+}

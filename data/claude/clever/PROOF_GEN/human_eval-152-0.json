@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef compare(scores: List[float], guesses: List[float]) -> List[float]\n\"\"\"I think we all remember that feeling when the result of some long-awaited\nevent is finally known. The feelings and thoughts you have at that moment are\ndefinitely worth noting down and comparing.\nYour task is to determine if a person correctly guessed the results of a number of matches.\nYou are given two arrays of scores and guesses of equal length, where each index shows a match.\nReturn an array of the same length denoting how far off each guess was. If they have guessed correctly,\nthe value is 0, and if not, the value is the absolute difference between the guess and the score.\n\nNote: to reviewer, the reason for not using |.| to get the absolute value is to avoid leaking the implementation.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: List Rat → List Rat → List Rat)\n-- inputs\n(scores guesses: List Rat) :=\n-- spec\nlet spec (result: List Rat) :=\n  result.length = scores.length ∧\n  scores.length = guesses.length ∧\n  ∀ i, i < scores.length →\n  if scores[i]! > guesses[i]! then result[i]! + guesses[i]! = scores[i]!\n  else result[i]! + scores[i]! = guesses[i]!\n-- program terminates\n∃ result, impl scores guesses = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (scores guesses: List Rat) : List Rat :=\n\n(scores.zip guesses).map fun (s, g) => if s > g then s - g else g - s\n\n\n-- [TEST_CASES]\n\n#test implementation [1,2,3,4,5,1] [1,2,3,4,2,-2] = [0,0,0,0,3,3]\n#test implementation [0,5,0,0,0,4] [4,1,1,0,0,-2] = [4,4,1,0,0,6]\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(scores guesses: List Rat)\n: problem_spec implementation scores guesses :=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 152,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:3ad25db61e5ad9dece5eb48b3639fce532da71e3a9a92710b55d8ec83da5de9d",
+  "timing": 158.4551279109437,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:0d035d8d8c6c213a3df6a6eea9504c1a1f511d396939bf97198d38dc928fdc57",
+    "status": "ISSUE",
+    "result": "sha256:ad047382d62753a4d310bf4159c7654a687fee18f91510b6b4b855f57c8b6c28",
+    "validation": [
+      {
+        "problem_id": "152",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:8aab86bc23b07f8f440c98783b08236c2644652df2df53d625f6bb85ae20c858"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]\n\"\"\"Filter an input list of strings only for ones that contain given substring\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String → String → List String)\n-- inputs\n(strings: List String)\n(substring: String)\n:=\n-- spec\nlet spec (result: List String) :=\n(∀ i, i < result.length → result[i]!.containsSubstr substring →\n∀ j, j < strings.length ∧ strings[j]!.containsSubstr substring → strings[j]! ∈ result →\n∀ j, j < result.length → result.count result[j]! = strings.count result[j]!);\n-- program termination\n∃ result, implementation strings substring = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (strings: List String) (substring: String): List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] \"a\" = []\n-- #test implementation [\"abc\", \"bacd\", \"cde\", \"array\"] \"a\" = [\"abc\", \"bacd\", \"array\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 7,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:87e9cbb62889485f27a971323248ac52a2cdba7983cd3df98473922eae6ad172",
+  "timing": 31.343137739691883,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "kimi": "sha256:efecbcdad393077e5ec95bc6b1f63a01131e6b290e549e40257d7dae4cc32daa",
+    "status": "OK",
+    "result": "sha256:9dabffbc5a41f05931fc338b7a2981ff6398780a9077e129eec5323440076eab"
+  },
+  "exception": null
+}

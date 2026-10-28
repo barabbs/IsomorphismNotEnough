@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_prime(n)\n\"\"\"Return true if a given number is prime, and false otherwise.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat \u2192 Bool)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 31,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bc7e17790e990a9464401b9ffaac97bac839232d71311c27427e610bc9f3defe",
+  "timing": 67.94973621499958,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/g1dx_2eu/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:73cbb0e6d45fe78b389959521e304a7798b50e012d83d14775b1461877a452c4",
+    "status": "OK",
+    "result": "sha256:cf638287a36607ed97e71f2c81d536a745793ba65951889d3068d51a2545c734"
+  },
+  "exception": null
+}

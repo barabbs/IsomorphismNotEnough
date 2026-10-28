@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef odd_count(lst : list[str]) -> list[str]\n\"\"\"Given a list of strings, where each string consists of only digits, return a list.\nEach element i of the output should be \"the number of odd elements in the\nstring i of the input.\" where all the i's should be replaced by the number\nof odd digits in the i'th string of the input.\nNote(George): Found it hard to not leak the implementation, so I opted for a recursive statement.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List String \u2192 List String)\n-- inputs\n(lst: List String) :=\n-- spec\nlet spec (result : List String) :=\n  lst.all (fun s => s.data.all (fun c => c.isDigit)) \u2192\n  (result.length = 0 \u2194 lst.length = 0) \u2227\n  (result.length > 0 \u2192\n  let num_odd_digits := (lst.head!.data.filter (fun c => c.isDigit \u2227 c.toNat % 2 = 1)).length\n  result.head! = \"the number of odd elements \" ++ num_odd_digits.repr ++ \"n the str\" ++ num_odd_digits.repr ++ \"ng \" ++ num_odd_digits.repr ++ \" of the \" ++ num_odd_digits.repr ++ \"nput.\"\n  \u2227 result.tail! = implementation lst.tail!)\n-- program termination\n\u2203 result,\n  implementation lst = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List String) : List String :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation ['1234567'] = [\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n-- #test implementation ['3',\"11111111\"] = [\"the number of odd elements 1n the str1ng 1 of the 1nput.\", \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 113,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:030e82f96f2b56b1b21e862f0ec08d34311b0c0e2cf1d9c032a8bc19d8d8da90",
+  "timing": 56.03850230498938,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/ki33cp3m/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:c0f5fcc93bcc9db3eea7b392b242a23a66dc89fbdc7643a401838bc1667c55f9",
+    "status": "OK",
+    "result": "sha256:177237fd76dc116e3a64954f1d4cd75e7c0e9c2b2c2a26b2f0d8cebaa44e2b0b"
+  },
+  "exception": null
+}

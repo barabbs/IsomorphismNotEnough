@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef solve(n: list[int]) -> int\n\"\"\"Given a non-empty list of integers lst, add the even elements that are at odd indices.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Int \u2192 Int)\n-- inputs\n(lst: List Int) :=\n-- spec\nlet spec (result : Int) :=\n  lst.length = 0 \u2192 result = 0 \u2227\n  lst.length > 0 \u2192\n    if lst.length > 1 then\n      result = (if Even lst[1]! then lst[1]! else 0) + implementation (lst.drop 2)\n    else\n      result = (if Even lst[1]! then lst[1]! else 0)\n-- program termination\n\u2203 result,\n  implementation lst = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (lst: List Int) : Int :=\n\n  match lst with\n  | [] => 0\n  | [_] => 0\n  | _ :: x :: rest => (if Even x then x else 0) + implementation rest\n\n\n-- [TEST_CASES]\n\n#test implementation [4, 2, 6, 7] = 2\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(lst: List Int)\n: problem_spec implementation lst\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 85,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1efad1c4b0a27bf25dfe634620f2fbccfb6aa3d91d42f927df9827e23bfc47db",
+  "timing": 111.53526136407163,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:8d21dab9bb6dbdfe79d861dd27fb68b67aa69517bdc26d85094dcb7b6d9ba796",
+    "status": "OK",
+    "result": "sha256:7e923c512871479dc004102a1f894a94d9aec8a02358914081e54da96441de4b",
+    "validation": [
+      {
+        "problem_id": "85",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:8e889af94cd965f8a0ef4fe426db4456a068c16a1e4cd9534aeba41d0d650109"
+      }
+    ]
+  },
+  "exception": null
+}

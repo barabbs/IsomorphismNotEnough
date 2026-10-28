@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_coords_sorted(lst : list(list(int)), x : int) -> list((int, int))\n\"\"\"You are given a 2 dimensional data, as a nested lists,\nwhich is similar to matrix, however, unlike matrices,\neach row may contain a different number of columns.\nGiven lst, and integer x, find integers x in the list,\nand return list of tuples, [(x1, y1), (x2, y2) ...] such that\neach tuple is a coordinate - (row, columns), starting with 0.\nSort coordinates initially by rows in ascending order.\nAlso, sort coordinates of the row by columns in descending order.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List (List Int) \u2192 Int \u2192 List (Nat \u00d7 Nat))\n-- inputs\n(lst: List (List Int))\n(x: Int) :=\n-- spec\nlet spec (result : List (Nat \u00d7 Nat)) :=\n  (\u2200 i, i < result.length \u2192\n    let (row, col) := result[i]!\n    row < lst.length \u2227\n    col < lst[row]!.length \u2227\n    (lst[row]!)[col]! = x) \u2227\n  (\u2200\u1d49 (i < lst.length) (j < lst[i]!.length),\n    (lst[i]!)[j]! = x \u2192 (i, j) \u2208 result) \u2227\n  (result.map (fun (r, c) => r)).Sorted Nat.le \u2227\n  (\u2200 i < result.length,\n    let (row, col) := result[i]!\n    ((result.filter (fun (r, c) => r = row)).map (fun (r, c) => c)).Sorted (fun a b => a \u2265 b))\n-- program termination\n\u2203 result,\n  implementation lst x = result \u2227\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List (List Int)) (x: Int) : List (Nat \u00d7 Nat) :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"Hi\" = \"Hi\"\n-- #test implementation \"hello\" = \"ehllo\"\n-- #test implementation \"Hello World!!!\" = \"Hello !!!Wdlor\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 87,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:bc05a8e738c4419ca815f8ccc667f0bbfa75407b833f1cee61c70dda5f06e59b",
+  "timing": 133.91266117797932,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/hhc_b5wf/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:69e6e660606b29a88a4d89b946f8e6d12fd2872d91533e1293dace45a290b792",
+    "status": "OK",
+    "result": "sha256:ea331e506556ec2e4fb5f2118aaf815d1ee85d45fdbec1e507c26194012be517"
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef factorize(n: int) -> List[int]\n\"\"\"Return list of prime factors of given integer in the order from smallest to largest.\nEach of the factors should be listed number of times corresponding to how many times it appeares in factorization.\nInput number should be equal to the product of all factors\n\n>>> factorize(8)\n[2, 2, 2]\n>>> factorize(25)\n[5, 5]\n>>> factorize(70)\n[2, 5, 7]\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: Nat \u2192 List Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 8 = [2, 2, 2]\n-- #test implementation 25 = [5, 5]\n-- #test implementation 70 = [2, 5, 7]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 25,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:7d98f228a9753e1d9d31a7bab941842cdfb5dd810004df8ca997d35a656d1d3d",
+  "timing": 95.83861448505195,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/a_ah0afg/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:22c17f1d422dadd07b2ce3d66c6edd01ce06dba372c43786976e2bc44958e6c7",
+    "status": "OK",
+    "result": "sha256:f9df98d3e036f4442465d03d130b07f1a02db12a15509602854931219ee5226b"
+  },
+  "exception": null
+}

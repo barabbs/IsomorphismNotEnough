@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef max_fill_count(grid : list[list[int]], capacity : int) -> int\n\"\"\"You are given a rectangular grid of wells. Each row represents a single well,\nand each 1 in a row represents a single unit of water.\nEach well has a corresponding bucket that can be used to extract water from it,\nand all buckets have the same capacity.\nYour task is to use the buckets to empty the wells.\nOutput the number of times you need to lower the buckets.\nConstraints:\n    * all wells have the same length\n    * 1 <= grid.length <= 10^2\n    * 1 <= grid[:,1].length <= 10^2\n    * grid[i][j] -> 0 | 1\n    * 1 <= capacity <= 10\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List (List Nat) → Nat → Nat)\n-- inputs\n(grid: List (List Nat))\n(capacity: Nat) :=\n-- spec\nlet spec (result : Nat) :=\n  (grid.all (fun row => row.all (fun cell => cell = 0 ∨ cell = 1))) →\n  (∃ len : Nat, grid.all (fun row => row.length = len)) →\n  (result = 0 ↔ grid.length = 0) ∧\n  (grid.length > 0 →\n    let well_water_count := grid.head!.sum;\n    result - (well_water_count / capacity) - (if well_water_count % capacity > 0 then 1 else 0) = implementation grid.tail! capacity)\n-- program termination\n∃ result,\n  implementation grid capacity = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (grid: List (List Nat)) (capacity: Nat) : Nat :=\n\n  grid.foldl (fun acc row =>\n    let water := row.sum\n    acc + (water / capacity) + (if water % capacity > 0 then 1 else 0)\n  ) 0\n\n\n-- [TEST_CASES]\n\n#test implementation [[0,0,1,0], [0,1,0,0], [1,1,1,1]] 1 = 6\n#test implementation [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]] 2 = 5\n#test implementation [[0,0,0], [0,0,0]] 5 = 0\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(grid: List (List Nat))\n(capacity: Nat)\n: problem_spec implementation grid capacity\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 115,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:9140283a6304ef6bb8324efa0546f89e4df7ed1d97b6c1c8c44f0e223ad09400",
+  "timing": 229.52594158402644,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:712ab43a6124932cf01d4a8c690de558bff6841ba873f301f222cc2a5a3e2e01",
+    "status": "ISSUE",
+    "result": "sha256:e9110d42ea7880a1f8d39abc2681034bdd4e41d5b1ca39d501242656ea81c840",
+    "validation": [
+      {
+        "problem_id": "115",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:df36855eaaefe7604c9d7eab9d388d5a95dab5e0b3dbbf50d4725810aaf52984"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "CONJ"
+  },
+  "exception": null
+}

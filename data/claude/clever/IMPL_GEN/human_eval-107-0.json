@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef even_odd_palindrome(n: nat) -> (nat, nat)\n\"\"\"Given a positive integer n, return a tuple that has the number of even and odd\ninteger palindromes that fall within the range(1, n), inclusive.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat \u2192 Nat \u00d7 Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat \u00d7 Nat) :=\n  let is_palindrome (k: Nat): Prop :=\n    List.Palindrome (Nat.digits 10 k);\n  let even_palindrome (k: Nat): Prop :=\n    (Even k) \u2227 (is_palindrome k);\n  let odd_palindrome (k: Nat): Prop :=\n    (Odd k) \u2227 (is_palindrome k);\n  n > 0 \u2192\n  (1 < n \u2192\n    let impl_n_minus_1 := implementation (n - 1);\n    ((even_palindrome n) \u2192 result.1 = 1 + impl_n_minus_1.1) \u2227\n    ((odd_palindrome n) \u2192 result.2 = 1 + impl_n_minus_1.2) \u2227\n    (\u00ac (odd_palindrome n) \u2192 result.2 = impl_n_minus_1.2) \u2227\n    (\u00ac (even_palindrome n) \u2192 result.1 = impl_n_minus_1.1))\n  \u2227\n  (n = 1 \u2192 (result.1 = 0) \u2227 (result.2 = 1));\n-- program termination\n\u2203 result, implementation n = result \u2227\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (n: Nat) : Nat \u00d7 Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation 123 = (8, 13)\n-- #test implementation 12 = (4, 6)\n-- #test implementation 3 = (1, 2)\n-- #test implementation 63 = (6, 8)\n-- #test implementation 25 = (5, 6)\n-- #test implementation 19 = (4, 6)\n-- #test implementation 9 = (4, 5)\n",
+  "info": {
+    "dataset": "clever",
+    "id": 107,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:69a9ae5c5b3a3cc2fc2a028478c7ec97ddf5424a223e62bddb2bd13cab7ff815",
+  "timing": 88.29868640200584,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/7_sku50_/problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "claude": "sha256:f7b25972f7d24fec8df01b7af3153106bd01acce38abd419af4448c99aef0cc8",
+    "status": "OK",
+    "result": "sha256:b5610ada102905db728d7563d07312cbbb1eef7b065cb3ded41b6b92ad209619"
+  },
+  "exception": null
+}

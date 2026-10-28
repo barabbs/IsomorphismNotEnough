@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef x_or_y(n: int, x: int, y: int) -> int\n\"\"\"A simple program which should return the value of x if n is\na prime number and should return the value of y otherwise.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Int → Int → Int → Int)\n-- inputs\n(n x y: Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 150,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2c57fcad2c3230a99addc547a06f323716b0a1dd8a7063bcaee520aa3cf32fee",
+  "timing": 126.92729635816067,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:0ddf1be541a358b7740b532a8a34ce7631b19b9b6426a7a401d16e20c7866015",
+    "status": "OK",
+    "result": "sha256:2ec5ffb6b220b0b1d1d236ce3cd08f79a1cb6fbb2a0875d61895f50fe9d145b4"
+  },
+  "exception": null
+}

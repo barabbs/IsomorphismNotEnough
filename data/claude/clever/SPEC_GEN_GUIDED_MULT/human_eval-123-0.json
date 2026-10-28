@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef get_odd_collatz (n: int) -> List[int]\n\"\"\"Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.\n\nThe Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\nas follows: start with any positive integer n. Then each term is obtained from the\nprevious term as follows: if the previous term is even, the next term is one half of\nthe previous term. If the previous term is odd, the next term is 3 times the previous\nterm plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\nNote:\n    1. Collatz(1) is [1].\n    2. returned list sorted in increasing order.\n\n>>> get_odd_collatz(5)\n[1, 5]\n\"\"\"\n-/\n\n\n-- [HELPER_DEFINITIONS]\n\ndef collatz_reachable (n m : Nat) : Prop :=\n  \u2203 k, Nat.iterate (fun x => if x % 2 = 0 then x / 2 else x * 3 + 1) k n = m\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: Nat \u2192 List Nat)\n-- inputs\n(n: Nat) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation 5 = [1, 5]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 123,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:64e1657fba9d3373eb36287e3925ddb323a55217a6660b1e1825a504f979fd28",
+  "timing": 183.78151752700796,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/jfvvw1fj/problem.lean and create .lean files in the `solutions` subdirectory filling the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:c4064480a28c8f1a6e0652c5a5f453b18d2cd6284166a6a60f44a8a04358ddb7",
+    "status": "OK",
+    "result": "sha256:4d5c46d07cfaedbac360acea9e6dbc41c4660b51fa1da2bdbc6842b6c0c25451"
+  },
+  "exception": null
+}

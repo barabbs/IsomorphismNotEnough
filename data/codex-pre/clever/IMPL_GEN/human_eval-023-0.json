@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef strlen(string: str) -> int\n\"\"\"Return length of given string\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: String → Nat)\n-- inputs\n(string: String) :=\n-- spec\nlet spec (result: Nat) :=\n-- every character in the string is counted once\nresult = 0 ↔ string.isEmpty ∧\n(0 < result → result - 1 = implementation (string.drop 1))\n-- program termination\n∃ result, implementation string = result ∧\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (string: String): Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"\" = 0\n-- #test implementation \"abc\" = 3\n",
+  "info": {
+    "dataset": "clever",
+    "id": 23,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:b7fed8d885ea80bc08f2c7dc6c1e96838cbbd7d7c26c8c0f37135f429f0a2a50",
+  "timing": 85.81099278500187,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex-pre": "sha256:a4a84c576acb5928c72e722e87907f62e87377794f84ee9f235849a055beed0e",
+    "status": "OK",
+    "result": "sha256:d8e0aa37b9eb7504f55e0ea60bc092f1b23bb83e33314ed24e285295ae744ae2"
+  },
+  "exception": null
+}

@@ -1,0 +1,60 @@
+{
+  "text": "sha256:26690a364e870efe8b0ca638400d7cea330557ba88e67eb5cb2c65dff4c17b23",
+  "info": {
+    "dataset": "clever",
+    "id": 19,
+    "subset": "human_eval",
+    "task": "SPEC_ISO_GUIDED_MULT",
+    "attempt": 0
+  },
+  "solution": "sha256:1df88a638f20d9388a32830ade76e3a443a688580c18f80c78d4aedffbefaaa3",
+  "timing": 384.3571094000363,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem_0.lean problem_1.lean problem_2.lean --deep=stuck",
+    "claude": "sha256:14228b2c9afcb0fb2c637d302c7d4c5862a588b3c91fae9211aaab2c91ae09dd",
+    "status": [
+      "MISMATCH",
+      "MISMATCH",
+      "MISMATCH"
+    ],
+    "result": "sha256:7c8e1c012a4f9406004701d53bec91897ecd70b9c5fcc1bdb4d4bc5dac442d95",
+    "raw_status": "0:MISMATCH\n1:MISMATCH\n2:MISMATCH",
+    "comment": [
+      "/",
+      "/",
+      "/"
+    ],
+    "validation": [
+      {
+        "problem_id": "19",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:e5ca60e182508d42b7d353d600b4a3b8b8365eb0c2f4d2e1d8fcf747de5e3220"
+      },
+      {
+        "problem_id": "19",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:0552128d949888cce8d198c9ce60296df91f278311f0409b661284c3c7298bce"
+      },
+      {
+        "problem_id": "19",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:3209d3f048f4c6c9a2cebb6be5ab98f6c043f9ea27a290f8060d04ec0ea12980"
+      }
+    ],
+    "analysis": [
+      "STRUCT+PRECOND",
+      "ORDER+STRUCT",
+      "STRUCT+PRECOND"
+    ]
+  },
+  "exception": null
+}

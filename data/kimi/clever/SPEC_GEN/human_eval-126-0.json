@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_sorted(lst: List[int]) -> bool\n\"\"\"Given a list of numbers, return whether or not they are sorted\nin ascending order. If list has more than 1 duplicate of the same\nnumber, return False. Assume no negative numbers and only integers.\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: List Int → Bool)\n-- inputs\n(lst: List Int) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 126,
+    "subset": "human_eval",
+    "task": "SPEC_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:2b98df3829e282bb4f5664382fdcfc2090290f3253103200ba1b1181cef7439e",
+  "timing": 203.6958750989288,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:0d68ad5a58a54ce5e7ebf66810f80a98b2ad7afdd22da030af1e782fd9cd6dc5",
+    "status": "OK",
+    "result": "sha256:6ae44f1d15675fd040265b7a6ca5b877940a9578ba89bfad96f486eed1bbe481"
+  },
+  "exception": null
+}

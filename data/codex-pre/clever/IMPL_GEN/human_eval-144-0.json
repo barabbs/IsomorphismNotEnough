@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef simplify(x: str, n: str) -> bool\n\"\"\"Your task is to implement a function that will simplify the expression\nx * n. The function returns True if x * n evaluates to a whole number and False\notherwise. Both x and n, are string representation of a fraction, and have the following format,\n<numerator>/<denominator> where both numerator and denominator are positive whole numbers.\n\nYou can assume that x, and n are valid fractions, and do not have zero as denominator.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(impl: String → String → Bool)\n-- inputs\n(x: String) (n: String) :=\n-- spec\nlet spec (result: Bool) :=\nlet fx := x.splitOn \"/\";\nlet fn := n.splitOn \"/\";\nfx.length = 2 → fn.length = 2 →\nfx.all String.isNat → fn.all String.isNat →\nlet p1 := fx[0]!.toNat!;\nlet q1 := fx[1]!.toNat!;\nlet p2 := fn[0]!.toNat!;\nlet q2 := fn[1]!.toNat!;\nq1 ≠ 0 → q2 ≠ 0 →\n(result ↔ (∃ k, k * p1 * p2 = q1 * q2))\n-- program termination\n∃ result, impl x n = result ∧\n-- return value satisfies spec\nspec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (x: String) (n: String) : Bool :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation \"1/5\" \"5/1\" = True\n-- #test implementation \"1/6\" \"2/1\" = False\n-- #test implementation \"7/10\" \"10/2\" = False\n",
+  "info": {
+    "dataset": "clever",
+    "id": 144,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:22d7eb138b73778fc1101f17fcddca285e2459c38de235854dad8508ad332510",
+  "timing": 494.90957767600776,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex-pre": "sha256:533c2d142374cf6559ca173959087889aec8f668d6dcf33bd12fd307620f7e85",
+    "status": "OK",
+    "result": "sha256:d4cc8688a5070f2a3171159e35a62744ee3d4d0f3ebfd98288c9747dcfa4b651"
+  },
+  "exception": null
+}

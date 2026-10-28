@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef string_xor(a: str, b: str) -> str\n\"\"\"Input are two strings a and b consisting only of 1s and 0s.\nPerform binary XOR on these inputs and return result also as a string.\n\n>>> string_xor('010', '110')\n'100'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(implementation: String \u2192 String \u2192 String)\n-- inputs\n(a b: String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"010\" \"110\" = \"100\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 11,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:fc3db98ad2442c0726804a245e0021de6c5354075ff35f6944a5055b00cc24da",
+  "timing": 62.41947409500062,
+  "metadata": {
+    "prompt": "Read /tmp/appv/envs/_zgbita9/problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "claude": "sha256:ec1691543a0288f83227434c0bfb517b5353dbf15edc94529944edb017f28219",
+    "status": "OK",
+    "result": "sha256:18d77ac2938a4d227769d0220c66eb6fc14e4015535dec920e990e265a91da5a"
+  },
+  "exception": null
+}

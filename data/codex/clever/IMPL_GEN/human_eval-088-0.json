@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef sort_array(lst : List[int]) -> List[int]\n\"\"\"Given an array of non-negative integers, return a copy of the given array after sorting,\nyou will sort the given array in ascending order if the sum( first index value, last index value) is odd,\nor sort it in descending order if the sum( first index value, last index value) is even.\nNote(George): I have elected to ignore the copy part.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: List Nat → List Nat)\n-- inputs\n(lst: List Nat) :=\n-- spec\nlet spec (result : List Nat) :=\n  lst.length > 0 →\n  result.length = lst.length ∧\n  (∀ i, i < result.length →\n    result[i]! ∈ lst ∧\n    lst[i]! ∈ result ∧\n    result.count (lst[i]!) = lst.count (lst[i]!)) ∧\n  (lst.head! + lst.getLast!) ≡ 1 [MOD 2] →\n    result.Sorted Nat.le ∧\n  (lst.head! + lst.getLast!) ≡ 0 [MOD 2] →\n    result.Sorted (fun a b => a ≥ b)\n-- program termination\n∃ result,\n  implementation lst = result ∧\n  spec result\n\n\n-- [IMPLEMENTATION_SIGNATURE]\n\ndef implementation (lst: List Nat) : List Nat :=\n\n\n-- [IMPLEMENTATION]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- Uncomment the #test lines below after completing the implementation\n-- #test implementation [] = []\n-- #test implementation [5] = [5]\n-- #test implementation [2, 4, 3, 0, 1, 5] = [0, 1, 2, 3, 4, 5]\n-- #test implementation [2, 4, 3, 0, 1, 5, 6] = [6, 5, 4, 3, 2, 1, 0]\n",
+  "info": {
+    "dataset": "clever",
+    "id": 88,
+    "subset": "human_eval",
+    "task": "IMPL_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:f0632013f9aa67c201f2563e725a4055bb05a71857a4f473a8e83a5e80e33401",
+  "timing": 104.26551123801619,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [IMPLEMENTATION] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Uncomment the test cases upon completing the implementation, and fix any compilation or test errors",
+    "codex": "sha256:7074951aa19bebc7624200393a8954ee18a1b9a515d0f4e1460b3aa01aa76335",
+    "status": "OK",
+    "result": "sha256:5397864e17bd18b9697c6aab0bd9ebf566499b78fc2d1a32de1258e9ca73e579"
+  },
+  "exception": null
+}

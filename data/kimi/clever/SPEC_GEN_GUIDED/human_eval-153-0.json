@@ -1,0 +1,19 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef Strongest_Extension(class_name: str, extensions: List[str]) -> str\n\"\"\"You will be given the name of a class (a string) and a list of extensions.\nThe extensions are to be used to load additional classes to the class. The\nstrength of the extension is as follows: Let CAP be the number of the uppercase\nletters in the extension's name, and let SM be the number of lowercase letters\nin the extension's name, the strength is given by the fraction CAP - SM.\nYou should find the strongest extension and return a string in this\nformat: ClassName.StrongestExtensionName.\nIf there are two or more extensions with the same strength, you should\nchoose the one that comes first in the list.\nFor example, if you are given \"Slices\" as the class and a list of the\nextensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should\nreturn 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the strongest extension\n(its strength is -1).\n\n>>> Strongest_Extension('my_class', ['AA', 'Be', 'CC'])\n'my_class.AA'\n\"\"\"\n-/\n\n\n-- [SPECIFICATION_SIGNATURE]\n\ndef generated_spec\n-- function signature\n(impl: String → List String → String)\n-- inputs\n(class_name: String)\n(extensions: List String) : Prop :=\n\n\n-- [SPECIFICATION_BODY]\n\nsorry\n\n\n-- [TEST_CASES]\n\n-- #test implementation \"my_class\" [\"AA\", \"Be\", \"CC\"] = \"my_class.AA\"\n",
+  "info": {
+    "dataset": "clever",
+    "id": 153,
+    "subset": "human_eval",
+    "task": "SPEC_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:0eefc565e8b0fe77955f85c104d456a9250d7517e53fc424653895ff22a63e12",
+  "timing": 433.29882950987667,
+  "metadata": {
+    "prompt": "Read problem.lean and fill the [SPECIFICATION_BODY] section faithfully following the prior instructions.\nConsult the lean4 skill for Lean 4 conventions, strategies and available tools. Fix any compilation errors",
+    "kimi": "sha256:9f6cba9911943aab676998930a8123244abaa73a29c472b872a88f2f5c2b4bfe",
+    "status": "OK",
+    "result": "sha256:13e3bacb41e2d3e4858acbb69205901c8f1a4357a65a4eeb31a88ebc88c1996c"
+  },
+  "exception": null
+}

@@ -1,0 +1,29 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef largest_prime_factor(n: nat) -> nat\n\"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Nat → Nat)\n-- inputs\n(n: Nat) :=\n-- spec\nlet spec (result: Nat) :=\n  1 < n ∧ ¬ Nat.Prime n →\n  (Nat.Prime result ∧ result ∣ n ∧\n  ∀ i, i < n ∧ i ∣ n ∧ Nat.Prime i → i ≤ result);\n-- program termination\n∃ result, implementation n = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (n: Nat) : Nat :=\n\n  let primeFactors := Nat.primeFactors n\n  if h : primeFactors.Nonempty then\n    primeFactors.max' h\n  else\n    0\n\n\n-- [TEST_CASES]\n\n#test implementation 13195 = 29\n#test implementation 2048 = 2\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(n: Nat)\n: problem_spec implementation n\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 59,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:1a271029d5278017d07e20cad39a71e3ed5b91ee2d2570816178fea498947e88",
+  "timing": 353.84650960192084,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:7ebc48681303e8dca12ad438845e49f544b4dcf45827889df3919ebc768428e7",
+    "status": "OK",
+    "result": "sha256:0b2863af72aecdb003cf4eb0b07d1b23dfbbc032e93886be97458d43a3c00111",
+    "validation": [
+      {
+        "problem_id": "59",
+        "isomorphism_ok": false,
+        "correctness_ok": true,
+        "compilation_ok": true,
+        "error_message": "sha256:ca9e48fd12a462a99f625c58ba7e18e64a4e50fbdbf76d62e7b0e1ed42234d3f",
+        "lean_code": "sha256:1d174dd2c533f2812705232a7f761c11a0491c3473e0367461da804025d6c1e8"
+      }
+    ]
+  },
+  "exception": null
+}

@@ -1,0 +1,19 @@
+{
+  "text": "sha256:b4274996e2c07bb6c5733b3cb0460c4fb71448568a19a927e9b373ddd01c7b74",
+  "info": {
+    "dataset": "clever",
+    "id": 56,
+    "subset": "human_eval",
+    "task": "PROOF_GEN_GEN_GUIDED",
+    "attempt": 0
+  },
+  "solution": "sha256:42318ca50ca71031763da50b7310c288193d1bc7c95df427bb77f7a9ae378620",
+  "timing": 3409.3342986432835,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "kimi": "sha256:fb098d063437102d80dd1659bf5f3b818c85d1cab4fc4fa5b04ef4bb3c840fdc",
+    "status": "OK",
+    "result": "sha256:7ff4c271a36e03c34c59aabfbed1bef84f754d987bae3ee8e4c0d95a54968537"
+  },
+  "exception": null
+}

@@ -1,0 +1,31 @@
+{
+  "text": "import Mathlib\nimport Mathlib.Algebra.Polynomial.Basic\nimport Std.Data.HashMap\n\n\n-- [NL_SPECIFICATION]\n\n/--\ndef is_multiply_prime(a: int) -> bool\n\"\"\"Write a function that returns true if the given number is the multiplication of 3 prime numbers\nand false otherwise. Knowing that (a) is less then 100.\n\"\"\"\n-/\n\n\n-- [FORMAL_SPECIFICATION]\n\ndef problem_spec\n-- function signature\n(implementation: Int → Bool)\n-- inputs\n(a: Int) :=\n-- spec\nlet spec (result: Bool) :=\n  (a < 100) →\n    result ↔ exists a' b c, (Nat.Prime a') ∧ (Nat.Prime b) ∧ (Nat.Prime c) ∧ (a == a'*b*c)\n-- program termination\n∃ result, implementation a = result ∧\nspec result\n\n\n-- [IMPLEMENTATION]\n\ndef implementation (a: Int) : Bool :=\n\n  let isPrime := fun (n : Nat) =>\n    n ≥ 2 && (List.range (n - 2) |>.all fun i => n % (i + 2) != 0)\n  if a ≤ 1 then false\n  else\n    let n := a.toNat\n    (List.range (n / 4 + 1)).any fun i =>\n      let p := i + 2\n      isPrime p && (List.range (n / (p * 2) + 1)).any fun j =>\n        let q := j + 2\n        isPrime q &&\n        let pq := p * q\n        n % pq == 0 &&\n        isPrime (n / pq)\n\n\n-- [TEST_CASES]\n\n#test implementation 5 = False\n#test implementation 30 = True\n#test implementation 8 = True\n#test implementation 10 = False\n#test implementation 125 = True\n#test implementation (3 * 5 * 7) = True\n#test implementation (3 * 6 * 7) = False\n#test implementation (9 * 9 * 9) = False\n#test implementation (11 * 9 * 9) = False\n#test implementation (11*13*7) = True\n\n\n-- [CORRECTNESS_HELPER_LEMMAS]\n\n\n-- [CORRECTNESS_THEOREM]\n\ntheorem correctness\n(a: Int)\n: problem_spec implementation a\n:=\n\n\n-- [CORRECTNESS_PROOF]\n\nby sorry\n",
+  "info": {
+    "dataset": "clever",
+    "id": 75,
+    "subset": "human_eval",
+    "task": "PROOF_GEN",
+    "attempt": 0
+  },
+  "solution": "sha256:7449323bc869e6d1f48f243ebe793d4e20a2167a808d81347283e1a5e1a15487",
+  "timing": 1280.7796979970299,
+  "metadata": {
+    "prompt": "/lean4:autoprove problem.lean --deep=stuck",
+    "claude": "sha256:94a79ee0458ae942f98f38bdc2fde206075f296c80393359282a96cfd2e9b6af",
+    "status": "ISSUE",
+    "result": "sha256:c4620fc1cba1b0e8910067f768204b85f444d2263184541754193615ac8fd34f",
+    "validation": [
+      {
+        "problem_id": "75",
+        "isomorphism_ok": false,
+        "correctness_ok": false,
+        "compilation_ok": true,
+        "error_message": "sha256:795404c3c05cb8a29cc578b66bf0389c09faf513b26d782104fe3067cb76fd9f",
+        "lean_code": "sha256:f1c9597d81e1e968a58562d9f9258262f5af91643ab26680e279ff3aa83d0206"
+      }
+    ],
+    "comment": "SPEC",
+    "analysis": "PREC"
+  },
+  "exception": null
+}
